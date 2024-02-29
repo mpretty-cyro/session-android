@@ -1,2 +1,6 @@
+commit_message: "[CI SKIP]"
+files:
+  - source: /app/src/main/res/values/strings.xml
+    translation: /app/src/main/res/values-%two_letters_code%/strings.xml
 bundles:
   - 4
