@@ -1,9 +1,9 @@
-commit_message: "[CI SKIP]"
+commit_message: '[CI SKIP]'
 files:
-- translation: "/app/src/main/res/values-%android_code%/strings.xml"
-  languages_mapping:
-    android_code:
-      en-rUS: ''
-      fr: fr
+  - translation: /app/src/main/res/values-%android_code%/strings.xml
+    languages_mapping:
+      android_code:
+        en-rUS: ''
+        fr: fr
 bundles:
-- 4
+  - 2
