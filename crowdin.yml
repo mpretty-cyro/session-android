@@ -1,4 +1,4 @@
-commit_message: "[CI SKIP]"
+commit_message: '[CI SKIP]'
 files:
   - source: /app/src/main/res/values/strings.xml
     translation: /app/src/main/res/values-%android_code%/strings.xml
