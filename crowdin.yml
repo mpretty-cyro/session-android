@@ -1,7 +1,3 @@
-languages_mapping:
-  android_code:
-    fil-rPH: values-fil-rPH
-    en-US: values
 commit_message: '[CI SKIP]'
 bundles:
   - 4
