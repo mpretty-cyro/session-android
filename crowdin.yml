@@ -1,7 +1,5 @@
 commit_message: '[CI SKIP]'
 files:
-  - languages_mapping:
-    android_code:
-      fil-rPH: values-fil-rPH
+  - languages_mapping: 
 bundles:
   - 4
