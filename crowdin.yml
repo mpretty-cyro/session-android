@@ -1,5 +1,10 @@
 commit_message: '[CI SKIP]'
 files:
-  - languages_mapping: 
+- source: Language Strings - For Export.csv
+  translation: /app/src/main/res/%android_code%/strings.xml
+  languages_mapping:
+    android_code:
+      fil-rPH: values-fil-rPH
+      en-US: values
 bundles:
   - 4
