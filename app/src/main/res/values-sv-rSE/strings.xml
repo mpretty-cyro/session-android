@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="disappearingMessagesUpdated"><b>{adminname}</b> updated disappearing message settings.</string>
-  <string name="groupMemberLeft"><b>{name}</b> left the group.</string>
+  <string name="groupMemberLeft"><b>{name}</b> lämnade gruppen.</string>
   <string name="adminMorePromotedToAdmin"><b>{name}</b> and <b>{count} others</b> were promoted to Admin.</string>
   <string name="adminTwoPromotedToAdmin"><b>{name}</b> and <b>{othername}</b> were promoted to Admin.</string>
   <string name="adminPromotedToAdmin"><b>{name}</b> was promoted to Admin.</string>
@@ -9,7 +9,7 @@
   <string name="groupRemovedMore"><b>{name}</b> and <b>{othername}</b> were removed from the group.</string>
   <string name="groupMemberTwoNew"><b>{name}</b> and <b>{othername}</b> joined the group.</string>
   <string name="groupRemovedTwo"><b>{name}</b> and <b>{othername}</b> were removed from the group.</string>
-  <string name="groupMemberNew"><b>{name}</b> joined the group.</string>
+  <string name="groupMemberNew"><b>{name}</b> gick med i gruppen.</string>
   <string name="searchMatches">{count} of {totalcount} matches</string>
   <string name="members">{count} medlemmar</string>
   <string name="callsCalledYou">{name} called you</string>
