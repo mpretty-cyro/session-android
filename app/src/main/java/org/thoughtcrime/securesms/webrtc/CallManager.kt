@@ -16,6 +16,7 @@ import nl.komponents.kovenant.Promise
 import nl.komponents.kovenant.functional.bind
 import org.session.libsession.database.StorageProtocol
 import org.session.libsession.messaging.calls.CallMessageType
+import org.session.libsession.messaging.messages.applyExpiryMode
 import org.session.libsession.messaging.messages.control.CallMessage
 import org.session.libsession.messaging.sending_receiving.MessageSender
 import org.session.libsession.snode.SnodeAPI
@@ -25,6 +26,7 @@ import org.session.libsession.utilities.Util
 import org.session.libsession.utilities.recipients.Recipient
 import org.session.libsignal.protos.SignalServiceProtos.CallMessage.Type.ICE_CANDIDATES
 import org.session.libsignal.utilities.Log
+import org.thoughtcrime.securesms.dependencies.DatabaseComponent
 import org.thoughtcrime.securesms.webrtc.CallManager.StateEvent.AudioDeviceUpdate
 import org.thoughtcrime.securesms.webrtc.CallManager.StateEvent.AudioEnabled
 import org.thoughtcrime.securesms.webrtc.CallManager.StateEvent.RecipientUpdate
@@ -57,8 +59,12 @@ import java.util.ArrayDeque
 import java.util.UUID
 import org.thoughtcrime.securesms.webrtc.data.State as CallState
 
-class CallManager(context: Context, audioManager: AudioManagerCompat, private val storage: StorageProtocol): PeerConnection.Observer,
-        SignalAudioManager.EventListener, CameraEventListener, DataChannel.Observer {
+class CallManager(
+    private val context: Context,
+    audioManager: AudioManagerCompat,
+    private val storage: StorageProtocol
+): PeerConnection.Observer,
+    SignalAudioManager.EventListener, CameraEventListener, DataChannel.Observer {
 
     sealed class StateEvent {
         data class AudioEnabled(val isEnabled: Boolean): StateEvent()
@@ -293,17 +299,17 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
                 while (pendingOutgoingIceUpdates.isNotEmpty()) {
                     currentPendings.add(pendingOutgoingIceUpdates.pop())
                 }
-                val sdps = currentPendings.map { it.sdp }
-                val sdpMLineIndexes = currentPendings.map { it.sdpMLineIndex }
-                val sdpMids = currentPendings.map { it.sdpMid }
 
-                MessageSender.sendNonDurably(CallMessage(
-                        ICE_CANDIDATES,
-                        sdps = sdps,
-                        sdpMLineIndexes = sdpMLineIndexes,
-                        sdpMids = sdpMids,
-                        currentCallId
-                ), currentRecipient.address, isSyncMessage = currentRecipient.isLocalNumber)
+                val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(expectedRecipient)
+                CallMessage(
+                    ICE_CANDIDATES,
+                    sdps = currentPendings.map(IceCandidate::sdp),
+                    sdpMLineIndexes = currentPendings.map(IceCandidate::sdpMLineIndex),
+                    sdpMids = currentPendings.map(IceCandidate::sdpMid),
+                    currentCallId
+                )
+                    .applyExpiryMode(thread)
+                    .also { MessageSender.sendNonDurably(it, currentRecipient.address, isSyncMessage = currentRecipient.isLocalNumber) }
             }
         }
     }
@@ -402,6 +408,10 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
 
     override fun onCameraSwitchCompleted(newCameraState: CameraState) {
         localCameraState = newCameraState
+
+        // If the camera we've switched to is the front one then mirror it to match what someone
+        // would see when looking in the mirror rather than the left<-->right flipped version.
+        localRenderer?.setMirror(localCameraState.activeDirection == CameraState.Direction.FRONT)
     }
 
     fun onPreOffer(callId: UUID, recipient: Recipient, onSuccess: () -> Unit) {
@@ -419,6 +429,7 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
     fun onNewOffer(offer: String, callId: UUID, recipient: Recipient): Promise<Unit, Exception> {
         if (callId != this.callId) return Promise.ofFail(NullPointerException("No callId"))
         if (recipient != this.recipient) return Promise.ofFail(NullPointerException("No recipient"))
+        val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(recipient)
 
         val connection = peerConnection ?: return Promise.ofFail(NullPointerException("No peer connection wrapper"))
 
@@ -431,11 +442,9 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
                 mandatory.add(MediaConstraints.KeyValuePair("IceRestart", "true"))
             })
             connection.setLocalDescription(answer)
-            pendingIncomingIceUpdates.toList().forEach { update ->
-                connection.addIceCandidate(update)
-            }
+            pendingIncomingIceUpdates.toList().forEach(connection::addIceCandidate)
             pendingIncomingIceUpdates.clear()
-            val answerMessage = CallMessage.answer(answer.description, callId)
+            val answerMessage = CallMessage.answer(answer.description, callId).applyExpiryMode(thread)
             Log.i("Loki", "Posting new answer")
             MessageSender.sendNonDurably(answerMessage, recipient.address, isSyncMessage = recipient.isLocalNumber)
         } else {
@@ -479,13 +488,14 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
         connection.setRemoteDescription(SessionDescription(SessionDescription.Type.OFFER, offer))
         val answer = connection.createAnswer(MediaConstraints())
         connection.setLocalDescription(answer)
-        val answerMessage = CallMessage.answer(answer.description, callId)
+        val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(recipient)
+        val answerMessage = CallMessage.answer(answer.description, callId).applyExpiryMode(thread)
         val userAddress = storage.getUserPublicKey() ?: return Promise.ofFail(NullPointerException("No user public key"))
         MessageSender.sendNonDurably(answerMessage, Address.fromSerialized(userAddress), isSyncMessage = true)
         val sendAnswerMessage = MessageSender.sendNonDurably(CallMessage.answer(
                 answer.description,
                 callId
-        ), recipient.address, isSyncMessage = recipient.isLocalNumber)
+        ).applyExpiryMode(thread), recipient.address, isSyncMessage = recipient.isLocalNumber)
 
         insertCallMessage(recipient.address.serialize(), CallMessageType.CALL_INCOMING, false)
 
@@ -533,15 +543,16 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
             connection.setLocalDescription(offer)
 
             Log.d("Loki", "Sending pre-offer")
+            val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(recipient)
             return MessageSender.sendNonDurably(CallMessage.preOffer(
                 callId
-            ), recipient.address, isSyncMessage = recipient.isLocalNumber).bind {
+            ).applyExpiryMode(thread), recipient.address, isSyncMessage = recipient.isLocalNumber).bind {
                 Log.d("Loki", "Sent pre-offer")
                 Log.d("Loki", "Sending offer")
                 MessageSender.sendNonDurably(CallMessage.offer(
                     offer.description,
                     callId
-                ), recipient.address, isSyncMessage = recipient.isLocalNumber).success {
+                ).applyExpiryMode(thread), recipient.address, isSyncMessage = recipient.isLocalNumber).success {
                     Log.d("Loki", "Sent offer")
                 }.fail {
                     Log.e("Loki", "Failed to send offer", it)
@@ -555,8 +566,9 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
         val recipient = recipient ?: return
         val userAddress = storage.getUserPublicKey() ?: return
         stateProcessor.processEvent(Event.DeclineCall) {
-            MessageSender.sendNonDurably(CallMessage.endCall(callId), Address.fromSerialized(userAddress), isSyncMessage = true)
-            MessageSender.sendNonDurably(CallMessage.endCall(callId), recipient.address, isSyncMessage = recipient.isLocalNumber)
+            val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(recipient)
+            MessageSender.sendNonDurably(CallMessage.endCall(callId).applyExpiryMode(thread), Address.fromSerialized(userAddress), isSyncMessage = true)
+            MessageSender.sendNonDurably(CallMessage.endCall(callId).applyExpiryMode(thread), recipient.address, isSyncMessage = recipient.isLocalNumber)
             insertCallMessage(recipient.address.serialize(), CallMessageType.CALL_MISSED)
         }
     }
@@ -575,7 +587,9 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
                 val buffer = DataChannel.Buffer(ByteBuffer.wrap(HANGUP_JSON.toString().encodeToByteArray()), false)
                 channel.send(buffer)
             }
-            MessageSender.sendNonDurably(CallMessage.endCall(callId), recipient.address, isSyncMessage = recipient.isLocalNumber)
+
+            val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(recipient)
+            MessageSender.sendNonDurably(CallMessage.endCall(callId).applyExpiryMode(thread), recipient.address, isSyncMessage = recipient.isLocalNumber)
         }
     }
 
@@ -629,7 +643,11 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
         peerConnection?.let { connection ->
             connection.flipCamera()
             localCameraState = connection.getCameraState()
-            localRenderer?.setMirror(localCameraState.activeDirection == CameraState.Direction.FRONT)
+
+            // Note: We cannot set the mirrored state of the localRenderer here because
+            // localCameraState.activeDirection is still PENDING (not FRONT or BACK) until the flip
+            // completes and we hit Camera.onCameraSwitchDone (followed by PeerConnectionWrapper.onCameraSwitchCompleted
+            // and CallManager.onCameraSwitchCompleted).
         }
     }
 
@@ -725,8 +743,8 @@ class CallManager(context: Context, audioManager: AudioManagerCompat, private va
                 mandatory.add(MediaConstraints.KeyValuePair("IceRestart", "true"))
             })
             connection.setLocalDescription(offer)
-
-            MessageSender.sendNonDurably(CallMessage.offer(offer.description, callId), recipient.address, isSyncMessage = recipient.isLocalNumber)
+            val thread = DatabaseComponent.get(context).threadDatabase().getOrCreateThreadIdFor(recipient)
+            MessageSender.sendNonDurably(CallMessage.offer(offer.description, callId).applyExpiryMode(thread), recipient.address, isSyncMessage = recipient.isLocalNumber)
         }
     }
 

@@ -17,6 +17,7 @@ import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.view.isVisible
@@ -30,9 +31,9 @@ import nl.komponents.kovenant.all
 import nl.komponents.kovenant.ui.alwaysUi
 import nl.komponents.kovenant.ui.successUi
 import org.session.libsession.avatars.AvatarHelper
+import org.session.libsession.avatars.ProfileContactPhoto
 import org.session.libsession.messaging.MessagingModuleConfiguration
 import org.session.libsession.snode.SnodeAPI
-import org.session.libsession.avatars.ProfileContactPhoto
 import org.session.libsession.utilities.*
 import org.session.libsession.utilities.SSKEnvironment.ProfileManagerProtocol
 import org.session.libsession.utilities.recipients.Recipient
@@ -151,6 +152,7 @@ class SettingsActivity : PassphraseRequiredActionBarActivity() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
@@ -202,6 +204,21 @@ class SettingsActivity : PassphraseRequiredActionBarActivity() {
             binding.displayNameEditText.selectAll()
             binding.displayNameEditText.requestFocus()
             inputMethodManager.showSoftInput(binding.displayNameEditText, 0)
+
+            // Save the updated display name when the user presses enter on the soft keyboard
+            binding.displayNameEditText.setOnEditorActionListener { v, actionId, event ->
+                when (actionId) {
+                    // Note: IME_ACTION_DONE is how we've configured the soft keyboard to respond,
+                    // while IME_ACTION_UNSPECIFIED is what triggers when we hit enter on a
+                    // physical keyboard.
+                    EditorInfo.IME_ACTION_DONE, EditorInfo.IME_ACTION_UNSPECIFIED -> {
+                        saveDisplayName()
+                        displayNameEditActionMode?.finish()
+                        true
+                    }
+                    else -> false
+                }
+            }
         } else {
             inputMethodManager.hideSoftInputFromWindow(binding.displayNameEditText.windowToken, 0)
         }
