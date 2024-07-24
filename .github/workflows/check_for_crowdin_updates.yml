@@ -1,0 +1,48 @@
+name: Check for Crowdin Updates
+
+on:
+  push
+
+jobs:
+  fetch_convert_and_diff_translations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo Content
+        uses: actions/checkout@v4
+        with:
+          path: 'repo'
+          ref: 'dev'
+      - name: Checkout LibSession
+        uses: actions/checkout@v4
+        with:
+          repository: 'mpretty-cyro/libsession-util'
+          path: 'libsession'
+          ref: 'feature/shared-scripts'
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      - name: Install Dependencies
+        run: |
+          pip install colorama requests tqdm
+      - name: Download and Convert Translations
+        env:
+          CROWDIN_API_TOKEN: ${{ secrets.CROWDIN_API_TOKEN }}
+        run: |
+          python "${{ github.workspace }}/libsession/utils/shared-scripts/download_and_convert_translations.py" \
+            "$CROWDIN_API_TOKEN" \
+            618696 \
+            "${{ github.workspace }}/raw_translations" \
+            "${{ github.workspace }}/repo/app/src/main/res" \
+            "${{ github.workspace }}/libsession/utils/shared-scripts/xliff_to_android_xml.py" \
+            --skip-untranslated-strings
+          rm -rf "${{ github.workspace }}/raw_translations"
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          path: 'repo'
+          title: Update translations from Crowdin
+          body: This PR includes the latest translations from Crowdin
+          branch: feature/update-translations
+          commit-message: "[Automated] Update translations from Crowdin"
+          delete-branch: true
