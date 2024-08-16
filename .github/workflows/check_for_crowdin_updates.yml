@@ -19,13 +19,13 @@ jobs:
           path: 'libsession'
           ref: 'feature/shared-scripts'
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
           cache: 'pip' # caching pip dependencies
       - name: Install Dependencies
         run: |
-          run: pip install -r ${{ github.workspace }}/libsession/utils/shared-scripts/requirements.txt
+          pip install -r ${{ github.workspace }}/libsession/utils/shared-scripts/requirements.txt
       - name: Download and Convert Translations
         env:
           CROWDIN_API_TOKEN: ${{ secrets.CROWDIN_API_TOKEN }}
