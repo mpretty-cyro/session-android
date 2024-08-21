@@ -1,480 +1,779 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"> Session</string>
-    <string name="yes">មែន</string>
-    <string name="no">ទេ</string>
+    <string name="about">អំពី</string>
+    <string name="accept">ទទួលយក</string>
+    <string name="accountIDCopy">Copy Account ID</string>
+    <string name="accountIdCopied">Account ID បានចម្លង</string>
+    <string name="accountIdCopyDescription">Copy your Account ID then share it with your friends so they can message you.</string>
+    <string name="accountIdEnter">បញ្ចូល Account ID</string>
+    <string name="accountIdErrorInvalid">This Account ID is invalid. Please check and try again.</string>
+    <string name="accountIdOrOnsEnter">បញ្ចូល Account ID ឬ ONS</string>
+    <string name="accountIdOrOnsInvite">អញ្ជើញ Account ID ឬ ONS</string>
+    <string name="accountIdShare">Hey, I\'ve been using {app_name} to chat with complete privacy and security. Come join me! My Account ID is
+
+{account_id}
+
+Download it at {download_url}</string>
+    <string name="accountIdYours">Account ID របស់អ្នក</string>
+    <string name="accountIdYoursDescription">This is your Account ID. Other users can scan it to start a conversation with you.</string>
+    <string name="actualSize">ទំហំជាក់ស្តែង</string>
+    <string name="add">បន្ថែម</string>
+    <string name="adminCannotBeRemoved">អ្នកគ្រប់គ្រងមិនអាចត្រូវបានដកចេញ។</string>
+    <string name="adminMorePromotedToAdmin"><b>{name}‍> និង <b>{count} គេផ្សេងទៀត‍> ត្រូវបានបដិស្មីជា Admin។</string>
+    <string name="adminPromote">ដំណើរការអ្នកគ្រប់គ្រង</string>
+    <string name="adminPromoteDescription">តើអ្នកប្រាកដទេថាចង់ដាក់តំណែង <b>{name}</b> ឲ្យជាអ្នកគ្រប់គ្រង? អ្នកគ្រប់គ្រងមិនអាចដកចេញបានទេ។</string>
+    <string name="adminPromoteMoreDescription">តើអ្នកប្រាកដទេថាចង់ដាក់តំណែង <b>{name}</b> និង <b>{count} នាក់ផ្សេងទៀត</b> ឲ្យជាអ្នកគ្រប់គ្រង? អ្នកគ្រប់គ្រងមិនអាចដកចេញបានទេ។</string>
+    <string name="adminPromoteToAdmin">ដំណើរការជាអ្នកគ្រប់គ្រង</string>
+    <string name="adminPromoteTwoDescription">តើអ្នកប្រាកដទេថាចង់ដាក់តំណែង <b>{name}</b> និង <b>{other_name}</b> ឲ្យជាអ្នកគ្រប់គ្រង? អ្នកគ្រប់គ្រងមិនអាចដកចេញបានទេ។</string>
+    <string name="adminPromotedToAdmin"><b>{name}‍> ត្រូវបានបដិស្មីជា Admin។</string>
+    <string name="adminPromotionFailed">ការដំឡើងជាអ្នកគ្រប់គ្រងបានបរាជ័យ</string>
+    <string name="adminPromotionFailedDescription">បរាជ័យក្នុងការបំលែង {name} នៅក្នុង {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMany">បរាជ័យក្នុងការបំលែង {name} និង {count} នាក់ផ្សេងទៀតនៅក្នុង {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMore">បរាជ័យក្នុងការបំលែង {name} និង {other_name} នៅក្នុង {group_name}</string>
+    <string name="adminPromotionSent">ការដំឡើងជាអ្នកគ្រប់គ្រងបានផ្ញើ</string>
+    <string name="adminRemove">ដកអ្នកគ្រប់គ្រងចេញ</string>
+    <string name="adminRemoveAsAdmin">ដកចេញពីអ្នកគ្រប់គ្រង</string>
+    <string name="adminRemoveCommunityNone">There are no Admins in this Community.</string>
+    <string name="adminRemoveFailed">បរាជ័យក្នុងការដក {name} ជាអ្នកគ្រប់គ្រង។</string>
+    <string name="adminRemovedUser"><b>{name}‍> ត្រូវបានដកចេញពីការកាន់តំណែងជា Admin។</string>
+    <string name="adminSendingPromotion">កំពុងផ្ញើការផ្សព្វផ្សាយរបស់អ្នកគ្រប់គ្រង</string>
+    <string name="adminSettings">ការកំណត់អ្នកគ្រប់គ្រង</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name}‍> និង <b>{other_name}‍> ត្រូវបានបដិស្មីជា Admin។</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">អនាមិក</string>
+    <string name="appearanceAutoDarkMode">ម៉ូដងងឹតដោយស្វ័យប្រវត្តិ</string>
+    <string name="appearanceHideMenuBar">លាក់របារម៉ឺនុយ</string>
+    <string name="appearanceLanguage">ភាសា</string>
+    <string name="appearanceLanguageDescription">ជ្រើសរើសការកំណត់ភាសាសម្រាប់ {app_name}។ {app_name} នឹងចាប់ផ្តើមឡើងវិញនៅពេលអ្នកផ្លាស់ប្តូរការកំណត់ភាសារបស់អ្នក។</string>
+    <string name="appearancePreview1">អ្នកសុខសប្បាយទេ?</string>
+    <string name="appearancePreview2">ខ្ញុំសុខសប្បាយ អរគុណ, អ្នកវិញ?</string>
+    <string name="appearancePreview3">ខ្ញុំមែនសុខសប្បាយ, អរគុណ.</string>
+    <string name="appearancePrimaryColor">ពណ៌ចម្បង</string>
+    <string name="appearanceThemes">ទម្រង់រចនា</string>
+    <string name="appearanceThemesClassicDark">ផ្ទៃចាស់ស្រអាប់</string>
+    <string name="appearanceThemesClassicLight">ពន្លឺក្លាស៊ិក</string>
+    <string name="appearanceThemesOceanDark">សមុទ្រស្រអាប់</string>
+    <string name="appearanceThemesOceanLight">សមុទ្រភ្លឺថ្លា</string>
+    <string name="appearanceZoom">ពង្រីក</string>
+    <string name="appearanceZoomIn">ពង្រីក</string>
+    <string name="appearanceZoomOut">បង្រួម</string>
+    <string name="attachment">ឯកសារ​ភ្ជាប់</string>
+    <string name="attachmentsAdd">ភ្ជាប់ឯកសារបន្ថែម</string>
+    <string name="attachmentsAlbumUnnamed">អាល់ប៊ុំ ដែលមិនបានដាក់ឈ្មោះ</string>
+    <string name="attachmentsAutoDownload">ទាញយកឯកសារភ្ជាប់ដោយស្វ័យប្រវត្តិ</string>
+    <string name="attachmentsAutoDownloadDescription">ទាញយកព័ត៌មាន និងឯកសារចេញពីកិច្ចសន្ទនានេះដោយស្វ័យប្រវត្តិ។</string>
+    <string name="attachmentsAutoDownloadModalDescription">តើអ្នកចង់ទាញយកឯកសារទាំងអស់ពី <b>{conversation_name} <\/b> ដោយស្វ័យប្រវត្តិទេ?</string>
+    <string name="attachmentsAutoDownloadModalTitle">ទាញយកដោយស្វ័យប្រវត្តិ</string>
+    <string name="attachmentsClearAll">ជម្រះឯកសារភ្ជាប់ទាំងអស់</string>
+    <string name="attachmentsClearAllDescription">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះឯកសារភ្ជាប់ទាំងអស់? សារជាមួយឯកសារភ្ជាប់នឹងត្រូវបានលុបផងដែរ។</string>
+    <string name="attachmentsClickToDownload">ចុចទាញយក {file_type}</string>
+    <string name="attachmentsCollapseOptions">Collapse attachment options</string>
+    <string name="attachmentsCollecting">កំពុងប្រមូលឯកសារភ្ជាប់...</string>
+    <string name="attachmentsDownload">ទាញយកឯកសារភ្ជាប់</string>
+    <string name="attachmentsDuration">ថិរវេលា៖</string>
+    <string name="attachmentsErrorLoad">មានបញ្ហាពាក់ឯកសារ</string>
+    <string name="attachmentsErrorNoApp">មិនអាចស្វែងរកកម្មវិធីដើម្បីជ្រើសរើសព័ត៌មាន</string>
+    <string name="attachmentsErrorNotSupported">This file type is not supported.</string>
+    <string name="attachmentsErrorNumber">មិនអាចផ្ញើរូបភាពនិងឯកសារវីដេអូបានទាំងនេះ។</string>
+    <string name="attachmentsErrorOpen">មិនអាចបើកឯកសារបានទេ។</string>
+    <string name="attachmentsErrorSending">មានបញ្ហាផ្ញើឯកសារ</string>
+    <string name="attachmentsErrorSeparate">សូមផ្ញើឯកសារ ជាសារផ្សេងៗគ្នា។</string>
+    <string name="attachmentsErrorSize">ឯកសារត្រូវតែមានទំហំតិចជាង 10MB</string>
+    <string name="attachmentsErrorTypes">មិនអាចភ្ជាប់រូបភាព និងវីដេអូជាមួយប្រភេទឯកសារផ្សេងទៀតបានទេ សូមព្យាយាមផ្ញើឯកសារផ្សេងៗក្នុងសារចែកចេញផ្សេងទៀត។</string>
+    <string name="attachmentsExpired">ឯកសារភ្ជាប់បានផុតកំណត់</string>
+    <string name="attachmentsFileId">Id ឯកសារ៖</string>
+    <string name="attachmentsFileSize">ទំហំឯកសារ៖</string>
+    <string name="attachmentsFileType">ប្រភេទឯកសារ៖</string>
+    <string name="attachmentsFilesEmpty">អ្នកមិនមានឯកសារណាមួយនៅក្នុងការសន្ទនាពីនេះទេ។</string>
+    <string name="attachmentsImageErrorMetadata">មិនអាចលុបព័ត៌មានវីដេអាបានទេ។</string>
+    <string name="attachmentsLoadingNewer">កំពុងផ្ទុកមេឌៀថ្មីៗ...</string>
+    <string name="attachmentsLoadingNewerFiles">កំពុងផ្ទុកឯកសារថ្មី...</string>
+    <string name="attachmentsLoadingOlder">កំពុងផ្ទុកមេឌៀចាស់ៗ...</string>
+    <string name="attachmentsLoadingOlderFiles">កំពុងផ្ទុកឯកសារចាស់...</string>
+    <string name="attachmentsMedia">{name} នៅលើ {date_time}</string>
+    <string name="attachmentsMediaEmpty">អ្នកមិនមានឯកសារមេឌានៅក្នុងការសន្ទនាពីនេះទេ។</string>
+    <string name="attachmentsMediaSaved">មេឌៀបានរក្សាទុកដោយ {name}</string>
+    <string name="attachmentsMoveAndScale">ផ្លាស់ទីនិងវាស់ទំនង</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} ឯកសារភ្ជាប់</string>
+    <string name="attachmentsResolution">គុណភាពបង្ហាញ៖</string>
+    <string name="attachmentsSaveError">មិនអាចរក្សាឯកសារបានទេ។</string>
+    <string name="attachmentsSendTo">ផ្ញើទៅកាន់ {name}</string>
+    <string name="attachmentsTapToDownload">ចុចដើម្បីទាញយក {file_type}</string>
+    <string name="attachmentsThisMonth">ខែនេះ</string>
+    <string name="attachmentsThisWeek">សប្តាហ៍នេះ</string>
+    <string name="attachmentsWarning">ឯកសារភ្ជាប់ដែលអ្នករក្សា អាចត្រូវបានប្រើប្រាស់ដោយកម្មវិធីផ្សេងទៀតនៅលើឧបករណ៍របស់អ្នក។</string>
+    <string name="audio">សំឡេង</string>
+    <string name="audioNoInput">រកមិនឃើញការបញ្ចូលអូឌីយ៉ូ</string>
+    <string name="audioNoOutput">រកមិនឃើញឧបករណ៍បញ្ចេញអូឌីយ៉ូ</string>
+    <string name="audioUnableToPlay">មិនអាចរំកិលឯកសារសំឡេងបានទេ។</string>
+    <string name="audioUnableToRecord">មិនអាចថតសំឡេងបាន។</string>
+    <string name="authenticateFailed">ផ្ទៀងផ្ទាត់បរាជ័យ</string>
+    <string name="authenticateFailedTooManyAttempts">Too many failed authentication attempts. Please try again later.</string>
+    <string name="authenticateNotAccessed">មិនអាចចូលដំណើរការផ្ទៀងផ្ទាត់ឈ្មោះបានទេ។</string>
+    <string name="authenticateToOpen">ផ្ទៀងផ្ទាត់ដើម្បីបើក {app_name} ។</string>
+    <string name="back">ថយក្រោយ</string>
+    <string name="banDeleteAll">ហាមឃាត់ និងលុបទាំងអស់</string>
+    <string name="banErrorFailed">ហាមឃាត់មិនបានសម្រេច</string>
+    <string name="banUnbanErrorFailed">ហាមឃាត់តមិនបានសម្រេច</string>
+    <string name="banUnbanUser">ឈប់ហាមឃាត់អ្នកប្រើ</string>
+    <string name="banUnbanUserUnbanned">បានឈប់ហាមឃាត់អ្នកប្រើ</string>
+    <string name="banUser">ហាមឃាត់អ្នកប្រើ</string>
+    <string name="banUserBanned">បានហាមឃាត់អ្នកប្រើ</string>
+    <string name="block">ទប់ស្កាត់</string>
+    <string name="blockBlockedDescription">ដោះការហាមឃាត់លេខទំនាក់ទំនងនេះ ដើម្បីផ្ញើសារ។</string>
+    <string name="blockBlockedNone">ពុំមានលេខដែលបានបិទ</string>
+    <string name="blockBlockedUser">បានទប់ស្កាត់ {name}</string>
+    <string name="blockDescription">តើអ្នកប្រាកដទេថាអ្នកចង់រារាំង <b>{name}?</b> អ្នកប្រើប្រាស់ដែលត្រូវបានរារាំងមិនអាចផ្ញើសំណើសារ ការអញ្ជើញក្រុម ឬហៅអ្នកបានទេ។</string>
+    <string name="blockUnblock">បើកវិញ</string>
+    <string name="blockUnblockName">តើអ្នកប្រាកដទេថាចង់ឈប់ប្លុក {name}?</string>
+    <string name="blockUnblockNameMultiple">តើអ្នកប្រាកដទេថាចង់ឈប់ប្លុក {name} និង {count} នាក់ផ្សេងទៀត?</string>
+    <string name="blockUnblockNameTwo">តើអ្នកប្រាកដទេថាចង់ឈប់ប្លុក {name} និង 1 នាក់ផ្សេងទៀត?</string>
+    <string name="blockUnblockedUser">បានឈប់ទប់ស្កាត់ {name}</string>
+    <string name="call">សូរ</string>
+    <string name="callsCalledYou">{name} បានហៅមកអ្នក</string>
+    <string name="callsCannotStart">អ្នកមិនអាចចាប់ផ្ដើមហៅថ្មីមួយបានទេ។ សូមបញ្ចប់ការហៅកំពុងមានមុនសិន។</string>
+    <string name="callsConnecting">កំពុងភ្ជាប់...</string>
+    <string name="callsEnd">បញ្ចប់ការហៅ</string>
+    <string name="callsEnded">ការហៅបានបញ្ចប់</string>
+    <string name="callsErrorAnswer">បរាជ័យក្នុងការឆ្លើយការហៅ</string>
+    <string name="callsErrorStart">បរាជ័យក្នុងការចាប់ផ្តើមការហៅ</string>
+    <string name="callsInProgress">ការហៅកំពុងដំណើរការ</string>
+    <string name="callsIncoming">ការហៅចូលពី {name}</string>
+    <string name="callsIncomingUnknown">ការហៅចូល</string>
+    <string name="callsMissed">ការហៅមិនបានទទួល</string>
+    <string name="callsMissedCallFrom">បាន​ខកខាន​ទទួល​ការ​ហៅ​ពី {name}</string>
+    <string name="callsNotificationsRequired">ការហៅជាសំឡេង និងជាវីដេអូត្រូវបានដំណើរការជាសកម្មនៅក្នុងការកំណត់ប្រព័ន្ធរបស់ឧបករណ៍របស់អ្នក។</string>
+    <string name="callsPermissionsRequired">តម្រូវឱ្យមានការអនុញ្ញាតការហៅ</string>
+    <string name="callsPermissionsRequiredDescription">អ្នកអាចបើកការអនុញ្ញាត \"ការហៅទូរស័ព្ទ និងវីដេអូ\" ក្នុងការកំណត់ឯកជនភាព។</string>
+    <string name="callsReconnecting">កំពុងភ្ជាប់ឡើងវិញ…</string>
+    <string name="callsRinging">កំពុងរោទ៍...</string>
+    <string name="callsSessionCall">ការហៅចេញSession</string>
+    <string name="callsSettings">ការហៅ (បេតា)</string>
+    <string name="callsVoiceAndVideo">ការហៅជាសំឡេង និងជា​វីដេអូ</string>
+    <string name="callsVoiceAndVideoBeta">ការហៅជាសំឡេង និងជា​វីដេអូ (បេតា)</string>
+    <string name="callsVoiceAndVideoModalDescription">IP អ្នក​ត្រូវបាន​លេចឮ​ច្បាស់នៅពេល​អ្នក​ប្រើកិច្ចប្រជុំ Beta ក្នុង Oxen Foundation។</string>
+    <string name="callsVoiceAndVideoToggleDescription">បើកការហៅជាសំឡេង និងជាវីដេអូទៅកាន់ និងមកពីអ្នកប្រើផ្សេងទៀត</string>
+    <string name="callsYouCalled">អ្នកបានហៅ {name}</string>
+    <string name="callsYouMissedCallPermissions">អ្នក​ធ្វើ​រំលងការហៅពី <b>{name}<\/b> ដោយសារ​អ្នកមិន​បានបើក <b>ការហៅសំឡេង និងវីដេអូ<\/b> នៅក្នុងការកំណត់ភាពឯកជន។</string>
+    <string name="cameraErrorNotFound">រកមិនឃើញកាមេរ៉ា</string>
+    <string name="cameraErrorUnavailable">កាមេរ៉ាមិនមាន.</string>
+    <string name="cameraGrantAccess">ផ្តល់សិទ្ធិចូលប្រើប្រាស់កាមេរ៉ា</string>
+    <string name="cameraGrantAccessDenied">{app_name} ត្រូវការសិទ្ធិកាមេរ៉ាដើម្បីថតរូប និងវិដេអូ ប៉ុន្តែវាត្រូវបានបដិសេធរហូត។ សូមចូលទៅកាន់ការកំណត់កម្មវិធី ជ្រើសរើស \"សិទ្ធិ\" ហើយបើក \"កាមេរ៉ា\"។</string>
+    <string name="cameraGrantAccessDescription">{app_name} ត្រូវការការចូលប្រើកាមេរ៉ាដើម្បីថតរូប និងវីដេអូ ឬស្កេនកូដ QR ។</string>
+    <string name="cameraGrantAccessQr">{app_name} ត្រូវការសិទ្ធិកាមេរ៉ាដើម្បីស្កេនកូដ QR</string>
+    <string name="cancel">បោះបង់</string>
+    <string name="clear">ជម្រះ</string>
+    <string name="clearAll">ជម្រះទាំងអស់</string>
+    <string name="clearDataAll">ជម្រះទិន្នន័យទាំងអស់</string>
+    <string name="clearDataAllDescription">This will permanently delete your messages and contacts. Would you like to clear this device only, or delete your data from the network as well?</string>
+    <string name="clearDataError">ទិន្នន័យមិនត្រូវបានលុបទេ</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="other">ទិន្នន័យមិនត្រូវបានលុបដោយ %1$d Service Nodes។ ID Service Node: %2$s។</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">មានកំហុសមិនស្គាល់មួយបានកើតឡើង និងទិន្នន័យរបស់អ្នកមិនត្រូវបានលុប។ តើអ្នកចង់លុបទិន្នន័យរបស់អ្នកពីឧបករណ៍នេះតែម្តងទេ?</string>
+    <string name="clearDevice">ជម្រះឧបករណ៍</string>
+    <string name="clearDeviceAndNetwork">ជម្រះឧបករណ៍ និងបណ្តាញ</string>
+    <string name="clearDeviceAndNetworkConfirm">តើអ្នកពិតជាចង់លុបទិន្នន័យរបស់អ្នកចេញពីបណ្តាញនេះមែនទេ? ប្រសិនបើអ្នកបន្ត អ្នកនឹងមិនអាចស្តារសារ ឬទំនាក់ទំនងរបស់អ្នកឡើងវិញបានទេ។</string>
+    <string name="clearDeviceDescription">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះឧបករណ៍របស់អ្នករៀបសុទ្ធ?</string>
+    <string name="clearDeviceOnly">ជម្រះតែឧបករណ៍ប៉ុណ្ណោះ</string>
+    <string name="clearMessages">ជម្រះទាំងអស់សារ</string>
+    <string name="clearMessagesChatDescription">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះសារទាំងអស់ពីការសន្ទនាជាមួយ <b>{name}</b> រៀបសុទ្ធ?</string>
+    <string name="clearMessagesCommunity">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះសារទាំងអស់ពី <b>{community_name}</b> ជាការសារជាមូលដ្ឋាន?</string>
+    <string name="clearMessagesForEveryone">លុបចេញពីទាំងអស់គ្នា</string>
+    <string name="clearMessagesForMe">Clear for me</string>
+    <string name="clearMessagesGroupAdminDescription">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះសារទាំងអស់ពី <b>{group_name}</b> ជាការសារជាក្រុម?</string>
+    <string name="clearMessagesGroupDescription">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះសារទាំងអស់ពី <b>{group_name}</b> ជាការសារជាក្រុម?</string>
+    <string name="clearMessagesNoteToSelfDescription">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះចំណាំសំខាន់សារទាំងអស់ពីឧបករណ៍រៀបសុទ្ធ?</string>
+    <string name="close">Close</string>
+    <string name="closeWindow">បិទផ្ទាំង</string>
+    <string name="communityEnterUrl">បញ្ចូល URL សហគមន៍</string>
+    <string name="communityEnterUrlErrorInvalid">URL មិនត្រឹមត្រូវ</string>
+    <string name="communityEnterUrlErrorInvalidDescription">សូមពិនិត្យមើល Community URL ហើយព្យាយាមម្តងទៀត។</string>
+    <string name="communityError">Community Error</string>
+    <string name="communityErrorDescription">សូមអភ័យទោស មានកំហុសមួយក្នុងការបញ្ចូល។ សូមព្យាយាមម្តងទៀតក្រោយមួយរយះពេល។</string>
+    <string name="communityInvitation">Community Invitation</string>
+    <string name="communityJoin">ចូលរួមសហគមន៍</string>
+    <string name="communityJoinDescription">តើអ្នកប្រាកដថាចង់ចូលរួម {community_name} ដែរឬទេ?</string>
+    <string name="communityJoinError">បរាជ័យក្នុងការចូលរួម {community_name}</string>
+    <string name="communityJoinOfficial">ឬចូលរួមក្នុងចំណោមណាមួយនេះ…</string>
+    <string name="communityJoined">បានចូលរួមសហគមន៍</string>
+    <string name="communityJoinedAlready">អ្នកជាសមាជិករួចហើយនៃសហគមន៍នេះ។</string>
+    <string name="communityLeave">ចាកចេញពីសហគមន៍</string>
+    <string name="communityLeaveError">បរាជ័យក្នុងការចាកចេញពី {community_name}</string>
+    <string name="communityUnknown">សហគមន៍មិនដឹង</string>
+    <string name="communityUrl">URL សហគមន៍</string>
+    <string name="communityUrlCopy">ចម្លង URL សហគមន៍</string>
+    <string name="confirm">បញ្ចាក់</string>
+    <string name="contactContacts">បញ្ជីទំនាក់ទំនង</string>
+    <string name="contactDelete">លុបទំនាក់ទំនង</string>
+    <string name="contactDeleteDescription">តើអ្នកប្រាកដទេថាអ្នកចង់លុប <b>{name}</b> ពីទំនាក់ទំនងរបស់អ្នក? សារថ្មីពី <b>{name}</b> នឹងមកដល់ជាសំណើសារ។</string>
+    <string name="contactNone">អ្នកមិនទាន់មានទំនាក់ទំនងណាមួយនៅឡើយទេ</string>
+    <string name="contactSelect">ជ្រើសរើសទំនាក់ទំនង</string>
+    <string name="contactUserDetails">ព័ត៌មានលម្អិតអ្នកប្រើ</string>
+    <string name="contentDescriptionCamera">កាមេរ៉ា</string>
+    <string name="contentDescriptionChooseConversationType">ជ្រើសរើសសកម្មភាពមួយដើម្បីចាប់ផ្តើមការសន្ទនា</string>
+    <string name="contentDescriptionMediaMessage">សារមេឌា</string>
+    <string name="contentDescriptionMessageComposition">ការបង្កើតសារថ្មី</string>
+    <string name="contentDescriptionQuoteThumbnail">រូបភាពតូចៗនៃរូបភាពពីសារដែលបានដកស្រង់</string>
+    <string name="contentDescriptionStartConversation">បង្កើតការសន្ទនាជាមួយទំនាក់ទំនងថ្មីមួយ</string>
+    <string name="conversationsAddToHome">បន្ថែមទៅអេក្រង់ដើម</string>
+    <string name="conversationsAddedToHome">បានបន្ថែមទៅអេក្រង់ដើម</string>
+    <string name="conversationsAudioMessages">សារជាសំឡេង</string>
+    <string name="conversationsAutoplayAudioMessage">ចាក់សារជាសំឡេងដោយស្វ័យប្រវត្តិ</string>
+    <string name="conversationsAutoplayAudioMessageDescription">ចាក់សារជាសំឡេងបន្តបន្ទាប់គ្នាដោយស្វ័យប្រវត្តិ</string>
+    <string name="conversationsBlockedContacts">ទំនាក់ទំនងដែលបានទប់ស្កាត់</string>
+    <string name="conversationsCommunities">Communities</string>
+    <string name="conversationsDelete">លុបសន្ទនា</string>
+    <string name="conversationsDeleteDescription">តើអ្នកប្រាកដទេថាចង់លុបការសន្ទនារបស់អ្នកជាមួយ <b>{name}</b>? សារថ្មីពី <b>{name}</b> នឹងចាប់ផ្តើមការសន្ទនាថ្មី។</string>
+    <string name="conversationsDeleted">ការសន្ទនាត្រូវបានលុប</string>
+    <string name="conversationsEmpty">គ្មានសារណាមួយនៅក្នុង {conversation_name} ឡើយ។</string>
+    <string name="conversationsEnter">បញ្ចូល Key</string>
+    <string name="conversationsEnterDescription">មុខងាររបស់ឃី enter នៅពេលវាយក្នុងការសន្ទនា។</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER ផ្ញើសារ ENTER ចាប់ផ្តើមបន្ទាត់ថ្មី</string>
+    <string name="conversationsEnterSends">ENTER ផ្ញើសារ, SHIFT + ENTER ចាប់ផ្តើមបន្ទាត់ថ្មី</string>
+    <string name="conversationsGroups">ក្រុម</string>
+    <string name="conversationsMessageTrimming">តម្រឹមសារ</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">បង្រួមសហគមន៍</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">លុបសារចេញពីសន្ទនាសហគមន៍ ដែលមាន វ័យចាស់ជាង ៦ ខែ និងមានចំណុចប្រទាក់សារលើសពី 2000</string>
+    <string name="conversationsNew">ការសន្ទនាថ្មី</string>
+    <string name="conversationsNone">អ្នក​មិន​ទាន់​មានការសន្ទនាណាមួយនៅឡើយទេ</string>
+    <string name="conversationsSendWithEnterKey">ផ្ញើដោយប្រើខ្យល់ Key</string>
+    <string name="conversationsSendWithEnterKeyDescription">ការ​ចុចលើឃី Enter នឹងផ្ញើសារជំនួសឱ្យការចុះបន្ទាត់ថ្មី។</string>
+    <string name="conversationsSettingsAllMedia">ព័ត៌មានទាំងអស់</string>
+    <string name="conversationsSpellCheck">ពិនិត្យអក្ខរាវិរុទ្ធ</string>
+    <string name="conversationsSpellCheckDescription">បើកការពិនិត្យអក្ខរាវិរុទ្ធនៅពេលវាយសារ</string>
+    <string name="conversationsStart">ចាប់ផ្តើមសន្ទនា</string>
+    <string name="copied">បានចម្លង</string>
+    <string name="copy">ចម្លង</string>
+    <string name="create">បង្កើត</string>
+    <string name="cut">កាត់</string>
+    <string name="databaseErrorGeneric">មានបញ្ហាមូលដ្ឋានទិន្នន័យបានកើតឡើង។<br‍\‍/><br‍/>នាំចេញការកំណត់ត្រាអនុវត្តរបស់អ្នកដើម្បីចែករំលែកសម្រាប់ដោះស្រាយបញ្ហា។ ប្រសិនបើការនេះមិនបានជោគជ័យទេ សូមធ្វើការដំឡើង <b>{app_name}<br‍\‍/><br‍/>ឡើងវិញ និងស្តារឡើងវិញគណនីរបស់អ្នក។ ព្រមាន៖ នេះនឹងធ្វើឲ្យពុះសារទាំងនោះ មាតិកាភ្ជាប់ខាងក្នុង និងទិន្នន័យគណនីដែលចាស់ជាងពីរ​សប្តាហ៍បាត់មួយរយៈពេលខ្លី។</string>
+    <string name="databaseErrorTimeout">យើងគិតថា {app_name} ពុំអាចចាប់ផ្ដើមបានយ៉ាងចំហរមួយរយៈ 
+
+ អ្នកអាចរង់ចាំតទៅ ហៅទិន្នន័យឧបករណ៍របស់អ្នកដើម្បីជួយដោះស្រាយ បើទោះអញ្ចឹងក៏ដោយ សាកល្បងចាប់ផ្ដើម Session</string>
+    <string name="databaseErrorUpdate">ឃ្លាំងទិន្នន័យរបស់កម្មវិធីរបស់អ្នកមិនអាចបើកជាមួយ {app_name} នេះទេ។ កញ្ចួញកម្មវិធីឡើងវិញ ហើយស្ដារគណនីរបស់អ្នកដើម្បីបង្កើតឃ្លាំងទិន្នន័យថ្មី និង​បន្តប្រើ {app_name}។<br\/><br\/>ការព្រមាន៖ នេះនឹងលុបបាត់ជាស្ថាពរ នូវសារទាំងអស់ និងឯកសារភ្ជាប់ដែលអាយុចាស់ជាងពីរសប្ដាហ៍។</string>
+    <string name="databaseOptimizing">កំពុងធ្វើបច្ចុប្បន្នភាពមូលដ្ខានទិន្នន័យ</string>
+    <string name="debugLog">កំណត់ត្រាបញ្ហា</string>
+    <string name="decline">បដិសេធ</string>
     <string name="delete">លុប</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">ឧបករណ៍របស់អ្នកមួយចំនួនបានប្រើប្រាស់កំណែហួសសម័យ។ ការសមកាលកម្មអាចមិនគួរឱ្យទុកចិត្តរហូតពួកគេត្រូវបានអាប់ដេត។</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">ទប់ស្កាត់អ្នក​ប្រើ​</string>
+    <string name="deleteAfterGroupPR1BlockUser">ទប់ស្កាត់អ្នក​ប្រើ​</string>
+    <string name="deleteAfterGroupPR1GroupSettings">ការកំណត់ក្រុម</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Notify for Mentions Only</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">ជាប្រព្រឹត្តិការណ៍ អ្នកនឹងត្រូវបានជូនដំណឹងសម្រាប់សារដែលបានហៅ ឬកិច្ចសារ</string>
+    <string name="deleteAfterGroupPR1MessageSound">សម្លេងប្រព័ន្ធផ្សព្វផ្សាយ</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">លុបការសន្ទនានេះចោលរហូត?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">មិនអាចចាកចេញនៅពេលបន្ថែមឬដកសមាជិកផ្សេងទៀត។</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">អក្សនាន</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">កំណែដើមនៃការបាត់ទៅរបស់សារ.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name}‍> បានកំណត់រយៈពេលសារដែលអាចបាត់ទៅវិញជា <b>{time}‍></string>
+    <string name="deleteMessage">លុបសារ</string>
+    <string name="deleteMessageConfirm">តើអ្នកប្រាកដទេថាចង់លុបសារនេះ?</string>
+    <string name="deleteMessageDeleted">សារត្រូវបានលុប</string>
+    <string name="deleteMessageDeletedGlobally">This message was deleted</string>
+    <string name="deleteMessageDeletedLocally">This message was deleted on this device</string>
+    <string name="deleteMessageDescriptionDevice">តើអ្នកប្រាកដទេថាចង់លុបសារនេះចេញពីឧបករណ៍នេះតែប៉ុណ្ណោះ?</string>
+    <string name="deleteMessageDescriptionEveryone">តើអ្នកប្រាកដទេថាចង់លុបសារនេះចេញពីទាំងអស់គ្នា?</string>
+    <string name="deleteMessageDeviceOnly">លុបតែឧបករណ៍នេះប៉ុណ្ណោះ</string>
+    <string name="deleteMessageDevicesAll">លុបចេញពីឧបករណ៍របស់ខ្ញុំទាំងអស់</string>
+    <string name="deleteMessageEveryone">លុបចេញពីទាំងអស់គ្នា</string>
+    <string name="deleteMessageFailed">បរាជ័យក្នុងការលុបសារ</string>
+    <string name="deleteMessages">លុបសារ</string>
+    <string name="deleteMessagesConfirm">តើអ្នកប្រាកដទេថាចង់លុបសារទាំងនេះ?</string>
+    <string name="deleteMessagesDeleted">សារត្រូវបានលុបហើយ</string>
+    <string name="deleteMessagesDescriptionDevice">កុំអោយបញ្ចប់ <b>{group_name}</b> ដើម្បីលុបសារទាំងអស់សម្រាប់ការសន្ទនារបស់អ្នក</string>
+    <string name="deleteMessagesDescriptionEveryone">តើអ្នកប្រាកដទេថាអ្នកចង់លុបសារទាំងនេះសម្រាប់ចោល?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="other">បរាជ័យក្នុងការលុបសារ</item>
+    </plurals>
+    <string name="deleting">កំពុងលុប</string>
+    <string name="developerToolsToggle">Toggle Developer Tools</string>
+    <string name="dictationStart">ចាប់ផ្តើម Dictation...</string>
+    <string name="disappearingMessages">សារបាត់ទៅវិញ</string>
+    <string name="disappearingMessagesCountdownBig">សារនឹងត្រូវលុបនៅខេត្ត {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">លុបដោយស្វ័យប្រវត្តិនៅ {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">សារនឹងត្រូវលុបនៅខេត្ត {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">លុបដោយស្វ័យប្រវត្តិនៅ {time_large} {time_small}</string>
+    <string name="disappearingMessagesDeleteType">ប្រភេទលុប</string>
+    <string name="disappearingMessagesDescription">This setting applies to everyone in this conversation.</string>
+    <string name="disappearingMessagesDescription1">This setting applies to messages you send in this conversation.</string>
+    <string name="disappearingMessagesDisappear">បាត់ទៅវិញបន្ទាប់ពី {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">បាត់ទៅវិញបន្ទាប់ពីអាន</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">សារអ្នកផ្ញើម្តងទៀត</string>
+    <string name="disappearingMessagesDisappearAfterSend">បាត់ទៅវិញបន្ទាប់ពីផ្ញើ</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">សារនឹងលុបឡើងវិញ</string>
+    <string name="disappearingMessagesFollowSetting">តាមដានការកំណត់</string>
+    <string name="disappearingMessagesFollowSettingOff">សារដែលអ្នកផ្ញើឡើងវិញនឹង១ត្រូវបានលុបចោលឡើងវិញតើអ្នកចង់បកទួលយល់ចូល {b}សារទៅវិញ{/b}?</string>
+    <string name="disappearingMessagesFollowSettingOn">តើអ្នកចង់កំណត់សាររបស់អ្នកឲ្យលុប <b>{time}<\/b> បន្ទាប់ពីពួគេចាប់ផ្ដើមលុបទាំងអស់<b>{disappearing_messages_type}<\/b>?</string>
+    <string name="disappearingMessagesLegacy">{name} កំពុងប្រើការនិយមថ្មីត្រូវបានធ្វើបច្ចុប្បន្នភាព។ សារបាត់ពេលអាចនឹងមិនដំណើរការដូច​ការ​រំពឹងទុក។</string>
+    <string name="disappearingMessagesOnlyAdmins">មានតែអ្នកគ្រប់គ្រងក្រុមអាចផ្លាស់ប្ដូរការកំណត់នេះបាន។</string>
+    <string name="disappearingMessagesSent">បានផ្ញើ</string>
+    <string name="disappearingMessagesSet"><b>{name}‍> បានកំណត់សារឱ្យលុប {time} ក្រោយពួកគេបាន {disappearing_messages_type}។</string>
+    <string name="disappearingMessagesSetYou"><b>អ្នក<br‍\‍/><br‍/>បានកំណត់សារឱ្យបាត់ {time} ក្រោយពួកគេបាន {disappearing_messages_type}។</string>
+    <string name="disappearingMessagesTimer">Timer</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name}‍> បានបិទ Disappearing Messages ។ សារទាំងអស់ដែលពួកគេផ្ញើនឹងមិនបាត់អស់ទៀតទេ។</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>អ្នក<br‍\‍/><br‍/>បានបិទ <b>ការលុបសារដោយស្វ័យប្រវត្តិ</b>។ សារដែលអ្នកផ្ញើនឹងមិនបាត់អស់ទៀតទេ។</string>
+    <string name="disappearingMessagesTypeRead">អាន</string>
+    <string name="disappearingMessagesTypeSent">បានផ្ញើ</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> បានធ្វើការកំណត់សារបាត់ទៅវិញ។</string>
+    <string name="disappearingMessagesUpdatedYou"><b>អ្នក<br‍\‍/><br‍/>បានធ្វើបច្ចុប្បន្នភាពការកំណត់ Disappearing Messages។</string>
+    <string name="dismiss">ច្រានចោល</string>
+    <string name="displayNameDescription">វាអាចជាឈ្មោះដែលជាការពិតរបស់អ្នក ឬឈ្មោះត្រួសត្រាយ ឬអ្វីដែលអ្នកចូលចិត្ត - និងអ្នកអាចផ្លាស់ប្តូរជានិច្ចកាល។</string>
+    <string name="displayNameEnter">បញ្ចូលឈ្មោះបង្ហាញរបស់អ្នក</string>
+    <string name="displayNameErrorDescription">សូមជ្រើសរើសឈ្មោះបង្ហាញ</string>
+    <string name="displayNameErrorDescriptionShorter">សូមជ្រើសរើសឈ្មោះបង្ហាញដែលខ្លីជាងមុន</string>
+    <string name="displayNameErrorNew">យើងមិនអាចផ្ទុកឈ្មោះបង្ហាញរបស់អ្នកបានទេ។ សូមបញ្ចូលឈ្មោះបង្ហាញថ្មីដើម្បីបន្ត។</string>
+    <string name="displayNameNew">ជ្រើសរើសឈ្មោះបង្ហាញថ្មី</string>
+    <string name="displayNamePick">ជ្រើសរើសឈ្មោះបង្ហាញរបស់អ្នក</string>
+    <string name="displayNameSet">កំណត់បង្ហាញឈ្មោះ</string>
+    <string name="document">ឯកសារ</string>
+    <string name="done">រួចរាល់</string>
+    <string name="download">ទាញយក</string>
+    <string name="downloading">កំពុងទាញយក...</string>
+    <string name="draft">ព្រាង</string>
+    <string name="edit">កែប្រែ</string>
+    <string name="emojiAndSymbols">Emoji &amp; Symbols</string>
+    <string name="emojiCategoryActivities">សកម្មភាព</string>
+    <string name="emojiCategoryAnimals">សត្វ &amp; ធម្មជាតិ</string>
+    <string name="emojiCategoryFlags">ទង់ជាតិ</string>
+    <string name="emojiCategoryFood">អាហារ & ភេសជ្ជៈ</string>
+    <string name="emojiCategoryObjects">វត្ថុ</string>
+    <string name="emojiCategoryRecentlyUsed">បានប្រើថ្មីៗនេះ</string>
+    <string name="emojiCategorySmileys">ញញឹម &amp; មនុស្ស</string>
+    <string name="emojiCategorySymbols">និមិត្តសញ្ញា</string>
+    <string name="emojiCategoryTravel">ការធ្វើដំណើរ &amp; ទីកន្លែង</string>
+    <string name="emojiReactsClearAll">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះសញ្ញា {emoji} ដោយសារអារម្មណ៍ទាំងអស់?</string>
+    <string name="emojiReactsCoolDown">កុំលឿនពេក! អ្នកបានផ្ញើរូប Emoji ច្រើនពេក។ សូមព្យាយាមម្តងទៀតក្នុងពេលឆាប់ៗនេះ</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="other">និង %1$d នាក់ផ្សេងទៀតបានធ្វើប្រតិកម្ម %2$s ទៅកាន់សារនេះ</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} បានប្រតិកម្មដោយ <emoji /></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} បានប្រតិកម្មដោយ <emoji /></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} និង <span>{count} ផ្សេងទៀត</span> បានប្រតិកម្មដោយ <emoji /></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} និង <span>1 ផ្សេងទៀត</span> បានប្រតិកម្មដោយ <emoji /></string>
+    <string name="emojiReactsHoverYouDesktop">អ្នកបានប្រតិកម្មជាមួយ <emoji\/></string>
+    <string name="emojiReactsHoverYouNameDesktop">អ្នក & {name} បានប្រតិកម្មជា <emoji\/ ></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">អ្នក, {name} និង <span>{count} នាក់ផ្សេងទៀត<\/span> បានប្រតិកម្មជាមួយ <emoji\/></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">អ្នក, {name} និង <span>1 នាក់ផ្សេងទៀត<\/span> បានប្រតិកម្មជាមួយ <emoji\/></string>
+    <string name="emojiReactsNotification">បានធ្វើប្រតិកម្មចំពោះសាររបស់អ្នក {emoji}</string>
+    <string name="enable">បើក</string>
+    <string name="errorConnection">សូមពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក ហើយព្យាយាមម្តងទៀត។</string>
+    <string name="errorCopyAndQuit">ចម្លងបញ្ហា និងចាកចេញ</string>
+    <string name="errorDatabase">បញ្ហាទិន្នន័យ</string>
+    <string name="errorUnknown">មានកំហុសមិនស្គាល់មួយបានកើតឡើង។</string>
+    <string name="failures">បរាជ័យ</string>
+    <string name="file">ឯកសារ</string>
+    <string name="files">ឯកសារ</string>
+    <string name="followSystemSettings">ផ្គូផ្គងការកំណត់ប្រព័ន្ធ</string>
+    <string name="from">ពី៖</string>
+    <string name="fullScreenToggle">Toggle Full Screen</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">{app_name} នឹងភ្ជាប់ទៅ Giphy ដើម្បីផ្ដល់លទ្ធផលស្វែងរក។ អ្នកនឹងមានការការពារ Metadata ពេញលេញទេ នៅពេលផ្ញើ GIFs។</string>
+    <string name="groupAddMemberMaximum">ក្រុមមានសមាជិកអតិបរិមា 100 នាក់</string>
+    <string name="groupCreate">បង្កើតក្រុម</string>
+    <string name="groupCreateErrorNoMembers">សូមជ្រើសរើសសមាជិកដែលបានចូលរួមយ៉ាងតិចបំផុតមួយ.</string>
+    <string name="groupDelete">លុប​ក្រុម</string>
+    <string name="groupDeleteDescription">តើអ្នកប្រាកដទេថាអ្នកចង់លុប <b>{group_name}?</b> នេះនឹងលុបសមាជិកទាំងអស់ហើយនឹងលុបមាតិកាក្រុមទាំងមូល។</string>
+    <string name="groupDescriptionEnter">បញ្ចូលការពិពណ៌នាក្រុម</string>
+    <string name="groupDisplayPictureUpdated">រូបតំណាងក្រុមត្រូវបានធ្វើបច្ចុប្បន្នភាព។</string>
+    <string name="groupEdit">កែក្រុម</string>
+    <string name="groupError">កំហុសក្រុម</string>
+    <string name="groupErrorCreate">បរាជ័យក្នុងការបង្កើតក្រុម។ សូមពិនិត្យការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក និងសម្លឹងទៀត។</string>
+    <string name="groupErrorJoin">បរាជ័យក្នុងការចូលរួម {group_name}</string>
+    <string name="groupInformationSet">កំណត់ព័ត៌មានក្រុម</string>
+    <string name="groupInviteDelete">តើអ្នកប្រាកដទេថាចង់លុបការអញ្ជើញក្រុមនេះ?</string>
+    <string name="groupInviteFailed">អញ្ជើញបរាជ័យ</string>
+    <string name="groupInviteFailedMore">បរាជ័យក្នុងការអញ្ជើញ {name} និង {count} នាក់ផ្សេងទៀតចូល {group_name}</string>
+    <string name="groupInviteFailedTwo">បរាជ័យក្នុងការអញ្ជើញ {name} និង {other_name} ទៅ {group_name}</string>
+    <string name="groupInviteFailedUser">បរាជ័យក្នុងការអញ្ជើញ {name} ទៅ {group_name}</string>
+    <string name="groupInviteSending">ការផ្ញើការអញ្ជើញ</string>
+    <string name="groupInviteSent">ការអញ្ជើញបានផ្ញើទៅហើយ</string>
+    <string name="groupInviteSuccessful">ការអញ្ជើញក្រុមដោយជោគជ័យ</string>
+    <string name="groupInviteVersion">អ្នកប្រើត្រូវមានកំណែ {version} ឬខ្ពស់ជាងនេះដើម្បីទទួលបានការអញ្ជើញ</string>
+    <string name="groupInviteYou"><b>អ្នក<br‍\‍/><br‍/>ត្រូវបានអញ្ជើញឱ្យចូលក្រុមនេះ។</string>
+    <string name="groupLeave">ចាកចេញពីក្រុម</string>
+    <string name="groupLeaveDescription">តើអ្នកប្រាកដទេថាចង់ចាកចេញពី {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">តើអ្នកប្រាកដទេថាចង់ចាកចេញពី {group_name}? ឆ្នាំនេះ នឹងធ្វើឱ្យក្រុមអសកម្មសម្រាប់សមាជិកទាំងអស់។</string>
+    <string name="groupLeaveErrorFailed">បរាជ័យក្នុងការចាកចេញពី {group_name}</string>
+    <string name="groupLegacyBanner">ក្រុមបានធ្វើឱ្យប្រសើរឡើង បង្កើតក្រុមថ្មីដើម្បីធ្វើឱ្យប្រសើរ។ មុខងារក្រុមចាស់នឹងត្រូវបានបន្ទោរបង់ចាប់ពី {date}។</string>
+    <string name="groupMemberLeft"><b>{name}‍> បានចាកចេញពីក្រុមនេះ។</string>
+    <string name="groupMemberLeftMore"><b>{name}‍> និង <b>{count} គេផ្សេងទៀត‍> បានចាកចេញពីក្រុមនេះ។</string>
+    <string name="groupMemberLeftTwo"><b>{name}‍> និង <b>{other_name}‍> បានចាកចេញពីក្រុមនេះ។</string>
+    <string name="groupMemberMoreNew"><b>{name}‍> និង <b>{count} គេផ្សេងទៀត‍> បានចូលក្រុម។</string>
+    <string name="groupMemberNew"><b>{name}‍> បានចូលក្រុម។</string>
+    <string name="groupMemberTwoNew"><b>{name}‍> និង <b>{other_name}‍> បានចូលក្រុម។</string>
+    <string name="groupMemberYouLeft"><b>អ្នក<br‍\‍/><br‍\‍/>បានចាកចេញពីក្រុម។</string>
+    <string name="groupMembers">សមាជិកក្រុម</string>
+    <string name="groupMembersNone">គ្មានសមាជិកផ្សេងទៀតនៅក្នុងក្រុមនេះទេ</string>
+    <string name="groupName">ឈ្មោះក្រុម</string>
+    <string name="groupNameEnter">បញ្ចូលឈ្មោះក្រុម</string>
+    <string name="groupNameEnterPlease">សូមបញ្ចូលឈ្មោះក្រុម.</string>
+    <string name="groupNameEnterShorter">សូមបញ្ចូលឈ្មោះក្រុមខ្លីជាងនេះ</string>
+    <string name="groupNameNew">ឈ្មោះក្រុមឥឡូវគឺ {group_name}. </string>
+    <string name="groupNameUpdated">ឈ្មោះក្រុមត្រូវបានធ្វើបច្ចុប្បន្នភាព។</string>
+    <string name="groupNoMessages">អ្នកមិនមានសារទីពី <b>{group_name}<\/b>។ ផ្ញើសារមួយដើម្បីចាប់ផ្តើមការសន្ទនា!</string>
+    <string name="groupOnlyAdmin">អ្នកគឺជាអ្នកគ្រប់គ្រងតែម្នាក់ប៉ុណ្ណោះនៅក្នុង <b>{group_name} <\/b>។
+
+សមាជិកក្រុមនិងការកំណត់មិនអាចផ្លាស់ប្តូរបានទេផុតពីអ្នកគ្រប់គ្រង។</string>
+    <string name="groupPromotedYou"><b>អ្នក<br‍\‍/><br‍/>ត្រូវបានបដិស្មីជា Admin។</string>
+    <string name="groupRemoveDescription">តើអ្នកចង់ដក <b>{name} <\/b> ពី <b>{group_name} <\/b> មែនទេ?</string>
+    <string name="groupRemoveMessages">ដកអ្នកប្រើនិងសាររបស់ពួកគេ</string>
+    <string name="groupRemoveMoreDescription">តើអ្នកចង់ដក <b>{name} <\/b> និង <b>{count} បន្ទាប់ <\/b> ពី <b>{group_name} <\/b> មែនទេ?</string>
+    <string name="groupRemoveTwoDescription">តើអ្នកចង់ដក <b>{name} <\/b> និង <b>{other_name} <\/b> ពី <b>{group_name} <\/b> មែនទេ?</string>
+    <string name="groupRemoveUserOnly">ដកអ្នកប្រើ</string>
+    <string name="groupRemoveUsersMessages">ដកអ្នកប្រើនិងសាររបស់ពួកគេ</string>
+    <string name="groupRemoveUsersOnly">ដកអ្នកប្រើ</string>
+    <string name="groupRemoved"><b>{name}‍> ត្រូវបានដកចេញពីក្រុមនេះ។</string>
+    <string name="groupRemovedMore"><b>{name}‍> និង <b>{count} គេផ្សេងទៀត‍> ត្រូវបានដកចេញពីក្រុមនេះ។</string>
+    <string name="groupRemovedTwo"><b>{name}‍> និង <b>{other_name}‍> ត្រូវបានដកចេញពីក្រុមនេះ។</string>
+    <string name="groupRemovedYou">អ្នកត្រូវបានយកចេញពី <b>{group_name}<\/b>។</string>
+    <string name="groupSetDisplayPicture">កំណត់រូបបង្ហាញក្រុម</string>
+    <string name="groupUnknown">ក្រុមមិនស្គាល់</string>
+    <string name="groupUpdated">ក្រុមបានធ្វើបច្ចុប្បន្នភាព</string>
+    <string name="helpFAQ">សំណួរដែលសួរញឹកញាប់</string>
+    <string name="helpHelpUsTranslateSession">ជួយយើងបកប្រែ {app_name}</string>
+    <string name="helpReportABug">រាយការណ៍ពីកំហុសមួយ</string>
+    <string name="helpReportABugDescription">ចែករំលែកព័ត៌មាននៃបញ្ហារបស់អ្នកដើម្បីជួយយើងដោះស្រាយបញ្ហា។ គម្រោងកំណត់ហេតុរបស់អ្នកហើយបញ្ចូលឯកសារនោះតាមរយៈជំនួយ {app_name}។</string>
+    <string name="helpReportABugExportLogs">ការនាំចេញកំណត់ត្រា</string>
+    <string name="helpReportABugExportLogsDescription">នាំចេញកំណត់ហេតុរបស់អ្នក បន្ទាប់មកអាប់ឡូតឯកសារតាមរយៈ {app_name} របស់ផ្នែកជំនួយ។</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">រក្សាទុកនៅក្នុងកុំព្យូទ័រ</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">រក្សាទុកឯកសារនេះទៅក្នុងកុំព្យូទ័ររបស់អ្នក រួចចែករំលែកទៅអ្នកអភិវឌ្ឍ​ {app_name}</string>
+    <string name="helpSupport">ជំនួយ</string>
+    <string name="helpWedLoveYourFeedback">យើងចូលចិត្តមតិយោបល់របស់អ្នក</string>
+    <string name="hide">លាក់</string>
+    <string name="hideOthers">លាក់ផ្សេងទៀត</string>
+    <string name="image">រូបភាព</string>
+    <string name="incognitoKeyboard">ក្តារចុចអនាមឹក</string>
+    <string name="incognitoKeyboardDescription">ស្នើអំពីមុខងារសម្ងាត់ ប្រសិនបើមាន។ ទៅតាមប្រភេទក្តារចុចដែលអ្នកកំពុងប្រើ អាច​នឹង​មិន​ទាន់បញ្ចូនសំណើនេះ ឡើយ។</string>
+    <string name="info">ព័ត៌មាន</string>
+    <string name="invalidShortcut">រូបតំណាងផ្លូវកាត់មិនត្រឹមត្រូវ</string>
+    <string name="join">ចូលរួម</string>
+    <string name="later">លើកក្រោយ</string>
+    <string name="learnMore">ស្វែង​យល់​បន្ថែម</string>
+    <string name="leave">ចាកចេញ</string>
+    <string name="leaving">កំពុងចាកចេញ...</string>
+    <string name="linkPreviews">ការមើលតំណជាមុន</string>
+    <string name="linkPreviewsDescription">បង្ហាញតំណឲ្យមើលជាមុនសម្រាប់ URLs ដែលអាចប្រើប្រាស់បាន។</string>
+    <string name="linkPreviewsEnable">បើកការមើលតំណជាមុនឬ</string>
+    <string name="linkPreviewsErrorLoad">Unable to load link preview</string>
+    <string name="linkPreviewsErrorUnsecure">មើលភាពមិនបានផ្ទុកសម្រាប់តំណភ្ជាប់ដែលមិនមានសុវត្ថិភាព</string>
+    <string name="linkPreviewsFirstDescription">បង្ហាញការមើលជាមុនសម្រាប់ URLs ដែលអ្នកផ្ញើ និងទទួល។ វាអាចល្អប្រសើរ ទោះបីជាកម្មវិធី {app_name} ត្រូវការទាក់ទងគេហទំព័រដូចគ្នា ដើម្បីបង្កើតការមើលជាមុនទាំងនេះ។ អ្នកអាចបិទការមើលតំណភ្ជាប់នៅក្នុងការកំណត់នៃកម្មវិធី {app_name} បានជានិច្ច។</string>
+    <string name="linkPreviewsSend">ផ្ញើទម្រង់ឆ្លើយតប</string>
+    <string name="linkPreviewsSendModalDescription">អ្នក​នឹងមិន​មានការការពារទិន្នន័យមេតាពេញលេញនៅពេលផ្ញើការមើលតំណជាមុននេះទេ។</string>
+    <string name="linkPreviewsTurnedOff">ការមើលតំណភាសាសាសកូន</string>
+    <string name="linkPreviewsTurnedOffDescription">{app_name} ត្រូវការទាក់ទងគេហទំព័រដែលភ្ជាប់ដើម្បីបង្កើតការមើលជាមុននៃតំណភ្ជាប់ដែលអ្នកផ្ញើ និងទទួល។
+
+អ្នកអាចបើក​បាននៅក្នុងការកំណត់​របស់ {app_name}។</string>
+    <string name="loadAccount">ផ្ទុក​គណនី</string>
+    <string name="loadAccountProgressMessage">កំពុងផ្ទុកគណនីរបស់អ្នក</string>
+    <string name="loading">កំពុងផ្ទុក...</string>
+    <string name="lockApp">ចាក់សោកម្មវិធី</string>
+    <string name="lockAppDescriptionAndroid">ទាមទារក្រយ៉ៅដៃ, កូដ PIN, លំនាំ ឬពាក្យសម្ងាត់ ដើម្បីដោះសោ {app_name}។</string>
+    <string name="lockAppDescriptionIos">តម្រូវឲ្យមាន Touch ID, Face ID ឬលេខកូដសម្ងាត់របស់អ្នក ដើម្បីដោះសោ {app_name}។</string>
+    <string name="lockAppEnablePasscode">អ្នក​ត្រូវតែ​បើកលេខសម្ងាត់​ក្នុងការកំណត់ iOS របស់​អ្នក ដើម្បីប្រើ Screen Lock។</string>
+    <string name="lockAppLocked">{app_name} ត្រូវបានចាក់សោរ</string>
+    <string name="lockAppQuickResponse">មិនមានការឆ្លើយតបភ្លាមៗ នៅពេល {app_name} ត្រូវបានចាក់សោរ!</string>
+    <string name="lockAppStatus">ស្ថានភាពចាក់សោរ</string>
+    <string name="lockAppUnlock">ប៉ះដោះសោ</string>
+    <string name="lockAppUnlocked">{app_name} ត្រូវបានដោះសោរ</string>
+    <string name="max">អតិបរិមា</string>
+    <string name="media">មេឌៀ</string>
+    <plurals name="members">
+        <item quantity="other">សមាជិក %1$d</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="other">សមាជិកសកម្ម %1$d</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">បន្ថែម Account ID ឬ ONS</string>
+    <string name="membersInvite">អញ្ជើញទំនាក់ទំនង</string>
+    <string name="membersInviteSend">ផ្ញើការអញ្ជើញ</string>
+    <string name="membersInviteSendMultiple">ផ្ញើការអញ្ជើញច្រើន</string>
+    <string name="membersInviteShareDescription">តើអ្នកចង់ចែករំលែកប្រវត្តិសារក្រុមជាមួយ <b>{name} <\/b> មែនទេ?</string>
+    <string name="membersInviteShareMessageHistory">ចែករំលែកប្រវត្តិសារ</string>
+    <string name="membersInviteShareMoreDescription">តើអ្នកចង់ចែករំលែកប្រវត្តិសារក្រុមជាមួយ <b>{name} <\/b> និង <b>{count} អ្នកផ្សេងទៀត <\/b> មែនទេ?</string>
+    <string name="membersInviteShareNewMessagesOnly">ចែករំលែកតែការផ្ញើសារថ្មី</string>
+    <string name="membersInviteShareTwoDescription">តើអ្នកចង់ចែករំលែកប្រវត្តិសារក្រុមជាមួយ <b>{name} <\/b> និង <b>{other_name} <\/b> មែនទេ?</string>
+    <string name="membersInviteTitle">អញ្ជើញ</string>
+    <string name="message">សារ</string>
+    <string name="messageEmpty">This message is empty.</string>
+    <string name="messageErrorDelivery">ការចែកសារប្រើវិញដោយម្ចាស់</string>
+    <string name="messageErrorLimit">ទេក...ៃចាំហ្នឹង!</string>
+    <string name="messageErrorOld">ទទួលបានសារដែលមានកាណាល់កូដសម្ងាត់ តែជាជំនាន់ចាស់របស់ {app_name} ដែលគេលែងប្រើហើយ។ សូមប្រាប់អ្នកផ្ញើ ឲ្យធ្វើបច្ចុប្បន្នភាពទៅជំនាន់ចុងក្រោយបង្អស់ និងផ្ញើសារម្តងទៀត។</string>
+    <string name="messageErrorOriginal">រកមិនឃើញសារដើម</string>
+    <string name="messageInfo">ព័ត៌មានសារ</string>
+    <string name="messageMarkRead">សម្គាល់ថាបានអាន</string>
+    <string name="messageMarkUnread">សម្គាល់ថាមិនទាន់អាន</string>
+    <string name="messageNew">សារថ្មី</string>
+    <string name="messageNewDescriptionDesktop">ចាប់ផ្តើមការសន្ទនាថ្មីតាមរយៈបញ្ចូល Account ID របស់មិត្តភក្តិរបស់អ្នកឬ ONS។</string>
+    <string name="messageNewDescriptionMobile">ចាប់ផ្តើមការសន្ទនាថ្មីដោយបញ្ចូល Account ID របស់មិត្តភក្តិរបស់អ្នក, ONS ឬស្កេនកូដ QR របស់ពួកគេ។</string>
+    <string name="messageNewMessages">សារថ្មី</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="other">អ្នកមានសារថ្មី %1$d សារ។</item>
+    </plurals>
+    <string name="messageReplyingTo">ឆ្លើយតបទៅកាន់</string>
+    <string name="messageRequestGroupInvite"><b>{name}‍> អញ្ជើញអ្នកឱ្យចូល <b>{group_name}‍>។</string>
+    <string name="messageRequestGroupInviteDescription">ការផ្ញើសារទៅក្រុមនេះនឹងទទួលយកការអញ្ជើញក្រុមដោយស្វ័យប្រវត្តិ។</string>
+    <string name="messageRequestPending">សំណើសុំសាររបស់អ្នក​នឹង​កំពុងរង់ចាំថ្មីៗនេះ។</string>
+    <string name="messageRequestPendingDescription">អ្នក​នឹង​អាច​ផ្ញើសារសំឡេង និងឯកសារភ្ជាប់ បន្ទាប់ពី​អ្នក​ទទួល បាន​យល់ព្រមលើសំណើសារនេះ។</string>
+    <string name="messageRequestYouHaveAccepted">អ្នកបានទទួលយកការស្នើសុំសារពី <b>{name} ។</string>
+    <string name="messageRequestsAcceptDescription">ការផ្ញើសារទៅកាន់អ្នកប្រើរូបនេះនឹងទទួលយកសំណើសារ និងបង្ហាញ Account ID របស់អ្នកដោយស្វ័យប្រវត្តិ។</string>
+    <string name="messageRequestsAccepted">បានទទួលយកការស្នើសុំសាររបស់អ្នករួចហើយ។</string>
+    <string name="messageRequestsClearAllExplanation">តើអ្នកប្រាកដទេថាអ្នកចង់ជម្រះសារទាំងអស់ និងការអញ្ជើញក្រុម?</string>
+    <string name="messageRequestsCommunities">សំណើសារសហគមន៍</string>
+    <string name="messageRequestsCommunitiesDescription">អនុញ្ញាតសំណើសារពីការសន្ទនារបស់សហគមន៍។</string>
+    <string name="messageRequestsDelete">តើអ្នកប្រាកដទេថាចង់លុបសំណើសារនេះ?</string>
+    <string name="messageRequestsNew">អ្នក​មាន​ការស្នើសុំ​សារ​ថ្មី​មួយ</string>
+    <string name="messageRequestsNonePending">គ្មានការស្នើសុំដែលកំពុងរង់ចាំ</string>
+    <string name="messageRequestsTurnedOff"><b>{name}‍> បានបិទសំណើសំរាប់សារពីការសន្ទនារបស់ Community ដូច្នេះអ្នកមិនអាចផ្ញើសារទៅពួកគេបានទេ។</string>
+    <string name="messageSelect">ជ្រើសរើសសារ</string>
+    <string name="messageStatusFailedToSend">បានបរាជ័យក្នុងការផ្ញើ</string>
+    <string name="messageStatusFailedToSync">បានបរាជ័យធ្វើសមកាលកម្ម</string>
+    <string name="messageStatusSyncing">កំពុងសមកាល</string>
+    <string name="messageUnread">សារមិនទាន់អាន</string>
+    <string name="messageVoice">សារសំឡេង</string>
+    <string name="messageVoiceErrorShort">ចាំដើម្បីថតសំឡេង</string>
+    <string name="messageVoiceSlideToCancel">អូសដើម្បីបោះបង់</string>
+    <string name="messages">សារ</string>
+    <string name="minimize">បង្រួមតូច</string>
+    <string name="next">បន្ទាប់</string>
+    <string name="nicknameDescription">ជ្រើសរើសឈ្មោះហៅក្រៅសម្រាប់ {name}។ វានឹងបង្ហាញទៅលើការសន្ទនារបស់អ្នកក្នុងការចែកចាយនិងក្រុម។</string>
+    <string name="nicknameEnter">បញ្ចូលឈ្មោះហៅក្រៅ</string>
+    <string name="nicknameRemove">ដកឈ្មោះហៅក្រៅចោល</string>
+    <string name="nicknameSet">កំណត់ឈ្មោះហៅក្រៅ</string>
+    <string name="no">ទេ</string>
+    <string name="noSuggestions">មិនមានយោបល់កែប្រែទេ</string>
+    <string name="none">គ្មាន</string>
+    <string name="notNow">ពេលក្រោយ</string>
+    <string name="noteToSelf">កំណត់ចំណាំ</string>
+    <string name="noteToSelfEmpty">អ្នកមិនមានសារណាទេនៅក្នុងចំណាំឲ្យខ្លួនឯង។</string>
+    <string name="noteToSelfHide">លាក់កំណត់ចំណាំខ្លួនឯង</string>
+    <string name="noteToSelfHideDescription">តើអ្នកប្រាកដទេថាអ្នកចង់លាក់កំណត់ចំណាំខ្លួនឯង?</string>
+    <string name="notificationsAllMessages">សារទាំងអស់</string>
+    <string name="notificationsAndroidSystem">{message_count} សារថ្មីក្នុង {conversation_count} ការសន្ទនា</string>
+    <string name="notificationsContent">ខ្លឹមសារនៃការជូនដំណឹង</string>
+    <string name="notificationsContentDescription">ព័ត៌មានដែលបានបង្ហាញនៅក្នុងការជូនដំណឹង។</string>
+    <string name="notificationsContentShowNameAndContent">ឈ្មោះ និងមាតិកា</string>
+    <string name="notificationsContentShowNameOnly">ឈ្មោះតែប៉ុណ្ណោះ</string>
+    <string name="notificationsContentShowNoNameOrContent">គ្មានឈ្មោះ ឬមាតិកា</string>
+    <string name="notificationsFastMode">មុខងាររហ័ស</string>
+    <string name="notificationsFastModeDescriptionAndroid">អ្នក​នឹង​ទទួលបានការជូនដំណឹង​អំពី​សារថ្មី ដែលជឿជាក់បាន និង​រហ័ស ដោយប្រើម៉ាស៊ីនមេនៃការជូនដំណឹងរបស់ Google។</string>
+    <string name="notificationsFastModeDescriptionIos">អ្នក​នឹង​ទទួលបានការជូនដំណឹង​អំពី​សារថ្មី ដែលជឿជាក់បាន និង​រហ័ស ដោយប្រើម៉ាស៊ីនមេនៃការជូនដំណឹងរបស់ Apple។</string>
+    <string name="notificationsGoToAndroidSettings">ចូលទៅកាន់ការកំណត់ការជូនដំណឹងរបស់ Android</string>
+    <string name="notificationsGoToDevice">ចូលទៅកាន់ការកំណត់ការជូនដំណឹងរបស់ឧបករណ៍</string>
+    <string name="notificationsIosGroup">{name} ទៅ {conversation_name}</string>
+    <string name="notificationsIosRestart">អ្នក​អាច​ដែល​បាន​ទទួលសារក្នុង​ពេល​ដែលឧបករណ៍ {device} របស់អ្នកកំពុងធ្វើ​ឡើង​វិញ។</string>
+    <string name="notificationsLedColor">ពណ៌​LED</string>
+    <string name="notificationsMentionsOnly">ការលើកឡើងតែប៉ុណ្ណោះ</string>
+    <string name="notificationsMessage">ការជូនដំណឹងអំពីសារ​</string>
+    <string name="notificationsMostRecent">ថ្មីៗបំផុតពី {name}</string>
+    <string name="notificationsMute">បិទសំឡេង</string>
+    <string name="notificationsMuteFor">បិទសំឡេង {time_large}</string>
+    <string name="notificationsMuteUnmute">បើកសំឡេង</string>
+    <string name="notificationsMuted">បានបិទ</string>
+    <string name="notificationsSlowMode">មុខងារយឺត</string>
+    <string name="notificationsSlowModeDescription">{app_name} នឹងត្រួតពិនិត្យទៅលើ សារដែលថ្មី ម្ដងម្កាលនៅក្នុងផ្ទៃខាងក្រោយ។</string>
+    <string name="notificationsSound">សំឡេង</string>
+    <string name="notificationsSoundDescription">បញ្ចេញសំឡេងនៅពេលបើកកម្មវិធី</string>
+    <string name="notificationsSoundDesktop">សារសំឡេងជូនដំណឹង</string>
+    <string name="notificationsStrategy">យុទ្ធសាស្ត្រជូនដំណឹង</string>
+    <string name="notificationsStyle">ម៉ូដនៃការជូនដំណឹង</string>
+    <string name="notificationsVibrate">ញ័រ</string>
+    <string name="off">បិទ</string>
+    <string name="okay">Okay</string>
+    <string name="onboardingAccountCreate">Create account</string>
+    <string name="onboardingAccountCreated">បានបង្កើត​គណនី</string>
+    <string name="onboardingAccountExists">ខ្ញុំមានគណនីមួយ</string>
+    <string name="onboardingBackAccountCreation">អ្នកមិនអាចថយក្រោយបន្ថែមទៀតបានទេ។ ដើម្បីបោះបង់ការបង្កើតគណនី Session ត្រូវទាំងបញ្ចប់ផ្នែកនេះ។</string>
+    <string name="onboardingBackLoadAccount">អ្នកមិនអាចថយក្រោយបន្ថែមទៀតបានទេ។ ដើម្បីបញ្ឈប់ការស្ទាកអង្គភាពរបស់អ្នក, Session ត្រូវចូលឋាន.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Creating an account is instant, free, and anonymous </string>
+    <string name="onboardingBubbleNoPhoneNumber">អ្នកមិនចាំបាច់ចូលប្រព័ន្ធទៅតាមលេខលេខទូរស័ព្ទទេ.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">ឯកជនភាពនៅក្នុងហោប៉ៅរបស់អ្នក។</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} ត្រូវបានបង្កើតឡើងដើម្បីការពារភាពឯកជនរបស់អ្នក។</string>
+    <string name="onboardingBubbleWelcomeToSession">សូមស្វាគមន៍មកកាន់ {app_name}</string>
+    <string name="onboardingHitThePlusButton">ចុចប៊ូតុងបូកដើម្បីចាប់ផ្តើមជជែក បង្កើតក្រុម ឬចូលរួមជាមួយសហគមន៍ផ្លូវការ!</string>
+    <string name="onboardingMessageNotificationExplanation">មានវិធីពីរយ៉ាងដែល {app_name} អាចជូនដំណឹងទៅកាន់អ្នកអំពីសារថ្មី។</string>
+    <string name="onboardingPrivacy">Privacy Policy</string>
+    <string name="onboardingTos">Terms of Service</string>
+    <string name="onboardingTosPrivacy">ដោយប្រើសេវាកម្មនេះ អ្នកយល់ព្រមទៅនឹង<b> លក្ខខណ្ឌ </b>និង<b> គោលការណ៍ភាពឯកជន </b>របស់យើង</string>
+    <string name="onionRoutingPath">ផ្លូវ</string>
+    <string name="onionRoutingPathDescription">{app_name} លាក់ IP របស់អ្នកដោយបញ្ជូនសាររបស់អ្នកតាមគ nodes សេវាកម្មច្រើនក្នុងបណ្តាញ decentralised របស់ {app_name}។ នេះជាពពួកបច្ចុប្បន្នរបស់អ្នក៖</string>
+    <string name="onionRoutingPathDestination">គោលដៅ</string>
+    <string name="onionRoutingPathEntryNode">Entry Node</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">ប្រទេសដែលមិនស្គាល់</string>
+    <string name="onsErrorNotRecognized">យើងមិនអាចស្គាល់ ONS នេះទេ។ សូមពិនិត្យម្តងទៀតហើយសាកល្បងម្តងទៀត។</string>
+    <string name="onsErrorUnableToSearch">យើងមិនអាចស្វែងរក ONS នេះបានទេ។ សូមសាកល្បងម្តងទៀតនៅពេលក្រោយ។</string>
+    <string name="open">បើក</string>
+    <string name="other">ផ្សេងៗ</string>
+    <string name="passwordChange">ប្តូរពាក្យសម្ងាត់</string>
+    <string name="passwordChangeDescription">ប្ដូរពាក្យសម្ងាត់ដែលបានតម្រូវឲ្យមានដើម្បីឈប់ទប់ស្កាត់ {app_name}។</string>
+    <string name="passwordChangedDescription">ពាក្យសម្ងាត់ របស់អ្នកត្រូវ​បាន​ប្តូរ។ សូមរក្សា​វា​ឲ្យ​មាន​សុវត្ថិភាព។</string>
+    <string name="passwordConfirm">បញ្ជាក់ពាក្យសម្ងាត់</string>
+    <string name="passwordCreate">បង្កើតពាក្យសម្ងាត់របស់អ្នក</string>
+    <string name="passwordCurrentIncorrect">ពាក្យសម្ងាត់​បច្ចុប្បន្នរបស់អ្នក មិនត្រឹមត្រូវទេ។</string>
+    <string name="passwordDescription">តម្រូវឲ្យមានពាក្យសម្ងាត់ដើម្បីឈប់ទប់ស្កាត់ {app_name}។</string>
+    <string name="passwordEnter">បញ្ចូលពាក្យសម្ងាត់</string>
+    <string name="passwordEnterCurrent">សូម​បញ្ចូល​ពាក្យ​សម្ងាត់ថ្មី​របស់​អ្នក.</string>
+    <string name="passwordEnterNew">សូម​បញ្ចូល​ពាក្យ​សម្ងាត់ថ្មី​របស់​អ្នក</string>
+    <string name="passwordError">ពាក្យសម្ងាត់ត្រូវតែមានអក្សរ លេខ និងនិមិត្តសញ្ញាប៉ុណ្ណោះ</string>
+    <string name="passwordErrorLength">ពាក្យ​សម្ងាត់​ត្រូវ​តែ​មាន​ចន្លោះ​ពី 6 ទៅ 64 តួអក្សរ</string>
+    <string name="passwordErrorMatch">ពាក្យសម្ងាត់មិនត្រូវគ្នាទេ</string>
+    <string name="passwordFailed">ការកំណត់ពាក្យសម្ងាត់មិនបានសម្រេច</string>
+    <string name="passwordIncorrect">ពាក្យសម្ងាត់មិនត្រឹមត្រូវ</string>
+    <string name="passwordRemove">លុបពាក្យសម្ងាត់</string>
+    <string name="passwordRemoveDescription">ប្ដូរពាក្យសម្ងាត់ដែលបានតម្រូវឲ្យមានដើម្បីឈប់ទប់ស្កាត់ {app_name}។</string>
+    <string name="passwordRemovedDescription">ពាក្យសម្ងាត់ របស់អ្នកត្រូវបានលុបចេញ។</string>
+    <string name="passwordSet">កំណត់ពាក្យសម្ងាត់</string>
+    <string name="passwordSetDescription">ពាក្យសម្ងាត់របស់អ្នកត្រូវបានកំណត់។ សូមរក្សាវាឲ្យមានសុវត្ថិភាព។</string>
+    <string name="paste">បិទភ្ជាប់</string>
+    <string name="permissionsAppleMusic">{app_name} ត្រូវការប្រើប្រាស់ Apple Music ដើម្បីចាក់មេឌៀភ្ជាប់</string>
+    <string name="permissionsAutoUpdate">ធ្វើបច្ចុប្បន្នភាពដោយស្វ័យប្រវត្តិ</string>
+    <string name="permissionsAutoUpdateDescription">ពិនិត្យដោយស្វ័យប្រវត្តិសម្រាប់ការធ្វើបច្ចុប្បន្នភាពនៅពេលចាប់ផ្តើម។</string>
+    <string name="permissionsFaceId">The screen lock feature on {app_name} uses Face ID.</string>
+    <string name="permissionsKeepInSystemTray">រក្សាទុកក្នុងថាសប្រព័ន្ធ</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} នឹងបន្តដំណើរការនៅផ្ទៃខាងក្រោយនៅពេលអ្នកបិទផ្ទាំងបង្អួច</string>
+    <string name="permissionsLibrary">{app_name} នឹងត្រូវការចូលប្រើវិញ្ញាបនបត្រឆ្លើយតបរូបភាពបញ្ចូល សូមអនុញ្ញាតសម្រាប់ iOS លើការប្រើប្រាស់។</string>
+    <string name="permissionsMicrophone">មីក្រូហ្វូន</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">{app_name} សុំសិទ្ធិប្រើប្រាស់ម៉ៃក្រូហ្វូន ដើម្បីផ្ញើសារជាសំឡេង, ប៉ុន្តែ វាត្រូវបានបដិសេធរហូត។ សូមបន្តទៅកាន់ ការកំណត់កម្មវិធី, ជ្រើសរើស \"សិទ្ធិ\", និងបើក \"ម៉ិក្រូហ្វូន\"។</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">អ្នកអាចបើកការអនុញ្ញាតម៉ាលិភិននុមាននៅក្នុងការកំណត់ឯកជនភាពរបស់ {app_name}</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">{app_name} ត្រូវការវិស្សមន្តងសម្រាប់ដាក់ស្នើរ និងថតសារ​សំឡេង។</string>
+    <string name="permissionsMicrophoneDescription">ការអនុញ្ញាតឱ្យចូលប្រើមីក្រូហ្វូន</string>
+    <string name="permissionsRequired">ទាមទារការអនុញ្ញាត</string>
+    <string name="permissionsStorageSave">{app_name} ត្រូវការចូលប្រើវើសកម្មដើម្បីរក្សាទុកឯកសារ និងមេឌៀ។</string>
+    <string name="permissionsStorageSaveDenied">{app_name} ត្រូវការសិទ្ធិចូលប្រើអង្គរក្សាទុកដើម្បីរក្សាទុករូប, វីដេអូ, ប៉ុន្តែវាត្រូវបានបដិសេធរហូត។ សូមបន្តទៅការកំណត់ជ្រើសរើស \"ការអនុញ្ញាត\" និងបើក \"អង្គរក្សាទុក\"។</string>
+    <string name="permissionsStorageSend">{app_name} ត្រូវការភ្ជាប់អង្គរក្សាទុកដើម្បីផ្ញើរូបទិញនិងវីដេអូ.</string>
+    <string name="pin">ខ្ទាស់ </string>
+    <string name="pinConversation">ខ្ទាស់ការសន្ទនា</string>
+    <string name="pinUnpin">ដកខ្ទាស់</string>
+    <string name="pinUnpinConversation">បិតខ្ទាស់ការសន្ទនា</string>
+    <string name="preview">មើលជាមុន</string>
+    <string name="profile">ប្រវត្តិរូប</string>
+    <string name="profileDisplayPicture">បង្ហាញរូបភាព</string>
+    <string name="profileDisplayPictureRemoveError">បរាជ័យក្នុងការដករូបតំណាងបង្ហាញចេញ។</string>
+    <string name="profileDisplayPictureSet">កំណត់រូបបង្ហាញ</string>
+    <string name="profileDisplayPictureSizeError">សូមជ្រើសរើសឯកសារតិចជាង.</string>
+    <string name="profileErrorUpdate">បរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាពប្រវត្តិរូប។</string>
+    <string name="promote">Promote</string>
+    <string name="qrCode">កូដ QR</string>
+    <string name="qrNotAccountId">This QR code does not contain an Account ID</string>
+    <string name="qrNotRecoveryPassword">This QR code does not contain a Recovery Password</string>
+    <string name="qrScan">ស្កេនកូដ QR</string>
+    <string name="qrView">មើល QR</string>
+    <string name="qrYoursDescription">មិត្តភក្តិអាចផ្ញើសារមកអ្នកដោយស្កេនកូដ QR របស់អ្នក។</string>
+    <string name="quit">ចាកចេញពី {app_name}</string>
+    <string name="quitButton">ចាកចេញ</string>
+    <string name="read">អាន</string>
+    <string name="readReceipts">អ្នកទទួលដែលបានអានសាររួច</string>
+    <string name="readReceiptsDescription">បង្ហាញការទទួលសារសម្រាប់សារទាំងអស់ដែលអ្នកផ្ញើរនិងទទួលបាន។</string>
+    <string name="received">បានទទួល:</string>
+    <string name="recommended">ដែលបានណែនាំ</string>
+    <string name="recoveryPasswordBannerDescription">រក្សាទុក recovery password របស់អ្នក ដើម្បីដឹងថាអ្នកនឹងមិនបាត់បង់សិទ្ធិចូលទៅក្នុងគណនីរបស់អ្នកឡើយ។</string>
+    <string name="recoveryPasswordBannerTitle">រក្សាទុកពាក្យសម្ងាត់ស្ដាររបស់អ្នក</string>
+    <string name="recoveryPasswordDescription">ប្រើពាក្យសម្ងាត់ដើម្បីទាញយកគណនីរបស់អ្នកលើឧបករណ៍ថ្មីៗ. <br /><br />គណនីរបស់អ្នកមិនអាចទាញយកកនឡើងវិញដោយគ្មាន Recovery Password។ សូមរក្សាវានៅកន្លែងសុវត្ថិភាព ហើយកុំចែករំលែកវាជាមួយនរណាម្នាក់ទេ។</string>
+    <string name="recoveryPasswordEnter">បញ្ចូល Recovery password របស់អ្នក</string>
+    <string name="recoveryPasswordErrorMessageGeneric">សូមពិនិត្យពាក្យសម្ងាត់ ស្តារអោយដូចដើម របស់អ្នក ហើយព្យាយាមម្តងទៀត។</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">ពាក្យមួយចំនួនក្នុង Recovery Password របស់អ្នកមិនត្រឹមត្រូវទេ។ សូមពិនិត្យនិងព្យាយាមម្តងទៀត។</string>
+    <string name="recoveryPasswordErrorMessageShort">The Recovery Password you entered is not long enough. Please check and try again.</string>
+    <string name="recoveryPasswordErrorTitle">Recovery Password មិនត្រឹមត្រូវ</string>
+    <string name="recoveryPasswordExplanation">To load your account, enter your recovery password.</string>
+    <string name="recoveryPasswordHidePermanently">លាក់ Recovery Password ជាអចិន្ត្រៃយ៍</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">ដោយគ្មានលេខសម្ងាត់បណ្ដាញ តើ អ្នកមិនអាចផ្ទុកគណនីស៊ីសិនរបស់អ្នកនៅលើឧបករណ៍ថ្មីបានទេ។
+
+យើងណែនាំឱ្យអ្នករក្សា Recovery password នៅឋាននៃ​ដែលសុវត្ថិភាព និងសន្តិសុខ មុនពេលបន្ត។</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">តើអ្នកប្រាកដទេថាចង់លាក់ពាក្យសម្ងាត់សង្គ្រោះរបស់អ្នកដោយស្នាក់នៅលើឧបករណ៍នេះជាអចិន្ត្រៃយ៍? វាមិនអាចត្រូវបានមិនធ្វើវិញបានទេ។</string>
+    <string name="recoveryPasswordHideRecoveryPassword">លាក់ Recovery Password</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">លាក់ពាក្យសម្ងាត់ស្តារឡើងវិញរបស់អ្នកនៅលើឧបករណ៍នេះជាអចិន្រ្តៃយ៍។</string>
+    <string name="recoveryPasswordRestoreDescription">បញ្ចូល Recovery password របស់អ្នកដើម្បីផ្ទុកគណនីរបស់អ្នក។ ប្រសិនបើអ្នកមិនបានរក្សាទុកវាទេ អ្នកអាចរកវាបានឯក្នុងការកំណត់កម្មវិធីរបស់អ្នក។</string>
+    <string name="recoveryPasswordView">មើលពាក្យសម្ងាត់</string>
+    <string name="recoveryPasswordWarningSendDescription">This is your recovery password. If you send it to someone they\'ll have full access to your account.</string>
+    <string name="redo">ធ្វើឡើងវិញ</string>
+    <string name="remove">លុបចេញ</string>
+    <string name="reply">ឆ្លើយតប</string>
+    <string name="resend">ផ្ញើជាថ្មី</string>
+    <string name="resolving">កំពុងផ្ទុកព័ត៌មានប្រទេស...</string>
+    <string name="restart">ចាប់ផ្តើមឡើងវិញ</string>
+    <string name="resync">សមកាលវិញ</string>
+    <string name="retry">សូមព្យាយាម​</string>
     <string name="save">រក្សាទុក</string>
-    <string name="note_to_self">កំណត់ចំណាំខ្លួនឯង</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">សារថ្មី</string>
-    <!-- AlbumThumbnailView -->
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="other">%d សារក្នុងពេលសន្ទនា</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">លុបសារចាស់ទាំងអស់ឥឡូវនេះ?</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="other">វានឹងតម្រឹមការសន្ទនាទាំងអស់ភ្លាមៗ ទៅជាសារថ្មីៗ ចំនួន%d។</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">លុប</string>
-    <string name="ApplicationPreferencesActivity_On">បើក</string>
-    <string name="ApplicationPreferencesActivity_Off">បិទ</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(រូបភាព)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(សំឡេង)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(វីដេអូ)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(ឆ្លើយតប)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">មិនអាចស្វែងរកកម្មវិធីដើម្បីជ្រើសរើសព័ត៌មាន</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Session ទាមទារសិទ្ធិប្រើប្រាស់អង្គរក្សាទុកដើម្បីភ្ជាប់រូបថត វីដេអូ ឬសំឡេង ប៉ុន្តែវាត្រូវបានបដិសេធរហូត។ សូមបន្តទៅការកំណត់របស់ប្រព័ន្ធ ជ្រើសរើស \"អនុញ្ញាត\" និងបើក \"អង្គរក្សាទុក\" ។</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">Sessionត្រូវការសិទ្ធិប្រើប្រាស់កាមេរ៉ាដើម្បីថតរូប ប៉ុន្តែវាត្រូវបានបដិសេធរហូត។ សូមបន្តទៅការកំណត់ ជ្រើសរើស \"អនុញ្ញាត\" និងបើក \"កាមេរ៉ា\"។</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">បញ្ហាការចាក់សំឡេង!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">ថ្ងៃនេះ</string>
-    <string name="BucketedThreadMedia_Yesterday">ម្សិលមិញ</string>
-    <string name="BucketedThreadMedia_This_week">សប្តាហ៍នេះ</string>
-    <string name="BucketedThreadMedia_This_month">ខែនេះ</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">ទំព័រវែបសាយរកមិនឃើញ.</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">ក្រុម</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">ផ្ញើបរាជ័យ ចុច សម្រាប់ព័ត៌មានលម្អិត</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">ទទួលបានសារ ផ្លាស់ប្តូរសោរ សូមចុច ដើម្បីដំណើរការ។</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">ផ្ញើបរាជ័យ ចុច សម្រាប់ជំនួសគ្មានសុវត្ថិភាព</string>
-    <string name="ConversationItem_unable_to_open_media">មិនអាចស្វែករកកម្មវិធី ដើម្បីបើកព័ត៌មាននេះទេ។</string>
-    <string name="ConversationItem_copied_text">បានចម្លង %s</string>
-    <string name="ConversationItem_download_more">  ទាញយកបន្ថែម</string>
-    <string name="ConversationItem_pending">  កំពុងរង់ចាំ</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">ភ្ជាប់ឯកសារ</string>
-    <string name="ConversationActivity_select_contact_info">ជ្រើសរើសព័ត៌មានលេខទំនាក់ទំនង</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">សុំទោស មានបញ្ហក្នុងការកំណត់ឯកសារភ្ជាប់របស់អ្នក។</string>
-    <string name="ConversationActivity_invalid_recipient">អ្នកទទួលមិនត្រឹមត្រូវ!</string>
-    <string name="ConversationActivity_added_to_home_screen">បានបន្ថែមទៅអេក្រង់ដើម</string>
-    <string name="ConversationActivity_leave_group">ចាកចេញពីក្រុម?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">តើអ្នកប្រាកដទេ ថាចង់ចាកចេញពីក្រុមនេះ?</string>
-    <string name="ConversationActivity_error_leaving_group">បញ្ហាសម្រាប់ការចាកចេញពីក្រុម</string>
-    <string name="ConversationActivity_unblock_this_contact_question">បើកលេខទំនាក់ទំនងនេះ?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">អ្នកអាចនឹងទទួលបានសារ និងការហៅចូលពីលេខទំនាក់ទំនងនេះម្តងទៀត។</string>
-    <string name="ConversationActivity_unblock">បើកវិញ</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">ឯកសារភ្ជាប់លើសទំហំកំណត់ សម្រាប់ប្រភេទសារដែលអ្នកកំពុងផ្ញើ។</string>
-    <string name="ConversationActivity_unable_to_record_audio">មិនអាចថតសំឡេងបាន!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">មិនមានកម្មវិធីដើម្បីបើកតំណនេះ នៅលើឧបករណ៍របស់អ្នកទេ។</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">ដើម្បីផ្ញើសារជាសំឡេង អនុញ្ញាតឱ្យ Session ចូលទៅប្រើប្រាស់មីក្រូហ្វូនរបស់អ្នក។</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">Session សុំសិទ្ធិប្រើប្រាស់ម៉ៃក្រូហ្វូន ដើម្បីផ្ញើសារជាសំឡេង, ប៉ុន្តែ វាត្រូវបានបដិសេធរហូត។ សូមបន្តទៅកាន់ ការកំណត់កម្មវិធី, ជ្រើសរើស  \"ការអនុញ្ញាត\", និងបើក \"ប្រដាប់ស្រូបសំឡេង\"។</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">ដើម្បីថតរូបភាព និងវីដេអូ, សូមអនុញ្ញាត Session ចូលប្រើប្រាស់កាមេរ៉ា។</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">Sessionត្រូវការសិទ្ធិប្រើប្រាស់កាមេរ៉ាដើម្បីថតរូប ឬវីដេអូ ប៉ុន្តែវាត្រូវបានបដិសេធរហូត។ សូមបន្តទៅការកំណត់ជ្រើសរើស \"អនុញ្ញាត\" ហើយបើក \"កាមេរ៉ា\"។</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">Session​ សុំសិទ្ធិប្រើប្រាស់កាមេរ៉ា ដើម្បីថតរូបភាព ឬវីដេអូ</string>
-    <string name="ConversationActivity_search_position">%1$d នៃ%2$d</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="other">លុបសារដែលបានជ្រើសរើស?</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="other">នេះនឹងលុបសារ %1$d ដែលបានជ្រើសរើសជារៀងរហូត។</item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">រក្សារទុក?</string>
-    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-        <item quantity="other">ការរក្សាទុកទាំងអស់ %1$d ព័ត៌មាននៅលើថាសផ្ទុក នឹងអនុញ្ញាតអោយកម្មវិធីផ្សេងៗ បើកមើលបាន.\n\nបន្ត?</item>
-    </plurals>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="other">មានបញ្ហានៅពេលរក្សាទុកឯកសារភ្ជាប់!</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="other">កំពុងរក្សា %1$d ឯកសារភ្ជាប់</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">រូបថតប្រវត្តិរូប</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">ប្រើផ្សេងៗ៖ %s</string>
-    <string name="CustomDefaultPreference_using_default">ប្រើលំនាំដើម៖ %s</string>
-    <string name="CustomDefaultPreference_none">គ្មាន</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">ឥឡូវនេះ</string>
-    <string name="DateUtils_minutes_ago">%d នាទី</string>
-    <string name="DateUtils_today">ថ្ងៃនេះ</string>
-    <string name="DateUtils_yesterday">ម្សិលមិញ</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">ថ្ងៃនេះ</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">ឯកសារមិនស្គាល់</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">មានបញ្ហានៅពេលទាញយករូបភាព GIF ពេញខ្នាត</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_stickers">ស្ទីកគ័រ</string>
-    <!-- CropImageActivity -->
-    <string name="CropImageActivity_profile_avatar">រូបតំណាង</string>
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">ចុចអោយជាប់ដើម្បីថតសំឡេងជាសារ ដកដៃចេញដើម្បីផ្ញើ</string>
-    <!-- LongMessageActivity -->
-    <string name="LongMessageActivity_unable_to_find_message">មិនអាចស្វែងរកសារ</string>
-    <string name="LongMessageActivity_message_from_s">សារពី %1$s</string>
-    <string name="LongMessageActivity_your_message">សាររបស់អ្នក</string>
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">ព័ត៌មាន</string>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_title">
-        <item quantity="other">លុបសារដែលបានជ្រើសរើស?</item>
-    </plurals>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_message">
-        <item quantity="other">វានឹងលុបសារ %1$d ដែលបានជ្រើសរើសទាំងអស់ជារៀងរហូត។</item>
-    </plurals>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">កំពុងលុប</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">កំពុងលុបសារ...</string>
-    <string name="MediaOverviewActivity_Documents">ឯកសារ</string>
-    <string name="MediaOverviewActivity_Select_all">ជ្រើសរើសទាំងអស់</string>
-    <string name="MediaOverviewActivity_collecting_attachments">កំពុងប្រមូលឯកសារភ្ជាប់...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">សារចម្រុះ</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">កំពុងទាញយកសារ MMS </string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">មានបញ្ហាទាញយកសារMMS សូមចុច ដើម្បីព្យាយាមម្តងទៀត</string>
-    <!-- MediaPickerActivity -->
-    <string name="MediaPickerActivity_send_to">ផ្ញើទៅកាន់ %s</string>
-    <!-- MediaSendActivity -->
-    <string name="MediaSendActivity_add_a_caption">ដាក់ចំណងជើង...</string>
-    <string name="MediaSendActivity_an_item_was_removed_because_it_exceeded_the_size_limit">ចំណុចមួយត្រូវបានលុបចេញព្រោះវាលើសពីទំហំកំណត់</string>
-    <string name="MediaSendActivity_camera_unavailable">កាមេរ៉ាមិនដំណើរការ</string>
-    <string name="MediaSendActivity_message_to_s">សារទៅកាន់ %s</string>
-    <plurals name="MediaSendActivity_cant_share_more_than_n_items">
-        <item quantity="other">អ្នកមិនអាចចែករំលែកចំនួនលើសពី %d ។</item>
-    </plurals>
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">ព័ត៌មានទាំងអស់</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">ទទួលបានសារដែលមានកាណាល់កូដសម្ងាត់ តែជាជំនាន់ចាស់របស់Session ដែលគេលែងប្រើហើយ។ សូមប្រាប់អ្នកផ្ញើ ឲ្យធ្វើបច្ចុប្បន្នភាពទៅជំនាន់ចុងក្រោយបង្អស់ និងផ្ញើសារម្តងទៀត។</string>
-    <string name="MessageRecord_left_group">អ្នកបានចាកចេញពីក្រុម។</string>
-    <string name="MessageRecord_you_updated_group">អ្នកបានធ្វើបច្ចុប្បន្នភាពក្រុម។</string>
-    <string name="MessageRecord_s_updated_group">%s បានធ្វើបច្ចុប្បន្នភាពក្រុម។</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">សារដែលមិនបង្ហាញ</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">សាររបស់អ្នកនឹងមិនផុតកំណត់ទេ។</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">សារ ដែលបានផ្ញើនិងទទួលក្នុងការសន្ទនានេះ នឹងបាត់ក្នុងពេល %s បន្ទាប់ពីត្រូវបានបើកមើល។</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">បញ្ចូលឃ្លាសម្ងាត់</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">បិទលេខទំនាក់ទំនងនេះ?</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">អ្នកនឹងលែងទទួលសារ និងការហៅចូលពីលេខទំនាក់ទំនងនេះទៀតហើយ។</string>
-    <string name="RecipientPreferenceActivity_block">ហាមឃាត់</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">មិនបិទលេខទំនាក់ទំនងនេះទេ?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">អ្នកនឹងទទួលបានសារ និងការហៅចូលពីលេខទំនាក់ទំនងនេះម្តងទៀត។</string>
-    <string name="RecipientPreferenceActivity_unblock">បើកវិញ</string>
-    <!-- Slide -->
-    <string name="Slide_image">រូបភាព</string>
-    <string name="Slide_audio">សំឡេង</string>
-    <string name="Slide_video">វីដេអូ</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">បានទទួលសារផ្លាស់ប្តូរ
-សោរមានបញ្ហា!</string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">ទទួលបានសារជាមួយលេខសុវត្ថិភាពថ្មី។ ចុច ដើម្បីដំណើការនិងបង្ហាញ។</string>
-    <string name="SmsMessageRecord_secure_session_reset">អ្នកកំណត់ការចូលប្រើប្រាស់សុវត្ថិភាពឡើងវិញ។</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%s កំណត់ការចូលប្រើប្រាស់សុវត្ថិភាពឡើងវិញ។</string>
-    <string name="SmsMessageRecord_duplicate_message">សារស្ទួន។</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">បានធ្វើបច្ចុប្បន្នភាពក្រុម</string>
-    <string name="ThreadRecord_left_the_group">បានចាកចេញពីក្រុម</string>
-    <string name="ThreadRecord_secure_session_reset">កំណត់ការចូលប្រើប្រាស់សុវត្ថិភាពឡើងវិញ</string>
-    <string name="ThreadRecord_draft">ព្រាង៖</string>
-    <string name="ThreadRecord_called">អ្នកបានហៅ</string>
-    <string name="ThreadRecord_called_you">បានហៅមកអ្នក</string>
-    <string name="ThreadRecord_missed_call">ការហៅមិនបានទទួល</string>
-    <string name="ThreadRecord_media_message">សារក្នុងប្រព័ន្ធផ្សព្វផ្សាយ</string>
-    <string name="ThreadRecord_s_is_on_signal">%s ប្រើ Session!​</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">សារបាត់ទៅវិញបានបិទ</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">កំណត់រយៈពេលលុបសារ %s</string>
-    <string name="ThreadRecord_safety_number_changed">លេខសុវត្ថិភាព បានផ្លាស់ប្តូរ</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">លេខសុវត្ថិភាពរបស់អ្នក %s បានផ្លាស់ប្តូរ។</string>
-    <string name="ThreadRecord_you_marked_verified">អ្នកបានផ្ទៀងផ្ទាត់</string>
-    <string name="ThreadRecord_you_marked_unverified">អ្នកមិនបានផ្ទៀងផ្ទាត់</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">បច្ចុប្បន្នភាព Session</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">កំណែថ្មីរបស់ Session មានហើយ, ចុច ដើម្បីធ្វើបច្ចុប្បន្នភាព។</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">សារដែលបានកាណាលកូដសម្ងាត់មិនត្រឹមត្រូវ</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">សារត្រូវបានកាណាល់កូដសម្ងាត់សម្រាប់កំឡុងពេលមិនប្រើប្រាស់</string>
-    <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">ការណាល់កូដសម្ងាត់សារMMS​ មិនត្រឹមត្រូវ</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">សារMMS ត្រូវបានកាណាល់កូដសម្ងាត់សម្រាប់កំឡុងពេលមិនប្រើប្រាស់</string>
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">បិទសំឡេងសារជូនដំណឹង</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">ចុច ដើម្បីបើក។</string>
-    <string name="KeyCachingService_passphrase_cached"> Session បានដោះសោ</string>
-    <string name="KeyCachingService_lock">ចាក់សោរSession</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">អ្នក</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">ប្រភេទឯកសារមិនគាំទ្រ</string>
-    <string name="MediaPreviewActivity_draft">ព្រាង</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">មិនអាចរក្សាទុកក្នុងអង្គរក្សាទុកខាងក្រៅ ដោយគ្មានការអនុញ្ញាត</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">លុបសារ?</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">សារនេះនឹងលុប ជារៀងរហូត។</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d សារថ្មីក្នុង %2$d ការសន្ទនា</string>
-    <string name="MessageNotifier_most_recent_from_s">ថ្មីៗភាគច្រើនមកពី៖ %1$s</string>
-    <string name="MessageNotifier_locked_message">សារចាក់សោរ</string>
-    <string name="MessageNotifier_message_delivery_failed">សារបញ្ជូនបរាជ័យ។</string>
-    <string name="MessageNotifier_failed_to_deliver_message">ការបញ្ជូនសារបរាជ័យ។</string>
-    <string name="MessageNotifier_error_delivering_message">ការបញ្ជូនសារមានបញ្ហា។</string>
-    <string name="MessageNotifier_mark_all_as_read">សម្គាល់ថាបានអានទាំងអស់</string>
-    <string name="MessageNotifier_mark_read">សម្គាល់ថាបានអាន</string>
-    <string name="MessageNotifier_reply">ឆ្លើយតប</string>
-    <string name="MessageNotifier_pending_signal_messages">សារ Session បញ្ចូនមិនទាន់សម្រេច</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">អ្នកមានសារSession មិនទាន់បញ្ចូនសម្រេច ចុចបើក និងទាញយកមកវិញ</string>
-    <string name="MessageNotifier_unknown_contact_message">ទំនាក់ទំនង</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">លំនាំដើម</string>
-    <string name="NotificationChannel_calls">ការហៅ</string>
-    <string name="NotificationChannel_failures">បរាជ័យ</string>
-    <string name="NotificationChannel_backups">បម្រុងទុក</string>
-    <string name="NotificationChannel_locked_status">ស្ថានភាពចាក់សោរ</string>
-    <string name="NotificationChannel_app_updates">បច្ចុប្បន្នភាពកម្មវិធី</string>
-    <string name="NotificationChannel_other">ផ្សេងៗ</string>
-    <string name="NotificationChannel_group_messages">សារ</string>
-    <string name="NotificationChannel_missing_display_name">មិនស្គាល់</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">មិនមានការឆ្លើយតបភ្លាមៗ នៅពេល Session ត្រូវបានចាក់សោរ!</string>
-    <string name="QuickResponseService_problem_sending_message">សារដែលបានបញ្ជូនមានបញ្ហា!</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">បានរក្សាទុកនៅ %s</string>
-    <string name="SaveAttachmentTask_saved">បានរក្សាទុក</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">ស្វែងរក</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">រូបតំណាងផ្លូវកាត់មិនត្រឹមត្រូវ</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_signal"> Session</string>
-    <string name="SingleRecipientNotificationBuilder_new_message">សារថ្មី</string>
-    <!-- TransferControlView -->
-    <plurals name="TransferControlView_n_items">
-        <item quantity="other">%d ធាតុ</item>
-    </plurals>
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">មានបញ្ហាចាក់មើលវីដេអូ</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">សំឡេង</string>
-    <string name="attachment_type_selector__audio_description">សំឡេង</string>
-    <string name="attachment_type_selector__contact">ទំនាក់ទំនង</string>
-    <string name="attachment_type_selector__contact_description">ទំនាក់ទំនង</string>
-    <string name="attachment_type_selector__camera">កាមេរ៉ា</string>
-    <string name="attachment_type_selector__camera_description">កាមេរ៉ា</string>
-    <string name="attachment_type_selector__location">ទីតាំង</string>
-    <string name="attachment_type_selector__location_description">ទីតាំង</string>
-    <string name="attachment_type_selector__gallery_description">រូបភាព ឬវីដេអូ</string>
-    <string name="attachment_type_selector__file_description">ឯកសារ</string>
-    <string name="attachment_type_selector__gallery">វិចិត្រសាល</string>
-    <string name="attachment_type_selector__file">ឯកសារ</string>
-    <string name="attachment_type_selector__drawer_description">បិទបើកថតឯកសារភ្ជាប់</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">កំពុងផ្ទុកបញ្ជីទំនាក់ទំនង...</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">ផ្ញើ</string>
-    <string name="conversation_activity__compose_description">ការបង្កើតសារថ្មី</string>
-    <string name="conversation_activity__emoji_toggle_description">បិទបើកក្តារចុចរូបអារម្មណ៍emoji</string>
-    <string name="conversation_activity__attachment_thumbnail">ភ្ជាប់រូបភាពឯកសារ</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">បិទបើកថតឯកសារភ្ជាប់កាមេរ៉ារហ័ស</string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">ថត​ និងផ្ញើឯកសារភ្ជាប់ជាសំឡេង</string>
-    <string name="conversation_activity__quick_attachment_drawer_lock_record_description">បិទការថតឯកសារសម្លេង</string>
-    <string name="conversation_activity__enable_signal_for_sms">បើក Session សម្រាប់ SMS</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__slide_to_cancel">អូសដើម្បីបោះបង់</string>
-    <string name="conversation_input_panel__cancel">បោះបង់</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">សារជាព័ត៌មាន</string>
-    <string name="conversation_item__secure_message_description">សារសុវត្ថិភាព</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">ផ្ញើបរាជ័យ</string>
-    <string name="conversation_item_sent__pending_approval_description">រង់ចាំការអនុម័ត</string>
-    <string name="conversation_item_sent__delivered_description">បានបញ្ចូន</string>
-    <string name="conversation_item_sent__message_read">សារបានអានរួច</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">រូបភាពទំនាក់ទំនង</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">បើក</string>
-    <string name="audio_view__pause_accessibility_description">ផ្អាក់</string>
-    <string name="audio_view__download_accessibility_description">ទាញយក</string>
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">សំឡេង</string>
-    <string name="QuoteView_video">វីដេអូ</string>
-    <string name="QuoteView_photo">រូបភាព</string>
-    <string name="QuoteView_you">អ្នក</string>
-    <string name="QuoteView_original_missing">រកមិនឃើញសារដើម</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">អូសចុះក្រោម</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">ស្វែករក GIFs និងស្ទីកគ័រ</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">ពុំរកមិនឃើញអ្វីទេ</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">មើលសារសន្ទនាទាំងស្រុង</string>
-    <string name="load_more_header__loading">កំពុងផ្ទុក</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">គ្មានព័ត៌មាន</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">ផ្ញើឡើងវិញ</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">រារាំង</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">បញ្ហាមួយចំនួនត្រូវការ ការយកចិត្តទុកដាក់របស់អ្នក។</string>
-    <string name="message_details_header__sent">បានផ្ញើ</string>
-    <string name="message_details_header__received">បានទទួល</string>
-    <string name="message_details_header__disappears">បាត់</string>
-    <string name="message_details_header__via">តាមរយៈ</string>
-    <string name="message_details_header__to">ទៅ៖</string>
-    <string name="message_details_header__from">ពី៖</string>
-    <string name="message_details_header__with">ជាមួយ៖</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">បង្កើតឃ្លាសម្ងាត់</string>
-    <string name="AndroidManifest__select_contacts">ជ្រើសរើសបញ្ជីលេខទំនាក់ទំនង</string>
-    <string name="AndroidManifest__media_preview">ការបង្ហាញសារ</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">ប្រើលំនាំដើម</string>
-    <string name="arrays__use_custom">ប្រើផ្សេងៗ</string>
-    <string name="arrays__mute_for_one_hour">បិទសំឡេង 1 ម៉ោង</string>
-    <string name="arrays__mute_for_two_hours">បិទសំឡេង 2 ម៉ោង</string>
-    <string name="arrays__mute_for_one_day">បិទសំឡេង 1 ថ្ងៃ</string>
-    <string name="arrays__mute_for_seven_days">បិទសំឡេង 7 ថ្ងៃ</string>
-    <string name="arrays__mute_for_one_year">បិទសំឡេង 1 ឆ្នាំ</string>
-    <string name="arrays__settings_default">ការកំណត់លំនាំដើម</string>
-    <string name="arrays__enabled">បានបើក</string>
-    <string name="arrays__disabled">បានបិទ</string>
-    <string name="arrays__name_and_message">ឈ្មោះ និងសារ</string>
-    <string name="arrays__name_only">ឈ្មោះតែប៉ុណ្ណោះ</string>
-    <string name="arrays__no_name_or_message">ពុំមានឈ្មោះ ឬសារ</string>
-    <string name="arrays__images">រូបភាព</string>
-    <string name="arrays__audio">សំឡេង</string>
-    <string name="arrays__video">វីដេអូ</string>
-    <string name="arrays__documents">ឯកសារ</string>
-    <string name="arrays__small">តូច</string>
-    <string name="arrays__normal">ធម្មតា</string>
-    <string name="arrays__large">ធំ</string>
-    <string name="arrays__extra_large">ធំបំផុត</string>
-    <string name="arrays__default">លំនាំដើម</string>
-    <string name="arrays__high">ខ្ពស់</string>
-    <string name="arrays__max">អតិបរិមា</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="other">%d ម៉ោង</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">ចុច Enter ដើម្បីផ្ញើ</string>
-    <string name="preferences__send_link_previews">ការមើល ការផ្ញើតំណភ្ជាប់</string>
-    <string name="preferences__screen_security">អេក្រង់សុវត្ថិភាព</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">បិទថតរូបអេក្រង់ក្នុងបញ្ជីថ្មី និងក្នុងកម្មវិធី</string>
-    <string name="preferences__notifications">សារជូនដំណឹង</string>
-    <string name="preferences__led_color">ពណ៌​LED</string>
-    <string name="preferences__led_color_unknown">មិនដឹង</string>
-    <string name="preferences__pref_led_blink_title">លំនាំលោតភ្លើង LED</string>
-    <string name="preferences__sound">សំឡេង</string>
-    <string name="preferences__silent">ស្ងាត់</string>
-    <string name="preferences__repeat_alerts">ជូនដំណឹងច្រើនដង</string>
-    <string name="preferences__never">មិនដែល</string>
-    <string name="preferences__one_time">ម្តង</string>
-    <string name="preferences__two_times">២ដង</string>
-    <string name="preferences__three_times">៣ដង</string>
-    <string name="preferences__five_times">៥ដង</string>
-    <string name="preferences__ten_times">១០ដង</string>
-    <string name="preferences__vibrate">ញ័រ</string>
-    <string name="preferences__green">ពណ៌បៃតង</string>
-    <string name="preferences__red">ពណ៌ក្រហម</string>
-    <string name="preferences__blue">ពណ៌ខៀវ</string>
-    <string name="preferences__orange">ពណ៌ទឹកក្រូច</string>
-    <string name="preferences__cyan">ផ្ទៃមេឃ</string>
-    <string name="preferences__magenta">ស្វាយ</string>
-    <string name="preferences__white">ពណ៌ស</string>
-    <string name="preferences__none">គ្មាន</string>
-    <string name="preferences__fast">លឿន</string>
-    <string name="preferences__normal">ធម្មតា</string>
-    <string name="preferences__slow">យឺត</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">លុបសារចាស់ៗដោយស្វ័យប្រវត្តិ នៅពេលការសន្ទនាលើសការកំណត់</string>
-    <string name="preferences__delete_old_messages">លុបសារចាស់ៗ</string>
-    <string name="preferences__conversation_length_limit">ប្រវែងការសន្ទនាមានកំណត់</string>
-    <string name="preferences__trim_all_conversations_now">តម្រឹមការសន្ទនាទាំងអស់ឥលូវនេះ</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">វិភាគតាមរយៈការសន្ទនាទាំងអស់ និងពង្រឹងដែនកំណត់ប្រវែងសន្ទនា</string>
-    <string name="preferences__default">លំនាំដើម</string>
-    <string name="preferences__incognito_keyboard">ក្តារចុចអនាមឹក</string>
-    <string name="preferences__read_receipts">ទទួលបានការអាន</string>
-    <string name="preferences__typing_indicators">វាស់ការវាយអក្សរ</string>
-    <string name="preferences__if_typing_indicators_are_disabled_you_wont_be_able_to_see_typing_indicators">ប្រសិនបើ ការបង្ហាញការវាយត្រូវបានបិទ អ្នកនឹងមិនអាចមើលឃើញការវាយបញ្ចូលរបស់អ្នកដទៃទេ។</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">ការស្នើសុំក្តារចុច ដើម្បីបិទការសិក្សាផ្ទាល់ខ្លួន</string>
-    <string name="preferences__light_theme">ភ្លឺ</string>
-    <string name="preferences__dark_theme">ងងឹត</string>
-    <string name="preferences_chats__message_trimming">តម្រឹមសារ</string>
-    <string name="preferences_advanced__use_system_emoji">ប្រើរូបអារម្មណ៍emoji នៅក្នុងប្រព័ន្ធ</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">បិទមិនប្រើរូបអារម្មណ៍emoji របស់ Session</string>
-    <string name="preferences_chats__chats">ការជជែក</string>
-    <string name="preferences_notifications__messages">សារ</string>
-    <string name="preferences_notifications__in_chat_sounds">សំឡេងក្នុងការជជែក</string>
-    <string name="preferences_notifications__priority">អទិភាព</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">ផ្ញើសារថ្មីទៅកាន់...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">សារលម្អិត</string>
-    <string name="conversation_context__menu_copy_text">ថតចម្លងអក្សរ</string>
-    <string name="conversation_context__menu_delete_message">លុបសារ</string>
-    <string name="conversation_context__menu_resend_message">ផ្ញើសារឡើងវិញ</string>
-    <string name="conversation_context__menu_reply_to_message">ឆ្លើយតបសារ</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">រក្សាឯកសារភ្ជាប់</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">សារបាត់ទៅវិញ</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">សារដែលហួសកាលកំណត់</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">បើកសំឡេង</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">បិទសំឡេងសារជូនដំណឹង</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">កែប្រែក្រុម</string>
-    <string name="conversation__menu_leave_group">ចាកចេញពីក្រុម</string>
-    <string name="conversation__menu_view_all_media">ព័ត៌មានទាំងអស់</string>
-    <string name="conversation__menu_add_shortcut">បន្ថែមទៅអេក្រង់ដើម</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">ពង្រីកការផុសឡើង</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">ការបញ្ជូន</string>
-    <string name="conversation_group_options__conversation">សន្ទនា</string>
-    <string name="conversation_group_options__broadcast">ផ្សព្វផ្សាយ</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">រក្សាទុក</string>
-    <string name="media_preview__forward_title">បញ្ជូនបន្ត</string>
-    <string name="media_preview__all_media_title">ព័ត៌មានទាំងអស់</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">គ្មានឯកសារ</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">មើលព័ត៌មានជាមុន</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">កំពុងលុប</string>
-    <string name="trimmer__deleting_old_messages">កំពុងលុបសារចាស់ៗ...</string>
-    <string name="trimmer__old_messages_successfully_deleted">សារចាស់ៗត្រូវបានលុបចេញដោយជោគជ័យ</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">ទាមទារការអនុញ្ញាត</string>
-    <string name="Permissions_continue">បន្ត</string>
-    <string name="Permissions_not_now">ពេលក្រោយ</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">ការបម្រុងទុក នឹងត្រូវរក្សាទុកនៅលើអង្គរក្សាទុកខាងក្រៅ និងកូដនីយកម្មជាមួយឃ្លាសម្ងាត់ខាងក្រោម។ អ្នកត្រូវមានឃ្លាសម្ងាត់នេះដើម្បីស្តារការបម្រុងទុកឡើងវិញ។</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">ខ្ញុំបានកត់ឃ្លាសម្ងាត់ទុកហើយ។ បើគ្មានវា ខ្ញុំនឹងមិនអាចស្តារការបម្រុងទុកបានទេ។</string>
-    <string name="registration_activity__skip">រំលង</string>
-    <string name="RegistrationActivity_backup_failure_downgrade">មិនអាចនាំចូលឯកសារបម្រុងទុក ពី Session ជំនាន់ថ្មី</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">ឃ្លាសម្ងាត់បម្រុងទុកមិនត្រឹមត្រូវ</string>
-    <string name="BackupDialog_enable_local_backups">បើកការបម្រុងទុកខាងក្នុង?</string>
-    <string name="BackupDialog_enable_backups">បើកការបម្រុងទុក</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">សូមទទួលស្គាល់ដោយគូសក្នុងប្រអប់បញ្ជាក់។</string>
-    <string name="BackupDialog_delete_backups">លុបការបម្រុងទុក?</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">បិទ និងលុបចោលការបម្រុងទុកខាងក្នុងទាំងអស់?</string>
-    <string name="BackupDialog_delete_backups_statement">លុបការបម្រុងទុក</string>
-    <string name="BackupDialog_copied_to_clipboard">បានចម្លងទៅ clipboard</string>
-    <string name="LocalBackupJob_creating_backup">កំពុងបង្កើតការបម្រុងទុក...</string>
-    <string name="ProgressPreference_d_messages_so_far">ឥឡូវនេះសារ%d</string>
-    <string name="BackupUtil_never">មិនធ្លាប់</string>
-    <string name="preferences_app_protection__screen_lock">ចាក់សោរអេក្រង់</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">ចាក់សោរការប្រើប្រាស់ Session ជាមួយសោរអេក្រង់ Android ឬ ក្រយៅដៃ</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">អេក្រង់ជាប់សោរ ទុកចោលហួសកំណត់ </string>
-    <string name="AppProtectionPreferenceFragment_none">គ្មាន</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+    <string name="saved">បានរក្សាទុក</string>
+    <string name="savedMessages">សារ​រក្សាទុក</string>
+    <string name="saving">កំពុងរក្សាទុក...</string>
+    <string name="scan">ស្កេន</string>
+    <string name="screenSecurity">សុវត្ថិភាពអេក្រង់</string>
+    <string name="screenshotNotifications">សេចក្ដីជូនដំណឹងផ្ទាំងថត</string>
+    <string name="screenshotNotificationsDescription">ទាមទារការ ជូន​ដំណឹង នៅពេលទំនាក់ទំនងបានថតរូបអេក្រង់នៃការជជែកមួយទល់មួយ។</string>
+    <string name="screenshotTaken"><b>{name}‍> បានថតរូបថតអេក្រង់។</string>
+    <string name="search">ស្វែងរក</string>
+    <string name="searchContacts">ស្វែងរកទំនាក់ទំនង</string>
+    <string name="searchConversation">ស្វែងរកការសន្ទនា</string>
+    <string name="searchEnter">សូមបញ្ចូលការស្វែងរករបស់អ្នក។</string>
+    <string name="searchMatchesNone">រកមិនឃើញលទ្ធផលទេ</string>
+    <string name="searchMatchesNoneSpecific">គ្មានលទ្ធផលសម្រាប់ {query}</string>
+    <string name="searchMembers">ស្វែងរកសមាជិក</string>
+    <string name="searchSearching">កំពុងស្វែងរក...</string>
+    <string name="select">ជ្រើសរើស</string>
+    <string name="selectAll">ជ្រើសរើស​ទាំងអស់</string>
+    <string name="send">ផ្ញើ</string>
+    <string name="sending">កំពុងផ្ញើ</string>
+    <string name="sent">បានផ្ញើ៖</string>
+    <string name="sessionAppearance">រូបរាង</string>
+    <string name="sessionClearData">លុបទិន្នន័យ</string>
+    <string name="sessionConversations">ការសន្ទនា</string>
+    <string name="sessionHelp">ជំនួយ</string>
+    <string name="sessionInviteAFriend">អញ្ជើញមិត្តភក្តិម្នាក់</string>
+    <string name="sessionMessageRequests">សំណាងល្អនៅមុខបន្ថែម!</string>
+    <string name="sessionNotifications">សារជូនដំណឹង</string>
+    <string name="sessionPermissions">ការអនុញ្ញាត</string>
+    <string name="sessionPrivacy">ឯកជនភាព</string>
+    <string name="sessionRecoveryPassword">ពាក្យសម្ងាត់ Recovery</string>
+    <string name="sessionSettings">ការកំណត់</string>
+    <string name="set">កំណត់</string>
+    <string name="settingsRestartDescription">អ្នក​ត្រូវចាប់ផ្តើម {app_name} ឡើងਵੀញ ដើម្បីអនុវត្តការកំណត់ថ្មីរបស់អ្នក។</string>
+    <string name="share">ចែករំលែក</string>
+    <string name="shareAccountIdDescription">អញ្ជើញមិត្តរបស់អ្នកមកជជែកជាមួយអ្នកតាមរយៈការចែករំលែក Account ID របស់អ្នកទៅកាន់ពួកគេ។</string>
+    <string name="shareAccountIdDescriptionCopied">ចែករំលែកជាមួយមិត្តភក្តិរបស់អ្នកនៅទីកន្លែងដែលអ្នកភាគច្រើននិយាយជាមួយពួកគេនិងបន្ទាប់មកផ្លាស់ប្តូរប្រសាសន៍មកទីនេះ។</string>
+    <string name="shareExtensionDatabaseError">There is an issue opening the database. Please restart the app and try again.</string>
+    <string name="show">បង្ហាញ</string>
+    <string name="showAll">បង្ហាញទាំងអស់</string>
+    <string name="showLess">បង្ហាញតិចជាង</string>
+    <string name="stickers">ស្ទីកគ័រ</string>
+    <string name="supportGoTo">ចូលទៅកាន់ទំព័រគាំទ្រ</string>
+    <string name="theContinue">បន្ត</string>
+    <string name="theDefault">លំនាំដើម</string>
+    <string name="theError">បញ្ហា</string>
+    <string name="tryAgain">សូមព្យាយាម​ម្តង​ទៀត</string>
+    <string name="typingIndicators">សូចនាករវាយអក្សរ</string>
+    <string name="typingIndicatorsDescription">មើល និង​ចែករំលែកសូចនាករបំពាក់​អក្សរ​ (...)</string>
+    <string name="undo">មិនធ្វើវិញ</string>
+    <string name="unknown">មិនដឹង</string>
+    <string name="updateApp">បច្ចុប្បន្នភាពកម្មវិធី</string>
+    <string name="updateDownloaded">តំឡើងការអាប់ដេត និងចុចដើម្បីចាប់ផ្តើមឡើងវិញ</string>
+    <string name="updateDownloading">កំពុងទាញយកបច្ចុប្បន្នភាព៖ {percent_loader}%</string>
+    <string name="updateError">មិនអាចធ្វើបច្ចុប្បន្នភាព</string>
+    <string name="updateErrorDescription">{app_name} បានបរាជ័យក្នុងការធ្វើបច្ចុប្បន្នភាព។ សូមចូលទៅកាន់ {download_url} ហើយដំឡើងជំនាន់ថ្មីដោយដៃ បន្ទាប់មកទាក់ទងមជ្ឈមណ្ឌលជំនួយរបស់យើង ដើម្បីជំរាបព័ត៌មានអំពីបញ្ហានេះ។</string>
+    <string name="updateNewVersion">កំណែថ្មីរបស់ <b>{app_name}<br‍\‍/><br‍/>អាចប្រើប្រាស់បានហើយ សូមចុចធ្វើបច្ចុប្បន្នភាព។</string>
+    <string name="updateNewVersionDescription">កំណែថ្មីរបស់ <b>{app_name}<br‍\‍/><br‍/>ចេញហើយ។</string>
+    <string name="updateReleaseNotes">ចូលទៅកាន់កំណត់ចេញថ្មី</string>
+    <string name="updateSession">{app_name} ភើពុទ្ធ</string>
+    <string name="updateVersion">កំណែ {version}</string>
+    <string name="uploading">កំពុងផ្ញើ</string>
+    <string name="urlCopy">ចម្លង URL</string>
+    <string name="urlOpen">បើក URL</string>
+    <string name="urlOpenBrowser">This will open in your browser.</string>
+    <string name="urlOpenDescription">តើអ្នកប្រាកដទេថាចង់បើក URL នេះនៅក្នុងកម្មវិធីរុករករបស់អ្នក? 
+
+{url}</string>
+    <string name="useFastMode">ប្រើមុខងាររហ័ស</string>
+    <string name="video">វីដេអូ</string>
+    <string name="videoErrorPlay">មិនអាចរំកិលវីដេអូបានទេ។</string>
+    <string name="view">បង្ហាញ</string>
+    <string name="waitFewMinutes">This can take a few minutes.</string>
+    <string name="waitOneMoment">សុំនៅមួយភ្លែត...</string>
+    <string name="warning">ការព្រមាន</string>
+    <string name="window">ផ្ទាំងបង្អួច</string>
+    <string name="yes">បាទ</string>
+    <string name="you">អ្នក</string>
 </resources>

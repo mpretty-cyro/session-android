@@ -1,454 +1,762 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="yes">ใช่</string>
-    <string name="no">ไม่</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="accept">ยอมรับ</string>
+    <string name="accountIDCopy">Copy Account ID</string>
+    <string name="accountIdCopied">คัดลอก ID บัญชีแล้ว</string>
+    <string name="accountIdCopyDescription">Copy your Account ID then share it with your friends so they can message you.</string>
+    <string name="accountIdEnter">ป้อน Account ID</string>
+    <string name="accountIdErrorInvalid">Account ID นี้ไม่ถูกต้อง กรุณาตรวจสอบแล้วลองใหม่อีกครั้ง</string>
+    <string name="accountIdOrOnsEnter">ป้อน Account ID หรือ ONS</string>
+    <string name="accountIdOrOnsInvite">เชิญ Account ID หรือ ONS</string>
+    <string name="accountIdShare">เฮ้! ฉันกำลังใช้งาน {app_name} เพื่อแชทด้วยความเป็นส่วนตัวและความปลอดภัย มาร่วมกับฉันสิ! รหัสบัญชีของฉันคือ
+
+{account_id}
+
+ดาวน์โหลดได้ที่ {download_url}</string>
+    <string name="accountIdYours">Account ID ของคุณ</string>
+    <string name="accountIdYoursDescription">นี่คือ Account ID ของคุณ ผู้ใช้รายอื่นสามารถสแกนเพื่อเริ่มการสนทนากับคุณได้</string>
+    <string name="actualSize">ขนาดจริง</string>
+    <string name="add">เพิ่ม</string>
+    <string name="adminCannotBeRemoved">ไม่สามารถลบผู้ดูแลได้</string>
+    <string name="adminMorePromotedToAdmin"><b>{name}</b> and <b>{count} อื่นๆ</b> ได้รับการเลื่อนตำแหน่งเป็นผู้ดูแลระบบ</string>
+    <string name="adminPromote">ยกระดับเป็นผู้ดูแล</string>
+    <string name="adminPromoteDescription">คุณแน่ใจหรือไม่ว่าต้องการเลื่อนตำแหน่ง <b>{name}</b> ให้เป็นแอดมิน? แอดมินไม่สามารถถูกลบออกได้</string>
+    <string name="adminPromoteMoreDescription">คุณแน่ใจหรือไม่ว่าต้องการเลื่อนตำแหน่ง <b>{name}</b> และ <b>{count} อื่นๆ</b> ให้เป็นแอดมิน? แอดมินไม่สามารถถูกลบออกได้</string>
+    <string name="adminPromoteToAdmin">ยกระดับเป็นผู้ดูแล</string>
+    <string name="adminPromoteTwoDescription">คุณแน่ใจหรือไม่ว่าต้องการเลื่อนตำแหน่ง <b>{name}</b> และ <b>{other_name}</b> ให้เป็นแอดมิน? แอดมินไม่สามารถถูกลบออกได้</string>
+    <string name="adminPromotedToAdmin"><b>{name}</b> ได้รับการเลื่อนตำแหน่งเป็นผู้ดูแลระบบ</string>
+    <string name="adminPromotionFailed">การเลื่อนตำแหน่งผู้ดูแลล้มเหลว</string>
+    <string name="adminPromotionFailedDescription">การโปรโมต {name} เป็นแอดมินใน {group_name} ล้มเหลว</string>
+    <string name="adminPromotionFailedDescriptionMany">การโปรโมต {name} และอีก {count} คนเป็นแอดมินใน {group_name} ล้มเหลว</string>
+    <string name="adminPromotionFailedDescriptionMore">การโปรโมต {name} และ {other_name} เป็นแอดมินใน {group_name} ล้มเหลว</string>
+    <string name="adminPromotionSent">การเลื่อนตำแหน่งผู้ดูแลถูกส่งไปแล้ว</string>
+    <string name="adminRemove">ลบผู้ดูแล</string>
+    <string name="adminRemoveAsAdmin">ลบสถานะผู้ดูแล</string>
+    <string name="adminRemoveCommunityNone">ไม่มีแอดมินใน Community นี้</string>
+    <string name="adminRemoveFailed">การลบ {name} จากแอดมินล้มเหลว</string>
+    <string name="adminRemovedUser"><b>{name}</b> ถูกปลดออกจากผู้ดูแลระบบ</string>
+    <string name="adminSendingPromotion">การส่งโปรโมชันผู้ดูแลระบบ</string>
+    <string name="adminSettings">การตั้งค่าผู้ดูแล</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name}</b> และ <b>{other_name}</b> ได้รับการเลื่อนตำแหน่งเป็นผู้ดูแลระบบ</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">ถูกปิดบัง</string>
+    <string name="appearanceAutoDarkMode">โหมดมืดอัตโนมัติ</string>
+    <string name="appearanceHideMenuBar">ซ่อนแถบเมนู</string>
+    <string name="appearanceLanguage">ภาษา</string>
+    <string name="appearanceLanguageDescription">เลือกการตั้งค่าภาษาสำหรับ {app_name} {app_name} จะรีสตาร์ทเมื่อเปลี่ยนการตั้งค่าภาษา</string>
+    <string name="appearancePreview1">คุณเป็นอย่างไรบ้าง?</string>
+    <string name="appearancePreview2">ฉันก็ดี ขอบคุณ, คุณล่ะ?</string>
+    <string name="appearancePreview3">ฉันก็ดี ขอบคุณ.</string>
+    <string name="appearancePrimaryColor">สีหลัก</string>
+    <string name="appearanceThemes">ธีม</string>
+    <string name="appearanceThemesClassicDark">ดาร์กคลาสสิค</string>
+    <string name="appearanceThemesClassicLight">ไลท์คลาสสิค</string>
+    <string name="appearanceThemesOceanDark">Ocean Dark</string>
+    <string name="appearanceThemesOceanLight">Ocean Light</string>
+    <string name="appearanceZoom">ซูม</string>
+    <string name="appearanceZoomIn">ซูมเข้า</string>
+    <string name="appearanceZoomOut">ซูมออก</string>
+    <string name="attachment">ไฟล์แนบ</string>
+    <string name="attachmentsAdd">เพิ่มไฟล์แนบ</string>
+    <string name="attachmentsAlbumUnnamed">อัลบั้มที่ไม่มีชื่อ.</string>
+    <string name="attachmentsAutoDownload">ดาวน์โหลดสิ่งแนบอัตโนมัติ</string>
+    <string name="attachmentsAutoDownloadDescription">ดาวน์โหลดมีเดียและไฟล์จากการสนทนานี้โดยอัตโนมัติ</string>
+    <string name="attachmentsAutoDownloadModalDescription">คุณต้องการดาวน์โหลดไฟล์ทั้งหมดจาก <b>{conversation_name}</b> โดยอัตโนมัติหรือไม่?</string>
+    <string name="attachmentsAutoDownloadModalTitle">การดาวน์โหลดอัตโนมัติ</string>
+    <string name="attachmentsClearAll">เคลียร์สิ่งแนบทั้งหมด</string>
+    <string name="attachmentsClearAllDescription">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ไฟล์แนบทั้งหมด? ข้อความที่มีไฟล์แนบจะถูกลบเช่นกัน</string>
+    <string name="attachmentsClickToDownload">Click to download {file_type}</string>
+    <string name="attachmentsCollapseOptions">Collapse attachment options</string>
+    <string name="attachmentsCollecting">รวบรวมสิ่งแนบ...</string>
+    <string name="attachmentsDownload">ดาวน์โหลดไฟล์แนบ</string>
+    <string name="attachmentsDuration">ระยะเวลา:</string>
+    <string name="attachmentsErrorLoad">เกิดข้อผิดพลาดขณะไฟล์แนบ</string>
+    <string name="attachmentsErrorNoApp">ไม่พบแอปสำหรับสื่อที่เลือก</string>
+    <string name="attachmentsErrorNotSupported">ไฟล์ประเภทนี้ไม่ได้รับการสนับสนุน</string>
+    <string name="attachmentsErrorNumber">ส่งไฟล์ภาพและวิดีโอพร้อมกันเกิน 32 ไฟล์ไม่ได้.</string>
+    <string name="attachmentsErrorOpen">เปิดไฟล์ไม่ได้.</string>
+    <string name="attachmentsErrorSending">การส่งไฟล์ล้มเหลว</string>
+    <string name="attachmentsErrorSeparate">โปรดส่งไฟล์เป็นข้อความแยกต่างหาก</string>
+    <string name="attachmentsErrorSize">ไฟล์ต้องมีขนาดไม่เกิน 10MB</string>
+    <string name="attachmentsErrorTypes">ไม่สามารถแนบรูปภาพและวิดีโอร่วมกับไฟล์ประเภทอื่นได้ ลองส่งไฟล์อื่นในข้อความแยก</string>
+    <string name="attachmentsExpired">ไฟล์แนบหมดอายุ</string>
+    <string name="attachmentsFileId">ไฟล์ ID:</string>
+    <string name="attachmentsFileSize">ขนาดไฟล์:</string>
+    <string name="attachmentsFileType">ประเภทไฟล์:</string>
+    <string name="attachmentsFilesEmpty">คุณไม่มีไฟล์ในการสนทนานี้</string>
+    <string name="attachmentsImageErrorMetadata">ลบข้อมูลเมตาจากไฟล์ไม่ได้.</string>
+    <string name="attachmentsLoadingNewer">กำลังโหลดข้อความใหม่...</string>
+    <string name="attachmentsLoadingNewerFiles">กำลังโหลดไฟล์ใหม่...</string>
+    <string name="attachmentsLoadingOlder">กำลังโหลดข้อความเก่า...</string>
+    <string name="attachmentsLoadingOlderFiles">กำลังโหลดไฟล์เก่า...</string>
+    <string name="attachmentsMedia">{name} เมื่อ {date_time}</string>
+    <string name="attachmentsMediaEmpty">คุณไม่มีรูปในการสนทนานี้</string>
+    <string name="attachmentsMediaSaved">ชื่อบันทึกสื่อโดย {name}</string>
+    <string name="attachmentsMoveAndScale">เลื่อนและย่อขยาย</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsResolution">ความละเอียด:</string>
+    <string name="attachmentsSaveError">บันทึกไฟล์ไม่ได้.</string>
+    <string name="attachmentsSendTo">ส่งไปยัง {name}</string>
+    <string name="attachmentsTapToDownload">แตะเพื่อดาวน์โหลด {file_type}</string>
+    <string name="attachmentsThisMonth">เดือนนี้</string>
+    <string name="attachmentsThisWeek">สัปดาห์นี้</string>
+    <string name="attachmentsWarning">ไฟล์แนบที่คุณบันทึกสามารถเข้าถึงได้โดยแอปอื่นบนอุปกรณ์ของคุณ</string>
+    <string name="audio">เสียง</string>
+    <string name="audioNoInput">ไม่พบแหล่งป้อนเสียง</string>
+    <string name="audioNoOutput">ไม่พบแหล่งส่งออกเสียง</string>
+    <string name="audioUnableToPlay">เล่นไฟล์เสียงไม่ได้.</string>
+    <string name="audioUnableToRecord">บันทึกเสียงไม่ได้.</string>
+    <string name="authenticateFailed">การตรวจสอบสิทธิ์ล้มเหลว</string>
+    <string name="authenticateFailedTooManyAttempts">ความพยายามในการรับรองความถูกต้องล้มเหลวจำนวนมาก กรุณาลองใหม่ภายหลัง</string>
+    <string name="authenticateNotAccessed">ไม่สามารถเข้าถึงการตรวจสอบสิทธิ์ได้</string>
+    <string name="authenticateToOpen">ยืนยันตัวตนเพื่อเปิด {app_name}.</string>
+    <string name="back">กลับ</string>
+    <string name="banDeleteAll">แบนและลบทั้งหมด</string>
+    <string name="banErrorFailed">การแบนล้มเหลว</string>
+    <string name="banUnbanErrorFailed">เลิกแบนไม่สำเร็จ.</string>
+    <string name="banUnbanUser">เลิกแบนผู้ใช้.</string>
+    <string name="banUnbanUserUnbanned">เลิกแบนผู้ใช้แล้ว.</string>
+    <string name="banUser">แบนผู้ใช้</string>
+    <string name="banUserBanned">แบนผู้ใช้แล้ว.</string>
+    <string name="block">บล็อก</string>
+    <string name="blockBlockedDescription">เลิกปิดกั้นผู้ติดต่อนี้เพื่อส่งข้อความ.</string>
+    <string name="blockBlockedNone">ไม่มีผู้ติดต่อที่ถูกปิดกั้น</string>
+    <string name="blockBlockedUser">บล็อก {name}</string>
+    <string name="blockDescription">คุณแน่ใจหรือไม่ว่าต้องการบล็อก <b>{name}?</b> ผู้ใช้ที่ถูกบล็อกจะไม่สามารถส่งคำร้องขอข้อความเชิญกลุ่ม หรือโทรหาคุณได้</string>
+    <string name="blockUnblock">เลิกปิดกั้น.</string>
+    <string name="blockUnblockName">คุณแน่ใจหรือไม่ว่าต้องการเลิกบล็อก {name}?</string>
+    <string name="blockUnblockNameMultiple">คุณแน่ใจหรือไม่ว่าต้องการเลิกบล็อก {name} และ {count} อื่นๆ?</string>
+    <string name="blockUnblockNameTwo">คุณแน่ใจหรือไม่ว่าต้องการเลิกบล็อก {name} และอีก 1 คน?</string>
+    <string name="blockUnblockedUser">เลิกปิดกั้น {name}.</string>
+    <string name="call">โทร</string>
+    <string name="callsCalledYou">{name} ได้โทรหาคุณ</string>
+    <string name="callsCannotStart">คุณไม่สามารถเริ่มการโทรใหม่ได้ กรุณาเสร็จสิ้นการโทรปัจจุบันของคุณก่อน</string>
+    <string name="callsConnecting">กำลังเชื่อมต่อ...</string>
+    <string name="callsEnd">วางสาย</string>
+    <string name="callsEnded">สายโทรจบลงแล้ว</string>
+    <string name="callsErrorAnswer">การรับสายล้มเหลว</string>
+    <string name="callsErrorStart">การเริ่มต้นการโทรล้มเหลว</string>
+    <string name="callsInProgress">สายโทรดำเนินการอยู่</string>
+    <string name="callsIncoming">สายเรียกเข้าจาก {name}</string>
+    <string name="callsIncomingUnknown">สายเรียกเข้า</string>
+    <string name="callsMissed">สายที่ไม่ได้รับ</string>
+    <string name="callsMissedCallFrom">สายที่ไม่ได้รับจาก {name}</string>
+    <string name="callsNotificationsRequired">การโทรด้วยเสียงและวิดีโอต้องมีการเปิดการแจ้งเตือนในการตั้งค่าระบบของอุปกรณ์ของคุณ.</string>
+    <string name="callsPermissionsRequired">ต้องการสิทธิการโทร</string>
+    <string name="callsPermissionsRequiredDescription">คุณสามารถเปิดการอนุญาต \"การโทรด้วยเสียงและวิดีโอ\" ได้ในการตั้งค่าความเป็นส่วนตัว</string>
+    <string name="callsReconnecting">กำลังเชื่อมใหม่…</string>
+    <string name="callsRinging">กำลังส่งเสียง...</string>
+    <string name="callsSessionCall">สาย Session</string>
+    <string name="callsSettings">การโทร (เบต้า)</string>
+    <string name="callsVoiceAndVideo">การโทรด้วยเสียงและวิดีโอ.</string>
+    <string name="callsVoiceAndVideoBeta">การโทรด้วยเสียงและวิดีโอ (Beta).</string>
+    <string name="callsVoiceAndVideoModalDescription">IP ของคุณจะสามารถมองเห็นได้โดยคู่สายของคุณและเซิร์ฟเวอร์ของ Oxen Foundation ในขณะที่ใช้เบต้าการโทร</string>
+    <string name="callsVoiceAndVideoToggleDescription">เปิดการโทรด้วยเสียงและวิดีโอไปยังและจากผู้ใช้รายอื่น</string>
+    <string name="callsYouCalled">คุณได้โทรหา {name}</string>
+    <string name="callsYouMissedCallPermissions">คุณพลาดสายจาก <b>{name}​</b> เพราะคุณไม่ได้เปิดใช้งาน <b>การโทรด้วยเสียงและวิดีโอ</b> ในการตั้งค่าความเป็นส่วนตัว</string>
+    <string name="cameraErrorNotFound">ไม่พบกล้อง</string>
+    <string name="cameraErrorUnavailable">กล้องไม่พร้อมใช้งาน</string>
+    <string name="cameraGrantAccess">ให้สิทธิใช้กล้อง</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="clear">เคลียร์</string>
+    <string name="clearAll">เคลียร์ทั้งหมด</string>
+    <string name="clearDataAll">ลบข้อมูลไปหมด</string>
+    <string name="clearDataAllDescription">นี่จะลบข้อความและผู้ติดต่อนี้ของคุณอย่างถาวร คุณอยากลบจากอุปกรณ์นี้เท่านั้นหรือลบข้อมูลจากเครือข่ายด้วย?</string>
+    <string name="clearDataError">Data Not Deleted</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="other">ลบข้อมูลไม่สำเร็จโดย Service Node จำนวน %1$d IDs ของ Service Node: %2$s</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">เกิดข้อผิดพลาดไม่ทราบสาเหตุและข้อมูลของคุณไม่ได้ถูกลบ คุณต้องการจะลบข้อมูลจากอุปกรณ์นี้แทนหรือไม่</string>
+    <string name="clearDevice">Clear Device</string>
+    <string name="clearDeviceAndNetwork">Clear device and network</string>
+    <string name="clearDeviceAndNetworkConfirm">คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลของคุณออกจากเครือข่าย? หากคุณดำเนินการต่อคุณจะไม่สามารถกู้คืนข้อความหรือผู้ติดต่อของคุณได้</string>
+    <string name="clearDeviceDescription">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์อุปกรณ?</string>
+    <string name="clearDeviceOnly">Clear device only</string>
+    <string name="clearMessages">ลบข้อความไปหมด</string>
+    <string name="clearMessagesChatDescription">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ข้อความทั้งหมดจากการสนทนากับ <b>{name}</b> จากอุปกรณ์ของคุณ?</string>
+    <string name="clearMessagesCommunity">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ข้อความ <b>{community_name}</b> ทั้งหมดจากอุปกรณ์ของคุณ?</string>
+    <string name="clearMessagesForEveryone">Clear for everyone</string>
+    <string name="clearMessagesForMe">Clear for me</string>
+    <string name="clearMessagesGroupAdminDescription">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ข้อความ <b>{group_name}</b> ทั้งหมด?</string>
+    <string name="clearMessagesGroupDescription">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ข้อความ <b>{group_name}</b> ทั้งหมดจากอุปกรณ์ของคุณ?</string>
+    <string name="clearMessagesNoteToSelfDescription">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ข้อความ Note to Self ทั้งหมดจากอุปกรณ์ของคุณ?</string>
+    <string name="close">Close</string>
+    <string name="closeWindow">ปิดหน้าต่าง</string>
+    <string name="communityEnterUrl">ป้อน Community URL</string>
+    <string name="communityEnterUrlErrorInvalid">URL ลิงค์ไม่ถูกต้อง</string>
+    <string name="communityEnterUrlErrorInvalidDescription">โปรดตรวจสอบ URL ชุมชนและลองอีกครั้ง</string>
+    <string name="communityError">Community Error</string>
+    <string name="communityErrorDescription">อุ๊บส์ เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้งภายหลัง</string>
+    <string name="communityInvitation">Community Invitation</string>
+    <string name="communityJoin">เข้าร่วม Community</string>
+    <string name="communityJoinDescription">คุณแน่ใจหรือไม่ว่าต้องการเข้าร่วม {community_name}?</string>
+    <string name="communityJoinError">ไม่สามารถเข้าร่วม {community_name} ได้</string>
+    <string name="communityJoinOfficial">หรือเข้าร่วมอย่างใดอย่างหนึ่งเหล่านี้...</string>
+    <string name="communityJoined">เข้าร่วม Community แล้ว</string>
+    <string name="communityJoinedAlready">คุณเป็นสมาชิกของชุมชนนี้แล้ว</string>
+    <string name="communityLeave">ออกจาก Community</string>
+    <string name="communityLeaveError">ไม่สามารถออกจาก {community_name} ได้</string>
+    <string name="communityUnknown">Community ที่ไม่ทราบ.</string>
+    <string name="communityUrl">Community URL</string>
+    <string name="communityUrlCopy">Copy Community URL</string>
+    <string name="confirm">ยืนยัน</string>
+    <string name="contactContacts">ผู้ติดต่อ</string>
+    <string name="contactDelete">ลบผู้ติดต่อ</string>
+    <string name="contactDeleteDescription">คุณแน่ใจหรือไม่ว่าต้องการลบ <b>{name}?</b> จากผู้ติดต่อของคุณ ข้อความใหม่จาก <b>{name}</b> จะมาในลักษณะคำร้องขอข้อความ</string>
+    <string name="contactNone">คุณยังไม่มีผู้ติดต่อ</string>
+    <string name="contactSelect">เลือกผู้ติดต่อ</string>
+    <string name="contactUserDetails">รายละเอียดผู้ใช้.</string>
+    <string name="contentDescriptionCamera">กล้อง</string>
+    <string name="contentDescriptionChooseConversationType">เลือกการกระทำเพื่อเริ่มการสนทนาใหม่</string>
+    <string name="contentDescriptionMediaMessage">ข้อความสื่อ</string>
+    <string name="contentDescriptionMessageComposition">การสร้างข้อความ</string>
+    <string name="contentDescriptionQuoteThumbnail">รูปย่อจากข้อความที่อ้างถึง</string>
+    <string name="contentDescriptionStartConversation">Create a conversation with a new contact</string>
+    <string name="conversationsAddToHome">เพิ่มไปยังหน้าจอหลัก</string>
+    <string name="conversationsAddedToHome">เพิ่มไปยังหน้าจอหลักแล้ว</string>
+    <string name="conversationsAudioMessages">ข้อความเสียง</string>
+    <string name="conversationsAutoplayAudioMessage">เล่นอัตโนมัติข้อความเสียง</string>
+    <string name="conversationsAutoplayAudioMessageDescription">เล่นอัตโนมัติเมื่อส่งข้อความเสียงติดต่อกัน</string>
+    <string name="conversationsBlockedContacts">รายชื่อผู้ที่ถูกบล็อก</string>
+    <string name="conversationsCommunities">Communities</string>
+    <string name="conversationsDelete">ลบการสนทนา</string>
+    <string name="conversationsDeleteDescription">คุณแน่ใจหรือไม่ว่าต้องการลบการสนทนาของคุณกับ <b>{name}</b>? ข้อความใหม่จาก <b>{name}</b> จะเริ่มการสนทนาใหม่</string>
+    <string name="conversationsDeleted">Conversation deleted</string>
+    <string name="conversationsEmpty">ไม่มีข้อความใน {conversation_name}</string>
+    <string name="conversationsEnter">ป้อน Key</string>
+    <string name="conversationsEnterDescription">ฟังก์ชันของปุ่ม Enter เมื่อพิมพ์ในบทสนทนา</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER ส่งข้อความ, ENTER เริ่มบรรทัดใหม่</string>
+    <string name="conversationsEnterSends">ENTER ส่งข้อความ, SHIFT + ENTER เริ่มบรรทัดใหม่</string>
+    <string name="conversationsGroups">กลุ่ม</string>
+    <string name="conversationsMessageTrimming">ตัดข้อความให้สั้นลง</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Trim Communities</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">ลบข้อความใน Community การสนทนาที่อายุมากกว่า 6 เดือน และมีข้อความมากกว่า 2,000 ข้อความ</string>
+    <string name="conversationsNew">การสนทนาใหม่</string>
+    <string name="conversationsNone">คุณยังไม่มีการสนทนา</string>
+    <string name="conversationsSendWithEnterKey">ส่งด้วยปุ่ม Enter</string>
+    <string name="conversationsSendWithEnterKeyDescription">การแตะปุ่ม Enter จะส่งข้อความแทนการเริ่มบรรทัดใหม่</string>
+    <string name="conversationsSettingsAllMedia">ไฟล์ทั้งหมด</string>
+    <string name="conversationsSpellCheck">การตรวจสอบการสะกด</string>
+    <string name="conversationsSpellCheckDescription">เปิดใช้การตรวจสอบการสะกดเมื่อพิมพ์ข้อความ</string>
+    <string name="conversationsStart">เริ่มการสนทนา</string>
+    <string name="copied">คัดลอกแล้ว</string>
+    <string name="copy">คัดลอก</string>
+    <string name="create">Create</string>
+    <string name="cut">ตัด</string>
+    <string name="databaseErrorGeneric">เกิดข้อผิดพลาดในฐานข้อมูล
+
+ส่งออกล็อกแอปพลิเคชันของคุณเพื่อแบ่งปันแก้ไขปัญหา หากไม่สำเร็จ ให้ติดตั้ง {app_name} ใหม่และกู้คืนบัญชีของคุณ
+
+คำเตือน: การดำเนินการนี้จะส่งผลให้สูญเสียข้อความ ไฟล์แนบ และข้อมูลบัญชีที่มีอายุมากกว่าสองสัปดาห์</string>
+    <string name="databaseErrorTimeout">เราได้สังเกตว่า {app_name} ใช้เวลานานในการเริ่มต้น
+
+คุณสามารถรอต่อไป ส่งออกบันทึกอุปกรณ์ของคุณเพื่อแบ่งปันเพื่อแก้ไขปัญหา หรือลองรีสตาร์ท Session</string>
+    <string name="databaseErrorUpdate">ฐานข้อมูลแอปของคุณไม่สามารถใช้งานร่วมกับเวอร์ชันนี้ของ {app_name} ติดตั้งใหม่และกู้คืนบัญชีเพื่อสร้างฐานข้อมูลใหม่และใช้งาน {app_name} ต่อไป 
+
+คำเตือน: สิ่งนี้จะส่งผลให้สูญเสียข้อความและไฟล์แนบทั้งหมดที่มีอายุเกินสองสัปดาห์</string>
+    <string name="databaseOptimizing">การเพิ่มประสิทธิภาพฐานข้อมูล</string>
+    <string name="debugLog">Debug Log</string>
+    <string name="decline">ปฏิเสธ</string>
     <string name="delete">ลบ</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">อุปกรณ์บางอย่างของคุณใช้เวอร์ชันที่ล้าสมัย การซิงค์อาจไม่น่าเชื่อถือจนกว่าจะได้รับการอัปเดต</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">บล็อกคนนี้</string>
+    <string name="deleteAfterGroupPR1BlockUser">บล็อกผู้ใช้</string>
+    <string name="deleteAfterGroupPR1GroupSettings">การตั้งค่ากลุ่ม</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">แจ้งเฉพาะการกล่าวถึง</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">เมื่อเปิดใช้งาน คุณจะได้รับการแจ้งเตือนเฉพาะข้อความที่พูดถึงคุณ</string>
+    <string name="deleteAfterGroupPR1MessageSound">เสียงข้อความ</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">ลบการสนทนานี้โดยถาวรหรือไม่</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">ไม่สามารถออกในขณะที่กำลังเพิ่มหรือลบสมาชิกอื่น</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">รุ่นก่อน</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">เวอร์ชันดั้งเดิมของข้อความที่ลบตัวเอง</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name}</b> ตั้งค่าตัวตั้งเวลาข้อความที่ลบตัวเองไว้ที่ <b>{time}</b></string>
+    <string name="deleteMessage">ลบข้อความ</string>
+    <string name="deleteMessageConfirm">คุณแน่ใจหรือไม่ว่าต้องการลบข้อความนี้?</string>
+    <string name="deleteMessageDeleted">ลบข้อความนี้</string>
+    <string name="deleteMessageDeletedGlobally">ข้อความนี้ถูกลบ</string>
+    <string name="deleteMessageDeletedLocally">ข้อความนี้ถูกลบบนอุปกรณ์นี้</string>
+    <string name="deleteMessageDescriptionDevice">คุณแน่ใจหรือไม่ว่าต้องการลบข้อความนี้เฉพาะในอุปกรณ์นี้?</string>
+    <string name="deleteMessageDescriptionEveryone">คุณแน่ใจหรือไม่ว่าต้องการลบข้อความนี้สำหรับทุกคน?</string>
+    <string name="deleteMessageDeviceOnly">ลบเฉพาะบนอุปกรณ์นี้</string>
+    <string name="deleteMessageDevicesAll">ลบบนอุปกรณ์ของฉันทั้งหมด</string>
+    <string name="deleteMessageEveryone">ลบสำหรับทุกคน</string>
+    <string name="deleteMessageFailed">การลบข้อความล้มเหลว</string>
+    <string name="deleteMessages">ลบข้อความ</string>
+    <string name="deleteMessagesConfirm">คุณแน่ใจหรือไม่ว่าต้องการลบข้อความเหล่านี้?</string>
+    <string name="deleteMessagesDeleted">ลบข้อความ</string>
+    <string name="deleteMessagesDescriptionDevice">คุณแน่ใจหรือไม่ว่าต้องการลบข้อความเหล่านี้จากอุปกรณ์นี้เท่านั้น?</string>
+    <string name="deleteMessagesDescriptionEveryone">คุณแน่ใจหรือไม่ว่าต้องการลบข้อความเหล่านี้สำหรับทุกคน?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="other">ลบข้อความล้มเหลว</item>
+    </plurals>
+    <string name="deleting">กำลังลบ</string>
+    <string name="developerToolsToggle">สลับไปที่เครื่องมือสำหรับผู้พัฒนา</string>
+    <string name="dictationStart">เริ่มการพิมพ์คำ...</string>
+    <string name="disappearingMessages">ข้อความที่ลบตัวเอง</string>
+    <string name="disappearingMessagesCountdownBig">ข้อความจะถูกลบใน {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">จะถูกลบอัตโนมัติในอีก {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">ข้อความจะถูกลบใน {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">จะถูกลบอัตโนมัติในอีก {time_large} {time_small}</string>
+    <string name="disappearingMessagesDeleteType">ลบประเภท</string>
+    <string name="disappearingMessagesDescription">การตั้งค่านี้มีผลบังคับใช้กับทุกคนในการสนทนานี้</string>
+    <string name="disappearingMessagesDescription1">การตั้งค่านี้มีผลกับข้อความที่คุณส่งในการสนทนานี้</string>
+    <string name="disappearingMessagesDisappear">หายไปหลังจาก {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">หายไปหลังจากอ่าน</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">ข้อความจะถูกลบหลังจากอ่านแล้ว</string>
+    <string name="disappearingMessagesDisappearAfterSend">หายไปหลังจากส่ง</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">ข้อความจะถูกลบหลังจากส่งแล้ว</string>
+    <string name="disappearingMessagesFollowSetting">ตามการตั้งค่า</string>
+    <string name="disappearingMessagesFollowSettingOff">ข้อความที่คุณส่งจะไม่หายไปอีกต่อไป คุณแน่ใจหรือไม่ว่าต้องการ<b>ปิด</b>ข้อความที่หายไป</string>
+    <string name="disappearingMessagesFollowSettingOn">ตั้งค่าข้อความของคุณให้หายไป <b>{time}</b> หลังจากที่ถูก <b>{disappearing_messages_type}</b> ไปใช่ไหม?</string>
+    <string name="disappearingMessagesLegacy">{name} กำลังใช้ไคลเอนต์ที่ล้าสมัย ข้อความที่หายไปอาจไม่ทำงานตามที่คาดไว้</string>
+    <string name="disappearingMessagesOnlyAdmins">การตั้งค่านี้เปลี่ยนแปลงได้เฉพาะผู้ดูแลกลุ่มเท่านั้น</string>
+    <string name="disappearingMessagesSent">ส่งแล้ว</string>
+    <string name="disappearingMessagesSet"><b>{name}</b> ตั้งค่าข้อความให้หายไปใน {time} หลังจากที่ได้รับการ {disappearing_messages_type}</string>
+    <string name="disappearingMessagesSetYou"><b>คุณ</b> ตั้งค่าข้อความให้หายไปใน {time} หลังจากที่ได้รับการ {disappearing_messages_type}</string>
+    <string name="disappearingMessagesTimer">ตั้งเวลา</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name}</b> ได้ปิดข้อความที่ลบตัวเองแล้ว ข้อความที่เขาส่งจะไม่หายไปอีกต่อไป</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>คุณ</b> ปิดข้อความที่ลบตัวเองแล้ว ข้อความที่คุณส่งจะไม่หายไป</string>
+    <string name="disappearingMessagesTypeRead">อ่านแล้ว</string>
+    <string name="disappearingMessagesTypeSent">ส่งแล้ว</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> อัปเดตการตั้งค่าข้อความที่ลบตัวเอง</string>
+    <string name="disappearingMessagesUpdatedYou"><b>คุณ</b> อัพเดตการตั้งค่าข้อความที่ลบตัวเอง</string>
+    <string name="dismiss">ยกเลิก</string>
+    <string name="displayNameDescription">มันอาจจะเป็นชื่อจริง นามแฝง หรืออะไรก็ได้ที่คุณชอบ — และคุณสามารถเปลี่ยนได้ทุกเมื่อ</string>
+    <string name="displayNameEnter">ป้อนชื่อที่ใช้แสดง</string>
+    <string name="displayNameErrorDescription">โปรดกรอกชื่อที่ใช้แสดง</string>
+    <string name="displayNameErrorDescriptionShorter">ขอเลือกชื่อสั้นกว่า</string>
+    <string name="displayNameErrorNew">เราไม่สามารถโหลดชื่อแสดงของคุณ กรุณาใส่ชื่อแสดงใหม่เพื่อดำเนินการต่อ</string>
+    <string name="displayNameNew">เลือกชื่อที่ใช้แสดงใหม่</string>
+    <string name="displayNamePick">เลือกชื่อที่ใช้แสดง</string>
+    <string name="displayNameSet">ตั้งชื่อที่แสดง</string>
+    <string name="document">เอกสาร</string>
+    <string name="done">เสร็จ</string>
+    <string name="download">ดาวน์โหลด</string>
+    <string name="downloading">กำลังดาวน์โหลด...</string>
+    <string name="draft">ร่าง</string>
+    <string name="edit">แก้ไข</string>
+    <string name="emojiAndSymbols">อิโมจิ &amp; สัญลักษณ์</string>
+    <string name="emojiCategoryActivities">กิจกรรม</string>
+    <string name="emojiCategoryAnimals">สัตว์ & ธรรมชาติ</string>
+    <string name="emojiCategoryFlags">ธง</string>
+    <string name="emojiCategoryFood">อาหาร &amp; เครื่องดื่ม</string>
+    <string name="emojiCategoryObjects">สิ่งต่างๆ</string>
+    <string name="emojiCategoryRecentlyUsed">ใช้ล่าสุด</string>
+    <string name="emojiCategorySmileys">Smileys &amp; People</string>
+    <string name="emojiCategorySymbols">สัญลักษณ์</string>
+    <string name="emojiCategoryTravel">การเดินทางและสถานที่</string>
+    <string name="emojiReactsClearAll">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ {emoji} ทั้งหมด?</string>
+    <string name="emojiReactsCoolDown">เย็นลง! คุณได้ส่งปฏิกิริยาอิโมจิมากเกินไป ลองอีกครั้งในภายหลัง</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="other">และมี %1$d คนอื่นๆ ที่ได้แสดงอีโมจิ %2$s ให้กับข้อความนี้</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} ต่อต่อด้วย <emoji /></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} ต่อต่อด้วย <emoji /></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} และ <span>{count} อื่นๆ</span> ต่อต่อด้วย <emoji /></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} และ <span>1 อื่นๆ</span> ต่อต่อด้วย <emoji /></string>
+    <string name="emojiReactsHoverYouDesktop">คุณแสดงอารมณ์ด้วย <emoji/></string>
+    <string name="emojiReactsHoverYouNameDesktop">คุณและ {name} ได้แสดงความรู้สึกด้วย <emoji /></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">คุณ, {name} &amp; <span>{count} คนอื่นๆ</span> แสดงอารมณ์ด้วย <emoji/></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">คุณ, {name} &amp; <span>1คนอื่นๆ</span> แสดงอารมณ์ด้วย <emoji/></string>
+    <string name="emojiReactsNotification">แสดงความเห็นผ่านอิโมจิที่ข้อความของคุณ {emoji}</string>
+    <string name="enable">เปิดใช้งาน</string>
+    <string name="errorConnection">โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตและลองอีกครั้ง</string>
+    <string name="errorCopyAndQuit">Copy Error and Quit</string>
+    <string name="errorDatabase">Database Error</string>
+    <string name="errorUnknown">เกิดข้อผิดพลาดไม่ทราบสาเหตุ</string>
+    <string name="failures">ล้มเหลว</string>
+    <string name="file">ไฟล์</string>
+    <string name="files">ไฟล์</string>
+    <string name="followSystemSettings">ตามการตั้งค่าระบบ</string>
+    <string name="from">จาก:</string>
+    <string name="fullScreenToggle">สลับไปเต็มหน้าจอ</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="groupAddMemberMaximum">กลุ่มมีสมาชิกสูงสุด 100 คน</string>
+    <string name="groupCreate">Create Group</string>
+    <string name="groupCreateErrorNoMembers">โปรดเลือกสมาชิกกลุ่มอย่างน้อยหนึ่งคน</string>
+    <string name="groupDelete">ลบกลุ่ม</string>
+    <string name="groupDeleteDescription">คุณแน่ใจหรือไม่ว่าต้องการลบ <b>{group_name}?</b> การกระทำนี้จะลบสมาชิกทั้งหมดและลบเนื้อหากลุ่มทั้งหมด</string>
+    <string name="groupDescriptionEnter">ป้อนคำอธิบายกลุ่ม</string>
+    <string name="groupDisplayPictureUpdated">รูปกลุ่มถูกอัปเดตแล้ว</string>
+    <string name="groupEdit">แก้ไขกลุ่ม</string>
+    <string name="groupError">ข้อผิดพลาดของกลุ่ม</string>
+    <string name="groupErrorCreate">การสร้างกลุ่มล้มเหลว กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณและลองอีกครั้ง</string>
+    <string name="groupErrorJoin">ไม่สามารถเข้าร่วม {group_name} ได้</string>
+    <string name="groupInformationSet">ตั้งค่ากลุ่ม</string>
+    <string name="groupInviteDelete">คุณแน่ใจหรือไม่ว่าต้องการลบคำเชิญเข้ากลุ่มนี้?</string>
+    <string name="groupInviteFailed">เชิญไม่สำเร็จ</string>
+    <string name="groupInviteFailedMore">ไม่สามารถเชิญ {name} และอีก {count} คนเข้าร่วม {group_name} ได้</string>
+    <string name="groupInviteFailedTwo">ไม่สามารถเชิญ {name} และ {other_name} เข้าร่วม {group_name} ได้</string>
+    <string name="groupInviteFailedUser">ไม่สามารถเชิญ {name} เข้าร่วม {group_name} ได้</string>
+    <string name="groupInviteSending">การส่งคำเชิญ</string>
+    <string name="groupInviteSent">เชิญแล้ว</string>
+    <string name="groupInviteSuccessful">เชิญเข้าร่วมกลุ่มสำเร็จ</string>
+    <string name="groupInviteVersion">ผู้ใช้ต้องมีเวอร์ชัน {version} หรือสูงกว่าเพื่อรับคำเชิญ.</string>
+    <string name="groupInviteYou"><b>คุณ</b> ถูกเชิญเข้าร่วมกลุ่ม</string>
+    <string name="groupLeave">ออกจากกลุ่ม</string>
+    <string name="groupLeaveDescription">คุณแน่ใจหรือไม่ว่าต้องการออกจาก {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">คุณแน่ใจหรือไม่ว่าต้องการออกจาก {group_name}? สิ่งนี้จะยุบกลุ่มให้กับสมาชิกทั้งหมด</string>
+    <string name="groupLeaveErrorFailed">ไม่สามารถออกจาก {group_name} ได้</string>
+    <string name="groupLegacyBanner">กลุ่มถูกอัปเกรด สร้างกลุ่มใหม่เพื่ออัปเกรด ฟังก์ชันกลุ่มเก่าจะลดลงตั้งแต่ {date}</string>
+    <string name="groupMemberLeft"><b>{name}</b> ได้ออกจากกลุ่ม</string>
+    <string name="groupMemberLeftMore"><b>{name}</b> and <b>{count} อื่นๆ</b> ได้ออกจากกลุ่ม</string>
+    <string name="groupMemberLeftTwo"><b>{name}</b> และ <b>{other_name}</b> ได้ออกจากกลุ่ม</string>
+    <string name="groupMemberMoreNew"><b>{name}</b> and <b>{count} อื่นๆ</b> ได้เข้าร่วมกลุ่ม</string>
+    <string name="groupMemberNew"><b>{name}</b> ได้เข้าร่วมกลุ่ม</string>
+    <string name="groupMemberTwoNew"><b>{name}</b> และ <b>{other_name}</b> ได้เข้าร่วมกลุ่ม</string>
+    <string name="groupMemberYouLeft"><b>คุณ</b> ได้ออกจากกลุ่ม</string>
+    <string name="groupMembers">สมาชิกกลุ่ม</string>
+    <string name="groupMembersNone">ไม่มีสมาชิกคนอื่นในกลุ่มนี้</string>
+    <string name="groupName">ชื่อกลุ่ม</string>
+    <string name="groupNameEnter">ป้อนชื่อกลุ่ม</string>
+    <string name="groupNameEnterPlease">ขอระบุชื่อกลุ่ม</string>
+    <string name="groupNameEnterShorter">ขอระบุชื่อกลุ่มสั้นกว่า</string>
+    <string name="groupNameNew">ชื่อกลุ่มตอนนี้คือ {group_name}.</string>
+    <string name="groupNameUpdated">อัปเดตชื่อกลุ่มแล้ว</string>
+    <string name="groupNoMessages">คุณไม่มีข้อความจาก <b>{group_name}</b> ส่งข้อความเพื่อเริ่มการสนทนา!</string>
+    <string name="groupOnlyAdmin">คุณเป็นผู้ดูแลคนเดียวใน <b>{group_name}</b>.
+
+สมาชิกกลุ่มและการตั้งค่าไม่สามารถเปลี่ยนแปลงได้หากไม่มีผู้ดูแล</string>
+    <string name="groupPromotedYou"><b>คุณ</b> ได้รับการเลื่อนตำแหน่งเป็นผู้ดูแลระบบ</string>
+    <string name="groupRemoveDescription">คุณต้องการลบ <b>{name}</b> ออกจาก <b>{group_name}</b> หรือไม่?</string>
+    <string name="groupRemoveMessages">ลบผู้ใช้และข้อความของพวกเขา</string>
+    <string name="groupRemoveMoreDescription">คุณต้องการลบ <b>{name}</b> และอีก <b>{count} คน</b> ออกจาก <b>{group_name}</b> หรือไม่?</string>
+    <string name="groupRemoveTwoDescription">คุณต้องการลบ <b>{name}</b> และ <b>{other_name}</b> ออกจาก <b>{group_name}</b> หรือไม่?</string>
+    <string name="groupRemoveUserOnly">ลบผู้ใช้</string>
+    <string name="groupRemoveUsersMessages">ลบผู้ใช้และข้อความของพวกเขา</string>
+    <string name="groupRemoveUsersOnly">ลบผู้ใช้</string>
+    <string name="groupRemoved"><b>{name}</b> ถูกลบออกจากกลุ่ม</string>
+    <string name="groupRemovedMore"><b>{name} and {count} อื่นๆ</b> ถูกลบออกจากกลุ่ม</string>
+    <string name="groupRemovedTwo"><b>{name}</b> และ <b>{other_name}</b> ถูกลบออกจากกลุ่ม</string>
+    <string name="groupRemovedYou">คุณได้ถูกลบออกจาก <b>{group_name}</b> แล้ว</string>
+    <string name="groupSetDisplayPicture">ตั้งรูปภาพกลุ่ม</string>
+    <string name="groupUnknown">กลุ่มที่ไม่ทราบ.</string>
+    <string name="groupUpdated">กลุ่มมีการปรับปรุง</string>
+    <string name="helpFAQ">FAQ</string>
+    <string name="helpHelpUsTranslateSession">ช่วยเราแปล {app_name}</string>
+    <string name="helpReportABug">รายงานบั๊ก</string>
+    <string name="helpReportABugDescription">ส่งรายละเอียดบางอย่างเพื่อช่วยให้เราตรวจสอบปัญหาของคุณ ส่งบันทึกเหตุการณ์ของคุณ แล้วอัปโหลดไฟล์ผ่านระบบช่วยเหลือของ {app_name}</string>
+    <string name="helpReportABugExportLogs">ส่งออกบันทึก</string>
+    <string name="helpReportABugExportLogsDescription">ส่งออกบันทึกของคุณ จากนั้น อัปโหลดไฟล์ผ่านฝ่ายสนับสนุนของ {app_name}</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">บันทึกไปที่เดสก์ท็อป</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">บันทึกไฟล์นี้ลงในเดสก์ท็อปของคุณ จากนั้นแชร์กับนักพัฒนาของ {app_name}</string>
+    <string name="helpSupport">การสนับสนุน</string>
+    <string name="helpWedLoveYourFeedback">เรายินดีรับฟังความคิดเห็นของคุณ</string>
+    <string name="hide">ซ่อน</string>
+    <string name="hideOthers">ซ่อนหน้าต่างอื่นๆ</string>
+    <string name="image">ภาพ</string>
+    <string name="incognitoKeyboard">แป้นพิมพ์แบบลับ</string>
+    <string name="incognitoKeyboardDescription">ขอเปิดโหมดไม่ระบุชื่อถ้าใช้ได้ ขึ้นอยู่กับคีย์บอร์ดที่คุณใช้ คีย์บอร์ดของคุณอาจจะไม่ยอมรับคำขอนี้</string>
+    <string name="info">ข้อมูล</string>
+    <string name="invalidShortcut">ชอร์ตคัทใช้ไม่ได้</string>
+    <string name="join">เข้าร่วม</string>
+    <string name="later">ไว้ภายหลัง</string>
+    <string name="learnMore">เรียน​รู้​เพิ่ม​เติม</string>
+    <string name="leave">ออก</string>
+    <string name="leaving">กำลังออก...</string>
+    <string name="linkPreviews">ตัวอย่างจากลิงค์</string>
+    <string name="linkPreviewsDescription">แสดงตัวอย่างลิงก์สำหรับ URL ที่รองรับ</string>
+    <string name="linkPreviewsEnable">เปิดใช้งานการแสดงตัวอย่างลิงค์</string>
+    <string name="linkPreviewsErrorLoad">ไม่สามารถโหลดการแสดงตัวอย่างลิงก์ได้</string>
+    <string name="linkPreviewsErrorUnsecure">โหลดพรีวิวไม่ได้สำหรับลิงก์ที่ไม่ปลอดภัย</string>
+    <string name="linkPreviewsSend">ส่งตัวอย่างจากลิงค์</string>
+    <string name="linkPreviewsSendModalDescription">คุณจะไม่มีการป้องกันข้อมูลเมตาอย่างเต็มที่เมื่อส่งการแสดงตัวอย่างลิงก์</string>
+    <string name="linkPreviewsTurnedOff">ปิดตัวอย่างจากลิงค์</string>
+    <string name="loadAccount">โหลดบัญชี</string>
+    <string name="loadAccountProgressMessage">กำลังโหลดบัญชีของคุณ</string>
+    <string name="loading">กำลังโหลด...</string>
+    <string name="lockApp">ล็อคแอป</string>
+    <string name="lockAppDescriptionAndroid">ต้องใช้ลายนิ้วมือ, PIN, รูปแบบ หรือรหัสผ่านในการปลดล็อก {app_name}</string>
+    <string name="lockAppDescriptionIos">ต้องใช้ Touch ID, Face ID หรือรหัสผ่านในการปลดล็อก {app_name}</string>
+    <string name="lockAppEnablePasscode">คุณต้องเปิดใช้งานรหัสผ่านในการตั้งค่า iOS ของคุณเพื่อใช้ล็อคหน้าจอ</string>
+    <string name="lockAppQuickResponse">การตอบด่วนใช้ไม่ได้ถ้า {app_name} ถูกล็อกอยู่!</string>
+    <string name="lockAppStatus">สถานะล็อค</string>
+    <string name="lockAppUnlock">แตะเพื่อปลดล็อก</string>
+    <string name="max">สูงสุด</string>
+    <string name="media">สื่อ</string>
+    <plurals name="members">
+        <item quantity="other">%1$d สมาชิก</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="other">%1$d สมาชิกที่ใช้งาน</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">เพิ่ม Account ID หรือ ONS</string>
+    <string name="membersInvite">เชิญเพื่อน</string>
+    <string name="membersInviteSend">ส่งคำเชิญ</string>
+    <string name="membersInviteSendMultiple">ส่งคำเชิญ</string>
+    <string name="membersInviteShareDescription">คุณต้องการแบ่งปันประวัติการสนทนากลุ่มกับ <b>{name}</b> หรือไม่?</string>
+    <string name="membersInviteShareMessageHistory">แบ่งปันประวัติการส่งข้อความ</string>
+    <string name="membersInviteShareMoreDescription">คุณต้องการแบ่งปันประวัติการสนทนากลุ่มกับ <b>{name}</b> และอีก <b>{count} คน</b> หรือไม่?</string>
+    <string name="membersInviteShareNewMessagesOnly">แบ่งปันเฉพาะข้อความใหม่</string>
+    <string name="membersInviteShareTwoDescription">คุณต้องการแบ่งปันประวัติการสนทนากลุ่มกับ <b>{name}</b> และ <b>{other_name}</b> หรือไม่?</string>
+    <string name="membersInviteTitle">เชิญ</string>
+    <string name="message">ข้อความ</string>
+    <string name="messageEmpty">ข้อความนี้ว่างเปล่า</string>
+    <string name="messageErrorDelivery">ส่งข้อความล้มเหลว</string>
+    <string name="messageErrorLimit">ถึงขีดจำกัดการข้อความแล้ว</string>
+    <string name="messageErrorOld">ได้รับข้อความที่เข้ารหัสด้วย {app_name} รุ่นเก่าที่ไม่รองรับอีกต่อไปแล้ว โปรดขอให้ผู้ส่งอัพเดตแอปเป็นเวอร์ชันล่าสุดและส่งข้อความอีกครั้ง</string>
+    <string name="messageErrorOriginal">ไม่พบข้อความดั้งเดิม</string>
+    <string name="messageInfo">ข้อมูลข้อความ</string>
+    <string name="messageMarkRead">ทำเครื่องหมายว่าอ่านแล้ว</string>
+    <string name="messageMarkUnread">ทำเครื่องหมายว่ายังไม่ได้อ่าน</string>
+    <string name="messageNew">ข้อความใหม่</string>
+    <string name="messageNewDescriptionDesktop">เริ่มการสนทนาใหม่โดยป้อนรหัสบัญชีหรือ ONS ของเพื่อนของคุณ</string>
+    <string name="messageNewDescriptionMobile">เริ่มการสนทนาใหม่โดยป้อนรหัสบัญชี, ONS หรือสแกน QR code ของเพื่อนของคุณ</string>
+    <string name="messageNewMessages">ข้อความใหม่</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="other">คุณมี %1$d ข้อความใหม่</item>
+    </plurals>
+    <string name="messageReplyingTo">กำลังตอบกลับ</string>
+    <string name="messageRequestGroupInvite"><b>{name}</b> เชิญคุณเข้าร่วม <b>{group_name}</b></string>
+    <string name="messageRequestGroupInviteDescription">การส่งข้อความไปยังกลุ่มนี้จะเป็นการยอมรับคำเชิญเข้ากลุ่มโดยอัตโนมัติ</string>
+    <string name="messageRequestPending">คำขอข้อความของคุณกำลังรอผู้รับอนุมัติ</string>
+    <string name="messageRequestPendingDescription">คุณจะสามารถส่งข้อความเสียงและไฟล์แนบได้เมื่อผู้รับได้อนุมัติคำขอข้อความนี้</string>
+    <string name="messageRequestYouHaveAccepted">คุณได้ยอมรับคำขอข้อความจาก <b>{name}​</b> แล้ว</string>
+    <string name="messageRequestsAcceptDescription">การส่งข้อความไปยังผู้ใช้รายนี้จะเป็นการยอมรับคำขอข้อความและเปิดเผย Account ID ของคุณโดยอัตโนมัติ</string>
+    <string name="messageRequestsAccepted">คำขอข้อความของคุณได้รับการยอมรับแล้ว</string>
+    <string name="messageRequestsClearAllExplanation">คุณแน่ใจหรือไม่ว่าต้องการเคลียร์ข้อความและคำเชิญกลุ่มทั้งหมด?</string>
+    <string name="messageRequestsCommunities">Community Message Requests</string>
+    <string name="messageRequestsCommunitiesDescription">อนุญาตคำร้องขอข้อความจากการสนทนาของ Community</string>
+    <string name="messageRequestsDelete">คุณแน่ใจหรือไม่ว่าต้องการลบคำขอข้อความนี้?</string>
+    <string name="messageRequestsNew">คุณมีคำขอข้อความใหม่</string>
+    <string name="messageRequestsNonePending">ไม่มีคำร้องขอข้อความที่ค้างอยู่</string>
+    <string name="messageRequestsTurnedOff"><b>{name}</b> ไม่ยอมรับคำขอข้อความจากการสนทนาของ Community ดังนั้นคุณไม่สามารถส่งข้อความถึงเขาได้</string>
+    <string name="messageSelect">เลือกข้อความ</string>
+    <string name="messageStatusFailedToSend">การส่งล้มเหลว</string>
+    <string name="messageStatusFailedToSync">การซิงค์ล้มเหลว</string>
+    <string name="messageStatusSyncing">กำลังซิงค์</string>
+    <string name="messageUnread">ข้อความที่ยังไม่ได้อ่าน.</string>
+    <string name="messageVoice">ข้อความเสียง</string>
+    <string name="messageVoiceErrorShort">กดค้างเพื่อบันทึกข้อความเสียง</string>
+    <string name="messageVoiceSlideToCancel">เลื่อนเพื่อยกเลิก</string>
+    <string name="messages">ข้อความ</string>
+    <string name="minimize">ย่อลง</string>
+    <string name="next">ถัดไป</string>
+    <string name="nicknameDescription">เลือกชื่อเล่นสำหรับ {name} จะปรากฏในการสนทนาหนึ่งต่อหนึ่งและกลุ่ม</string>
+    <string name="nicknameEnter">ป้อนชื่อเล่น</string>
+    <string name="nicknameRemove">ลบชื่อเล่น</string>
+    <string name="nicknameSet">ตั้งชื่อเล่น</string>
+    <string name="no">ไม่</string>
+    <string name="noSuggestions">ไม่มีคำแนะนำ</string>
+    <string name="none">ไม่มี</string>
+    <string name="notNow">ไม่ใช่ตอนนี้</string>
+    <string name="noteToSelf">ข้อความให้ตังเองจำไว้</string>
+    <string name="noteToSelfEmpty">คุณไม่มีข้อความในบันทึกถึงตัวเอง</string>
+    <string name="noteToSelfHide">ซ่อนข้อความให้ตัวเองจำไว้</string>
+    <string name="noteToSelfHideDescription">คุณแน่ใจหรือไม่ว่าต้องการซ่อนข้อความ Note to Self?</string>
+    <string name="notificationsAllMessages">ข้อความทั้งหมด</string>
+    <string name="notificationsAndroidSystem">มี {message_count} ข้อความใหม่ใน {conversation_count} การสนทนา</string>
+    <string name="notificationsContent">ข้อมูลการแจ้งเตือน</string>
+    <string name="notificationsContentDescription">ข้อมูลที่แสดงในการแจ้งเตือน</string>
+    <string name="notificationsContentShowNameAndContent">ชื่อและข้อความ</string>
+    <string name="notificationsContentShowNameOnly">เฉพาะชื่อผู้ส่ง</string>
+    <string name="notificationsContentShowNoNameOrContent">ไม่แสดงข้อมูลเลย</string>
+    <string name="notificationsFastMode">โหมดเร็ว</string>
+    <string name="notificationsFastModeDescriptionAndroid">คุณจะได้รับการแจ้งเตือนเมื่อมีข้อความใหม่ที่เชื่อถือได้และทันทีโดยใช้เซิร์ฟเวอร์การแจ้งเตือนของ Google</string>
+    <string name="notificationsFastModeDescriptionIos">คุณจะได้รับการแจ้งเตือนเมื่อมีข้อความใหม่ที่เชื่อถือได้และทันทีโดยใช้เซิร์ฟเวอร์การแจ้งเตือนของ Apple</string>
+    <string name="notificationsGoToAndroidSettings">ไปที่การตั้งค่าการแจ้งเตือนของ Android</string>
+    <string name="notificationsGoToDevice">ไปที่การตั้งค่าการแจ้งเตือนของอุปกรณ์</string>
+    <string name="notificationsIosGroup">{name} ไปที่ {conversation_name}</string>
+    <string name="notificationsIosRestart">อาจจะได้รับข้อความตอน {device} รีสตาร์ทมา</string>
+    <string name="notificationsLedColor">สี LED</string>
+    <string name="notificationsMentionsOnly">แจ้งเตือนเมื่อถูกเอ่ยถึงเท่านั้น</string>
+    <string name="notificationsMessage">แจ้งเตือนข้อความ</string>
+    <string name="notificationsMostRecent">ล่าสุดจาก: {name}</string>
+    <string name="notificationsMute">ปิดแจ้งเตือน</string>
+    <string name="notificationsMuteFor">ปิดแจ้งเตือนเป็นเวลา {time_large}</string>
+    <string name="notificationsMuteUnmute">เลิกปิดเสียง.</string>
+    <string name="notificationsMuted">ปิดแจ้งเตือนแล้ว</string>
+    <string name="notificationsSlowMode">โหมดล่าช้า</string>
+    <string name="notificationsSound">เสียง</string>
+    <string name="notificationsSoundDescription">เสียงเมื่อเปิดแอป</string>
+    <string name="notificationsSoundDesktop">การแจ้งเตือนเสียง</string>
+    <string name="notificationsStrategy">กลยุทธ์สำคัญแจ้งเตือน</string>
+    <string name="notificationsStyle">รูปแบบการแจ้งเตือน</string>
+    <string name="notificationsVibrate">สั่น.</string>
+    <string name="off">ปิด</string>
+    <string name="okay">ตกลง</string>
+    <string name="onboardingAccountCreate">Create account</string>
+    <string name="onboardingAccountCreated">สร้างบัญชีแล้ว</string>
+    <string name="onboardingAccountExists">ฉันมีบัญชี</string>
+    <string name="onboardingBackAccountCreation">คุณไม่สามารถย้อนกลับไปอีกได้ ในการยกเลิกการสร้างบัญชีของคุณ Session จำเป็นต้องออกจากระบบ</string>
+    <string name="onboardingBackLoadAccount">คุณไม่สามารถย้อนกลับไปอีกได้ ในการหยุดการโหลดบัญชีของคุณ Session จำเป็นต้องออกจากระบบ</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Creating an account is instant, free, and anonymous </string>
+    <string name="onboardingBubbleNoPhoneNumber">คุณไม่จำเป็นต้องมีหมายเลขโทรศัพท์เพื่อสมัคร</string>
+    <string name="onboardingBubblePrivacyInYourPocket">ความเป็นส่วนตัวในกระเป๋าคุณ</string>
+    <string name="onboardingBubbleWelcomeToSession">ยินดีต้อนรับสู่ {app_name}</string>
+    <string name="onboardingHitThePlusButton">กดปุ่มบวกเพื่อเริ่มแชท สร้างกลุ่ม หรือเข้าร่วม Community อย่างเป็นทางการ!</string>
+    <string name="onboardingMessageNotificationExplanation">มีสองวิธีที่ {app_name} สามารถแจ้งเตือนคุณเมื่อมีข้อความใหม่</string>
+    <string name="onboardingPrivacy">นโยบายความเป็นส่วนตัว</string>
+    <string name="onboardingTos">ข้อกำหนดในการให้บริการ</string>
+    <string name="onboardingTosPrivacy">การใช้บริการนี้แสดงว่าคุณยอมรับ<b>ข้อกำหนดในการให้บริการ</b>และ<b>นโยบายความเป็นส่วนตัว</b>ของเรา</string>
+    <string name="onionRoutingPath">ทาง</string>
+    <string name="onionRoutingPathDestination">ปลายทาง</string>
+    <string name="onionRoutingPathEntryNode">โหนดเข้า</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">ประเทศที่ไม่ทราบ.</string>
+    <string name="onsErrorNotRecognized">ระบบ ONS ไม่พบรายการนี้ กรุณาตรวจสอบอีกครั้ง</string>
+    <string name="onsErrorUnableToSearch">เราไม่สามารถค้นหาระบบ ONS นี้ได้ กรุณาลองอีกครั้งในภายหลัง</string>
+    <string name="open">เปิด</string>
+    <string name="other">ที่อื่น</string>
+    <string name="passwordChange">เปลี่ยนรหัสผ่าน</string>
+    <string name="passwordChangeDescription">เปลี่ยนรหัสผ่านที่ใช้ปลดล็อก {app_name}</string>
+    <string name="passwordChangedDescription">รหัสผ่านของคุณได้รับการเปลี่ยนแปลงแล้ว กรุณารักษาเอาไว้ให้ปลอดภัย</string>
+    <string name="passwordConfirm">Confirm password</string>
+    <string name="passwordCreate">Create your password</string>
+    <string name="passwordCurrentIncorrect">รหัสผ่านปัจจุบันของคุณไม่ถูกต้อง</string>
+    <string name="passwordDescription">จำเป็นต้องใช้รหัสผ่านในการปลดล็อก {app_name}</string>
+    <string name="passwordEnter">ป้อนรหัสผ่าน</string>
+    <string name="passwordEnterCurrent">โปรดป้อนรหัสผ่านปัจจุบันของคุณ</string>
+    <string name="passwordEnterNew">โปรดป้อนรหัสผ่านใหม่ของคุณ</string>
+    <string name="passwordError">รหัสผ่านต้องประกอบด้วยตัวอักษร ตัวเลข และสัญลักษณ์เท่านั้น</string>
+    <string name="passwordErrorLength">รหัสผ่านต้องมีความยาวตั้งแต่ 6 ถึง 64 ตัวอักษร</string>
+    <string name="passwordErrorMatch">รหัสผ่านไม่ตรงกัน</string>
+    <string name="passwordFailed">การตั้งรหัสผ่านล้มเหลว</string>
+    <string name="passwordIncorrect">รหัสผ่านไม่ถูกต้อง</string>
+    <string name="passwordRemove">ลบรหัสผ่าน</string>
+    <string name="passwordRemoveDescription">ลบรหัสผ่านที่ต้องใช้เพื่อปลดล็อก {app_name}</string>
+    <string name="passwordRemovedDescription">รหัสผ่านของคุณถูกลบแล้ว</string>
+    <string name="passwordSet">ตั้งรหัสผ่าน</string>
+    <string name="passwordSetDescription">รหัสผ่านของคุณถูกตั้งแล้ว กรุณารักษาเอาไว้ให้ปลอดภัย</string>
+    <string name="paste">วาง</string>
+    <string name="permissionsAutoUpdate">อัปเดตอัตโนมัติ</string>
+    <string name="permissionsAutoUpdateDescription">ตรวจสอบการอัปเดตอัตโนมัติเมื่อเริ่มต้น</string>
+    <string name="permissionsFaceId">ฟีเจอร์ล็อกหน้าจอใน {app_name} ใช้ Face ID</string>
+    <string name="permissionsKeepInSystemTray">เก็บใน System Tray</string>
+    <string name="permissionsMicrophone">ไมโครโฟน</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">คุณสามารถเปิดการเข้าถึงไมโครโฟนได้ในการตั้งค่าความเป็นส่วนตัวของ {app_name}</string>
+    <string name="permissionsMicrophoneDescription">อนุญาตให้เข้าถึงไมโครโฟน</string>
+    <string name="permissionsRequired">ต้องได้รับอนุญาตก่อน</string>
+    <string name="pin">ปักหมุด </string>
+    <string name="pinConversation">ปักหมุดการสนทนา</string>
+    <string name="pinUnpin">ยกเลิกปักหมุด.</string>
+    <string name="pinUnpinConversation">ยกเลิกปักหมุดการสนทนา.</string>
+    <string name="preview">พรีวิว</string>
+    <string name="profile">โปรไฟล์</string>
+    <string name="profileDisplayPicture">รูปภาพที่แสดง</string>
+    <string name="profileDisplayPictureRemoveError">การลบรูปโปรไฟล์ล้มเหลว</string>
+    <string name="profileDisplayPictureSet">ตั้งรูปภาพโปรไฟล์</string>
+    <string name="profileDisplayPictureSizeError">โปรดเลือกไฟล์ที่เล็กลง</string>
+    <string name="profileErrorUpdate">อัปเดตโปรไฟล์ล้มเหลว</string>
+    <string name="promote">โปรโมต</string>
+    <string name="qrCode">QR โค้ด</string>
+    <string name="qrNotAccountId">QR โค้ดนี้ไม่มี Account ID</string>
+    <string name="qrNotRecoveryPassword">QR โค้ดนี้ไม่ประกอบด้วยรหัสผ่านกู้คืน</string>
+    <string name="qrScan">สแกน QR โค้ด</string>
+    <string name="qrView">ดู QR.</string>
+    <string name="qrYoursDescription">เพื่อนสามารถส่งข้อความถึงคุณได้โดยการสแกน QR โค้ดของคุณ</string>
+    <string name="quit">ออกจาก {app_name}</string>
+    <string name="quitButton">ออก</string>
+    <string name="read">อ่านแล้ว</string>
+    <string name="readReceipts">แจ้งการอ่านข้อความ</string>
+    <string name="readReceiptsDescription">แสดงสถานะการเปิดอ่านสำหรับทุกข้อความที่คุณส่งและรับ</string>
+    <string name="received">ได้รับแล้ว:</string>
+    <string name="recommended">แนะนำ</string>
+    <string name="recoveryPasswordBannerDescription">บันทึกรหัสผ่านการกู้คืนของคุณเพื่อให้แน่ใจว่าคุณจะไม่สูญเสียการเข้าถึงบัญชีของคุณ</string>
+    <string name="recoveryPasswordBannerTitle">บันทึกรหัสผ่านการกู้คืนของคุณ</string>
+    <string name="recoveryPasswordDescription">ใช้รหัสผ่านการกู้คืนของคุณเพื่อโหลดบัญชีของคุณบนอุปกรณ์ใหม่.
+
+บัญชีของคุณจะไม่สามารถกู้คืนได้หากไม่มีรหัสผ่านการกู้คืนของคุณ. ตรวจสอบให้แน่ใจว่ามีการเก็บไว้อย่างปลอดภัยและไม่แบ่งปันให้ใคร.</string>
+    <string name="recoveryPasswordEnter">ป้อนรหัสผ่านสำหรับการกู้คืนของคุณ</string>
+    <string name="recoveryPasswordErrorMessageGeneric">โปรดตรวจสอบรหัสการกู้คืนของคุณและลองอีกครั้ง</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">บางคำในรหัสผ่านการกู้คืนของคุณไม่ถูกต้อง กรุณาตรวจสอบและลองอีกครั้ง</string>
+    <string name="recoveryPasswordErrorMessageShort">รหัสผ่านกู้คืนที่ท่านใส่ยังไม่พอ กรุณาตรวจสอบแล้วลองใหม่อีกครั้ง</string>
+    <string name="recoveryPasswordErrorTitle">Recovery Password ไม่ถูกต้อง</string>
+    <string name="recoveryPasswordExplanation">กรอกรหัสผ่านกู้คืนของคุณเพื่อโหลดบัญชีของคุณ</string>
+    <string name="recoveryPasswordHidePermanently">ซ่อน Recovery Password อย่างถาวร</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">หากไม่มีรหัสผ่านกู้คืน คุณไม่สามารถโหลดบัญชีของคุณในอุปกรณ์ใหม่ได้ <br /><br />เราขอแนะนำอย่างยิ่งให้คุณบันทึกความปลอดภัยของรหัสผ่านกู้คืนของคุณไว้ในที่ปลอดภัย</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">คุณแน่ใจหรือไม่ว่าต้องการซ่อนไว้รหัสผ่านการกู้คืนบนอุปกรณ์นี้อย่างถาวร? ไม่สามารถย้อนกลับได้</string>
+    <string name="recoveryPasswordHideRecoveryPassword">ซ่อน Recovery Password</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">ซ่อนรหัสการกู้คืนของคุณบนอุปกรณ์นี้อย่างถาวร</string>
+    <string name="recoveryPasswordRestoreDescription">ป้อนรหัสผ่านสำหรับการกู้คืนของคุณเพื่อโหลดบัญชีของคุณ หากคุณยังไม่บันทึก คุณสามารถค้นหาในการตั้งค่าแอปของคุณ</string>
+    <string name="recoveryPasswordView">ดูรหัสผ่าน.</string>
+    <string name="recoveryPasswordWarningSendDescription">นี่คือรหัสผ่านกู้คืนของคุณ หากคุณส่งให้คนอื่น พวกเขาจะเข้าถึงบัญชีของคุณได้เต็มที่</string>
+    <string name="redo">ทำซ้ำ</string>
+    <string name="remove">เอาออก</string>
+    <string name="reply">ตอบกลับ</string>
+    <string name="resend">ส่งอีกครั้ง</string>
+    <string name="resolving">กำลังโหลดข้อมูลประเทศ...</string>
+    <string name="restart">รีสตาร์ท</string>
+    <string name="resync">รีซิงค์</string>
+    <string name="retry">ลองอีกครั้ง</string>
     <string name="save">บันทึก</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">ข้อความใหม่</string>
-    <!-- AlbumThumbnailView -->
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="other">%d ข้อความต่อบทสนทนา</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">ลบข้อความเก่าทั้งหมดตอนนี้หรือไม่</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="other">นี่จะตัดการสนทนาทั้งหมดให้สั้นลงเหลือแค่ %d ข้อความล่าสุดโดยทันที</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">ลบ</string>
-    <string name="ApplicationPreferencesActivity_On">เปิด</string>
-    <string name="ApplicationPreferencesActivity_Off">ปิด</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(ภาพ)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(เสียง)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(วิดีโอ)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(ตอบกลับ)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">ไม่พบแอปสำหรับสื่อที่เลือก</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">เพื่อที่จะแนบรูปภาพ วิดีโอ หรือเสียงได้ Session ต้องได้รับอนุญาตให้เข้าถึงที่เก็บข้อมูล แต่คำขอนั้นถูกปฏิเสธอย่างถาวร กรุณาไปที่เมนูตั้งค่าแอป เลือก \"การอนุญาต\" และเปิดใช้งาน \"ที่เก็บข้อมูล\"</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">เพื่อที่จะถ่ายรูปได้ Session ต้องได้รับอนุญาตให้เข้าถึงกล้อง แต่คำขอนั้นถูกปฏิเสธอย่างถาวร กรุณาไปที่เมนูตั้งค่าแอป เลือก \"การอนุญาต\" และเปิดใช้งาน \"กล้อง\"</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">เกิดข้อผิดพลาดในการเล่นเสียง</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">วันนี้</string>
-    <string name="BucketedThreadMedia_Yesterday">เมื่อวานนี้</string>
-    <string name="BucketedThreadMedia_This_week">สัปดาห์นี้</string>
-    <string name="BucketedThreadMedia_This_month">เดือนนี้</string>
-    <!-- CommunicationActions -->
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">กลุ่ม</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">การส่งล้มเหลว แตะเพื่อดูรายละเอียด</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">ได้รับข้อความแลกเปลี่ยนคีย์ แตะเพื่อประมวลผล</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">การส่งล้มเหลว แตะเพื่อกลับไปใช้วิธีที่ไม่ปลอดภัยแทน</string>
-    <string name="ConversationItem_unable_to_open_media">ไม่พบแอปที่สามารถเปิดสื่อนี้</string>
-    <string name="ConversationItem_copied_text">คัดลอกแล้ว %s</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">เพิ่มไฟล์แนบ</string>
-    <string name="ConversationActivity_select_contact_info">เลือกข้อมูลผู้ติดต่อ</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">ขออภัย พบปัญหาในการตั้งค่าไฟล์แนบของคุณ</string>
-    <string name="ConversationActivity_invalid_recipient">ผู้รับไม่ถูกต้อง</string>
-    <string name="ConversationActivity_added_to_home_screen">เพิ่มไปยังหน้าจอหลักแล้ว</string>
-    <string name="ConversationActivity_leave_group">ออกจากกลุ่มหรือไม่</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">คุณแน่ใจหรือไหมว่าต้องการออกจากกลุ่มนี้</string>
-    <string name="ConversationActivity_error_leaving_group">เกิดข้อผิดพลาดระหว่างออกจากกลุ่ม</string>
-    <string name="ConversationActivity_unblock_this_contact_question">เลิกปิดกั้นผู้ติดต่อนี้หรือไม่</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">คุณจะกลับมารับข้อความและสายโทรเข้าจากผู้ติดต่อนี้ได้อีก</string>
-    <string name="ConversationActivity_unblock">เลิกปิดกั้น</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">ไฟล์แนบมีขนาดใหญ่เกินกำหนดสำหรับชนิดของข้อความที่คุณกำลังจะส่ง</string>
-    <string name="ConversationActivity_unable_to_record_audio">บันทึกเสียงไม่ได้</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">อุปกรณ์ของคุณไม่มีแอปที่สามารถจัดการกับลิงก์นี้ได้</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">เพื่อจะส่งข้อความเสียง ต้องอนุญาตให้ Session เข้าถึงไมโครโฟนของคุณ</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">เพื่อจะส่งข้อความเสียงได้ Session ต้องได้รับอนุญาตให้เข้าถึงไมโครโฟน แต่คำขอนั้นถูกปฏิเสธอย่างถาวร กรุณาไปที่เมนูตั้งค่าแอป เลือก \"การอนุญาต\" และเปิดใช้งาน \"ไมโครโฟน\"</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">อนุญาต Session ให้ใช้กล้องเพื่อถ่ายรูปและวิดีโอ</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">เพื่อที่จะถ่ายรูปหรือวิดีโอได้ Session ต้องได้รับอนุญาตให้เข้าถึงกล้อง แต่คำขอนั้นถูกปฏิเสธอย่างถาวร กรุณาไปที่เมนูตั้งค่าแอป เลือก \"การอนุญาต\" และเปิดใช้งาน \"กล้อง\"</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">Session ต้องได้รับอนุญาตให้เข้าถึงกล้องเพื่อถ่ายรูปและวิดีโอ</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="other">ลบข้อความที่เลือกหรือไม่</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="other">นี่จะลบ %1$d ข้อความที่ถูกเลือกทั้งหมด อย่างถาวร</item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">บันทึกลงที่เก็บข้อมูลหรือไม่</string>
-    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-        <item quantity="other">การบันทึกสื่อทั้งหมด %1$d รายการลงในที่เก็บข้อมูล จะอนุญาตให้แอปอื่นในอุปกรณ์ของคุณเข้าถึงสื่อเหล่านี้ได้ด้วย\n\nดำเนินการต่อหรือไม่</item>
-    </plurals>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="other">เกิดข้อผิดพลาดระหว่างบันทึกไฟล์แนบลงที่เก็บข้อมูล</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="other">บันทึกไฟล์แนบแล้ว %1$d</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">รูปโปรไฟล์</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">ใช้ค่าที่กำหนดเอง: %s</string>
-    <string name="CustomDefaultPreference_using_default">ใช้ค่าเริ่มต้น: %s</string>
-    <string name="CustomDefaultPreference_none">ไม่มี</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">เดี๋ยวนี้</string>
-    <string name="DateUtils_minutes_ago">%d นาที</string>
-    <string name="DateUtils_today">วันนี้</string>
-    <string name="DateUtils_yesterday">เมื่อวานนี้</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">วันนี้</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">ไฟล์ที่ไม่รู้จัก</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">เกิดข้อผิดพลาดระหว่างการดึงภาพ GIF ความละเอียดสูง</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_gifs">GIF</string>
-    <string name="GiphyFragmentPagerAdapter_stickers">สติกเกอร์</string>
-    <!-- CropImageActivity -->
-    <string name="CropImageActivity_profile_avatar">อวตาร</string>
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">แตะค้างไว้เพื่อบันทึกข้อความเสียง ปล่อยเพื่อส่ง</string>
-    <!-- LongMessageActivity -->
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">สื่อ</string>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_title">
-        <item quantity="other">ลบข้อความที่เลือกหรือไม่</item>
-    </plurals>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_message">
-        <item quantity="other">นี่จะลบ %1$d ข้อความที่ถูกเลือกทั้งหมด อย่างถาวร</item>
-    </plurals>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">กำลังลบ</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">กำลังลบข้อความ...</string>
-    <string name="MediaOverviewActivity_Documents">เอกสาร</string>
-    <string name="MediaOverviewActivity_Select_all">เลือกทั้งหมด</string>
-    <string name="MediaOverviewActivity_collecting_attachments">รวบรวมสิ่งแนบ...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">ข้อความมัลติมีเดีย</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">กำลังดาวน์โหลดข้อความ MMS</string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">เกิดข้อผิดพลาดระหว่างดาวน์โหลด MMS แตะเพื่อลองใหม่</string>
-    <!-- MediaPickerActivity -->
-    <!-- MediaSendActivity -->
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">สื่อทั้งหมด</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">ได้รับข้อความที่เข้ารหัสด้วย Session รุ่นเก่าที่ไม่รองรับอีกต่อไปแล้ว โปรดขอให้ผู้ส่งอัพเดตแอปเป็นเวอร์ชันล่าสุดและส่งข้อความอีกครั้ง</string>
-    <string name="MessageRecord_left_group">คุณได้ออกจากกลุ่ม</string>
-    <string name="MessageRecord_you_updated_group">คุณได้อัพเดตกลุ่ม</string>
-    <string name="MessageRecord_s_updated_group">%s ได้อัพเดตกลุ่ม</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">ข้อความที่ลบตัวเอง</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">ข้อความของคุณจะไม่หมดอายุ</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">ข้อความที่ถูกส่งและได้รับในการสนทนานี้จะลบตัวเองไป %s หลังจากที่คู่สนทนาเห็นข้อความแล้ว</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">ใส่วลีรหัสผ่าน</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">ปิดกั้นผู้ติดต่อนี้หรือไม่</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">คุณจะไม่ได้รับข้อความและสายโทรเข้าจากผู้ติดต่อนี้อีกต่อไป</string>
-    <string name="RecipientPreferenceActivity_block">ปิดกั้น</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">เลิกปิดกั้นผู้ติดต่อนี้หรือไม่</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">คุณจะกลับมารับข้อความและสายโทรเข้าจากผู้ติดต่อนี้ได้อีก</string>
-    <string name="RecipientPreferenceActivity_unblock">เลิกปิดกั้น</string>
-    <!-- Slide -->
-    <string name="Slide_image">ภาพ</string>
-    <string name="Slide_audio">เสียง</string>
-    <string name="Slide_video">วิดีโอ</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">ได้รับข้อความแลกเปลี่ยน
-        คีย์ที่เสียหาย
-    </string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">ได้รับข้อความที่มีรหัสความปลอดภัยชุดใหม่ แตะเพื่อประมวลผลและแสดง</string>
-    <string name="SmsMessageRecord_secure_session_reset">คุณได้ทำการรีเซ็ตเซสชันที่ปลอดภัย</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%s ได้ทำการรีเซ็ตเซสชันที่ปลอดภัย</string>
-    <string name="SmsMessageRecord_duplicate_message">ข้อความซ้ำ</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">อัพเดตกลุ่มแล้ว</string>
-    <string name="ThreadRecord_left_the_group">ออกจากกลุ่มแล้ว</string>
-    <string name="ThreadRecord_secure_session_reset">เซสชันที่ปลอดภัยถูกรีเซ็ตแล้ว</string>
-    <string name="ThreadRecord_draft">ร่าง:</string>
-    <string name="ThreadRecord_called">คุณได้โทรหา</string>
-    <string name="ThreadRecord_called_you">โทรหาคุณ</string>
-    <string name="ThreadRecord_missed_call">สายที่ไม่ได้รับ</string>
-    <string name="ThreadRecord_media_message">ข้อความสื่อ</string>
-    <string name="ThreadRecord_s_is_on_signal">%s ใช้งาน Session</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">ข้อความที่ลบตัวเองถูกปิดใช้งานแล้ว</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">ตั้งเวลาข้อความที่ลบตัวเองไว้ที่ %s</string>
-    <string name="ThreadRecord_safety_number_changed">รหัสความปลอดภัยเปลี่ยนแล้ว</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">มีการเปลี่ยนแปลงรหัสความปลอดภัยระหว่างคุณกับ %s</string>
-    <string name="ThreadRecord_you_marked_verified">คุณถูกทำเครื่องหมายว่าถูกยืนยันแล้ว</string>
-    <string name="ThreadRecord_you_marked_unverified">คุณถูกทำเครื่องหมายว่ายังไม่ได้ยืนยัน</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">อัพเดต Session</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">Session เวอร์ชันใหม่มาแล้ว แตะเพื่ออัพเดต</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">ข้อความที่เข้ารหัสมีความผิดปกติ</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">ข้อความถูกเข้ารหัสสำหรับเซสชันที่ไม่มีอยู่</string>
-    <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">ข้อความ MMS ที่เข้ารหัสมีความผิดปกติ</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">ข้อความ MMS ถูกเข้ารหัสสำหรับเซสชันที่ไม่มีอยู่</string>
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">ปิดเสียงการแจ้งเตือน</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">แตะเพื่อเปิด</string>
-    <string name="KeyCachingService_passphrase_cached">Session ถูกปลดล็อก</string>
-    <string name="KeyCachingService_lock">ล็อก Session</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">คุณ</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">ชนิดสื่อที่ไม่รองรับ</string>
-    <string name="MediaPreviewActivity_draft">ร่าง</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">ไม่สามารถบันทึกลงที่เก็บข้อมูลภายนอกได้ หากไม่ได้รับอนุญาต</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">ลบข้อความหรือไม่</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">นี่จะเป็นการลบข้อความนี้โดยถาวร</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">มี %1$d ข้อความใหม่ใน %2$d การสนทนา</string>
-    <string name="MessageNotifier_most_recent_from_s">ล่าสุดจาก: %1$s</string>
-    <string name="MessageNotifier_locked_message">ข้อความที่ถูกล็อก</string>
-    <string name="MessageNotifier_message_delivery_failed">การส่งข้อความล้มเหลว</string>
-    <string name="MessageNotifier_failed_to_deliver_message">ส่งข้อความล้มเหลว</string>
-    <string name="MessageNotifier_error_delivering_message">เกิดข้อผิดพลาดระหว่างส่งข้อความ</string>
-    <string name="MessageNotifier_mark_all_as_read">ทำเครื่องหมายทั้งหมดว่าอ่านแล้ว</string>
-    <string name="MessageNotifier_mark_read">ทำเครื่องหมายว่าอ่านแล้ว</string>
-    <string name="MessageNotifier_reply">ตอบกลับ</string>
-    <string name="MessageNotifier_pending_signal_messages">ข้อความ Session ที่รอดำเนินการ</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">คุณมีข้อความ Session ที่รอดำเนินการอยู่ แตะเพื่อเปิดและดึงข้อความ</string>
-    <string name="MessageNotifier_unknown_contact_message">ผู้ติดต่อ</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">ค่าเริ่มต้น</string>
-    <string name="NotificationChannel_calls">การโทร</string>
-    <string name="NotificationChannel_failures">ล้มเหลว</string>
-    <string name="NotificationChannel_backups">การสำรองข้อมูล</string>
-    <string name="NotificationChannel_locked_status">สถานะล๊อค</string>
-    <string name="NotificationChannel_app_updates">การอัปเดตแอป</string>
-    <string name="NotificationChannel_other">ที่อื่น</string>
-    <string name="NotificationChannel_group_messages">ข้อความ</string>
-    <string name="NotificationChannel_missing_display_name">ไม่ทราบ</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">การตอบด่วนใช้ไม่ได้ถ้า Session ถูกล็อกอยู่</string>
-    <string name="QuickResponseService_problem_sending_message">เกิดปัญหาในการส่งข้อความ</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">บันทึกไปยัง %s</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">ค้นหา</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">ชอร์ตคัทใช้ไม่ได้</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_new_message">ข้อความใหม่</string>
-    <!-- TransferControlView -->
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">เกิดข้อผิดพลาดระหว่างเล่นวิดีโอ</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">เสียง</string>
-    <string name="attachment_type_selector__audio_description">เสียง</string>
-    <string name="attachment_type_selector__contact">ผู้ติดต่อ</string>
-    <string name="attachment_type_selector__contact_description">ผู้ติดต่อ</string>
-    <string name="attachment_type_selector__camera">กล้อง</string>
-    <string name="attachment_type_selector__camera_description">กล้อง</string>
-    <string name="attachment_type_selector__location">ตำแหน่งที่ตั้ง</string>
-    <string name="attachment_type_selector__location_description">ตำแหน่งที่ตั้ง</string>
-    <string name="attachment_type_selector__gallery_description">ภาพหรือวิดีโอ</string>
-    <string name="attachment_type_selector__file_description">ไฟล์</string>
-    <string name="attachment_type_selector__gallery">คลังภาพ</string>
-    <string name="attachment_type_selector__file">ไฟล์</string>
-    <string name="attachment_type_selector__drawer_description">สลับแถบเมนูไฟล์แนบ</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">กำลังโหลดผู้ติดต่อ…</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">ส่ง</string>
-    <string name="conversation_activity__compose_description">การสร้างข้อความ</string>
-    <string name="conversation_activity__emoji_toggle_description">สลับแป้นพิมพ์อีโมจิ</string>
-    <string name="conversation_activity__attachment_thumbnail">รูปย่อของไฟล์แนบ</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">สลับแถบเมนูไฟล์แนบกล้องถ่ายภาพแบบเร็ว</string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">บันทึกและส่งไฟล์แนบแบบเสียง</string>
-    <string name="conversation_activity__enable_signal_for_sms">เปิดใช้งาน Session สำหรับ SMS</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__cancel">ยกเลิก</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">ข้อความสื่อ</string>
-    <string name="conversation_item__secure_message_description">ข้อความที่ปลอดภัย</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">การส่งล้มเหลว</string>
-    <string name="conversation_item_sent__pending_approval_description">รออนุมัติ</string>
-    <string name="conversation_item_sent__delivered_description">ส่งแล้ว</string>
-    <string name="conversation_item_sent__message_read">ข้อความถูกอ่านแล้ว</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">ภาพของผู้ติดต่อ</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">เล่น</string>
-    <string name="audio_view__pause_accessibility_description">หยุดชั่วคราว</string>
-    <string name="audio_view__download_accessibility_description">ดาวน์โหลด</string>
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">เสียง</string>
-    <string name="QuoteView_video">วิดีโอ</string>
-    <string name="QuoteView_photo">รูปภาพ</string>
-    <string name="QuoteView_you">คุณ</string>
-    <string name="QuoteView_original_missing">ไม่พบข้อความดั้งเดิม</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">เลื่อนลงด้านล่างสุด</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">ค้นหาภาพ GIF และสติกเกอร์</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">ไม่พบสิ่งใด</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">ดูการสนทนาแบบเต็ม</string>
-    <string name="load_more_header__loading">กำลังโหลด</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">ไม่มีสื่อ</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">ส่งใหม่</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">ปิดกั้น</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">มีปัญหาบางประการที่ต้องการให้คุณพิจารณา</string>
-    <string name="message_details_header__sent">ส่งแล้ว</string>
-    <string name="message_details_header__received">ได้รับแล้ว</string>
-    <string name="message_details_header__disappears">ลบตัวเอง</string>
-    <string name="message_details_header__via">ผ่าน</string>
-    <string name="message_details_header__to">ถึง:</string>
-    <string name="message_details_header__from">จาก:</string>
-    <string name="message_details_header__with">กับ:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">สร้างวลีรหัสผ่าน</string>
-    <string name="AndroidManifest__select_contacts">เลือกผู้ติดต่อ</string>
-    <string name="AndroidManifest__media_preview">ดูตัวอย่างสื่อ</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">ใช้ค่าเริ่มต้น</string>
-    <string name="arrays__use_custom">ใช้ค่าที่กำหนดเอง</string>
-    <string name="arrays__mute_for_one_hour">ปิดเสียง 1 ชั่วโมง</string>
-    <string name="arrays__mute_for_two_hours">ปิดเสียง 2 ชั่วโมง</string>
-    <string name="arrays__mute_for_one_day">ปิดเสียง 1 วัน</string>
-    <string name="arrays__mute_for_seven_days">ปิดเสียง 7 วัน</string>
-    <string name="arrays__mute_for_one_year">ปิดเสียง 1 ปี</string>
-    <string name="arrays__settings_default">การตั้งค่าเริ่มต้น</string>
-    <string name="arrays__enabled">เปิดใช้งานแล้ว</string>
-    <string name="arrays__disabled">ปิดใช้งานแล้ว</string>
-    <string name="arrays__name_and_message">ชื่อและข้อความ</string>
-    <string name="arrays__name_only">ชื่อเท่านั้น</string>
-    <string name="arrays__no_name_or_message">ไม่มีชื่อหรือข้อความ</string>
-    <string name="arrays__images">ภาพ</string>
-    <string name="arrays__audio">เสียง</string>
-    <string name="arrays__video">วิดีโอ</string>
-    <string name="arrays__documents">เอกสาร</string>
-    <string name="arrays__small">เล็ก</string>
-    <string name="arrays__normal">ปกติ</string>
-    <string name="arrays__large">ใหญ่</string>
-    <string name="arrays__extra_large">ใหญ่พิเศษ</string>
-    <string name="arrays__default">ค่าเริ่มต้น</string>
-    <string name="arrays__high">สูง</string>
-    <string name="arrays__max">สูงสุด</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="other">%d ชั่วโมง</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">ป้อนคีย์เพื่อส่ง</string>
-    <string name="preferences__screen_security">ความปลอดภัยหน้าจอ</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">ปิดกั้นการจับภาพหน้าจอในรายการล่าสุดและภายในแอป</string>
-    <string name="preferences__notifications">การแจ้งเตือน</string>
-    <string name="preferences__led_color">สี LED</string>
-    <string name="preferences__led_color_unknown">ไม่ทราบ</string>
-    <string name="preferences__pref_led_blink_title">รูปแบบการกระพริบไฟ LED</string>
-    <string name="preferences__sound">เสียง</string>
-    <string name="preferences__silent">ไม่ส่งเสียง</string>
-    <string name="preferences__repeat_alerts">ทวนเสียงเตือน</string>
-    <string name="preferences__never">ไม่เลย</string>
-    <string name="preferences__one_time">หนึ่งครั้ง</string>
-    <string name="preferences__two_times">สองครั้ง</string>
-    <string name="preferences__three_times">สามครั้ง</string>
-    <string name="preferences__five_times">ห้าครั้ง</string>
-    <string name="preferences__ten_times">สิบครั้ง</string>
-    <string name="preferences__vibrate">สั่น</string>
-    <string name="preferences__green">เขียว</string>
-    <string name="preferences__red">แดง</string>
-    <string name="preferences__blue">น้ำเงิน</string>
-    <string name="preferences__orange">ส้ม</string>
-    <string name="preferences__cyan">ฟ้าอมเขียว</string>
-    <string name="preferences__magenta">แดงอมม่วง</string>
-    <string name="preferences__white">ขาว</string>
-    <string name="preferences__none">ไม่มี</string>
-    <string name="preferences__fast">เร็ว</string>
-    <string name="preferences__normal">ปกติ</string>
-    <string name="preferences__slow">ช้า</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">ลบข้อความเก่าโดยอัตโนมัติเมื่อการสนทนายาวเกินกว่าความยาวที่กำหนด</string>
-    <string name="preferences__delete_old_messages">ลบข้อความเก่า</string>
-    <string name="preferences__conversation_length_limit">ขีดจำกัดความยาวของการสนทนา</string>
-    <string name="preferences__trim_all_conversations_now">ตัดการสนทนาทั้งหมดให้สั้นลงเดี๋ยวนี้</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">ไล่ดูการสนทนาทั้งหมดและบังคับใช้ขีดจำกัดความยาวของการสนทนา</string>
-    <string name="preferences__default">ค่าเริ่มต้น</string>
-    <string name="preferences__incognito_keyboard">แป้นพิมพ์แบบลับ</string>
-    <string name="preferences__read_receipts">ใบตอบรับเมื่ออ่าน</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">ร้องขอแป้นพิมพ์ให้ปิดใช้งานการเรียนรู้การแนะนำคำ</string>
-    <string name="preferences__light_theme">สว่าง</string>
-    <string name="preferences__dark_theme">มืด</string>
-    <string name="preferences_chats__message_trimming">ตัดข้อความให้สั้นลง</string>
-    <string name="preferences_advanced__use_system_emoji">ใช้อีโมจิของระบบ</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">ปิดใช้งานการรองรับอีโมจิของ Session เอง</string>
-    <string name="preferences_chats__chats">แชต</string>
-    <string name="preferences_notifications__messages">ข้อความ</string>
-    <string name="preferences_notifications__in_chat_sounds">เสียงภายในแชต</string>
-    <string name="preferences_notifications__priority">ความสำคัญ</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">ข้อความใหม่ถึง...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">รายละเอียดข้อความ</string>
-    <string name="conversation_context__menu_copy_text">คัดลอกข้อความ</string>
-    <string name="conversation_context__menu_delete_message">ลบข้อความ</string>
-    <string name="conversation_context__menu_resend_message">ส่งข้อความอีกครั้ง</string>
-    <string name="conversation_context__menu_reply_to_message">ตอบกลับข้อความ</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">บันทึกไฟล์แนบ</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">ข้อความที่ลบตัวเอง</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">ข้อความที่กำลังหมดอายุ</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">เลิกปิดเสียง</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">ปิดเสียงการแจ้งเตือน</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">แก้ไขกลุ่ม</string>
-    <string name="conversation__menu_leave_group">ออกจากกลุ่ม</string>
-    <string name="conversation__menu_view_all_media">สื่อทั้งหมด</string>
-    <string name="conversation__menu_add_shortcut">เพิ่มไปยังหน้าจอหลัก</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">ขยายป็อปอัพ</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">ส่ง</string>
-    <string name="conversation_group_options__conversation">สนทนา</string>
-    <string name="conversation_group_options__broadcast">เผยแพร่</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">บันทึก</string>
-    <string name="media_preview__forward_title">ส่งต่อ</string>
-    <string name="media_preview__all_media_title">สื่อทั้งหมด</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">ไม่มีเอกสาร</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">ดูตัวอย่างสื่อ</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">กำลังลบ</string>
-    <string name="trimmer__deleting_old_messages">กำลังลบข้อความเก่า...</string>
-    <string name="trimmer__old_messages_successfully_deleted">ลบข้อความเก่าสำเร็จ</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">ต้องได้รับอนุญาตก่อน</string>
-    <string name="Permissions_continue">ดำเนินการต่อ</string>
-    <string name="Permissions_not_now">ไม่ใช่ตอนนี้</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">การสำรองข้อมูลจะถูกบันทึกไว้ที่ที่เก็บข้อมูลภายนอกและถูกเข้ารหัสด้วยวลีรหัสผ่านด้านล่างนี้ คุณจะต้องใช้วลีรหัสผ่านนี้เพื่อคืนค่าสำรองข้อมูล</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">ฉันได้จดบันทึกวลีรหัสผ่านนี้แล้ว หากจำไม่ได้ ฉันจะไม่สามารถคืนค่าสำรองข้อมูลได้</string>
-    <string name="registration_activity__skip">ข้าม</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">วลีรหัสผ่านของการสำรองข้อมูลไม่ถูกต้อง</string>
-    <string name="BackupDialog_enable_local_backups">เปิดใช้งานการสำรองข้อมูลในเครื่องหรือไม่</string>
-    <string name="BackupDialog_enable_backups">เปิดใช้งานการสำรองข้อมูล</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">โปรดแสดงการยอมรับว่าคุณเข้าใจโดยทำเครื่องหมายที่กล่องกาเครื่องหมายการยืนยัน</string>
-    <string name="BackupDialog_delete_backups">ลบการสำรองข้อมูลหรือไม่</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">ปิดใช้งานและลบการสำรองข้อมูลในเครื่องทั้งหมดหรือไม่</string>
-    <string name="BackupDialog_delete_backups_statement">ลบการสำรองข้อมูล</string>
-    <string name="BackupDialog_copied_to_clipboard">คัดลอกไปยังคลิปบอร์ดแล้ว</string>
-    <string name="LocalBackupJob_creating_backup">กำลังสร้างการสำรองข้อมูล...</string>
-    <string name="ProgressPreference_d_messages_so_far">%d ข้อความจนถึงตอนนี้</string>
-    <string name="BackupUtil_never">ไม่เลย</string>
-    <string name="preferences_app_protection__screen_lock">ล็อกหน้าจอ</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">ล็อกการเข้าถึง Session ด้วยการล็อกหน้าจอของ Android หรือลายนิ้วมือ</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">ล็อกหน้าจอเมื่อไม่มีการใช้งานเกินเวลาที่กำหนด</string>
-    <string name="AppProtectionPreferenceFragment_none">ไม่มี</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+    <string name="saved">บันทึกแล้ว</string>
+    <string name="savedMessages">ข้อความที่บันทึก</string>
+    <string name="saving">กำลังบันทึก...</string>
+    <string name="scan">สแกน</string>
+    <string name="screenSecurity">ความปลอดภัยหน้าจอ</string>
+    <string name="screenshotNotifications">การแจ้งเตือนการบันทึกหน้าจอ</string>
+    <string name="screenshotNotificationsDescription">จำเป็นต้องมีการแจ้งเตือนเมื่อมีผู้ติดต่อแคปหน้าจอของแชทส่วนตัว</string>
+    <string name="screenshotTaken"><b>{name}</b> ได้ถ่ายสกรีนช็อต</string>
+    <string name="search">ค้นหา</string>
+    <string name="searchContacts">ค้นหาผู้ติดต่อ</string>
+    <string name="searchConversation">ค้นหาอะไรในการสนทนา</string>
+    <string name="searchEnter">เขียนที่ค้นหา</string>
+    <string name="searchMatchesNone">ไม่พบข้อมูลเลย</string>
+    <string name="searchMatchesNoneSpecific">ไม่พบข้อมูลเกี่ยวกับ \'{query}</string>
+    <string name="searchMembers">ค้นหาสมาชิก</string>
+    <string name="searchSearching">กำลังค้นหา...</string>
+    <string name="select">เลือก</string>
+    <string name="selectAll">เลือกทั้งหมด</string>
+    <string name="send">ส่ง</string>
+    <string name="sending">กำลังส่ง</string>
+    <string name="sent">ส่งแล้ว:</string>
+    <string name="sessionAppearance">ลักษณะที่ปรากฎ</string>
+    <string name="sessionClearData">ลบข้อมูล</string>
+    <string name="sessionConversations">การสนทนา</string>
+    <string name="sessionHelp">ช่วยเหลือ</string>
+    <string name="sessionInviteAFriend">เชิญเพื่อน</string>
+    <string name="sessionMessageRequests">ข้อความร้องขอ</string>
+    <string name="sessionNotifications">การแจ้งเตือน</string>
+    <string name="sessionPermissions">สิทธิ์</string>
+    <string name="sessionPrivacy">ความเป็นส่วนตัว</string>
+    <string name="sessionRecoveryPassword">Recovery Password</string>
+    <string name="sessionSettings">การตั้งค่า</string>
+    <string name="set">ตั้งค่า</string>
+    <string name="settingsRestartDescription">คุณต้องรีสตาร์ท {app_name} เพื่อใช้งานการตั้งค่าใหม่ของคุณ</string>
+    <string name="share">แบ่งปัน</string>
+    <string name="shareAccountIdDescription">เชิญเพื่อนของคุณมาแชทกับคุณใน Session ด้วยการแชร์ Account ID ของคุณกับพวกเขา</string>
+    <string name="shareAccountIdDescriptionCopied">แบ่งปันกับเพื่อน ๆ ของคุณไม่ว่าพวกเขาจะอยู่ที่ไหนแล้วจึงย้ายการสนทนามาที่นี่</string>
+    <string name="shareExtensionDatabaseError">เกิดปัญหาในการเปิดฐานข้อมูล กรุณารีสตาร์ทแอปพลิเคชันแล้วลองอีกครั้ง</string>
+    <string name="shareToSession">แบ่งปันไปยัง {app_Name}</string>
+    <string name="show">แสดง</string>
+    <string name="showAll">แสดงทั้งหมด</string>
+    <string name="showLess">แสดงน้อยลง</string>
+    <string name="stickers">สติกเกอร์</string>
+    <string name="supportGoTo">ไปที่หน้าการสนับสนุน</string>
+    <string name="theContinue">ไปต่อ</string>
+    <string name="theDefault">ค่าเริ่มต้น</string>
+    <string name="theError">ข้อผิดพลาด</string>
+    <string name="tryAgain">ลองอีกครั้ง</string>
+    <string name="typingIndicators">บ่งชี้การพิมพ์</string>
+    <string name="typingIndicatorsDescription">ดูและแชร์ตัวบ่งชี้การพิมพ์ (...)</string>
+    <string name="undo">เลิกทำ.</string>
+    <string name="unknown">ไม่ทราบ.</string>
+    <string name="updateApp">การอัปเดตแอป</string>
+    <string name="updateDownloaded">การอัปเดตติดตั้งแล้ว คลิกเพื่อเริ่มต้นใหม่.</string>
+    <string name="updateDownloading">กำลังดาวน์โหลดอัปเดต: {percent_loader}%</string>
+    <string name="updateError">ไม่สามารถอัปเดตได้</string>
+    <string name="updateNewVersion">มีเวอร์ชั่นใหม่ของ {app_name} ที่พร้อมให้อัปเดต แตะเพื่ออัปเดต</string>
+    <string name="updateNewVersionDescription">มีเวอร์ชั่นใหม่ของ {app_name} พร้อมใช้งาน</string>
+    <string name="updateReleaseNotes">ไปที่บันทึกประจำรุ่น</string>
+    <string name="updateVersion">เวอร์ชัน {version}.</string>
+    <string name="uploading">กำลังอัปโหลด...</string>
+    <string name="urlCopy">Copy URL</string>
+    <string name="urlOpen">เปิด URL</string>
+    <string name="urlOpenBrowser">สิ่งนี้จะเปิดในเบราว์เซอร์ของคุณ</string>
+    <string name="urlOpenDescription">คุณแน่ใจหรือไม่ว่าต้องการเปิด URL นี้ในเบราว์เซอร์ของคุณ?
+
+{url}</string>
+    <string name="useFastMode">ใช้โหมดเร็ว.</string>
+    <string name="video">วิดีโอ.</string>
+    <string name="videoErrorPlay">เล่นวิดีโอไม่ได้.</string>
+    <string name="view">ดู.</string>
+    <string name="waitFewMinutes">นี่อาจใช้เวลาสักไม่กี่นาที</string>
+    <string name="waitOneMoment">กรุณารอสักครู่...</string>
+    <string name="warning">คำเตือน</string>
+    <string name="window">หน้าต่าง</string>
+    <string name="yes">ใช่</string>
+    <string name="you">คุณ</string>
 </resources>

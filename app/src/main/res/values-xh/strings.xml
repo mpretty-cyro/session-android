@@ -1,315 +1,786 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="yes">Yee</string>
-    <string name="no">Nedda</string>
+    <string name="about">Malunga</string>
+    <string name="accept">Vuma</string>
+    <string name="accountIDCopy">Kopa i i-ID yeAkhawunti</string>
+    <string name="accountIdCopied">Iakhawunti ye-ID ikopiwe</string>
+    <string name="accountIdCopyDescription">Kopa I-ID ye-akhawunti yakho uze uyithumele kubahlobo bakho ukuze bakuthumele umyalezo.</string>
+    <string name="accountIdEnter">Ngenisa i-ID yeAkhawunti</string>
+    <string name="accountIdErrorInvalid">Le-ID ye-Akhawunti ayisebenzi. Nceda ujonge uze uzame kwakhona.</string>
+    <string name="accountIdOrOnsEnter">Ngenisa i-ID yeAkhawunti okanye i-ONS</string>
+    <string name="accountIdOrOnsInvite">Mema i-akhawunti yesazisi okanye i-ONS</string>
+    <string name="accountIdShare">Molo, bendisebenzisa i-{app_name} ukuncokola ngokupheleleyo ngokukhuselekileyo. Yiza ujoyine nam! ID yami yeAkhawunti ngu
+
+{account_id}
+
+Khuphela kwi {download_url}</string>
+    <string name="accountIdYours">I-Account ID yakho</string>
+    <string name="accountIdYoursDescription">Le yi-ID yakho ye-Akhawunti. Abanye abasebenzisi banokuyiskena ukuqalisa incoko nawe.</string>
+    <string name="actualSize">Ubukhulu Banga</string>
+    <string name="add">Yongeza</string>
+    <string name="adminCannotBeRemoved">Abaphathi abanakususwa.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name} <\/b> kunye <b>{count} abanye abantu <\/b> banyuselwe kubu-Admin.</string>
+    <string name="adminPromote">Phakamisa Abalawuli</string>
+    <string name="adminPromoteDescription">Uqinisekile ukuba ufuna ukunyusa <b>{name}</b> kube yintloko? Abalawuli abanakususwa.</string>
+    <string name="adminPromoteMoreDescription">Uqinisekile ukuba ufuna ukunyusa <b>{name}</b> n <b>{count} abanye</b> kube yintloko? Abalawuli abanakususwa.</string>
+    <string name="adminPromoteToAdmin">Phakamisa ku-Admin</string>
+    <string name="adminPromoteTwoDescription">Uqinisekile ukuba ufuna ukunyusa <b>{name}</b> n <b>{other_name}</b> kube yintloko? Abalawuli abanakususwa.</string>
+    <string name="adminPromotedToAdmin"><b>{name} <\/b> inyuselwe kubu-Admin.</string>
+    <string name="adminPromotionFailed">Ukuphakanyiswa komlawuli kuhlulekile</string>
+    <string name="adminPromotionFailedDescription">Koyekile ukukhuthaza {name} ku {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMany">Koyekile ukukhuthaza {name} kunye {count} nabanye ku {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMore">Koyekile ukukhuthaza {name} kunye {other_name} ku {group_name}</string>
+    <string name="adminPromotionSent">Ukuphakanyiswa komlawuli kuthunyelwe</string>
+    <string name="adminRemove">Susa ulawulo</string>
+    <string name="adminRemoveAsAdmin">Susa njenge-Admin</string>
+    <string name="adminRemoveCommunityNone">Akukho balawuli kwi-Community.</string>
+    <string name="adminRemoveFailed">Koyekile ukususa {name} njenge Admin.</string>
+    <string name="adminRemovedUser"><b>{name} <\/b> ikhutshelwe ngaphandle kwindawo ye-Admin.</string>
+    <string name="adminSendingPromotion">Ukuthumela ukuqina komlawuli</string>
+    <string name="adminSettings">Izilungiselelo zabaAdmin</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name} <\/b> kunye <b>{other_name} <\/b> banyuselwe kubu-Admin.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">Ogama lingaziwayo</string>
+    <string name="appearanceAutoDarkMode">Imowudi emnyama ngokuzenzekelayo</string>
+    <string name="appearanceHideMenuBar">Fihla iiMenyu Bar</string>
+    <string name="appearanceLanguage">Ulwimi</string>
+    <string name="appearanceLanguageDescription">Khetha useto lolwimi lwakho lwe-{app_name}. {app_name} iya kuqalisa kwakhona xa utshintsha useto lolwimi lwakho.</string>
+    <string name="appearancePreview1">Unjani?</string>
+    <string name="appearancePreview2">Ndiyaphila enkosi, wena?</string>
+    <string name="appearancePreview3">Ndiyaphila, enkosi.</string>
+    <string name="appearancePrimaryColor">Umbala Oyingundoqo</string>
+    <string name="appearanceThemes">Imixholo</string>
+    <string name="appearanceThemesClassicDark">Ithem yeClassic Mnyama</string>
+    <string name="appearanceThemesClassicLight">Classic Light</string>
+    <string name="appearanceThemesOceanDark">Ocean Dark</string>
+    <string name="appearanceThemesOceanLight">Ocean Light</string>
+    <string name="appearanceZoom">Zoom</string>
+    <string name="appearanceZoomIn">Zoom In</string>
+    <string name="appearanceZoomOut">Zoom Out</string>
+    <string name="attachment">Isihombiso</string>
+    <string name="attachmentsAdd">Gatako ekigatiddwako</string>
+    <string name="attachmentsAlbumUnnamed">Ialbhamu engachazwanga</string>
+    <string name="attachmentsAutoDownload">Khuphela ngokuzenzekelayo izinto ezincamathiselweyo</string>
+    <string name="attachmentsAutoDownloadDescription">Khuphela ngokuzenzekelayo imidiya kunye neefayile ezivela kule ngxoxo.</string>
+    <string name="attachmentsAutoDownloadModalDescription">Ungathanda ukulayisha yonke ifayile isuka kwi-<b>{conversation_name}?</b></string>
+    <string name="attachmentsAutoDownloadModalTitle">Ukukhuphela ngokuzenzekelayo</string>
+    <string name="attachmentsClearAll">Cacisa Zonke Izincamathiselwa</string>
+    <string name="attachmentsClearAllDescription">Uqinisekile ukuba ufuna ukucima onke amazibuko? Imilayezo enezibuko nayo iyakucinywa.</string>
+    <string name="attachmentsClickToDownload">Cofa ukuze ulehlise {file_type}</string>
+    <string name="attachmentsCollapseOptions">Skrolela ezantsi ukhetho lwezinto ezisecaleni</string>
+    <string name="attachmentsCollecting">Qokelela izilungiso...</string>
+    <string name="attachmentsDownload">Khuphela unyathelo</string>
+    <string name="attachmentsDuration">Ixesha:</string>
+    <string name="attachmentsErrorLoad">Impazamo yokufaka ifayile</string>
+    <string name="attachmentsErrorNoApp">Andikwazi ukufumana usetyenziso rhoqo sele ukhetha imidiya.</string>
+    <string name="attachmentsErrorNotSupported">Uhlobo lwefayili aluxhaswanga.</string>
+    <string name="attachmentsErrorNumber">Akukho kubanakho ukuthumela ngaphezu kweefayile ezingama-32 zemifanekiso kunye nevidiyo ngaxeshanye.</string>
+    <string name="attachmentsErrorOpen">Ayikwazi ukuvula ifayili.</string>
+    <string name="attachmentsErrorSending">Impazamo yokuthumela ifayile</string>
+    <string name="attachmentsErrorSeparate">Nceda uthumele iifayile njengeemiyalezo ezahlukileyo.</string>
+    <string name="attachmentsErrorSize">Iifayile mazibe ngaphantsi kwe-10MB</string>
+    <string name="attachmentsErrorTypes">Ayinakusetyenziswa imifanekiso kunye iividiyo nezinye iindidi zeefayile. Zama ukuthumela ezinye iifayile kwinyaniseso elahlukileyo.</string>
+    <string name="attachmentsExpired">Isihombiso siphelelwe lixesha</string>
+    <string name="attachmentsFileId">ID Yefayile:</string>
+    <string name="attachmentsFileSize">Ubukhulu beFayile:</string>
+    <string name="attachmentsFileType">Uhlobo lweFayile:</string>
+    <string name="attachmentsFilesEmpty">Awunazo zifayile kule ncoko.</string>
+    <string name="attachmentsImageErrorMetadata">Akukho kubanakho ukususwa kwemethadatha kwifayile.</string>
+    <string name="attachmentsLoadingNewer">Ukulayisha iMidhiya entsha...</string>
+    <string name="attachmentsLoadingNewerFiles">Ukulayisha iifayile ezintsha...</string>
+    <string name="attachmentsLoadingOlder">Ukulayisha iMidhiya eyindala...</string>
+    <string name="attachmentsLoadingOlderFiles">Ukulayisha iifayile ezindala...</string>
+    <string name="attachmentsMedia">{name} ngo-{date_time}</string>
+    <string name="attachmentsMediaEmpty">Awunayo imidiya kule ncoko.</string>
+    <string name="attachmentsMediaSaved">Imidiya igciniwe ngu{name}</string>
+    <string name="attachmentsMoveAndScale">Shukuma kwaye Yilinganise</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} Isiphumo</string>
+    <string name="attachmentsResolution">Isisombululo:</string>
+    <string name="attachmentsSaveError">Akukho kubanakho ukugcinwa kwefayile.</string>
+    <string name="attachmentsTapToDownload">Tap to download {file_type}</string>
+    <string name="attachmentsThisMonth">Eli Nyanga</string>
+    <string name="attachmentsWarning">Izihombiso ogcina zona zinokufikelelwa ngezinye iinkqubo kwi sixhobo sakho.</string>
+    <string name="audio">Udiyo</string>
+    <string name="audioNoInput">Akukho kufakwa kweaudiyo okufunyenweyo</string>
+    <string name="audioNoOutput">Akukho kuputhwa kweaudiyo okufunyenweyo</string>
+    <string name="audioUnableToPlay">Ayikwazi ukudlala ifayile yeaudio.</string>
+    <string name="audioUnableToRecord">Akukho kubanakho ukubamba isandi.</string>
+    <string name="authenticateFailed">Ukungelelanisa akwenzekanga</string>
+    <string name="authenticateFailedTooManyAttempts">Imizamo eninzi yokulinganisa iyasilela. Nceda uzame kwakhona kamva.</string>
+    <string name="authenticateNotAccessed">Ubhaliso alukhange lufumaneke.</string>
+    <string name="authenticateToOpen">Qinisekisa ukuvula {app_name}.</string>
+    <string name="back">Emuva</string>
+    <string name="banDeleteAll">Vimba kwaye Ucime Konke</string>
+    <string name="banErrorFailed">Uvimbelo aluphumelelanga</string>
+    <string name="banUnbanErrorFailed">Ukususwa kwesirhoxo akuphumelelanga</string>
+    <string name="banUnbanUser">Susa umsebenzisi osusiweyo</string>
+    <string name="banUnbanUserUnbanned">Umsebenzisi orhoxisiweyo</string>
+    <string name="banUser">Vimba Umsebenzisi</string>
+    <string name="banUserBanned">Umsebenzisi urhoxisiwe</string>
+    <string name="block">Zziyiiza</string>
+    <string name="blockBlockedDescription">Susa lo qhakamshelwano ukuze uthumele umyalezo.</string>
+    <string name="blockBlockedNone">Akukho qhagamshela okubhlokiweyo</string>
+    <string name="blockBlockedUser">Uvimbile {name}</string>
+    <string name="blockDescription">Uqinisekile ukuba ufuna ukuzivimba <b>{name}?</b> Abasebenzisi abavalweyo abanakukuthumela izicelo zemiyalezo, izimemo zeqela okanye bakufowunele.</string>
+    <string name="blockUnblock">Susa ukuvalela</string>
+    <string name="blockUnblockName">Uqinisekile ukuba ufuna ukuvula {name}?</string>
+    <string name="blockUnblockNameMultiple">Uqinisekile ukuba ufuna ukuvula {name} n {count} abanye?</string>
+    <string name="blockUnblockNameTwo">Uqinisekile ukuba ufuna ukuvula {name} n 1 omnye?</string>
+    <string name="blockUnblockedUser">Isusiwe {name}</string>
+    <string name="call">Essimu</string>
+    <string name="callsCalledYou">{name} ikfonile kuwe</string>
+    <string name="callsCannotStart">Awungekhe uqale umnxeba omtsha. Gqibezela umnxeba wakho wokuqala kuqala.</string>
+    <string name="callsConnecting">Kuye kuqhagamishelwe...</string>
+    <string name="callsEnd">Gqibezela ucingo</string>
+    <string name="callsEnded">Ukuya Phelile</string>
+    <string name="callsErrorAnswer">Koyekile ukuphendula umnxeba</string>
+    <string name="callsErrorStart">Koyekile ukuqala umnxeba</string>
+    <string name="callsInProgress">Ukutsalela kusenzeka</string>
+    <string name="callsIncoming">Ifowuni esIncoming evela ku {name}</string>
+    <string name="callsIncomingUnknown">Ifowuni esIncoming</string>
+    <string name="callsMissed">Ifowuni ephosiwe</string>
+    <string name="callsMissedCallFrom">Ifowuni ephosiwe ngo {name}</string>
+    <string name="callsNotificationsRequired">Iifowuni zeSandi neeVidiyo zifuna izaziso ukuba zivulwe kwizicwangciso zenkqubo yezixhobo zakho. </string>
+    <string name="callsPermissionsRequired">Ufunwa Iimvume Zetsalelo</string>
+    <string name="callsPermissionsRequiredDescription">Ungavula imvume ethi \"Voice and Video Calls\" kwi-Privacy Settings.</string>
+    <string name="callsReconnecting">Ukuqhagamshelanisa kwakhona</string>
+    <string name="callsRinging">Kuyaqhosha...</string>
+    <string name="callsSessionCall">Umnxeba we-Session</string>
+    <string name="callsSettings">Iitsalela (Beta)</string>
+    <string name="callsVoiceAndVideo">Iifowuni zeSandi neeVidiyo</string>
+    <string name="callsVoiceAndVideoBeta">Iifowuni zeSandi neeVidiyo (Beta)</string>
+    <string name="callsVoiceAndVideoModalDescription">I-IP yakho iyabonakala komnxibelele wakho nakwiOxen Foundation Server ngelixa usebenzisa i-beta calls.</string>
+    <string name="callsVoiceAndVideoToggleDescription">Vumela i-voice ne-video calls ukuba zithumeletyayanayo nabanye abasebenzisi</string>
+    <string name="callsYouCalled">Wakubidde {name}</string>
+    <string name="callsYouMissedCallPermissions">Uphoswe ngumnxeba ovela ku <b>{name}</b> kuba awuvulanga i<b>Voice and Video Calls</b> kuSeto loBukeko Olwahlukileyo.</string>
+    <string name="cameraErrorNotFound">Akukho kamera ifumanekayo</string>
+    <string name="cameraErrorUnavailable">Ikhamera azifumaneki.</string>
+    <string name="cameraGrantAccess">Nika iMfanelo yeKhamera</string>
+    <string name="cameraGrantAccessDenied">{app_name} ifuna ukufikelela kwikhamera ukuthatha iifoto nevidiyo, kodwa ivaliwe ngokusisigxina. Nceda uqhubeke useto lwe-app, ukhethe \"Imvume\", kwaye uvule \"Ikhamera\".</string>
+    <string name="cameraGrantAccessDescription">{app_name} ifuna ukufikelela kwikhamera ukuthatha iifoto nevidiyo, okanye ukukhangela iikhowudi ze-QR.</string>
+    <string name="cameraGrantAccessQr">{app_name} ifuna ukufikelela kwikhamera ukukhangela iikhowudi ze-QR</string>
+    <string name="cancel">Rhoxisa</string>
+    <string name="clear">Cacisa</string>
+    <string name="clearAll">Cacisa Zonke</string>
+    <string name="clearDataAll">Cacisa Zonke Idatha</string>
+    <string name="clearDataAllDescription">Oku kuya kususa yonke imiyalezo yakho kunye nonxibelelwano lwakho ngokusisigxina. Ngaba ungathanda ukucoca esi sixhobo kuphela, okanye ususe idatha yakho kunxibelelwano?</string>
+    <string name="clearDataError">Idatha Ayicinywanga</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="one">Idatha ayicinywanga yiService Node %1$d. I-ID yeService Node: %2$s.</item>
+        <item quantity="other">Idatha ayicinywanga yiService Nodes %1$d. I-ID yeService Nodes: %2$s.</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">Kwenzeke impazamo engaziwayo kwaye idatha yakho ayicinywanga. Ngaba ufuna ukukhipha idatha yakho kweli sixhobo kuphela?</string>
+    <string name="clearDevice">Coca Isixhobo</string>
+    <string name="clearDeviceAndNetwork">Coca isixhobo kunye nenethiwekhi</string>
+    <string name="clearDeviceAndNetworkConfirm">Uqinisekile ukuba ufuna ukususa idatha yakho kunethiwekhi? Ukuba uyaqhubeka, awuyi kuba nakho ukubuyisela imiyalezo yakho okanye abanxibelelwano bakho.</string>
+    <string name="clearDeviceDescription">Uqinisekile ukuba ufuna ukucima isixhobo sakho?</string>
+    <string name="clearDeviceOnly">Coca isixhobo kuphela</string>
+    <string name="clearMessages">Coca Onke Imiyalezo</string>
+    <string name="clearMessagesChatDescription">Uqinisekile ukuba ufuna ukucima yonke imiyalezo yekho yakho <b>{name}</b> kwisixhobo sakho?</string>
+    <string name="clearMessagesCommunity">Uqinisekile ukuba ufuna ukucima yonke imiyalezo ye-<b>{community_name}</b> kwisixhobo sakho?</string>
+    <string name="clearMessagesForEveryone">Coca kubo bonke</string>
+    <string name="clearMessagesForMe">Coca kum</string>
+    <string name="clearMessagesGroupAdminDescription">Uqinisekile ukuba ufuna ukucima yonke imiyalezo ye-<b>{group_name}</b>?</string>
+    <string name="clearMessagesGroupDescription">Uqinisekile ukuba ufuna ukucima yonke imiyalezo ye-<b>{group_name}</b> kwisixhobo sakho?</string>
+    <string name="clearMessagesNoteToSelfDescription">Uqinisekile ukuba ufuna ukucima yonke imiyalezo ye-Nota yeSelf kwisixhobo sakho?</string>
+    <string name="close">Vala</string>
+    <string name="closeWindow">Vala Iwindi</string>
+    <string name="communityEnterUrl">Ngenisa i-URL yeCommunity</string>
+    <string name="communityEnterUrlErrorInvalid">I-URL engalunganga</string>
+    <string name="communityEnterUrlErrorInvalidDescription">Nceda ujonge i-URL ye-Community kwaye uzame kwakhona.</string>
+    <string name="communityError">Iphutha Loluntu</string>
+    <string name="communityErrorDescription">Ooppsi, liphutha lenzekile. Khethe phinde uzame kamva.</string>
+    <string name="communityInvitation">Isimemo Soluntu</string>
+    <string name="communityJoin">Joyina iCommunity</string>
+    <string name="communityJoinDescription">Uqinisekile ukuba ufuna ukujoyina i {community_name}?</string>
+    <string name="communityJoinError">Koyekile ukujoyina {community_name}</string>
+    <string name="communityJoinOfficial">Okanye joyina elinye lala...</string>
+    <string name="communityJoined">Ujoyine i Community</string>
+    <string name="communityJoinedAlready">Uvele ube lilungu lale Community.</string>
+    <string name="communityLeave">Shiya iCommunity</string>
+    <string name="communityLeaveError">Koyekile ukuphuma ku {community_name}</string>
+    <string name="communityUnknown">Ikomyunithi Ayaziwa</string>
+    <string name="communityUrl">i-URL yoLuntu</string>
+    <string name="communityUrlCopy">Kopa i-URL yoLuntu</string>
+    <string name="confirm">Qinisekisa</string>
+    <string name="contactContacts">Qhagamshelana</string>
+    <string name="contactDelete">Sangula Qhagamshelwano</string>
+    <string name="contactDeleteDescription">Uqinisekile ukuba ufuna ukucima  <b>{name}</b> kwiinkcukacha zakho? Imiyalezo emitsha evela <b>{name}</b> iya kuza njengezicelo zemiyalezo.</string>
+    <string name="contactNone">Awunazo naziphi na iincoko okwangoku</string>
+    <string name="contactSelect">Khetha abafowunelwa</string>
+    <string name="contactUserDetails">Iinkcukacha zoMsebenzisi</string>
+    <string name="contentDescriptionCamera">Ikhamera</string>
+    <string name="contentDescriptionChooseConversationType">Khetha isenzo sokwazisa incoko</string>
+    <string name="contentDescriptionMediaMessage">Umongo wobugqithi beMidhiya</string>
+    <string name="contentDescriptionMessageComposition">Ukwakhiwa komyalezo</string>
+    <string name="contentDescriptionQuoteThumbnail">Thumbnail of image from quoted message</string>
+    <string name="contentDescriptionStartConversation">Qala incoko kunye noqhagamshelwano olutsha</string>
+    <string name="conversationsAddToHome">Yongeza kwiscreen sasekhaya</string>
+    <string name="conversationsAddedToHome">Ikongeze kwiscreen sasekhaya</string>
+    <string name="conversationsAudioMessages">Imiyalezo ye-Audio</string>
+    <string name="conversationsAutoplayAudioMessage">Dlala ngokuzenzekelayo imiyalezo eseAudiyo</string>
+    <string name="conversationsAutoplayAudioMessageDescription">Dlala ngokuzenzekelayo imiyalezo eseAudiyo ethunyelwe ngokulandelelanayo</string>
+    <string name="conversationsBlockedContacts">Imiyalezo eVimbileyo</string>
+    <string name="conversationsCommunities">Uluntu</string>
+    <string name="conversationsDelete">Sangula Inkqubo</string>
+    <string name="conversationsDeleteDescription">Uqinisekile ukuba ufuna ukususa incoko yakho no <b>{name}?</b> Imiyalezo emitsha ivela <b>{name} </b> iza kuqala incoko entsha.</string>
+    <string name="conversationsDeleted">Incoko icinyiwe</string>
+    <string name="conversationsEmpty">Akukho myalezo kwi-{conversation_name}.</string>
+    <string name="conversationsEnter">Ngenisa iqhosha</string>
+    <string name="conversationsEnterDescription">Umsebenzi weqhosha loku ngenisa xa uchwetheza kwincoko.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER sends a message, ENTER starts a new line</string>
+    <string name="conversationsEnterSends">ENTER ithumela umyalezo, SHIFT + ENTER uqala ulayini omtsha</string>
+    <string name="conversationsGroups">Amaqela</string>
+    <string name="conversationsMessageTrimming">Ukuskrowa umyalezo</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Coca i-Community</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">Sangula imilayezo yeNguquko ezingaphaya kweinyanga ezi-6, nee malunga ne-2,000 yemilayezo</string>
+    <string name="conversationsNew">Ingxoxo Entsha</string>
+    <string name="conversationsNone">Awunazo naziphi na iincoko okwangoku</string>
+    <string name="conversationsSendWithEnterKey">Thumela ngazo Ukhiye we-Enter</string>
+    <string name="conversationsSendWithEnterKeyDescription">Tapping the Enter Key will send message instead of starting a new line.</string>
+    <string name="conversationsSettingsAllMedia">Yonke Imithombo yeendaba</string>
+    <string name="conversationsSpellCheck">Spell Check</string>
+    <string name="conversationsSpellCheckDescription">Vumela ukupela ngokuzenzekelayo xa ubhala imilayezo</string>
+    <string name="conversationsStart">Start Conversation</string>
+    <string name="copied">Ikopiwe</string>
+    <string name="copy">Kopa</string>
+    <string name="create">Yenza</string>
+    <string name="cut">Sika</string>
+    <string name="databaseErrorGeneric">Kufunyenwe impazamo kwisiseko sedatha.<br\/><br\/>Nceda thumela ii-log zenkqubo yakho ukuze uwabelane ngazo ngeengxaki. Ukuba oku kuphumelele, reinstall {app_name} kwaye ubuyisele iakhawunti yakho.<br\/><br\/>Isilumkiso: oku kuya kubangela ukulahleka kwemiyalezo yonke, ii-attachements, kunye nedatha yeakhawunti endala ngokuphakama kweveki ezimbini.</string>
+    <string name="databaseErrorTimeout">Siqaphele ukuba i-{app_name} ithatha ixesha elide ukuqala.
+
+Ungaqhubeka ulinde, uthumele iingxelo zesixhobo sakho ukwabelana ngazo ukulungisa iingxaki, okanye uzame ukuqala ngokutsha i-Session.</string>
+    <string name="databaseErrorUpdate">I-database yakho yohlelo lwe-app ayinakuvisisana nohlobo lwangoku lwe {app_name}. Faka app kwakhona kwaye ubuyisele i-akhawunti yakho ukuphuhlisa database entsha kwaye uqhubeke usebenzisa {app_name}.
+
+Isilumkiso: Oku kuya kubangela ukulahleka kwemiyalezo yonke kunye nezinto ezihambelanayo ezindala kunokuba yiveki ezimbini.</string>
+    <string name="databaseOptimizing">Ukuphucula iDatha</string>
+    <string name="debugLog">Ilogi yeSipseko</string>
+    <string name="decline">Caphula</string>
     <string name="delete">Sangula</string>
-    <string name="save">Tereka</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">Obubaka obupya</string>
-    <!-- AlbumThumbnailView -->
-    <!-- ApplicationPreferencesActivity -->
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Obubaka obukadde bwonna busangule kati?</string>
-    <string name="ApplicationPreferencesActivity_delete">Sangula</string>
-    <string name="ApplicationPreferencesActivity_On">Kweeri</string>
-    <string name="ApplicationPreferencesActivity_Off">Teriiko</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">Ekifananyi</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(doboozi)</string>
-    <string name="DraftDatabase_Draft_video_snippet">olutambi</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Tosobodde kufuna app okulonda ku media </string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">Ensobi mukuzanya edoboozi</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">Leero</string>
-    <!-- CommunicationActions -->
-    <!-- ContactsCursorLoader -->
-    <!-- ConversationItem -->
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">Key  exchange message efuniddwa, kwata okugenda mumaso</string>
-    <string name="ConversationItem_unable_to_open_media">tosobodde kufuna app esobola kugulawo kiwandiiko kyo</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">Gatako ekigatiddwako</string>
-    <string name="ConversationActivity_select_contact_info">Londako obuubaka bwa kontakiti</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Tusonyiwe, wabaddewo ensobi mu kwerobooza kw\'ekigatibwako kyo</string>
-    <string name="ConversationActivity_invalid_recipient">Afuna mukyamu</string>
-    <string name="ConversationActivity_leave_group">Vva mu kibinja?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Okakasa oyagala kuva mu kibija kino?</string>
-    <string name="ConversationActivity_unblock_this_contact_question">sumulula contact eno</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Ojjakudamu okufuna obubaka ne ssimu okuva ew\'omuntu ono</string>
-    <string name="ConversationActivity_unblock">sumulula</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">ekigatiddwako kiyissawo ku bunene bwe kikia ky\'obubaka bw\'osindika</string>
-    <string name="ConversationActivity_unable_to_record_audio">Tesobodde kukwata ddoboozi!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">Tewali App kukwasaganya </string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="one">siimuula obubaka obulondedwako?</item>
-        <item quantity="other">simuula obubaka obulondedwako?</item>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">Some of your devices are using outdated versions. Syncing may be unreliable until they are updated.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">Vimba Lo Msebenzisi</string>
+    <string name="deleteAfterGroupPR1BlockUser">Vimba Umsebenzisi</string>
+    <string name="deleteAfterGroupPR1GroupSettings">UsesiQela</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Zaziso ZeMentions Kuphela</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">Xa ivuliwe, uza kuziswa kuphela ngemiyalezo ekukhankanywayo.</string>
+    <string name="deleteAfterGroupPR1MessageSound">Isandi soMyalezo</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">Cima imiyalezo kule ncoko unaphakade?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">Awukwazi ukuhamba xa ungezelela okanye ususa amalungu amanye.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">Ilifa</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">Uhlobo lwangaphambili lwemiyalezo edisela.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name} <\/b> uyicala ixesha eliphumzayo lemyalezo ukuya ku <b>{time} <\/b>.</string>
+    <string name="deleteMessage">Sangula Umphumela</string>
+    <string name="deleteMessageConfirm">Uqinisekile ukuba ufuna ukususa lo myalezo?</string>
+    <string name="deleteMessageDeleted">Umyalezo ucinyiwe</string>
+    <string name="deleteMessageDeletedGlobally">Lo myalezo ususiwe</string>
+    <string name="deleteMessageDeletedLocally">Lo myalezo ususiwe kweli sixhobo</string>
+    <string name="deleteMessageDescriptionDevice">Uqinisekile ukuba ufuna ukususa lo myalezo kule sixhobo kuphela?</string>
+    <string name="deleteMessageDescriptionEveryone">Uqinisekile ukuba ufuna ukususa lo myalezo kubo bonke?</string>
+    <string name="deleteMessageDeviceOnly">Sangula kwisixhobo esi kuphela</string>
+    <string name="deleteMessageDevicesAll">Sangula kuzo zonke izixhobo zam</string>
+    <string name="deleteMessageEveryone">Sangula kubo bonke</string>
+    <string name="deleteMessageFailed">Koyekile ukususa umyalezo</string>
+    <string name="deleteMessages">Sangula Imiphumela</string>
+    <string name="deleteMessagesConfirm">Uqinisekile ukuba ufuna ukususa le miyalezo?</string>
+    <string name="deleteMessagesDeleted">Imiyalezo icinyiwe</string>
+    <string name="deleteMessagesDescriptionDevice">Uqinisekile ukuba ufuna ukucima le miyalezo kweli sixhobo kuphela?</string>
+    <string name="deleteMessagesDescriptionEveryone">Uqinisekile ukuba ufuna ukucima le miyalezo kubo bonke?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="one">Biganye okusindika obubaka</item>
+        <item quantity="other">Biganye okusindika obubaka</item>
     </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="one">obubaka obulondedwako bujja kusiimuuka</item>
-        <item quantity="other">Kino kijja kusimuula bwona %1$d obubaka obulondeddwa</item>
+    <string name="deleting">Kisangulwa</string>
+    <string name="developerToolsToggle">Guqula izixhobo zoMphuhlisi</string>
+    <string name="dictationStart">Start Dictation...</string>
+    <string name="disappearingMessages">Imilayezo Enyamalalayo</string>
+    <string name="disappearingMessagesCountdownBig">Umyalezo uza kucinywa ngaphakathi kwexesha elichazwe {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">Iya kucinywa ngokuzenzekelayo ku {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">Umyalezo uza kucinywa ngaphakathi kwexesha elichazwe {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">Iya kucinywa ngokuzenzekelayo ku {time_large} {time_small}</string>
+    <string name="disappearingMessagesDeleteType">Uhlobo loMsangano</string>
+    <string name="disappearingMessagesDescription">Esi sicwangciso sisebenza kuwo wonke umntu kwincoko.</string>
+    <string name="disappearingMessagesDescription1">Esi sicwangciso sisebenza kwimiyalezo oyithumela kwincoko.</string>
+    <string name="disappearingMessagesDisappear">Nyamalala Emva {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">Nyamalala Emva Kokufunda</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">Imiyalezo iyacinywa emva kokuba ifundiwe.</string>
+    <string name="disappearingMessagesDisappearAfterSend">Nyamalala Emva Kokuthumela</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">Imiyalezo iyacinywa emva kokuba ithunyelwe.</string>
+    <string name="disappearingMessagesFollowSetting">Landela uSethingi</string>
+    <string name="disappearingMessagesFollowSettingOff">Imiyalezo oyithumelayo ayizukutsha. Ungaqinisekisile ukuba ufuna <b>ukucima</b> imiyalezo yokubhangwa?</string>
+    <string name="disappearingMessagesFollowSettingOn">Cwangcisa ukuba imiyalezo yakho iphele <b>{time}</b> emva kokuba ibe <b>{disappearing_messages_type}</b>?</string>
+    <string name="disappearingMessagesLegacy">{name} isebenzisa isoftwe endala. Imiyalezo ephulukayo ayinakusebenza kakuhle.</string>
+    <string name="disappearingMessagesOnlyAdmins">Abalawuli beqela kuphela abazakwazi ukutshintsha esi setting.</string>
+    <string name="disappearingMessagesSent">Sithumele</string>
+    <string name="disappearingMessagesSet"><b>{name} <\/b> usete iimyalezo ukuba ziphelelwe lixesha emva kwe <b>{time} <\/b> emva kokuba zenzekile <b>{disappearing_messages_type} <\/b>.</string>
+    <string name="disappearingMessagesSetYou"><b>Mna </b> ndacwangcisa ukuba iimyalezo ziphelelwe {time} emva kokuba zime <b>{disappearing_messages_type} <\/b>.</string>
+    <string name="disappearingMessagesTimer">I-Timer</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name} <\/b> ucime iimyalezo eziphelelwe lixesha. Imiyalezo ayisasekho na.</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>Mna <\/b> ndibekhubekile <b> off <\/b> iimyalezo ezinyamalala. Imiyalezo endiyithumeleli ngayo ayisayi kunyamalala.</string>
+    <string name="disappearingMessagesTypeRead">ifundiwe</string>
+    <string name="disappearingMessagesTypeSent">sithumele</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> uhlaziye useto lwezithunywa ezinyamalalayo.</string>
+    <string name="disappearingMessagesUpdatedYou"><b>Mna <\/b> uhlaziywe iisetingi zemiyalezo enyamalalayo.</string>
+    <string name="dismiss">Lahla</string>
+    <string name="displayNameDescription">Ingaba lingaba ligama lakho lokwenyani, igama elithi eli okanye elinye into oyithandayo — ungaliyitshintsha ngawo nawuphi na umzuzu.</string>
+    <string name="displayNameEnter">Ngenisa igama lakho lokuboniswa</string>
+    <string name="displayNameErrorDescription">Nceda ngenisa igama lokubonisa</string>
+    <string name="displayNameErrorDescriptionShorter">Nceda ngenisa igama elifutshane lokubonisa</string>
+    <string name="displayNameErrorNew">Asikwazanga ukulayisha igama lakho lomboniso. Nceda ufake igama lomboniso elitsha ukuze uqhubeke.</string>
+    <string name="displayNameNew">Khetha igama elitsha</string>
+    <string name="displayNamePick">Chola igama lakho lokubonisa</string>
+    <string name="displayNameSet">Setha igama elibonisiweyo</string>
+    <string name="document">Ixwebhu</string>
+    <string name="done">Gqibezela</string>
+    <string name="download">Khuphela</string>
+    <string name="downloading">Ukukhuphela...</string>
+    <string name="draft">Isishwankathelo</string>
+    <string name="edit">Hlela</string>
+    <string name="emojiAndSymbols">Emoji &amp; Izimboli</string>
+    <string name="emojiCategoryActivities">Imisebenzi</string>
+    <string name="emojiCategoryAnimals">Izilwanyana &amp; Indalo</string>
+    <string name="emojiCategoryFlags">Iiflegi</string>
+    <string name="emojiCategoryFood">Ukutya &amp; Isiselo</string>
+    <string name="emojiCategoryObjects">Izilwanyana</string>
+    <string name="emojiCategoryRecentlyUsed">Iziqinisekiso Ezisandul\'Ukusetyenziswa</string>
+    <string name="emojiCategorySmileys">Smileys &amp; People</string>
+    <string name="emojiCategorySymbols">Symbols</string>
+    <string name="emojiCategoryTravel">Uhambo & Iindawo</string>
+    <string name="emojiReactsClearAll">Uqinisekile ukuba ufuna ukucima onke {emoji}?</string>
+    <string name="emojiReactsCoolDown">Slow down! You\'ve sent too many emoji reacts. Try again soon</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="one">Kwaye omnye u %1$d uphosele lo myalezo %2$s.</item>
+        <item quantity="other">Kwaye abaninzi u %1$d baphosele lo myalezo %2$s.</item>
     </plurals>
-    <string name="ConversationFragment_save_to_sd_card">tereka mu terekero</string>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="one">Ensobi mu kutereka ebigatiddwako mu terekero</item>
-        <item quantity="other">Ensobi mu kutereka ebigatiddwako mu terekero</item>
+    <string name="emojiReactsHoverNameDesktop">{name} usebenzise <emoji/></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} basebenzise <emoji/></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} kunye <span>{count} abanye</span> basebenzise <emoji/></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} kunye <span>1 omnye</span> basebenzise <emoji/></string>
+    <string name="emojiReactsHoverYouDesktop">Uphendule nge <emoji/></string>
+    <string name="emojiReactsHoverYouNameDesktop">Gwe &amp; {name} nithumele i <emoji /></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">Wena, {name} &amp; <span>{count} abanye</span> baphendule nge <emoji/></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">Wena, {name} &amp; <span>1 omunye</span> baphendule nge <emoji/></string>
+    <string name="emojiReactsNotification">Uphendule umyalezo wakho {emoji}</string>
+    <string name="enable">Vumela</string>
+    <string name="errorConnection">Nceda ujonge uqhagamshelo lwe-intanethi kwaye uzame kwakhona.</string>
+    <string name="errorCopyAndQuit">Kopa Iphutha kwaye Phuma</string>
+    <string name="errorDatabase">Iphutha leDatha yeBanki</string>
+    <string name="errorUnknown">Kwenzeke impazamo engaziwayo.</string>
+    <string name="failures">Iingxaki</string>
+    <string name="file">Ifayile</string>
+    <string name="files">Iifayile</string>
+    <string name="followSystemSettings">Landela usetiwe lwenkqubo</string>
+    <string name="from">Okuva:</string>
+    <string name="fullScreenToggle">Guqula Isikrini Esipheleleyo</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">{app_name} iya kuqhagamshela kwi-Giphy ukuhambisa iziphumo zozinzo. Awuyi kufumana ukhuseleko lwe-metadata ngokupheleleyo xa uthumela i-GIFs.</string>
+    <string name="groupAddMemberMaximum">Amaqela anamalungu angamaxesha aphezulu ayi-100</string>
+    <string name="groupCreate">Yenza iqela</string>
+    <string name="groupCreateErrorNoMembers">Nceda ukhethe ubuncinane ilungu elinye leqela elinge</string>
+    <string name="groupDelete">Sangula Iqela</string>
+    <string name="groupDeleteDescription">Uqinisekile ukuba ufuna ukucima <b>{group_name}?</b> Oku kuyakuchithela onke amalungu kunye nokucima yonke into yeqela.</string>
+    <string name="groupDescriptionEnter">Ngena inkcazo yeqela</string>
+    <string name="groupDisplayPictureUpdated">Umfanekiso wokubonisa weqela uhlaziyiwe.</string>
+    <string name="groupEdit">Hlela Iqela</string>
+    <string name="groupError">Impazamo yeQela</string>
+    <string name="groupErrorCreate">Kuphume impazamo ekudaleni iqela. Nceda ujonge uqhagamshelo lwakho lwe-intanethi kwaye uzame kwakhona.</string>
+    <string name="groupErrorJoin">Koyekile ukujoyina {group_name}</string>
+    <string name="groupInformationSet">Set Group Information</string>
+    <string name="groupInviteDelete">Uqinisekile ukuba ufuna ukususa esi simemo seqela?</string>
+    <string name="groupInviteFailed">Umemi akaphumelelanga</string>
+    <string name="groupInviteFailedMore">Koyekile ukumema {name} kunye {count} nabanye {group_name}</string>
+    <string name="groupInviteFailedTwo">Koyekile ukumema {name} kunye {other_name} ku {group_name}</string>
+    <string name="groupInviteFailedUser">Koyekile ukumema {name} ku {group_name}</string>
+    <string name="groupInviteSending">Ukuthumela isimemo</string>
+    <string name="groupInviteSent">Umemi uthunyelwe</string>
+    <string name="groupInviteSuccessful">Isimemo seqela siphumelele</string>
+    <string name="groupInviteVersion">Abasebenzisi kufuneka babe ne-version {version} okanye ephezulu ukufumana izimemo</string>
+    <string name="groupInviteYou"><b>Mna <\/b> ndimele ukujoyina iqela.</string>
+    <string name="groupLeave">Shiya iQela</string>
+    <string name="groupLeaveDescription">Uqinisekile ukuba ufuna ukufumana {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">Uqinisekile ukuba ufuna ukufumana {group_name}? Oku kuya kumisela iqela kubo bonke amalungu.</string>
+    <string name="groupLeaveErrorFailed">Koyekile ukuphuma ku {group_name}</string>
+    <string name="groupLegacyBanner">Amaqela aphuculwe, yenza iqela elitsha ukuphucula. Umsebenzi weqela elidala uya kunciphisa ukusukela ngomhla we {date}.</string>
+    <string name="groupMemberLeft"><b>{name} <\/b> bashiye iqela.</string>
+    <string name="groupMemberLeftMore"><b>{name} <\/b> kunye <b>{count} abanye abantu <\/b> bashiye iqela.</string>
+    <string name="groupMemberLeftTwo"><b>{name} <\/b> kunye <b>{other_name} <\/b> bashiye iqela.</string>
+    <string name="groupMemberMoreNew"><b>{name} <\/b> kunye <b>{count} abanye abantu <\/b> bajoyine iqela.</string>
+    <string name="groupMemberNew"><b>{name} <\/b> bajoyine iqela.</string>
+    <string name="groupMemberTwoNew"><b>{name} <\/b> kunye <b>{other_name} <\/b> bajoyine iqela.</string>
+    <string name="groupMemberYouLeft"><b>Mna <\/b> bashiye iqela.</string>
+    <string name="groupMembers">Amalungu eQela</string>
+    <string name="groupMembersNone">Akukho namanye amalungu kweli qela.</string>
+    <string name="groupName">Igama leQela</string>
+    <string name="groupNameEnter">Ngenisa igama leqela</string>
+    <string name="groupNameEnterPlease">Nceda ngenisa igama leqela.</string>
+    <string name="groupNameEnterShorter">Nceda ngenisa igama leqela elifutshane.</string>
+    <string name="groupNameNew">Igama leqela ngoku ngu {group_name}. </string>
+    <string name="groupNameUpdated">Igama leqela lihlaziyiwe.</string>
+    <string name="groupNoMessages">Akunamiyalezo ivela kwi <b>{group_name}</b>. Thumela umyalezo ukuyiqala incoko!</string>
+    <string name="groupOnlyAdmin">Unguye kuphela admin kwi <b>{group_name}&lt;\/b&gt;.&lt;\/br&gt;&lt;\/br&gt;Amalungu eqela kunye neesetingi azinakutshintshwa ngaphandle kwe-admin.</string>
+    <string name="groupPromotedYou"><b>Mna </b> ndinyuselwe kubu-Admin.</string>
+    <string name="groupRemoveDescription">Ungathanda ukususa <b>{name}</b> kwi-<b>{group_name}?</b></string>
+    <string name="groupRemoveMessages">Susa umsebenzisi kunye nemiyalezo yabo</string>
+    <string name="groupRemoveMoreDescription">Ungathanda ukususa <b>{name}</b> kunye nabanye <b>{count}?</b> kwi-<b>{group_name}?</b></string>
+    <string name="groupRemoveTwoDescription">Ungathanda ukususa <b>{name}</b> kunye no<b>{other_name}</b> kwi-<b>{group_name}?</b></string>
+    <string name="groupRemoveUserOnly">Susa umsebenzisi</string>
+    <string name="groupRemoveUsersMessages">Susa abasebenzisi kunye nemiyalezo yabo</string>
+    <string name="groupRemoveUsersOnly">Susa abasebenzisi</string>
+    <string name="groupRemoved"><b>{name} <\/b> ikhutshelwe ngaphandle kweqela.</string>
+    <string name="groupRemovedMore"><b>{name} <\/b> kunye <b>{count} abanye abantu <\/b> bakhutshelwe ngaphandle kweqela.</string>
+    <string name="groupRemovedTwo"><b>{name} <\/b> kunye <b>{other_name} <\/b> bakhutshelwe ngaphandle kweqela.</string>
+    <string name="groupRemovedYou">Ususwe kwi <b>{group_name}</b>.</string>
+    <string name="groupSetDisplayPicture">Set Group Display Picture</string>
+    <string name="groupUnknown">Iqela elingaziwa</string>
+    <string name="groupUpdated">Iqela lihlaziyiwe</string>
+    <string name="helpFAQ">FAQ</string>
+    <string name="helpHelpUsTranslateSession">Siza uncede uguqulele i-{app_name}</string>
+    <string name="helpReportABug">Xela impazamo</string>
+    <string name="helpReportABugDescription">Share some details to help us resolve your issue. Export your logs, then upload the file through {app_name}\'s Help Desk.</string>
+    <string name="helpReportABugExportLogs">Thumela iiLogs</string>
+    <string name="helpReportABugExportLogsDescription">Thumela iilogs zakho, uze ulayishe ifayile kwi-Help Desk yase {app_name}.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">Gcina kwi desktop</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">Gcina le fayile kwi desktop yakho, uze uyibonise abaphuhlisi be-{app_name}.</string>
+    <string name="helpSupport">Support</string>
+    <string name="helpWedLoveYourFeedback">Sicela ingxelo yakho</string>
+    <string name="hide">Fihla</string>
+    <string name="hideOthers">Fihla Abanye</string>
+    <string name="image">Umfanekiso</string>
+    <string name="incognitoKeyboard">Ikhibhodi yeNcognito</string>
+    <string name="incognitoKeyboardDescription">Cela imo esithunzini xa ikhona. Kuxhomekeka kwi-keyboard oisebenzisayo, i-keyboard yakho ingasilela ukuqwalasela esi sicelo.</string>
+    <string name="info">Ulwazi</string>
+    <string name="invalidShortcut">Isiqhosho esingalunganga</string>
+    <string name="join">Joyina</string>
+    <string name="later">Kamva</string>
+    <string name="learnMore">Funda kabanzi</string>
+    <string name="leave">Shiya</string>
+    <string name="leaving">Kushiywa...</string>
+    <string name="linkPreviews">Imixholo yeLinki</string>
+    <string name="linkPreviewsDescription">Show link previews for supported URLs.</string>
+    <string name="linkPreviewsEnable">Vumela I-Link Previews</string>
+    <string name="linkPreviewsErrorLoad">Ayikwazi ukulayisha ukujonga ikhonkco</string>
+    <string name="linkPreviewsErrorUnsecure">Ukuqhaynqa akuthunyiselwanga ku-link engekho ekhuselekileyo</string>
+    <string name="linkPreviewsFirstDescription">Bonisa i-preview yezixhumanisi ozithumeletyayanayo. Kungenzeka ukuba luncedo, nangona kunjalo {app_name} kufuneka wuqhagamshele iindawo ezinoxulumaniso ukuze kuveliswe i-preview. Ungayivala i-preview ye-link ku {app_name}\'s settings.</string>
+    <string name="linkPreviewsSend">Thumela Iipriviuwe Zemisebenzi</string>
+    <string name="linkPreviewsSendModalDescription">Awuyi kuba nokhuseleko olupheleleyo lweMetadata xa uthumela izikhankanyi zamakhonkco.</string>
+    <string name="linkPreviewsTurnedOff">Imixholo yeLinki Icinyiwe</string>
+    <string name="linkPreviewsTurnedOffDescription">{app_name} kufuneka iqhagamshelane newebhusayithi ezidibeneyo ukwenza iintlobo zamanqaku ozithumelayo nozifumanayo.
+
+Unokuzenza kwii-settings zika {app_name}.</string>
+    <string name="loadAccount">Layisha iAkhawunti</string>
+    <string name="loadAccountProgressMessage">Ukulayisha iakhawunti yakho</string>
+    <string name="loading">Ukulayisha...</string>
+    <string name="lockApp">Qinisa iApp</string>
+    <string name="lockAppDescriptionAndroid">Ifuna isisiseko somnwe, iPIN, ipateni okanye ipaswedi ukuvula {app_name}.</string>
+    <string name="lockAppDescriptionIos">Ifuna iTouch ID, iFace ID okanye ipaswedi yakho ukuvula {app_name}.</string>
+    <string name="lockAppEnablePasscode">Kufuneka uvule ikhowudi yokungena kweSeto se-iOS yakho ukuze usebenzise i-Lokhi yeSikrini.</string>
+    <string name="lockAppLocked">{app_name} ivaliwe</string>
+    <string name="lockAppQuickResponse">Impendulo ekhawulezayo ayifumaneki xa {app_name} ivaliwe!</string>
+    <string name="lockAppStatus">Imeko yokuQinisa</string>
+    <string name="lockAppUnlock">Tap to unlock</string>
+    <string name="lockAppUnlocked">{app_name} ivuliwe</string>
+    <string name="max">Ubungakanani obukhulu</string>
+    <string name="media">Midhiya</string>
+    <plurals name="members">
+        <item quantity="one">%1$d ilungu</item>
+        <item quantity="other">%1$d amalungu</item>
     </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="one">ekigatibwaako kiterekebwa</item>
-        <item quantity="other">ebigattibwako %1$d biterekebwa </item>
+    <plurals name="membersActive">
+        <item quantity="one">%1$d ilungu lisebenzayo</item>
+        <item quantity="other">%1$d amalungu asebenzayo</item>
     </plurals>
-    <!-- CreateProfileActivity -->
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_none">tewali</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">Kati</string>
-    <string name="DateUtils_minutes_ago">%d dakiika</string>
-    <string name="DateUtils_today">Leero</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">Leero</string>
-    <!-- DocumentView -->
-    <!-- GiphyActivity -->
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_gifs">Ekifananyi ekizanya</string>
-    <string name="GiphyFragmentPagerAdapter_stickers">Enkwaso</string>
-    <!-- CropImageActivity -->
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Nyiga olemezeko okukwata obubaka bwedobozi, gyako okuwereza </string>
-    <!-- LongMessageActivity -->
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media_delete_progress_title">Okusangula</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">Obubabaka busangulwa</string>
-    <string name="MediaOverviewActivity_Select_all">Londa byonna.</string>
-    <string name="MediaOverviewActivity_collecting_attachments">ebigatibwako bikunganyizibwa</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">obubaka obwa  vidiyo oba amaloboozi</string>
-    <!-- MediaPickerActivity -->
-    <!-- MediaSendActivity -->
-    <!-- MediaRepository -->
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Ofuny obubaka obubuabuzidwa nga bakozesa vazoni ya signal etakyaakola. wattu saba asindise okuza obujja  signal ye  era addemu asindike obubaka</string>
-    <string name="MessageRecord_left_group">Ovudemu mu kibinja.</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">Obubaka bwo bubuzibwaawo</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">Obubaka bwo tebujja kugwako.</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">Obubaka bwowereza ne bwofunye mu mbozi eno %s bujakubula bwomaliriza obulaba</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">Yingiza passiwaddi nga yabigaambo ne namba</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">Zziyiza enamba eno</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">Tojja kudamu kufuna obubaka oba ssimu okuva ew\'omukozesa ono</string>
-    <string name="RecipientPreferenceActivity_block">Zziyiiza</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">sumulula contact eno?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Ojjakudamu okufuna obubaka ne ssimu okuva ew\'omuntu ono</string>
-    <string name="RecipientPreferenceActivity_unblock">sumulula</string>
-    <!-- Slide -->
-    <string name="Slide_image">ekifaananyi</string>
-    <string name="Slide_audio">edoboozi</string>
-    <string name="Slide_video">Olutambi</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_secure_session_reset">Resetinga akadde akekusifu</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%sresettinga akade akekusifu</string>
-    <string name="SmsMessageRecord_duplicate_message">Ddamu message</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_secure_session_reset">Akadde akekusifu karesetinge nate</string>
-    <string name="ThreadRecord_draft">Ekyakolabwako</string>
-    <string name="ThreadRecord_called">wakubye</string>
-    <string name="ThreadRecord_called_you">yakubidde</string>
-    <string name="ThreadRecord_missed_call">missed call</string>
-    <string name="ThreadRecord_media_message">obubaka bwemikutu</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">Message yakusanguka mu dakiika %s</string>
-    <!-- UpdateApkReadyListener -->
-    <!-- MessageDisplayHelper -->
-    <!-- MmsMessageRecord -->
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">zikiza obude bwemboozi</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">Kwatako okugulawo</string>
-    <string name="KeyCachingService_passphrase_cached">Session eggudwa</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">Gwe</string>
-    <string name="MediaPreviewActivity_unssuported_media_type"> ekika kino ekya  Tekiwaniriddwa </string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d obubaka obupya mu %2$d mboozi</string>
-    <string name="MessageNotifier_most_recent_from_s">Ebiyiseewo okuva:%1$s</string>
-    <string name="MessageNotifier_message_delivery_failed">obubaka buganye okugenda</string>
-    <string name="MessageNotifier_failed_to_deliver_message">biganye okusindika obubaka</string>
-    <string name="MessageNotifier_error_delivering_message">ensobi mukuwereza obubaka</string>
-    <string name="MessageNotifier_mark_all_as_read">lamba nga esomedwa</string>
-    <string name="MessageNotifier_mark_read">lamba osome</string>
-    <string name="MessageNotifier_reply">ddamu</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">wifi calling compatiblity mode</string>
-    <string name="NotificationChannel_missing_display_name">Tekimanyikiddwa</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">okudamu okwangu tekubawo nga amayengo gasibidwa</string>
-    <string name="QuickResponseService_problem_sending_message">obuzibu mukusindika obubaka</string>
-    <!-- SaveAttachmentTask -->
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Noonya</string>
-    <!-- ShortcutLauncherActivity -->
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_signal">mayengo</string>
-    <string name="SingleRecipientNotificationBuilder_new_message">Obubaka obupya</string>
-    <!-- TransferControlView -->
-    <!-- VideoPlayer -->
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">doboozi</string>
-    <string name="attachment_type_selector__location">wosangibwa</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">Loading contacts</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">Sindika</string>
-    <string name="conversation_activity__compose_description">Tandika obubaka</string>
-    <string name="conversation_activity__emoji_toggle_description">kyusa yusa keybodi ya emoji</string>
-    <string name="conversation_activity__attachment_thumbnail">Ekikwasidwaako Thumbnail</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__slide_to_cancel">Kasindike okusazamu</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">obubaka bwemikutu</string>
-    <string name="conversation_item__secure_message_description">Message ekumiidwa</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">okusindika kuganye</string>
-    <string name="conversation_item_sent__pending_approval_description">kilindilila kukakasibwa</string>
-    <string name="conversation_item_sent__delivered_description">Etuuse</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">Ekifananyi kya kontakiti</string>
-    <!-- audio_view -->
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">edoboozi</string>
-    <string name="QuoteView_video">Olutambi</string>
-    <string name="QuoteView_you">Gwe</string>
-    <!-- conversation_fragment -->
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">Noonya GIFs ne sticka</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">Tewali kisangidwa</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">Laba emboozi yonna</string>
-    <!-- media_overview_activity -->
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">Ddamu owerezze</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">Zziyiiza</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">Ensonga ezimu zetaaga gwe</string>
-    <string name="message_details_header__sent">Esindikiddwa</string>
-    <string name="message_details_header__received">Etuuse</string>
-    <string name="message_details_header__disappears">Kibula</string>
-    <string name="message_details_header__via">Okuyita</string>
-    <string name="message_details_header__to">Eri:</string>
-    <string name="message_details_header__from">Okuva:</string>
-    <string name="message_details_header__with">Wamu</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">Tonda passwadi yebigambo n\'enamba</string>
-    <string name="AndroidManifest__select_contacts">Londawo contact</string>
-    <string name="AndroidManifest__media_preview">Lozaako ku bifaananyi, vidiyo n\'enyimba</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">Kozesa nga bwebyakolebwa</string>
-    <string name="arrays__use_custom">Kozesa bwoyagala</string>
-    <string name="arrays__mute_for_one_hour">Silisa okumala essawa emu  </string>
-    <string name="arrays__mute_for_two_hours">Silisa okumala esawa bbiri </string>
-    <string name="arrays__mute_for_one_day">Silisa okumala olunaku 1</string>
-    <string name="arrays__mute_for_seven_days">Silisa okumala enaku 7</string>
-    <string name="arrays__mute_for_one_year">Silisa okumala omwaka 1</string>
-    <string name="arrays__settings_default">Settingi ngabwezaali</string>
-    <string name="arrays__enabled">Etereddwaako</string>
-    <string name="arrays__disabled">Egyiddwaako</string>
-    <string name="arrays__name_and_message">Erinya n\'emessage</string>
-    <string name="arrays__name_only">Linnya lyoka</string>
-    <string name="arrays__no_name_or_message">Teli linnya oba obubaka</string>
-    <string name="arrays__images">Ebifaananyi</string>
-    <string name="arrays__audio">Doboozi</string>
-    <string name="arrays__video">Vidiyo</string>
-    <string name="arrays__normal">Kyabulijjo</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="one">%d saawa</item>
-        <item quantity="other">%d saawa</item>
+    <string name="membersAddAccountIdOrOns">Yongeza Isazisi seAkhawunti okanye ONS</string>
+    <string name="membersInvite">Mema abafowunelwa</string>
+    <string name="membersInviteSend">Thumela isimemo</string>
+    <string name="membersInviteSendMultiple">Thumela izimemo</string>
+    <string name="membersInviteShareDescription">Ungathanda ukwabelana ngembali yemiyalezo yeqela kunye no<b>{name}?</b></string>
+    <string name="membersInviteShareMessageHistory">Share message history</string>
+    <string name="membersInviteShareMoreDescription">Ungathanda ukwabelana ngembali yemiyalezo yeqela kunye no<b>{name}</b> kunye nabanye <b>{count}?</b></string>
+    <string name="membersInviteShareNewMessagesOnly">Share new messages only</string>
+    <string name="membersInviteShareTwoDescription">Ungathanda ukwabelana ngembali yemiyalezo yeqela kunye no<b>{name}</b> kunye no<b>{other_name}?</b></string>
+    <string name="membersInviteTitle">Okuyitibwa</string>
+    <string name="message">Umyalezo</string>
+    <string name="messageEmpty">Lo myalezo uyaphalala.</string>
+    <string name="messageErrorDelivery">Ukuleyisa komyalezo kuyasilela</string>
+    <string name="messageErrorLimit">Umyalezo uthintelwe</string>
+    <string name="messageErrorOld">Sifumene umyalezo oqulethe umyalelo oguqulweyo usebenzisa inguqulelo endala ye-{app_name} engasekho ixhaswayo. Nceda ubuze umthumeli ukuba aguqulele kuhlobo olutsha aze aphinda athumele umyalezo.</string>
+    <string name="messageErrorOriginal">Umthunywa wokuqala awufumaneki</string>
+    <string name="messageInfo">Ulwazi ngomyalezo</string>
+    <string name="messageMarkRead">Marka ukufundwayo</string>
+    <string name="messageMarkUnread">Marka Okungafundwanga</string>
+    <string name="messageNew">Umyalezo Omtsha</string>
+    <string name="messageNewDescriptionDesktop">Start a new conversation by entering your friend\'s Account ID or ONS.</string>
+    <string name="messageNewDescriptionMobile">Start a new conversation by entering your friend\'s Account ID, ONS or scanning their QR code.</string>
+    <string name="messageNewMessages">Imiyalezo Emitsha</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="one">Unomyalezo omtsha.</item>
+        <item quantity="other">Unomyalezo omtsha %1$d.</item>
     </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">Epeesa eliyingira lyerisindika</string>
-    <string name="preferences__screen_security">Okukuuma Screen yo</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">Bulokinga okukuba screenshots mubyakaberawo ne minda mu app zo</string>
-    <string name="preferences__notifications">Obude</string>
-    <string name="preferences__led_color">Langi ya screen eraga</string>
-    <string name="preferences__led_color_unknown">Tekimanyikiddwa</string>
-    <string name="preferences__pref_led_blink_title">Screen yo erage etya</string>
-    <string name="preferences__sound">Doboozi</string>
-    <string name="preferences__silent">Kusirika</string>
-    <string name="preferences__repeat_alerts">ndiganamu okutemezebwako</string>
-    <string name="preferences__never">tekirisoboka</string>
-    <string name="preferences__one_time">Mulundi gumu</string>
-    <string name="preferences__two_times">Mirundi ebili</string>
-    <string name="preferences__three_times">Mirundi esatu</string>
-    <string name="preferences__five_times">Emirundi etaano </string>
-    <string name="preferences__ten_times">Mirundi kumi</string>
-    <string name="preferences__vibrate">Okuwuluguma</string>
-    <string name="preferences__green">Kilagala</string>
-    <string name="preferences__red">kimyuffu</string>
-    <string name="preferences__orange">Kakyuungwa</string>
-    <string name="preferences__cyan">cyan </string>
-    <string name="preferences__white">Ngyeru</string>
-    <string name="preferences__none">tekuli</string>
-    <string name="preferences__fast">Bwangu</string>
-    <string name="preferences__normal">Kyabulijjo</string>
-    <string name="preferences__slow">Kasoobo</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">buterevu sagula obubaka mu mboozi kasita buyitirira</string>
-    <string name="preferences__delete_old_messages">sagula obubaka obukadde</string>
-    <string name="preferences__conversation_length_limit">Ekkomo ku mboozi</string>
-    <string name="preferences__trim_all_conversations_now">sala ku mboozi zona kati</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">yita mu mboozi zonna otekeko ekkomo ku buwanvu bwazo.</string>
-    <string name="preferences__default">wifi calling compatiblity mode</string>
-    <string name="preferences__light_theme">Ekitangaala</string>
-    <string name="preferences__dark_theme">Kizikiza</string>
-    <string name="preferences_chats__message_trimming">Okuyimpaya obubaka</string>
-    <string name="preferences_advanced__use_system_emoji">Kozesa system emoji</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">Gyako emoji support eyazimbibwa mu Session</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">Obubaka obupya eri...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">Obulambulukufu bw\'obubaka</string>
-    <string name="conversation_context__menu_copy_text">yozaamu obubaka.</string>
-    <string name="conversation_context__menu_delete_message">Siimula obubaka</string>
-    <string name="conversation_context__menu_resend_message">Ddamu osindike obubaka.</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">Tereka ekigattiddwako.</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">Obubaka bwo bujakubula</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">Obubaka bugwaamu ensa.</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">Saako obude.</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">zikiza obude bwemboozi</string>
-    <!-- conversation -->
-    <string name="conversation__menu_leave_group">Vva mukibinja</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">gaziya popup</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">okutuusibwa</string>
-    <string name="conversation_group_options__conversation">Emboozi</string>
-    <string name="conversation_group_options__broadcast">Okusasaanya mubutongole</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">Tereka</string>
-    <string name="media_preview__forward_title">sindikirako omulala</string>
-    <!-- media_overview -->
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">Lozaako ku bifaananyi, vidiyo n\'enyimba</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">Okusangula</string>
-    <string name="trimmer__deleting_old_messages">Okusangula obubaka obukadde</string>
-    <string name="trimmer__old_messages_successfully_deleted">Obubaka obukadde busangulidwa ddala</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_continue">genda maaso</string>
-    <string name="registration_activity__skip">Buuka</string>
-    <string name="BackupUtil_never">tekirisoboka</string>
-    <string name="AppProtectionPreferenceFragment_none">tekuli</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+    <string name="messageReplyingTo">Uphendula ku</string>
+    <string name="messageRequestGroupInvite"><b>{name} <\/b> ukumemelela ukuba ujoyine <b>{group_name} <\/b>.</string>
+    <string name="messageRequestGroupInviteDescription">Ukuthumela umyalezo kweli qela kuya kwamkela isimemo seqela ngokuzenzekelayo.</string>
+    <string name="messageRequestPending">Isicelo sakho somyalezo sisalindile.</string>
+    <string name="messageRequestPendingDescription">Uya kukwazi ukuthumela imiyalezo yelizwi kunye nezinto ezihambelanayo xa umamkeli eveleli isicelo somyalezo.</string>
+    <string name="messageRequestYouHaveAccepted">Uwamkele isicelo somyalezo esivela ku <b>{name}.</b></string>
+    <string name="messageRequestsAcceptDescription">Ukuthumela umyalezo kumsebenzisi oluya kwamkela ngokuzenzekelayo isicelo somyalezo kunye nokutyhila i- ID yakho ye-Akhawunti.</string>
+    <string name="messageRequestsAccepted">Isicelo sakho somyalezo samkelwe.</string>
+    <string name="messageRequestsClearAllExplanation">Uqinisekile ukuba ufuna ukucima yonke imiyalezo kunye nezicelo zeqela?</string>
+    <string name="messageRequestsCommunities">Izicelo Zemiyalezo YoLuntu</string>
+    <string name="messageRequestsCommunitiesDescription">Vumela izicelo zemiyalezo ukusuka kwiincoko zoLuntu.</string>
+    <string name="messageRequestsDelete">Uqinisekile ukuba ufuna ukususa esi sicelo somyalezo?</string>
+    <string name="messageRequestsNew">Unesicelo esitsha somyalezo</string>
+    <string name="messageRequestsNonePending">Akukho zicelo zomyalezo ezigqityiweyo</string>
+    <string name="messageRequestsTurnedOff"><b>{name} <\/b> ibekhubekile kwiimfuno zemiyalezo ivela kwiingxoxo ze-Community, ke awukwazi ukumthumelela umyalezo.</string>
+    <string name="messageSelect">Khetha umyalezo</string>
+    <string name="messageStatusFailedToSend">Koyekile ukuthumela</string>
+    <string name="messageStatusFailedToSync">Koyekile ukuvumelanisa</string>
+    <string name="messageStatusSyncing">Syncing</string>
+    <string name="messageUnread">Imiyalezo engaqhelekanga</string>
+    <string name="messageVoice">Umyalezo weSandi</string>
+    <string name="messageVoiceErrorShort">Bamba ukurekhoda umyalezo welizwi</string>
+    <string name="messageVoiceSlideToCancel">Slide to Cancel</string>
+    <string name="messages">Imiyalezo</string>
+    <string name="minimize">Minimize</string>
+    <string name="next">Okulandelayo</string>
+    <string name="nicknameDescription">Khetha igama lesidlaliso ku {name}. Oku kuya kubonakala kuwe kwiincoko zakho zijongene nezimbini.</string>
+    <string name="nicknameEnter">Ngenisa i-nickname</string>
+    <string name="nicknameRemove">Susa igama lesidlaliso</string>
+    <string name="nicknameSet">Set Nickname</string>
+    <string name="no">Hayi</string>
+    <string name="noSuggestions">Akukho zithaziso</string>
+    <string name="none">Akukho</string>
+    <string name="notNow">Hayi ngoku</string>
+    <string name="noteToSelf">Umbhalo kuZihlandlo</string>
+    <string name="noteToSelfEmpty">Akunamiyalezo ku Qaphele kuZimeleyo.</string>
+    <string name="noteToSelfHide">Fihla Qaphela kwi-Self</string>
+    <string name="noteToSelfHideDescription">Uqinisekile ukuba ufuna ukufihla amanqaku oKwazisa?</string>
+    <string name="notificationsAllMessages">Zonke Imiyalezo</string>
+    <string name="notificationsAndroidSystem">{message_count} imiyalezo emitsha kwi {conversation_count} iingxoxo</string>
+    <string name="notificationsContent">Izaziso zoMyalezo</string>
+    <string name="notificationsContentDescription">Ulwazi olubonisiwe kwizaziso.</string>
+    <string name="notificationsContentShowNameAndContent">Igama kunye neziqulatho</string>
+    <string name="notificationsContentShowNameOnly">Igama Lodwa</string>
+    <string name="notificationsContentShowNoNameOrContent">Akukho gama okanye iziqulatho</string>
+    <string name="notificationsFastMode">Fast Mode</string>
+    <string name="notificationsFastModeDescriptionAndroid">Uya kwaziswa ngokukhawuleza nangokuthembekile kwimiyalezo emitsha usebenzisa iiSefva ze-Google ezaziswayo.</string>
+    <string name="notificationsFastModeDescriptionIos">Uya kwaziswa ngokukhawuleza nangokuthembekile kwimiyalezo emitsha usebenzisa iiSefva ze-Apple ezaziswayo.</string>
+    <string name="notificationsGoToAndroidSettings">Yiya kuseti lwezaziso kwi-Android</string>
+    <string name="notificationsGoToDevice">Yiya kuseti lwezaziso zesixhobo</string>
+    <string name="notificationsIosGroup">{name} ukuya {conversation_name}</string>
+    <string name="notificationsIosRestart">Unokufumana imiyalezo ngexesha ngelixa <b>{device}</b> sibuya ukuqala.</string>
+    <string name="notificationsLedColor">Umbala we-LED</string>
+    <string name="notificationsMentionsOnly">Izikhumbuzo kuphela</string>
+    <string name="notificationsMessage">Izaziso zomyalezo</string>
+    <string name="notificationsMostRecent">Ukwazisa okugeza {name}</string>
+    <string name="notificationsMute">Thulisa</string>
+    <string name="notificationsMuteFor">Thulisa imizuzu eyi-{time_large}</string>
+    <string name="notificationsMuteUnmute">Susa ukuyimela isandi.</string>
+    <string name="notificationsMuted">Zithule</string>
+    <string name="notificationsSlowMode">Slow Mode</string>
+    <string name="notificationsSlowModeDescription">{app_name} iya kuhlola iimyalezo ezintsha ngasemva ngamaxesha athile.</string>
+    <string name="notificationsSound">Sound</string>
+    <string name="notificationsSoundDescription">Sound when App is open</string>
+    <string name="notificationsSoundDesktop">Izaziso ze-Audio</string>
+    <string name="notificationsStrategy">Icebo leZaziso</string>
+    <string name="notificationsStyle">Isitayile seZaziso</string>
+    <string name="notificationsVibrate">Phokohli</string>
+    <string name="off">Ndithethwe</string>
+    <string name="okay">Kulungile</string>
+    <string name="onboardingAccountCreate">Yenza iakhawunti</string>
+    <string name="onboardingAccountCreated">Iakhawunti yenziwe</string>
+    <string name="onboardingAccountExists">Ndinayo iakhawunti</string>
+    <string name="onboardingBackAccountCreation">Awungekhe ubuyisele umva ngakumbi. Ukusuka kokuqhawula ukudala iakhawunti yakho, i-Session kufuneka ivalwe.</string>
+    <string name="onboardingBackLoadAccount">Awungekhe ubuyisele umva ngakumbi. Ukusuka kokuqhawula ukulayisha i-akhawunti yakho, i-Session kufuneka ivalwe.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Ukudala i-akhawunti kuyakhawuleza, simahla, kwaye ayichanisanga</string>
+    <string name="onboardingBubbleNoPhoneNumber">Awudingi kwanombolo yefowuni ukubhalisa.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">Ubumfihlo kwipokotho yakho.</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} yenzelwe ukukhusela ubumfihlo bakho.</string>
+    <string name="onboardingBubbleWelcomeToSession">Wamkelekile kwi-{app_name}</string>
+    <string name="onboardingHitThePlusButton">Cofa iqhosha elingaphezulu ukuqala incoko, ukudala iqela okanye ukujoyina uluntu olusemthethweni!</string>
+    <string name="onboardingMessageNotificationExplanation">Kukho iindlela ezimbini ze-{app_name} zokukwazisa ngemiyalezo emitsha.</string>
+    <string name="onboardingPrivacy">Umgaqo-nkqubo Wobumfihlo</string>
+    <string name="onboardingTos">Terms of Service</string>
+    <string name="onboardingTosPrivacy">Ngokusebenzisa le nkonzo, uyavuma kwimigaqo yethu ye <b>imigaqo yenkonzo</b> kunye <b>imigaqo yabucala</b></string>
+    <string name="onionRoutingPath">Indlela</string>
+    <string name="onionRoutingPathDescription">{app_name} ifihla i-IP yakho ngokuthumela imiyalezo yakho ngeendawo ezininzi zeenkonzo kwinethiwekhi ye {app_name} esekwe kwiNode yeNkonzo. Le yindlela yakho yangoku:</string>
+    <string name="onionRoutingPathDestination">Destinieshoni</string>
+    <string name="onionRoutingPathEntryNode">Isango lokungena</string>
+    <string name="onionRoutingPathServiceNode">I-node yeNkqubo</string>
+    <string name="onionRoutingPathUnknownCountry">Ilizwe elingaziwa</string>
+    <string name="onsErrorNotRecognized">Asikwazanga ukufumanisa le ONS. Nceda uyijonge kwaye uzame kwakhona.</string>
+    <string name="onsErrorUnableToSearch">Asikwazanga ukufuna le ONS. Nceda uzame kwakhona kamva.</string>
+    <string name="open">Vula</string>
+    <string name="other">Okunye</string>
+    <string name="passwordChange">Tshintsha Ipassword</string>
+    <string name="passwordChangeDescription">Tshintsha i-password efunekayo ukusikhulula {app_name}.</string>
+    <string name="passwordChangedDescription">Iphasiwedi yakho itshintshiwe. Nceda uyigcine ikhuselekile.</string>
+    <string name="passwordConfirm">Qinisekisa iphasiwedi</string>
+    <string name="passwordCreate">Yenza iphasiwedi yakho</string>
+    <string name="passwordCurrentIncorrect">Iphasiwedi yakho yangoku ayichaneki.</string>
+    <string name="passwordDescription">Ifuna iphaswedi ukuvula {app_name}.</string>
+    <string name="passwordEnter">Ngenisa i-password</string>
+    <string name="passwordEnterCurrent">Nceda ngenisa ipassword yakho yangoku.</string>
+    <string name="passwordEnterNew">Nceda ngenisa ipassword yakho entsha</string>
+    <string name="passwordError">Iphasiwedi kufuneka iqulathe oonobumba, amanani kunye neesimboli kuphela</string>
+    <string name="passwordErrorLength">Iphasiwedi mayibe phakathi kwe-6 ne-64 iimpawu ngokubude</string>
+    <string name="passwordErrorMatch">Iipasiwedi azifanani</string>
+    <string name="passwordFailed">Koyekile ukumisela i-password</string>
+    <string name="passwordIncorrect">Iphasiwedi echanekileyo</string>
+    <string name="passwordRemove">Susa iphasiwedi</string>
+    <string name="passwordRemoveDescription">Susa iphasiwedi efunekayo ukuze uvule {app_name}.</string>
+    <string name="passwordRemovedDescription">Iphasiwedi yakho isusiwe.</string>
+    <string name="passwordSet">Set Password</string>
+    <string name="passwordSetDescription">Iphasiwedi yakho isetiwe. Nceda uyigcine ikhuselekile.</string>
+    <string name="paste">Ncamathisela</string>
+    <string name="permissionsAppleMusic">{app_name} kufuneka isebenzise uMculo weApple ukudlala iziphumo zemidiya.</string>
+    <string name="permissionsAutoUpdate">Uhlaziyo oluzenzekelayo</string>
+    <string name="permissionsAutoUpdateDescription">Ukujonga uhlaziyo ngokuzenzekelayo xa uqala inkqubo</string>
+    <string name="permissionsFaceId">Umsebenzi wokutshixa isikrini kwi-{app_name} usebenzisa i-Face ID.</string>
+    <string name="permissionsKeepInSystemTray">Gcina kwiTray yesistim</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} iqhubeka isebenza ngasemva xa uvala ifestile</string>
+    <string name="permissionsLibrary">{app_name} ifuna ukufikelela kumtapo weefoto ukuze iqhubeke. Unokukhubaza ukufikelela kuseto lwakwi-iOS.</string>
+    <string name="permissionsMicrophone">IMikrofoni</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">{app_name} ifuna ukufikelela kwisixhobo somculo ukuthumela imiyalezo yesandi, kodwa ivaliwe ngokusisigxina. Nceda uqhubeke useto lwe-app, ukhethe \"Imvume\", kwaye uvule \"Umculo\".</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">Ungavula ukufikelela kwitsho ye-microphone kwii-setingi zabucala ze-{app_name}</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">{app_name} ifuna ukufikelela kwisixhobo somculo wokwenza iminxeba kunye nokurekhoda imiyalezo yesandi.</string>
+    <string name="permissionsMicrophoneDescription">Vumela ukufikelela kwimikrofono</string>
+    <string name="permissionsRequired">Imvume iyafuneka</string>
+    <string name="permissionsStorageSave">{app_name} ifuna ukufikelela kwindawo yokugcina ukuthumela iziphumo kunye nemidiya.</string>
+    <string name="permissionsStorageSaveDenied">{app_name} ifuna ukufikelela kwindawo yokugcina ukuthumela iifoto nevidiyo, kodwa ivaliwe ngokusisigxina. Nceda uqhubeke useto lwe-app, ukhethe \"Imvume\", kwaye uvule \"Indawo yokugcina\".</string>
+    <string name="permissionsStorageSend">{app_name} ifuna ukufikelela kwindawo yokugcina ukuthumela iifoto nevidiyo.</string>
+    <string name="pin">Pin </string>
+    <string name="pinConversation">Gcina Incoko</string>
+    <string name="pinUnpin">Susa Ukukhonkxa</string>
+    <string name="pinUnpinConversation">Susa ukukhonkxa incoko</string>
+    <string name="preview">Ukuqhaynqa</string>
+    <string name="profile">Iprofayile</string>
+    <string name="profileDisplayPicture">Umfanekiso Okhombisa Ubuso</string>
+    <string name="profileDisplayPictureRemoveError">Koyekile ukususa umfanekiso wokubonisa.</string>
+    <string name="profileDisplayPictureSet">Set Display Picture</string>
+    <string name="profileDisplayPictureSizeError">Nceda ukhethe ifayile encinci.</string>
+    <string name="profileErrorUpdate">Koyekile ukuhlaziya iphrofayile.</string>
+    <string name="promote">Phakamisa</string>
+    <string name="qrCode">Ikhowudi ye-QR</string>
+    <string name="qrNotAccountId">Le khowudi ye-QR ayiqulathanga i-ID ye-Akhawunti</string>
+    <string name="qrNotRecoveryPassword">Le khowudi ye-QR ayiqulathanga i-Password yokubuyisela</string>
+    <string name="qrScan">Skani i-Khowudi ye-QR</string>
+    <string name="qrView">Jonga QR</string>
+    <string name="qrYoursDescription">Abahlobo bangakuthumela umyalezo ngokuskena i-QR code yakho.</string>
+    <string name="quit">Phuma {app_name}</string>
+    <string name="quitButton">Phuma</string>
+    <string name="read">Fundiwe</string>
+    <string name="readReceipts">Iindawo Zokufunda</string>
+    <string name="readReceiptsDescription">Show read receipts for all messages you send and receive.</string>
+    <string name="received">Ifunyenwe:</string>
+    <string name="recommended">Okucetyiswayo</string>
+    <string name="recoveryPasswordBannerDescription">Gcina iphasiwedi yakho yokubuyisela ukuze uqiniseke ukuba awulahlekelwa ukufikelela kwi-akhawunti yakho.</string>
+    <string name="recoveryPasswordBannerTitle">Gcina iphasiwedi yakho yokubuyisela kwi imeyile</string>
+    <string name="recoveryPasswordDescription">Faka iphasiwedi yakho yokufumana kwakhona ukuze ufake iakhawunti yakho kwizixhobo ezintsha.
+
+Iakhawunti yakho ayinakufumaneka ngaphandle kwephasiwedi yakho yokufumana kwakhona. Qinisekisa ukuba iyonke indawo ekhuselekileyo kwaye ungayabelani nabani na.</string>
+    <string name="recoveryPasswordEnter">Ngenisa i-password yakho yokubuyisela</string>
+    <string name="recoveryPasswordErrorMessageGeneric">Nceda ujonge ipassword yakho yokubuyisela kwaye uzame kwakhona.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">Some of the words in your Recovery Password are incorrect. Please check and try again.</string>
+    <string name="recoveryPasswordErrorMessageShort">I-Password yokubuyisela oyifakileyo ayide. Nceda ujonge uze uzame kwakhona.</string>
+    <string name="recoveryPasswordErrorTitle">Iphasiwedi yokubuyisela engalunganga</string>
+    <string name="recoveryPasswordExplanation">Ukhuphulela iakhawunti yakho, faka i-Password yakho yokubuyisela.</string>
+    <string name="recoveryPasswordHidePermanently">Fihla Iphasiwedi yokubuyisela Ngokupheleleyo</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">Ngaphandle kwegama lakho eligqithisiweyo lokubuyisela, awukwazi ukulayisha iakhawunti yakho kwizixhobo ezintsha. 
+
+Sikugxininise kakhulu ukuba ugcine igama lakho lokubuyisela kwindawo ekhuselekileyo neyimfihlo phambi kokuqhubeka.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">Uqinisekile ukuba ufuna ukufihla rhoqo iphasiwedi yakho yokubuyisela kule sixhobo? Oku akunakubuyiselwa.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Fihla Iphasiwedi yokubuyisela</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">Fihla upangisiwe wokumka nge-to ndi ichaphazeleka</string>
+    <string name="recoveryPasswordRestoreDescription">Ngenisa i-password yakho yokubuyisela ukuze ulayishe iakhawunti yakho. Ukuba awuyigcinanga, ungayifumana kwisethingi zohlelo lwakho.</string>
+    <string name="recoveryPasswordView">Jonga Iphasiwedi</string>
+    <string name="recoveryPasswordWarningSendDescription">Le yi-Password yakho yokubuyisela. Ukuba uyithumela kumntu othile baya kuba nelungelo lokufikelela kwi-akhawunti yakho ngokupheleleyo.</string>
+    <string name="redo">Phinda</string>
+    <string name="remove">Susa</string>
+    <string name="reply">Phendula</string>
+    <string name="resend">Thumela kwakhona</string>
+    <string name="resolving">Ukulayishwa kolwazi lwezwe...</string>
+    <string name="restart">Qalisa kwakhona</string>
+    <string name="resync">Phinda usinike</string>
+    <string name="retry">Phinda uzame</string>
+    <string name="save">Gcina</string>
+    <string name="saved">Igcinwe</string>
+    <string name="savedMessages">Imiyalezo egciniwe</string>
+    <string name="saving">Sigcina...</string>
+    <string name="scan">Skani</string>
+    <string name="screenSecurity">Ukhuseleko lweSikrini</string>
+    <string name="screenshotNotifications">Izaziso zeswidi</string>
+    <string name="screenshotNotificationsDescription">Fumana isaziso xa unxibelelwano lwenza into yeskrini se-one-to-one chat.</string>
+    <string name="screenshotTaken"><b>{name} <\/b> ithathe umfanekiso wescreen.</string>
+    <string name="search">Khangela</string>
+    <string name="searchContacts">Khangela Iincwadi Zokunxibelelana</string>
+    <string name="searchConversation">Khangela Udliwano-ndlebe</string>
+    <string name="searchEnter">Nceda ngenisa uphando lwakho.</string>
+    <string name="searchMatchesNone">Akukho ziphumo ezifumanekayo.</string>
+    <string name="searchMatchesNoneSpecific">Akukho ziphumo ezifumanekayo kwi-{query}</string>
+    <string name="searchMembers">Khangela Amalungu</string>
+    <string name="searchSearching">Sikhangela...</string>
+    <string name="select">Khetha</string>
+    <string name="selectAll">Khetha Zonke</string>
+    <string name="send">Thumela</string>
+    <string name="sending">UkuThumela</string>
+    <string name="sent">Thumile:</string>
+    <string name="sessionAppearance">Ndabika</string>
+    <string name="sessionClearData">Coca Idatha</string>
+    <string name="sessionConversations">Iincoko</string>
+    <string name="sessionHelp">Uncedo</string>
+    <string name="sessionInviteAFriend">Mema umhlobo</string>
+    <string name="sessionMessageRequests">Izicelo zoMyalezo</string>
+    <string name="sessionNotifications">Izaziso</string>
+    <string name="sessionPermissions">Izimvume</string>
+    <string name="sessionPrivacy">Ubumfihlo</string>
+    <string name="sessionRecoveryPassword">Recovery Password</string>
+    <string name="sessionSettings">Settings</string>
+    <string name="set">Miselani</string>
+    <string name="settingsRestartDescription">Kufuneka uqale kwakhona {app_name} ukufaka isicelo setshedulo sakho esitsha.</string>
+    <string name="share">Share</string>
+    <string name="shareAccountIdDescription">Mema umhlobo wakho ukuba athethe kunye nawe kwi-Session ngokwabelana nge-ID yakho</string>
+    <string name="shareAccountIdDescriptionCopied">Share with your friends wherever you usually speak with them — then move the conversation here.</string>
+    <string name="shareExtensionDatabaseError">Kukho ingxaki ekuvuleni i-database. Nceda uqale kwakhona uze uzame kwakhona.</string>
+    <string name="shareToSession">Share to {app_Name}</string>
+    <string name="show">Show</string>
+    <string name="showAll">Show All</string>
+    <string name="showLess">Show Less</string>
+    <string name="stickers">Stickers</string>
+    <string name="supportGoTo">Yiya ku Iphepha leNkxaso</string>
+    <string name="theContinue">Qhubeka</string>
+    <string name="theDefault">Okungagqibekanga</string>
+    <string name="theError">Impazamo</string>
+    <string name="tryAgain">Zama kwakhona</string>
+    <string name="typingIndicators">Iimpawu zokuChwetheza</string>
+    <string name="typingIndicatorsDescription">Jonga kwaye wabelane ngezikhombisi zokuchwetheza (...)</string>
+    <string name="undo">Rhoxisa</string>
+    <string name="unknown">Ayaziwa</string>
+    <string name="updateApp">Ihlaziywa Inkqubo</string>
+    <string name="updateDownloaded">Uhlaziyo lufakiwe, cofa ukuze uqale kwakhona</string>
+    <string name="updateDownloading">Khuphela uhlaziyo: {percent_loader}%</string>
+    <string name="updateError">Ayinakho Uhlaziyo</string>
+    <string name="updateErrorDescription">{app_name} ayiphumelelanga ukuhlaziya. Nceda uye ku {download_url} ufake inguqulelo entsha ngesandla, emva koko unxibelelane neZiko lethu loNcedo ukuze usixelele ngale ngxaki.</string>
+    <string name="updateNewVersion">Uhlobo olutsha lwe-{app_name} luyafumaneka, cofa ukuze uhlaziye</string>
+    <string name="updateNewVersionDescription">Uhlobo olutsha lwe-{app_name} luyafumaneka. </string>
+    <string name="updateReleaseNotes">Yiya kuNgcaciso olupapashiweyo</string>
+    <string name="updateSession">Ukuhlaziya i-{app_name}</string>
+    <string name="updateVersion">Inguqulelo {version}</string>
+    <string name="uploading">Ukulayisha</string>
+    <string name="urlCopy">Kopa i-URL</string>
+    <string name="urlOpen">Vula i-URL</string>
+    <string name="urlOpenBrowser">Oku kuya kuvula kwisikhangeli sakho.</string>
+    <string name="urlOpenDescription">Uqinisekile ukuba ufuna ukuvula le URL kwisikhangeli sakho?
+
+{url}</string>
+    <string name="useFastMode">Sebenzisa Imowudi Ekhawulezayo</string>
+    <string name="video">Vidiyo</string>
+    <string name="videoErrorPlay">Ayikwazi ukudlala ividiyo.</string>
+    <string name="view">Jonga</string>
+    <string name="waitFewMinutes">Oku kungathatha imizuzu embalwa.</string>
+    <string name="waitOneMoment">Mxolela umzuzwana wenqindi...</string>
+    <string name="warning">Isilumkiso</string>
+    <string name="window">Window</string>
+    <string name="yes">Ewe</string>
+    <string name="you">Gwe</string>
 </resources>

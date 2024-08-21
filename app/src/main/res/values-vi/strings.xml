@@ -1,430 +1,776 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Session</string>
-    <string name="yes">Có</string>
-    <string name="no">Không</string>
-    <string name="delete">Xóa</string>
-    <string name="save">Lưu</string>
-    <string name="note_to_self">Gửi lời nhắc cho chính mình</string>
-    <string name="version_s">Phiên bản %s</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">Tin nhắn mới</string>
-    <!-- AlbumThumbnailView -->
-    <string name="AlbumThumbnailView_plus">\+%d</string>
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="other">%d tin nhắn trong mỗi cuộc trò chuyện</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Xóa tất cả tin nhắn cũ bây giờ?</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="other">Thao tác này sẽ thu ngắn tức thì tất cả các cuộc hội thoại đến %d tin nhắn gần nhất.</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">Xóa</string>
-    <string name="ApplicationPreferencesActivity_On">Mở</string>
-    <string name="ApplicationPreferencesActivity_Off">Tắt</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(hình)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(âm thanh)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(video)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(trả lời)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Không tìm thấy ứng dụng để chọn dữ liệu truyền thông.</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">Lỗi khi chạy tập tin âm thanh!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">Hôm nay</string>
-    <string name="BucketedThreadMedia_Yesterday">Ngày hôm qua</string>
-    <string name="BucketedThreadMedia_This_week">Tuần này</string>
-    <string name="BucketedThreadMedia_This_month">Tháng này</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">Không tìm thấy trình duyệt.</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">Nhóm</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">Đã nhận được yêu cầu trao đổi khoá, chạm để xử lý.</string>
-    <string name="ConversationItem_unable_to_open_media">Không tìm thấy ứng dụng để mở dữ liệu truyền thông này.</string>
-    <string name="ConversationItem_copied_text">Đã sao chép %s</string>
-    <string name="ConversationItem_download_more">&#160; Tải thêm</string>
-    <string name="ConversationItem_pending">&#160; Đang chờ</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">Thêm tập tin đính kèm</string>
-    <string name="ConversationActivity_select_contact_info">Chọn thông tin liên lạc</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Xin lỗi, có lỗi thiết đặt tập tin đính kèm của bạn.</string>
-    <string name="ConversationActivity_invalid_recipient">Người nhận không đúng!</string>
-    <string name="ConversationActivity_added_to_home_screen">Thêm vào màn hình chính</string>
-    <string name="ConversationActivity_leave_group">Rời nhóm?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Bạn có chắc là muốn rời nhóm?</string>
-    <string name="ConversationActivity_error_leaving_group">Lỗi khi rời nhóm</string>
-    <string name="ConversationActivity_unblock_this_contact_question">Không chặn liên lạc này?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Bạn sẽ lại có thể nhận tin nhắn và cuộc gọi từ liên hệ này.</string>
-    <string name="ConversationActivity_unblock">Không chặn</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">Văn bản đính kèm vượt quá giới hạn kích cỡ cho loại tin nhắn mà bạn đang gửi.</string>
-    <string name="ConversationActivity_unable_to_record_audio">Không thể ghi âm!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">Thiết bị của bạn không có ứng dụng nào tương ứng để mở đường dẫn này.</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">Session cần được truy cập microphone để gửi tin nhắn thoại.</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">Session cần truy cập microphone để gửi tin nhắn thoại, nhưng quyền này đã bị chặn. Hãy đến phần cài đặt, chọn \"Quyền truy cập\" và kích hoạt \"Microphone\".</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="other">Xóa các tin nhắn đã chọn?</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="other">Thao tác này sẽ xóa vĩnh viễn %1$d tin nhắn đã chọn?</item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">Lưu vào thẻ nhớ?</string>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="other">Có lỗi trong khi đang lưu đính kèm vào thẻ nhớ!</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="other">Đang lưu %1$d đính kèm</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">Dùng tùy chỉnh: %s</string>
-    <string name="CustomDefaultPreference_using_default">Dùng mặc định: %s</string>
-    <string name="CustomDefaultPreference_none">Không</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">Bây giờ</string>
-    <string name="DateUtils_minutes_ago">%d phút</string>
-    <string name="DateUtils_today">Hôm nay</string>
-    <string name="DateUtils_yesterday">Ngày hôm qua</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">Hôm nay</string>
-    <!-- DocumentView -->
-    <!-- GiphyActivity -->
-    <!-- GiphyFragmentPageAdapter -->
-    <!-- CropImageActivity -->
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Nhấn và giữ để ghi âm tin nhắn thoại, thả ra để gửi</string>
-    <!-- LongMessageActivity -->
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media_delete_progress_title">Đang xóa</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">Đang xóa tin nhắn...</string>
-    <string name="MediaOverviewActivity_Documents">Tài liệu</string>
-    <string name="MediaOverviewActivity_Select_all">Chọn tất cả</string>
-    <string name="MediaOverviewActivity_collecting_attachments">Đang thu thập đính kèm...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">Tin nhắn đa phương tiện</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">Đang tải xuống tin nhắn MMS</string>
-    <!-- MediaPickerActivity -->
-    <!-- MediaSendActivity -->
-    <!-- MediaRepository -->
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Đã nhận một tin nhắn được mã khoá bởi phiên bản Session cũ và không còn được hỗ trợ. Hãy yêu cầu người gửi cập nhật phiên bản mới nhất và gửi lại tin nhắn.</string>
-    <string name="MessageRecord_left_group">Bạn đã rời nhóm.</string>
-    <!-- ExpirationDialog -->
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">Điền vào cụm từ mật khẩu</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">Chặn liên lạc này?</string>
-    <string name="RecipientPreferenceActivity_block">Chặn</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">Không chặn liên lạc này?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Bạn sẽ lại có thể nhận tin nhắn và cuộc gọi từ liên hệ này.</string>
-    <string name="RecipientPreferenceActivity_unblock">Không chặn</string>
-    <!-- Slide -->
-    <string name="Slide_image">Ảnh</string>
-    <string name="Slide_audio">Đoạn nhạc</string>
-    <string name="Slide_video">Đoạn phim</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Nhận được thông tin
-trao đổi chìa khóa bị hỏng!</string>
-    <string name="SmsMessageRecord_duplicate_message">Tin nhắn trùng lập.</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_secure_session_reset">Đã tái thiết lập phiên bảo mật.</string>
-    <string name="ThreadRecord_draft">Nháp:</string>
-    <string name="ThreadRecord_called">Bạn đã gọi</string>
-    <string name="ThreadRecord_called_you">Đã gọi cho bạn</string>
-    <string name="ThreadRecord_missed_call">Cuộc gọi nhỡ</string>
-    <string name="ThreadRecord_media_message">Tin nhắn đa phương tiện</string>
-    <!-- UpdateApkReadyListener -->
-    <!-- MessageDisplayHelper -->
-    <!-- MmsMessageRecord -->
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">Tạm im thông báo</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">Chạm vào để mở.</string>
-    <string name="KeyCachingService_passphrase_cached">Session đã mở khóa</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">Bạn</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">Không hỗ trợ dạng truyền thông này</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d tin nhắn mới trong %2$d cuộc chuyện trò</string>
-    <string name="MessageNotifier_most_recent_from_s">Gần đây nhất từ: %1$s</string>
-    <string name="MessageNotifier_message_delivery_failed">Phân phối tin nhắn bị thất bại.</string>
-    <string name="MessageNotifier_failed_to_deliver_message">Thất bại trong việc phân phối tin.</string>
-    <string name="MessageNotifier_error_delivering_message">Có lỗi khi phân phối tin.</string>
-    <string name="MessageNotifier_mark_all_as_read">Đánh dấu tất cả đã đọc</string>
-    <string name="MessageNotifier_mark_read">Đánh dấu đã đọc</string>
-    <string name="MessageNotifier_reply">Hồi âm</string>
-    <string name="MessageNotifier_unknown_contact_message">Liên lạc</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">Mặc định</string>
-    <string name="NotificationChannel_missing_display_name">Không rõ</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Trả lời nhanh không khả thi khi Session bị khoá!</string>
-    <string name="QuickResponseService_problem_sending_message">Có vấn đề khi gửi tin nhắn!</string>
-    <!-- SaveAttachmentTask -->
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Tìm kiếm</string>
-    <!-- ShortcutLauncherActivity -->
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_new_message">Tin nhắn mới</string>
-    <!-- TransferControlView -->
-    <!-- VideoPlayer -->
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">Âm thanh</string>
-    <string name="attachment_type_selector__contact">Liên lạc</string>
-    <string name="attachment_type_selector__camera">Máy ảnh</string>
-    <string name="attachment_type_selector__location">Vị trí</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">Nạp danh sách liên lạc..</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">Gửi</string>
-    <string name="conversation_activity__compose_description">Soạn tin nhắn</string>
-    <string name="conversation_activity__emoji_toggle_description">Chuyển bàn phím biểu tượng cảm xúc</string>
-    <string name="conversation_activity__attachment_thumbnail">Ảnh nhỏ tập tin đính kèm</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__slide_to_cancel">TRƯỢT ĐỂ HUỶ</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">Tin nhắn đa phương tiện</string>
-    <string name="conversation_item__secure_message_description">Tin nhắn có mã hóa</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">Gửi thất bại</string>
-    <string name="conversation_item_sent__pending_approval_description">Chờ Chấp Thuận</string>
-    <string name="conversation_item_sent__delivered_description">Đã giao</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">Hình liên lạc</string>
-    <!-- audio_view -->
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">Âm thanh</string>
-    <string name="QuoteView_video">Đoạn phim</string>
-    <string name="QuoteView_you">Bạn</string>
-    <!-- conversation_fragment -->
-    <!-- giphy_activity -->
-    <!-- giphy_fragment -->
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">Xem cuộc hội thoại đầy đủ</string>
-    <!-- media_overview_activity -->
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">GỬI LẠI</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">Chặn</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">Một số việc cần bạn lưu ý.</string>
-    <string name="message_details_header__sent">Đã gửi</string>
-    <string name="message_details_header__received">Đã nhận</string>
-    <string name="message_details_header__via">Qua</string>
-    <string name="message_details_header__to">Đến:</string>
-    <string name="message_details_header__from">Từ:</string>
-    <string name="message_details_header__with">Với:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">Tạo cụm từ mật khẩu</string>
-    <string name="AndroidManifest__select_contacts">Chọn liên lạc</string>
-    <string name="AndroidManifest__media_preview">Xem trước tệp đa phương tiện</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">Dùng mặc định</string>
-    <string name="arrays__use_custom">Dùng tùy chỉnh</string>
-    <string name="arrays__mute_for_one_hour">Tạm im 1 tiếng</string>
-    <string name="arrays__mute_for_two_hours">Tạm im 2 tiếng</string>
-    <string name="arrays__mute_for_one_day">Tạm im 1 ngày</string>
-    <string name="arrays__mute_for_seven_days">Tạm im 7 ngày</string>
-    <string name="arrays__mute_for_one_year">Không báo trong 1 năm</string>
-    <string name="arrays__settings_default">Thiết đặt mặc định</string>
-    <string name="arrays__enabled">Mở</string>
-    <string name="arrays__disabled">Tắt</string>
-    <string name="arrays__name_and_message">Tên và tin nhắn</string>
-    <string name="arrays__name_only">Tên thôi</string>
-    <string name="arrays__no_name_or_message">Không có tên hay tin nhắn</string>
-    <string name="arrays__images">Hình ảnh</string>
-    <string name="arrays__audio">Nhạc</string>
-    <string name="arrays__video">Đoạn phim</string>
-    <string name="arrays__documents">Tài liệu</string>
-    <string name="arrays__normal">Bình thường</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="other">%d tiếng</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">Phím Enter gửi đi</string>
-    <string name="preferences__screen_security">An ninh màn hình</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">Chặn không cho chụp màn hình trong danh sách mới nhất và bên trong ứng dụng</string>
-    <string name="preferences__notifications">Thông báo</string>
-    <string name="preferences__led_color">Màu LED</string>
-    <string name="preferences__led_color_unknown">Không rõ</string>
-    <string name="preferences__pref_led_blink_title">Mô hình chớp nháy LED</string>
-    <string name="preferences__sound">Âm thanh</string>
-    <string name="preferences__silent">Yên lặng</string>
-    <string name="preferences__repeat_alerts">Lập lại cảnh báo</string>
-    <string name="preferences__never">Không bao giờ</string>
-    <string name="preferences__one_time">Một lần</string>
-    <string name="preferences__two_times">Hai lần</string>
-    <string name="preferences__three_times">Ba lần</string>
-    <string name="preferences__five_times">Năm lần</string>
-    <string name="preferences__ten_times">Mười lần</string>
-    <string name="preferences__vibrate">Rung</string>
-    <string name="preferences__green">Xanh lá cây</string>
-    <string name="preferences__red">Đỏ</string>
-    <string name="preferences__blue">Xanh dương</string>
-    <string name="preferences__orange">Cam</string>
-    <string name="preferences__cyan">Xanh lam</string>
-    <string name="preferences__magenta">Hồng đậm</string>
-    <string name="preferences__white">Trắng</string>
-    <string name="preferences__none">Không</string>
-    <string name="preferences__fast">Nhanh</string>
-    <string name="preferences__normal">Bình thường</string>
-    <string name="preferences__slow">Chậm</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Tự động xóa các tin nhắn cũ một khi cuộc hội thoại vượt quá độ dài ấn định</string>
-    <string name="preferences__delete_old_messages">Xóa tin nhắn cũ</string>
-    <string name="preferences__conversation_length_limit">Giới hạn độ dài cuộc chuyện trò</string>
-    <string name="preferences__trim_all_conversations_now">Lập tức rút ngắn tất cả các cuộc hội thoại</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Quét tất cả các cuộc hội thoại và áp dụng giới hạn độ dài hội thoại</string>
-    <string name="preferences__default">Mặc định</string>
-    <string name="preferences__light_theme">Lợt</string>
-    <string name="preferences__dark_theme">Đậm</string>
-    <string name="preferences_chats__message_trimming">Thu gọn tin nhắn</string>
-    <string name="preferences_advanced__use_system_emoji">Sử dụng ký tự biểu cảm hệ thống</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">Tắt hỗ trợ ký tự biểu cảm mặc định của Session</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">Tin nhắn mới cho...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">Chi tiết tin nhắn</string>
-    <string name="conversation_context__menu_copy_text">Sao chép văn bản</string>
-    <string name="conversation_context__menu_delete_message">Xóa tin nhắn</string>
-    <string name="conversation_context__menu_resend_message">Gửi lại tin nhắn</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">Lưu đính kèm</string>
-    <!-- conversation_expiring_off -->
-    <!-- conversation_expiring_on -->
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">Tắt tạm im</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">Tạm im thông báo</string>
-    <!-- conversation -->
-    <string name="conversation__menu_leave_group">Rời nhóm</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">Nới rộng khung popup</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">Phân phối</string>
-    <string name="conversation_group_options__conversation">Chuyện trò</string>
-    <string name="conversation_group_options__broadcast">Phát rộng</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">Lưu</string>
-    <!-- media_overview -->
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">Xem trước tệp đa phương tiện</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">Đang xóa</string>
-    <string name="trimmer__deleting_old_messages">Đang xóa tin nhắn cũ...</string>
-    <string name="trimmer__old_messages_successfully_deleted">Xóa thành công các tin nhắn cũ</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_continue">Tiếp tục</string>
-    <string name="registration_activity__skip">Bỏ qua</string>
-    <string name="BackupDialog_copied_to_clipboard">Sao chép vào bảng ghi tạm</string>
-    <string name="BackupUtil_never">Không bao giờ</string>
-    <string name="AppProtectionPreferenceFragment_none">Không</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <string name="continue_2">Tiếp tục</string>
-    <string name="copy">Sao chép</string>
-    <string name="invalid_url">URL không hợp lệ</string>
-    <string name="copied_to_clipboard">Sao chép vào bộ nhớ tạm</string>
-    <string name="next">Tiếp</string>
-    <string name="share">Chia sẻ</string>
-    <string name="invalid_session_id">Session ID không hợp lệ</string>
+    <string name="about">Giới thiệu</string>
+    <string name="accept">Chấp nhận</string>
+    <string name="accountIDCopy">Sao chép Account ID</string>
+    <string name="accountIdCopied">ID Tài khoản đã sao chép</string>
+    <string name="accountIdCopyDescription">Sao chép Account ID của bạn sau đó chia sẻ nó với bạn bè của bạn để họ có thể nhắn tin cho bạn.</string>
+    <string name="accountIdEnter">Nhập Account ID</string>
+    <string name="accountIdErrorInvalid">Mã Tài Khoản này không hợp lệ. Vui lòng kiểm tra và thử lại.</string>
+    <string name="accountIdOrOnsEnter">Nhập Account ID hoặc ONS</string>
+    <string name="accountIdOrOnsInvite">Mời Account ID hoặc ONS</string>
+    <string name="accountIdShare">Này, tôi đã sử dụng {app_name} để trò chuyện với sự riêng tư và bảo mật hoàn toàn. Hãy tham gia cùng tôi! ID tài khoản của tôi là
+
+{account_id}
+
+Tải về tại {download_url}</string>
+    <string name="accountIdYours">ID Tài khoản của bạn</string>
+    <string name="accountIdYoursDescription">Đây là Mã Tài Khoản của bạn. Những người khác có thể quét nó để bắt đầu trò chuyện với bạn.</string>
+    <string name="actualSize">Kích thước thật</string>
+    <string name="add">Thêm</string>
+    <string name="adminCannotBeRemoved">Quản trị viên không thể bị xoá.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name} <\/b> và <b>{count} người khác <\/b> được thăng lên làm Admin.</string>
+    <string name="adminPromote">Đề bạt quản trị viên</string>
+    <string name="adminPromoteDescription">Bạn có chắc chắn rằng bạn muốn nâng cấp <b>{name} </b> lên quản trị viên? Các quản trị viên không thể bị gỡ bỏ.</string>
+    <string name="adminPromoteMoreDescription">Bạn có chắc chắn rằng bạn muốn nâng cấp <b>{name} <\/b> và <b> {count} người khác <\/b> lên quản trị viên? Các quản trị viên không thể bị gỡ bỏ.</string>
+    <string name="adminPromoteToAdmin">Đề bạt thành Quản trị viên</string>
+    <string name="adminPromoteTwoDescription">Bạn có chắc chắn rằng bạn muốn nâng cấp <b>{name} <\/b> và <b>{other_name} <\/b> lên quản trị viên? Các quản trị viên không thể bị gỡ bỏ.</string>
+    <string name="adminPromotedToAdmin"><b>{name} <\/b> được thăng lên làm Admin.</string>
+    <string name="adminPromotionFailed">Thăng chức quản trị viên thất bại</string>
+    <string name="adminPromotionFailedDescription">Thăng cấp {name} lên Admin trong nhóm {group_name} thất bại</string>
+    <string name="adminPromotionFailedDescriptionMany">Thăng cấp {name} và {count} người khác lên Admin trong nhóm {group_name} thất bại</string>
+    <string name="adminPromotionFailedDescriptionMore">Thăng cấp {name} và {other_name} lên Admin trong nhóm {group_name} thất bại</string>
+    <string name="adminPromotionSent">Đã gửi yêu cầu thăng chức quản trị viên</string>
+    <string name="adminRemove">Xóa quản trị viên</string>
+    <string name="adminRemoveAsAdmin">Xóa quyền Quản trị viên</string>
+    <string name="adminRemoveCommunityNone">Không có Admin trong Community này.</string>
+    <string name="adminRemoveFailed">Không thể xóa {name} khỏi Admin.</string>
+    <string name="adminRemovedUser"><b>{name} <\/b> đã bị loại khỏi Admin.</string>
+    <string name="adminSendingPromotion">Đang gửi khuyến mại quản trị viên</string>
+    <string name="adminSettings">Cài đặt quản trị viên</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name} <\/b> và <b>{other_name} <\/b> được thăng lên làm Admin.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">Ẩn danh</string>
+    <string name="appearanceAutoDarkMode">Chế độ tối tự động</string>
+    <string name="appearanceHideMenuBar">Ẩn thanh Menu</string>
+    <string name="appearanceLanguage">Ngôn ngữ</string>
+    <string name="appearanceLanguageDescription">Chọn cài đặt ngôn ngữ của bạn cho {app_name}. {app_name} sẽ khởi động lại khi bạn thay đổi cài đặt ngôn ngữ.</string>
+    <string name="appearancePreview1">Bạn khoẻ không?</string>
+    <string name="appearancePreview2">Tôi ổn, cảm ơn, còn bạn?</string>
+    <string name="appearancePreview3">Tôi rất tốt, cảm ơn.</string>
+    <string name="appearancePrimaryColor">Màu chính</string>
+    <string name="appearanceThemes">Hình nền</string>
+    <string name="appearanceThemesClassicDark">Tối cổ điển</string>
+    <string name="appearanceThemesClassicLight">Sáng cổ điển</string>
+    <string name="appearanceThemesOceanDark">Ocean Dark</string>
+    <string name="appearanceThemesOceanLight">Ocean Light</string>
+    <string name="appearanceZoom">Phóng to</string>
+    <string name="appearanceZoomIn">Phóng to</string>
+    <string name="appearanceZoomOut">Thu nhỏ</string>
+    <string name="attachment">Tệp đính kèm</string>
+    <string name="attachmentsAdd">Thêm tệp đính kèm</string>
+    <string name="attachmentsAlbumUnnamed">Album không tên</string>
+    <string name="attachmentsAutoDownload">Tự động tải về Tệp tin Đính kèm</string>
+    <string name="attachmentsAutoDownloadDescription">Tự động tải về phương tiện và các tập tin từ cuộc trò chuyện này.</string>
+    <string name="attachmentsAutoDownloadModalDescription">Bạn có muốn tự động tải về tất cả các tệp từ <b>{conversation_name}</b> không?</string>
+    <string name="attachmentsAutoDownloadModalTitle">Tự động tải xuống</string>
+    <string name="attachmentsClearAll">Xóa Tất cả Tệp đính kèm</string>
+    <string name="attachmentsClearAllDescription">Bạn có chắc rằng bạn muốn xoá tất cả tệp đính kèm? Các tin nhắn có tệp đính kèm cũng sẽ bị xoá.</string>
+    <string name="attachmentsClickToDownload">Bấm để tải {file_type}</string>
+    <string name="attachmentsCollapseOptions">Thu gọn tùy chọn đính kèm</string>
+    <string name="attachmentsCollecting">Đang thu thập đính kèm...</string>
+    <string name="attachmentsDownload">Tải về Tệp tin Đính kèm</string>
+    <string name="attachmentsDuration">Thời lượng:</string>
+    <string name="attachmentsErrorLoad">Lỗi khi đính kèm tệp tin</string>
+    <string name="attachmentsErrorNoApp">Không tìm thấy ứng dụng để chọn dữ liệu truyền thông.</string>
+    <string name="attachmentsErrorNotSupported">Loại tệp này không được hỗ trợ.</string>
+    <string name="attachmentsErrorNumber">Không thể gửi quá 32 tệp hình ảnh và video cùng lúc.</string>
+    <string name="attachmentsErrorOpen">Không thể mở tệp.</string>
+    <string name="attachmentsErrorSending">Lỗi khi gửi tệp tin</string>
+    <string name="attachmentsErrorSeparate">Vui lòng gửi các tệp dưới dạng tin nhắn riêng biệt.</string>
+    <string name="attachmentsErrorSize">Tập tin phải nhỏ hơn 10MB</string>
+    <string name="attachmentsErrorTypes">Không thể đính kèm ảnh và video cùng với các loại tập tin khác. Thử gửi các tập tin khác trong một tin nhắn riêng.</string>
+    <string name="attachmentsExpired">Tệp đính kèm đã hết hạn</string>
+    <string name="attachmentsFileId">ID tệp tin:</string>
+    <string name="attachmentsFileSize">Dung lượng tệp tin:</string>
+    <string name="attachmentsFileType">Loại tệp tin:</string>
+    <string name="attachmentsFilesEmpty">Bạn không có tệp nào trong cuộc trò chuyện này.</string>
+    <string name="attachmentsImageErrorMetadata">Không thể xoá dữ liệu khỏi tệp.</string>
+    <string name="attachmentsLoadingNewer">Đang tải phương tiện mới nhất...</string>
+    <string name="attachmentsLoadingNewerFiles">Đang tải tập tin mới nhất...</string>
+    <string name="attachmentsLoadingOlder">Đang tải phương tiện cũ hơn...</string>
+    <string name="attachmentsLoadingOlderFiles">Đang tải tập tin cũ hơn...</string>
+    <string name="attachmentsMedia">{name} hồi {date_time}</string>
+    <string name="attachmentsMediaEmpty">Bạn không có nội dung đa phương tiện nào trong cuộc trò chuyện này.</string>
+    <string name="attachmentsMediaSaved">Phương tiện được lưu bởi {name}</string>
+    <string name="attachmentsMoveAndScale">Di chuyển và Thu phóng</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} Tệp đính kèm</string>
+    <string name="attachmentsResolution">Độ phân giải:</string>
+    <string name="attachmentsSaveError">Không thể lưu tệp.</string>
+    <string name="attachmentsSendTo">Gửi tới {name}</string>
+    <string name="attachmentsTapToDownload">Nhấn để tải xuống {file_type}</string>
+    <string name="attachmentsThisMonth">Tháng này</string>
+    <string name="attachmentsThisWeek">Tuần này</string>
+    <string name="attachmentsWarning">Các tệp đính kèm bạn lưu có thể được truy cập bởi các ứng dụng khác trên thiết bị của bạn.</string>
+    <string name="audio">Âm thanh</string>
+    <string name="audioNoInput">Không tìm thấy đầu vào âm thanh</string>
+    <string name="audioNoOutput">Không tìm thấy đầu ra âm thanh</string>
+    <string name="audioUnableToPlay">Không thể phát tệp âm thanh.</string>
+    <string name="audioUnableToRecord">Không thể ghi âm.</string>
+    <string name="authenticateFailed">Xác thực thất bại</string>
+    <string name="authenticateFailedTooManyAttempts">Quá nhiều lần xác thực không thành công. Vui lòng thử lại sau.</string>
+    <string name="authenticateNotAccessed">Không thể truy cập xác thực.</string>
+    <string name="authenticateToOpen">Xác thực để mở {app_name}.</string>
+    <string name="back">Quay lại</string>
+    <string name="banDeleteAll">Cấm và Xoá toàn bộ</string>
+    <string name="banErrorFailed">Bỏ cấm thất bại</string>
+    <string name="banUnbanErrorFailed">Bỏ cấm thất bại</string>
+    <string name="banUnbanUser">Bỏ cấm người dùng</string>
+    <string name="banUnbanUserUnbanned">Người dùng được bỏ cấm</string>
+    <string name="banUser">Cấm người dùng</string>
+    <string name="banUserBanned">Người dùng bị cấm</string>
+    <string name="block">Chặn</string>
+    <string name="blockBlockedDescription">Mở khóa người (liên lạc) này để gởi thông báo.</string>
+    <string name="blockBlockedNone">Không có liên lạc bị chặn</string>
+    <string name="blockBlockedUser">Đã chặn {name}</string>
+    <string name="blockDescription">Bạn có chắc chắn rằng bạn muốn chặn <b>{name}?</b> Người dùng bị chặn không thể gửi yêu cầu tin nhắn, lời mời nhóm hoặc gọi cho bạn.</string>
+    <string name="blockUnblock">Bỏ chặn</string>
+    <string name="blockUnblockName">Bạn có chắc chắn rằng bạn muốn bỏ chặn {name}?</string>
+    <string name="blockUnblockNameMultiple">Bạn có chắc chắn rằng bạn muốn bỏ chặn {name} và {count} người khác?</string>
+    <string name="blockUnblockNameTwo">Bạn có chắc chắn rằng bạn muốn bỏ chặn {name} và 1 người khác?</string>
+    <string name="blockUnblockedUser">Bỏ chặn {name}</string>
+    <string name="call">Gọi</string>
+    <string name="callsCalledYou">{name} đã gọi cho bạn</string>
+    <string name="callsCannotStart">Bạn không thể bắt đầu cuộc gọi mới. Hoàn thành cuộc gọi hiện tại của bạn trước.</string>
+    <string name="callsConnecting">Đang kết nối...</string>
+    <string name="callsEnd">Kết thúc cuộc gọi</string>
+    <string name="callsEnded">Cuộc gọi đã kết thúc</string>
+    <string name="callsErrorAnswer">Không thể trả lời cuộc gọi</string>
+    <string name="callsErrorStart">Không thể bắt đầu cuộc gọi</string>
+    <string name="callsInProgress">Cuộc gọi đang diễn ra</string>
+    <string name="callsIncoming">Cuộc gọi đến từ {name}</string>
+    <string name="callsIncomingUnknown">Cuộc gọi đến</string>
+    <string name="callsMissed">Cuộc gọi nhỡ</string>
+    <string name="callsMissedCallFrom">Cuộc gọi nhỡ từ {name}</string>
+    <string name="callsNotificationsRequired">Các cuộc gọi giọng nói và video yêu cầu phải bật thông báo trong cài đặt hệ thống thiết bị của bạn.</string>
+    <string name="callsPermissionsRequired">Yêu cầu Quyền Gọi</string>
+    <string name="callsPermissionsRequiredDescription">Bạn có thể bật quyền \"Gọi giọng nói và video\" trong cài đặt Quyền riêng tư.</string>
+    <string name="callsReconnecting">Đang kết nối lại…</string>
+    <string name="callsRinging">Đang đổ chuông...</string>
+    <string name="callsSessionCall">Cuộc gọi Session</string>
+    <string name="callsSettings">Cuộc gọi (Beta)</string>
+    <string name="callsVoiceAndVideo">Cuộc gọi thoại và video</string>
+    <string name="callsVoiceAndVideoBeta">Các cuộc gọi giọng nói và video (Beta)</string>
+    <string name="callsVoiceAndVideoModalDescription">Địa chỉ IP của bạn hiển thị với đối tác cuộc gọi và máy chủ Oxen Foundation trong khi sử dụng cuộc gọi beta.</string>
+    <string name="callsVoiceAndVideoToggleDescription">Cho phép thực hiện cuộc gọi giọng nói và video với người dùng khác</string>
+    <string name="callsYouCalled">Bạn đã gọi {name}</string>
+    <string name="callsYouMissedCallPermissions">Bạn đã bỏ lỡ cuộc gọi từ <b>{name}</b> vì bạn chưa bật <b>Cuộc gọi Điện thoại và Video</b> trong Cài đặt Quyền riêng tư.</string>
+    <string name="cameraErrorNotFound">Không tìm thấy máy ảnh</string>
+    <string name="cameraErrorUnavailable">Máy ảnh không khả dụng.</string>
+    <string name="cameraGrantAccess">Cho phép truy cập máy ảnh</string>
+    <string name="cameraGrantAccessDenied">{app_name} cần truy cập máy ảnh để chụp ảnh và quay video, nhưng quyền truy cập này đã bị chặn. Hãy đến phần cài đặt, chọn \"Quyền truy cập\" và kích hoạt \"Máy ảnh\".</string>
+    <string name="cameraGrantAccessDescription">{app_name} cần truy cập máy ảnh để chụp ảnh, quay video hoặc quét mã QR.</string>
+    <string name="cameraGrantAccessQr">{app_name} cần truy cập máy ảnh để quét mã QR</string>
     <string name="cancel">Huỷ</string>
-    <string name="your_session_id">Session ID của bạn</string>
-    <string name="activity_landing_title_2">Session của bạn bắt đầu từ đây...</string>
-    <string name="activity_landing_register_button_title">Tạo Session ID</string>
-    <string name="activity_landing_restore_button_title">Tiếp tục Session của bạn</string>
-    <string name="view_fake_chat_bubble_1">Session là gì?</string>
-    <string name="view_fake_chat_bubble_2">Đây là một ứng dụng nhắn tin phân cấp và mã hoá</string>
-    <string name="view_fake_chat_bubble_3">Vậy ứng dụng có thu thập dữ liệu cá nhân của tôi hoặc siêu dữ liệu về cuộc hội thoại của tôi không? Ứng dụng hoạt động như thế nào?</string>
-    <string name="view_fake_chat_bubble_4">Sử dụng kết hợp công nghệ định tuyến ẩn danh nâng cao và công nghệ mã hoá đầu cuối.</string>
-    <string name="view_fake_chat_bubble_5">Đừng để bạn bè sử dụng những ứng dụng nhắn tin dễ bị tấn công.</string>
-    <string name="activity_register_title">Bắt đầu với Session ID của bạn</string>
-    <string name="activity_register_explanation">Session ID của bạn là địa chỉ duy nhất mà mọi người có thể dùng để liên lạc với bạn trên ứng dụng Session. Session ID của bạn được thiết kế đảm bảo tuyệt đối ẩn danh và riêng tư vì nó không liên kết với danh tính thật của bạn.</string>
-    <string name="activity_restore_title">Khôi phục lại tài khoản của bạn</string>
-    <string name="activity_restore_explanation">Nhập cụm từ khôi phục mà bạn nhận được khi đăng ký khôi phục tài khoản.</string>
-    <string name="activity_restore_seed_edit_text_hint">Nhập cụm từ khôi phục của bạn.</string>
-    <string name="activity_display_name_title_2">Chọn tên hiển thị của bạn</string>
-    <string name="activity_display_name_explanation">Đây là tên của bạn khi sử dụng Session. Nó có thể là tên thật, tên gọi khác của bạn hoặc bất kì tên nào bạn thích.</string>
-    <string name="activity_display_name_edit_text_hint">Nhập một tên hiển thị</string>
-    <string name="activity_display_name_display_name_missing_error">Vui lòng chọn một tên hiển thị</string>
-    <string name="activity_display_name_display_name_too_long_error">Vui lòng chọn tên hiển thị ngắn hơn</string>
-    <string name="activity_pn_mode_recommended_option_tag">Khuyến nghị</string>
-    <string name="activity_pn_mode_no_option_picked_dialog_title">Vui lòng lựa chọn </string>
-    <string name="activity_home_empty_state_message">Bạn chưa có danh bạ </string>
-    <string name="activity_home_empty_state_button_title">Bắt đầu một Session</string>
-    <string name="activity_home_leave_group_dialog_message">Bạn có chắc chắn rằng bạn muốn rời nhóm này không?</string>
-    <string name="activity_home_leaving_group_failed_message">"Không thể rời nhóm"</string>
-    <string name="activity_home_delete_conversation_dialog_message">Bạn có chắc chắn rằng bạn muốn xoá cuộc hội thoại này không?</string>
-    <string name="activity_home_conversation_deleted_message">Cuộc hội thoại đã được xoá </string>
-    <string name="activity_seed_title">Cụm từ khôi phục của bạn</string>
-    <string name="activity_seed_title_2">Làm quen với cụm từ khôi phục của bạn</string>
-    <string name="activity_seed_explanation">Cụm từ khôi phục của bạn là chìa khoá chủ cho Session ID của bạn — bạn có thể sử dụng nó để khôi phục Session ID khi bị mất tiếp cận với thiết bị của bạn. Hãy lưu cụm từ khôi phục của bạn ở một nơi an toàn và không cung cấp cho bất kì ai.</string>
-    <string name="activity_seed_reveal_button_title">Giữ để hiển thị.</string>
-    <string name="view_seed_reminder_subtitle_1">Bảo vệ tài khoản của bạn bằng việc bảo vệ cụm từ khôi phục của bạn</string>
-    <string name="view_seed_reminder_subtitle_2">Chạm và giữ cụm từ bị che để hiển thị cụm từ khôi phục của bạn, sau đó lưu nó cẩn thận để bảo vệ Session ID của bạn.</string>
-    <string name="view_seed_reminder_subtitle_3">Hãy lưu cụm từ khôi phục của bạn ở một nơi an toàn</string>
-    <string name="activity_path_title">Đường đi</string>
-    <string name="activity_path_explanation">Session ẩn IP của bạn bằng cách luân chuyển tin nhắn của bạn qua một số Nút Dịch vụ trong mạng lưới phân cấp của Session. Đây là các nước mà kết nối của bạn đang được luân chuyển: </string>
-    <string name="activity_path_device_row_title">Bạn</string>
-    <string name="activity_path_guard_node_row_title">Nút khởi đầu</string>
-    <string name="activity_path_service_node_row_title">Nút Dịch vụ</string>
-    <string name="activity_path_destination_row_title">Điểm đến</string>
-    <string name="activity_path_learn_more_button_title">Tìm hiểu thêm</string>
-    <string name="activity_create_private_chat_title">Session mới</string>
-    <string name="activity_create_private_chat_enter_session_id_tab_title">Nhập Session ID</string>
-    <string name="activity_create_private_chat_scan_qr_code_tab_title">Quét mã QR</string>
-    <string name="activity_create_private_chat_scan_qr_code_explanation">Quét mã QR của người dùng để bắt đầu session. Tìm mã QR bằng cách chạm vào biểu tượng mã QR trong mục cài đặt tài khoản.</string>
-    <string name="fragment_enter_public_key_explanation">Người dùng có thể chia sẻ Session ID của mình bằng cách tới mục cài đặt tài khoản và chạm vào “Chia sẻ Session ID”, hoặc bằng cách chia sẻ mã QR của họ.</string>
-    <string name="fragment_scan_qr_code_camera_access_explanation">Session cần truy cập máy ảnh để quét mã QR </string>
-    <string name="fragment_scan_qr_code_grant_camera_access_button_title">Cho phép truy cập máy ảnh</string>
-    <string name="activity_create_closed_group_title">Nhóm kín mới </string>
-    <string name="activity_create_closed_group_edit_text_hint">Nhập tên nhóm</string>
-    <string name="activity_create_closed_group_empty_state_message">Bạn chưa có danh bạ nào </string>
-    <string name="activity_create_closed_group_empty_state_button_title">Bắt đầu Session</string>
-    <string name="activity_create_closed_group_group_name_missing_error">Vui lòng nhập tên nhóm</string>
-    <string name="activity_create_closed_group_group_name_too_long_error">Vui lòng nhập một tên nhóm ngắn hơn </string>
-    <string name="activity_create_closed_group_not_enough_group_members_error">Vui lòng chọn ít nhất 2 thành viên trong nhóm </string>
-    <string name="activity_join_public_chat_title">Tham gia nhóm mở</string>
-    <string name="activity_join_public_chat_error">Không thể tham gia nhóm</string>
-    <string name="activity_join_public_chat_enter_group_url_tab_title">URL của nhóm mở</string>
-    <string name="activity_join_public_chat_scan_qr_code_tab_title">Quét mã QR</string>
-    <string name="activity_join_public_chat_scan_qr_code_explanation"> Quét mã QR của nhóm mở mà bạn muốn tham gia</string>
-    <string name="fragment_enter_chat_url_edit_text_hint">Nhập URL của nhóm mở</string>
-    <string name="activity_settings_title">Cài đặt</string>
-    <string name="activity_settings_display_name_edit_text_hint">Nhập tên hiển thị</string>
-    <string name="activity_settings_display_name_missing_error">Vui lòng chọn một tên hiển thị </string>
-    <string name="activity_settings_display_name_too_long_error">Vui lòng chọn một tên hiển thị ngắn hơn </string>
-    <string name="activity_settings_privacy_button_title">Riêng tư</string>
-    <string name="activity_settings_notifications_button_title">Thông báo</string>
-    <string name="activity_settings_chats_button_title">Trò chuyện</string>
-    <string name="activity_settings_devices_button_title">Thiết bị</string>
-    <string name="activity_settings_recovery_phrase_button_title">Cụm từ khôi phục</string>
-    <string name="activity_settings_clear_all_data_button_title">Xóa dữ liệu</string>
-    <string name="activity_notification_settings_title">Thông báo</string>
-    <string name="activity_notification_settings_style_section_title">Kiểu thông báo</string>
-    <string name="activity_notification_settings_content_section_title">Nội dung thông báo</string>
-    <string name="activity_privacy_settings_title">Riêng tưy</string>
-    <string name="preferences_notifications_strategy_category_title">Chiến lược thông báo</string>
-    <string name="fragment_device_list_bottom_sheet_change_name_button_title">Đổi tên</string>
-    <string name="fragment_device_list_bottom_sheet_unlink_device_button_title">Hủy liên kết thiết bị</string>
-    <string name="dialog_seed_title">Cụm từ khôi phục của bạn</string>
-    <string name="dialog_seed_explanation">Đây là cụm từ khôi phục của bạn. Bạn có thể dùng nó để khôi phục hoặc chuyển Session ID của mình sang một thiết bị mới.</string>
-    <string name="dialog_clear_all_data_title">Xóa tất cả dữ liệu</string>
-    <string name="dialog_clear_all_data_explanation">Thao tác này sẽ xóa vĩnh viễn các tin nhắn, sessions, và danh bạ của bạn.</string>
-    <string name="activity_qr_code_title">Mã QR</string>
-    <string name="activity_qr_code_view_my_qr_code_tab_title">Xem mã QR của tôi</string>
-    <string name="activity_qr_code_view_scan_qr_code_tab_title">Quét mã QR</string>
-    <string name="activity_qr_code_view_scan_qr_code_explanation">Quét mã QR của ai đó để bắt đầu trò chuyện với họ</string>
-    <string name="fragment_view_my_qr_code_explanation">Đây là mã QR của bạn. Những người dùng khác có thể quét mã này và bắt đầu session với bạn.</string>
-    <string name="fragment_view_my_qr_code_share_title">Chia sẻ mã QR </string>
-    <string name="fragment_contact_selection_contacts_title">Danh bạ</string>
-    <string name="fragment_contact_selection_closed_groups_title">Nhóm kín</string>
-    <string name="fragment_contact_selection_open_groups_title">Nhóm mở</string>
-    <!-- Next round of translation -->
+    <string name="clear">Xóa</string>
+    <string name="clearAll">Xóa Tất cả</string>
+    <string name="clearDataAll">Xóa tất cả dữ liệu</string>
+    <string name="clearDataAllDescription">Điều này sẽ xóa vĩnh viễn tin nhắn và danh bạ của bạn. Bạn có muốn xoá dữ liệu chỉ trên thiết bị này hay xoá dữ liệu từ mạng lưới?</string>
+    <string name="clearDataError">Dữ liệu không được xóa</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="other">Dữ liệu không được xóa bởi %1$d Service Node. ID của Service Node: %2$s.</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">Một lỗi không xác định đã xảy ra và dữ liệu của bạn chưa bị xóa. Bạn có muốn xóa dữ liệu của mình chỉ từ thiết bị này không?</string>
+    <string name="clearDevice">Xóa thiết bị</string>
+    <string name="clearDeviceAndNetwork">Xóa thiết bị và mạng</string>
+    <string name="clearDeviceAndNetworkConfirm">Bạn có chắc chắn rằng bạn muốn xoá dữ liệu của bạn khỏi mạng? Nếu bạn tiếp tục, bạn sẽ không thể khôi phục lại tin nhắn hay danh bạ.</string>
+    <string name="clearDeviceDescription">Bạn có chắc rằng bạn muốn xoá thiết bị của mình?</string>
+    <string name="clearDeviceOnly">Chỉ xóa thiết bị</string>
+    <string name="clearMessages">Xóa tất cả tin nhắn</string>
+    <string name="clearMessagesChatDescription">Bạn có chắc chắn rằng bạn muốn xóa tất cả tin nhắn từ cuộc trò chuyện của mình với <b>{name}</b> khỏi thiết bị của bạn?</string>
+    <string name="clearMessagesCommunity">Bạn có chắc chắn rằng bạn muốn xóa tất cả tin nhắn của <b>{community_name}</b> khỏi thiết bị của bạn?</string>
+    <string name="clearMessagesForEveryone">Xóa cho mọi người</string>
+    <string name="clearMessagesForMe">Xóa cho tôi</string>
+    <string name="clearMessagesGroupAdminDescription">Bạn có chắc chắn rằng bạn muốn xóa tất cả tin nhắn của <b>{group_name}</b>?</string>
+    <string name="clearMessagesGroupDescription">Bạn có chắc chắn rằng bạn muốn xóa tất cả tin nhắn của <b>{group_name}</b> khỏi thiết bị của bạn?</string>
+    <string name="clearMessagesNoteToSelfDescription">Bạn có chắc chắn rằng bạn muốn xóa tất cả các tin nhắn Note to Self khỏi thiết bị của bạn?</string>
+    <string name="close">Đóng</string>
+    <string name="closeWindow">Đóng cửa sổ</string>
+    <string name="communityEnterUrl">Nhập URL của Community</string>
+    <string name="communityEnterUrlErrorInvalid">URL không hợp lệ</string>
+    <string name="communityEnterUrlErrorInvalidDescription">Vui lòng kiểm tra URL của Cộng Đồng và thử lại.</string>
+    <string name="communityError">Lỗi cộng đồng</string>
+    <string name="communityErrorDescription">Rất tiếc, đã xảy ra lỗi. Vui lòng thử lại sau.</string>
+    <string name="communityInvitation">Lời mời tham gia cộng đồng</string>
+    <string name="communityJoin">Tham gia Community</string>
+    <string name="communityJoinDescription">Bạn có chắc chắn rằng bạn muốn tham gia {community_name}?</string>
+    <string name="communityJoinError">Không thể tham gia {community_name}</string>
+    <string name="communityJoinOfficial">Hoặc tham gia một trong các cộng đồng này...</string>
+    <string name="communityJoined">Đã tham gia Community</string>
+    <string name="communityJoinedAlready">Bạn đã là thành viên của cộng đồng này.</string>
+    <string name="communityLeave">Rời Community</string>
+    <string name="communityLeaveError">Không thể rời khỏi {community_name}</string>
+    <string name="communityUnknown">Cộng đồng không rõ</string>
+    <string name="communityUrl">URL cộng đồng</string>
+    <string name="communityUrlCopy">Sao chép URL cộng đồng</string>
+    <string name="confirm">Xác nhận</string>
+    <string name="contactContacts">Liên hệ</string>
+    <string name="contactDelete">Xoá liên hệ</string>
+    <string name="contactDeleteDescription">Bạn có chắc chắn rằng bạn muốn xóa <b>{name}</b> khỏi danh bạ của bạn? Tin nhắn mới từ <b>{name}</b> sẽ đến dưới dạng yêu cầu tin nhắn.</string>
+    <string name="contactNone">Bạn chưa có danh bạ nào</string>
+    <string name="contactSelect">Chọn liên lạc</string>
+    <string name="contactUserDetails">Chi tiết của người dùng</string>
+    <string name="contentDescriptionCamera">Máy ảnh</string>
+    <string name="contentDescriptionChooseConversationType">Chọn một hành động để bắt đầu một cuộc trò chuyện</string>
+    <string name="contentDescriptionMediaMessage">Tin nhắn đa phương tiện</string>
+    <string name="contentDescriptionMessageComposition">Soạn tin nhắn</string>
+    <string name="contentDescriptionQuoteThumbnail">Ảnh xem trước của tin nhắn trích dẫn</string>
+    <string name="contentDescriptionStartConversation">Tạo một cuộc trò chuyện với liên hệ mới</string>
+    <string name="conversationsAddToHome">Thêm vào màn hình chính</string>
+    <string name="conversationsAddedToHome">Đã thêm vào màn hình chính</string>
+    <string name="conversationsAudioMessages">Tin nhắn âm thanh</string>
+    <string name="conversationsAutoplayAudioMessage">Tự động phát Tin nhắn Âm thanh</string>
+    <string name="conversationsAutoplayAudioMessageDescription">Tự động phát các tin nhắn âm thanh được gửi liên tục</string>
+    <string name="conversationsBlockedContacts">Liên hệ đã chặn</string>
+    <string name="conversationsCommunities">Cộng đồng</string>
+    <string name="conversationsDelete">Xóa cuộc hội thoại</string>
+    <string name="conversationsDeleteDescription">Bạn có chắc chắn rằng bạn muốn xoá cuộc trò chuyện với <b>{name} <\/b>? Các tin nhắn mới từ <b>{name} <\/b> sẽ bắt đầu một cuộc trò chuyện mới.</string>
+    <string name="conversationsDeleted">Cuộc hội thoại đã được xoá</string>
+    <string name="conversationsEmpty">Không có tin nhắn nào trong {conversation_name}.</string>
+    <string name="conversationsEnter">Nhập Key</string>
+    <string name="conversationsEnterDescription">Chức năng của phím enter khi nhập nội dung trong cuộc trò chuyện.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER gửi tin nhắn, ENTER bắt đầu dòng mới</string>
+    <string name="conversationsEnterSends">Enter gửi tin nhắn, SHIFT + ENTER bắt đầu một dòng mới</string>
+    <string name="conversationsGroups">Nhóm</string>
+    <string name="conversationsMessageTrimming">Thu gọn tin nhắn</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Cắt bớt Communities</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">Xóa tin nhắn từ cuộc hội thoại Community cũ hơn 6 tháng, và nơi có hơn 2.000 tin nhắn.</string>
+    <string name="conversationsNew">Chuyện trò mới</string>
+    <string name="conversationsNone">Bạn chưa có cuộc trò chuyện nào</string>
+    <string name="conversationsSendWithEnterKey">Gửi bằng Phím Enter</string>
+    <string name="conversationsSendWithEnterKeyDescription">Bấm phím Enter sẽ gửi tin nhắn thay vì bắt đầu một dòng mới.</string>
+    <string name="conversationsSettingsAllMedia">Tất cả tệp phương tiện</string>
+    <string name="conversationsSpellCheck">Kiểm tra chính tả</string>
+    <string name="conversationsSpellCheckDescription">Bật kiểm tra chính tả khi nhập tin nhắn</string>
+    <string name="conversationsStart">Bắt đầu cuộc trò chuyện</string>
+    <string name="copied">Đã sao chép</string>
+    <string name="copy">Sao chép</string>
+    <string name="create">Tạo</string>
+    <string name="cut">Cắt</string>
+    <string name="databaseErrorGeneric">Một lỗi cơ sở dữ liệu đã xảy ra.<br\/><br\/>Xuất nhật ký ứng dụng của bạn để chia sẻ nhằm xử lý sự cố. Nếu không thành công, hãy cài đặt lại {app_name} và khôi phục tài khoản của bạn.<br\/><br\/>Cảnh báo: Điều này sẽ dẫn đến mất tất cả tin nhắn, tệp đính kèm và dữ liệu tài khoản cũ hơn hai tuần.</string>
+    <string name="databaseErrorTimeout">Chúng tôi nhận thấy {app_name} mất nhiều thời gian để khởi động.
+
+Bạn có thể tiếp tục chờ, xuất nhật ký thiết bị để chia sẻ hỗ trợ khắc phục sự cố, hoặc thử khởi động lại Session.</string>
+    <string name="databaseErrorUpdate">Cơ sở dữ liệu ứng dụng của bạn không tương thích với phiên bản {app_name} này. Cài đặt lại ứng dụng và khôi phục tài khoản của bạn để tạo một cơ sở dữ liệu mới và tiếp tục sử dụng {app_name}.<br /><br />Cảnh báo: Điều này sẽ dẫn đến việc mất tất cả tin nhắn và tệp đính kèm cũ hơn hai tuần.</string>
+    <string name="databaseOptimizing">Đang tối ưu hóa cơ sở dữ liệu</string>
+    <string name="debugLog">Nhật ký sửa lỗi</string>
+    <string name="decline">Từ chối</string>
+    <string name="delete">Xóa</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">Một số thiết bị của bạn đang sử dụng các phiên bản đã lỗi thời. Đồng bộ hóa có thể không đáng tin cậy cho đến khi chúng được cập nhật.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">Chặn Người dùng này</string>
+    <string name="deleteAfterGroupPR1BlockUser">Chặn Người dùng này</string>
+    <string name="deleteAfterGroupPR1GroupSettings">Cài đặt nhóm</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Notify for Mentions Only</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">Khi được bật, bạn sẽ chỉ nhận thông báo cho các tin nhắn đề cập đến bạn.</string>
+    <string name="deleteAfterGroupPR1MessageSound">Âm báo</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">Xóa cuộc trò chuyện này vĩnh viễn?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">Không thể rời đi trong khi đang thêm hoặc xóa các thành viên khác.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">Legacy</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">Phiên bản gốc của tin nhắn tự huỷ.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name} <\/b> đã đặt đồng hồ đếm ngược tin nhắn tự huỷ đến <b>{time} <\/b></string>
+    <string name="deleteMessage">Xóa tin nhắn</string>
+    <string name="deleteMessageConfirm">Bạn có chắc chắn rằng bạn muốn xoá tin nhắn này không?</string>
+    <string name="deleteMessageDeleted">Tin nhắn đã bị xóa</string>
+    <string name="deleteMessageDeletedGlobally">Tin nhắn này đã bị xóa</string>
+    <string name="deleteMessageDeletedLocally">Tin nhắn sẽ chỉ được xoá trên thiết bị này</string>
+    <string name="deleteMessageDescriptionDevice">Bạn có chắc chắn rằng bạn muốn xoá tin nhắn này chỉ trên thiết bị này không?</string>
+    <string name="deleteMessageDescriptionEveryone">Bạn có chắc chắn rằng bạn muốn xoá tin nhắn này cho mọi người không?</string>
+    <string name="deleteMessageDeviceOnly">Chỉ xóa trên thiết bị này</string>
+    <string name="deleteMessageDevicesAll">Xóa trên tất cả thiết bị của tôi</string>
+    <string name="deleteMessageEveryone">Xoá cho mọi người</string>
+    <string name="deleteMessageFailed">Xóa tin nhắn thất bại</string>
+    <string name="deleteMessages">Xóa tin nhắn</string>
+    <string name="deleteMessagesConfirm">Bạn có chắc chắn rằng bạn muốn xoá các tin nhắn này không?</string>
+    <string name="deleteMessagesDeleted">Các tin nhắn đã bị xoá</string>
+    <string name="deleteMessagesDescriptionDevice">Bạn có chắc rằng bạn muốn xoá những tin nhắn này chỉ từ thiết bị này?</string>
+    <string name="deleteMessagesDescriptionEveryone">Bạn có chắc rằng bạn muốn xoá những tin nhắn này cho tất cả mọi người?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="other">Không thể xóa tin nhắn</item>
+    </plurals>
+    <string name="deleting">Đang xóa</string>
+    <string name="developerToolsToggle">Bật/Tắt Công Cụ Nhà Phát Triển</string>
+    <string name="dictationStart">Bắt đầu chỉnh văn bản...</string>
+    <string name="disappearingMessages">Tin nhắn tự huỷ</string>
+    <string name="disappearingMessagesCountdownBig">Tin nhắn sẽ tự huỷ trong {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">Tự động xóa trong {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">Tin nhắn sẽ tự huỷ trong {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">Tự động xóa trong {time_large} và {time_small}</string>
+    <string name="disappearingMessagesDeleteType">Loại bỏ</string>
+    <string name="disappearingMessagesDescription">Thiết lập này áp dụng cho tất cả mọi người trong cuộc trò chuyện này.</string>
+    <string name="disappearingMessagesDescription1">Thiết lập này áp dụng cho các tin nhắn bạn gửi trong cuộc trò chuyện này.</string>
+    <string name="disappearingMessagesDisappear">Xóa sau khi {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">Xóa sau khi đọc</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">Tin nhắn sẽ tự huỷ sau khi đã đọc.</string>
+    <string name="disappearingMessagesDisappearAfterSend">Xóa sau khi gửi</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">Tin nhắn sẽ tự huỷ sau khi đã gửi.</string>
+    <string name="disappearingMessagesFollowSetting">Theo cài đặt</string>
+    <string name="disappearingMessagesFollowSettingOff">Tin nhắn bạn gửi sẽ không tự huỷ nữa. Bạn có chắc muốn <b>tắt</b> tin nhắn tự huỷ không?</string>
+    <string name="disappearingMessagesFollowSettingOn">Thiết lập tin nhắn của bạn biến mất <b>{time}</b> sau khi chúng đã được <b>{disappearing_messages_type}</b>?</string>
+    <string name="disappearingMessagesLegacy">{name} đang sử dụng ứng dụng cũ. Tin nhắn tự huỷ có thể không hoạt động đúng như mong đợi.</string>
+    <string name="disappearingMessagesOnlyAdmins">Only group admins can change this setting.</string>
+    <string name="disappearingMessagesSent">Đã gửi</string>
+    <string name="disappearingMessagesSet"><b>{name} <\/b> đã đặt tin nhắn tự huỷ sau <b>{time} <\/b> khi chúng đã được <b>{disappearing_messages_type} <\/b>.</string>
+    <string name="disappearingMessagesSetYou"><b>Bạn <\/b> đã đặt tin nhắn tự huỷ sau <b>{time} <\/b> khi chúng đã được <b>{disappearing_messages_type} <\/b>.</string>
+    <string name="disappearingMessagesTimer">Hẹn giờ</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name} <\/b> đã tắt tin nhắn tự huỷ. Tin nhắn họ gửi sẽ không còn tự huỷ.</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>Bạn <\/b> đã tắt <b> tin nhắn tự huỷ <\/b>. Tin nhắn bạn gửi sẽ không còn tự huỷ.</string>
+    <string name="disappearingMessagesTypeRead">đã đọc</string>
+    <string name="disappearingMessagesTypeSent">đã gửi</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> đã cập nhật cài đặt tin nhắn tự huỷ.</string>
+    <string name="disappearingMessagesUpdatedYou"><b>Bạn <\/b> đã cập nhật cài đặt tin nhắn tự huỷ.</string>
+    <string name="dismiss">Bỏ qua</string>
+    <string name="displayNameDescription">Điều này có thể là tên thật của bạn, một biệt danh, hoặc bất kỳ cái gì bạn thích — và bạn có thể thay đổi nó bất cứ lúc nào.</string>
+    <string name="displayNameEnter">Nhập tên hiển thị của bạn</string>
+    <string name="displayNameErrorDescription">Vui lòng chọn một tên hiển thị</string>
+    <string name="displayNameErrorDescriptionShorter">Vui lòng chọn tên hiển thị ngắn hơn</string>
+    <string name="displayNameErrorNew">Chúng tôi không thể tải tên hiển thị của bạn. Vui lòng nhập tên hiển thị mới để tiếp tục.</string>
+    <string name="displayNameNew">Chọn một tên hiển thị mới</string>
+    <string name="displayNamePick">Chọn tên hiển thị của bạn</string>
+    <string name="displayNameSet">Thiết Lập Hiển thị Tên</string>
+    <string name="document">Tài liệu</string>
+    <string name="done">Xong</string>
+    <string name="download">Tải xuống</string>
+    <string name="downloading">Đang tải về...</string>
+    <string name="draft">Nháp</string>
+    <string name="edit">Sửa</string>
+    <string name="emojiAndSymbols">Biểu tượng cảm xúc &amp; Ký hiệu</string>
+    <string name="emojiCategoryActivities">Hoạt động</string>
+    <string name="emojiCategoryAnimals">Động vật &amp; Thiên nhiên</string>
+    <string name="emojiCategoryFlags">Cờ</string>
+    <string name="emojiCategoryFood">Thức ăn &amp; Đồ uống</string>
+    <string name="emojiCategoryObjects">Đồ vật</string>
+    <string name="emojiCategoryRecentlyUsed">Đã sử dụng gần đây</string>
+    <string name="emojiCategorySmileys">Biểu tượng cảm xúc & Con người</string>
+    <string name="emojiCategorySymbols">Biểu trưng</string>
+    <string name="emojiCategoryTravel">Du lịch & Địa điểm</string>
+    <string name="emojiReactsClearAll">Bạn có chắc chắn rằng bạn muốn xóa tất cả {emoji}?</string>
+    <string name="emojiReactsCoolDown">Chậm lại! Bạn đã gửi quá nhiều emoji react. Thử lại sau</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="other">Và %1$d người khác đã phản ứng %2$s với tin nhắn này.</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} đã phản ứng với <emoji /></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} đã phản ứng với <emoji /></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} và <span>{count} người khác</span> đã phản ứng với <emoji /></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} và <span>1 người khác</span> đã phản ứng với <emoji /></string>
+    <string name="emojiReactsHoverYouDesktop">Bạn đã phản ứng với <emoji /></string>
+    <string name="emojiReactsHoverYouNameDesktop">Bạn &amp; {name} đã phản ứng bằng <emoji/></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">Bạn, {name} &amp; <span>{count} người khác</span> đã phản ứng với <emoji /></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">Bạn, {name} &amp; <span>1 người khác</span> đã phản ứng với <emoji /></string>
+    <string name="emojiReactsNotification">Đã phản hồi với tin nhắn của bạn {emoji}</string>
+    <string name="enable">Bật</string>
+    <string name="errorConnection">Vui lòng kiểm tra kết nối internet của bạn và thử lại.</string>
+    <string name="errorCopyAndQuit">Sao chép lỗi và thoát</string>
+    <string name="errorDatabase">Lỗi cơ sở dữ liệu</string>
+    <string name="errorUnknown">Một lỗi không xác định đã xảy ra.</string>
+    <string name="failures">Lỗi</string>
+    <string name="file">Tập tin</string>
+    <string name="files">Các tập tin</string>
+    <string name="followSystemSettings">Theo cài đặt hệ thống</string>
+    <string name="from">Từ:</string>
+    <string name="fullScreenToggle">Bật/Tắt toàn màn hình</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">{app_name} sẽ kết nối với Giphy để cung cấp kết quả tìm kiếm. Bạn sẽ không được bảo vệ siêu dữ liệu đầy đủ khi gửi GIF.</string>
+    <string name="groupAddMemberMaximum">Các nhóm có tối đa 100 thành viên</string>
+    <string name="groupCreate">Tạo nhóm</string>
+    <string name="groupCreateErrorNoMembers">Vui lòng chọn ít nhất một thành viên khác.</string>
+    <string name="groupDelete">Xoá nhóm</string>
+    <string name="groupDeleteDescription">Bạn có chắc chắn rằng bạn muốn xóa <b>{group_name}</b>? Điều này sẽ loại bỏ tất cả các thành viên và xóa tất cả nội dung nhóm.</string>
+    <string name="groupDescriptionEnter">Nhập mô tả nhóm</string>
+    <string name="groupDisplayPictureUpdated">Đã cập nhật ảnh nhóm.</string>
+    <string name="groupEdit">Sửa nhóm</string>
+    <string name="groupError">Lỗi Nhóm</string>
+    <string name="groupErrorCreate">Tạo nhóm thất bại. Vui lòng kiểm tra kết nối internet và thử lại.</string>
+    <string name="groupErrorJoin">Không thể tham gia nhóm {group_name}</string>
+    <string name="groupInformationSet">Thiết Lập Thông tin Nhóm</string>
+    <string name="groupInviteDelete">Bạn có chắc chắn rằng bạn muốn xoá lời mời nhóm này không?</string>
+    <string name="groupInviteFailed">Mời thất bại</string>
+    <string name="groupInviteFailedMore">Mời {name} và {count} người khác vào nhóm {group_name} thất bại</string>
+    <string name="groupInviteFailedTwo">Mời {name} và {other_name} vào nhóm {group_name} thất bại</string>
+    <string name="groupInviteFailedUser">Mời {name} vào nhóm {group_name} thất bại</string>
+    <string name="groupInviteSending">Đang gửi lời mời</string>
+    <string name="groupInviteSent">Đã gửi lời mời</string>
+    <string name="groupInviteSuccessful">Mời tham gia nhóm thành công</string>
+    <string name="groupInviteVersion">Người dùng phải có phiên bản {version} hoặc cao hơn để nhận lời mời</string>
+    <string name="groupInviteYou"><b>Bạn <\/b> đã được mời tham gia nhóm.</string>
+    <string name="groupLeave">Rời nhóm</string>
+    <string name="groupLeaveDescription">Bạn có chắc chắn rằng bạn muốn rời {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">Bạn có chắc chắn rằng bạn muốn rời {group_name}? Điều này sẽ hủy kích hoạt nhóm cho tất cả thành viên.</string>
+    <string name="groupLeaveErrorFailed">Không thể rời khỏi nhóm {group_name}</string>
+    <string name="groupLegacyBanner">Các nhóm đã được nâng cấp, tạo một nhóm mới để nâng cấp. Chức năng nhóm cũ sẽ bị suy giảm từ {date}.</string>
+    <string name="groupMemberLeft"><b>{name} <\/b> đã rời nhóm.</string>
+    <string name="groupMemberLeftMore"><b>{name} <\/b> và <b>{count} người khác <\/b> đã rời nhóm.</string>
+    <string name="groupMemberLeftTwo"><b>{name} <\/b> và <b>{other_name} <\/b> đã rời nhóm.</string>
+    <string name="groupMemberMoreNew"><b>{name} <\/b> và <b>{count} người khác <\/b> đã tham gia nhóm.</string>
+    <string name="groupMemberNew"><b>{name} <\/b> đã tham gia nhóm.</string>
+    <string name="groupMemberTwoNew"><b>{name} <\/b> và <b>{other_name} <\/b> đã tham gia nhóm.</string>
+    <string name="groupMemberYouLeft"><b>Bạn <\/b> đã rời nhóm.</string>
+    <string name="groupMembers">Thành viên nhóm</string>
+    <string name="groupMembersNone">Không có thành viên nào khác trong nhóm này.</string>
+    <string name="groupName">Tên nhóm</string>
+    <string name="groupNameEnter">Nhập tên nhóm</string>
+    <string name="groupNameEnterPlease">Vui lòng nhập tên nhóm.</string>
+    <string name="groupNameEnterShorter">Vui lòng nhập một tên nhóm ngắn hơn.</string>
+    <string name="groupNameNew">Tên nhóm hiện giờ là {group_name}. </string>
+    <string name="groupNameUpdated">Đã cập nhật tên nhóm.</string>
+    <string name="groupNoMessages">Bạn không có tin nhắn nào từ <b>{group_name}.</b> Gửi một tin nhắn để bắt đầu cuộc trò chuyện!</string>
+    <string name="groupOnlyAdmin">Bạn là quản trị viên duy nhất trong <b>{group_name}</b>.
+
+Các thành viên và cài đặt nhóm không thể được thay đổi nếu không có quản trị viên.</string>
+    <string name="groupPromotedYou"><b>Bạn <\/b> được thăng lên làm Admin.</string>
+    <string name="groupRemoveDescription">Bạn có muốn xóa <b>{name}</b> khỏi <b>{group_name}</b> không?</string>
+    <string name="groupRemoveMessages">Xóa người dùng và tin nhắn của họ</string>
+    <string name="groupRemoveMoreDescription">Bạn có muốn xóa <b>{name}</b> và <b>{count} người khác</b> khỏi <b>{group_name}</b> không?</string>
+    <string name="groupRemoveTwoDescription">Bạn có muốn xóa <b>{name}</b> và <b>{other_name}</b> khỏi <b>{group_name}</b> không?</string>
+    <string name="groupRemoveUserOnly">Xóa người dùng </string>
+    <string name="groupRemoveUsersMessages">Xóa người dùng và tin nhắn của họ</string>
+    <string name="groupRemoveUsersOnly">Xóa người dùng</string>
+    <string name="groupRemoved"><b>{name} <\/b> đã bị xoá khỏi nhóm.</string>
+    <string name="groupRemovedMore"><b>{name} <\/b> và <b>{count} người khác <\/b> đã bị xoá khỏi nhóm.</string>
+    <string name="groupRemovedTwo"><b>{name} <\/b> và <b>{other_name} <\/b> đã bị xoá khỏi nhóm.</string>
+    <string name="groupRemovedYou">Bạn đã bị xoá khỏi <b>{group_name}.</b></string>
+    <string name="groupSetDisplayPicture">Thiết Lập Hình ảnh Đại diện Nhóm</string>
+    <string name="groupUnknown">Nhóm không rõ</string>
+    <string name="groupUpdated">Đã cập nhật nhóm</string>
+    <string name="helpFAQ">Câu hỏi thường gặp</string>
+    <string name="helpHelpUsTranslateSession">Giúp chúng tôi dịch {app_name}</string>
+    <string name="helpReportABug">Báo cáo lỗi</string>
+    <string name="helpReportABugDescription">Chia sẻ một số chi tiết để giúp chúng tôi giải quyết vấn đề của bạn. Xuất nhật ký của bạn, sau đó tải tệp lên qua Trung tâm Trợ giúp của {app_name}.</string>
+    <string name="helpReportABugExportLogs">Xuất nhật ký</string>
+    <string name="helpReportABugExportLogsDescription">Xuất nhật ký của bạn, sau đó tải tệp tin qua Help Desk của {app_name}.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">Lưu vào máy tính để bàn</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">Lưu tệp này vào máy tính để bàn của bạn, rồi chia sẻ nó với các nhà phát triển {app_name}.</string>
+    <string name="helpSupport">Hỗ trợ</string>
+    <string name="helpWedLoveYourFeedback">Chúng tôi rất mong nhận phản hồi từ bạn</string>
+    <string name="hide">Ẩn đi</string>
+    <string name="hideOthers">Ẩn mục khác</string>
+    <string name="image">Ảnh</string>
+    <string name="incognitoKeyboard">Bàn phím ẩn danh</string>
+    <string name="incognitoKeyboardDescription">Yêu cầu ẩn danh nếu có. Tùy thuộc vào bàn phím bạn đang sử dụng, bàn phím của bạn có thể bỏ qua yêu cầu này.</string>
+    <string name="info">Thông tin</string>
+    <string name="invalidShortcut">Lối tắt không hợp lệ</string>
+    <string name="join">Tham gia</string>
+    <string name="later">Sau này</string>
+    <string name="learnMore">Tìm hiểu thêm</string>
+    <string name="leave">Rời đi</string>
+    <string name="leaving">Rời...</string>
+    <string name="linkPreviews">Link Previews</string>
+    <string name="linkPreviewsDescription">Hiển thị bản xem trước liên kết cho các URL được hỗ trợ.</string>
+    <string name="linkPreviewsEnable">Bật xem trước liên kết</string>
+    <string name="linkPreviewsErrorLoad">Không thể tải bản xem trước liên kết</string>
+    <string name="linkPreviewsErrorUnsecure">Xem trước không được tải cho liên kết không bảo mật</string>
+    <string name="linkPreviewsFirstDescription">Hiển thị bản xem trước cho URL bạn gửi và nhận. Điều này có thể hữu ích, tuy nhiên {app_name} phải liên hệ với các trang web liên kết để tạo ra bản xem trước. Bạn luôn có thể tắt bản xem trước liên kết trong cài đặt của {app_name}.</string>
+    <string name="linkPreviewsSend">Gửi đường dẫn xem trước</string>
+    <string name="linkPreviewsSendModalDescription">Bạn sẽ không được bảo vệ siêu dữ liệu đầy đủ khi gửi bản xem trước liên kết.</string>
+    <string name="linkPreviewsTurnedOff">Link Previews Tắt</string>
+    <string name="linkPreviewsTurnedOffDescription">{app_name} phải liên hệ với các trang web liên kết để tạo ra bản xem trước của các liên kết bạn gửi và nhận.
+ 
+Bạn có thể bật chúng trong cài đặt của {app_name}.</string>
+    <string name="loadAccount">Tải Tài Khoản</string>
+    <string name="loadAccountProgressMessage">Đang tải tài khoản của bạn</string>
+    <string name="loading">Đang tải...</string>
+    <string name="lockApp">Khoá Ứng Dụng</string>
+    <string name="lockAppDescriptionAndroid">Yêu cầu vân tay, PIN, mẫu hình hoặc mật khẩu để mở khóa {app_name}.</string>
+    <string name="lockAppDescriptionIos">Yêu cầu Touch ID, Face ID hoặc mật mã của bạn để mở khóa {app_name}.</string>
+    <string name="lockAppEnablePasscode">Bạn phải kích hoạt mật mã trong Cài đặt iOS của mình để sử dụng Khóa màn hình.</string>
+    <string name="lockAppLocked">{app_name} đã bị khoá</string>
+    <string name="lockAppQuickResponse">Trả lời nhanh không khả thi khi {app_name} bị khóa!</string>
+    <string name="lockAppStatus">Trạng thái khoá</string>
+    <string name="lockAppUnlock">Bấm để mở khóa</string>
+    <string name="lockAppUnlocked">{app_name} đã mở khóa</string>
+    <string name="max">Max</string>
+    <string name="media">Đa phương tiện</string>
+    <plurals name="members">
+        <item quantity="other">%1$d thành viên</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="other">%1$d thành viên hoạt động</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">Thêm Account ID hoặc ONS</string>
+    <string name="membersInvite">Mời bạn bè</string>
+    <string name="membersInviteSend">Gửi lời mời</string>
+    <string name="membersInviteSendMultiple">Gửi lời mời</string>
+    <string name="membersInviteShareDescription">Bạn có muốn chia sẻ lịch sử tin nhắn nhóm với <b>{name}</b> không?</string>
+    <string name="membersInviteShareMessageHistory">Chia sẻ lịch sử tin nhắn</string>
+    <string name="membersInviteShareMoreDescription">Bạn có muốn chia sẻ lịch sử tin nhắn nhóm với <b>{name}</b> và <b>{count} người khác</b> không?</string>
+    <string name="membersInviteShareNewMessagesOnly">Chỉ chia sẻ tin nhắn mới</string>
+    <string name="membersInviteShareTwoDescription">Bạn có muốn chia sẻ lịch sử tin nhắn nhóm với <b>{name}</b> và <b>{other_name}</b> không?</string>
+    <string name="membersInviteTitle">Mời</string>
+    <string name="message">Tin nhắn</string>
+    <string name="messageEmpty">Tin nhắn này trống không.</string>
+    <string name="messageErrorDelivery">Phân phối tin nhắn bị thất bại</string>
+    <string name="messageErrorLimit">Đã đạt đến mức giới hạn ký tự</string>
+    <string name="messageErrorOld">Đã nhận một tin nhắn được mã khóa bởi phiên bản {app_name} cũ và không còn được hỗ trợ. Hãy yêu cầu người gửi cập nhật phiên bản mới nhất và gửi lại tin nhắn.</string>
+    <string name="messageErrorOriginal">Không tìm thấy tin nhắn gốc</string>
+    <string name="messageInfo">Thông tin Tin nhắn</string>
+    <string name="messageMarkRead">Đánh dấu đã đọc</string>
+    <string name="messageMarkUnread">Đánh dấu chưa đọc</string>
+    <string name="messageNew">Tin nhắn mới</string>
+    <string name="messageNewDescriptionDesktop">Bắt đầu một cuộc trò chuyện mới bằng cách nhập Mã Tài Khoản hoặc ONS của bạn bè bạn.</string>
+    <string name="messageNewDescriptionMobile">Bắt đầu một cuộc trò chuyện mới bằng cách nhập Mã Tài Khoản, ONS hoặc quét mã QR của bạn bè bạn.</string>
+    <string name="messageNewMessages">Các tin nhắn mới</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="other">Bạn có %1$d tin nhắn mới.</item>
+    </plurals>
+    <string name="messageReplyingTo">Trả lời đến</string>
+    <string name="messageRequestGroupInvite"><b>{name} <\/b> đã mời bạn tham gia <b>{group_name} <\/b>.</string>
+    <string name="messageRequestGroupInviteDescription">Gửi một tin nhắn đến nhóm này sẽ tự động chấp nhận lời mời vào nhóm.</string>
+    <string name="messageRequestPending">Yêu cầu tin nhắn của bạn hiện đang chờ xử lý.</string>
+    <string name="messageRequestPendingDescription">Bạn sẽ có thể gửi tin nhắn thoại và tệp đính kèm khi người nhận đã chấp nhận yêu cầu tin nhắn này.</string>
+    <string name="messageRequestYouHaveAccepted">Bạn đã chấp nhận yêu cầu tin nhắn từ <b>{name}.</b></string>
+    <string name="messageRequestsAcceptDescription">Gửi một tin nhắn đến người dùng này sẽ tự động chấp nhận yêu cầu tin nhắn và tiết lộ ID Tài khoản của bạn.</string>
+    <string name="messageRequestsAccepted">Yêu cầu tin nhắn của bạn đã được chấp nhận.</string>
+    <string name="messageRequestsClearAllExplanation">Bạn có chắc chắn rằng bạn muốn xóa tất cả thông điệp và lời mời nhóm?</string>
+    <string name="messageRequestsCommunities">Yêu cầu tin nhắn cộng đồng</string>
+    <string name="messageRequestsCommunitiesDescription">Cho phép các yêu cầu tin nhắn từ các cuộc trò chuyện Cộng đồng.</string>
+    <string name="messageRequestsDelete">Bạn có chắc chắn rằng bạn muốn xoá yêu cầu tin nhắn này không?</string>
+    <string name="messageRequestsNew">Bạn có yêu cầu tin nhắn mới</string>
+    <string name="messageRequestsNonePending">Không có yêu cầu tin nhắn đang chờ</string>
+    <string name="messageRequestsTurnedOff"><b>{name} <\/b> đã tắt yêu cầu tin nhắn từ các cuộc trò chuyện <b> Community <\/b>, do đó bạn không thể gửi tin nhắn cho họ.</string>
+    <string name="messageSelect">Chọn tin nhắn</string>
+    <string name="messageStatusFailedToSend">Gửi đi không được</string>
+    <string name="messageStatusFailedToSync">Không thể đồng bộ hóa</string>
+    <string name="messageStatusSyncing">Đang đồng bộ</string>
+    <string name="messageUnread">Các tin nhắn chưa đọc</string>
+    <string name="messageVoice">Tin nhắn thoại</string>
+    <string name="messageVoiceErrorShort">Giữ để ghi lại tin nhắn thoại</string>
+    <string name="messageVoiceSlideToCancel">TRƯỢT ĐỂ HUỶ</string>
+    <string name="messages">Tin nhắn</string>
+    <string name="minimize">Thu nhỏ</string>
+    <string name="next">Tiếp</string>
+    <string name="nicknameDescription">Chọn một biệt danh cho {name}. Điều này sẽ xuất hiện với bạn trong các cuộc trò chuyện một-một và nhóm.</string>
+    <string name="nicknameEnter">Nhập biệt danh</string>
+    <string name="nicknameRemove">Xóa biệt danh</string>
+    <string name="nicknameSet">Thiết Lập Biệt Danh</string>
+    <string name="no">Không</string>
+    <string name="noSuggestions">Không có đề xuất</string>
+    <string name="none">Không</string>
+    <string name="notNow">Không phải bây giờ</string>
+    <string name="noteToSelf">Gửi lời nhắc cho chính mình</string>
+    <string name="noteToSelfEmpty">Bạn không có tin nhắn nào trong Ghi chú cho bản thân.</string>
+    <string name="noteToSelfHide">Ẩn Ghi chú bản thân</string>
+    <string name="noteToSelfHideDescription">Bạn có chắc chắn rằng bạn muốn ẩn Ghi chú bản thân?</string>
+    <string name="notificationsAllMessages">Tất cả tin nhắn</string>
+    <string name="notificationsAndroidSystem">{message_count} tin nhắn mới trong {conversation_count} cuộc trò chuyện</string>
+    <string name="notificationsContent">Nội dung thông báo</string>
+    <string name="notificationsContentDescription">Thông tin hiển thị trong thông báo.</string>
+    <string name="notificationsContentShowNameAndContent">Tên và Nội dung</string>
+    <string name="notificationsContentShowNameOnly">Chỉ tên người gửi</string>
+    <string name="notificationsContentShowNoNameOrContent">Không hiện tên cũng như tin nhắn</string>
+    <string name="notificationsFastMode">Fast Mode</string>
+    <string name="notificationsFastModeDescriptionAndroid">Bạn sẽ nhận được thông báo về tin nhắn mới đáng tin cậy và ngay lập tức bằng cách sử dụng Máy chủ thông báo của Google.</string>
+    <string name="notificationsFastModeDescriptionIos">Bạn sẽ nhận được thông báo về tin nhắn mới đáng tin cậy và ngay lập tức bằng cách sử dụng Máy chủ thông báo của Apple.</string>
+    <string name="notificationsGoToAndroidSettings">Đi đến cài đặt thông báo trên Android</string>
+    <string name="notificationsGoToDevice">Đi đến cài đặt thông báo trên thiết bị</string>
+    <string name="notificationsIosGroup">{name} đến {conversation_name}</string>
+    <string name="notificationsLedColor">Màu LED</string>
+    <string name="notificationsMentionsOnly">Chỉ Đề Cập</string>
+    <string name="notificationsMessage">Thông báo tin nhắn</string>
+    <string name="notificationsMostRecent">Gần đây nhất từ {name}</string>
+    <string name="notificationsMute">Im lặng</string>
+    <string name="notificationsMuteFor">Im lặng trong {time_large}</string>
+    <string name="notificationsMuteUnmute">Tắt tạm im</string>
+    <string name="notificationsMuted">Đã ngắt tiếng</string>
+    <string name="notificationsSlowMode">Slow Mode</string>
+    <string name="notificationsSlowModeDescription">{app_name} sẽ thỉnh thoảng kiểm tra tin nhắn mới trong nền.</string>
+    <string name="notificationsSound">Âm thanh</string>
+    <string name="notificationsSoundDescription">Âm thanh khi ứng dụng mở</string>
+    <string name="notificationsSoundDesktop">Thông báo âm thanh</string>
+    <string name="notificationsStrategy">Chiến lược thông báo</string>
+    <string name="notificationsStyle">Kiểu thông báo</string>
+    <string name="notificationsVibrate">Rung</string>
+    <string name="off">Tắt</string>
+    <string name="okay">Okay</string>
+    <string name="onboardingAccountCreate">Tạo tài khoản</string>
+    <string name="onboardingAccountCreated">Đã tạo tài khoản</string>
+    <string name="onboardingAccountExists">Tôi có tài khoản</string>
+    <string name="onboardingBackAccountCreation">Bạn không thể quay lại được nữa. Để hủy tạo tài khoản của bạn, Session cần thoát.</string>
+    <string name="onboardingBackLoadAccount">Bạn không thể quay lại được nữa. Để dừng tải tài khoản của bạn, Session cần thoát.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Tạo một tài khoản thì ngay lập tức, miễn phí và ẩn danh.</string>
+    <string name="onboardingBubbleNoPhoneNumber">Bạn thậm chí không cần số điện thoại để đăng ký.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">Riêng tư trong túi của bạn.</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} được thiết kế để bảo vệ quyền riêng tư của bạn.</string>
+    <string name="onboardingBubbleWelcomeToSession">Chào mừng tới {app_name}</string>
+    <string name="onboardingHitThePlusButton">Nhấn nút cộng để bắt đầu cuộc trò chuyện, tạo nhóm hoặc tham gia cộng đồng chính thức!</string>
+    <string name="onboardingMessageNotificationExplanation">\"Có hai cách {app_name} có thể thông báo cho bạn về tin nhắn mới.</string>
+    <string name="onboardingPrivacy">Chính sách Bảo mật</string>
+    <string name="onboardingTos">Điều Khoản Dịch Vụ</string>
+    <string name="onboardingTosPrivacy">Bằng cách sử dụng dịch vụ này, bạn đồng ý với <b>Điều khoản Dịch vụ</b> và <b>Chính sách Bảo mật</b> của chúng tôi</string>
+    <string name="onionRoutingPath">Đường đi</string>
+    <string name="onionRoutingPathDescription">{app_name} ẩn IP của bạn bằng cách luân chuyển tin nhắn của bạn qua một số Service Node trong mạng lưới phân cấp của {app_name}. Đây là đường đi hiện tại của bạn:</string>
+    <string name="onionRoutingPathDestination">Điểm đến</string>
+    <string name="onionRoutingPathEntryNode">Nút khởi đầu</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">Quốc gia không rõ</string>
+    <string name="onsErrorNotRecognized">Chúng tôi không thể nhận diện ONS này. Vui lòng kiểm tra và thử lại.</string>
+    <string name="onsErrorUnableToSearch">Chúng tôi không thể tìm kiếm ONS này. Vui lòng thử lại sau.</string>
+    <string name="open">Mở</string>
+    <string name="other">Khác</string>
+    <string name="passwordChange">Đổi mật khẩu</string>
+    <string name="passwordChangeDescription">Đổi mật khẩu cần thiết để mở khóa {app_name}.</string>
+    <string name="passwordChangedDescription">Mật khẩu của bạn đã được đổi. Hãy giữ nó cẩn thận.</string>
+    <string name="passwordConfirm">Xác nhận mật khẩu</string>
+    <string name="passwordCreate">Tạo mật khẩu của bạn</string>
+    <string name="passwordCurrentIncorrect">Mật khẩu hiện tại của bạn không chính xác.</string>
+    <string name="passwordDescription">Yêu cầu mật khẩu để mở khóa {app_name}.</string>
+    <string name="passwordEnter">Nhập mật khẩu</string>
+    <string name="passwordEnterCurrent">Vui lòng nhập mật khẩu hiện tại của bạn.</string>
+    <string name="passwordEnterNew">Vui lòng nhập mật khẩu mới</string>
+    <string name="passwordError">Mật khẩu chỉ có thể chứa chữ cái, số và các ký hiệu đơn giản</string>
+    <string name="passwordErrorLength">Mật khẩu phải dài từ 6 đến 64 ký tự</string>
+    <string name="passwordErrorMatch">Mật khẩu không khớp</string>
+    <string name="passwordFailed">Đặt mật khẩu thất bại</string>
+    <string name="passwordIncorrect">Mật khẩu không chính xác</string>
+    <string name="passwordRemove">Xóa mật khẩu</string>
+    <string name="passwordRemoveDescription">Xóa mật khẩu cần thiết để mở khóa {app_name}.</string>
+    <string name="passwordRemovedDescription">Mật khẩu của bạn đã được gỡ bỏ.</string>
+    <string name="passwordSet">Đặt Mật khẩu</string>
+    <string name="passwordSetDescription">Mật khẩu của bạn đã được đặt. Hãy giữ nó cẩn thận.</string>
+    <string name="paste">Dán</string>
+    <string name="permissionsAppleMusic">{app_name} cần sử dụng Apple Music để phát các tập tin đính kèm phương tiện.</string>
+    <string name="permissionsAutoUpdate">Tự động cập nhật</string>
+    <string name="permissionsAutoUpdateDescription">Automatically check for updates on startup</string>
+    <string name="permissionsFaceId">Tính năng khóa màn hình trên {app_name} sử dụng Face ID.</string>
+    <string name="permissionsKeepInSystemTray">Giữ trong khay hệ thống</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} tiếp tục chạy nền khi bạn đóng cửa sổ</string>
+    <string name="permissionsLibrary">{app_name} cần quyền truy cập thư viện ảnh để tiếp tục. Bạn có thể kích hoạt quyền truy cập trong phần cài đặt iOS.</string>
+    <string name="permissionsMicrophone">Micrô</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">{app_name} cần truy cập microphone để gửi tin nhắn thoại, nhưng quyền này đã bị chặn. Hãy đến phần cài đặt, chọn \"Quyền truy cập\" và kích hoạt \"Microphone\".</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">Bạn có thể bật quyền truy cập microphone trong cài đặt quyền riêng tư của {app_name}</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">{app_name} cần quyền truy cập microphone để gọi điện và ghi âm tin nhắn thoại.</string>
+    <string name="permissionsMicrophoneDescription">Cho phép truy cập vào micrô</string>
+    <string name="permissionsRequired">Cần cấp quyền</string>
+    <string name="permissionsStorageSave">{app_name} cần quyền truy cập lưu trữ để lưu các tập tin đính kèm và phương tiện.</string>
+    <string name="permissionsStorageSaveDenied">{app_name} cần quyền truy cập lưu trữ để lưu ảnh và video, nhưng quyền này đã bị chặn. Vui lòng vào phần cài đặt ứng dụng, chọn \"Quyền truy cập\", và cho phép truy cập \"Lưu trữ\".</string>
+    <string name="permissionsStorageSend">{app_name} cần quyền truy cập lưu trữ để gửi ảnh và video.</string>
+    <string name="pin">Ghim </string>
+    <string name="pinConversation">Ghim cuộc trò chuyện</string>
+    <string name="pinUnpin">Bỏ ghim</string>
+    <string name="pinUnpinConversation">Bỏ ghim cuộc trò chuyện</string>
+    <string name="preview">Xem trước</string>
+    <string name="profile">Hồ sơ cá nhân</string>
+    <string name="profileDisplayPicture">Display Picture</string>
+    <string name="profileDisplayPictureRemoveError">Không thể xóa hình đại diện.</string>
+    <string name="profileDisplayPictureSet">Thiết Lập Hình ảnh Đại diện</string>
+    <string name="profileDisplayPictureSizeError">Vui lòng chọn tệp nhỏ hơn.</string>
+    <string name="profileErrorUpdate">Không thể cập nhật hồ sơ.</string>
+    <string name="promote">Quảng bá</string>
+    <string name="qrCode">Mã QR</string>
+    <string name="qrNotAccountId">Mã QR này không chứa Mã Tài Khoản</string>
+    <string name="qrNotRecoveryPassword">Mã QR này không chứa Mật khẩu Khôi phục</string>
+    <string name="qrScan">Quét mã QR</string>
+    <string name="qrView">Xem mã QR</string>
+    <string name="qrYoursDescription">Bạn bè có thể nhắn tin cho bạn bằng cách quét mã QR của bạn.</string>
+    <string name="quit">Thoát {app_name}</string>
+    <string name="quitButton">Thoát</string>
+    <string name="read">Đã đọc</string>
+    <string name="readReceipts">Biên lai đã đọc</string>
+    <string name="readReceiptsDescription">Hiển thị biên nhận đã đọc cho tất cả tin nhắn bạn gửi và nhận.</string>
+    <string name="received">Đã nhận:</string>
+    <string name="recommended">Khuyến nghị</string>
+    <string name="recoveryPasswordBannerDescription">Lưu mật khẩu phục hồi của bạn để đảm bảo bạn không mất quyền truy cập vào tài khoản của mình.</string>
+    <string name="recoveryPasswordBannerTitle">Lưu mật khẩu phục hồi của bạn</string>
+    <string name="recoveryPasswordDescription">Dùng mật khẩu khôi phục của bạn để tải tài khoản của bạn trên các thiết bị mới.
+
+Tài khoản của bạn không thể được khôi phục nếu không có mật khẩu khôi phục của bạn. Hãy chắc chắn rằng nó được lưu trữ ở một nơi an toàn và bảo mật  — và đừng chia sẻ nó với bất kỳ ai.</string>
+    <string name="recoveryPasswordEnter">Nhập mật khẩu khôi phục của bạn</string>
+    <string name="recoveryPasswordErrorMessageGeneric">Vui lòng kiểm tra mật khẩu khôi phục của bạn và thử lại.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">Một số từ trong Mật khẩu Khôi phục của bạn không đúng. Vui lòng kiểm tra lại và thử lại.</string>
+    <string name="recoveryPasswordErrorMessageShort">Mật khẩu Khôi phục bạn nhập chưa đủ dài. Vui lòng kiểm tra và thử lại.</string>
+    <string name="recoveryPasswordErrorTitle">Recovery Password không chính xác</string>
+    <string name="recoveryPasswordExplanation">Để tải tài khoản của bạn, hãy nhập mật khẩu khôi phục của bạn.</string>
+    <string name="recoveryPasswordHidePermanently">Ẩn Recovery Password vĩnh viễn</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">Không có mật khẩu phục hồi, bạn không thể tải tài khoản của mình trên thiết bị mới. <br /><br />Chúng tôi khuyến cáo bạn nên lưu mật khẩu phục hồi ở nơi an toàn trước khi tiếp tục.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">Bạn có chắc chắc rằng bạn muốn ẩn mật khẩu khôi phục của bạn vĩnh viễn trên thiết bị này? Điều này không thể hồi phục.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Ẩn Recovery Password</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">Ẩn mật khẩu khôi phục trên thiết bị này vĩnh viễn.</string>
+    <string name="recoveryPasswordRestoreDescription">Nhập mật khẩu khôi phục của bạn để nạp tài khoản. Nếu chưa lưu, bạn có thể tìm thấy nó trong cài đặt của ứng dụng.</string>
+    <string name="recoveryPasswordView">Xem Mật khẩu</string>
+    <string name="recoveryPasswordWarningSendDescription">Đây là Mật khẩu Khôi phục của bạn. Nếu bạn gửi nó cho ai đó, họ sẽ có toàn quyền truy cập vào tài khoản của bạn.</string>
+    <string name="redo">Hoàn tác</string>
+    <string name="remove">Bỏ</string>
+    <string name="reply">Trả lời</string>
+    <string name="resend">Gửi lại</string>
+    <string name="resolving">Đang nạp thông tin quốc gia...</string>
+    <string name="restart">Khởi động lại</string>
+    <string name="resync">Đồng bộ lại</string>
+    <string name="retry">Thử lại</string>
+    <string name="save">Lưu</string>
+    <string name="saved">Đã lưu</string>
+    <string name="savedMessages">Các tin nhắn đã lưu</string>
+    <string name="saving">Đang lưu...</string>
+    <string name="scan">Quét</string>
+    <string name="screenSecurity">An ninh màn hình</string>
+    <string name="screenshotNotifications">Thông báo chụp màn hình</string>
+    <string name="screenshotNotificationsDescription">Yêu cầu thông báo khi một liên hệ chụp ảnh màn hình của một cuộc trò chuyện một-một.</string>
+    <string name="screenshotTaken"><b>{name} <\/b> đã chụp màn hình.</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="searchContacts">Tìm kiếm liên lạc</string>
+    <string name="searchConversation">Tìm kiếm hội thoại</string>
+    <string name="searchEnter">Vui lòng nhập để tìm kiếm.</string>
+    <string name="searchMatchesNone">Không tìm thấy kết quả nào.</string>
+    <string name="searchMatchesNoneSpecific">Không tìm thấy kết quả nào cho \'{query}</string>
+    <string name="searchMembers">Tìm kiếm thành viên</string>
+    <string name="searchSearching">Đang tìm kiếm...</string>
+    <string name="select">Chọn</string>
+    <string name="selectAll">Chọn tất cả</string>
+    <string name="send">Gửi</string>
+    <string name="sending">Đang gửi</string>
+    <string name="sent">Đã gửi:</string>
+    <string name="sessionAppearance">Diện mạo</string>
+    <string name="sessionClearData">Xóa dữ liệu</string>
+    <string name="sessionConversations">Chuyện trò</string>
+    <string name="sessionHelp">Trợ giúp</string>
+    <string name="sessionInviteAFriend">Mời bạn</string>
+    <string name="sessionMessageRequests">Các yêu cầu tin nhắn</string>
+    <string name="sessionNotifications">Thông báo</string>
+    <string name="sessionPermissions">Quyền</string>
+    <string name="sessionPrivacy">Riêng tư</string>
+    <string name="sessionRecoveryPassword">Mật khẩu khôi phục</string>
+    <string name="sessionSettings">Cài Đặt</string>
+    <string name="set">Thiết Lập</string>
+    <string name="settingsRestartDescription">Bạn phải khởi động lại {app_name} để áp dụng các cài đặt mới của mình.</string>
+    <string name="share">Chia sẻ</string>
+    <string name="shareAccountIdDescription">Mời bạn bè để trò chuyện với bạn trên Session bằng cách chia sẻ Account ID của bạn với họ.</string>
+    <string name="shareAccountIdDescriptionCopied">Chia sẻ với bạn bè của bạn bất cứ nơi nào bạn thường nói chuyện với họ — sau đó chuyển cuộc trò chuyện đến đây.</string>
+    <string name="shareExtensionDatabaseError">Có vấn đề khi mở cơ sở dữ liệu. Vui lòng khởi động lại ứng dụng và thử lại.</string>
+    <string name="show">Hiển thị</string>
+    <string name="showAll">Hiển thị tất cả</string>
+    <string name="showLess">Hiển thị ít hơn</string>
+    <string name="stickers">Hình dán</string>
+    <string name="supportGoTo">Đi đến trang Hỗ trợ</string>
+    <string name="theContinue">Tiếp tục</string>
+    <string name="theDefault">Mặc định</string>
+    <string name="theError">Lỗi</string>
+    <string name="tryAgain">Thử lại</string>
+    <string name="typingIndicators">Chỉ báo nhập văn bản</string>
+    <string name="typingIndicatorsDescription">Xem và chia sẻ các chỉ báo đang gõ (...)</string>
+    <string name="undo">Hoàn tác</string>
+    <string name="unknown">Không rõ</string>
+    <string name="updateApp">Cập nhật ứng dụng</string>
+    <string name="updateDownloaded">Cập nhật đã cài đặt, nhấn để khởi động lại</string>
+    <string name="updateDownloading">Đang tải về cập nhật: {percent_loader}%</string>
+    <string name="updateError">Không thể cập nhật</string>
+    <string name="updateErrorDescription">{app_name} không thể cập nhật. Vui lòng truy cập {download_url} và cài đặt phiên bản mới thủ công, sau đó liên hệ Trung tâm trợ giúp của chúng tôi để thông báo về vấn đề này.</string>
+    <string name="updateNewVersion">Một phiên bản mới của {app_name} đã có, chạm để cập nhật</string>
+    <string name="updateNewVersionDescription">Một phiên bản mới của {app_name} đã có.</string>
+    <string name="updateReleaseNotes">Đi tới các ghi chú phát hành</string>
+    <string name="updateSession">Cập nhật {app_name}</string>
+    <string name="updateVersion">Phiên bản {version}</string>
+    <string name="uploading">Đang tải lên</string>
+    <string name="urlCopy">Sao chép URL</string>
+    <string name="urlOpen">Mở URL</string>
+    <string name="urlOpenBrowser">Điều này sẽ mở trong trình duyệt của bạn.</string>
+    <string name="urlOpenDescription">Bạn có chắc chắn rằng bạn muốn mở URL này trong trình duyệt của bạn?<br\/><br\/> {url}</string>
+    <string name="useFastMode">Sử dụng Chế độ Nhanh</string>
+    <string name="video">Video</string>
+    <string name="videoErrorPlay">Không thể phát video.</string>
+    <string name="view">Xem</string>
+    <string name="waitFewMinutes">Quá trình này có thể mất vài phút.</string>
+    <string name="waitOneMoment">Một chút thôi...</string>
+    <string name="warning">Cảnh báo</string>
+    <string name="window">Cửa sổ</string>
+    <string name="yes">Có</string>
+    <string name="you">Bạn</string>
 </resources>

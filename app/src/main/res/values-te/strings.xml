@@ -1,481 +1,788 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sandarbham</string>
-    <string name="yes">అవును</string>
+    <string name="about">గురించి</string>
+    <string name="accept">ఒప్పుకోండి</string>
+    <string name="accountIDCopy">అకౌంట్ ID కాపీ చేయండి</string>
+    <string name="accountIdCopied">ఖాతా ఐడి కాపీ చేయబడింది</string>
+    <string name="accountIdCopyDescription">మీ అకౌంట్ ID కాపీ చేసి, మీ స్నేహితులతో పంచుకోండి తద్వారా వారు మీకు సందేశం పంపగలరు.</string>
+    <string name="accountIdEnter">Account ID ని ఎంటర్ చేయండి</string>
+    <string name="accountIdErrorInvalid">ఈ ఖాతా ఐడి చెల్లుబాటులో లేదు. దయచేసి తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="accountIdOrOnsEnter">Account ID లేదా ONS ని ఎంటర్ చేయండి</string>
+    <string name="accountIdOrOnsInvite">ఖాతా ID లేదా ONSని ఆహ్వానించండి</string>
+    <string name="accountIdShare">హే, నేను {app_name}ను పూర్తిగా గోప్యత మరియు భద్రతతో చాట్ చేయడానికి ఉపయోగిస్తున్నాను. నాతో చేరండి! నా ఖాతా ID 
+
+{account_id}
+
+దానిని {download_url}లో డౌన్‌లోడ్ చేయండి</string>
+    <string name="accountIdYours">మీ ఖాతా ID</string>
+    <string name="accountIdYoursDescription">ఇది మీ ఖాతా ఐడి. ఇతర వినియోగదారులు దీనిని స్కాన్ చేసి మీతో సంభాషణ చేయవచ్చు.</string>
+    <string name="actualSize">యధాతధ పరిమాణం</string>
+    <string name="add">జోడించు</string>
+    <string name="adminCannotBeRemoved">ప్రశాసకులు తీయబడలేరు.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name}</b> మరియు <b>{count} ఇతరులు</b> అడ్మిన్ కీ ప్రమోట్ చేయబడ్డారు.</string>
+    <string name="adminPromote">అడ్మిన్లను ప్రమోట్ చేయండి</string>
+    <string name="adminPromoteDescription">మీరు <b>{name}</b> ను యాడ్మిన్‌గా ప్రమోట్ చేయాలనుకుంటున్నారా? యాడ్మిన్‌లను తీసివేయడం సాధ్యం కాదు.</string>
+    <string name="adminPromoteMoreDescription">మీరు <b>{name}</b> మరియు <b>{count} ఇతరులను</b> యాడ్మిన్‌గా ప్రమోట్ చేయాలనుకుంటున్నారా? యాడ్మిన్‌లను తీసివేయడం సాధ్యం కాదు.</string>
+    <string name="adminPromoteToAdmin">అడ్మిన్ గా ప్రమోట్ చేయండి</string>
+    <string name="adminPromoteTwoDescription">మీరు <b>{name}</b> మరియు <b>{other_name}</b> ను యాడ్మిన్‌గా ప్రమోట్ చేయాలనుకుంటున్నారా? యాడ్మిన్‌లను తీసివేయడం సాధ్యం కాదు.</string>
+    <string name="adminPromotedToAdmin"><b>{name}</b> అడ్మిన్ గా ప్రమోట్ చేయబడ్డారు.</string>
+    <string name="adminPromotionFailed">ప్రశాసక ప్రమోషన్ విఫలమైంది</string>
+    <string name="adminPromotionFailedDescription">{name} ను {group_name}లో ప్రమోట్ చేయడంలో విఫలమైంది</string>
+    <string name="adminPromotionFailedDescriptionMany">{name} మరియు {count} ఇతరులను {group_name}లో ప్రమోట్ చేయడంలో విఫలమైంది</string>
+    <string name="adminPromotionFailedDescriptionMore">{name} మరియు {other_name} {group_name}లో ప్రమోట్ చేయడంలో విఫలమైంది</string>
+    <string name="adminPromotionSent">ప్రశాసక ప్రమోషన్ పంపబడింది</string>
+    <string name="adminRemove">అడ్మిన్లను తొలగించు</string>
+    <string name="adminRemoveAsAdmin">అడ్మిన్ గా తొలగించు</string>
+    <string name="adminRemoveCommunityNone">ఈ కమ్యూనిటీలో ఎలాంటి అడ్మిన్లు లేరు.</string>
+    <string name="adminRemoveFailed">{name} ను అడ్మిన్ గా తొలగించడంలో విఫలమైంది.</string>
+    <string name="adminRemovedUser"><b>{name}</b> అడ్మిన్ గా తొలగించబడ్డారు.</string>
+    <string name="adminSendingPromotion">అడ్మిన్ ప్రమోషన్‌ను పంపుతోంది</string>
+    <string name="adminSettings">ప్రశాసక సెట్టింగ్‌లు</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name}</b> మరియు <b>{other_name}</b> అడ్మిన్ కీ ప్రమోట్ చేయబడ్డారు.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">అజ్ఞాతం</string>
+    <string name="appearanceAutoDarkMode">ఆటో డార్క్-మోడ్</string>
+    <string name="appearanceHideMenuBar">మెను బార్ దాచు</string>
+    <string name="appearanceLanguage">భాష</string>
+    <string name="appearanceLanguageDescription">{app_name} కోసం మీ భాష సెట్టింగ్ ఎంచుకోండి. భాష సెట్టింగ్ మార్పినప్పుడు {app_name} రీస్టార్ట్ అవుతుంది.</string>
+    <string name="appearancePreview1">మీరు యలా ఉన్నారు?</string>
+    <string name="appearancePreview2">నేను బాగున్నాను ధన్యవాదాలు, మీరు యలా ఉన్నారు?</string>
+    <string name="appearancePreview3">నేను చల్లగానే ఉన్నాను, థ్యాంక్స్.</string>
+    <string name="appearancePrimaryColor">ప్రాధాన్య రంగు</string>
+    <string name="appearanceThemes">థీమ్</string>
+    <string name="appearanceThemesClassicDark">క్లాసిక్ డార్క్</string>
+    <string name="appearanceThemesClassicLight">క్లాసిక్ లైట్</string>
+    <string name="appearanceThemesOceanDark">ఒకేసారి మాయమయ్యే రంగు</string>
+    <string name="appearanceThemesOceanLight">ఒకేసారి స్వలంభన రంగు</string>
+    <string name="appearanceZoom">జూమ్</string>
+    <string name="appearanceZoomIn">జూమ్ ఇన్</string>
+    <string name="appearanceZoomOut">జూమ్ ఔట్</string>
+    <string name="attachment">Attachment</string>
+    <string name="attachmentsAdd">అటాచ్మెంట్ జోడించండి</string>
+    <string name="attachmentsAlbumUnnamed">పేరులేని ఆల్బమ్</string>
+    <string name="attachmentsAutoDownload">జోడింపులను ఆటో-డౌన్లోడ్ చేయు</string>
+    <string name="attachmentsAutoDownloadDescription">ఈ చాట్ నుండి మీడియా మరియు ఫైళ్ళను ఆటోమేటిక్‌గా డౌన్లోడ్ చేయండి.</string>
+    <string name="attachmentsAutoDownloadModalDescription">మీరు <b>{conversation_name}</b> నుండి అన్ని ఫైళ్ళను ఆటోమేటిక్‌గా డౌన్‌లోడ్ చేయాలనుకుంటున్నారా?</string>
+    <string name="attachmentsAutoDownloadModalTitle">ఆటో డౌన్లోడ్</string>
+    <string name="attachmentsClearAll">అన్ని జోడింపులను స్పష్టంచేయి</string>
+    <string name="attachmentsClearAllDescription">మీరు అందరి జోడింపులను ఖాళీ చేసాలనుకుంటున్నారా? జోడింపుల ద్వారా సందేశాలు కూడా తొలగించబడతాయి.</string>
+    <string name="attachmentsClickToDownload">{file_type} డౌన్‌లోడ్ చేయడానికి క్లిక్ చేయండి</string>
+    <string name="attachmentsCollapseOptions">జతచేసిన ఎంపికలను సంకోచించు</string>
+    <string name="attachmentsCollecting">జోడింపుల సేకరణ...</string>
+    <string name="attachmentsDownload">అటాచ్‌మెంట్‌ను డౌన్‌లోడ్ చేయండి</string>
+    <string name="attachmentsDuration">వ్యవధి:</string>
+    <string name="attachmentsErrorLoad">ఫైల్ అటాచింగ్ లోపం</string>
+    <string name="attachmentsErrorNoApp">మీడియాను ఎంచుకోవడానికి అనువర్తనం దొరకదు.</string>
+    <string name="attachmentsErrorNotSupported">ఈ ఫైల్ రకం మద్దతునిచ్చబడదు.</string>
+    <string name="attachmentsErrorNumber">ఒక్కసారిగా 32 కన్నా ఎక్కువ విక్రయించదగిన విలువ సంపూర్ణ వార్తలు మరియు చిత్రం ఫైళ్ళను పంపడం సాధ్యపడదు.</string>
+    <string name="attachmentsErrorOpen">ఫైల్‌ని తెరవడం సాధ్యపడదు.</string>
+    <string name="attachmentsErrorSending">ఫైల్ పంపడంలో లోపం</string>
+    <string name="attachmentsErrorSeparate">దయచేసి ఫైలలను వేర్వేరు సందేశాలుగా పంపండి.</string>
+    <string name="attachmentsErrorSize">ఫైళ్ళ పరిమాణం 10MB కన్నా తక్కువగా ఉండాలి</string>
+    <string name="attachmentsErrorTypes">చిత్రాలు మరియు వీడియోను ఇతర ఫైల్ రకాలతో జోడించలేరు. ఇతర ఫైళ్ళను వేరు సందేశం లో పంపడానికి ప్రయత్నించండి.</string>
+    <string name="attachmentsExpired">Attachment expired</string>
+    <string name="attachmentsFileId">ఫైల్ ID:</string>
+    <string name="attachmentsFileSize">ఫైల్ పరిమాణం:</string>
+    <string name="attachmentsFileType">ఫైల్ రకం:</string>
+    <string name="attachmentsFilesEmpty">ఈ సంభాషణలో మీకు ఏ ఫైళ్లు లేవు.</string>
+    <string name="attachmentsImageErrorMetadata">ఫైల్ నుండి మెటాడేటా తొలగించడం సాధ్యపడదు.</string>
+    <string name="attachmentsLoadingNewer">కొత్త మీడియా లోడ్ చేస్తున్నారు...</string>
+    <string name="attachmentsLoadingNewerFiles">కొత్త ఫైళ్ళను లోడ్ చేస్తున్నారు...</string>
+    <string name="attachmentsLoadingOlder">పాత మీడియా లోడ్ చేస్తున్నారు...</string>
+    <string name="attachmentsLoadingOlderFiles">పాత ఫైళ్ళను లోడ్ చేస్తున్నారు...</string>
+    <string name="attachmentsMedia">{date_time} న {name}</string>
+    <string name="attachmentsMediaEmpty">ఈ సంభాషణలో మీకు ఏ మాధ్యమం లేవు.</string>
+    <string name="attachmentsMediaSaved">{name} ద్వారా సేవ్ చేయబడిన మీడియా</string>
+    <string name="attachmentsMoveAndScale">కదిలించడం మరియు పరిమాణం సమ ఉజ్జీ</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} అటాచ్మెంట్</string>
+    <string name="attachmentsResolution">రిజల్యూషన్:</string>
+    <string name="attachmentsSaveError">ఫైల్‌ని సేవ్ చేయడం సాధ్యపడదు.</string>
+    <string name="attachmentsSendTo">{name}కి పంపించండి</string>
+    <string name="attachmentsTapToDownload">{file_type} డౌన్‌లోన్ చేయడానికి టాప్ చేయండి</string>
+    <string name="attachmentsThisMonth">ఈ నెల</string>
+    <string name="attachmentsThisWeek">ఈ వారం</string>
+    <string name="attachmentsWarning">Attachments you save can be accessed by other apps on your device.</string>
+    <string name="audio">ఆడియో</string>
+    <string name="audioNoInput">మైక్రోఫోన్ కనుగొనబడలేదు</string>
+    <string name="audioNoOutput">అధ్భుతమైనది</string>
+    <string name="audioUnableToPlay">ఆడియో ఫైల్ ప్లే చేయడం సాధ్యపడదు.</string>
+    <string name="audioUnableToRecord">ఆడియో రికార్డ్ చేయడం సాధ్యపడలేదు!</string>
+    <string name="authenticateFailed">ధృవీకరణ విఫలమైంది</string>
+    <string name="authenticateFailedTooManyAttempts">చాలా ఎక్కువ ఫెయిల్డ్ ఆథెంటికేషన్ ప్రయత్నాలు. దయచేసి తరువాత మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="authenticateNotAccessed">ధృవీకరణకు ప్రాప్యత సాధ్యం కాలేదు.</string>
+    <string name="authenticateToOpen">{app_name} తెరవడానికి ధృవీకరించండి.</string>
+    <string name="back">వెనుకకు</string>
+    <string name="banDeleteAll">నిషేధించు మరియు అన్ని తొలగించు</string>
+    <string name="banErrorFailed">నిషేధం విఫలమైంది</string>
+    <string name="banUnbanErrorFailed">అనుమతించడం విఫలమైంది</string>
+    <string name="banUnbanUser">వాడుకరిని అనుమతించు</string>
+    <string name="banUnbanUserUnbanned">వాడుకరిని నిషేధం నుండి విడుదల చేశారు</string>
+    <string name="banUser">వినియోగదారుని నిషేధించు</string>
+    <string name="banUserBanned">వాడుకరి నిషేధించబడినారు</string>
+    <string name="block">నిరోధించు</string>
+    <string name="blockBlockedDescription">సందేశాన్ని పంపడానికి ఈ పరిచయాన్ని అనుమతించు.</string>
+    <string name="blockBlockedNone">నిరోధించిన పరిచయాలు లేవు</string>
+    <string name="blockBlockedUser">{name} నిరోధించబడింది</string>
+    <string name="blockDescription">మీరు <b>{name}</b>ని బ్లాక్ చేయాలనుకుంటున్నారా? బ్లాక్ చేసిన వినియోగదారులు మీకు సందేశ వివరణలను పంపలేరు, సమూహ ఆహ్వానాలు లేదా మీకు కాల్ చేయలేరు.</string>
+    <string name="blockUnblock">అనుమతించు</string>
+    <string name="blockUnblockName">మీరు {name} ను అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?</string>
+    <string name="blockUnblockNameMultiple">మీరు {name} మరియు {count} ఇతరులను అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?</string>
+    <string name="blockUnblockNameTwo">మీరు {name} మరియు 1 ఇతర వ్యక్తిని అన్‌బ్లాక్ చేయాలనుకుంటున్నారా?</string>
+    <string name="blockUnblockedUser">అనుమతించబడిన {name}</string>
+    <string name="call">కాల్</string>
+    <string name="callsCalledYou">{name} మీకు కాల్ చేసారు</string>
+    <string name="callsCannotStart">మీరు కొత్త కాల్ ప్రారంభించలేరు. ముందుగా మీ ప్రస్తుత కాల్ పూర్తిగా ముగించండి.</string>
+    <string name="callsConnecting">కలుస్తుంది...</string>
+    <string name="callsEnd">కాల్ ముగించండి</string>
+    <string name="callsEnded">కాల్ ముగిసింది</string>
+    <string name="callsErrorAnswer">కాల్‌ని జవాబివ్వడంలో విఫలమయ్యింది</string>
+    <string name="callsErrorStart">కాల్ ప్రారంభించడంలో విఫలమైంది</string>
+    <string name="callsInProgress">కాల్ జరుగుతోంది</string>
+    <string name="callsIncoming">{name} నుండి కొత్తగా వచ్చిన కాల్</string>
+    <string name="callsIncomingUnknown">కొత్తగా వచ్చిన కాల్</string>
+    <string name="callsMissed">తప్పిన కాల్</string>
+    <string name="callsMissedCallFrom">{name} నుండి తప్పిన కాల్</string>
+    <string name="callsNotificationsRequired">వాయిస్ మరియు వీడియో కాల్స్‌లో నోటిఫికేషన్‌లు అవసరం</string>
+    <string name="callsPermissionsRequired">కాల్ అనుమతులు కావాలి</string>
+    <string name="callsPermissionsRequiredDescription">మీరు గోప్యతా సెట్టింగ్‌లలో \"వాయిస్ మరియు విడియో కాల్‌లు\" అనుమతి ప్రారంభించవచ్చు.</string>
+    <string name="callsReconnecting">మళ్లీ కనెక్ట్ అవుతోంది…</string>
+    <string name="callsRinging">మోగిస్తోంది...</string>
+    <string name="callsSessionCall">Session కాల్ </string>
+    <string name="callsSettings">కాల్స్ (బీటా)</string>
+    <string name="callsVoiceAndVideo">వాయిస్ మరియు వీడియో కాల్స్</string>
+    <string name="callsVoiceAndVideoBeta">వాయిస్ మరియు వీడియో కాల్స్ (బీటా)</string>
+    <string name="callsVoiceAndVideoModalDescription">బీటా కాల్‌లను ఉపయోగిస్తున్నప్పుడు మీ ఐపి మీ కాల్ భాగస్వామికి మరియు ఒక Oxen Foundation సర్వర్‌కు కనిపిస్తుంది.</string>
+    <string name="callsVoiceAndVideoToggleDescription">ఇతర వినియోగదారులకు మరియు వినియోగదారుల నుండి వునియోగేదతలు </string>
+    <string name="callsYouCalled">మీరు {name} కాల్ చేశారు</string>
+    <string name="callsYouMissedCallPermissions">మీరు <b>వాయిస్ మరియు వీడియో కాల్స్</b>ను ప్రైవసీ సెట్టింగ్స్‌లో నేడు చెయ్యకపోవడంతో మీరు <b>{name}</b> నుండి కాల్ మిస్ చేశారు.</string>
+    <string name="cameraErrorNotFound">కెమేరా కనుగొనబడలేదు</string>
+    <string name="cameraErrorUnavailable">కెమెరా అందుబాటులో లేదు.</string>
+    <string name="cameraGrantAccess">కెమెరా యాక్సెస్‌ని అనుమతించండి</string>
+    <string name="cameraGrantAccessDenied">ఫోటోలను లేదా వీడియోలను తీసుకోవడానికి {app_name} కెమెరా యాక్సెస్ కావాలి, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి యాప్ సెట్టింగ్‌లకు వెళ్ళి, \"Permissions\" ఎంచుకోండి మరియు \"Camera\"ని సుముఖం చేయండి.</string>
+    <string name="cameraGrantAccessDescription">ఫోటోలను మరియు వీడియోలను తీసుకోవడం లేదా QR కోడ్లను స్కాన్ చేయడానికి {app_name} కు కెమెరా యాక్సెస్ కావాలి.</string>
+    <string name="cameraGrantAccessQr">QR కోడ్లు స్కాన్ చేయడానికి {app_name} కెమెరా యాక్సెస్ అవసరం</string>
+    <string name="cancel">రద్దు</string>
+    <string name="clear">స్పష్టమైనది</string>
+    <string name="clearAll">అన్నీ స్పష్టంచేసి</string>
+    <string name="clearDataAll">అన్ని డేటాను క్లియర్ చేయండి</string>
+    <string name="clearDataAllDescription">ఇది మీ సందేశాలు మరియు సంపర్కాలను శాశ్వతంగా తొలగిస్తుంది. మీరు ఈ పరికరం మాత్రమే క్లియర్ చేయాలనుకుంటున్నారా, లేక మీ డేటాను నెట్వర్క్ నుండి కూడా తొలగించాలనుకుంటున్నారా?</string>
+    <string name="clearDataError">డేటా తొలగింపబడలేదు</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="one">%1$d Service Node ద్వారా డేటా తొలగించబడలేదు. Service Node ID: %2$s.</item>
+        <item quantity="other">%1$d Service Nodes ద్వారా డేటా తొలగించబడలేదు. Service Node IDs: %2$s.</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">గుర్తని లోపం సంభవించి మీ డేటా తొలగించబడలేదు. మీ డేటాను కేవలం ఈ పరికరం నుండి తొలగించాలనుకుంటున్నారా?</string>
+    <string name="clearDevice">పరికరాన్ని క్లియర్ చేయండి</string>
+    <string name="clearDeviceAndNetwork">పరికరం మరియు నెట్‌వర్క్ క్లియర్ చేయండి</string>
+    <string name="clearDeviceAndNetworkConfirm">మీరు నెట్వర్క్ నుంచి మీ డేటాను తొలగించాలనుకుంటున్నారా? మీరు కొనసాగిస్తే, మీరు మీ సందేశాలు లేదా పరిచయాలను తిరిగి పొందలేరు.</string>
+    <string name="clearDeviceDescription">మీరు మీ పరికరాన్ని ఖాళీ చేసికోవాలనుకుంటున్నారా?</string>
+    <string name="clearDeviceOnly">కేవలం పరికరం క్లియర్ చేయండి</string>
+    <string name="clearMessages">అన్ని సందేశాలను క్లియర్ చేయండి</string>
+    <string name="clearMessagesChatDescription">మీరు <b>{name}</b>తో మీ సంభాషణ నుండి అన్ని సందేశాలను మీ పరికరం నుండి ఖాళీ చేసాలనుకుంటున్నారా?</string>
+    <string name="clearMessagesCommunity">మీరు అన్ని <b>{community_name}</b> సందేశాలను మీ పరికరం నుండి ఖాళీచేయాలనుకుంటున్నారా?</string>
+    <string name="clearMessagesForEveryone">అందరికీ క్లియర్ చేయండి</string>
+    <string name="clearMessagesForMe">నాకు మాత్రమే క్లియర్ చేయండి</string>
+    <string name="clearMessagesGroupAdminDescription">మీరు అన్ని <b>{group_name}</b> సందేశాలను ఖాళీచేయాలనుకుంటున్నారా?</string>
+    <string name="clearMessagesGroupDescription">మీరు అన్ని <b>{group_name}</b> సందేశాలను మీ పరికరం నుండి ఖాళీచేయాలనుకుంటున్నారా?</string>
+    <string name="clearMessagesNoteToSelfDescription">మీరు మీరు నుండి మీరు గమనించిన అన్ని సందేశాలను మీ పరికరం నుండి ఖాళీ చేసాలనుకుంటున్నారా?</string>
+    <string name="close">క్లోజ్</string>
+    <string name="closeWindow">విండో మూసివేయి</string>
+    <string name="communityEnterUrl">Community URLని ఎంటర్ చేయండి</string>
+    <string name="communityEnterUrlErrorInvalid">చెల్లని URL</string>
+    <string name="communityEnterUrlErrorInvalidDescription">దయచేసి Community URLను తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="communityError">కమ్యునిటీ ఎర్రర్</string>
+    <string name="communityErrorDescription">అయ్యో, తప్పు జరిగింది. దయచేసి తరువాత ప్రయత్నించండి.</string>
+    <string name="communityInvitation">కమ్యునిటీ ఆహ్వానం</string>
+    <string name="communityJoin">Communityలో చేరండి</string>
+    <string name="communityJoinDescription">మీరు {community_name} లో చేరాలనుకుంటున్నారా?</string>
+    <string name="communityJoinError">{community_name} లో చేరడంలో విఫలమైంది</string>
+    <string name="communityJoinOfficial">ఈ వాటిలో ఒకటిలో చేరండి...</string>
+    <string name="communityJoined">Communityలో చేరారు</string>
+    <string name="communityJoinedAlready">మీరు ఇప్పటికే ఈ Community యొక్క సభ్యులు.</string>
+    <string name="communityLeave">Community వదిలివేయి</string>
+    <string name="communityLeaveError">{community_name} ను వదిలివేయడంలో విఫలమైంది</string>
+    <string name="communityUnknown">తెలియని Community</string>
+    <string name="communityUrl">కమ్యునిటీ URL</string>
+    <string name="communityUrlCopy">కమ్యునిటీ URL కాపీ చేయండి</string>
+    <string name="confirm">నిర్ధారించు</string>
+    <string name="contactContacts">కాంటాక్ట్స్</string>
+    <string name="contactDelete">పరిచయాన్ని తొలగించు</string>
+    <string name="contactDeleteDescription">మీరు <b>{name}</b> ని మీ పరిచయాల నుండి తొలగించాలనుకుంటున్నారా? <b>{name}</b> నుండి కొత్త సందేశాలు సందేశ అభ్యర్థన రూపంలో వస్తాయి.</string>
+    <string name="contactNone">మీరు ఇప్పటికి ఎలాంటి కనెక్ట్‌లను కలిగి లేరు</string>
+    <string name="contactSelect">పరిచయాల ఎంపిక</string>
+    <string name="contactUserDetails">వాడుకరి వివరాలు</string>
+    <string name="contentDescriptionCamera">కెమెరా</string>
+    <string name="contentDescriptionChooseConversationType">సంభాషణ ప్రారంభించడానికి ఒక చర్య ఎంచుకోండి</string>
+    <string name="contentDescriptionMediaMessage">మీడియా సందేశం</string>
+    <string name="contentDescriptionMessageComposition">సందేశాన్ని కూర్పుము</string>
+    <string name="contentDescriptionQuoteThumbnail">కొటేషన్లలోని సందేశపు చిత్రపు ఉపచిత్రం</string>
+    <string name="contentDescriptionStartConversation">కొత్త కాంటాక్ట్ తో సంభాషణ ప్రారంభించండి</string>
+    <string name="conversationsAddToHome">హోమ్ స్క్రీన్కు జోడించండి</string>
+    <string name="conversationsAddedToHome">హోమ్ స్క్రీన్కు జోడించబడింది</string>
+    <string name="conversationsAudioMessages">ఆడియో సందేశాలు</string>
+    <string name="conversationsAutoplayAudioMessage">ఆడియో సందేశాలను ఆటోప్లే చేయి</string>
+    <string name="conversationsAutoplayAudioMessageDescription">తదుపరి పంపబడిన ఆడియో సందేశాలను ఆటోప్లే చేయి</string>
+    <string name="conversationsBlockedContacts">నిరోధించిన పరిచయాలు</string>
+    <string name="conversationsCommunities">కమ్యునిటీస్</string>
+    <string name="conversationsDelete">సంభాషణను తొలగించు</string>
+    <string name="conversationsDeleteDescription">మీరు <b>{name}</b> తో మీ సంభాషణను తొలగించాలనుకుంటున్నారా? <b>{name}</b> నుండి కొత్త సందేశాలు ఒక కొత్త సంభాషణను ప్రారంభిస్తాయి.</string>
+    <string name="conversationsDeleted">సంభాషణ తొలగించబడింది</string>
+    <string name="conversationsEmpty">{conversation_name} లో ఎలాంటి సందేశాలు లేవు.</string>
+    <string name="conversationsEnter">కీని ఎంటర్ చేయండి</string>
+    <string name="conversationsEnterDescription">సంభాషణలో టైపింగ్ చేస్తున్నప్పుడు ఎంటర్ కీ యొక్క విధానం.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER సందేశం పంపుతుంది, ENTER కొత్త పంక్తిని ప్రారంభిస్తుంది</string>
+    <string name="conversationsEnterSends">ENTER సందేశం పంపుతుంది, SHIFT + ENTER కొత్త పంక్తిని ప్రారంభిస్తుంది</string>
+    <string name="conversationsGroups">సమూహాలు</string>
+    <string name="conversationsMessageTrimming">సందేశం కత్తిరించి సరి చేయుట</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">కమ్యూనిటీలను ట్రిమ్ చేయండి</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">సంఘాల సంభాషణల నుండి 6 నెలల కంటే పాతవి మరియు 2,000 సందేశాల కంటే ఎక్కువ ఉన్న సందేశాలను తొలగించండి.</string>
+    <string name="conversationsNew">కొత్త సంభాషణ</string>
+    <string name="conversationsNone">మీకు ఇంకా ఏ టిందనో సంభాషణలు లేవు</string>
+    <string name="conversationsSendWithEnterKey">ఎంటర్ కీతో పంపుము</string>
+    <string name="conversationsSendWithEnterKeyDescription">ఎంటర్ కీని టాప్ చేయడం ద్వారా కొత్త పంక్తి ప్రారంభం కాకుండా సందేశం పంపబడుతుంది.</string>
+    <string name="conversationsSettingsAllMedia">అన్ని మీడియా</string>
+    <string name="conversationsSpellCheck">పర్యాశలించడానికి చెక్ చేయి</string>
+    <string name="conversationsSpellCheckDescription">సందేశాలు టైప్ చేయడం ప్రారంభించినప్పుడు స్పెల్ చెక్ ప్రారంభించండి</string>
+    <string name="conversationsStart">సంభాషణ ప్రారంభించండి</string>
+    <string name="copied">ప్రతి తీసుకోబడింది</string>
+    <string name="copy">కాపీ చేయండి</string>
+    <string name="create">సృష్టించు</string>
+    <string name="cut">కట్ చేయడం</string>
+    <string name="databaseErrorGeneric">డేటాబేస్ లోపం జరిగింది.
+
+మీ అనువర్తనం లాగ్లను ఎగుమతి చేయండి మరియు సమస్య పరిష్కారం కోసం వాటిని పంచుకోండి. ఇది విజయవంతం కాకపోతే, {app_name} ను మళ్లీ ఇన్‌స్టాల్ చేసి మీ ఖాతాను పునరుద్ధరించండి.
+
+హెచ్చరిక: దీనివలన రెండు వారాల కంటే పాత సందేశాలు, జతల్ని మరియు ఖాతా డేటా అన్నీ కోల్పోతారు.</string>
+    <string name="databaseErrorTimeout">మేము గమనించాము {app_name} ప్రారంభమవ్వడానికి చాలా సమయం పడుతోంది.
+
+మీరు వేచి ఉండవచ్చు, సమస్యను నిర్ధారించడానికి పరికరం లాగ్‌లను ఎగుమతి చేసి షేర్ చేయవచ్చు లేదా Session రీస్టార్ట్ చేయవచ్చు.</string>
+    <string name="databaseOptimizing">డేటాబేస్‌ను మెరుగ్గాచేయడం</string>
+    <string name="debugLog">డీబగ్ లాగ్</string>
+    <string name="decline">నిరాకరించు</string>
+    <string name="delete">సందేశాన్ని తొలగించు</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">మీ పరికరాలలో కొన్ని పాత సంస్కరణలను ఉపయోగిస్తున్నాయి. అవి నవీకరించేవరకూ సింక్ అవ్వడంలో విశ్వసనీయత ఉండకపోవచ్చు.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">ఈ వినియోగదారుని నిరోధించు</string>
+    <string name="deleteAfterGroupPR1BlockUser">వినియోగదారుని నిరోధించు</string>
+    <string name="deleteAfterGroupPR1GroupSettings">సమూహ సెట్టింగ్‌లు</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">కేవలం పేర్లు</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">ఇది ప్రారంభించినప్పుడు, మీరు మాత్రమే చేర్పించిన సందేశాల కోసం నోటిఫికేషన్‌లు అందుకుంటారు.</string>
+    <string name="deleteAfterGroupPR1MessageSound">సందేశ ధ్వని</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">ఈ సంభాషణలోని సందేశాలను శాశ్వతంగా తొలగించాలా?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">ఇతర సభ్యులను చేర్చడంలో లేదా తొలగించడంలో ఉన్నప్పుడు లీవ్ చేయలేరు.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">లెగసీ</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">కనుమరుగవుతున్న సందేశాల అసలు స్వరూపం.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name}</b> కనుమరుగవుతున్న సందేశాన్ని టైమర్కు సెట్ చేశారు <b>{time}</b></string>
+    <string name="deleteMessage">Message తొలగించండి</string>
+    <string name="deleteMessageConfirm">మీరు ఈ సందేశాన్ని తొలగించాలనుకుంటున్నారా?</string>
+    <string name="deleteMessageDeleted">సందేశం తొలగించబడింది</string>
+    <string name="deleteMessageDeletedGlobally">ఈ సందేశం తొలగించబడింది</string>
+    <string name="deleteMessageDeletedLocally">ఈ సందేశం ఈ పరికరంలో తొలగించబడింది</string>
+    <string name="deleteMessageDescriptionDevice">మీరు ఈ సందేశాన్ని కేవలం ఈ పరికరం నుండి తీసివేయాలనుకుంటున్నారా?</string>
+    <string name="deleteMessageDescriptionEveryone">మీరు ఈ సందేశాన్ని అందరికీ తీసివేయాలనుకుంటున్నారా?</string>
+    <string name="deleteMessageDeviceOnly">ఈ పరికరంలో మాత్రమే తొలగించు</string>
+    <string name="deleteMessageDevicesAll">నా పరికరాలన్నింటిలో కూడా తొలగించండి</string>
+    <string name="deleteMessageEveryone">అందరికీ తొలగించు</string>
+    <string name="deleteMessageFailed">సందేశాన్ని తొలగించడంలో విఫలమైంది</string>
+    <string name="deleteMessages">సందేశాలను తొలగించండి</string>
+    <string name="deleteMessagesConfirm">మీరు ఈ సందేశాలను తొలగించాలనుకుంటున్నారా?</string>
+    <string name="deleteMessagesDeleted">సందేశాలు తొలగించబడ్డాయి</string>
+    <string name="deleteMessagesDescriptionDevice">మీరు ఈ సందేశాలను కేవలం ఈ పరికరం నుండి మాత్రమే తొలగించాలనుకుంటున్నారా?</string>
+    <string name="deleteMessagesDescriptionEveryone">మీరు ఈ సందేశాలను అందరికీ తొలగించాలనుకుంటున్నారా?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="one">సందేశం తొలగించడం విఫలమైంది</item>
+        <item quantity="other">సందేశాలు తొలగించడం విఫలమైంది</item>
+    </plurals>
+    <string name="deleting">సందేశాలను తొలగిస్తోంది</string>
+    <string name="developerToolsToggle">డెవలపర్ టూల్స్ ని మారుస్తుంది</string>
+    <string name="dictationStart">నిడివక ప్రారంభిచు...</string>
+    <string name="disappearingMessages">అదృశ్యమవుతున్న సందేశాలు</string>
+    <string name="disappearingMessagesCountdownBig">సందేశం {time_large} తర్వాత తొలగించబడుతుంది</string>
+    <string name="disappearingMessagesCountdownBigMobile">{time_large} లో ఆటో-డిలీట్ల్ అవుతుంది</string>
+    <string name="disappearingMessagesCountdownBigSmall">సందేశం {time_large} {time_small} తర్వాత తొలగించబడుతుంది</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">{time_large} {time_small} లో ఆటో-డిలీట్ల్ అవుతుంది</string>
+    <string name="disappearingMessagesDeleteType">తొలగింపు రకం</string>
+    <string name="disappearingMessagesDescription">ఈ సెట్టింగ్ ఈ సంభాషణలోని ప్రతిఒక్కరికీ వర్తిస్తుంది.</string>
+    <string name="disappearingMessagesDescription1">ఈ సెట్టింగ్ మీరు ఈ సంభాషణలో పంపిన సందేశాలకు వర్తిస్తుంది.</string>
+    <string name="disappearingMessagesDisappear">{disappearing_messages_type} తరువాత తప్పించడం - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">చదివిన తర్వాత అదృశ్యమవుతుంది</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">సందేశాలు చదవబడిన తరువాత తొలగించబడతాయి.</string>
+    <string name="disappearingMessagesDisappearAfterSend">వినియోగం తరువాత అదృశ్యమవుతుంది</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">సందేశాలు పంపిన తరువాత తొలగించబడతాయి.</string>
+    <string name="disappearingMessagesFollowSetting">అమలులో వెంట రావు</string>
+    <string name="disappearingMessagesFollowSettingOff">మీరు పంపే సందేశాలు ఇకపైన కనుమరుగవవు. కనుమరుగవుతున్న సందేశాలను <b>ఆఫ్</b> చేయాలనుకుంటున్నారా?</string>
+    <string name="disappearingMessagesFollowSettingOn">మీ సందేశాలను <b>{time}</b> తర్వాత <b>{disappearing_messages_type}</b>గా మాయం చేయించండి?</string>
+    <string name="disappearingMessagesLegacy">{name} పాత క్లయింట్‌ను ఉపయోగిస్తున్నారు. కనుమరుగైపోతున్న సందేశాలు ఆశించిన విధంగా పని చేయకపోవచ్చు.</string>
+    <string name="disappearingMessagesOnlyAdmins">ఈ సెట్టింగ్ ను కేవలం అధికారులే మార్చగలరు</string>
+    <string name="disappearingMessagesSent">పంపిన</string>
+    <string name="disappearingMessagesTimer">టైమర్</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name}</b> కనిపించని సందేశాలను ఆపివేశారు. వారు పంపిన సందేశాలు ఆధికంగా కనిపించవు.</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>మీరు</b> <b>ఆఫ్</b> కనిపించని సందేశాలను ఆపేశారు. మీరు పంపిన సందేశాలు ఆధికంగా కనిపించవు.</string>
+    <string name="disappearingMessagesTypeRead">చదవండి</string>
+    <string name="disappearingMessagesTypeSent">పంపిన</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> కనుమరుగైపోతున్న సందేశాల అమరికలను నవీకరించారు.</string>
+    <string name="disappearingMessagesUpdatedYou"><b>మీరు</b> కనుమరుగవుతున్న సందేశాల అమరికలను నవీకరించారు.</string>
+    <string name="dismiss">విస్మరించు</string>
+    <string name="displayNameDescription">అది మీ వాస్తవ పేరు, ఒక ముద్ర పేరు లేదా మీకు ఇష్టమైన మరేదైనా కావచ్చు — మరియు మీరు దానిని ఎప్పుడైనా మార్చుకోచ్చు.</string>
+    <string name="displayNameEnter">మీ ప్రదర్శన పేరును ఎంటర్ చేయండి</string>
+    <string name="displayNameErrorDescription">దయచేసి ప్రదర్శన పేరు ఎంటర్ చేయండి</string>
+    <string name="displayNameErrorDescriptionShorter">దయచేసి చిన్న ప్రదర్శన పేరు ఎంటర్ చేయండి</string>
+    <string name="displayNameErrorNew">మేము మీ ప్రదర్శన పేరు లోడ్ చేయలేకపోయాము. కొనసాగడానికి దయచేసి కొత్త ప్రదర్శన పేరును నమోదు చేయండి.</string>
+    <string name="displayNameNew">కొత్త ప్రదర్శన పేరు ఎంచుకోండి</string>
+    <string name="displayNamePick">మీ ప్రదర్శన పేరు ఎంచుకోండి</string>
+    <string name="displayNameSet">ప్రదర్శన పేరు సెట్</string>
+    <string name="document">పత్రం</string>
+    <string name="done">పూర్తయింది</string>
+    <string name="download">డౌన్లోడ్</string>
+    <string name="downloading">డౌన్లోడింగ్...</string>
+    <string name="draft">చిత్తు పత్రం</string>
+    <string name="edit">మార్చు</string>
+    <string name="emojiAndSymbols">ఎమోజి &amp; సింబల్స్</string>
+    <string name="emojiCategoryActivities">ప్రవృత్తులు</string>
+    <string name="emojiCategoryAnimals">జీవ జాలం &amp; ప్రకృతి</string>
+    <string name="emojiCategoryFlags">పతాకాలు</string>
+    <string name="emojiCategoryFood">ఆహారం &amp; పానీయం</string>
+    <string name="emojiCategoryObjects">వస్తువులు</string>
+    <string name="emojiCategoryRecentlyUsed">ఇటీవల ఉపయోగించినవి</string>
+    <string name="emojiCategorySmileys">స్మైలీస్ &amp; పీపుల్</string>
+    <string name="emojiCategorySymbols">సంథsymbols symbolsని</string>
+    <string name="emojiCategoryTravel">యాత్ర మరియు ప్రదేశాలు</string>
+    <string name="emojiReactsClearAll">మీరు అన్ని {emoji} ని ఖాళీ చేయాలనుకుంటున్నారా?</string>
+    <string name="emojiReactsCoolDown">నెమ్మదించు! మీరు చాలా ఈమోజి ప్రతిస్పందనలను పంపారు. త్వరలో మళ్ళీ ప్రయత్నించండి</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="one">ఈ సందేశానికి %1$s స్పందించిన %2$d ఇతరుడు</item>
+        <item quantity="other">ఈ సందేశానికి %1$s స్పందించిన %2$d ఇతరులు</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} &amp; {other_name} <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} మరియు <span>{count} ఇతరులు</span> <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} మరియు <span>1 ఇతర</span> <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsHoverYouDesktop">మీరు <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsHoverYouNameDesktop">మీరు & {name} <emoji/>తో ప్రతిస్పందించారు</string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">మీరు, {name} &amp; <span>{count} ఇతరులు</span> <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsHoverYouNameOneDesktop">మీరు, {name} &amp; <span>1 ఇతర</span> <emoji/>తో స్పందించారు</string>
+    <string name="emojiReactsNotification">మీ సందేశానికి {emoji} తో స్పందించారు</string>
+    <string name="enable">ప్రారంభించు</string>
+    <string name="errorConnection">దయచేసి మీ ఇంటర్నెట్ కనెక్షన్‌ను తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="errorCopyAndQuit">పరచుకునేది మరియు నిరాకేష్ణం</string>
+    <string name="errorDatabase">డేటాబేస్ ఎర్రర్</string>
+    <string name="errorUnknown">గుర్తని లోపం సంభవించింది.</string>
+    <string name="failures">వైఫల్యాలు</string>
+    <string name="file">దస్థవెధి</string>
+    <string name="files">ఫైళ్లు</string>
+    <string name="followSystemSettings">సిస్టమ్ సెట్టింగ్‌లను అనుసరించండి</string>
+    <string name="from">ఎవరినుండి:</string>
+    <string name="fullScreenToggle">ఫుల్ స్క్రీన్ ని మారుస్తుంది</string>
+    <string name="gif">గిఫ్</string>
+    <string name="giphyWarning">గిఫీ</string>
+    <string name="giphyWarningDescription">{app_name} సెర్చ్ ఫలితాలను అందించడానికి గిప్హీకి కనెక్ట్ అవుతుంది. మీరు గిఫ్‌లు పంపినపుడు మీకు పూర్తి మెటాడేటా రక్షణ ఉండదు.</string>
+    <string name="groupAddMemberMaximum">సమూహాలు గరిష్టంగా 100 సభ్యులు ఉండవచ్చు</string>
+    <string name="groupCreate">సమూహం సృష్టించండి</string>
+    <string name="groupCreateErrorNoMembers">దయచేసి కనీసం ఒక ఇతర సమూహ సభ్యుని ఎంచుకోండి.</string>
+    <string name="groupDelete">సమూహాన్ని తొలగించు</string>
+    <string name="groupDeleteDescription">మీరు <b>{group_name}</b>ని తొలగించాలనుకుంటున్నారా? ఇది అన్ని సభ్యులను తొలగించి, అన్ని సమూహ విషయాన్ని తొలగిస్తుంది.</string>
+    <string name="groupDescriptionEnter">సమూహ వివరణను ఎంటర్ చేయండి</string>
+    <string name="groupDisplayPictureUpdated">సమూహ ప్రదర్శన చిత్రం నవీకరించబడింది.</string>
+    <string name="groupEdit">సమూహాన్ని మార్చు</string>
+    <string name="groupError">సమూహం లోపం</string>
+    <string name="groupErrorCreate">సమూహం సృష్టించడంలో విఫలమైంది. దయచేసి మీ ఇంటర్నెట్ కనెక్షన్‌ని తనిఖీ చేయండి మరియు మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="groupErrorJoin">{group_name} లో చేరడంలో విఫలమైంది</string>
+    <string name="groupInformationSet">గ్రూప్ సమాచారం సెట్ చేయి</string>
+    <string name="groupInviteDelete">మీరు ఈ గ్రూప్ ఆహ్వానాన్ని తొలగించాలనుకుంటున్నారా?</string>
+    <string name="groupInviteFailed">ఆహ్వానం విఫలమైంది</string>
+    <string name="groupInviteFailedMore">{name} మరియు {count} ఇతరులను {group_name} ఆహ్వానించడంలో విఫలమైంది</string>
+    <string name="groupInviteFailedTwo">{name} మరియు {other_name} {group_name}కు ఆహ్వానించడంలో విఫలమైంది</string>
+    <string name="groupInviteFailedUser">{name} ను {group_name}కు ఆహ్వానించడంలో విఫలమైంది</string>
+    <string name="groupInviteSending">ఆహ్వానాన్ని పంపుతోంది</string>
+    <string name="groupInviteSent">ఆహ్వానం పంపబడింది</string>
+    <string name="groupInviteSuccessful">సమూహ ఆహ్వానం విజయవంతం అయ్యింది</string>
+    <string name="groupInviteVersion">వాడుకరులు {version} లేదా అంతకంటే ఎక్కువ వెర్షన్ కలిగి ఉండాలి</string>
+    <string name="groupInviteYou"><b>మీరు</b> సమూహంలో చేరడానికి ఆహ్వానించబడ్డారు.</string>
+    <string name="groupLeave">సమూహాన్ని వదులు</string>
+    <string name="groupLeaveDescription">మీరు {group_name} ను వదిలిపెట్టాలనుకుంటున్నారా?</string>
+    <string name="groupLeaveDescriptionAdmin">మీరు {group_name} ను వదిలిపెట్టాలనుకుంటున్నారా? ఇది అన్ని సభ్యులకు గ్రూప్‌ను అచేతనం చేస్తుంది.</string>
+    <string name="groupLeaveErrorFailed">{group_name} ను వదిలివేయడంలో విఫలమైంది</string>
+    <string name="groupLegacyBanner">సమూహాలు అభివృద్ధి చేయబడ్డాయి, మెరుగుపరచడానికి కొత్త సమూహం సృష్టించండి. పాత సమూహ పనితీరు {date} నుండి దిగజారిపోతుంది.</string>
+    <string name="groupMemberLeft"><b>{name}</b> సమూహాన్ని వదిలి వెళ్లారు.</string>
+    <string name="groupMemberLeftMore"><b>{name}</b> మరియు <b>{count}ఇతరులు</b> సమూహాన్ని వదిలివేశారు.</string>
+    <string name="groupMemberLeftTwo"><b>{name}</b> మరియు <b>{other_name}</b> సమూహాన్ని వదిలి వెళ్లారు.</string>
+    <string name="groupMemberMoreNew"><b>{name}</b> మరియు <b>{count} ఇతరులు</b> సమూహంలో చేరారు.</string>
+    <string name="groupMemberNew"><b>{name}</b> సమూహంలో చేరారు.</string>
+    <string name="groupMemberTwoNew"><b>{name}</b> మరియు <b>{other_name}</b> సమూహంలో చేరారు.</string>
+    <string name="groupMemberYouLeft"><b>మీరు</b> సమూహాన్ని వదిలారు.</string>
+    <string name="groupMembers">సమూహ సభ్యులు</string>
+    <string name="groupMembersNone">ఈ గ్రూపులో ఇతరులు సభ్యులు లేరు.</string>
+    <string name="groupName">సమూహం పేరు</string>
+    <string name="groupNameEnter">సమూహం పేరును ఎంటర్ చేయండి</string>
+    <string name="groupNameEnterPlease">దయచేసి సమూహం పేరు ఎంటర్ చేయండి.</string>
+    <string name="groupNameEnterShorter">దయచేసి చిన్న సమూహం పేరు ఎంటర్ చేయండి.</string>
+    <string name="groupNameNew">ఇప్పుడు సమూహం పేరు {group_name} ఉంది. </string>
+    <string name="groupNameUpdated">సమూహం పేరు నవీకరించబడింది.</string>
+    <string name="groupNoMessages">మీకు <b>{group_name}</b> నుండి సందేశాలు లేవు. సంభాషణ ప్రారంభించడానికి ఒక సందేశం పంపండి!</string>
+    <string name="groupOnlyAdmin">మీరు <b>{group_name}</b>లో ఏకైక అడ్మిన్ .
+
+గుంపు సభ్యులు మరియు అమరికలు అడ్మిన్ లేకుండా మార్చబడవు.</string>
+    <string name="groupPromotedYou"><b>మీరు</b> అడ్మిన్ గా ప్రమోట్ చేయబడ్డారు.</string>
+    <string name="groupRemoveDescription">మీరు <b>{name}</b>ను <b>{group_name}</b> నుండి తొలగించాలనుకుంటున్నారా?</string>
+    <string name="groupRemoveMessages">వినియోగదారిని మరియు వారి సందేశాలను తొలగించు</string>
+    <string name="groupRemoveMoreDescription">మీరు <b>{name}</b> మరియు <b>{count} ఇతరులను</b> <b>{group_name}</b> నుండి తొలగించాలనుకుంటున్నారా?</string>
+    <string name="groupRemoveTwoDescription">మీరు <b>{name}</b> మరియు <b>{other_name}</b>ను <b>{group_name}</b> నుండి తొలగించాలనుకుంటున్నారా?</string>
+    <string name="groupRemoveUserOnly">వినియోగదారీని తొలగించు</string>
+    <string name="groupRemoveUsersMessages">వినియోగదారులను మరియు వారి సందేశాలను తొలగించు</string>
+    <string name="groupRemoveUsersOnly">వినియోగదారులను తొలగించు</string>
+    <string name="groupRemoved"><b>{name}</b> సమూహం నుండి తొలగించబడ్డారు.</string>
+    <string name="groupRemovedMore"><b>{name}</b> మరియు <b>{count} ఇతరులు</b> సమూహం నుండి తొలగించబడ్డారు.</string>
+    <string name="groupRemovedTwo"><b>{name}</b> మరియు <b>{other_name}</b> సమూహం నుండి తొలగించబడ్డారు.</string>
+    <string name="groupRemovedYou">మీరు <b>{group_name}</b> నుండి తొలగించబడ్డారు.</string>
+    <string name="groupSetDisplayPicture">గ్రూప్ ప్రదర్శన చిత్రాన్ని సెట్ చేయి</string>
+    <string name="groupUnknown">తెలియని సమూహం</string>
+    <string name="groupUpdated">సమూహం నవీకరించబడింది</string>
+    <string name="helpFAQ">సహాయ విధానం</string>
+    <string name="helpHelpUsTranslateSession">{app_name} ను అనువదించడంలో మాకు సహాయపడండి</string>
+    <string name="helpReportABug">బగ్‌ను నివేదించండి</string>
+    <string name="helpReportABugDescription">మీ సమస్యను పరిష్కరించడానికి మాకు సహాయపడేందుకు కొంత సమాచారాన్ని పంచుకోండి. మీ లాగ్లను ఎగుమతీ చేసి, ఆ ఫైల్ను {app_name}\'s సహాయక క్షేత్రం ద్వారా అప్‌లోడ్ చేయండి.</string>
+    <string name="helpReportABugExportLogs">లాగులను ఎగుమతి చేయండి</string>
+    <string name="helpReportABugExportLogsDescription">మీ లాగులను ఎగుమతి చేయండి, తరువాత ఫైల్‌ను {app_name} యొక్క సహాయ డెస్క్ ద్వారా అప్‌లోడ్ చేయండి.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">డెస్క్‌టాప్‌లో సేవ్ చేయండి</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">ఈ దస్త్రాన్ని మీ డెస్క్‌టాప్‌లో సేవ్ చేసి, తరువాత దాన్ని {app_name} డెవలపర్‌లకు షేర్ చేయండి.</string>
+    <string name="helpSupport">మద్దతు</string>
+    <string name="helpWedLoveYourFeedback">మేము మీ అభిప్రాయం కోరుకుంటున్నాము</string>
+    <string name="hide">దాచు</string>
+    <string name="hideOthers">ఇతరులను దాచండి</string>
+    <string name="image">చిత్రం</string>
+    <string name="incognitoKeyboard">అజ్ఞాత కీబోర్డ్</string>
+    <string name="incognitoKeyboardDescription">అభ్యున్నత స్థాయి కీబోర్డ్ అందుబాటులో ఉంటే అభ్యున్నత మోడ్‌ కోరండి. మీరు ఉపయోగిస్తున్న కీబోర్డ్‌పై ఆధారపడి, మీ కీబోర్డ్ ఈ అభ్యర్థనను నిర్లక్ష్యం చేయవచ్చు.</string>
+    <string name="info">సమాచారం</string>
+    <string name="invalidShortcut">చెల్లని సత్వరమార్గం</string>
+    <string name="join">చేరండి</string>
+    <string name="later">తర్వాత</string>
+    <string name="learnMore">ఇంకా నేర్చుకో</string>
+    <string name="leave">వదిలివేయి</string>
+    <string name="leaving">వదులుతున్నా...</string>
+    <string name="linkPreviews">లింక్ ప్రీవ్యూస్</string>
+    <string name="linkPreviewsDescription">మద్దతు ఉన్న URLల కోసం లింక్ ముందస్తు వీక్షణలను చూపించు.</string>
+    <string name="linkPreviewsEnable">లింక్ ప్రివ్యూ ప్రారంభించు</string>
+    <string name="linkPreviewsErrorLoad">లింక్ ప్రివ్యూ ని లోడ్ చేయడం సాధ్యపడలేదు</string>
+    <string name="linkPreviewsErrorUnsecure">ప్రమాదకర లింక్‌కు ప్రివ్యూ లోడ్ కాలేదు.</string>
+    <string name="linkPreviewsFirstDescription">మీరు పంపిన మరియు స్వీకరించిన URLల ప్రివ్యూ చూపించండి. ఇది ఉపయోగకరం, అయినప్పటికీ {app_name} ప్రివ్యూ సృష్టించడానికి లింక్ చేసిన వెబ్‌సైట్‌లను సంప్రదించాలి. మీరు ఎప్పుడైనా లింక్ ప్రివ్యూలను {app_name} యొక్క సెట్టింగ్‌లలో ఆఫ్ చేయవచ్చు.</string>
+    <string name="linkPreviewsSend">లింక్ ప్రివ్యూలను పంపుము</string>
+    <string name="linkPreviewsSendModalDescription">లింక్ పీవ్యూస్ పంపడం సమయంలో మీకు పూర్తిస్థాయి మెటాడేటా రక్షణ లభించదు.</string>
+    <string name="linkPreviewsTurnedOff">లింక్ ప్రీవ్యూస్ ఆఫ్ ఉన్నాయి</string>
+    <string name="linkPreviewsTurnedOffDescription">లింక్స్‌ను మీరు పంపిన మరియు స్వీకరించినట్లు జనరేట్ చేయడానికి {app_name} అనుసంధానించిన వెబ్‌సైట్లు సంప్రదించవలసి ఉంటుంది.
+
+మీరు {app_name} యొక్క అమరికలలో అవి ఆన్ చేస్తాయి.</string>
+    <string name="loadAccount">అకౌంట్ లోడ్ చేయండి</string>
+    <string name="loadAccountProgressMessage">మీ అకౌంట్ ను లోడ్ చేస్తున్నాము</string>
+    <string name="loading">లోడింగ్...</string>
+    <string name="lockApp">యాప్ ను లాక్ చేయండి</string>
+    <string name="lockAppDescriptionAndroid">{app_name}ని అన్లాక్ చేయడానికి ఫింగర్‌ప్రింట్, PIN, ప్యాటర్న్ లేదా పాస్వర్డ్ అవసరం.</string>
+    <string name="lockAppDescriptionIos">{app_name} ని అన్లాక్ చేయడానికి టచ్ ID, ఫేస్ ID లేదా మీ పాస్ కోడ్ అవసరం.</string>
+    <string name="lockAppEnablePasscode">స్క్రీన్ లాక్ ఉపయోగించాలంటే, మీ iOS సెట్టింగ్స్‌లో పాస్‌కోడ్‌ను ఎనేబుల్ చేయాలి.</string>
+    <string name="lockAppLocked">{app_name} లాక్ చేయబడింది</string>
+    <string name="lockAppStatus">స్థితి లాక్</string>
+    <string name="lockAppUnlock">అన్లాక్ చేయడానికి టాప్ చేయండి</string>
+    <string name="lockAppUnlocked">{app_name} అన్‌లాక్ చేయబడింది</string>
+    <string name="max">గరిష్టం</string>
+    <string name="media">మీడియా</string>
+    <plurals name="members">
+        <item quantity="one">%1$d సభ్యుడు</item>
+        <item quantity="other">%1$d సభ్యులు</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="one">%1$d చురుకైన సభ్యుడు</item>
+        <item quantity="other">%1$d చురుకైన సభ్యులు</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">ఖాతా ID లేదా ONS జోడించు</string>
+    <string name="membersInvite">స్నేహితులను ఆహ్వానించండి</string>
+    <string name="membersInviteSend">ఆహ్వానాన్ని పంపుము</string>
+    <string name="membersInviteSendMultiple">ఆహ్వానాలు పంపుము</string>
+    <string name="membersInviteShareDescription">మీరు <b>{name}</b>తో గ్రూప్ సందేశాల చరిత్రను షేర్ చేయాలనుకుంటున్నారా?</string>
+    <string name="membersInviteShareMessageHistory">సందేశ చరిత్రను పంచుకోండి</string>
+    <string name="membersInviteShareMoreDescription">మీరు <b>{name}</b> మరియు <b>{count} ఇతరులతో</b> గ్రూప్ సందేశాల చరిత్రను షేర్ చేయాలనుకుంటున్నారా?</string>
+    <string name="membersInviteShareNewMessagesOnly">కేవలం కొత్త సందేశాలను పంచుకోండి</string>
+    <string name="membersInviteShareTwoDescription">మీరు <b>{name}</b> మరియు <b>{other_name}</b>తో గ్రూప్ సందేశాల చరిత్రను షేర్ చేయాలనుకుంటున్నారా?</string>
+    <string name="membersInviteTitle">ఆహ్వానించండి</string>
+    <string name="message">సందేశం</string>
+    <string name="messageEmpty">సందేశం ఖాళీగా ఉంది!</string>
+    <string name="messageErrorDelivery">సందేశం పంపుట విఫలమైనది</string>
+    <string name="messageErrorLimit">సందేశ పరిమితి చేరుకుంది</string>
+    <string name="messageErrorOld">ఇకపై మద్దతు అందని {app_name} యొక్క పాత సంస్కరణను ఉపయోగించి ఎన్క్రిప్ట్ చేసిన సందేశాన్ని అందుకుంది. దయచేసి ఇటీవల సంస్కరణకు అప్డేట్ చేయమని పంపినవారు అడగండి మరియు సందేశాన్ని మళ్లీ పంపించండి.</string>
+    <string name="messageErrorOriginal">అసలు సందేశం కనుగొనబడలేదు</string>
+    <string name="messageInfo">సందేశం సమాచారం</string>
+    <string name="messageMarkRead">చదివినట్టు గుర్తుపెట్టు</string>
+    <string name="messageMarkUnread">చదవకుండా గుర్తుపెట్టు</string>
+    <string name="messageNew">కొత్త సందేశం</string>
+    <string name="messageNewDescriptionDesktop">మీ స్నేహితుడి అక్కోవండ్ ID లేదా ONS ఇవ్వడం ద్వారా కంపెనీ పరిక్షణను ప్రారంభించండి.</string>
+    <string name="messageNewDescriptionMobile">మీ స్నేహితుడి అక్కోవండ్ ID, ONS లేదా వారి QR కోడ్‌ని స్కాన్ చేయడం ద్వారా నూతన సంభాషణ ప్రారంభించండి.</string>
+    <string name="messageNewMessages">కొత్త సందేశాలు</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="one">You\'ve got a new message.</item>
+        <item quantity="other">మీకు %1$d కొత్త సందేశాలు అందాయి.</item>
+    </plurals>
+    <string name="messageReplyingTo">స్పందిస్తున్నారు</string>
+    <string name="messageRequestGroupInvite"><b>{name}</b> మీకు <b>{group_name}</b> లో చేరడానికి ఆహ్వానించారు.</string>
+    <string name="messageRequestGroupInviteDescription">ఈ గ్రూప్కి సందేశం పంపడం ద్వారా మీ గ్రూప్ ఆహ్వానాన్ని స్వీకరించబడుతుంది.</string>
+    <string name="messageRequestPending">మీ సందేశ్ అభ్యర్థన ప్రస్తుతం పెండింగ్‌లో ఉంది.</string>
+    <string name="messageRequestPendingDescription">ఈ సంక్షిప్తసం లో మీ సంక్షిప్తం అభ్యర్థనను అంగీకరించిన తర్వాత మీరు వాయిస్ సందేశాలు మరియు ఫైర్‌లు పంపగలరు.</string>
+    <string name="messageRequestYouHaveAccepted">మీరు <b>{name}</b> నుండి మెసేజ్ అభ్యర్థనను అంగీకరించారు.</string>
+    <string name="messageRequestsAcceptDescription">ఈ యూజర్కి సందేశం పంపడం ద్వారా మీ సందేశ అభ్యర్థనను స్వీకరించబడుతుంది మరియు మీ Account ID బయటపడుతుంది.</string>
+    <string name="messageRequestsAccepted">మీ మెసేజ్ అభ్యర్థనను అంగీకరించారు.</string>
+    <string name="messageRequestsClearAllExplanation">మీరు అన్ని సందేశ మరియు సమూహ ఆహ్వానాలను ఖాళీ చేసాలనుకుంటున్నారా?</string>
+    <string name="messageRequestsCommunities">కమ్యునిటీ మెసేజ్ రిక్వెస్ట్స్</string>
+    <string name="messageRequestsCommunitiesDescription">సమూహ సంభాషణల నుండి సందేశ వినతులను అనుమతించండి.</string>
+    <string name="messageRequestsDelete">మీరు ఈ మెసేజ్ రిక్వెస్ట్‌ను తీసివేయాలనుకుంటున్నారా?</string>
+    <string name="messageRequestsNew">మీకు ఒక కొత్త మెసేజ్ అభ్యర్థన వచ్చింది</string>
+    <string name="messageRequestsNonePending">పెండింగ్ సందేశం డిమాండ్లు లేవు</string>
+    <string name="messageRequestsTurnedOff"><b>{name}</b> వద్ద కమ్యూనిటీ సంభాషణల నుండి మెసేజ్ రిక్వెస్ట్లను ఆపివేసినందున, మీరు వారికి సందేశం పంపలేరు.</string>
+    <string name="messageSelect">సందేశాన్ని ఎంచుకో</string>
+    <string name="messageStatusFailedToSend">పంపించడం విఫలమైనది</string>
+    <string name="messageStatusFailedToSync">సింక్ చేయడం విఫలమైంది</string>
+    <string name="messageStatusSyncing">సింక్ అవుతోంది</string>
+    <string name="messageUnread">చదవని సందేశాలు</string>
+    <string name="messageVoice">వాయిస్ సందేశం</string>
+    <string name="messageVoiceErrorShort">వాయిస్ సందేశాన్ని రికార్డ్ చేయడానికి పట్టుకోండి</string>
+    <string name="messageVoiceSlideToCancel">రద్దు చేయడానికి సరిపు చేయండి</string>
+    <string name="messages">సందేశాలు</string>
+    <string name="minimize">కనిష్ఠ చేయండి</string>
+    <string name="next">తర్వాత</string>
+    <string name="nicknameDescription">{name} కోసం ఒక నిక్‌నేమ్ ఎంచుకోండి. ఇది మీ ఒక్కటి మరియు గ్రూప్ సంభాషణల్లో తెచ్చబడుతుంది.</string>
+    <string name="nicknameEnter">మారుపేరును ఎంటర్ చేయండి</string>
+    <string name="nicknameRemove">మారుపేరు తొలగించు</string>
+    <string name="nicknameSet">మారుపేరు సెట్ చేయి</string>
     <string name="no">కాదు</string>
-    <string name="delete">తొలగించండి</string>
-    <string name="ban">Nishedham</string>
+    <string name="noSuggestions">సూచనలు ఏమి వద్దు</string>
+    <string name="none">ఏదీ కాదు</string>
+    <string name="notNow">ఇప్పుడు కాదు</string>
+    <string name="noteToSelf">Sviya gamanika</string>
+    <string name="noteToSelfEmpty">మీరు Note to Self లో సందేశాలు లేవు.</string>
+    <string name="noteToSelfHide">Sviya gamanika మోహార్పించు</string>
+    <string name="noteToSelfHideDescription">మీరు Note to Self ను దాచాలనుకుంటున్నారా?</string>
+    <string name="notificationsAllMessages">అన్ని సందేశాలు</string>
+    <string name="notificationsAndroidSystem">{conversation_count} సంభాషణలలో కొత్త {message_count} సందేశాలు</string>
+    <string name="notificationsContent">ప్రకటనల విషయం</string>
+    <string name="notificationsContentDescription">నోటిఫికేషన్లలో చూపే సమాచారం.</string>
+    <string name="notificationsContentShowNameAndContent">పేరు మరియు విషయము</string>
+    <string name="notificationsContentShowNameOnly">పేరు మాత్రమే</string>
+    <string name="notificationsContentShowNoNameOrContent">పేరు మరియు విషయం లేదు</string>
+    <string name="notificationsFastMode">Fast Mode</string>
+    <string name="notificationsFastModeDescriptionAndroid">మీరు కొత్త సందేశాలకు నమ్మదగిన మరియు తక్షణంగా Google యొక్క నోటిఫికేషన్ సర్వర్లను ఉపయోగించి నెరేవులబాటు పొందుతారు.</string>
+    <string name="notificationsFastModeDescriptionIos">మీరు కొత్త సందేశాలకు నమ్మదగిన మరియు తక్షణంగా Apple యొక్క నోటిఫికేషన్ సర్వర్లను ఉపయోగించి నెరేవులబాటు పొందుతారు.</string>
+    <string name="notificationsGoToAndroidSettings">అండ్రాయిడ్ నోటిఫికేషన్ సెట్టింగ్‌లకు వెళ్లండి</string>
+    <string name="notificationsGoToDevice">పరికర నోటిఫికేషన్ సెట్టింగ్‌లకు వెళ్లండి</string>
+    <string name="notificationsIosGroup">{conversation_name} కు {name} పంపిన సందేశం</string>
+    <string name="notificationsIosRestart">మీ {device} రీస్టార్ట్ అవుతున్నప్పుడు మీరు సందేశాలను స్వీకరించి ఉండవచ్చు.</string>
+    <string name="notificationsLedColor">ఎల్ఈడి రంగు</string>
+    <string name="notificationsMentionsOnly">కేవలం ప్రస్తావనలు</string>
+    <string name="notificationsMessage">సందేశ ప్రకటనలు</string>
+    <string name="notificationsMostRecent">సమీప కాలపు: {name}</string>
+    <string name="notificationsMute">నిశబ్ధం</string>
+    <string name="notificationsMuteFor">నిశబ్ధంగా ఉంచు {time_large}</string>
+    <string name="notificationsMuteUnmute">మ్యూట్ తీసివేయి</string>
+    <string name="notificationsMuted">నిశబ్ధం చేయబడింది</string>
+    <string name="notificationsSlowMode">స్లో మోడ్</string>
+    <string name="notificationsSlowModeDescription">{app_name} నేపథ్యంలో కొత్త సందేశాల కోసం అప్పుడప్పుడు తనిఖీ చేస్తుంది.</string>
+    <string name="notificationsSound">శబ్దము</string>
+    <string name="notificationsSoundDescription">అమెరికా తెరిచినప్పుడు శబ్దం </string>
+    <string name="notificationsSoundDesktop">ఆడియో ప్రకటనలు</string>
+    <string name="notificationsStrategy">ప్రకటనల వ్యూహం</string>
+    <string name="notificationsStyle">ప్రకటనల శైలి</string>
+    <string name="notificationsVibrate">ప్రకంపన</string>
+    <string name="off">ఆఫ్</string>
+    <string name="okay">సరే</string>
+    <string name="onboardingAccountCreate">అకౌంట్ సృష్టించు</string>
+    <string name="onboardingAccountCreated">ఖాతా సృష్టించబడింది</string>
+    <string name="onboardingAccountExists">నాకు ఖాతా ఉంది</string>
+    <string name="onboardingBackAccountCreation">మీరు వెనక్కి వెళ్ళలేరు. ఖాతా సృష్టిని రద్దు చేయడానికి, Session మూసివేయాలి.</string>
+    <string name="onboardingBackLoadAccount">మీరు వెనక్కి వెళ్ళలేరు. మీ ఖాతా లోడ్ చేయడాన్ని నిలిపివేయడానికి, Session మూసివేయాలి.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">అకౌంట్ సృష్టించడం తక్షణం, ఉచితం మరియు అనామకం</string>
+    <string name="onboardingBubbleNoPhoneNumber">సైన్ అప్ చేయడానికి మీకు ఫోన్ నంబర్ కూడా అవసరం లేదు.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">మీ జేబులో గోప్యత.</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} మీ గోప్యతను రక్షించడానికి ఇంజనీరింగ్ చేయబడింది.</string>
+    <string name="onboardingBubbleWelcomeToSession">{app_name}కి స్వాగతం</string>
+    <string name="onboardingHitThePlusButton">ఒక చాట్‌ను ప్రారంభించడానికి, ఒక గుంపును సృష్టించడానికి లేదా అధికారిక Communityలో చేరడానికి ప్లస్ బటన్‌ను నొక్కండి!</string>
+    <string name="onboardingMessageNotificationExplanation">కొత్త సందేశాలను మీరు {app_name} ద్వారా ప్రకటించవచ్చని రెండు మార్గాలు ఉన్నాయి.</string>
+    <string name="onboardingPrivacy">గోప్యతా విధానం</string>
+    <string name="onboardingTos">సేవా నిబంధనలు</string>
+    <string name="onboardingTosPrivacy">ఈ సేవను ఉపయోగించడం ద్వారా, మీరు మా <b>సేవా నిబంధనలు</b> మరియు <b>గోప్యతా విధానం</b> ని అంగీకరిస్తారు</string>
+    <string name="onionRoutingPath">మార్గం</string>
+    <string name="onionRoutingPathDescription">{app_name} మీ IPని {app_name} యొక్క decentralized network లోని ఎక్కువ service nodes ద్వారా మీ సందేశాలను రూటింగ్ చేయడం ద్వారా దాచిపెడుతుంది. ఇది మీ ప్రస్తుత మార్గం:</string>
+    <string name="onionRoutingPathDestination">తలపురుగు</string>
+    <string name="onionRoutingPathEntryNode">ఎంట్రీ నోడ్</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">తెలియని దేశం</string>
+    <string name="onsErrorNotRecognized">మేము ఈ ONS గుర్తించలేకపోయాము. దయచేసి దీన్ని తనిఖీ చేయండి మరియు మళ్లీ ప్రయత్నించండి.</string>
+    <string name="onsErrorUnableToSearch">మేము ఈ ONS కోసం శోధించలేకపోయాము. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి.</string>
+    <string name="open">తెరవండి</string>
+    <string name="other">ఇతరులు</string>
+    <string name="passwordChange">పాస్వర్డ్ మార్చు</string>
+    <string name="passwordChangeDescription">{app_name} ని అన్‌లాక్ చేయడానికి అవసరమైన పాస్‌వర్డ్ మార్చండి.</string>
+    <string name="passwordChangedDescription">మీ పాస్‌వర్డ్ మార్పు జరిగింది. దయచేసి దాన్ని సురక్షితంగా ఉంచండి.</string>
+    <string name="passwordConfirm">పాస్‌వర్డ్‌ని నిర్ధారించండి</string>
+    <string name="passwordCreate">మీ పాస్‌వర్డ్ సృష్టించండి</string>
+    <string name="passwordCurrentIncorrect">మీ ప్రస్తుత పాస్‌వర్డ్ తప్పు.</string>
+    <string name="passwordDescription">{app_name}ని అన్లాక్ చేయడానికి పాస్వర్డ్ అవసరం.</string>
+    <string name="passwordEnter">పాస్‌వర్డ్ ఎంటర్ చేయండి</string>
+    <string name="passwordEnterCurrent">దయచేసి మీ ప్రస్తుత పాస్‌వర్డ్‌ను ఎంటర్ చేయండి.</string>
+    <string name="passwordEnterNew">దయచేసి మీ కొత్త పాస్‌వర్డ్‌ను ఎంటర్ చేయండి</string>
+    <string name="passwordError">పాస్‌వర్డ్‌లో కేవలం అక్షరాలు, సంఖ్యలు మరియు సాంకేతిక పదాలు ఉండాలి</string>
+    <string name="passwordErrorLength">పాస్‌వర్డ్ 6 మరియు 64 అక్షరాల మధ్య ఉండాలి</string>
+    <string name="passwordErrorMatch">పాస్‌వర్డ్‌లు సరిపోలవు</string>
+    <string name="passwordFailed">పాస్‌వర్డ్ సెట్ చేయడంలో విఫలమైంది</string>
+    <string name="passwordIncorrect">సరికాని పాస్వర్డ్</string>
+    <string name="passwordRemove">పాస్వర్డ్ తొలగించు</string>
+    <string name="passwordRemoveDescription">{app_name}ని అన్లాక్ చేయడానికి అవసరమైన పాస్వర్డ్ తొలగించు.</string>
+    <string name="passwordRemovedDescription">మీ పాస్‌వర్డ్ తొలగించబడింది.</string>
+    <string name="passwordSet">పాస్‌వర్డ్ సెట్ చేయి</string>
+    <string name="passwordSetDescription">మీ పాస్‌వర్డ్ సెట్ చేయబడింది. దయచేసి దాన్ని సురక్షితంగా ఉంచండి.</string>
+    <string name="paste">పేస్ట్</string>
+    <string name="permissionsAppleMusic">మీడియా అటాచ్మెంట్‌లను ప్లే చేయడానికి {app_name} Apple Musicను ఉపయోగించాలి.</string>
+    <string name="permissionsAutoUpdate">ఆటో అప్‌డేట్</string>
+    <string name="permissionsAutoUpdateDescription">స్టార్ట్‌అప్‌పై ఆటో అప్‌డేట్‌లు తనిఖీ చేయండి</string>
+    <string name="permissionsFaceId">{app_name}లో స్క్రీన్ లాక్ ఫీచర్ ఫేస్ ఐడి నీ ఉపయోగిస్తుంది.</string>
+    <string name="permissionsKeepInSystemTray">సిస్టమ్ ట్రేలో ఉంచండి</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} విండోను మూసినప్పుడు నేపథ్యంలో కొనసాగుతుంది</string>
+    <string name="permissionsLibrary">{app_name} కొనసాగించడానికి ఫోటో లైబ్రరీ యాక్సెస్ అవసరం. మీరు యాక్సెస్‌ను iOS సెట్టింగ్‌లలో ప్రారంభించవచ్చు.</string>
+    <string name="permissionsMicrophone">మైక్రోఫోన్</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">ఆడియో సందేశాలను పంపడానికి {app_name} మైక్రోఫోన్ యాక్సెస్ అవసరం, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి యాప్ సెట్టింగ్‌లకు వెళ్ళి, \"Permissions\" ఎంచుకోండి మరియు \"Microphone\"ని సుముఖం చేయండి.</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">మీరు {app_name} యొక్క గోప్యతా అమరికల్లో మైక్రోఫోన్ యాక్సెస్‌ని ప్రారంభించవచ్చు</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">కాల్ చేయడానికి మరియు ఆడియో సందేశాలను రికార్డ్ చేయడానికి {app_name} మైక్రోఫోన్ యాక్సెస్ అవసరం.</string>
+    <string name="permissionsMicrophoneDescription">మైక్రోఫోన్ కు యాక్సెస్ ఇవ్వండి</string>
+    <string name="permissionsRequired">అనుమతి అవసరం</string>
+    <string name="permissionsStorageSave">అటాచ్మెంట్‌లు మరియు మీడియాను సేవ్ చేయడానికి {app_name} కు నిల్వ యాక్సెస్ అవసరం.</string>
+    <string name="permissionsStorageSaveDenied">ఫోటోలు మరియు వీడియోలను సేవ్ చేయడానికి {app_name} కు నిల్వ యాక్సెస్ అవసరం, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి యాప్ సెట్టింగ్‌లకు వెళ్ళి, \"Permissions\" ఎంచుకోండి మరియు \"Storage\"ని సుముఖం చేయండి.</string>
+    <string name="permissionsStorageSend">ఫోటోలు మరియు వీడియోలను పంపడానికి {app_name} కు నిల్వ యాక్సెస్ అవసరం.</string>
+    <string name="pin">పిన్ </string>
+    <string name="pinConversation">సంభాషణను పిన్ చేయండి</string>
+    <string name="pinUnpin">అన్స్టిక్ చేయి</string>
+    <string name="pinUnpinConversation">సంభాషణను అన్స్టిక్ చేయి</string>
+    <string name="preview">ప్రివ్యూ</string>
+    <string name="profile">ప్రొఫైల్</string>
+    <string name="profileDisplayPicture">ప్రదర్శన చిత్రం</string>
+    <string name="profileDisplayPictureRemoveError">ప్రదర్శన చిత్రాన్ని తొలగించడంలో విఫలమైంది.</string>
+    <string name="profileDisplayPictureSet">ప్రొఫైల్ చిత్రాన్ని సెట్ చేయి</string>
+    <string name="profileDisplayPictureSizeError">దయచేసి చిన్న ఫైల్ ఎంపిక చేయండి.</string>
+    <string name="profileErrorUpdate">ప్రొఫైల్ అప్‌డేట్ చేయడం విఫలమైంది.</string>
+    <string name="promote">ప్రచారం చేయండి</string>
+    <string name="qrCode">QR కోడ్</string>
+    <string name="qrNotAccountId">ఈ క్యూ ఆర్ కోడ్ లో ఖాతా ఐడి లేదు</string>
+    <string name="qrNotRecoveryPassword">ఈ క్యూ ఆర్ కోడ్ లో రికవరీ పాస్వర్డ్ లేదు</string>
+    <string name="qrScan">QR కోడ్‌ని స్కాన్ చేయండి</string>
+    <string name="qrView">QR చూడండి</string>
+    <string name="qrYoursDescription">మీ QR కోడ్‌ను స్కాన్ చేయడం ద్వారా మిత్రులు మీకు సందేశం పంపవచ్చు.</string>
+    <string name="quit">{app_name} ను ముగించు</string>
+    <string name="quitButton">ముగించు</string>
+    <string name="read">చదవండి</string>
+    <string name="readReceipts">చదివిన రసీదులు</string>
+    <string name="readReceiptsDescription">మీరు పంపే మరియు అందుకునే అన్ని సందేశాల కోసం చదివిన అందులు చూపించు.</string>
+    <string name="received">అందుకున్న:</string>
+    <string name="recommended">సిఫారసు చేయబడింది</string>
+    <string name="recoveryPasswordBannerDescription">మీ ఖాతాకి ప్రాప్యత కోల్పోకుండా ఉండాలంటే మీ రికవరీ పాస్‌వర్డ్‌ను భద్రపరచండి.</string>
+    <string name="recoveryPasswordBannerTitle">మీ రికవరీ పాస్‌వర్డ్‌ను భద్రపరచండి</string>
+    <string name="recoveryPasswordDescription">మీ ఖాతాను కొత్త పరికరాలపై లోడ్ చేయడానికి మీ రికవరీ పాస్‌వర్డ్‌ని ఉపయోగించండి.
+
+మీ రికవరీ పాస్‌వర్డ్ లేకుండా మీ ఖాతాను పునరుద్ధరించలేరు. అది ఎక్కడైనా సురక్షితంగా నిల్వ చేయబడిందని నిర్ధారించుకోండి – మరియు దానిని ఎవరికీ పంచుకోకండి.</string>
+    <string name="recoveryPasswordEnter">మీ మరుపు తిరిగి పొందుపాస్వర్డ్ ఎంటర్ చేయండి</string>
+    <string name="recoveryPasswordErrorMessageGeneric">దయచేసి మీ రికవరీ పాస్‌వర్డ్‌ను తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">మీ రికవరీ పాస్‌వర్డ్‌లోని కొన్ని పదాలు తప్పు. దయచేసి చూసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="recoveryPasswordErrorMessageShort">మీరు నమోదు చేసిన రికవరీ పాస్వర్డ్ చాలు పొడవుగా లేదు. దయచేసి తనిఖీ చేసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="recoveryPasswordErrorTitle">సరికాని Recovery password</string>
+    <string name="recoveryPasswordExplanation">మీ ఖాతాను లోడ్ చేయడానికి, మీ రికవరీ పాస్వర్డ్ ని నమోదు చేయండి.</string>
+    <string name="recoveryPasswordHidePermanently">Recovery password శాశ్వతంగా దాచండి</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">మీ రికవరీ పాస్‌వర్డ్ లేకుండా, మీరు మీ ఖాతాను కొత్త పరికరాలలో లోడ్ చేయలేరు. 
+
+మరింత కొనసాగించే ముందు మీ రికవరీ పాస్‌వర్డ్‌ను ఒక సురక్షితమైన స్థలంలో సేవ్ చేయాలని మేము బలంగా సిఫారసు చేస్తున్నాము.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">మీరు మీ రికవరీ పాస్వర్డ్‌ను ఈ పరికరంలో శాశ్వతంగా దాచాలనుకుంటున్నారా? ఇది rückgängig చేయడం సాధ్యం కాదు.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Recovery password దాచండి</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">మీ ఈ పరికరంలో రికవరీ పాస్‌వర్డ్‌ను శాశ్వతంగా దాచండి.</string>
+    <string name="recoveryPasswordRestoreDescription">మీ ఖాతాను లోడ్ చేయడానికి మీ మరుపు తిరిగి పొందుపాస్వర్డ్ ఎంటర్ చేయండి. మీరు దాన్ని సేవ్ చేయకపోతే, దాన్ని మీ యాప్ సెట్టింగ్‌లలో కనుగొనవచ్చు.</string>
+    <string name="recoveryPasswordView">పాస్‌వర్డ్ చూడండి</string>
+    <string name="recoveryPasswordWarningSendDescription">ఇది మీ రికవరీ పాస్వర్డ్. మీరు దానిని ఎవరితోనైనా పంపిస్తే వారు మీ ఖాతాకు పూర్తి ప్రాప్యత కలిగి ఉంటారు.</string>
+    <string name="redo">మళ్లీ ప్రయత్నించండి</string>
+    <string name="remove">తొలగించు</string>
+    <string name="reply">స్పంధించు</string>
+    <string name="resend">తిరిగి పంపండి</string>
+    <string name="resolving">దేశ సమాచారాన్ని లోడ్ చేస్తోంది...</string>
+    <string name="restart">రీస్టార్ట్</string>
+    <string name="resync"> రీసింక్</string>
+    <string name="retry">రీట్రై</string>
     <string name="save">భద్రపరుచు</string>
-    <string name="note_to_self">Sviya gamanika</string>
-    <string name="version_s">Sanskarana %s</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">కొత్త సందేశం</string>
-    <!-- AlbumThumbnailView -->
-    <string name="AlbumThumbnailView_plus">\+%d</string>
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="one">సంభాషణకు %d సందేశం</item>
-        <item quantity="other">సంభాషణకు %d సందేశం</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">పాత సందేశాలన్ని ఇప్పుడు చెరిపివేయాలా?</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="one">ఇది వెంటనే ఇటీవల సందేశానికి అన్ని సంభాశనలో సవరణ చేస్తుంది</item>
-        <item quantity="other">ఇది వెంటనే ఇటీవల  %d  సందేశాలకు  అన్ని సంభాశనలో సవరణ చేస్తుంది</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">తొలగించండి</string>
-    <string name="ApplicationPreferencesActivity_On">ఆన్</string>
-    <string name="ApplicationPreferencesActivity_Off">ఆఫ్</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(చిత్రం)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(ఆడియో)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(వీడియో)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">స్పంధించు</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">మీడియా ఎంచుకోవడానికి అనువర్తనం దొరకదు.</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">ఫోటోలు, వీడియోలు లేదా ఆడియోను అటాచ్ చేయడానికి Sessionకు నిల్వ అనుమతి అవసరం, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి అనువర్తనం సెట్టింగ్ల మెనుకు కొనసాగండి, \"అనుమతులు\" ఎంచుకోండి మరియు \"నిల్వ\" ను ప్రారంభించండి.</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">ఫోటోలను తీయడానికి Sessionకు కెమెరా అనుమతి అవసరం, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి అనువర్తనం సెట్టింగ్ల మెనుకి కొనసాగండి, \"అనుమతులు\" ఎంచుకోండి మరియు \"కెమెరా\" ని ప్రారంభించండి.</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">ఆడియో ప్రదర్శనా లోపం!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">నేడు</string>
-    <string name="BucketedThreadMedia_Yesterday">నిన్న</string>
-    <string name="BucketedThreadMedia_This_week">ఈ వారం</string>
-    <string name="BucketedThreadMedia_This_month">ఈ నెల</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">వెబ్ బ్రౌజర్ కనుగొనబడలేదు.</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">సమూహాలు</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">విఫలమైంది పంపండి, వివరాల కోసం నొక్కండి</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">స్వీకరించు మీట మార్పిడి సందేశం, తట్టు తో క్రమణం</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">పంపడం విఫలమైంది, అసురక్షిత తిరిగి పొందడం కోసం నొక్కండి</string>
-    <string name="ConversationItem_unable_to_open_media">మీడియా ఎంచుకోవడానికి అనువర్తనం దొరకదు.</string>
-    <string name="ConversationItem_copied_text">ప్రతి  తీసుకోబడింది %s</string>
-    <string name="ConversationItem_read_more">Ekkuva chadavatam</string>
-    <string name="ConversationItem_download_more">&#160; మరింత డౌన్‌లోడ్ చేయండి</string>
-    <string name="ConversationItem_pending">&#160; పెండింగ్‌</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">అటాచ్మెంట్ జోడించండి</string>
-    <string name="ConversationActivity_select_contact_info">సంప్రదింపు సమాచారం ఎంచుకొండి</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">క్షమించండి, మీ అటాచ్మెంట్ అమర్చడంలో లోపం ఉంది.</string>
-    <string name="ConversationActivity_message">సందేశం</string>
-    <string name="ConversationActivity_compose">కంపోజ్</string>
-    <string name="ConversationActivity_invalid_recipient">చెల్లని గ్రహీత!</string>
-    <string name="ConversationActivity_added_to_home_screen">హోమ్ స్క్రీన్కు జోడించబడింది</string>
-    <string name="ConversationActivity_leave_group">సమూహం నుండి వైదొలగాలా?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">మీరు ఈ సమూహాన్ని వదిలిపెట్టాలనుకుంటున్నారా?</string>
-    <string name="ConversationActivity_error_leaving_group">సమూహం నుండి వైదొలగటంలో లోపం</string>
-    <string name="ConversationActivity_unblock_this_contact_question">ఈ పరిచయం నిరోధించాలా?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">మీరు మరోసారి ఈ పరిచయం నుండి సందేశాలను మరియు కాల్స్ అందుకోగలరు.</string>
-    <string name="ConversationActivity_unblock">అనుమతించు</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">జోడింపు మీరు పంపే సందేశం రకం పరిమాణ పరిమితి మించిపోయింది.</string>
-    <string name="ConversationActivity_unable_to_record_audio">ఆడియో రికార్డ్ చేయడం సాధ్యపడలేదు!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">మీ పరికరం ఈ లింక్ నిర్వహించడానికి ఎలాంటి అనువర్తనం లేదు.</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">ఆడియో సందేశాలను పంపడానికి, మీ మైక్రోఫోన్కు Session ప్రాప్తిని అనుమతించండి.</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">ఆడియో సందేశాలను పంపడానికి Sessionకు మైక్రోఫోన్ అనుమతి అవసరం, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి అనువర్తనం సెట్టింగ్లకు కొనసాగించండి, \"అనుమతులు\" ఎంచుకోండి మరియు \"మైక్రోఫోన్\" ని ప్రారంభించండి.</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">ఫోటోలు మరియు వీడియోలను సంగ్రహించడానికి, కెమెరాకి Session ప్రాప్తిని అనుమతించండి.</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">ఫోటోలను లేదా వీడియోను తీసుకోవడానికి Sessionకు కెమెరా అనుమతి అవసరం, కానీ ఇది శాశ్వతంగా తిరస్కరించబడింది. దయచేసి అనువర్తనం సెట్టింగ్లకు కొనసాగించండి, \"అనుమతులు\" ఎంచుకోండి మరియు \"కెమెరా\" ని ప్రారంభించండి.</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">ఛాయాచిత్రాలను లేదా వీడియోను తీసుకోవడానికి కెమెరా అనుమతులను Sessionకి అవసరం</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="one">ఎంపికైన సందేశం తొలగించాలా?</item>
-        <item quantity="other">ఎంపిక చేసిన సందేశాలను తొలగించాలా?</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="one">ఎంపికైన సందేశాన్ని శాశ్వతంగా తొలగిస్తుంది.</item>
-        <item quantity="other">%1$d ఎంపికైన సందేశాలను శాశ్వతంగా తొలగిస్తుంది.</item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">నిల్వలొ దాచు?</string>
-    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-        <item quantity="one">ఈ మీడియాను నిల్వలో భద్రపరచడం వల్ల మీ పరికరంలో ఏదైనా ఇతర అనువర్తనాలు దానిని వాడుటకు  ప్రవేశాధికారము కలిపిస్తుంది.
+    <string name="saved">సేవ్ చేయబడింది</string>
+    <string name="savedMessages">సేవ్ చేసిన సందేశాలు</string>
+    <string name="saving">సేవ్ అవుతోంది...</string>
+    <string name="scan">స్కాన్</string>
+    <string name="screenSecurity">స్క్రీన్ భద్రత</string>
+    <string name="screenshotNotifications">స్క్రీన్‌షాట్ ప్రకటనలు</string>
+    <string name="screenshotNotificationsDescription">వినియోగదారు ఒకటి-ఒకటి చాట్ స్క్రీన్‌షాట్ తీసినప్పుడు నోటిఫికేషన్ కావాలి.</string>
+    <string name="screenshotTaken"><b>{name}</b> స్క్రీన్ షాట్ తీసుకున్నారు.</string>
+    <string name="search">వెతకండి</string>
+    <string name="searchContacts">పరిచయాలను వెతకండి</string>
+    <string name="searchConversation">సంభాషణను వెతకండి</string>
+    <string name="searchEnter">దయచేసి మీ సెర్చ్ ఎంటర్ చేయండి.</string>
+    <string name="searchMatchesNone">ఫలితాలు కనుగొనబడలేదు.</string>
+    <string name="searchMatchesNoneSpecific">{query} కోసం ఫలితాలు కనుగొనబడలేదు</string>
+    <string name="searchMembers">సభ్యులను వెతకండి</string>
+    <string name="searchSearching">వెతుకుతోంది...</string>
+    <string name="select">ఎంచుకోండి</string>
+    <string name="selectAll">అన్ని ఎంచుకో</string>
+    <string name="send">పంపుము</string>
+    <string name="sending">పంపుతోంది</string>
+    <string name="sent">పంపిన:</string>
+    <string name="sessionAppearance">స్వరూపం</string>
+    <string name="sessionClearData">డేటాను క్లియర్ చేయండి</string>
+    <string name="sessionConversations">సంభాషణలు</string>
+    <string name="sessionHelp">సహాయం</string>
+    <string name="sessionInviteAFriend">ఒక స్నేహితున్ని ఆహ్వానించండి</string>
+    <string name="sessionMessageRequests">సందేశ అభ్యర్ధనలు</string>
+    <string name="sessionNotifications">ప్రకటనలు</string>
+    <string name="sessionPermissions">అనుమతులు</string>
+    <string name="sessionPrivacy">గోప్యత</string>
+    <string name="sessionRecoveryPassword">పునర్‌మూల్యపాస్‌వర్డ్</string>
+    <string name="sessionSettings">అమరికలు</string>
+    <string name="set">సెట్</string>
+    <string name="settingsRestartDescription">మీ కొత్త సెట్టింగ్స్‌ని ఉపయోగించాలంటే, మీరు {app_name}ను రీస్టార్ట్ చేయాలి.</string>
+    <string name="share">పంచుకోండి</string>
+    <string name="shareAccountIdDescription">మీ స్నేహితునితో చాట్ చేయడానికి మీ ఖాతా IDని పంచడం ద్వారా మీ స్నేహితున్ని Sessionలో ఆహ్వానించండి.</string>
+    <string name="shareAccountIdDescriptionCopied">మీ స్నేహితులతో ఎక్కడైనా మీరు సాధారణంగా మాట్లాడే చోట కలుసుకోండి - తరువాత సంభాషణను ఇక్కడకు తరలించండి.</string>
+    <string name="shareExtensionDatabaseError">డేటాబేస్ ను ఓపెన్ చేయడానికి సమస్య ఉంది. దయచేసి యాప్ ని రీస్టార్ట్ చేసి మళ్ళీ ప్రయత్నించండి.</string>
+    <string name="shareToSession">{app_Name} కు పంచుకోండి</string>
+    <string name="show">కనబర్చు</string>
+    <string name="showAll">పూర్తిగా చూపించు</string>
+    <string name="showLess">తక్కువ కనపరచు</string>
+    <string name="stickers">స్టిక్కర్లు</string>
+    <string name="supportGoTo">సహాయ పేజీకి వెళ్ళండి</string>
+    <string name="theContinue">కొనసాగించు</string>
+    <string name="theDefault">అప్రమేయ</string>
+    <string name="theError">లోపం</string>
+    <string name="tryAgain">మళ్ళీ ప్రయత్నించండి</string>
+    <string name="typingIndicators">టైపింగ్ సూచికలు</string>
+    <string name="typingIndicatorsDescription">టైపింగ్ సూచనలను చూడండి మరియు పంచుకోండి (...)</string>
+    <string name="undo">తిరిగి చేయి</string>
+    <string name="unknown">తెలియని</string>
+    <string name="updateApp">అనువర్తన నవీకరణలు</string>
+    <string name="updateDownloaded">అప్డేట్ ఇన్స్టాల్ చేయబడింది, రీస్టార్ట్ చేయడానికి క్లిక్ చేయండి</string>
+    <string name="updateDownloading">నవీకరించబడుతోంది: {percent_loader}%</string>
+    <string name="updateError">నవీకరించలేం</string>
+    <string name="updateErrorDescription">{app_name} నవీకరించడం విఫలమయింది. దయచేసి {download_url}కి వెళ్ళి 새로운 వెర్షన్‌ను మాన్యువల్‌గా ఇన్స్టాల్ చేయండి, ఆపై ఈ సమస్య గురించి తెలియజేయడానికి మా సహాయ కేంద్రాన్ని సంప్రదించండి.</string>
+    <string name="updateNewVersion">{app_name} యొక్క కొత్త సంస్కరణ అందుబాటులో ఉంది, నవీకరణ కొరకు తట్టండి</string>
+    <string name="updateNewVersionDescription">{app_name} యొక్క కొత్త సంస్కరణ అందుబాటులో ఉంది.</string>
+    <string name="updateReleaseNotes">రిలీజ్ నోట్స్‌కి వెళ్ళండి</string>
+    <string name="updateSession">{app_name} నవీకరణ</string>
+    <string name="updateVersion">Sanskarana {version}</string>
+    <string name="uploading">అప్లోడ్ చేస్తోంది...</string>
+    <string name="urlCopy">URL కాపీ చేయండి</string>
+    <string name="urlOpen">URL తెరువు</string>
+    <string name="urlOpenBrowser">ఇది మీ బ్రౌజర్ లో ఓపెన్ అవుతుంది.</string>
+    <string name="urlOpenDescription">మీరు మీ బ్రౌజర్‌లో ఈ URL ను తెరవాలనుకుంటున్నారా?
 
-కొనసాగించాలా?</item>
-        <item quantity="other">అన్ని %1$d మీడియాను నిల్వలో భద్రపరచడం వల్ల మీ పరికరంలో ఏదైనా ఇతర అనువర్తనాలు వాటిని వాడుటకు ప్రవేశాధికారము కలిపిస్తుంది.
-
-కొనసాగించాలా?</item>
-    </plurals>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="one">సంగ్రహించిన జోడింపును  నిల్వచేయుటలో లోపం!</item>
-        <item quantity="other">సంగ్రహించిన జోడింపులను  నిల్వచేయుటలో లోపం!</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="one">జత పరిచినది దాచిపెడుతున్నాము</item>
-        <item quantity="other">%1$d జత పరిచినది దాచిపెడుతున్నాము</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">ప్రొఫైల్ ఫోటో</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">అనుకూలీకరణ ఉపయోగించి: %s</string>
-    <string name="CustomDefaultPreference_using_default">ఉపయోగించి అప్రమేయం: %s</string>
-    <string name="CustomDefaultPreference_none">ఏదీ కాదు</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">ఇప్పుడు</string>
-    <string name="DateUtils_minutes_ago">%d కనీస</string>
-    <string name="DateUtils_today">నేడు</string>
-    <string name="DateUtils_yesterday">నిన్న</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">నేడు</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">తెలియని దస్థ్రం</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">పూతి స్పష్టత జి.ఐ.ఎఫ్. ను తిరిగి రప్పించుట లొ లొపము</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_gifs">గిఫ్ లు</string>
-    <string name="GiphyFragmentPagerAdapter_stickers">స్టిక్కర్లు</string>
-    <!-- CropImageActivity -->
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">మాటతో కూడిన సందేశాన్ని రికార్డు చేయుటకు తడుతూనే ఉంచి , పంపుటకు వదిలివేయండి.</string>
-    <!-- LongMessageActivity -->
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">మీడియా</string>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_title">
-        <item quantity="one">ఎంపిక చేసిన సందేశాలను తొలగించాలా?</item>
-        <item quantity="other">ఎంచుకున్న సందేశాలు తొలగించాలా?</item>
-    </plurals>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_message">
-        <item quantity="one">ఇది అన్ని% 1 $ d ఎంచుకున్న సందేశాలను శాశ్వతంగా తొలగిస్తుంది.</item>
-        <item quantity="other">ఇది అన్ని%1$d ఎంచుకున్న సందేశాలను శాశ్వతంగా తొలగిస్తుంది.</item>
-    </plurals>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">తొలగిపోతున్నాయ్</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">సందేశాలను తొలగిస్తోంది ...</string>
-    <string name="MediaOverviewActivity_Documents">పత్రాలు</string>
-    <string name="MediaOverviewActivity_Select_all">అన్నీ ఎంచుకో</string>
-    <string name="MediaOverviewActivity_collecting_attachments">జోడింపుల సేకరణ ...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">మల్టీమీడియా సందేశం</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">ఎమ్మెమ్మెస్ సందేశం దిగుమతి </string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">ఎమ్మెమ్మెస్ సందేశం దిగుమతిలో లోపం, తట్టి మళ్ళీ ప్రయత్నించండి</string>
-    <!-- MediaPickerActivity -->
-    <!-- MediaSendActivity -->
-    <string name="MediaSendActivity_camera_unavailable">కెమెరా అందుబాటులో లేదు.</string>
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">అన్ని మీడియా</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">ఇకపై మద్దతు అని Session యొక్క పాత సంస్కరణను ఉపయోగించి ఎన్క్రిప్ట్ ఒక సందేశాన్ని పొందింది. దయచేసి ఇటీవల సంస్కరణకు అప్డేట్ మరియు సందేశాన్ని మళ్లీ పంపినవారు అడగండి</string>
-    <string name="MessageRecord_left_group">మీరు సమూహం నుండి వైదొలిగారు</string>
-    <string name="MessageRecord_you_updated_group">మీరు ఈ సమూహాన్ని నవీకరించారు.</string>
-    <string name="MessageRecord_s_updated_group">%s  సమూహాన్ని నవీకరించారు.</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">అదృశ్యమవుతున్న  సందేశాలు</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">మీ సందేశాలకు గడువు ఉండదు.</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">వారు చూసిన తరువాత ఈ సంభాషణ లో పంపిన మరియు అందుకున్న సందేశాలు %s కనిపించదు.</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">సంకేతపదమును ప్రవేశపెట్టుము</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">ఈ పరిచయం నిరోధించాలా?</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">మీరు ఇకపై ఈ వ్యక్తి నుండి ఏటువంతి సందేశాలను మరియు కాల్స్ అందుకోరు.</string>
-    <string name="RecipientPreferenceActivity_block">నిరోధించు</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">ఈ పరిచయం అన్బ్లాక్ చేయాలా?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">మీరు మరోసారి ఈ పరిచయం నుండి సందేశాలను మరియు కాల్స్ అందుకోగలరు.</string>
-    <string name="RecipientPreferenceActivity_unblock">అనుమతించు</string>
-    <!-- Slide -->
-    <string name="Slide_image">చిత్రం</string>
-    <string name="Slide_audio">ఆడియో</string>
-    <string name="Slide_video">వీడియో</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">తప్ఫు కీ స్వీకరించబడినది , సందేసమును మర్చండి </string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">నూతన భద్రతా సంఖ్యను సందేశంలో అందుకునాం . ప్రాసెస్ మరియు ప్రదర్శనకు నొక్కండి.</string>
-    <string name="SmsMessageRecord_secure_session_reset">మీ సెషన్ సురక్షిత ంగ పునరుద్ధరించు.</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%s సురక్షిత భాగాన్ని మరలా మార్చు</string>
-    <string name="SmsMessageRecord_duplicate_message">నకిలీ సందేశాం.</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">సమూహం నవీకరించబడింది</string>
-    <string name="ThreadRecord_left_the_group">సమూహన్ని వదిలివేయుట</string>
-    <string name="ThreadRecord_secure_session_reset">సురక్షిత సెషన్ పునరుద్ధరించు.</string>
-    <string name="ThreadRecord_draft">చిత్తు పత్రం:</string>
-    <string name="ThreadRecord_called">మీరు కాల్ చెసారు</string>
-    <string name="ThreadRecord_called_you">మీకు కాల్ చెసారు</string>
-    <string name="ThreadRecord_missed_call">తప్పిన కాల్</string>
-    <string name="ThreadRecord_media_message">మీడియ సందేశం</string>
-    <string name="ThreadRecord_s_is_on_signal">1%s Session ఉంది!</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">కనుమరుగవుతున్న సందేశాలు నిలిపివేయబడ్డాయి</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s"> కనుమరుగవుథున సంధెషం కొరకు సమయం కుర్చుత కొసం %s</string>
-    <string name="ThreadRecord_safety_number_changed">భద్రతా సంఖ్య మార్చబడింది</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">%s తో మీ భద్రత సంఖ్య మార్చబడింది.</string>
-    <string name="ThreadRecord_you_marked_verified">మీరు ధృవీకరించినట్లుగా గుర్తు పెట్టారు</string>
-    <string name="ThreadRecord_you_marked_unverified">మీరు ధృవీకరించబడనిదిగా గుర్తు పెట్టారు</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">Session నవీకరణ</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">Session యొక్క కొత్త వివరణం అందుబాటులో ఉంది, నవీకరణ కొరకు తట్టండి</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">సరికాని గుప్తీకరించిన సందేశం</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">సందేశం</string>
-    <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">చెడు ఎన్క్రిప్టెడ్ ఎంఎంఎస్ సందేశాన్ని</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">ఎంఎంఎస్ సందేశాన్ని మనుగడలో కాని సెషన్ కోసం గుప్తీకరించబడింది</string>
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">  ప్రకటనలను మ్యూట్లో ఉంచు</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">తెరవడానికి తాకు</string>
-    <string name="KeyCachingService_passphrase_cached">Session తాళం తీయబడినది</string>
-    <string name="KeyCachingService_lock">లాక్ Session</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">మీరు</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">మద్ధతు  లేనటువంటి ప్రసార మాధ్యమం</string>
-    <string name="MediaPreviewActivity_draft">చిత్తు పత్రం</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">అనుమతులు లేకుండా బాహ్య నిల్వకి సేవ్ చేయడం సాధ్యపడలేదు</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">సందేశాన్ని తొలగించాలా?</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">ఇది శాశ్వతంగా ఈ సందేశాన్ని తొలగిస్తుంది.</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%2$d సంభాషణలొ కొత్త %1$d సందేశాలు</string>
-    <string name="MessageNotifier_most_recent_from_s">ఇటీవల నుండి: %1$s</string>
-    <string name="MessageNotifier_locked_message">బంధించబడిన సందేశం</string>
-    <string name="MessageNotifier_message_delivery_failed">సందేశం పంపుట విఫలమైనది.</string>
-    <string name="MessageNotifier_failed_to_deliver_message">సందేషాన్ని చెర్చడం విఫలమైనది.</string>
-    <string name="MessageNotifier_error_delivering_message">సందేశం పంపడంలో లోపం</string>
-    <string name="MessageNotifier_mark_all_as_read">అన్నీ చదివినట్టు గుర్తుపెట్టు</string>
-    <string name="MessageNotifier_mark_read">చదివినట్టు గుర్తుపెట్టు</string>
-    <string name="MessageNotifier_reply">స్పంధించు</string>
-    <string name="MessageNotifier_pending_signal_messages">Session సందేశాలు పెండింగ్లో ఉన్నాయి</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">మీ Session సందేశాలు పెండింగ్లో ఉన్నాయి, తెరవడానికి మరియు తిరిగి పొందడానికి నొక్కండి</string>
-    <string name="MessageNotifier_unknown_contact_message">పరిచయం</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">అప్రమేయం</string>
-    <string name="NotificationChannel_calls">కాల్స్</string>
-    <string name="NotificationChannel_failures">వైఫల్యాలు</string>
-    <string name="NotificationChannel_backups">బ్యాకప్లు</string>
-    <string name="NotificationChannel_locked_status">స్థితి లాక్</string>
-    <string name="NotificationChannel_app_updates">అనువర్తన నవీకరణలు</string>
-    <string name="NotificationChannel_other">ఇతర</string>
-    <string name="NotificationChannel_group_messages">సందేశాలు</string>
-    <string name="NotificationChannel_missing_display_name">తెలియని</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Session బంధించినపుడు తక్షణ స్పందన అందుబాటులొ లేదు!</string>
-    <string name="QuickResponseService_problem_sending_message">సందేశాన్ని పంపడంలొ సమస్య!</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">%s కు సేవ్ చేయబడింది</string>
-    <string name="SaveAttachmentTask_saved">సేవ్</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">వెతకండి</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">చెల్లని సత్వరమార్గం</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_new_message">కొత్త సందేశం</string>
-    <!-- TransferControlView -->
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">వీడియో ప్రదర్శనా లోపం</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">ఆడియో</string>
-    <string name="attachment_type_selector__audio_description">ఆడియో</string>
-    <string name="attachment_type_selector__contact">పరిచయం</string>
-    <string name="attachment_type_selector__contact_description">పరిచయం</string>
-    <string name="attachment_type_selector__camera">కెమెరా</string>
-    <string name="attachment_type_selector__camera_description">కెమెరా</string>
-    <string name="attachment_type_selector__location">స్థానం</string>
-    <string name="attachment_type_selector__location_description">స్థానం</string>
-    <string name="attachment_type_selector__gif">గిఫ్</string>
-    <string name="attachment_type_selector__gif_description">గిఫ్</string>
-    <string name="attachment_type_selector__gallery_description">ఇమెజ్   ఆర్   వీడియో</string>
-    <string name="attachment_type_selector__file_description">ఫైల్</string>
-    <string name="attachment_type_selector__gallery">వారపాక</string>
-    <string name="attachment_type_selector__file">దస్థవెధి</string>
-    <string name="attachment_type_selector__drawer_description">టోగుల్ అటాచ్మెంట్ సొరుగు</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">పరిచయాలు లోడ్ అవుతున్నాయి ...</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">పంపించు</string>
-    <string name="conversation_activity__compose_description">సందేశాన్ని కూర్పుము</string>
-    <string name="conversation_activity__emoji_toggle_description">టోగుల్ ఎమోజి కీబోర్డు</string>
-    <string name="conversation_activity__attachment_thumbnail">జోడింపు సూక్ష్మచిత్రం</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">టోగుల్ శీఘ్ర కెమెరా అటాచ్మెంట్ సొరుగు</string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">రికార్డు మరియు ఆడియో అటాచ్మెంట్ పంపడానికి</string>
-    <string name="conversation_activity__enable_signal_for_sms">ఎస్సెమ్మెస్ చేతనం</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__cancel">రద్దు</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">మీడియ సందేశం</string>
-    <string name="conversation_item__secure_message_description">సురక్షిత సందేశం</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">పంపడం విఫలమైంది</string>
-    <string name="conversation_item_sent__pending_approval_description">మిగిలి ఉన్న ఆమోదం</string>
-    <string name="conversation_item_sent__delivered_description">పంపిణి ఐనది</string>
-    <string name="conversation_item_sent__message_read">సందేశం చదవబడింది</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">పరిచయ ఫొటో</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">నడుపు</string>
-    <string name="audio_view__pause_accessibility_description">నిలుపు</string>
-    <string name="audio_view__download_accessibility_description">దిగుమతి</string>
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">ఆడియో</string>
-    <string name="QuoteView_video">వీడియో</string>
-    <string name="QuoteView_photo">ఫోటో</string>
-    <string name="QuoteView_you">మీరు</string>
-    <string name="QuoteView_original_missing">అసలు సందేశం కనుగొనబడలేదు</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">దిగువకు స్క్రోల్ చెయ్యి</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">జిఫ్‌లు మరియు స్టిక్కర్లు వెతుకు</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">ఏమీ దొరకలేదు</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">పూర్తి సంభాషణ చూడండి</string>
-    <string name="load_more_header__loading">లోడ్</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">మీడియా లేదు</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">మళ్ళీ పంపు</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">నిరోధించు</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">కొన్ని సమస్యలకు మీ శ్రద్ధ అవసరం.</string>
-    <string name="message_details_header__sent">పంపిన</string>
-    <string name="message_details_header__received">అందుకున్న</string>
-    <string name="message_details_header__disappears">అదృశ్యమవుతుంది</string>
-    <string name="message_details_header__via">ద్వారా</string>
-    <string name="message_details_header__to">ఎవరికి:</string>
-    <string name="message_details_header__from">ఎవరి నుండి:</string>
-    <string name="message_details_header__with">ఎవరితో:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">సంకేతపదమును తయారు చేయు</string>
-    <string name="AndroidManifest__select_contacts">పరిచయాలను ఎంచుకోండి</string>
-    <string name="AndroidManifest__media_preview">మీడియా ప్రివ్యూ</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default"> అప్రమేయం ఉపయోగించు</string>
-    <string name="arrays__use_custom"> నియమము ఉపయోగించు</string>
-    <string name="arrays__mute_for_one_hour">1 గంట నిశబ్దంగా ఉంచు</string>
-    <string name="arrays__mute_for_two_hours">2 గంటలు నిశబ్దంగా ఉంచు</string>
-    <string name="arrays__mute_for_one_day">1 రోజు నిశబ్దంగా ఉంచు</string>
-    <string name="arrays__mute_for_seven_days">7 రోజులు నిశబ్దంగా ఉంచు</string>
-    <string name="arrays__mute_for_one_year">1 సంవత్సరం నిశబ్దంగా ఉంచు</string>
-    <string name="arrays__settings_default">అప్రమేయ అమరికలు</string>
-    <string name="arrays__enabled">చేతనం అయింది</string>
-    <string name="arrays__disabled">అచేతనం అయింది</string>
-    <string name="arrays__name_and_message">పేరు మరియు సందేశం</string>
-    <string name="arrays__name_only">పేరు మాత్రమే </string>
-    <string name="arrays__no_name_or_message">పేరు లేదా సందేశం</string>
-    <string name="arrays__images">చిత్రాలు</string>
-    <string name="arrays__audio">ఆడియో</string>
-    <string name="arrays__video">వీడియో</string>
-    <string name="arrays__documents">పత్రాలు</string>
-    <string name="arrays__small">చిన్న</string>
-    <string name="arrays__normal">సాధారణంగా</string>
-    <string name="arrays__large">పెద్ద</string>
-    <string name="arrays__extra_large">చాలా పెద్దది</string>
-    <string name="arrays__default">అప్రమేయం</string>
-    <string name="arrays__high">అధికం</string>
-    <string name="arrays__max">గరిష్టం</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="one">%d గంట</item>
-        <item quantity="other">%d గంటలు</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">ఎంటర్ కీ పంపుతుంది </string>
-    <string name="preferences__screen_security">స్క్రీన్ భద్రత</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">  నిరోధించు స్క్రీన్షాట్లు లో ది ఇటీవలి జాబితా మరియు లోపల ది అనువర్తనం</string>
-    <string name="preferences__notifications">ప్రకటనలు</string>
-    <string name="preferences__led_color">ఎల్ఈడి రంగు</string>
-    <string name="preferences__led_color_unknown">తెలియని</string>
-    <string name="preferences__pref_led_blink_title">ఎల్ఇడి రెప్పపాటు నమూనా</string>
-    <string name="preferences__sound">శబ్దము</string>
-    <string name="preferences__silent">మౌనం</string>
-    <string name="preferences__repeat_alerts">రిపీట్ హెచ్చరికలు</string>
-    <string name="preferences__never">ఎప్పుడూ</string>
-    <string name="preferences__one_time">ఒక్కసారి</string>
-    <string name="preferences__two_times">రెండు సార్లు</string>
-    <string name="preferences__three_times">మూడు సార్లు</string>
-    <string name="preferences__five_times">ఐదు సార్లు</string>
-    <string name="preferences__ten_times">పది సార్లు</string>
-    <string name="preferences__vibrate">ప్రకంపన</string>
-    <string name="preferences__green">ఆకు పచ్చ</string>
-    <string name="preferences__red">ఎరుపు</string>
-    <string name="preferences__blue">నీలం</string>
-    <string name="preferences__orange">నారింజ</string>
-    <string name="preferences__cyan">సియన్</string>
-    <string name="preferences__magenta">మజెంటా</string>
-    <string name="preferences__white">తెలుపు</string>
-    <string name="preferences__none">ఏదీ కాదు</string>
-    <string name="preferences__fast">త్వరగా</string>
-    <string name="preferences__normal">సాధారణంగా</string>
-    <string name="preferences__slow">మెల్లిగా</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">ఒక సంభాషణ ఒక పేర్కొన్న పొడవు మించితె స్వయంచాలకంగా పాత సందేశాలను తొలగించు</string>
-    <string name="preferences__delete_old_messages">పాత సందేశాలను తొలగించు</string>
-    <string name="preferences__conversation_length_limit">సంభాషణ విస్తృతికి పరిమితి</string>
-    <string name="preferences__trim_all_conversations_now">ఇప్పుడు అన్ని సంభాషణలు  కత్తిరించి సరి చేయుట </string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">అన్ని సంభాషణలు స్కాన్ చేసి తద్వారా సంభాషణ పొడవు పరిమితులు అమలుపరచు</string>
-    <string name="preferences__default">అప్రమేయ</string>
-    <string name="preferences__incognito_keyboard">అజ్ఞాత కీబోర్డ్</string>
-    <string name="preferences__read_receipts">చదివిన రసీదులు</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">వ్యక్తిగతీకరించిన అభ్యాసను ఆపివేయడానికి కీబోర్డ్ని అభ్యర్థించండి</string>
-    <string name="preferences__light_theme">లైటు</string>
-    <string name="preferences__dark_theme">గుప్తమైన</string>
-    <string name="preferences_chats__message_trimming">సందేశం కత్తిరించి సరి చేయుట </string>
-    <string name="preferences_advanced__use_system_emoji">యంత్రము యొక్క  ఎమొజిలను  ఉపయొగించు</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">Session యొక్క అంతర్నిర్మిత ఎమోజి మద్దతును నిలిపివేయి  </string>
-    <string name="preferences_chats__chats">మాటామంతి</string>
-    <string name="preferences_notifications__messages">సందేశాలు</string>
-    <string name="preferences_notifications__in_chat_sounds">చాట్ శబ్దాలు</string>
-    <string name="preferences_notifications__priority">ప్రాధాన్యత</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">....కు కొత్త సందేశం</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">సందేశం వివరాలు</string>
-    <string name="conversation_context__menu_copy_text">మూల గ్రంథము అనుకరణ</string>
-    <string name="conversation_context__menu_delete_message">సందేశాన్ని తొలగించు</string>
-    <string name="conversation_context__menu_resend_message">సందేశాన్ని తిరిగి పంపు</string>
-    <string name="conversation_context__menu_reply_to_message">సందేశానికి ప్రత్యుత్తరం ఇవ్వండి</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">జత పరిచినది దాచి పెట్టు </string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">అదృశ్యమవుతున్న  సందేశాలు</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring"> సమయ పరిమితి లేని సందేశాలు </string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">మ్యూట్ తీసివేయి</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">  ప్రకటనలను మ్యూట్లో ఉంచు</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">సమూహాన్ని మార్చు</string>
-    <string name="conversation__menu_leave_group">సమూహాన్ని వదులు</string>
-    <string name="conversation__menu_view_all_media">అన్ని మీడియా</string>
-    <string name="conversation__menu_add_shortcut">హోమ్ స్క్రీన్కు జోడించండి</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">పాపప్ విస్తరించు </string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">చేర్చుట</string>
-    <string name="conversation_group_options__conversation">సంభాషణ</string>
-    <string name="conversation_group_options__broadcast">ప్రసారం </string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">భద్రపరుచు</string>
-    <string name="media_preview__forward_title">బదలాయించు</string>
-    <string name="media_preview__all_media_title">అన్ని మీడియా</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">పత్రాలు లేవు</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">మీడియా ప్రివ్యూ</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">తొలగిపోతున్నాయ్</string>
-    <string name="trimmer__deleting_old_messages">పాత సందేశాలను తొలగిస్తోంది ...</string>
-    <string name="trimmer__old_messages_successfully_deleted">పాత సందేశాలు విజయవంతంగా తొలగించబడ్డాయి </string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">అనుమతి అవసరం</string>
-    <string name="Permissions_continue">కొనసాగించు</string>
-    <string name="Permissions_not_now">ఇప్పుడు కాదు</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">బ్యాకప్ బాహ్య నిల్వకి సేవ్ చేయబడుతుంది మరియు పాస్ఫ్రేజ్తో గుప్తీకరించబడుతుంది. బ్యాకప్ను పునరుద్ధరించడానికి మీరు తప్పనిసరిగా ఈ పాస్ఫ్రేజ్ను కలిగి ఉండాలి.</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">నేను ఈ పాస్ఫ్రేజ్ని వ్రాశాను. ఇది లేకుండా, నేను ఒక బ్యాకప్ పునరుద్ధరించడానికి సాధ్యం కాదు.</string>
-    <string name="registration_activity__skip">వదిలివేయి</string>
-    <string name="RegistrationActivity_backup_failure_downgrade">Session యొక్క నూతన సంస్కరణల నుండి బ్యాకప్లను దిగుమతి చేయలేరు</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">సరికాని బ్యాకప్ పాస్ఫ్రేజ్</string>
-    <string name="BackupDialog_enable_local_backups">స్థానిక బ్యాకప్లను ప్రారంభించాలా?</string>
-    <string name="BackupDialog_enable_backups">బ్యాకప్స్ ప్రారంభించు</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">దయచేసి మీ అవగాహనను నిర్ధారించడానికి నిర్ధారణ తనిఖీ పెట్టెలో గుర్తించండి.</string>
-    <string name="BackupDialog_delete_backups">బ్యాకప్లను తొలగించాలా?</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">అన్ని స్థానిక బ్యాకప్లను తొలగించి, డిసేబుల్ చేయాలా?</string>
-    <string name="BackupDialog_delete_backups_statement">బ్యాకప్లను తొలిగించు</string>
-    <string name="BackupDialog_copied_to_clipboard">క్లిప్బోర్డ్కు కాపీ చేయబడింది</string>
-    <string name="LocalBackupJob_creating_backup">బ్యాకప్ను సృష్టిస్తోంది ...</string>
-    <string name="ProgressPreference_d_messages_so_far">ఇప్పటివరకు %d సందేశాలు</string>
-    <string name="BackupUtil_never">ఎప్పుడూ</string>
-    <string name="preferences_app_protection__screen_lock">స్క్రీన్ తాళం</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">Android స్క్రీన్ లాక్ లేదా వేలిముద్రతో Session యాక్సెస్ను లాక్ చేయండి</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">స్క్రీన్ లాక్ నిష్క్రియ సమయం</string>
-    <string name="AppProtectionPreferenceFragment_none">ఏదీ కాదు</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+{url}</string>
+    <string name="useFastMode">ఫాస్ట్ మోడ్ వాడండి</string>
+    <string name="video">వీడియో</string>
+    <string name="videoErrorPlay">వీడియో ప్లే చేయడం సాధ్యపడదు.</string>
+    <string name="view">చూడండి</string>
+    <string name="waitFewMinutes">ఇది కొన్ని నిమిషాలు పడవచ్చు.</string>
+    <string name="waitOneMoment">ఒక క్షణంలొపల దయచేసి...</string>
+    <string name="warning">హెచ్చరిక</string>
+    <string name="window">విండో</string>
+    <string name="yes">అవును</string>
+    <string name="you">మీరు</string>
 </resources>

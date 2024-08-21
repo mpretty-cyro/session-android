@@ -1,576 +1,793 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sesiune</string>
-    <string name="yes">Da</string>
-    <string name="no">Nu</string>
-    <string name="delete">Ștergeți</string>
-    <string name="ban">Interzice</string>
-    <string name="please_wait">Vă rugăm să așteptați…</string>
-    <string name="save">Salvează</string>
-    <string name="note_to_self">Notă personală</string>
-    <string name="version_s">Versiunea %s</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">Mesaj nou</string>
-    <!-- AlbumThumbnailView -->
-    <string name="AlbumThumbnailView_plus">\+%d</string>
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="one">%d mesaj per conversație</item>
-        <item quantity="few">%d mesaje per conversație</item>
-        <item quantity="other">%d  mesaje per conversație</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Şterg toate mesajele vechi acum?</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="one">Această acțiune va scurta toate conversațiile până la cel mai recent mesaj.</item>
-        <item quantity="few">Această acțiune va scurta toate conversațiile până la cele mai recente %d mesaje.</item>
-        <item quantity="other">Această acțiune va scurta toate conversațiile până la cele mai recente %d mesaje.</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">Ștergeți</string>
-    <string name="ApplicationPreferencesActivity_On">Activate</string>
-    <string name="ApplicationPreferencesActivity_Off">Dezactivate</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(imagine)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(audio)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(video)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(răspuns)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Nu pot găsi o aplicație pentru selecție media.</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Session are nevoie de permisiunea pentru spațiul de stocare pentru a putea atașa poze, filme sau audio, dar i-a fost refuzat accesul permanent. Vă rog navigați în meniul de setări al aplicației, selectați \"Permisiuni\" și activați \"Spațiu de stocare\".</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">Session are nevoie de permisiunea pentru Cameră pentru a putea face poze dar i-a fost refuzat accesul permanent. Vă rog navigați în meniul de setări al aplicației, selectați \"Permisiuni\" și activați \"Cameră\".</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">Eroare la redarea audio!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">Azi</string>
-    <string name="BucketedThreadMedia_Yesterday">Ieri</string>
-    <string name="BucketedThreadMedia_This_week">Săptămâna aceasta</string>
-    <string name="BucketedThreadMedia_This_month">Luna asta</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">Nu s-a găsit nici un web browser.</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">Grupuri</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">Trimitere eșuată, apăsați pentru detalii</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">Am primit un mesaj pentru schimbul de chei, apăsați pentru a-l procesa.</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">Trimitere eșuată, apăsați pentru varianta nesecurizată</string>
-    <string name="ConversationItem_unable_to_open_media">Nu a fost găsită nici o aplicație pentru a deschide acest tip media.</string>
-    <string name="ConversationItem_copied_text">Copiat %s</string>
-    <string name="ConversationItem_read_more">Informații suplimentare</string>
-    <string name="ConversationItem_download_more">  Descărcați mai multe</string>
-    <string name="ConversationItem_pending">  În curs</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">Adăugați atașament</string>
-    <string name="ConversationActivity_select_contact_info">Selectează informații de contact</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Ne pare rău, a apărut o eroare în setarea atașamentului dvs.</string>
-    <string name="ConversationActivity_message">Mesaj</string>
-    <string name="ConversationActivity_compose">Scrie</string>
-    <string name="ConversationActivity_muted_until_date">Amuțit până la %1$s</string>
-    <string name="ConversationActivity_muted_forever">Ignoră</string>
-    <string name="ConversationActivity_member_count">%1$d membri</string>
-    <string name="ConversationActivity_open_group_guidelines">Regulamentul Comunității</string>
-    <string name="ConversationActivity_invalid_recipient">Destinatar invalid!</string>
-    <string name="ConversationActivity_added_to_home_screen">Adăugat pe ecranul principal</string>
-    <string name="ConversationActivity_leave_group">Părăsiți grupul?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Sunteți sigur că doriți să părăsiți acest grup?</string>
-    <string name="ConversationActivity_error_leaving_group">Eroare la parăsirea grupului</string>
-    <string name="ConversationActivity_unblock_this_contact_question">Deblochez acest contact?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">O să poți primi din nou mesaje și apeluri de la acest contact.</string>
-    <string name="ConversationActivity_unblock">Deblochează</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">Atașamentul depășește limita de mărime pentru tipul de mesaj pe care vreți să-l trimiteți.</string>
-    <string name="ConversationActivity_unable_to_record_audio">Nu se poate înregistra audio!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">Nu există nici o aplicație disponibilă pe dispozitivul tău care să poată deschide acest link.</string>
-    <string name="ConversationActivity_invite_to_open_group">Adaugă membri</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">Pentru a trimite mesaje audio, permite-i aplicației Session accesul la microfonul tău.</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">Session are nevoie de permisiunea pentru Microfon pentru a putea trimite mesaje audio dar i-a fost refuzat accesul permanent. Vă rugăm să navigați în meniul de setări al aplicației, selectați \"Permisiuni\" și activați \"Microfon\".</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">Pentru a captura poze sau filme, permite-i Session accesul la cameră.</string>
-    <string name="ConversationActivity_to_send_photos_and_video_allow_signal_access_to_storage">Session are nevoie de acces la stocare pentru a trimite fotografii și videoclipuri.</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">Session are nevoie de permisiunea pentru Cameră pentru a captura poze sau filme dar i-a fost refuzat accesul permanent. Vă rog navigați în meniul de setări al aplicației, selectați \"Permisiuni\" și activați \"Cameră\".</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">Session are nevoie de permisiunea pentru Cameră pentru a captura poze sau filme</string>
-    <string name="ConversationActivity_search_position">%1$d din %2$d</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="one">Șterg mesajul selectat?</item>
-        <item quantity="few">Șterg mesajele selectate?</item>
-        <item quantity="other">Șterg mesajele selectate?</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="one">Această acțiune va șterge permanent mesajul selectat.</item>
-        <item quantity="few">Această acțiune va șterge permanent toate cele %1$d mesaje selectate.</item>
-        <item quantity="other">Această acțiune va șterge permanent toate cele %1$d mesaje selectate.</item>
-    </plurals>
-    <string name="ConversationFragment_ban_selected_user">Blocați acest utilizator?</string>
-    <string name="ConversationFragment_save_to_sd_card">Salvez pe spațiul de stocare?</string>
-    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-        <item quantity="one">Salvarea acestui fişier pe spaţiul de stocare va permite altor aplicaţii de pe dispozitivul tău să le acceseze.\n\nContinui?</item>
-        <item quantity="few">Salvarea tututor celor %1$d fişiere pe spaţiul de stocare va permite altor aplicaţii de pe dispozitivul tău să le acceseze.\n\nContinui?</item>
-        <item quantity="other">Salvarea tututor celor %1$d fişiere pe spaţiul de stocare va permite altor aplicaţii de pe dispozitivul tău să le acceseze.\n\nContinui?</item>
-    </plurals>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="one">A apărut o eroare în timpul salvării atașamentului pe spațiul de stocare!</item>
-        <item quantity="few">A apărut o eroare în timpul salvării atașamentelor pe spațiul de stocare!</item>
-        <item quantity="other">A apărut o eroare în timpul salvării atașamentelor pe spațiul de stocare!</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="one">Se salvează atașamentul</item>
-        <item quantity="few">Se salvează %1$d atașamente</item>
-        <item quantity="other">Se salvează %1$d atașamente</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">Poză profil</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">Personalizat: %s</string>
-    <string name="CustomDefaultPreference_using_default">Implicit: %s</string>
-    <string name="CustomDefaultPreference_none">Niciuna</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">Acum</string>
-    <string name="DateUtils_minutes_ago">%d min</string>
-    <string name="DateUtils_today">Azi</string>
-    <string name="DateUtils_yesterday">Ieri</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">Azi</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">Fișier necunoscut</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">A apărut o eroare la obținerea GIF-ului la rezoluție maximă</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_gifs">GIF-uri</string>
-    <string name="GiphyFragmentPagerAdapter_stickers">Autocolante</string>
-    <!-- CropImageActivity -->
-    <string name="CropImageActivity_profile_avatar">Avatar</string>
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Țineți apăsat pentru a înregistra un mesaj vocal, eliberați pentru a-l trimite</string>
-    <!-- LongMessageActivity -->
-    <string name="LongMessageActivity_unable_to_find_message">Mesajul nu a putut fi găsit</string>
-    <string name="LongMessageActivity_message_from_s">Mesaj de la %1$s</string>
-    <string name="LongMessageActivity_your_message">Mesajul dvs.</string>
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">Media</string>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_title">
-        <item quantity="one">Șterg mesajul selectat?</item>
-        <item quantity="few">Șterg mesajele selectate?</item>
-        <item quantity="other">Șterg mesajele selectate?</item>
-    </plurals>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_message">
-        <item quantity="one">Această acțiune va șterge permanent mesajul selectat.</item>
-        <item quantity="few">Această acțiune va șterge permanent toate cele %1$d mesaje selectate.</item>
-        <item quantity="other">Această acțiune va șterge permanent toate cele %1$d mesaje selectate.</item>
-    </plurals>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">Se șterge</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">Se șterg mesajele...</string>
-    <string name="MediaOverviewActivity_Documents">Documente</string>
-    <string name="MediaOverviewActivity_Select_all">Selectează tot</string>
-    <string name="MediaOverviewActivity_collecting_attachments">Se colectează atașamentele...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">Mesaj multimedia</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">Se descarcă mesajul MMS</string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Eroare la descărcarea mesajului MMS, apasă pentru reîncercare</string>
-    <!-- MediaPickerActivity -->
-    <string name="MediaPickerActivity_send_to">Trimiteți la %s</string>
-    <!-- MediaSendActivity -->
-    <string name="MediaSendActivity_add_a_caption">Adăugați un titlu...</string>
-    <string name="MediaSendActivity_an_item_was_removed_because_it_exceeded_the_size_limit">Un element a fost eliminat pentru că depășește limita de mărime</string>
-    <string name="MediaSendActivity_camera_unavailable">Cameră indisponibilă.</string>
-    <string name="MediaSendActivity_message_to_s">Mesaj către %s</string>
-    <plurals name="MediaSendActivity_cant_share_more_than_n_items">
-        <item quantity="one">Nu puteți partaja mai mult de %d element.</item>
-        <item quantity="few">Nu puteți partaja mai mult de %d element.</item>
-        <item quantity="other">Nu puteți partaja mai mult de %d elemente.</item>
-    </plurals>
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">Toate fișierele media</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Ai primit un mesaj care a fost criptat cu o versiune mai veche de Session care nu mai este suportată. Roagă-l pe expeditor să-și actualizeze aplicația la ultima versiune și să retrimită mesajul.</string>
-    <string name="MessageRecord_left_group">Ați parăsit grupul.</string>
-    <string name="MessageRecord_you_updated_group">Ați actualizat grupul.</string>
-    <string name="MessageRecord_s_updated_group">%s a actualizat grupul.</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">Mesaje care dispar</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">Mesajele dvs. nu vor expira.</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">Mesajele trimise și primite în această conversație vor dispărea după %s după ce au fost vizualizate.</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">Introduceți parola</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">Blochez acest contact?</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">Nu o să mai primești mesaje și apeluri de la acest contact.</string>
-    <string name="RecipientPreferenceActivity_block">Blochează</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">Deblochez acest contact?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">O să poți primi din nou mesaje și apeluri de la acest contact.</string>
-    <string name="RecipientPreferenceActivity_unblock">Deblochează</string>
-    <string name="RecipientPreferenceActivity_notification_settings">Setări notificări</string>
-    <!-- Slide -->
-    <string name="Slide_image">Imagine</string>
-    <string name="Slide_audio">Audio</string>
-    <string name="Slide_video">Video</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Primit mesajul conform caruia
-schimbul de chei este corupt </string>
-    <string name="SmsMessageRecord_received_key_exchange_message_for_invalid_protocol_version">Mesaj de schimb de chei primit pentru o versiune de protocol invalidă.
-    </string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">A fost primit un mesaj cu noul număr de siguranță. Apasă pentru a fi procesat și afișat.</string>
-    <string name="SmsMessageRecord_secure_session_reset">Ai resetat sesiunea securizată.</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%s a resetat sesiunea securizată.</string>
-    <string name="SmsMessageRecord_duplicate_message">Mesaj duplicat.</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">Grupul a fost actualizat</string>
-    <string name="ThreadRecord_left_the_group">A părăsit grupul</string>
-    <string name="ThreadRecord_secure_session_reset">Sesiune securizată resetată.</string>
-    <string name="ThreadRecord_draft">Ciornă:</string>
-    <string name="ThreadRecord_called">Ați apelat</string>
-    <string name="ThreadRecord_called_you">Te-a apelat</string>
-    <string name="ThreadRecord_missed_call">Apel nepreluat</string>
-    <string name="ThreadRecord_media_message">Mesaj media</string>
-    <string name="ThreadRecord_s_is_on_signal">%s folosește Session!</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">Mesajele care dispar sunt dezactivate</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">Timpul setat pentru mesajele care dispar este %s</string>
-    <string name="ThreadRecord_s_took_a_screenshot">%s a efectuat o captură de ecran.</string>
-    <string name="ThreadRecord_media_saved_by_s">Media salvată de %s.</string>
-    <string name="ThreadRecord_safety_number_changed">Numărul de siguranță s-a schimbat</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">Numărul tău de siguranță pentru %s s-a schimbat.</string>
-    <string name="ThreadRecord_you_marked_verified">Ați marcat ca și verificat</string>
-    <string name="ThreadRecord_you_marked_unverified">Ați marcat ca și neverificat</string>
-    <string name="ThreadRecord_empty_message">Această conversaţie este goală</string>
-    <string name="ThreadRecord_open_group_invitation">Deschide invitația în grup</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">Actualizare Session</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">O nouă versiune de Session este disponibilă, apasă pentru actualizare</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">Mesaj criptat incorect</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaj criptat pentru o sesiune inexistentă</string>
-    <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">Mesaj MMS criptat incorect</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Mesaj MMS criptat pentru o sesiune inexistentă</string>
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">Notificări fără sunet</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">Atingeți pentru a-l deschide.</string>
-    <string name="KeyCachingService_passphrase_cached">Session este deblocat</string>
-    <string name="KeyCachingService_lock">Blocați Session</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">Tu</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">Tip media nesuportat</string>
-    <string name="MediaPreviewActivity_draft">Ciornă</string>
-    <string name="MediaPreviewActivity_signal_needs_the_storage_permission_in_order_to_write_to_external_storage_but_it_has_been_permanently_denied">Session are nevoie de permisiune la spațiul de stocarea externa pentru a salva pe spațiul de stocare extern, dar i-a fost refuzat accesul permanent. Vă rog navigați în meniul de setări al aplicațiilor, selectați \"Permisiuni\" și activați \"Spațiu de stocare\".</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Nu se poate salva pe spațiu de stocare extern fără permisiune</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">Șterg mesajul?</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">Această acțiune va șterge permanent mesajul.</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d mesaje noi în %2$d conversaţii</string>
-    <string name="MessageNotifier_most_recent_from_s">Cel mai recent de la: %1$s</string>
-    <string name="MessageNotifier_locked_message">Mesaj blocat</string>
-    <string name="MessageNotifier_message_delivery_failed">Livrarea mesajului a eșuat.</string>
-    <string name="MessageNotifier_failed_to_deliver_message">Mesajul nu a putut fi trimis.</string>
-    <string name="MessageNotifier_error_delivering_message">A apărut o eroare la trimiterea mesajului.</string>
-    <string name="MessageNotifier_mark_all_as_read">Marchează tot ca citit</string>
-    <string name="MessageNotifier_mark_read">Marchează ca citit</string>
-    <string name="MessageNotifier_reply">Răspunde</string>
-    <string name="MessageNotifier_pending_signal_messages">Mesaje Session în așteptare</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">Ai mesaje Session în așteptare, apasă pentru deschidere și recuperare</string>
-    <string name="MessageNotifier_contact_message">%1$s %2$s</string>
-    <string name="MessageNotifier_unknown_contact_message">Contact</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">Implicit</string>
-    <string name="NotificationChannel_calls">Apeluri</string>
-    <string name="NotificationChannel_failures">Erori</string>
-    <string name="NotificationChannel_backups">Backup-uri</string>
-    <string name="NotificationChannel_locked_status">Stare blocare</string>
-    <string name="NotificationChannel_app_updates">Actualizări aplicație</string>
-    <string name="NotificationChannel_other">Altul</string>
-    <string name="NotificationChannel_group_messages">Mesaje</string>
-    <string name="NotificationChannel_missing_display_name">Necunoscut</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Răspunsul rapid nu este disponibil cât timp Session este blocat!</string>
-    <string name="QuickResponseService_problem_sending_message">Problemă la trimiterea mesajului!</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">Salvat în %s</string>
-    <string name="SaveAttachmentTask_saved">Salvat</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Căutați</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">Scurtătură invalidă</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_signal">Session</string>
-    <string name="SingleRecipientNotificationBuilder_new_message">Mesaj nou</string>
-    <!-- TransferControlView -->
-    <plurals name="TransferControlView_n_items">
-        <item quantity="one">%d articol</item>
-        <item quantity="few">%d  articole</item>
-        <item quantity="other">%d  articole</item>
-    </plurals>
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">Eroare la redarea video!</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">Audio</string>
-    <string name="attachment_type_selector__audio_description">Audio</string>
-    <string name="attachment_type_selector__contact">Contact</string>
-    <string name="attachment_type_selector__contact_description">Contact</string>
-    <string name="attachment_type_selector__camera">Cameră</string>
-    <string name="attachment_type_selector__camera_description">Cameră</string>
-    <string name="attachment_type_selector__location">Locație</string>
-    <string name="attachment_type_selector__location_description">Locație</string>
-    <string name="attachment_type_selector__gif">GIF</string>
-    <string name="attachment_type_selector__gif_description">Gif</string>
-    <string name="attachment_type_selector__gallery_description">Imagine sau video</string>
-    <string name="attachment_type_selector__file_description">Fișier</string>
-    <string name="attachment_type_selector__gallery">Galerie</string>
-    <string name="attachment_type_selector__file">Fișier</string>
-    <string name="attachment_type_selector__drawer_description">Comutare panou atașamente</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">Se încarcă contactele...</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">Trimite</string>
-    <string name="conversation_activity__compose_description">Compunere mesaj</string>
-    <string name="conversation_activity__emoji_toggle_description">Comutare tastatură emoji</string>
-    <string name="conversation_activity__attachment_thumbnail">Miniatură atașament</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">Comutare panou cu atașamente de la camera rapidă </string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">Înregistrează și trimite un atașament audio</string>
-    <string name="conversation_activity__quick_attachment_drawer_lock_record_description">Blocați înregistrarea atașamentului audio</string>
-    <string name="conversation_activity__enable_signal_for_sms">Activează Session pentru SMS</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__slide_to_cancel">Glisați pentru a anula</string>
-    <string name="conversation_input_panel__cancel">Anulați</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">Mesaj media</string>
-    <string name="conversation_item__secure_message_description">Mesaj securizat</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">Trimiterea a eşuat</string>
-    <string name="conversation_item_sent__pending_approval_description">În așteptare pentru aprobare </string>
-    <string name="conversation_item_sent__delivered_description">Livrat</string>
-    <string name="conversation_item_sent__message_read">Mesaj citit</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">Poză contact</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">Redare</string>
-    <string name="audio_view__pause_accessibility_description">Pauză</string>
-    <string name="audio_view__download_accessibility_description">Descarcă</string>
-    <!-- open_group_invitation_view -->
-    <string name="open_group_invitation_view__join_accessibility_description">Alătură-te</string>
-    <string name="open_group_invitation_view__open_group_invitation">Deschide invitația în grup</string>
-    <string name="open_group_guidelines_pinned_message">Mesaje fixate</string>
-    <string name="open_group_guidelines_community_guidelines">Regulile comunității</string>
-    <string name="open_group_guidelines_read">Citește</string>
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">Audio</string>
-    <string name="QuoteView_video">Video</string>
-    <string name="QuoteView_photo">Poză</string>
-    <string name="QuoteView_you">Tu</string>
-    <string name="QuoteView_original_missing">Mesajul original nu a fost găsit</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">Derulați până jos</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">Căutați GIF-uri și autocolante</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">Nu s-a găsit nimic</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">Vezi conversația completă.</string>
-    <string name="load_more_header__loading">Se încarcă</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">Nu aveți fișiere media</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">RETRIMITE</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">Blochează</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">Anumite probleme au nevoie de atenția dvs.</string>
-    <string name="message_details_header__sent">Trimis</string>
-    <string name="message_details_header__received">Primit</string>
-    <string name="message_details_header__disappears">Dispar</string>
-    <string name="message_details_header__via">Prin</string>
-    <string name="message_details_header__to">Către:</string>
-    <string name="message_details_header__from">De la:</string>
-    <string name="message_details_header__with">Cu:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">Creează parolă</string>
-    <string name="AndroidManifest__select_contacts">Selectați contacte</string>
-    <string name="AndroidManifest__media_preview">Previzualizare media</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">Implicit</string>
-    <string name="arrays__use_custom">Personalizat</string>
-    <string name="arrays__mute_for_one_hour">Fără sunet pentru o oră</string>
-    <string name="arrays__mute_for_two_hours">Fără sunet pentru 2 ore</string>
-    <string name="arrays__mute_for_one_day">Fără sunet pentru o zi</string>
-    <string name="arrays__mute_for_seven_days">Fără sunet pentru 7 zile</string>
-    <string name="arrays__mute_for_one_year">Fără sunet pentru un an</string>
-    <string name="arrays__mute_forever">Amuțește pentru totdeauna</string>
-    <string name="arrays__settings_default">Setări implicite</string>
-    <string name="arrays__enabled">Activat</string>
-    <string name="arrays__disabled">Dezactivat</string>
-    <string name="arrays__name_and_message">Nume şi mesaj</string>
-    <string name="arrays__name_only">Doar numele</string>
-    <string name="arrays__no_name_or_message">Niciun nume sau mesaj</string>
-    <string name="arrays__images">Imagini</string>
-    <string name="arrays__audio">Audio</string>
-    <string name="arrays__video">Video</string>
-    <string name="arrays__documents">Documente</string>
-    <string name="arrays__small">Mic</string>
-    <string name="arrays__normal">Normal</string>
-    <string name="arrays__large">Mare</string>
-    <string name="arrays__extra_large">Foarte mare</string>
-    <string name="arrays__default">Implicit</string>
-    <string name="arrays__high">Mare</string>
-    <string name="arrays__max">Maximă</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="one">%d oră</item>
-        <item quantity="few">%d ore</item>
-        <item quantity="other">%d ore</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">Trimiteți cu Enter</string>
-    <string name="preferences__send_link_previews">Trimite previzualizarea link-urilor</string>
-    <string name="preferences__previews_are_supported_for">Previzualizarea este suportată pentru link-uri Imgur, Instagram, Pinterest, Reddit și YouTube</string>
-    <string name="preferences__screen_security">Securitate ecran</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">Blocați screenshot-urile în lista cu aplicaţii recente şi în interiorul aplicaţiei</string>
-    <string name="preferences__notifications">Notificări</string>
-    <string name="preferences__led_color">Culoare LED</string>
-    <string name="preferences__led_color_unknown">Necunoscut</string>
-    <string name="preferences__pref_led_blink_title">Tipar de clipire LED</string>
-    <string name="preferences__sound">Sunet</string>
-    <string name="preferences__silent">Silențios</string>
-    <string name="preferences__repeat_alerts">Repetă alerte</string>
-    <string name="preferences__never">Niciodată</string>
-    <string name="preferences__one_time">O dată</string>
-    <string name="preferences__two_times">De două ori</string>
-    <string name="preferences__three_times">De trei ori</string>
-    <string name="preferences__five_times">De cinci ori</string>
-    <string name="preferences__ten_times">De zece ori</string>
-    <string name="preferences__vibrate">Vibrează</string>
-    <string name="preferences__green">Verde</string>
-    <string name="preferences__red">Roşu</string>
-    <string name="preferences__blue">Albastru</string>
-    <string name="preferences__orange">Portocaliu</string>
-    <string name="preferences__cyan">Turcoaz</string>
-    <string name="preferences__magenta">Purpuriu</string>
-    <string name="preferences__white">Alb</string>
-    <string name="preferences__none">Niciuna</string>
-    <string name="preferences__fast">Rapid</string>
-    <string name="preferences__normal">Normal</string>
-    <string name="preferences__slow">Încet</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Șterge automat mesajele vechi când conversația depășește mărimea specificată</string>
-    <string name="preferences__delete_old_messages">Șterge mesajele vechi</string>
-    <string name="preferences__conversation_length_limit">Limita mărime conversație</string>
-    <string name="preferences__trim_all_conversations_now">Scurtează acum toate conversaţiile </string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Verifică toate conversațiile și aplică limite de mărime a conversației</string>
-    <string name="preferences__default">Implicit</string>
-    <string name="preferences__incognito_keyboard">Tastatură incognito</string>
-    <string name="preferences__read_receipts">Confirmări de citire</string>
-    <string name="preferences__typing_indicators">Indicatori tastare</string>
-    <string name="preferences__if_typing_indicators_are_disabled_you_wont_be_able_to_see_typing_indicators">Dacă indicatorii de tastare sunt dezactivați, nu vei putea vedea indicatorii de tastare de la ceilalți.</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">Solicitați tastaturii dezactivarea învățarii personalizate</string>
-    <string name="preferences__light_theme">Deschisă</string>
-    <string name="preferences__dark_theme">Închisă</string>
-    <string name="preferences_chats__message_trimming">Scurtarea mesajelor</string>
-    <string name="preferences_advanced__use_system_emoji">Foloseşte emoji de sistem</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">Dezactivați icoanele emoji oferite de Session </string>
-    <string name="preferences_chats__chats">Conversații</string>
-    <string name="preferences_notifications__messages">Mesaje</string>
-    <string name="preferences_notifications__in_chat_sounds">Sunete în conversație</string>
-    <string name="preferences_notifications__priority">Prioritate</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">Mesajul nou către...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">Detalii mesaj</string>
-    <string name="conversation_context__menu_copy_text">Copiază textul</string>
-    <string name="conversation_context__menu_delete_message">Şterge mesajul</string>
-    <string name="conversation_context__menu_ban_user">Blochează utilizator</string>
-    <string name="conversation_context__menu_ban_and_delete_all">Interzice și șterge toate</string>
-    <string name="conversation_context__menu_resend_message">Retrimite mesajul</string>
-    <string name="conversation_context__menu_reply_to_message">Răspunde la mesaj</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">Salvează ataşamentul</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">Mesaje care dispar</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">Expirarea mesejelor</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">Activare sunet notificări</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">Notificări fără sunet</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">Editează grupul</string>
-    <string name="conversation__menu_leave_group">Părăseşte grupul</string>
-    <string name="conversation__menu_view_all_media">Toate fișierele media</string>
-    <string name="conversation__menu_add_shortcut">Adaugă pe ecranul principal</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">Extinde popup-ul</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">Trimitere</string>
-    <string name="conversation_group_options__conversation">Conversație</string>
-    <string name="conversation_group_options__broadcast">Difuzare</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">Salvează</string>
-    <string name="media_preview__forward_title">Redirecționează</string>
-    <string name="media_preview__all_media_title">Toate fișierele media</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">Nu aveți documente</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">Previzualizare media</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">Se șterge</string>
-    <string name="trimmer__deleting_old_messages">Se șterg mesajele vechi...</string>
-    <string name="trimmer__old_messages_successfully_deleted">Mesajele vechi au fost șterse cu succes</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">E nevoie de permisiune</string>
-    <string name="Permissions_continue">Continuă</string>
-    <string name="Permissions_not_now">Nu acum</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">Backup-urile se vor salva pe stocarea externă și vor fi criptate cu parola de mai jos. Trebuie sa aveți această parola pentru a putea restaura un backup.</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">Am scris parola. Fără ea nu voi putea restaura un backup.</string>
-    <string name="registration_activity__skip">Omite</string>
-    <string name="RegistrationActivity_backup_failure_downgrade">Nu se pot importa backup-uri din versiuni mai noi de Session</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">Parola pentru backup este incorectă</string>
-    <string name="BackupDialog_enable_local_backups">Activez backup-urile locale?</string>
-    <string name="BackupDialog_enable_backups">Activează backup-urile</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">Vă rog să vă dați acceptul prin marcarea căsuței de confirmare.</string>
-    <string name="BackupDialog_delete_backups">Șterg backup-urile?</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">Dezactivez și șterg toate backup-urile locale?</string>
-    <string name="BackupDialog_delete_backups_statement">Șterge backup-urile</string>
-    <string name="BackupDialog_copied_to_clipboard">S-a copiat în clipboard</string>
-    <string name="LocalBackupJob_creating_backup">Se creează backup-ul...</string>
-    <string name="ProgressPreference_d_messages_so_far">%d mesaje până acum</string>
-    <string name="BackupUtil_never">Niciodată</string>
-    <string name="preferences_app_protection__screen_lock">Blocare ecran</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">Blocați accesul la Session prin ecranul de blocare Android sau prin amprentă</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">Expirare timp blocare ecran pentru inactivitate</string>
-    <string name="AppProtectionPreferenceFragment_none">Niciuna</string>
-    <!-- Conversation activity -->
-    <string name="activity_conversation_copy_public_key_button_title">Copie cheia publică</string>
-    <!-- Session -->
-    <string name="continue_2">Continuă</string>
-    <string name="copy">Copiază</string>
-    <string name="invalid_url">URL invalid</string>
-    <string name="copied_to_clipboard">Copiat în clipboard</string>
-    <string name="next">Următorul</string>
-    <string name="share">Distribuie</string>
-    <string name="invalid_session_id">ID sesiune nevalid</string>
+    <string name="about">Despre</string>
+    <string name="accept">Acceptă</string>
+    <string name="accountIDCopy">Copiază ID-ul contului</string>
+    <string name="accountIdCopied">ID cont copiat</string>
+    <string name="accountIdCopyDescription">Copiază ID-ul tău de cont și apoi distribuie-l prietenilor tăi pentru a te putea trimite mesaje.</string>
+    <string name="accountIdEnter">Introduceți ID-ul contului</string>
+    <string name="accountIdErrorInvalid">Acest ID de cont nu este valid. Te rugăm să verifici și să încerci din nou.</string>
+    <string name="accountIdOrOnsEnter">Introduceți ID-ul contului sau ONS</string>
+    <string name="accountIdOrOnsInvite">Invită ID-ul de cont sau ONS</string>
+    <string name="accountIdShare">Salut, folosesc {app_name} pentru a discuta cu confidențialitate și securitate complete. Alătură-te mie! ID-ul meu de cont este
+
+{account_id}
+
+Descarcă-l de la {download_url}</string>
+    <string name="accountIdYours">ID-ul contului tău</string>
+    <string name="accountIdYoursDescription">Acesta este ID-ul tău de cont. Alți utilizatori îl pot scana pentru a începe o conversație cu tine.</string>
+    <string name="actualSize">Mărime actuală</string>
+    <string name="add">Adaugă</string>
+    <string name="adminCannotBeRemoved">Administratorii nu pot fi eliminați.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name}</b> și <b>{count} alții</b> au fost promovați la Admin.</string>
+    <string name="adminPromote">Promovează Admini</string>
+    <string name="adminPromoteDescription">Sunteți sigur că doriți să promovați <b>{name}</b> la admin? Administratorii nu pot fi înlăturați.</string>
+    <string name="adminPromoteMoreDescription">Sunteți sigur că doriți să promovați <b>{name}</b> și <b>{count} alții</b> la admin? Administratorii nu pot fi înlăturați.</string>
+    <string name="adminPromoteToAdmin">Promovează Administrator</string>
+    <string name="adminPromoteTwoDescription">Sunteți sigur că doriți să promovați <b>{name}</b> și <b>{other_name}</b> la admin? Administratorii nu pot fi înlăturați.</string>
+    <string name="adminPromotedToAdmin"><b>{name}</b> a fost promovat la Admin.</string>
+    <string name="adminPromotionFailed">Promovarea administratorului a eșuat</string>
+    <string name="adminPromotionFailedDescription">Nu s-a putut promova {name} în {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMany">Nu s-a putut promova {name} și {count} alții în {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMore">Nu s-a putut promova {name} și {other_name} în {group_name}</string>
+    <string name="adminPromotionSent">Promovare administrator trimisă</string>
+    <string name="adminRemove">Elimină administratorii</string>
+    <string name="adminRemoveAsAdmin">Elimină ca administrator</string>
+    <string name="adminRemoveCommunityNone">Nu există Admini în această Community.</string>
+    <string name="adminRemoveFailed">Nu s-a putut elimina {name} ca Admin.</string>
+    <string name="adminRemovedUser"><b>{name}</b> a fost eliminat ca Admin.</string>
+    <string name="adminSendingPromotion">Trimitere promovare admin</string>
+    <string name="adminSettings">Setări administrator</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name}</b> și <b>{other_name}</b> au fost promovați la Admin.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">Anonim</string>
+    <string name="appearanceAutoDarkMode">Mod întunecat automat</string>
+    <string name="appearanceHideMenuBar">Ascundeți bara de meniu</string>
+    <string name="appearanceLanguage">Limba</string>
+    <string name="appearanceLanguageDescription">Alegeți setarea limbii pentru {app_name}. {app_name} se va reporni atunci când schimbați setarea limbii.</string>
+    <string name="appearancePreview1">Ce mai faci?</string>
+    <string name="appearancePreview2">Vă mulţumesc frumos, dumneavoastră?</string>
+    <string name="appearancePreview3">Mă simt minunat, mulțumesc.</string>
+    <string name="appearancePrimaryColor">Culoare primară</string>
+    <string name="appearanceThemes">Teme</string>
+    <string name="appearanceThemesClassicDark">Clasic Întunecat</string>
+    <string name="appearanceThemesClassicLight">Clasic Luminos</string>
+    <string name="appearanceThemesOceanDark">Ocean Dark</string>
+    <string name="appearanceThemesOceanLight">Ocean Light</string>
+    <string name="appearanceZoom">Mărește</string>
+    <string name="appearanceZoomIn">Mărește</string>
+    <string name="appearanceZoomOut">Micșorează</string>
+    <string name="attachment">Atașament</string>
+    <string name="attachmentsAdd">Adăugați atașament</string>
+    <string name="attachmentsAlbumUnnamed">Album fără Nume</string>
+    <string name="attachmentsAutoDownload">Descărcare automată atașamente</string>
+    <string name="attachmentsAutoDownloadDescription">Descarcă automat media și fișiere din acest chat.</string>
+    <string name="attachmentsAutoDownloadModalDescription">Doriți să descărcați automat toate fișierele din <b>{conversation_name}</b>?</string>
+    <string name="attachmentsAutoDownloadModalTitle">Descărcare automată</string>
+    <string name="attachmentsClearAll">Șterge toate atașamentele</string>
+    <string name="attachmentsClearAllDescription">Ești sigur că vrei să ștergi toate atașamentele? Mesajele cu atașamente vor fi de asemenea șterse.</string>
+    <string name="attachmentsClickToDownload">Apasă pentru a descărca {file_type}</string>
+    <string name="attachmentsCollapseOptions">Restrânge opțiunile de atașare</string>
+    <string name="attachmentsCollecting">Se colectează atașamentele...</string>
+    <string name="attachmentsDownload">Descarcă atașamentul</string>
+    <string name="attachmentsDuration">Durata:</string>
+    <string name="attachmentsErrorLoad">Eroare la atașarea fișierului</string>
+    <string name="attachmentsErrorNoApp">Nu pot găsi o aplicație pentru selecție media.</string>
+    <string name="attachmentsErrorNotSupported">Acest tip de fișier nu este suportat.</string>
+    <string name="attachmentsErrorNumber">Nu se pot trimite mai mult de 32 de fișiere imagine și video simultan.</string>
+    <string name="attachmentsErrorOpen">Nu se poate deschide fișierul.</string>
+    <string name="attachmentsErrorSending">Eroare la trimiterea fișierului</string>
+    <string name="attachmentsErrorSeparate">Vă rugăm să trimiteți fișiere ca mesaje separate.</string>
+    <string name="attachmentsErrorSize">Fișierul trebuie să fie mai mic de 10MB</string>
+    <string name="attachmentsErrorTypes">Nu se pot atașa imagini și videoclipuri cu alte tipuri de fișiere. Încercați să trimiteți alte fișiere într-un mesaj separat.</string>
+    <string name="attachmentsExpired">Atașamentul a expirat</string>
+    <string name="attachmentsFileId">ID fișier:</string>
+    <string name="attachmentsFileSize">Dimensiune fișier:</string>
+    <string name="attachmentsFileType">Tip fişier:</string>
+    <string name="attachmentsFilesEmpty">Nu ai fișiere în această conversație.</string>
+    <string name="attachmentsImageErrorMetadata">Eliminarea metadata din fișier este imposibila.</string>
+    <string name="attachmentsLoadingNewer">Încărcăre fișiere media noi...</string>
+    <string name="attachmentsLoadingNewerFiles">Se încarcă fișierele mai noi...</string>
+    <string name="attachmentsLoadingOlder">Încărcăre fișiere media vechi...</string>
+    <string name="attachmentsLoadingOlderFiles">Încărcare fișiere mai vechi...</string>
+    <string name="attachmentsMedia">{name} pe {date_time}</string>
+    <string name="attachmentsMediaEmpty">Nu ai media în această conversație.</string>
+    <string name="attachmentsMediaSaved">Media salvată de {name}</string>
+    <string name="attachmentsMoveAndScale">Mută și modifică mărimea</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} Atașament</string>
+    <string name="attachmentsResolution">Rezoluție:</string>
+    <string name="attachmentsSaveError">Nu se poate salva fișierul.</string>
+    <string name="attachmentsSendTo">Trimiteți la {name}</string>
+    <string name="attachmentsTapToDownload">Atingeți pentru a descărca {file_type}</string>
+    <string name="attachmentsThisMonth">Luna aceasta</string>
+    <string name="attachmentsThisWeek">Săptămâna aceasta</string>
+    <string name="attachmentsWarning">Atașamentele pe care le salvați pot fi accesate de alte aplicații de pe dispozitivul dumneavoastră.</string>
+    <string name="audio">Audio</string>
+    <string name="audioNoInput">Nu s-a detectat nicio sursă audio</string>
+    <string name="audioNoOutput">Nu s-a detectat nicio ieșire audio</string>
+    <string name="audioUnableToPlay">Nu se poate reda fișierul audio.</string>
+    <string name="audioUnableToRecord">Nu se poate înregistra audio.</string>
+    <string name="authenticateFailed">Autentificare eșuată</string>
+    <string name="authenticateFailedTooManyAttempts">Prea multe încercări de autentificare eșuate. Vă rugăm să încercați din nou mai târziu.</string>
+    <string name="authenticateNotAccessed">Autentificarea nu a putut fi accesată.</string>
+    <string name="authenticateToOpen">Autentifică-te pentru a deschide {app_name}.</string>
+    <string name="back">Înapoi</string>
+    <string name="banDeleteAll">Banează și Șterge Tot</string>
+    <string name="banErrorFailed">Interdicţie eșuată</string>
+    <string name="banUnbanErrorFailed">Ridicarea accesului anulată</string>
+    <string name="banUnbanUser">Scoate Interdicția Utilizatorului</string>
+    <string name="banUnbanUserUnbanned">Utilizator neatertiz</string>
+    <string name="banUser">Banează utilizator</string>
+    <string name="banUserBanned">Utilizator interzis</string>
+    <string name="block">Blochează</string>
+    <string name="blockBlockedDescription">Deblochează acest contact pentru a putea trimite mesaje.</string>
+    <string name="blockBlockedNone">Nu aveți contacte blocate</string>
+    <string name="blockBlockedUser">Blocat {name}</string>
+    <string name="blockDescription">Ești sigur că vrei să blochezi pe <b>{name}?</b> Utilizatorii blocați nu vă pot trimite solicitări de mesaje, invitații de grup sau să vă sune.</string>
+    <string name="blockUnblock">Deblochează</string>
+    <string name="blockUnblockName">Sunteți sigur că doriți să deblocați {name}?</string>
+    <string name="blockUnblockNameMultiple">Sunteți sigur că doriți să deblocați {name} și {count} alții?</string>
+    <string name="blockUnblockNameTwo">Sunteți sigur că doriți să deblocați {name} și 1 altă persoană?</string>
+    <string name="blockUnblockedUser">Dezblocat {name}</string>
+    <string name="call">Apelează</string>
+    <string name="callsCalledYou">{name} te-a sunat</string>
+    <string name="callsCannotStart">Nu poți începe un apel nou. Termină apelul actual întâi.</string>
+    <string name="callsConnecting">Se conectează...</string>
+    <string name="callsEnd">Închide apelul</string>
+    <string name="callsEnded">Apel încheiat</string>
+    <string name="callsErrorAnswer">Nu s-a putut răspunde la apel</string>
+    <string name="callsErrorStart">Eroare la inițierea apelului</string>
+    <string name="callsInProgress">Apel în curs</string>
+    <string name="callsIncoming">Primire apel de la {name}</string>
+    <string name="callsIncomingUnknown">Apel de intrare</string>
+    <string name="callsMissed">Apel nepreluat</string>
+    <string name="callsMissedCallFrom">Apel pierdut de la {name}</string>
+    <string name="callsNotificationsRequired">Apelurile video și audio necesită activarea notificărilor în setările de sistem ale dispozitivului.</string>
+    <string name="callsPermissionsRequired">Permisiuni de apel necesare</string>
+    <string name="callsPermissionsRequiredDescription">Puteți activa permisiunea „Apeluri Vocale și Video” în Setările de Confidențialitate.</string>
+    <string name="callsReconnecting">Reconectare...</string>
+    <string name="callsRinging">Sună...</string>
+    <string name="callsSessionCall">Apel Session</string>
+    <string name="callsSettings">Apeluri (Beta)</string>
+    <string name="callsVoiceAndVideo">Apeluri video și audio</string>
+    <string name="callsVoiceAndVideoBeta">Apeluri vocale și video (Beta)</string>
+    <string name="callsVoiceAndVideoModalDescription">IP-ul dumneavoastră este vizibil către partenerul de apel și un server fundației Oxen în timp ce utilizați apeluri beta.</string>
+    <string name="callsVoiceAndVideoToggleDescription">Activează apelurile vocale și video către și de la alți utilizatori</string>
+    <string name="callsYouCalled">Ai sunat pe {name}</string>
+    <string name="callsYouMissedCallPermissions">Ai ratat un apel de la <b>{name} < / b> pentru că nu ai activat <b> Apeluri vocale și video < / b> în setările de confidențialitate.</string>
+    <string name="cameraErrorNotFound">Nu s-a găsit camera</string>
+    <string name="cameraErrorUnavailable">Cameră indisponibilă.</string>
+    <string name="cameraGrantAccess">Acordă acces cameră foto</string>
+    <string name="cameraGrantAccessDenied">{app_name} are nevoie de acces la cameră pentru a captura poze și filme, dar accesul a fost refuzat permanent. Vă rugăm să mergeți la setările aplicației, selectați \"Permisiuni\" și activați \"Cameră\".</string>
+    <string name="cameraGrantAccessDescription">{app_name} are nevoie de acces la cameră pentru a captura poze și filme sau pentru a scana coduri QR.</string>
+    <string name="cameraGrantAccessQr">{app_name} are nevoie de acces la cameră pentru a scana coduri QR</string>
     <string name="cancel">Anulare</string>
-    <string name="your_session_id">ID-ul sesiunii dvs</string>
-    <string name="activity_landing_title_2">Sesiunea dvs. începe aici...</string>
-    <string name="activity_landing_register_button_title">Creați ID sesiune</string>
-    <string name="activity_landing_restore_button_title">Continuați sesiunea</string>
-    <string name="view_fake_chat_bubble_1">Ce este Session?</string>
-    <string name="view_fake_chat_bubble_2">Este o aplicație de mesagerie descentralizată, criptată</string>
-    <string name="view_fake_chat_bubble_3">Deci nu colectează informaţii personale sau metadatele conversaţiei? Cum funcţionează?</string>
-    <string name="view_fake_chat_bubble_4">Utilizarea unei combinații avansate de rutare anonimă și de tehnologii de criptare capăt-la-capăt.</string>
-    <string name="view_fake_chat_bubble_5">Prietenii nu-și lasă prietenii să folosească mesageri compromiși. Cu plăcere.</string>
-    <string name="activity_register_title">Bun venit la noul tău ID Session</string>
-    <string name="activity_register_explanation">ID-ul de sesiune este adresa ta unică pe care persoanele o pot folosi pentru a te contacta în Session. Neavând conexiune la identitatea ta reală, ID-ul tău Session este complet anonim și privat prin design.</string>
-    <string name="activity_restore_title">Recuperează-ți contul</string>
-    <string name="activity_restore_explanation">Introduceți fraza de recuperare care v-a fost dată atunci când v-ați înregistrat pentru a vă restaura contul.</string>
-    <string name="activity_restore_seed_edit_text_hint">Introduceți fraza de recuperare</string>
-    <string name="activity_display_name_title_2">Alegeți numele afișat</string>
-    <string name="activity_display_name_explanation">Acesta va fi numele tău când folosești Session. Poate fi numele tău, un pseudonim, sau orice altceva dorești.</string>
-    <string name="activity_display_name_edit_text_hint">Alege un nume de afișat</string>
-    <string name="activity_display_name_display_name_missing_error">Vă rugăm să alegeți un nume de afișare</string>
-    <string name="activity_path_guard_node_row_title">Nod de intrare</string>
-    <string name="activity_path_service_node_row_title">Nod servicii</string>
-    <string name="activity_path_destination_row_title">Destinație</string>
-    <string name="activity_path_learn_more_button_title">Aflați mai multe</string>
-    <string name="activity_path_resolving_progress">Se rezolvă…</string>
-    <string name="activity_create_private_chat_title">Sesiune Nouă</string>
-    <string name="activity_create_private_chat_enter_session_id_tab_title">Introduceți ID-ul Session</string>
-    <string name="activity_create_private_chat_scan_qr_code_tab_title">Scanați codul QR</string>
-    <string name="activity_create_private_chat_scan_qr_code_explanation">Scanați codul QR al unui utilizator pentru a începe o sesiune. Codurile QR pot fi găsite prin atingerea pictogramei de cod QR din setările contului.</string>
-    <string name="fragment_enter_public_key_edit_text_hint">Introduceți ID-ul Session sau numele ONS</string>
-    <!-- Next round of translation -->
+    <string name="clear">Șterge</string>
+    <string name="clearAll">Șterge tot</string>
+    <string name="clearDataAll">Șterge toate datele</string>
+    <string name="clearDataAllDescription">Aceasta va șterge permanent mesajele și contactele tale. Dorești să ștergi doar acest dispozitiv sau să ștergi și datele din rețea?</string>
+    <string name="clearDataError">Datele nu au fost șterse</string>
+    <string name="clearDataErrorDescriptionGeneric">A apărut o eroare necunoscută și datele dvs. nu au fost șterse. Doriți să ștergeți datele de pe acest dispozitiv în schimb?</string>
+    <string name="clearDevice">Curăță dispozitiv</string>
+    <string name="clearDeviceAndNetwork">Curăță dispozitiv și rețea</string>
+    <string name="clearDeviceAndNetworkConfirm">Sunteți sigur că doriți să ștergeți datele dvs. din rețea? Dacă continuați, nu veți putea să restaurați mesajele sau contactele.</string>
+    <string name="clearDeviceDescription">Ești sigur că vrei să ștergi dispozitivul tău?</string>
+    <string name="clearDeviceOnly">Curăță doar dispozitivul</string>
+    <string name="clearMessages">Șterge toate mesajele</string>
+    <string name="clearMessagesChatDescription">Ești sigur că vrei să ștergi toate mesajele din conversația ta cu <b>{name} </b> de pe dispozitivul tău?</string>
+    <string name="clearMessagesCommunity">Ești sigur că vrei să ștergeți toate mesajele comunității <b>{community_name}?</b></string>
+    <string name="clearMessagesForEveryone">Șterge pentru toată lumea</string>
+    <string name="clearMessagesForMe">Șterge pentru mine</string>
+    <string name="clearMessagesGroupAdminDescription">Ești sigur că vrei să ștergi toate mesajele <b>{group_name}?</b></string>
+    <string name="clearMessagesGroupDescription">Ești sigur că vrei să ștergi toate mesajele grupului <b>{group_name}?</b></string>
+    <string name="clearMessagesNoteToSelfDescription">Ești sigur că vrei să ștergi toate mesajele Notă personală de pe dispozitivul tău?</string>
+    <string name="close">Închide</string>
+    <string name="closeWindow">Închide fereastra</string>
+    <string name="communityEnterUrl">Introduceți URL-ul comunității</string>
+    <string name="communityEnterUrlErrorInvalid">Adresa URL invalidă</string>
+    <string name="communityEnterUrlErrorInvalidDescription">Vă rugăm să verificați adresa URL a Comunității și să încercați din nou.</string>
+    <string name="communityError">Eroare comunitate</string>
+    <string name="communityErrorDescription">Oops, a apărut o eroare. Vă rugăm să încercați din nou mai târziu.</string>
+    <string name="communityInvitation">Invitație Comunitate</string>
+    <string name="communityJoin">Alătură-te comunității</string>
+    <string name="communityJoinDescription">Sunteți sigur că doriți să vă alăturați {community_name}?</string>
+    <string name="communityJoinError">Nu s-a putut alătura la {community_name}</string>
+    <string name="communityJoinOfficial">Sau alătură-te uneia dintre acestea...</string>
+    <string name="communityJoined">Comunitate alăturată</string>
+    <string name="communityJoinedAlready">Ești deja membru al acestei comunități.</string>
+    <string name="communityLeave">Părăsește Comunitatea</string>
+    <string name="communityLeaveError">Nu s-a putut părăsi {community_name}</string>
+    <string name="communityUnknown">Comunitate necunoscută</string>
+    <string name="communityUrl">URL-ul comunității</string>
+    <string name="communityUrlCopy">Copiere adresă comunitate</string>
+    <string name="confirm">Confirm</string>
+    <string name="contactContacts">Contacte</string>
+    <string name="contactDelete">Șterge contact</string>
+    <string name="contactDeleteDescription">Ești sigur că vrei să ștergi pe <b>{name}</b> din contactele tale? Mesajele noi de la <b>{name}</b> vor ajunge ca o solicitare de mesaj.</string>
+    <string name="contactNone">Încă nu ai contacte</string>
+    <string name="contactSelect">Selectați contacte</string>
+    <string name="contactUserDetails">Detalii utilizator</string>
+    <string name="contentDescriptionCamera">Cameră</string>
+    <string name="contentDescriptionChooseConversationType">Alegeți o acțiune pentru a începe o conversație</string>
+    <string name="contentDescriptionMediaMessage">Mesaj media</string>
+    <string name="contentDescriptionMessageComposition">Compunere mesaj</string>
+    <string name="contentDescriptionQuoteThumbnail">Pictograma imaginii din mesajul citat</string>
+    <string name="contentDescriptionStartConversation">Creează o conversație cu un nou contact</string>
+    <string name="conversationsAddToHome">Adaugă pe ecranul principal</string>
+    <string name="conversationsAddedToHome">Adăugat pe ecranul principal</string>
+    <string name="conversationsAudioMessages">Mesaje audio</string>
+    <string name="conversationsAutoplayAudioMessage">Redare automată mesaje audio</string>
+    <string name="conversationsAutoplayAudioMessageDescription">Redare automată a mesajelor audio consecutive</string>
+    <string name="conversationsBlockedContacts">Contacte blocate</string>
+    <string name="conversationsCommunities">Comunități</string>
+    <string name="conversationsDelete">Șterge conversația</string>
+    <string name="conversationsDeleteDescription">Sunteți sigur că doriți să ștergeți conversația dvs. cu <b>{name}?</b> Mesajele noi de la <b>{name}</b> vor începe o conversație nouă.</string>
+    <string name="conversationsDeleted">Conversație ștearsă</string>
+    <string name="conversationsEmpty">Nu există mesaje în {conversation_name}.</string>
+    <string name="conversationsEnter">Introduceți cheie</string>
+    <string name="conversationsEnterDescription">Funcția tastei Enter când scrii într-o conversație.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER trimite un mesaj, ENTER începe o linie nouă</string>
+    <string name="conversationsEnterSends">ENTER trimite un mesaj, SHIFT + ENTER începe o linie nouă</string>
+    <string name="conversationsGroups">Grupuri</string>
+    <string name="conversationsMessageTrimming">Scurtarea mesajelor</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Scurtați comunitățile</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">Șterge mesajele din conversațiile de Community mai vechi de 6 luni și unde sunt peste 2.000 de mesaje.</string>
+    <string name="conversationsNew">Conversație nouă</string>
+    <string name="conversationsNone">Încă nu ai conversații</string>
+    <string name="conversationsSendWithEnterKey">Trimite cu tasta Enter</string>
+    <string name="conversationsSendWithEnterKeyDescription">Atingerea tastei Enter va trimite mesaj în loc să pornească o nouă linie.</string>
+    <string name="conversationsSettingsAllMedia">Media</string>
+    <string name="conversationsSpellCheck">Verificare ortografie</string>
+    <string name="conversationsSpellCheckDescription">Activare verificare ortografie când scrieți mesaje</string>
+    <string name="conversationsStart">Începe o Conversație</string>
+    <string name="copied">S-a copiat</string>
+    <string name="copy">Copiază</string>
+    <string name="create">Creează</string>
+    <string name="cut">Decupează</string>
+    <string name="databaseErrorGeneric">A apărut o eroare în baza de date.
+
+Exportați jurnalele aplicației dvs. pentru a le partaja în scopuri de depanare. Dacă acest lucru nu reușește, reinstalați {app_name} și restaurați contul.
+
+Atenție: Acest lucru va duce la pierderea tuturor mesajelor, atașamentelor și datelor contului mai vechi de două săptămâni.</string>
+    <string name="databaseErrorTimeout">Am observat că {app_name} durează mult timp să pornească.
+
+Puteți continua să așteptați, să exportați jurnalele dispozitivului pentru a le partaja pentru depanare sau să încercați să reporniți Session.</string>
+    <string name="databaseErrorUpdate">Baza de date a aplicației dumneavoastră este incompatibilă cu această versiune de {app_name}. Reinstalați aplicația și restaurați contul pentru a genera o nouă bază de date și a continua să folosiți {app_name}.
+
+Atenție: Aceasta va conduce la pierderea tuturor mesajelor și atașamentelor mai vechi de două săptămâni.</string>
+    <string name="databaseOptimizing">Optimizare bază de date</string>
+    <string name="debugLog">Jurnal Depanare</string>
+    <string name="decline">Respinge</string>
+    <string name="delete">Șterge</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">Unele dintre dispozitivele tale folosesc versiuni învechite. Sincronizarea poate fi nesigură până când acestea sunt actualizate.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">Blochează acest utilizator</string>
+    <string name="deleteAfterGroupPR1BlockUser">Blochează utilizator</string>
+    <string name="deleteAfterGroupPR1GroupSettings">Setările grupului</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Notifică doar pentru Menționări</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">Când este activată, vei fi notificat doar pentru mesajele care te menționează.</string>
+    <string name="deleteAfterGroupPR1MessageSound">Sunet notificare mesaj</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">Șterg permanent acestă conversație?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">Nu pot pleca în timp ce adăugați sau eliminați alți membri.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">Legacy</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">Versiunea originală a mesajelor care dispar.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name}</b> a setat timpul pentru mesaje care dispar la <b>{time}</b></string>
+    <string name="deleteMessage">Șterge mesajul</string>
+    <string name="deleteMessageConfirm">Sunteți sigur că doriți să ștergeți acest mesaj?</string>
+    <string name="deleteMessageDeleted">Mesaj șters</string>
+    <string name="deleteMessageDeletedGlobally">Acest mesaj a fost șters.</string>
+    <string name="deleteMessageDeletedLocally">Acest mesaj a fost șters pe acest dispozitiv.</string>
+    <string name="deleteMessageDescriptionDevice">Sunteți sigur că doriți să ștergeți acest mesaj doar de pe acest dispozitiv?</string>
+    <string name="deleteMessageDescriptionEveryone">Sunteți sigur că doriți să ștergeți acest mesaj pentru toată lumea?</string>
+    <string name="deleteMessageDeviceOnly">Șterge doar pe acest dispozitiv</string>
+    <string name="deleteMessageDevicesAll">Șterge pe toate dispozitivele mele</string>
+    <string name="deleteMessageEveryone">Șterge pentru toată lumea</string>
+    <string name="deleteMessageFailed">Ștergerea mesajului a eșuat</string>
+    <string name="deleteMessages">Șterge mesajele</string>
+    <string name="deleteMessagesConfirm">Sunteți sigur că doriți să ștergeți aceste mesaje?</string>
+    <string name="deleteMessagesDeleted">Mesaje șterse</string>
+    <string name="deleteMessagesDescriptionDevice">Ești sigur că vrei să ștergi aceste mesaje doar de pe acest dispozitiv?</string>
+    <string name="deleteMessagesDescriptionEveryone">Ești sigur că vrei să ștergi aceste mesaje pentru toată lumea?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="one">Eroare la ștergerea mesajului</item>
+        <item quantity="few">Eroare la ștergerea mesajelor</item>
+        <item quantity="other">Eroare la ștergerea mesajelor</item>
+    </plurals>
+    <string name="deleting">Se șterge</string>
+    <string name="developerToolsToggle">Comutare unelte dezvoltator</string>
+    <string name="dictationStart">Începe Dictarea...</string>
+    <string name="disappearingMessages">Mesaje temporare</string>
+    <string name="disappearingMessagesCountdownBig">Mesajul va fi șters în {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">Se șterge automat în {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">Mesajul va fi șters în {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">Se șterge automat în {time_large} {time_small}</string>
+    <string name="disappearingMessagesDeleteType">Șterge tip</string>
+    <string name="disappearingMessagesDescription">Această setare se aplică tuturor celor din această conversație.</string>
+    <string name="disappearingMessagesDescription1">Această setare se aplică mesajelor pe care le trimiți în această conversație.</string>
+    <string name="disappearingMessagesDisappear">Dispare după {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">Dispare după citire</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">Şterge mesajele după ce au fost citite.</string>
+    <string name="disappearingMessagesDisappearAfterSend">Dispare după trimitere</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">Şterge mesajele după ce au fost trimise.</string>
+    <string name="disappearingMessagesFollowSetting">Urmează Setarea</string>
+    <string name="disappearingMessagesFollowSettingOff">Mesajele trimise nu vor mai dispărea. Ești sigur că vrei să dezactivezi <b>mesajele care dispar</b>?</string>
+    <string name="disappearingMessagesFollowSettingOn">Setați mesajele să dispară <b>{time}</b> după ce au fost <b>{disappearing_messages_type}</b>?</string>
+    <string name="disappearingMessagesLegacy">{name} folosește un client depășit. Mesajele care dispar s-ar putea să nu funcționeze conform așteptărilor.</string>
+    <string name="disappearingMessagesOnlyAdmins">Doar administratorii grupului pot schimba această setare.</string>
+    <string name="disappearingMessagesSent">Trimis</string>
+    <string name="disappearingMessagesSet"><b>{name}</b> a setat mesaje pentru a dispărea {time} după ce au fost {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesSetYou"><b>Tu</b> ai setat mesajele să dispară {time} după ce au fost {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesTimer">Temporizator</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name}</b> a dezactivat mesajele care dispar. Mesajele pe care le trimit nu vor mai dispărea.</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>Tu</b> ai dezactivat mesajele care dispar. Mesajele pe care le trimiți nu vor mai dispărea.</string>
+    <string name="disappearingMessagesTypeRead">citit</string>
+    <string name="disappearingMessagesTypeSent">trimis</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name} </b>a actualizat setările pentru mesajele care dispar.</string>
+    <string name="disappearingMessagesUpdatedYou"><b>Tu</b> ai actualizat setările pentru mesaje care dispar.</string>
+    <string name="dismiss">Respinge</string>
+    <string name="displayNameDescription">Poate fi numele tău real, un alias sau orice altceva dorești — și îl poți schimba oricând.</string>
+    <string name="displayNameEnter">Introduceți numele de afișare</string>
+    <string name="displayNameErrorDescription">Introduceți un nume</string>
+    <string name="displayNameErrorDescriptionShorter">Vă rugăm să alegeți un nume mai scurt</string>
+    <string name="displayNameErrorNew">Nu am putut încărca numele de afișare. Vă rugăm să introduceți un nou nume de afișare pentru a continua.</string>
+    <string name="displayNameNew">Alegeți numele afișat</string>
+    <string name="displayNamePick">Alegeți numele afișat</string>
+    <string name="displayNameSet">Setează numele afișat</string>
+    <string name="document">Document</string>
+    <string name="done">Terminat</string>
+    <string name="download">Descarcă</string>
+    <string name="downloading">Se descarcă...</string>
+    <string name="draft">Ciornă</string>
+    <string name="edit">Editare</string>
+    <string name="emojiAndSymbols">Emoji &amp; Simboluri</string>
+    <string name="emojiCategoryActivities">Activități</string>
+    <string name="emojiCategoryAnimals">Animale & Natura</string>
+    <string name="emojiCategoryFlags">Steaguri</string>
+    <string name="emojiCategoryFood">Alimente și băuturi</string>
+    <string name="emojiCategoryObjects">Obiecte</string>
+    <string name="emojiCategoryRecentlyUsed">Utilizate recent</string>
+    <string name="emojiCategorySmileys">Emoticoane &amp; Persoane</string>
+    <string name="emojiCategorySymbols">Simboluri</string>
+    <string name="emojiCategoryTravel">Călătorii &amp; Locuri</string>
+    <string name="emojiReactsClearAll">Ești sigur că vrei să ștergi toate {emoji}?</string>
+    <string name="emojiReactsCoolDown">Mai încet! Ai trimis prea multe reacții. Încearcă din nou în curând</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="one">Şi încă %1$d a reacţionat %2$s la acest mesaj.</item>
+        <item quantity="few">Și alții %1$d au reacționat %2$s la acest mesaj.</item>
+        <item quantity="other">Și alții %1$d au reacționat %2$s la acest mesaj.</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} a reacționat cu <emoji/></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} au reacționat cu <emoji/></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} și <span>{count} alții</span> au reacționat cu <emoji/></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} și <span>1 altul</span> au reacționat cu <emoji/></string>
+    <string name="emojiReactsHoverYouDesktop">Ai reacționat cu <emoji /></string>
+    <string name="emojiReactsHoverYouNameDesktop">Tu &amp; {name} ați reacționat cu <emoji/></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">Tu, {name} & amp; <span>{count} alții</span> ai reacționat cu <emoji /></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">Tu, {name} & amp; <span>1 altul</span> ai reacționat cu <emoji /></string>
+    <string name="emojiReactsNotification">A reacționat la mesajul tău {emoji}</string>
+    <string name="enable">Activare</string>
+    <string name="errorConnection">Vă rugăm să verificați conexiunea la internet și să încercați din nou.</string>
+    <string name="errorCopyAndQuit">Copiază eroare și închide aplicația</string>
+    <string name="errorDatabase">Eroare de bază de date</string>
+    <string name="errorUnknown">O eroare neașteptată a avut loc.</string>
+    <string name="failures">Erori</string>
+    <string name="file">Fișier</string>
+    <string name="files">Fișiere</string>
+    <string name="followSystemSettings">Urmează setările sistemului</string>
+    <string name="from">De la:</string>
+    <string name="fullScreenToggle">Comutare la ecran complet</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">{app_name} se va conecta la Giphy pentru a obține rezultate la căutare. Dvs. nu veți avea acces la protecția completă a metadatelor când trimiteți GIF-uri.</string>
+    <string name="groupAddMemberMaximum">Grupurile pot avea maximum 100 de membri</string>
+    <string name="groupCreate">Creează grup</string>
+    <string name="groupCreateErrorNoMembers">Te rugăm să alegi cel puțin un membru al grupului.</string>
+    <string name="groupDelete">Șterge grup</string>
+    <string name="groupDeleteDescription">Ești sigur că vrei să ștergi grupul <b>{group_name}?</b> Aceasta va elimina toți membrii și va șterge tot conținutul grupului.</string>
+    <string name="groupDescriptionEnter">Introduceți o descriere a grupului</string>
+    <string name="groupDisplayPictureUpdated">Poza de afișare a grupului a fost actualizată.</string>
+    <string name="groupEdit">Editează grupul</string>
+    <string name="groupError">Eroare grup</string>
+    <string name="groupErrorCreate">Crearea grupului a eșuat. Vă rugăm să verificați conexiunea la internet și să încercați din nou.</string>
+    <string name="groupErrorJoin">Nu s-a putut alătura grupului {group_name}</string>
+    <string name="groupInformationSet">Setează informațiile grupului</string>
+    <string name="groupInviteDelete">Sunteți sigur că doriți să ștergeți această invitație de grup?</string>
+    <string name="groupInviteFailed">Invitația a eșuat</string>
+    <string name="groupInviteFailedMore">Nu s-a putut invita {name} și {count} alții la {group_name}</string>
+    <string name="groupInviteFailedTwo">Nu s-a putut invita {name} și {other_name} la {group_name}</string>
+    <string name="groupInviteFailedUser">Nu s-a putut invita {name} la {group_name}</string>
+    <string name="groupInviteSending">Trimitere invitație</string>
+    <string name="groupInviteSent">Invitația a fost trimisă</string>
+    <string name="groupInviteSuccessful">Invitație grup reușită</string>
+    <string name="groupInviteVersion">Utilizatorii trebuie să aibă versiunea {version} sau mai recentă pentru a primi invitații</string>
+    <string name="groupInviteYou"><b>Tu</b> ai fost invitat să te alături grupului.</string>
+    <string name="groupLeave">Părăsește Grupul</string>
+    <string name="groupLeaveDescription">Ești sigur ca vrei sa părăsești {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">Ești sigur ca vrei sa părăsești {group_name}? Acest lucru va dezactiva grupul pentru toți membrii.</string>
+    <string name="groupLeaveErrorFailed">Nu s-a putut părăsi grupul {group_name}</string>
+    <string name="groupLegacyBanner">Grupurile au fost actualizate, creează un nou grup pentru actualizare. Funcționalitatea grupului vechi nu va mai funcționa începând cu {date}.</string>
+    <string name="groupMemberLeft"><b>{name}</b> a părăsit grupul.</string>
+    <string name="groupMemberLeftMore"><b>{name}</b> și <b>{count} alții</b> au părăsit grupul.</string>
+    <string name="groupMemberLeftTwo"><b>{name}</b> și <b>{other_name}</b> au părăsit grupul.</string>
+    <string name="groupMemberMoreNew"><b>{name}<{/b> și <b>{count} alții</b> s-au alăturat grupului.</string>
+    <string name="groupMemberNew"><b>{name}</b> s-a alăturat grupului.</string>
+    <string name="groupMemberTwoNew"><b>{name}</b> și <b>{other_name}</b> s-au alăturat grupului.</string>
+    <string name="groupMemberYouLeft"><b>Tu</b> ai părăsit grupul.</string>
+    <string name="groupMembers">Membrii grupului</string>
+    <string name="groupMembersNone">Nu există alți membri în acest grup.</string>
+    <string name="groupName">Numele Grupului</string>
+    <string name="groupNameEnter">Introduceți un nume de grup</string>
+    <string name="groupNameEnterPlease">Vă rugăm introduceți un nume de grup.</string>
+    <string name="groupNameEnterShorter">Vă rugăm introduceți un nume de grup mai scurt.</string>
+    <string name="groupNameNew">Numele grupului este acum {group_name}.</string>
+    <string name="groupNameUpdated">Numele grupului a fost actualizat.</string>
+    <string name="groupNoMessages">Nu ai mesaje din <b>{group_name}</b>. Trimite un mesaj pentru a începe conversația!</string>
+    <string name="groupOnlyAdmin">Ești singurul administrator în <b>{group_name}</b>.
+
+Membrii grupului și setările nu se pot schimba fără un administrator.</string>
+    <string name="groupPromotedYou"><b>Tu</b> ai fost promovat la Admin.</string>
+    <string name="groupRemoveDescription">Doriți să eliminați pe <b>{name}</b> din <b>{group_name}</b>?</string>
+    <string name="groupRemoveMessages">Elimină utilizatorul și mesajele acestuia</string>
+    <string name="groupRemoveMoreDescription">Doriți să eliminați pe <b>{name}</b> și <b>{count} alții</b> din <b>{group_name}</b>?</string>
+    <string name="groupRemoveTwoDescription">Doriți să eliminați pe <b>{name}</b> și <b>{other_name}</b> din <b>{group_name}</b>?</string>
+    <string name="groupRemoveUserOnly">Elimină utilizatorul</string>
+    <string name="groupRemoveUsersMessages">Elimină utilizatorii și mesajele acestora</string>
+    <string name="groupRemoveUsersOnly">Elimină utilizatorii</string>
+    <string name="groupRemoved"><b>{name}</b> a fost eliminat din grup.</string>
+    <string name="groupRemovedMore"><b>{name}</b> și <b>{count} alții</b> au fost eliminați din grup.</string>
+    <string name="groupRemovedTwo"><b>{name}</b> și <b>{other_name}</b> au fost eliminați din grup.</string>
+    <string name="groupRemovedYou">Ai fost scos din <b>{group_name}</b>.</string>
+    <string name="groupSetDisplayPicture">Setează imaginea de grup</string>
+    <string name="groupUnknown">Grup necunoscut</string>
+    <string name="groupUpdated">Grupul a fost actualizat.</string>
+    <string name="helpFAQ">Întrebări frecvente</string>
+    <string name="helpHelpUsTranslateSession">Ajută-ne să traducem {app_name}</string>
+    <string name="helpReportABug">Raportează o eroare</string>
+    <string name="helpReportABugDescription">Împărtășește câteva detalii pentru a ne ajuta să rezolvăm problema ta. Exportă jurnalele tale, apoi încarcă fișierul prin Help Desk-ul {app_name}.</string>
+    <string name="helpReportABugExportLogs">Exportați jurnalele</string>
+    <string name="helpReportABugExportLogsDescription">Exportă jurnalele, apoi încarcă fișierul prin Help Desk-ul {app_name}.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">Salvează pe desktop</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">Salvează acest fișier pe desktop-ul tău, apoi partajează-l cu dezvoltatorii {app_name}.</string>
+    <string name="helpSupport">Asistență</string>
+    <string name="helpWedLoveYourFeedback">Ne-ar plăcea feedback-ul tău</string>
+    <string name="hide">Ascunde</string>
+    <string name="hideOthers">Ascunde altele</string>
+    <string name="image">Imagine</string>
+    <string name="incognitoKeyboard">Tastatură incognito</string>
+    <string name="incognitoKeyboardDescription">Solicită modul incognito, dacă este disponibil. În funcție de tastatura pe care o folosești, este posibil ca tastatura ta să ignore această solicitare.</string>
+    <string name="info">Info</string>
+    <string name="invalidShortcut">Scurtătură invalidă</string>
+    <string name="join">Alătură-te</string>
+    <string name="later">Mai târziu</string>
+    <string name="learnMore">Află mai mult</string>
+    <string name="leave">Părăsește</string>
+    <string name="leaving">Se părăsește...</string>
+    <string name="linkPreviews">Previzualizări Link</string>
+    <string name="linkPreviewsDescription">Generare previzualizari link-uri pentru URL-uri suportate.</string>
+    <string name="linkPreviewsEnable">Activați Previzualizarea link-urilor</string>
+    <string name="linkPreviewsErrorLoad">Nu a fost posibilă încărcarea pre vizualizări</string>
+    <string name="linkPreviewsErrorUnsecure">Previzualizarea nu a fost încărcată pentru linkul nesigur</string>
+    <string name="linkPreviewsFirstDescription">Afișați previzualizări pentru URL-urile pe care le trimiteți și le primiți. Acest lucru poate fi util, însă {app_name} trebuie să consulte site-urile web asociate pentru a genera previzualizările. Puteți, oricând, dezactiva previzualizarea linkurilor în setările din {app_name}.</string>
+    <string name="linkPreviewsSend">Trimite Previzualizări Link</string>
+    <string name="linkPreviewsSendModalDescription">Nu veți avea protecție completă asupra metadatelor atunci când trimiteți previzualizări ale linkurilor.</string>
+    <string name="linkPreviewsTurnedOff">Previzualizările linkurilor sunt dezactivate</string>
+    <string name="linkPreviewsTurnedOffDescription">{app_name} trebuie să contacteze website-urile legate pentru a genera previzualizări ale linkurilor pe care le trimiteți și le primiți.
+
+Puteți să le activați în setările {app_name}.</string>
+    <string name="loadAccount">Încarcă contul</string>
+    <string name="loadAccountProgressMessage">Se încarcă contul tău</string>
+    <string name="loading">Se încarcă...</string>
+    <string name="lockApp">Blochează Aplicația</string>
+    <string name="lockAppEnablePasscode">Trebuie să activați un cod de acces în setările iOS pentru a putea utiliza blocarea ecranului.</string>
+    <string name="lockAppLocked">{app_name} este blocat</string>
+    <string name="lockAppQuickResponse">Răspuns rapid nu este disponibil cât timp {app_name} este blocat!</string>
+    <string name="lockAppStatus">Stare blocare</string>
+    <string name="lockAppUnlock">Atingeți pentru a debloca</string>
+    <string name="lockAppUnlocked">{app_name} este deblocat</string>
+    <string name="max">Maximă</string>
+    <string name="media">Media</string>
+    <plurals name="members">
+        <item quantity="one">%1$d membru</item>
+        <item quantity="few">%1$d membri</item>
+        <item quantity="other">%1$d membri</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="one">%1$d membru activ</item>
+        <item quantity="few">%1$d membri activi</item>
+        <item quantity="other">%1$d membri activi</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">Adaugă Account ID sau ONS</string>
+    <string name="membersInvite">Invită contacte</string>
+    <string name="membersInviteSend">Trimite invitația</string>
+    <string name="membersInviteSendMultiple">Trimite invitațiile</string>
+    <string name="membersInviteShareDescription">Doriți să partajați istoricul mesajelor de grup cu <b>{name}</b>?</string>
+    <string name="membersInviteShareMessageHistory">Partajează istoricul mesajelor</string>
+    <string name="membersInviteShareMoreDescription">Doriți să partajați istoricul mesajelor de grup cu <b>{name}</b> și <b>{count} alții</b>?</string>
+    <string name="membersInviteShareNewMessagesOnly">Partajează doar mesaje noi</string>
+    <string name="membersInviteShareTwoDescription">Doriți să partajați istoricul mesajelor de grup cu <b>{name}</b> și <b>{other_name}</b>?</string>
+    <string name="membersInviteTitle">Invită</string>
+    <string name="message">Mesaj</string>
+    <string name="messageEmpty">Mesajul este gol.</string>
+    <string name="messageErrorDelivery">Livrarea mesajului a eșuat</string>
+    <string name="messageErrorLimit">Limita de mesaje a fost atinsă</string>
+    <string name="messageErrorOld">Ai primit un mesaj care a fost criptat cu o versiune mai veche de {app_name} care nu mai este suportată. Roagă-l pe expeditor să-și actualizeze aplicația la ultima versiune și să retrimită mesajul.</string>
+    <string name="messageErrorOriginal">Mesajul original nu a fost găsit</string>
+    <string name="messageInfo">Despre Mesaj</string>
+    <string name="messageMarkRead">Marchează ca citit</string>
+    <string name="messageMarkUnread">Marchează ca necitit</string>
+    <string name="messageNew">Mesaj nou</string>
+    <string name="messageNewDescriptionDesktop">Începe o conversație nouă introducând ID-ul contului prietenului tău sau ONS.</string>
+    <string name="messageNewDescriptionMobile">Începe o conversație nouă introducând ID-ul contului prietenului tău, ONS sau scanarea codului lor QR.</string>
+    <string name="messageNewMessages">Mesaje noi</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="one">Ai primit un mesaj nou.</item>
+        <item quantity="few">Ai %1$d mesaje noi.</item>
+        <item quantity="other">Ai %1$d mesaje noi.</item>
+    </plurals>
+    <string name="messageReplyingTo">Răspunde la</string>
+    <string name="messageRequestGroupInvite"><b>{name}</b> te-a invitat să te alături grupului <b>{group_name}</b>.</string>
+    <string name="messageRequestGroupInviteDescription">Trimiterea unui mesaj către acest grup va accepta automat invitația de grup.</string>
+    <string name="messageRequestPending">Solicitarea ta de mesaj este în așteptare.</string>
+    <string name="messageRequestPendingDescription">Veți putea trimite mesaje vocale și atașamente după ce destinatarul a aprobat această cerere de mesaj.</string>
+    <string name="messageRequestYouHaveAccepted">Ai acceptat cererea de mesaj de la <b>{name}.</b></string>
+    <string name="messageRequestsAcceptDescription">Trimiterea unui mesaj către acest utilizator va accepta automat solicitarea de mesaje și va dezvălui ID-ul contului tău.</string>
+    <string name="messageRequestsAccepted">Solicitarea ta de mesaj a fost acceptată.</string>
+    <string name="messageRequestsClearAllExplanation">Ești sigur că vrei să ștergi toate mesajele și invitațiile de grup?</string>
+    <string name="messageRequestsCommunities">Solicitări de mesaje de la comunitate</string>
+    <string name="messageRequestsCommunitiesDescription">Permite solicitări de mesaje din conversațiile comunității.</string>
+    <string name="messageRequestsDelete">Sunteți sigur că doriți să ștergeți această solicitare de mesaj?</string>
+    <string name="messageRequestsNew">Ai o cerere de mesaj nouă</string>
+    <string name="messageRequestsNonePending">Nici o cerere de mesaje în așteptare</string>
+    <string name="messageRequestsTurnedOff"><b>{name}</b> are solicitări de mesaje dezactivate pentru conversațiile din Community, așa că nu le poți trimite un mesaj.</string>
+    <string name="messageSelect">Selectează mesaj</string>
+    <string name="messageStatusFailedToSend">Trimitere eșuată</string>
+    <string name="messageStatusFailedToSync">Sincronizare eșuată</string>
+    <string name="messageStatusSyncing">Sincronizare</string>
+    <string name="messageUnread">Mesaje necitite</string>
+    <string name="messageVoice">Mesaj vocal</string>
+    <string name="messageVoiceErrorShort">Apasă și menține apăsat pentru a înregistra un mesaj vocal</string>
+    <string name="messageVoiceSlideToCancel">Glisează pentru a renunța</string>
+    <string name="messages">Mesaje</string>
+    <string name="minimize">Minimizează</string>
+    <string name="next">Următorul</string>
+    <string name="nicknameDescription">Alegeți un pseudonim pentru {name}. Acesta va apărea în conversațiile unul la unul și de grup.</string>
+    <string name="nicknameEnter">Introduceți pseudonimul dorit</string>
+    <string name="nicknameRemove">Elimină pseudonimul</string>
+    <string name="nicknameSet">Setează pseudonim</string>
+    <string name="no">Nu</string>
+    <string name="noSuggestions">Fără sugestii</string>
+    <string name="none">Niciuna</string>
+    <string name="notNow">Nu acum</string>
+    <string name="noteToSelf">Notă personală</string>
+    <string name="noteToSelfEmpty">Nu ai mesaje în Note to Self.</string>
+    <string name="noteToSelfHide">Ascundeți Notă personală</string>
+    <string name="noteToSelfHideDescription">Sunteți sigur că doriți să ascundeți Notă pentru mine?</string>
+    <string name="notificationsAllMessages">Toate mesajele</string>
+    <string name="notificationsAndroidSystem">{message_count} mesaje noi în {conversation_count} conversații</string>
+    <string name="notificationsContent">Conținut notificări</string>
+    <string name="notificationsContentDescription">Informaţiile prezentate în notificări.</string>
+    <string name="notificationsContentShowNameAndContent">Nume și Conținut</string>
+    <string name="notificationsContentShowNameOnly">Numai numele expeditorului</string>
+    <string name="notificationsContentShowNoNameOrContent">Nici nume nici conținut</string>
+    <string name="notificationsFastMode">Mod rapid</string>
+    <string name="notificationsFastModeDescriptionAndroid">Veți fi notificat despre mesaje noi imediat și sigur folosind serverele de notificare Google.</string>
+    <string name="notificationsFastModeDescriptionIos">Vei fi notificat de noi mesaje pe loc și în mod sigur folosind serverele de notificare Apple.</string>
+    <string name="notificationsGoToAndroidSettings">Mergi la setările de notificare Android</string>
+    <string name="notificationsGoToDevice">Mergi la setările de notificare ale dispozitivului</string>
+    <string name="notificationsIosGroup">{name} către {conversation_name}</string>
+    <string name="notificationsIosRestart">Este posibil să fi primit mesaje în timp ce {device} a fost repornit.</string>
+    <string name="notificationsLedColor">Culoare LED</string>
+    <string name="notificationsMentionsOnly">Doar mențiuni</string>
+    <string name="notificationsMessage">Notificări mesaje</string>
+    <string name="notificationsMostRecent">Cel mai recent de la: {name}</string>
+    <string name="notificationsMute">Fără sunet</string>
+    <string name="notificationsMuteFor">Fără sunet pentru {time_large}</string>
+    <string name="notificationsMuteUnmute">Activare sunet notificări</string>
+    <string name="notificationsMuted">Ignoră</string>
+    <string name="notificationsSlowMode">Slow Mode</string>
+    <string name="notificationsSlowModeDescription">{app_name} va verifica ocazional în fundal dacă există mesaje noi.</string>
+    <string name="notificationsSound">Sunet</string>
+    <string name="notificationsSoundDescription">Sunet când aplicația este deschisă</string>
+    <string name="notificationsSoundDesktop">Notificări audio</string>
+    <string name="notificationsStrategy">Strategie de notificare</string>
+    <string name="notificationsStyle">Stil de notificare</string>
+    <string name="notificationsVibrate">Vibrează</string>
+    <string name="off">Dezactivată</string>
+    <string name="okay">Okay</string>
+    <string name="onboardingAccountCreate">Creați un cont</string>
+    <string name="onboardingAccountCreated">Cont creat</string>
+    <string name="onboardingAccountExists">Am deja un cont</string>
+    <string name="onboardingBackAccountCreation">Nu poți reveni mai departe. Pentru a anula crearea contului tău, Session trebuie să se închidă.</string>
+    <string name="onboardingBackLoadAccount">Nu poți reveni mai departe. Pentru a opri încărcarea contului tău, Session trebuie să se închidă.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Crearea unui cont este instantanee, gratuită și anonimă</string>
+    <string name="onboardingBubbleNoPhoneNumber">Nici măcar nu ai nevoie de un număr de telefon pentru a te înscrie.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">Confidențialitatea în buzunarul tău.</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} este conceput pentru a proteja confidențialitatea ta.</string>
+    <string name="onboardingBubbleWelcomeToSession">Bine ați venit la {app_name}</string>
+    <string name="onboardingHitThePlusButton">Apasă butonul plus pentru a începe o conversație, pentru a crea un grup sau pentru a intra într-o comunitate oficială!</string>
+    <string name="onboardingMessageNotificationExplanation">Există două moduri în care {app_name} te poate notifica despre mesaje noi.</string>
+    <string name="onboardingPrivacy">Politica de confidențialitate</string>
+    <string name="onboardingTos">Termeni de Utilizare</string>
+    <string name="onboardingTosPrivacy">Prin utilizarea acestui serviciu, sunteți de acord cu <b>Termenii și condițiile</b> și <b>Politica de confidențialitate</b></string>
+    <string name="onionRoutingPath">Cale</string>
+    <string name="onionRoutingPathDescription">{app_name} ascunde IP-ul tău prin redirecționarea mesajelor tale prin mai multe service nodes în rețeaua descentralizată a {app_name}. Aceasta este calea ta curentă:</string>
+    <string name="onionRoutingPathDestination">Destinație</string>
+    <string name="onionRoutingPathEntryNode">Nod de intrare</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">Țară necunoscută</string>
+    <string name="onsErrorNotRecognized">Nu am putut recunoaște acest ONS. Vă rugăm să verificați și să încercați din nou.</string>
+    <string name="onsErrorUnableToSearch">Nu am putut căuta acest ONS. Vă rugăm să încercați din nou mai târziu.</string>
+    <string name="open">Deschide</string>
+    <string name="other">Altul</string>
+    <string name="passwordChange">Schimbã Parola</string>
+    <string name="passwordChangeDescription">Schimbați parola necesară pentru a debloca {app_name}.</string>
+    <string name="passwordChangedDescription">Parola ta a fost schimbată. Te rugăm să o păstrezi în siguranță.</string>
+    <string name="passwordConfirm">Confirmă parola</string>
+    <string name="passwordCreate">Creează-ți parola</string>
+    <string name="passwordCurrentIncorrect">Parola actuală este incorectă.</string>
+    <string name="passwordDescription">Necesită parolă pentru a debloca {app_name}.</string>
+    <string name="passwordEnter">Introduceți parola</string>
+    <string name="passwordEnterCurrent">Vă rugăm să introduceţi parola actuală.</string>
+    <string name="passwordEnterNew">Vă rugăm să introduceţi parola nouă</string>
+    <string name="passwordError">Parola poate conține doar litere, numere și simboluri simple</string>
+    <string name="passwordErrorLength">Parola trebuie să aibă între 6 și 64 de caractere lungime</string>
+    <string name="passwordErrorMatch">Parolele nu se potrivesc</string>
+    <string name="passwordFailed">Eroare la setarea parolei</string>
+    <string name="passwordIncorrect">Parolă incorectă</string>
+    <string name="passwordRemove">Elimină parolă</string>
+    <string name="passwordRemoveDescription">Elimină parola necesară pentru a debloca {app_name}.</string>
+    <string name="passwordRemovedDescription">Parola ta a fost eliminată.</string>
+    <string name="passwordSet">Setează parola</string>
+    <string name="passwordSetDescription">Parola ta a fost setată. Ține-o într-un loc sigur te rugam.</string>
+    <string name="paste">Lipire</string>
+    <string name="permissionsAppleMusic">{app_name} are nevoie de Apple Music pentru a reda atașamente media.</string>
+    <string name="permissionsAutoUpdate">Actualizare automată</string>
+    <string name="permissionsAutoUpdateDescription">Verifică automat actualizările la pornire</string>
+    <string name="permissionsFaceId">Funcția de blocare a ecranului pe {app_name} folosește Face ID.</string>
+    <string name="permissionsKeepInSystemTray">Păstrează activ in bară</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} continuă să ruleze în fundal când închideți fereastra</string>
+    <string name="permissionsLibrary">{app_name} are nevoie de acces la biblioteca foto pentru a continua. Puteți activa accesul în setările iOS.</string>
+    <string name="permissionsMicrophone">Microfon</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">{app_name} are nevoie de permisiunea pentru Microfon pentru a putea trimite mesaje audio dar i-a fost refuzat accesul permanent. Vă rugăm să navigați în meniul de setări al aplicației, selectați \"Permisiuni\" și activați \"Microfon\".</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">Poți activa accesul la microfon din setările de confidențialitate ale {app_name}.</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">{app_name} are nevoie de acces la microfon pentru a efectua apeluri și a înregistra mesaje audio.</string>
+    <string name="permissionsMicrophoneDescription">Permiteți accesul la microfon</string>
+    <string name="permissionsRequired">E nevoie de permisiune</string>
+    <string name="permissionsStorageSave">{app_name} are nevoie de acces la stocare pentru a salva atașamente și media.</string>
+    <string name="permissionsStorageSaveDenied">{app_name} are nevoie de permisiune la spațiul de stocare pentru a salva poze și filme, dar i-a fost refuzat accesul permanent. Vă rog navigați în meniul de setări al aplicației, selectați \"Permisiuni\" și activați \"Spațiu de stocare\".</string>
+    <string name="permissionsStorageSend">{app_name} are nevoie de acces la stocare pentru a trimite poze și filme.</string>
+    <string name="pin">Fixați</string>
+    <string name="pinConversation">Fixare conversație</string>
+    <string name="pinUnpin">Anulați fixarea</string>
+    <string name="pinUnpinConversation">Anulați fixarea conversației</string>
+    <string name="preview">Previzualizare</string>
+    <string name="profile">Profil</string>
+    <string name="profileDisplayPicture">Afișează imaginea</string>
+    <string name="profileDisplayPictureRemoveError">Nu s-a putut elimina imaginea de afișare.</string>
+    <string name="profileDisplayPictureSet">Setează imaginea de profil</string>
+    <string name="profileDisplayPictureSizeError">Vă rugăm alegeți un fișier mai mic.</string>
+    <string name="profileErrorUpdate">Actualizarea profilului a eșuat.</string>
+    <string name="promote">Promovează</string>
+    <string name="qrCode">Cod QR</string>
+    <string name="qrNotAccountId">Acest cod QR nu conține un ID de cont</string>
+    <string name="qrNotRecoveryPassword">Acest cod QR nu conține o parolă de recuperare</string>
+    <string name="qrScan">Scanează cod QR</string>
+    <string name="qrView">Vizualare QR</string>
+    <string name="qrYoursDescription">Prieteni dvs. pot să vă trimite mesaje scanând codul QR.</string>
+    <string name="quit">Ieșire {app_name}</string>
+    <string name="quitButton">Ieșire</string>
+    <string name="read">Citit</string>
+    <string name="readReceipts">Confirmări de citire</string>
+    <string name="readReceiptsDescription">Afișează confirmările de citire pentru toate mesajele trimise și primite.</string>
+    <string name="received">Primit:</string>
+    <string name="recommended">Recomandat</string>
+    <string name="recoveryPasswordBannerDescription">Salvați parola de recuperare pentru a vă asigura că nu pierdeți accesul la contul dumneavoastră.</string>
+    <string name="recoveryPasswordBannerTitle">Salvați parola de recuperare</string>
+    <string name="recoveryPasswordDescription">Folosește parola de recuperare pentru a încărca contul pe dispozitive noi.
+
+Contul nu poate fi recuperat fără parola de recuperare. Asigurați-vă că este stocată într-un loc sigur și securizat – și nu o împărtășiți nimănui.</string>
+    <string name="recoveryPasswordEnter">Introduceți parola de recuperare</string>
+    <string name="recoveryPasswordErrorMessageGeneric">Vă rugăm să verificați parola de recuperare și încercați din nou.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">Unele din cuvintele din Parola de Recuperare sunt incorecte. Te rugăm să verifici și să încerci din nou.</string>
+    <string name="recoveryPasswordErrorMessageShort">Parola de Recuperare introdusă nu este suficient de lungă. Te rugăm să verifici și să încerci din nou.</string>
+    <string name="recoveryPasswordErrorTitle">Parolă de recuperare incorectă</string>
+    <string name="recoveryPasswordExplanation">Pentru a-ți încărca contul, introduce parola de recuperare.</string>
+    <string name="recoveryPasswordHidePermanently">Ascunde Parolă de recuperare Permanent</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">Fără parola de recuperare, nu puteți încărca contul dvs. pe dispozitive noi. 
+
+Vă recomandăm insistent să salvați parola de recuperare într-un loc sigur și securizat înainte de a continua.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">Sunteţi sigur că doriţi să ascundeţi definitiv parola de recuperare pe acest dispozitiv? Acest lucru nu poate fi anulat.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Ascunde Parolă de recuperare</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">Ascunde permanent fraza de recuperare de pe acest dispozitiv.</string>
+    <string name="recoveryPasswordRestoreDescription">Introduceți parola de recuperare pentru a încărca contul dvs. Dacă nu ați salvat-o, o puteți găsi în setările aplicației.</string>
+    <string name="recoveryPasswordView">Vizualizați parola</string>
+    <string name="recoveryPasswordWarningSendDescription">Aceasta este parola ta de recuperare. Dacă o trimiți cuiva, acea persoană va avea acces complet la contul tău.</string>
+    <string name="redo">Refă</string>
+    <string name="remove">Elimină</string>
+    <string name="reply">Răspunde</string>
+    <string name="resend">Retrimite</string>
+    <string name="resolving">Se încarcă informațiile despre țară...</string>
+    <string name="restart">Repornește</string>
+    <string name="resync">Resincronizează</string>
+    <string name="retry">Reîncercați</string>
+    <string name="save">Salvează</string>
+    <string name="saved">Salvat</string>
+    <string name="savedMessages">Mesaje salvate</string>
+    <string name="saving">Se salvează...</string>
+    <string name="scan">Scanează</string>
+    <string name="screenSecurity">Securitate ecran</string>
+    <string name="screenshotNotifications">Notificări captură ecran</string>
+    <string name="screenshotNotificationsDescription">Primește o notificare atunci când un contact face o captură de ecran a unei conversații unu-la-unu.</string>
+    <string name="screenshotTaken"><b>{name}</b> a făcut o captură de ecran.</string>
+    <string name="search">Căutați</string>
+    <string name="searchContacts">Cauta contacte</string>
+    <string name="searchConversation">Caută conversație</string>
+    <string name="searchEnter">Căutați.</string>
+    <string name="searchMatchesNone">Nu s-au găsit rezultate.</string>
+    <string name="searchMatchesNoneSpecific">Nu s-a găsit nici un rezultat pentru {query}</string>
+    <string name="searchMembers">Caută membri</string>
+    <string name="searchSearching">Căutare...</string>
+    <string name="select">Selectează</string>
+    <string name="selectAll">Selectează tot</string>
+    <string name="send">Trimite</string>
+    <string name="sending">Trimitere</string>
+    <string name="sent">Trimis:</string>
+    <string name="sessionAppearance">Aspect</string>
+    <string name="sessionClearData">Șterge datele</string>
+    <string name="sessionConversations">Conversații</string>
+    <string name="sessionHelp">Ajutor</string>
+    <string name="sessionInviteAFriend">Invită un prieten</string>
+    <string name="sessionMessageRequests">Cereri de Mesaje</string>
+    <string name="sessionNotifications">Notificări</string>
+    <string name="sessionPermissions">Permisiuni</string>
+    <string name="sessionPrivacy">Confidenţialitate</string>
+    <string name="sessionRecoveryPassword">Parolă de recuperare</string>
+    <string name="sessionSettings">Setări</string>
+    <string name="set">Setează</string>
+    <string name="settingsRestartDescription">Trebuie să reporniți {app_name} pentru a aplica noile setări.</string>
+    <string name="share">Partajează</string>
+    <string name="shareAccountIdDescription">Invită-ți prietenul să converseze cu tine pe Session împărtășindu-i ID-ul tău de cont.</string>
+    <string name="shareAccountIdDescriptionCopied">Împărtășește cu prietenii tai oriunde comunici cu ei - apoi muta conversația aici.</string>
+    <string name="shareExtensionDatabaseError">Există o problemă la deschiderea bazei de date. Te rugăm să repornești aplicația și să încerci din nou.</string>
+    <string name="shareToSession">Partajează către {app_Name}</string>
+    <string name="show">Afișează</string>
+    <string name="showAll">Afișează tot</string>
+    <string name="showLess">Arată mai puțin</string>
+    <string name="stickers">Autocolante</string>
+    <string name="supportGoTo">Mergi la Pagina de Suport</string>
+    <string name="theContinue">Continuați</string>
+    <string name="theDefault">Implicit</string>
+    <string name="theError">Eroare</string>
+    <string name="tryAgain">Încercați din nou</string>
+    <string name="typingIndicators">Indicatori tastare</string>
+    <string name="typingIndicatorsDescription">Vezi și partajează indicatorii de tastare (...)</string>
+    <string name="undo">Anulează</string>
+    <string name="unknown">Necunoscut</string>
+    <string name="updateApp">Actualizări aplicație</string>
+    <string name="updateDownloaded">Actualizare instalată, faceți clic pentru a reporni</string>
+    <string name="updateDownloading">Se descarcă actualizarea: {percent_loader}%</string>
+    <string name="updateError">Nu se poate actualiza</string>
+    <string name="updateErrorDescription">{app_name} nu a reușit să se actualizeze. Vă rugăm să accesați {download_url} și instalați manual noua versiune, apoi contactați Centrul de Asistență pentru a ne informa despre această problemă.</string>
+    <string name="updateNewVersion">Este disponibilă o nouă versiune de {app_name}, apăsați pentru actualizare</string>
+    <string name="updateNewVersionDescription">Este disponibilă o nouă versiune de {app_name}.</string>
+    <string name="updateReleaseNotes">Mergi la Notele de Lansare</string>
+    <string name="updateSession">Actualizare {app_name}</string>
+    <string name="updateVersion">Versiunea {version}</string>
+    <string name="uploading">Încărcare</string>
+    <string name="urlCopy">Copiați adresa URL</string>
+    <string name="urlOpen">Deschide URL</string>
+    <string name="urlOpenBrowser">Aceasta se va deschide în browserul tău.</string>
+    <string name="urlOpenDescription">Sunteți sigur că doriți să deschideți acest URL în browser-ul dumneavoastră?
+
+{url}</string>
+    <string name="useFastMode">Folosește modul rapid</string>
+    <string name="video">Video</string>
+    <string name="videoErrorPlay">Nu se poate reda videoclipul.</string>
+    <string name="view">Vizualizare</string>
+    <string name="waitFewMinutes">Poate dura câteva minute.</string>
+    <string name="waitOneMoment">Un moment vă rog...</string>
+    <string name="warning">Atenţie</string>
+    <string name="window">Fereastră</string>
+    <string name="yes">Da</string>
+    <string name="you">Tu</string>
 </resources>

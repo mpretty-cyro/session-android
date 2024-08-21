@@ -1,488 +1,791 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="yes">Jah</string>
-    <string name="no">Ei</string>
+    <string name="about">Teave</string>
+    <string name="accept">Nõustu</string>
+    <string name="accountIDCopy">Kopeeri konto ID</string>
+    <string name="accountIdCopied">Konto ID kopeeritud</string>
+    <string name="accountIdCopyDescription">Kopeeri oma konto ID ja jaga seda oma sõpradega, et nad saaksid sulle sõnumeid saata.</string>
+    <string name="accountIdEnter">Sisesta Account ID</string>
+    <string name="accountIdErrorInvalid">See kontotuvastusnumber on vale. Palun kontrollige ja proovige uuesti.</string>
+    <string name="accountIdOrOnsEnter">Sisesta Account ID või ONS</string>
+    <string name="accountIdOrOnsInvite">Kutsu Account ID või ONS</string>
+    <string name="accountIdShare">Hei, olen kasutanud {app_name} täielikuks privaatsuseks ja turvaliseks vestlemiseks. Liitu minuga! Minu Konto ID on
+
+{account_id}
+
+Lae alla siin {download_url}</string>
+    <string name="accountIdYours">Teie konto ID</string>
+    <string name="accountIdYoursDescription">See on teie kontotuvastusnumber. Teised kasutajad saavad seda skaneerida, et alustada teiega vestlust.</string>
+    <string name="actualSize">Tegelik suurus</string>
+    <string name="add">Lisa</string>
+    <string name="adminCannotBeRemoved">Adminneid ei saa eemaldada.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name}</b> ja <b>{count} teist</b> määrati adminiks.</string>
+    <string name="adminPromote">Edenda administraatoreid</string>
+    <string name="adminPromoteDescription">Kas soovite kasutajat <b>{name}</b> adminiks määrata? Adminkasutajaid ei saa eemaldada.</string>
+    <string name="adminPromoteMoreDescription">Kas soovite kasutajad <b>{name}</b> ja <b>{count} teist</b> adminiks määrata? Adminkasutajaid ei saa eemaldada.</string>
+    <string name="adminPromoteToAdmin">Edenda administraatoriks</string>
+    <string name="adminPromoteTwoDescription">Kas soovite kasutajad <b>{name}</b> ja <b>{other_name}</b> adminiks määrata? Adminkasutajaid ei saa eemaldada.</string>
+    <string name="adminPromotedToAdmin"><b>{name}</b> määrati adminiks.</string>
+    <string name="adminPromotionFailed">Admini edutamine ebaõnnestus</string>
+    <string name="adminPromotionFailedDescription">Ebaõnnestus edutada {name} gruppi {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMany">Ebaõnnestus edutada {name} ja {count} teisi gruppi {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMore">Ebaõnnestus edutada {name} ja {other_name} gruppi {group_name}</string>
+    <string name="adminPromotionSent">Admini edutamine saadeti</string>
+    <string name="adminRemove">Eemalda administraatoreid</string>
+    <string name="adminRemoveAsAdmin">Eemalda administraatorina</string>
+    <string name="adminRemoveCommunityNone">Selles kogukonnas pole administraatoreid.</string>
+    <string name="adminRemoveFailed">Ebaõnnestus eemaldada {name} administraatoriks.</string>
+    <string name="adminRemovedUser"><b>{name}</b> eemaldati administraatorina.</string>
+    <string name="adminSendingPromotion">Administraatori edutamine</string>
+    <string name="adminSettings">Admini seaded</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name}</b> ja <b>{other_name}</b> määrati adminiks.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">Anonüümne</string>
+    <string name="appearanceAutoDarkMode">Autom. tumerežiim</string>
+    <string name="appearanceHideMenuBar">Peida menüüriba</string>
+    <string name="appearanceLanguage">Keel</string>
+    <string name="appearanceLanguageDescription">Valige {app_name} keele seade. {app_name} taaskäivitub, kui muudate oma keele seadet.</string>
+    <string name="appearancePreview1">Kuidas sul läheb?</string>
+    <string name="appearancePreview2">Mul on hästi, aitäh, kuidas sinul?</string>
+    <string name="appearancePreview3">Mul läheb suurepäraselt, aitäh.</string>
+    <string name="appearancePrimaryColor">Põhivärv</string>
+    <string name="appearanceThemes">Teemad</string>
+    <string name="appearanceThemesClassicDark">Klassikaline tume</string>
+    <string name="appearanceThemesClassicLight">Klassikaline hele</string>
+    <string name="appearanceThemesOceanDark">Ookeani tume</string>
+    <string name="appearanceThemesOceanLight">Ookeani hele</string>
+    <string name="appearanceZoom">Suurenda</string>
+    <string name="appearanceZoomIn">Suurenda</string>
+    <string name="appearanceZoomOut">Vähenda</string>
+    <string name="attachment">Manus</string>
+    <string name="attachmentsAdd">Lisa manus</string>
+    <string name="attachmentsAlbumUnnamed">Nimeta album</string>
+    <string name="attachmentsAutoDownload">Manuste automaatne allalaadimine</string>
+    <string name="attachmentsAutoDownloadDescription">Laadi automaatselt alla meediume ja faile sellest vestlusest.</string>
+    <string name="attachmentsAutoDownloadModalDescription">Kas soovite automaatselt alla laadida kõik failid vestlusest <b>{conversation_name}</b>?</string>
+    <string name="attachmentsAutoDownloadModalTitle">Autom. allalaadimine</string>
+    <string name="attachmentsClearAll">Tühjenda kõik manused</string>
+    <string name="attachmentsClearAllDescription">Kas soovite kõik manused kustutada? Sõnumid manustega kustutatakse samuti.</string>
+    <string name="attachmentsClickToDownload">Click to download {file_type}</string>
+    <string name="attachmentsCollapseOptions">Collapse attachment options</string>
+    <string name="attachmentsCollecting">Kogun manuseid...</string>
+    <string name="attachmentsDownload">Laadi manus alla</string>
+    <string name="attachmentsDuration">Kestus:</string>
+    <string name="attachmentsErrorLoad">Tõrge faili manustamisel</string>
+    <string name="attachmentsErrorNoApp">Ei leia rakendust meediumi valimiseks.</string>
+    <string name="attachmentsErrorNotSupported">Seda failitüüpi ei toetata.</string>
+    <string name="attachmentsErrorNumber">Ei saa saata rohkem kui 32 pildi- ja videofaili korraga.</string>
+    <string name="attachmentsErrorOpen">Faili avamine ebaõnnestus.</string>
+    <string name="attachmentsErrorSending">Tõrge faili saatmisel</string>
+    <string name="attachmentsErrorSeparate">Palun saatke failid eraldi sõnumitena.</string>
+    <string name="attachmentsErrorSize">Failid peavad olema alla 10MB</string>
+    <string name="attachmentsErrorTypes">Ei saa lisada pilte ja videoid teiste failitüüpidega. Proovige teisi faile saata eraldi sõnumina.</string>
+    <string name="attachmentsExpired">Manuse aegumistähtaeg on lõppenud</string>
+    <string name="attachmentsFileId">Faili ID:</string>
+    <string name="attachmentsFileSize">Faili suurus:</string>
+    <string name="attachmentsFileType">Failitüüp:</string>
+    <string name="attachmentsFilesEmpty">Teil ei ole selles vestluses ühtegi faili.</string>
+    <string name="attachmentsImageErrorMetadata">Failist ei saa metaandmeid eemaldada.</string>
+    <string name="attachmentsLoadingNewer">Laadin uuemat meediat...</string>
+    <string name="attachmentsLoadingNewerFiles">Laadin uuemaid faile...</string>
+    <string name="attachmentsLoadingOlder">Laadin vanemat meediat...</string>
+    <string name="attachmentsLoadingOlderFiles">Laadin vanemaid faile...</string>
+    <string name="attachmentsMedia">{name} juures {date_time}</string>
+    <string name="attachmentsMediaEmpty">Teil ei ole selles vestluses meediat.</string>
+    <string name="attachmentsMediaSaved">{name} salvestas meediumi</string>
+    <string name="attachmentsMoveAndScale">Liiguta ja skaleeri</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} Manus</string>
+    <string name="attachmentsResolution">Resolutsioon:</string>
+    <string name="attachmentsSaveError">Faili salvestamine ebaõnnestus.</string>
+    <string name="attachmentsSendTo">Saada kohta {name}</string>
+    <string name="attachmentsTapToDownload">Puudutage allalaadimiseks {file_type}</string>
+    <string name="attachmentsThisMonth">See kuu</string>
+    <string name="attachmentsThisWeek">See nädal</string>
+    <string name="attachmentsWarning">Salvestatud manuseid on võimalik juurde pääseda teiste rakenduste kaudu teie seadmes.</string>
+    <string name="audio">Heli</string>
+    <string name="audioNoInput">Helisisendit ei leitud</string>
+    <string name="audioNoOutput">Heliväljundit ei leitud</string>
+    <string name="audioUnableToPlay">Helifaili mängimine ebaõnnestus.</string>
+    <string name="audioUnableToRecord">Heli salvestamine nurjus.</string>
+    <string name="authenticateFailed">Autentimine ebaõnnestus</string>
+    <string name="authenticateFailedTooManyAttempts">Liiga palju nurjunud autentimiskatseid. Palun proovige hiljem uuesti.</string>
+    <string name="authenticateNotAccessed">Autentimist ei õnnestunud pääseda.</string>
+    <string name="authenticateToOpen">Autendi {app_name} avamiseks.</string>
+    <string name="back">Tagasi</string>
+    <string name="banDeleteAll">Blokeeri ja kustuta kõik</string>
+    <string name="banErrorFailed">Blokeerimine ebaõnnestus</string>
+    <string name="banUnbanErrorFailed">Blokeeringu tühistamine nurjus.</string>
+    <string name="banUnbanUser">Tühista blokeering</string>
+    <string name="banUnbanUserUnbanned">Kasutaja blokeering tühistatud</string>
+    <string name="banUser">Blokeeri kasutaja</string>
+    <string name="banUserBanned">Kasutaja blokeerimine</string>
+    <string name="block">Blokeeri</string>
+    <string name="blockBlockedDescription">Sõnumi saatmiseks eemalda selle kontakti blokeering.</string>
+    <string name="blockBlockedNone">Blokeeritud kontakte pole</string>
+    <string name="blockBlockedUser">Blokeeritud {name}</string>
+    <string name="blockDescription">Kas olete kindel, et soovite blokeerida <b>{name}</b>? Blokeeritud kasutajad ei saa teile saata sõnumitaotlusi, grupikutseid ega helistada.</string>
+    <string name="blockUnblock">Eemalda blokeering</string>
+    <string name="blockUnblockName">Kas soovite tühistada kasutaja {name} blokeeringu?</string>
+    <string name="blockUnblockNameMultiple">Kas soovite tühistada kasutajate {name} ja {count} teise blokeeringu?</string>
+    <string name="blockUnblockNameTwo">Kas soovite tühistada kasutaja {name} ja ühe teise blokeeringu?</string>
+    <string name="blockUnblockedUser">Tühista {name} blokeering</string>
+    <string name="call">Helista</string>
+    <string name="callsCalledYou">{name} helistas sulle</string>
+    <string name="callsCannotStart">Te ei saa uut kõnet alustada. Kõigepealt lõpetage oma praegune kõne.</string>
+    <string name="callsConnecting">Ühendan...</string>
+    <string name="callsEnd">Lõpeta kõne</string>
+    <string name="callsEnded">Kõne lõpetatud</string>
+    <string name="callsErrorAnswer">Kõnele vastamine ebaõnnestus</string>
+    <string name="callsErrorStart">Kõne alustamine ebaõnnestus</string>
+    <string name="callsInProgress">Kõne on pooleli</string>
+    <string name="callsIncoming">Sissetulev kõne kasutajalt {name}</string>
+    <string name="callsIncomingUnknown">Sissetulev kõne</string>
+    <string name="callsMissed">Vastamata kõne</string>
+    <string name="callsMissedCallFrom">Vastamata kõne kontaktilt {name}</string>
+    <string name="callsNotificationsRequired">Hääl- ja videokõnede kasutamiseks peavad teie süsteemi seaded olema lubatud.</string>
+    <string name="callsPermissionsRequired">Helistamise load on nõutud</string>
+    <string name="callsPermissionsRequiredDescription">\"Hääl- ja videokõnede\" loa saate anda privaatsussätetes.</string>
+    <string name="callsReconnecting">Taasühendamine…</string>
+    <string name="callsRinging">Heliseb...</string>
+    <string name="callsSessionCall">Sessioni kõne</string>
+    <string name="callsSettings">Kõned (beta)</string>
+    <string name="callsVoiceAndVideo">Hääl- ja videokõned</string>
+    <string name="callsVoiceAndVideoBeta">Hääl- ja videokõned (Beta)</string>
+    <string name="callsVoiceAndVideoModalDescription">Teie IP on nähtav teie kõnepartnerile ja Oxen Foundation serverile beetakõnede ajal.</string>
+    <string name="callsVoiceAndVideoToggleDescription">Võimaldab hääl- ja videokõned teistele kasutajatele ja teistelt kasutajalt</string>
+    <string name="callsYouCalled">Häälestasite {name}le</string>
+    <string name="callsYouMissedCallPermissions">Te ei vastanud kõnele <b>{name}</b>, kuna te ei ole lubanud <b>Voice and Video Calls</b> Privaatsusseadetes.</string>
+    <string name="cameraErrorNotFound">Kaamerat ei leitud</string>
+    <string name="cameraErrorUnavailable">Kaamera pole saadaval.</string>
+    <string name="cameraGrantAccess">Anna kaamerale juurdepääs</string>
+    <string name="cameraGrantAccessDenied">{app_name} vajab fotode ja videote salvestamiseks ligipääsu kaamerale, kuid see on jäädavalt keelatud. Palun jätka rakenduse seadetes, vali \"Õigused\" ja luba \"Kaamera\".</string>
+    <string name="cameraGrantAccessDescription">{app_name} vajab fotode ja videote salvestamiseks või QR-koodide skannimiseks kaamera juurdepääsu.</string>
+    <string name="cameraGrantAccessQr">{app_name} vajab QR-koodide skannimiseks kaamera juurdepääsu</string>
+    <string name="cancel">Tühista</string>
+    <string name="clear">Tühjenda</string>
+    <string name="clearAll">Tühjenda kõik</string>
+    <string name="clearDataAll">Kustuta kõik andmed</string>
+    <string name="clearDataAllDescription">See kustutab jäädavalt teie sõnumid ja kontaktid. Kas soovite kustutada ainult selle seadme või kustutada andmed ka võrgustikust?</string>
+    <string name="clearDataError">Andmed pole kustutatud</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="one">Andmeid ei kustutanud %1$d Service Node. Service Node ID: %2$s.</item>
+        <item quantity="other">Andmeid ei kustutanud %1$d Service Node\'i. Service Node\'i ID: %2$s.</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">Tekkis tundmatu viga ja teie andmeid ei kustutatud. Kas soovite oma andmed kustutada ainult sellest seadmest?</string>
+    <string name="clearDevice">Tühjenda seade</string>
+    <string name="clearDeviceAndNetwork">Tühjenda seade ja võrk</string>
+    <string name="clearDeviceAndNetworkConfirm">Kas soovite oma andmed võrgust kustutada? Jätkates ei saa te oma sõnumeid ega kontakte taastada.</string>
+    <string name="clearDeviceDescription">Kas olete kindel, et soovite oma seadet tühjendada?</string>
+    <string name="clearDeviceOnly">Tühjenda ainult seade</string>
+    <string name="clearMessages">Kustuta kõik sõnumid</string>
+    <string name="clearMessagesChatDescription">Kas olete kindel, et soovite selvestluses <b>{name}</b> kõik sõnumid oma seadmest eemaldada?</string>
+    <string name="clearMessagesCommunity">Kas olete kindel, et soovite kõik <b>{community_name}</b> sõnumid oma seadmest eemaldada?</string>
+    <string name="clearMessagesForEveryone">Kustuta kõigi jaoks</string>
+    <string name="clearMessagesForMe">Kustuta minu jaoks</string>
+    <string name="clearMessagesGroupAdminDescription">Kas olete kindel, et soovite kõik <b>{group_name}</b> sõnumid kustutada?</string>
+    <string name="clearMessagesGroupDescription">Kas olete kindel, et soovite kõik <b>{group_name}</b> sõnumid oma seadmest eemaldada?</string>
+    <string name="clearMessagesNoteToSelfDescription">Kas olete kindel, et soovite kõik Märkus endale sõnumid oma seadmest eemaldada?</string>
+    <string name="close">Sulge</string>
+    <string name="closeWindow">Sulge aken</string>
+    <string name="communityEnterUrl">Sisesta kogukonna URL</string>
+    <string name="communityEnterUrlErrorInvalid">Sobimatu URL</string>
+    <string name="communityEnterUrlErrorInvalidDescription">Palun kontrollige Community URL-i ja proovige uuesti.</string>
+    <string name="communityError">Kogukonna viga</string>
+    <string name="communityErrorDescription">Ups, ilmnes viga. Palun proovige hiljem uuesti.</string>
+    <string name="communityInvitation">Kogukonna kutse</string>
+    <string name="communityJoin">Liitu Kogukonnaga</string>
+    <string name="communityJoinDescription">Kas soovite liituda kogukonnaga {community_name}?</string>
+    <string name="communityJoinError">Kogukonnaga liitumine ebaõnnestus {community_name}</string>
+    <string name="communityJoinOfficial">Või liituge ühega neist...</string>
+    <string name="communityJoined">Liitunud Kogukonnaga</string>
+    <string name="communityJoinedAlready">Olete juba selle kogukonna liige.</string>
+    <string name="communityLeave">Lahku Kogukonnast</string>
+    <string name="communityLeaveError">Ebaõnnestus lahkuda kogukonnast {community_name}</string>
+    <string name="communityUnknown">Tundmatu kogukond</string>
+    <string name="communityUrl">Kogukonna URL</string>
+    <string name="communityUrlCopy">Kopeeri kogukonna URL</string>
+    <string name="confirm">Kinnita</string>
+    <string name="contactContacts">Kontaktid</string>
+    <string name="contactDelete">Kustuta kontakt</string>
+    <string name="contactDeleteDescription">Kas olete kindel, et soovite kontakeist kustutada <b>{name}</b>? <b>{name}</b>\'lt uued sõnumid jõuavad teieni sõnumitaotlusena.</string>
+    <string name="contactNone">Teil pole ühtegi kontakti</string>
+    <string name="contactSelect">Vali kontaktid</string>
+    <string name="contactUserDetails">Kasutaja andmed</string>
+    <string name="contentDescriptionCamera">Kaamera</string>
+    <string name="contentDescriptionChooseConversationType">Valige tegevus, et alustada vestlust</string>
+    <string name="contentDescriptionMediaMessage">Meediasõnum</string>
+    <string name="contentDescriptionMessageComposition">Sõnumi koostamine</string>
+    <string name="contentDescriptionQuoteThumbnail">Tsiteeritud sõnumist pärit pildi pisipilt</string>
+    <string name="contentDescriptionStartConversation">Loo vestlus uue kontaktiga</string>
+    <string name="conversationsAddToHome">Lisa avakuvale</string>
+    <string name="conversationsAddedToHome">Avakuvale lisatud</string>
+    <string name="conversationsAudioMessages">Helisõnumid</string>
+    <string name="conversationsAutoplayAudioMessage">Helisõnumite autom. esitamine</string>
+    <string name="conversationsAutoplayAudioMessageDescription">Järjestikuste helisõnumite autom. esitamine</string>
+    <string name="conversationsBlockedContacts">Blokeeritud kontaktid</string>
+    <string name="conversationsCommunities">Kogukonnad</string>
+    <string name="conversationsDelete">Kustuta vestlus</string>
+    <string name="conversationsDeleteDescription">Kas soovite kustutada oma vestluse kasutajaga <b>{name}?</b> Uued sõnumid kasutajalt <b>{name} </b> käivitavad uue vestluse.</string>
+    <string name="conversationsDeleted">Vestlus kustutatud</string>
+    <string name="conversationsEmpty">{conversation_name} ei ole sõnumeid.</string>
+    <string name="conversationsEnter">Sisesta Key</string>
+    <string name="conversationsEnterDescription">Enter-klahvi funktsioon vestluse ajal tippimisel.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER saadab sõnumi, ENTER alustab uut rida</string>
+    <string name="conversationsEnterSends">ENTER saadab sõnumi, SHIFT + ENTER alustab uut rida</string>
+    <string name="conversationsGroups">Grupid</string>
+    <string name="conversationsMessageTrimming">Sõnumi piiramine</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Lähenda kogukonnad</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">Kustutage sõnumid Community vestlustest, mis on vanemad kui 6 kuud ja kus on üle 2 000 sõnumi.</string>
+    <string name="conversationsNew">Uus vestlus</string>
+    <string name="conversationsNone">Teil pole veel ühtegi vestlust</string>
+    <string name="conversationsSendWithEnterKey">Saada Enter-klahviga</string>
+    <string name="conversationsSendWithEnterKeyDescription">Uuelt realt alustamise asemel saadab Enter-klahvi koputamine sõnumi.</string>
+    <string name="conversationsSettingsAllMedia">Kogu meedia</string>
+    <string name="conversationsSpellCheck">Õigekirjakontroll</string>
+    <string name="conversationsSpellCheckDescription">Luba õigekirjakontrolli, kui kirjutate sõnumeid</string>
+    <string name="conversationsStart">Alusta vestlust</string>
+    <string name="copied">Kopeeritud</string>
+    <string name="copy">Kopeeri</string>
+    <string name="create">Loo</string>
+    <string name="cut">Lõika</string>
+    <string name="databaseErrorGeneric">Andmebaasi viga.
+
+Ekspordi oma rakenduslogid, et jagada tõrkeotsinguteks. Kui see ei õnnestu, installige {app_name} uuesti ja taastage oma konto.
+
+Hoiatus: Selle tulemusel kaotate kõik kaks nädalat vanemad sõnumid, manused ja kontoandmed.</string>
+    <string name="databaseErrorTimeout">Oleme märganud, et {app_name} käivitamine võtab kaua aega.
+
+Võite jätkata ootamist, eksportida oma seadme logisid tõrkeotsingu eesmärgil jagamiseks või proovida Session\'i taaskäivitamist.</string>
+    <string name="databaseErrorUpdate">Teie rakenduse andmebaas ei ühildu selle {app_name} versiooniga. Installige rakendus uuesti ja taastage oma konto, et luua uus andmebaas ja jätkata {app_name} kasutamist.
+
+Hoiatus: See kaotab kõik vanemad kui kaks nädalat sõnumid ja manused.</string>
+    <string name="databaseOptimizing">Andmebaasi optimeerimine</string>
+    <string name="debugLog">Silumislogi</string>
+    <string name="decline">Keeldu</string>
     <string name="delete">Kustuta</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">Mõned teie seadmed kasutavad aegunud versioone. Sünkroonimine võib olla ebausaldusväärne, kuni neid värskendatakse.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">Blokeeri see kasutaja</string>
+    <string name="deleteAfterGroupPR1BlockUser">Blokeeri kasutaja</string>
+    <string name="deleteAfterGroupPR1GroupSettings">Grupi sätted</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Teavita vaid mainimistest</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">Kui lubatud, teavitatakse teid ainult sõnumitest, mis mainivad teid.</string>
+    <string name="deleteAfterGroupPR1MessageSound">Sõnumiheli</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">Kas kustutada see vestlus jäädavalt?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">Ei saa lahkuda, kui on teisi liikmeid lisatud või eemaldatud.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">Pärand</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">Esialgne kaduvate sõnumite versioon.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name}</b> määras kaduvate sõnumite taimeri väärtusele <b>{time}</b></string>
+    <string name="deleteMessage">Kustuta sõnum</string>
+    <string name="deleteMessageConfirm">Kas soovite selle sõnumi kustutada?</string>
+    <string name="deleteMessageDeleted">Sõnum kustutatud</string>
+    <string name="deleteMessageDeletedGlobally">See sõnum on kustutatud</string>
+    <string name="deleteMessageDeletedLocally">See sõnum on sellest seadmest kustutatud</string>
+    <string name="deleteMessageDescriptionDevice">Kas soovite selle sõnumi ainult sellest seadmest kustutada?</string>
+    <string name="deleteMessageDescriptionEveryone">Kas soovite selle sõnumi kõigi jaoks kustutada?</string>
+    <string name="deleteMessageDeviceOnly">Kustuta ainult sellest seadmest</string>
+    <string name="deleteMessageDevicesAll">Kustuta kõigis minu seadmetes</string>
+    <string name="deleteMessageEveryone">Kustuta kõigi jaoks</string>
+    <string name="deleteMessageFailed">Sõnumi kustutamine ebaõnnestus</string>
+    <string name="deleteMessages">Kustuta sõnumid</string>
+    <string name="deleteMessagesConfirm">Kas soovite need sõnumid kustutada?</string>
+    <string name="deleteMessagesDeleted">Sõnumid kustutatud</string>
+    <string name="deleteMessagesDescriptionDevice">Kas olete kindel, et soovite need sõnumid kustutada ainult sellest seadmest?</string>
+    <string name="deleteMessagesDescriptionEveryone">Kas olete kindel, et soovite need sõnumid kõigi jaoks kustutada?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="one">Sõnumi kustutamine ebaõnnestus</item>
+        <item quantity="other">Sõnumite kustutamine ebaõnnestus</item>
+    </plurals>
+    <string name="deleting">Kustutan</string>
+    <string name="developerToolsToggle">Lülita arendusvahendid sisse/välja</string>
+    <string name="dictationStart">Alusta dikteerimist...</string>
+    <string name="disappearingMessages">Kaduvad sõnumid</string>
+    <string name="disappearingMessagesCountdownBig">Sõnum kustutatakse {time_large} pärast</string>
+    <string name="disappearingMessagesCountdownBigMobile">Kustutab automaatselt {time_large} pärast</string>
+    <string name="disappearingMessagesCountdownBigSmall">Sõnum kustutatakse {time_large} {time_small} pärast</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">Kustutab automaatselt {time_large} {time_small} pärast</string>
+    <string name="disappearingMessagesDeleteType">Kustutamise tüüp</string>
+    <string name="disappearingMessagesDescription">See säte kehtib kõigile selles vestluses.</string>
+    <string name="disappearingMessagesDescription1">See säte kehtib sõnumitele, mida saadate selles vestluses.</string>
+    <string name="disappearingMessagesDisappear">Kadauvad pärast {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">Kaduvad pärast lugemist</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">Sõnumid kustutatakse pärast nende lugemist.</string>
+    <string name="disappearingMessagesDisappearAfterSend">Kaduvad pärast saatmist</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">Sõnumid kustutatakse pärast nende saatmist.</string>
+    <string name="disappearingMessagesFollowSetting">Järgi seadistust</string>
+    <string name="disappearingMessagesFollowSettingOff">Sõnumid, mida saadad, ei kao enam ära. Kas oled kindel, et soovid kadunud sõnumid välja lülitada?</string>
+    <string name="disappearingMessagesFollowSettingOn">Kas soovite määrata oma sõnumid kaduma <b>{time}</b> pärast nende <b>{disappearing_messages_type}</b> määratud?</string>
+    <string name="disappearingMessagesLegacy">{name} kasutab aegunud kliendi versiooni. Kaduvad sõnumid ei pruugi töötada ootuspäraselt.</string>
+    <string name="disappearingMessagesOnlyAdmins">Ainult grupi administraatorid saavad seda seadet muuta.</string>
+    <string name="disappearingMessagesSent">Saadetud</string>
+    <string name="disappearingMessagesSet"><b>{name}</b> määras kaduvad sõnumid kaduvaks {time} pärast nende {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesSetYou"><b>Sa</b> määrasid kaduvad sõnumid kaduvaks {time} pärast nende {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesTimer">Taimer</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name}</b> lülitas kaduvad sõnumid välja. Nende saadetud sõnumid ei kao enam.</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>Sina</b> lülitasid <b>välja</b> kaduvad sõnumid. Nüüd saadetavad sõnumid ei kao enam.</string>
+    <string name="disappearingMessagesTypeRead">loe</string>
+    <string name="disappearingMessagesTypeSent">saadetud</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> uuendas kaduvate sõnumite seadeid.</string>
+    <string name="disappearingMessagesUpdatedYou"><b>Sina</b> uuendasid kaduvate sõnumite seadeid.</string>
+    <string name="dismiss">Loobu</string>
+    <string name="displayNameDescription">See võib olla sinu pärisnimi, varjunimi või ükskõik mis muu sulle meeldib — ja saad seda igal ajal muuta.</string>
+    <string name="displayNameEnter">Sisestage kuvanimi</string>
+    <string name="displayNameErrorDescription">Palun valige kuvanimi</string>
+    <string name="displayNameErrorDescriptionShorter">Palun valige lühem kuvanimi</string>
+    <string name="displayNameErrorNew">Me ei suutnud teie kuvatavat nime laadida. Jätkamiseks sisestage uus kuvatav nimi.</string>
+    <string name="displayNameNew">Valige omale uus kuvanimi</string>
+    <string name="displayNamePick">Valige omale kuvanimi</string>
+    <string name="displayNameSet">Määra kuvanimi</string>
+    <string name="document">Dokument</string>
+    <string name="done">Valmis</string>
+    <string name="download">Lae alla</string>
+    <string name="downloading">Allalaadimine...</string>
+    <string name="draft">Mustand</string>
+    <string name="edit">Muuda</string>
+    <string name="emojiAndSymbols">Emotikonid ja sümbolid</string>
+    <string name="emojiCategoryActivities">Tegevused</string>
+    <string name="emojiCategoryAnimals">Loomad ja loodus</string>
+    <string name="emojiCategoryFlags">Lipud</string>
+    <string name="emojiCategoryFood">Söök ja jook</string>
+    <string name="emojiCategoryObjects">Objektid</string>
+    <string name="emojiCategoryRecentlyUsed">Hiljuti kasutatud</string>
+    <string name="emojiCategorySmileys">Emotikonid ja inimesed</string>
+    <string name="emojiCategorySymbols">Sümbolid</string>
+    <string name="emojiCategoryTravel">Reisid ja kohad</string>
+    <string name="emojiReactsClearAll">Kas soovite kõik {emoji} tühjendada?</string>
+    <string name="emojiReactsCoolDown">Võtke hoogu maha! Olete saatnud liiga palju emotikonide reaktsioone. Proovi varsti uuesti</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="one">Ja %1$d inimene on reageerinud %2$s sellele sõnumile.</item>
+        <item quantity="other">Ja %1$d inimest on reageerinud %2$s sellele sõnumile.</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} reageeris <emoji /></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} reageerisid <emoji /></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} ja <span>{count} teised</span> reageerisid <emoji /></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} ja <span>1 teine</span> reageerisid <emoji /></string>
+    <string name="emojiReactsHoverYouDesktop">Olete reageerinud <emoji/></string>
+    <string name="emojiReactsHoverYouNameDesktop">Sina ja {name} reageerisid <emoji />-ga</string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">Teie, {name} &amp; <span>{count} veel</span> reageerisid <emoji/></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">Teie, {name} &amp; <span>1 veel</span> reageerisid <emoji/></string>
+    <string name="emojiReactsNotification">Reageeris sinu sõnumile {emoji}</string>
+    <string name="enable">Luba</string>
+    <string name="errorConnection">Palun kontrollige oma internetiühendust ja proovige uuesti.</string>
+    <string name="errorCopyAndQuit">Kopeeri viga ja sulge</string>
+    <string name="errorDatabase">Andmebaasi viga</string>
+    <string name="errorUnknown">Tekkis tundmatu viga.</string>
+    <string name="failures">Ebaõnnestumised</string>
+    <string name="file">Fail</string>
+    <string name="files">Failid</string>
+    <string name="followSystemSettings">Järgi süsteemi sätteid</string>
+    <string name="from">Saatja:</string>
+    <string name="fullScreenToggle">Lülita täisekraanirežiimi</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">{app_name} loob ühenduse Giphyga, et pakkuda otsingutulemusi. GIF-ide saatmisel ei ole teil täielikku metaandmete kaitset.</string>
+    <string name="groupAddMemberMaximum">Grupis võib maksimaalselt olla 100 liiget</string>
+    <string name="groupCreate">Loo grupp</string>
+    <string name="groupCreateErrorNoMembers">Palun vali vähemalt 1 grupiliige.</string>
+    <string name="groupDelete">Kustuta grupp</string>
+    <string name="groupDeleteDescription">Kas olete kindel, et soovite kustutada <b>{group_name}</b>? See eemaldab kõik liikmed ja kustutab kogu grupi sisu.</string>
+    <string name="groupDescriptionEnter">Sisestage grupi kirjeldus</string>
+    <string name="groupDisplayPictureUpdated">Grupi kuvapilt uuendatud.</string>
+    <string name="groupEdit">Redigeeri gruppi</string>
+    <string name="groupError">Grupi viga</string>
+    <string name="groupErrorCreate">Grupi loomine ebaõnnestus. Palun kontrolli oma internetiühendust ja proovi uuesti.</string>
+    <string name="groupErrorJoin">Ebaõnnestus liituda grupiga {group_name}</string>
+    <string name="groupInformationSet">Määra grupi teave</string>
+    <string name="groupInviteDelete">Kas soovite selle grupikutse kustutada?</string>
+    <string name="groupInviteFailed">Kutsumine ebaõnnestus</string>
+    <string name="groupInviteFailedMore">Ebaõnnestus kutsuda {name} ja {count} teisi kasutajaid gruppi {group_name}</string>
+    <string name="groupInviteFailedTwo">Ebaõnnestus kutsuda {name} ja {other_name} gruppi {group_name}</string>
+    <string name="groupInviteFailedUser">Ebaõnnestus kutsuda {name} gruppi {group_name}</string>
+    <string name="groupInviteSending">Kutsekirja saatmine</string>
+    <string name="groupInviteSent">Kutse saadetud</string>
+    <string name="groupInviteSuccessful">Grupi kutse oli edukas</string>
+    <string name="groupInviteVersion">Kasutajatel peab olema versioon {version} või uuem, et saada kutseid</string>
+    <string name="groupInviteYou"><b>Sind</b> kutsuti grupiga liituma.</string>
+    <string name="groupLeave">Lahku grupist</string>
+    <string name="groupLeaveDescription">Kas soovite grupist või kogukonnast {group_name} lahkuda?</string>
+    <string name="groupLeaveDescriptionAdmin">Kas soovite grupist {group_name} lahkuda? Gruppen desaktiveerimine kõigi liikmete jaoks.</string>
+    <string name="groupLeaveErrorFailed">Ebaõnnestus lahkuda grupist {group_name}</string>
+    <string name="groupLegacyBanner">Grupid on uuendatud, loo uus grupp, et uuendada. Vana grupi funktsionaalsus hakkab alates {date} aeguma.</string>
+    <string name="groupMemberLeft"><b>{name}</b> lahkus grupist.</string>
+    <string name="groupMemberLeftMore"><b>{name}</b> ja <b>{count} teist</b> lahkusid grupist.</string>
+    <string name="groupMemberLeftTwo"><b>{name}</b> ja <b>{other_name}</b> lahkusid grupist.</string>
+    <string name="groupMemberMoreNew"><b>{name} </b>ja <b>{count} teist</b> liitusid grupiga.</string>
+    <string name="groupMemberNew"><b>{name}</b> liitus grupiga.</string>
+    <string name="groupMemberTwoNew"><b>{name}</b> ja <b>{other_name}</b> said grupi liikmeks.</string>
+    <string name="groupMemberYouLeft"><b>Sina</b> lahkusid grupist.</string>
+    <string name="groupMembers">Grupi liikmed</string>
+    <string name="groupMembersNone">Selles grupis pole teisi liikmeid.</string>
+    <string name="groupName">Grupi nimi</string>
+    <string name="groupNameEnter">Sisestage grupi nimi</string>
+    <string name="groupNameEnterPlease">Palun sisestage grupi nimi.</string>
+    <string name="groupNameEnterShorter">Palun sisestage grupile lühem nimi.</string>
+    <string name="groupNameNew">Grupi nimi on nüüd {group_name}. </string>
+    <string name="groupNameUpdated">Grupi nimi uuendatud.</string>
+    <string name="groupNoMessages">Teil pole <b>{group_name}</b>\'ilt sõnumeid. Vestluse alustamiseks saatke sõnum!</string>
+    <string name="groupOnlyAdmin">Olete ainus administraator grupis <b>{group_name}</b>.
+
+Grupi liikmeid ja sätteid ei saa muuta ilma administraatorita.</string>
+    <string name="groupPromotedYou"><b>Sina</b> määrati adminiks.</string>
+    <string name="groupRemoveDescription">Kas soovite eemaldada <b>{name}</b> grupist <b>{group_name}</b>?</string>
+    <string name="groupRemoveMessages">Eemalda kasutaja ja nende sõnumid</string>
+    <string name="groupRemoveMoreDescription">Kas soovite eemaldada <b>{name}</b> ja <b>{count} teised</b> grupist <b>{group_name}</b>?</string>
+    <string name="groupRemoveTwoDescription">Kas soovite eemaldada <b>{name}</b> ja <b>{other_name}</b> grupist <b>{group_name}</b>?</string>
+    <string name="groupRemoveUserOnly">Eemalda kasutaja</string>
+    <string name="groupRemoveUsersMessages">Eemalda kasutajad ja nende sõnumid</string>
+    <string name="groupRemoveUsersOnly">Eemalda kasutajad</string>
+    <string name="groupRemoved"><b>{name}</b> eemaldati grupist.</string>
+    <string name="groupRemovedMore"><b>{name}</b> ja <b>{count} teist</b> eemaldati grupist.</string>
+    <string name="groupRemovedTwo"><b>{name}</b> ja <b>{other_name}</b> eemaldati grupist.</string>
+    <string name="groupRemovedYou">Teid eemaldati grupist <b>{group_name}</b>.</string>
+    <string name="groupSetDisplayPicture">Määra grupi kuvapilt</string>
+    <string name="groupUnknown">Tundmatu grupp</string>
+    <string name="groupUpdated">Grupp uuendatud</string>
+    <string name="helpFAQ">KKK</string>
+    <string name="helpReportABug">Teata veast</string>
+    <string name="helpReportABugDescription">Jaga mõnda teavet, et saaksime teie probleemi lahendada. Ekspordi oma logid ja lae fail üles {app_name}\'i abikeskuse kaudu.</string>
+    <string name="helpReportABugExportLogs">Ekspordi logid</string>
+    <string name="helpReportABugExportLogsDescription">Eksportige oma logid, laadige fail üles {app_name} kasutajatoe kaudu.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">Salvesta töölauale</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">Salvesta see fail oma arvutisse ja jaga seda {app_name} arendajatega.</string>
+    <string name="helpSupport">Tugi</string>
+    <string name="helpWedLoveYourFeedback">Oleme tänulikud tagasiside eest</string>
+    <string name="hide">Peida</string>
+    <string name="hideOthers">Peida teised</string>
+    <string name="image">Pilt</string>
+    <string name="incognitoKeyboard">Inkognito klaviatuur</string>
+    <string name="incognitoKeyboardDescription">Küsi inkognito režiimi, kui see on saadaval. Olenevalt klaviatuurist võib see taotlus eirata.</string>
+    <string name="info">Info</string>
+    <string name="invalidShortcut">Sobimatu otsetee</string>
+    <string name="join">Liitu</string>
+    <string name="later">Hiljem</string>
+    <string name="learnMore">Lisateave</string>
+    <string name="leave">Lahku</string>
+    <string name="leaving">Lahkumine...</string>
+    <string name="linkPreviews">Lingi eelvaated</string>
+    <string name="linkPreviewsDescription">Näita linkide eelvaateid toetatud URL-ide puhul.</string>
+    <string name="linkPreviewsEnable">Kas lubada lingi eelvaated</string>
+    <string name="linkPreviewsErrorLoad">Linki eelvaate laadimine ebaõnnestus</string>
+    <string name="linkPreviewsErrorUnsecure">Eelvaadet ei laaditud turvamata lingi jaoks</string>
+    <string name="linkPreviewsSend">Saada lingi eelvaated</string>
+    <string name="linkPreviewsSendModalDescription">Lingieelvaadete saatmisel ei pruugi teil olla täielik metakaitse.</string>
+    <string name="linkPreviewsTurnedOff">Lingi eelvaated on välja lülitatud</string>
+    <string name="linkPreviewsTurnedOffDescription">{app_name} peab linkide eelvaadete genereerimiseks ühendust võtma lingitud veebisaitidega. 
+
+ Saate need sisse lülitada {app_name}\'i seadetes.</string>
+    <string name="loadAccount">Laadi konto</string>
+    <string name="loadAccountProgressMessage">Laadin sinu kontot</string>
+    <string name="loading">Laadimine...</string>
+    <string name="lockApp">Lukusta rakendus</string>
+    <string name="lockAppDescriptionAndroid">Nõutav sõrmejälg, PIN-kood, muster või parool {app_name} avamiseks.</string>
+    <string name="lockAppDescriptionIos">Nõutav Touch ID, Face ID või pääsukood {app_name} avamiseks.</string>
+    <string name="lockAppEnablePasscode">Ekraaniluku kasutamiseks peate oma iOS-i seadetes lubama pääsukoodi.</string>
+    <string name="lockAppLocked">{app_name} on lukustatud</string>
+    <string name="lockAppQuickResponse">Kiirvastus pole saadaval, kui {app_name} on lukustatud!</string>
+    <string name="lockAppStatus">Luku olek</string>
+    <string name="lockAppUnlock">Avamiseks puudutage</string>
+    <string name="lockAppUnlocked">{app_name} on avatud</string>
+    <string name="max">Maksimaalne</string>
+    <string name="media">Meedium</string>
+    <plurals name="members">
+        <item quantity="one">%1$d liige</item>
+        <item quantity="other">%1$d liiget</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="one">%1$d aktiivne liige</item>
+        <item quantity="other">%1$d aktiivset liiget</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">Lisa konto ID või ONS</string>
+    <string name="membersInvite">Kutsu sõpru</string>
+    <string name="membersInviteSend">Saada kutse</string>
+    <string name="membersInviteSendMultiple">Saada kutsed</string>
+    <string name="membersInviteShareDescription">Kas soovite jagada grupisõnumite ajalugu koos <b>{name}</b>?</string>
+    <string name="membersInviteShareMessageHistory">Jaga sõnumi ajalugu</string>
+    <string name="membersInviteShareMoreDescription">Kas soovite jagada grupisõnumite ajalugu koos <b>{name}</b> ja <b>{count} teistega</b>?</string>
+    <string name="membersInviteShareNewMessagesOnly">Jaga ainult uusi sõnumeid</string>
+    <string name="membersInviteShareTwoDescription">Kas soovite jagada grupisõnumite ajalugu koos <b>{name}</b> ja <b>{other_name}</b>?</string>
+    <string name="membersInviteTitle">Kutsu</string>
+    <string name="message">Sõnum</string>
+    <string name="messageEmpty">See sõnum on tühi.</string>
+    <string name="messageErrorDelivery">Sõnumi kohaletoimetamine ebaõnnestus</string>
+    <string name="messageErrorLimit">Sõnumi piirang saavutatud</string>
+    <string name="messageErrorOld">Vastuvõetud sõnum, mis on krüptitud kasutades vana, mittetoetatud {app_name} versiooni. Palun palu saatjal uuendada uusimale versioonile ja siis sõnum uuesti saata.</string>
+    <string name="messageErrorOriginal">Originaalsõnumit ei leitud</string>
+    <string name="messageInfo">Sõnumi andmed</string>
+    <string name="messageMarkRead">Märgi loetuks</string>
+    <string name="messageMarkUnread">Märgi lugemata</string>
+    <string name="messageNew">Uus sõnum</string>
+    <string name="messageNewDescriptionDesktop">Alustage uut vestlust, sisestades oma sõbra Account ID või ONS.</string>
+    <string name="messageNewDescriptionMobile">Alustage uut vestlust, sisestades oma sõbra Account ID, ONS või skannides nende QR-koodi.</string>
+    <string name="messageNewMessages">Uued sõnumid</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="one">Sul on uus sõnum.</item>
+        <item quantity="other">Sul on %1$d uut sõnumit.</item>
+    </plurals>
+    <string name="messageReplyingTo">Vastamine</string>
+    <string name="messageRequestGroupInvite"><b>{name}</b> kutsus teid liituma grupiga <b>{group_name}</b>.</string>
+    <string name="messageRequestGroupInviteDescription">Sõnumi saatmine sellele grupile aktsepteerib automaatselt grupikutse.</string>
+    <string name="messageRequestPending">Teie sõnumitaotlus on praegu ootel.</string>
+    <string name="messageRequestPendingDescription">Saate häälsõnumeid ja manuseid saata, kui adressaat on selle sõnumitaotluse heaks kiitnud.</string>
+    <string name="messageRequestYouHaveAccepted">Olete sõnumitaotluse <b>{name}</b> vastu võtnud.</string>
+    <string name="messageRequestsAcceptDescription">Sõnumi saatmine sellele kasutajale aktsepteerib automaatselt tema sõnumitaotluse ja paljastab teie Account ID.</string>
+    <string name="messageRequestsAccepted">Teie sõnumitaotlus on vastu võetud.</string>
+    <string name="messageRequestsClearAllExplanation">Kas soovite kõik sõnumid ja grupikutseid kustutada?</string>
+    <string name="messageRequestsCommunities">Kogukonna sõnumitaotlused</string>
+    <string name="messageRequestsCommunitiesDescription">Luba sõnumitaotlused kogukonnavestlustest.</string>
+    <string name="messageRequestsDelete">Kas soovite selle sõnumitaotluse kustutada?</string>
+    <string name="messageRequestsNew">Teil on uus sõnumitaotlus</string>
+    <string name="messageRequestsNonePending">Ootel sõnumitaotlused puuduvad</string>
+    <string name="messageRequestsTurnedOff"><b>{name}</b> on kogukonna vestluste sõnumitaotlused välja lülitanud, te ei saa neile sõnumit saata.</string>
+    <string name="messageSelect">Vali sõnum</string>
+    <string name="messageStatusFailedToSend">Saatmine nurjus</string>
+    <string name="messageStatusFailedToSync">Sünkroonimine nurjus</string>
+    <string name="messageStatusSyncing">Sünkroonimine</string>
+    <string name="messageUnread">Lugemata sõnumid</string>
+    <string name="messageVoice">Häälsõnum</string>
+    <string name="messageVoiceErrorShort">Hoidke vajutatuna, et salvestada häälsõnumit</string>
+    <string name="messageVoiceSlideToCancel">Libista tühistamiseks</string>
+    <string name="messages">Sõnumid</string>
+    <string name="minimize">Minimeeri</string>
+    <string name="next">Järgmine</string>
+    <string name="nicknameDescription">Valige {name} jaoks hüüdnimi. See kuvatakse teile nii ühe-kahe kui ka grupivestluses.</string>
+    <string name="nicknameEnter">Sisestage hüüdnimi</string>
+    <string name="nicknameRemove">Eemalda hüüdnimi</string>
+    <string name="nicknameSet">Määra hüüdnimi</string>
+    <string name="no">Ei</string>
+    <string name="noSuggestions">Soovitusi pole</string>
+    <string name="none">Puudub</string>
+    <string name="notNow">Mitte praegu</string>
+    <string name="noteToSelf">Märkus endale</string>
+    <string name="noteToSelfEmpty">Teil ei ole sõnumeid kaustas Märkus endale.</string>
+    <string name="noteToSelfHide">Peida Märkus endale</string>
+    <string name="noteToSelfHideDescription">Kas soovite Märkust endale peita?</string>
+    <string name="notificationsAllMessages">Kõik sõnumid</string>
+    <string name="notificationsAndroidSystem">{message_count} uut sõnumit {conversation_count} vestluses</string>
+    <string name="notificationsContent">Teatiste sisu</string>
+    <string name="notificationsContentDescription">Teavitustes kuvatav teave.</string>
+    <string name="notificationsContentShowNameAndContent">Nimi ja sisu</string>
+    <string name="notificationsContentShowNameOnly">Ainult nimi</string>
+    <string name="notificationsContentShowNoNameOrContent">Nimi või sisu puudub</string>
+    <string name="notificationsFastMode">Kiire režiim</string>
+    <string name="notificationsFastModeDescriptionAndroid">Google\'i teavitusserverite abil teavitatakse teid uutest sõnumitest kohe ja usaldusväärselt.</string>
+    <string name="notificationsFastModeDescriptionIos">Apple\'i teavitusserverite abil teavitatakse teid uutest sõnumitest kohe ja usaldusväärselt.</string>
+    <string name="notificationsGoToAndroidSettings">Ava Androidi teadete sätted</string>
+    <string name="notificationsGoToDevice">Ava seadme teatiste sätted</string>
+    <string name="notificationsIosGroup">{name} saatis sõnumi gruppi {conversation_name}</string>
+    <string name="notificationsIosRestart">Teil võis olla sõnumeid ajal, mil teie {device} taaskäivitati.</string>
+    <string name="notificationsLedColor">LEDi värv</string>
+    <string name="notificationsMentionsOnly">Ainult mainimised</string>
+    <string name="notificationsMessage">Sõnumiteatised</string>
+    <string name="notificationsMostRecent">Viimatine kontaktilt {name}</string>
+    <string name="notificationsMute">Vaigista</string>
+    <string name="notificationsMuteFor">Vaigista {time_large} ajaks</string>
+    <string name="notificationsMuteUnmute">Keela vaigistus</string>
+    <string name="notificationsMuted">Vaigistatud</string>
+    <string name="notificationsSlowMode">Aeglane režiim</string>
+    <string name="notificationsSlowModeDescription">{app_name} otsib aeg-ajalt taustal uusi sõnumeid.</string>
+    <string name="notificationsSound">Heli</string>
+    <string name="notificationsSoundDescription">Heli, kui rakendus on avatud</string>
+    <string name="notificationsSoundDesktop">Heli teated</string>
+    <string name="notificationsStrategy">Teatise strateegia</string>
+    <string name="notificationsStyle">Teatiste laad</string>
+    <string name="notificationsVibrate">Vibratsioon</string>
+    <string name="off">Väljas</string>
+    <string name="okay">Okei</string>
+    <string name="onboardingAccountCreate">Loo konto</string>
+    <string name="onboardingAccountCreated">Konto loodud</string>
+    <string name="onboardingAccountExists">Mul on konto</string>
+    <string name="onboardingBackAccountCreation">Te ei saa tagasi minna. Konto loomise tühistamiseks peab Session sulgema.</string>
+    <string name="onboardingBackLoadAccount">Te ei saa tagasi minna. Konto laadimise peatamiseks peab Session sulgema.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Konto loomine on kohene, tasuta ja anonüümne</string>
+    <string name="onboardingBubbleNoPhoneNumber">Registreerumiseks ei ole isegi vaja telefoninumbrit.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">Privaatsus teie taskus.</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} on loodud teie privaatsuse kaitsmiseks.</string>
+    <string name="onboardingBubbleWelcomeToSession">Tere tulemast {app_name}\'i</string>
+    <string name="onboardingHitThePlusButton">Vajuta plussnuppu, et alustada vestlust, luua grupp või liituda ametliku kogukonnaga!</string>
+    <string name="onboardingMessageNotificationExplanation">{app_name} saab teid uutest sõnumitest teavitada kahel viisil.</string>
+    <string name="onboardingPrivacy">Privaatsuseeskirjad</string>
+    <string name="onboardingTos">Kasutustingimused</string>
+    <string name="onboardingTosPrivacy">Teenust kasutades nõustute meie <b>Kasutustingimuste</b> ja <b>Privaatsuspoliitikaga</b></string>
+    <string name="onionRoutingPath">Rada</string>
+    <string name="onionRoutingPathDescription">{app_name} peidab teie IP-aadressi, suunates teie sõnumeid läbi mitme teenusesõlme {app_name}\'i detsentraliseeritud võrgus. See on teie praegune rada:</string>
+    <string name="onionRoutingPathDestination">Sihtkoht</string>
+    <string name="onionRoutingPathEntryNode">Sisenemise sõlm</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">Tundmatu riik</string>
+    <string name="onsErrorNotRecognized">Me ei suutnud seda ONS-i tuvastada. Palun kontrollige ja proovige uuesti.</string>
+    <string name="onsErrorUnableToSearch">Me ei suutnud seda ONS-i otsida. Palun proovige hiljem uuesti.</string>
+    <string name="open">Ava</string>
+    <string name="other">Muu</string>
+    <string name="passwordChange">Muuda parool</string>
+    <string name="passwordChangeDescription">Muuda parooli, mida on vaja {app_name} avamiseks.</string>
+    <string name="passwordChangedDescription">Teie parool on muudetud. Hoidke seda turvaliselt.</string>
+    <string name="passwordConfirm">Kinnita parool</string>
+    <string name="passwordCreate">Loo oma parool</string>
+    <string name="passwordCurrentIncorrect">Teie praegune parool on vale.</string>
+    <string name="passwordDescription">Nõutav parool {app_name} avamiseks.</string>
+    <string name="passwordEnter">Sisesta parool</string>
+    <string name="passwordEnterCurrent">Palun sisestage oma praegune parool.</string>
+    <string name="passwordEnterNew">Palun sisestage oma uus parool</string>
+    <string name="passwordError">Parool võib sisaldada ainult tähti, numbreid ja sümboleid</string>
+    <string name="passwordErrorLength">Parool peab olema 6 kuni 64 tähemärki pikk</string>
+    <string name="passwordErrorMatch">Paroolid ei ühti</string>
+    <string name="passwordFailed">Salasõna määramine ebaõnnestus</string>
+    <string name="passwordIncorrect">Vale parool</string>
+    <string name="passwordRemove">Eemalda parool</string>
+    <string name="passwordRemoveDescription">Eemalda parool, mis on vajalik {app_name} avamiseks.</string>
+    <string name="passwordRemovedDescription">Teie parool on eemaldatud.</string>
+    <string name="passwordSet">Määra parool</string>
+    <string name="passwordSetDescription">Teie parool on määratud. Hoidke seda turvaliselt.</string>
+    <string name="paste">Aseta</string>
+    <string name="permissionsAppleMusic">{app_name} vajab Apple Musici kasutamist, et esitada meediamanuseid.</string>
+    <string name="permissionsAutoUpdate">Automaatne uuendus</string>
+    <string name="permissionsAutoUpdateDescription">Kontrolli automaatselt uuendusi käivitamisel</string>
+    <string name="permissionsFaceId">{app_name} ekraaniluku funktsioon kasutab Face ID-d.</string>
+    <string name="permissionsKeepInSystemTray">Jäta süsteemisalve</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} jätkab taustal töötamist, kui sulgete akna</string>
+    <string name="permissionsLibrary">{app_name} vajab juurdepääsu fototeegile. Saate lubada juurdepääsu iOS-i seadetes.</string>
+    <string name="permissionsMicrophone">Mikrofon</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">{app_name} vajab helisõnumite saatmiseks ligipääsu seadme mikrofonile, kuid see on püsivalt keelatud. Palun avage rakenduse sätete menüü, valige \"Õigused\" ja lubage \"Mikrofon\".</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">Mikrofoni juurdepääsu saate lubada {app_name}\'i privaatsussätetes</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">{app_name} vajab mikrofoni juurdepääsu, et teha kõnesid ja salvestada helisõnumeid.</string>
+    <string name="permissionsMicrophoneDescription">Luba ligipääs mikrofonile</string>
+    <string name="permissionsRequired">Luba on vajalik</string>
+    <string name="permissionsStorageSave">{app_name} vajab salvestusruumi ligipääsu, et salvestada manuseid ja meediat.</string>
+    <string name="permissionsStorageSaveDenied">{app_name} vajab fotode ja videote salvestamiseks juurdepääsu salvestusruumile, kuid see on jäädavalt keelatud. Jätkake rakenduse sätetes, valige \"Load\" ja lubage \"Salvestusruum\".</string>
+    <string name="permissionsStorageSend">{app_name} vajab fotode ja videote saatmiseks juurdepääsu salvestusruumile.</string>
+    <string name="pin">Kinnita</string>
+    <string name="pinConversation">Kinnita vestlus</string>
+    <string name="pinUnpin">Vabasta</string>
+    <string name="pinUnpinConversation">Vabasta vestlus</string>
+    <string name="preview">Eelvaade</string>
+    <string name="profile">Profiil</string>
+    <string name="profileDisplayPicture">Kuvapilt</string>
+    <string name="profileDisplayPictureRemoveError">Kuvapildi eemaldamine ebaõnnestus.</string>
+    <string name="profileDisplayPictureSet">Määra kuvapilt</string>
+    <string name="profileDisplayPictureSizeError">Palun valige väiksem fail.</string>
+    <string name="profileErrorUpdate">Profiili uuendamine nurjus.</string>
+    <string name="promote">Edenda</string>
+    <string name="qrCode">QR-kood</string>
+    <string name="qrNotAccountId">See QR-kood ei sisalda kontotuvastusnumbrit</string>
+    <string name="qrNotRecoveryPassword">See QR-kood ei sisalda taastamissõnumit</string>
+    <string name="qrScan">Skaneeri QR-kood</string>
+    <string name="qrView">Näita QR-koodi</string>
+    <string name="qrYoursDescription">Sõbrad saavad sulle sõnumeid saata, skaneerides sinu QR-koodi.</string>
+    <string name="quit">Lõpeta {app_name}</string>
+    <string name="quitButton">Lõpeta</string>
+    <string name="read">Loetud</string>
+    <string name="readReceipts">Lugemiskinnitused</string>
+    <string name="readReceiptsDescription">Näita loetud kviitungeid kõigi saadetud ja saadud sõnumite puhul.</string>
+    <string name="received">Saadud:</string>
+    <string name="recommended">Soovituslik</string>
+    <string name="recoveryPasswordBannerDescription">Salvesta oma taastamisparool, et vältida oma konto juurdepääsu kaotamist.</string>
+    <string name="recoveryPasswordBannerTitle">Salvesta oma taastamisparool</string>
+    <string name="recoveryPasswordDescription">Konto laadimiseks kasutage oma taastamissalasõna uutes seadmetes.
+
+Teie kontot ei saa taastada ilma taastamissalasõnata. Veenduge, et see oleks turvaliselt salvestatud ja ärge jagage seda kellelegi.</string>
+    <string name="recoveryPasswordEnter">Sisesta oma taastamise parool</string>
+    <string name="recoveryPasswordErrorMessageGeneric">Palun kontrollige oma taastamisparooli ja proovige uuesti.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">Mõned teie taastamislause sõnad on valed. Palun kontrollige ja proovige uuesti.</string>
+    <string name="recoveryPasswordErrorMessageShort">Sisestatud taastamislause ei ole piisavalt pikk. Palun kontrollige ja proovige uuesti.</string>
+    <string name="recoveryPasswordErrorTitle">Vale Recovery Password</string>
+    <string name="recoveryPasswordExplanation">Konto laadimiseks sisestage oma taastamislause.</string>
+    <string name="recoveryPasswordHidePermanently">Peida Recovery Password alatiseks</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">Ilma teie taastamisparoolita ei saa te oma kontot uutesse seadmetesse laadida. 
+
+Soovitame tungivalt salvestada oma taastamisparool turvalisse ja ohutusse kohta enne jätkamist.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">Kas olete kindel, et soovite oma taastamisparooli sellel seadmel jäädavalt peita? Seda ei saa tühistada.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Peida Recovery Password</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">Päriselt peida taastamisparool sellel seadmel.</string>
+    <string name="recoveryPasswordRestoreDescription">Sisestage oma taastamise parool, et laadida oma konto. Kui te ei ole seda salvestanud, leiate selle oma rakenduse seadetest.</string>
+    <string name="recoveryPasswordView">Näita parooli</string>
+    <string name="recoveryPasswordWarningSendDescription">See on teie taastamislause. Kui saadate selle kellelegi, on tal täielik juurdepääs teie kontole.</string>
+    <string name="redo">Tee uuesti</string>
+    <string name="remove">Eemalda</string>
+    <string name="reply">Vasta</string>
+    <string name="resend">Saada uuesti</string>
+    <string name="resolving">Riigi teabe laadimine...</string>
+    <string name="restart">Taaskäivita</string>
+    <string name="resync">Sünkro</string>
+    <string name="retry">Proovi uuesti</string>
     <string name="save">Salvesta</string>
-    <string name="note_to_self">Märkus endale</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">Uus sõnum</string>
-    <!-- AlbumThumbnailView -->
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="one">%d sõnum vestluse kohta</item>
-        <item quantity="other">%d sõnumit vestluse kohta</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Kustutad kõik vanad sõnumid nüüd?</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="one">See piirab koheselt kõiki vestlusi, jättes alles ainult viimase sõnumi.</item>
-        <item quantity="other">See piirab koheselt kõiki vestlusi, jättes alles ainult %d viimast sõnumit.</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">Kustuta</string>
-    <string name="ApplicationPreferencesActivity_On">Sees</string>
-    <string name="ApplicationPreferencesActivity_Off">Väljas</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(pilt)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(heli)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(vastus)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Ei leia rakendust meediafaili valimiseks.</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Session vajab fotode, videote või audiofailide manustamiseks ligipääsu salvestusmeediale, kuid see on püsivalt keelatud. Palun ava rakenduse sätete menüü, vali \"Õigused\" ja luba \"Salvestusmeedia\".</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">Session vajab fotode tegemiseks ligipääsu seadme kaamerale, kuid see on püsivalt keelatud. Palun ava rakenduse sätete menüü, vali \"Õigused\" ja luba \"Kaamera\".</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">Heli esitamisel tekkis viga!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">Täna</string>
-    <string name="BucketedThreadMedia_Yesterday">Eile</string>
-    <string name="BucketedThreadMedia_This_week">See nädal</string>
-    <string name="BucketedThreadMedia_This_month">See kuu</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">Veebibrauserit ei leitud.</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">Grupid</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">Saatmine ebaõnnestus, koputa üksikasjade nägemiseks</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">Võtmevahetussõnum vastuvõetud, koputa töötlemiseks.</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">Saatmine ebaõnnestus, koputa, et saata turvamata sõnum</string>
-    <string name="ConversationItem_unable_to_open_media">Ei leia rakendust, mis oleks võimeline seda meediafaili avama.</string>
-    <string name="ConversationItem_copied_text">%s kopeeritud</string>
-    <string name="ConversationItem_download_more">  Laadi rohkem alla</string>
-    <string name="ConversationItem_pending">  Ootel</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">Lisa manus</string>
-    <string name="ConversationActivity_select_contact_info">Vali kontaktandmed</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Vabandust, sinu manuse seadmisega tekkis viga.</string>
-    <string name="ConversationActivity_invalid_recipient">Sobimatu saaja!</string>
-    <string name="ConversationActivity_added_to_home_screen">Avakuvale lisatud</string>
-    <string name="ConversationActivity_leave_group">Lahkud grupist?</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Kas soovid kindlasti sellest grupist lahkuda?</string>
-    <string name="ConversationActivity_error_leaving_group">Grupist lahkumisel tekkis viga</string>
-    <string name="ConversationActivity_unblock_this_contact_question">Eemaldada kontakti blokeering?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Sa saad uuesti vastu võtta sõnumeid ja kõnesid sellelt kontaktilt.</string>
-    <string name="ConversationActivity_unblock">Eemalda blokeering</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">Manus ületab saadetava sõnumitüübi suuruspiiranguid.</string>
-    <string name="ConversationActivity_unable_to_record_audio">Ei saa heli salvestada!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">Sinu seadmes pole rakendust, mis oleks võimeline seda linki käsitlema.</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">Audiosõnumite saatmiseks luba Sessionile juurdepääs seadme mikrofonile.</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">Session vajab audiosõnumite saatmiseks ligipääsu seadme mikrofonile, kuid see on püsivalt keelatud. Palun ava rakenduse sätete menüü, vali \"Õigused\" ja luba \"Mikrofon\".</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">Luba Sessionile ligipääs kaamerale fotode ja videote salvestamiseks.</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">Session vajab ligipääsu kaamerale, et salvestada fotosid ja videosid, kuid see on püsivalt keelatud. Palun ava rakenduse sätete menüü, vali \"Õigused\" ja luba \"Kaamera\".</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">Session vajab fotode ja videote salvestamiseks ligipääsu kaamerale</string>
-    <string name="ConversationActivity_search_position">%1$d / %2$d</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="one">Kustutad valitud sõnumi?</item>
-        <item quantity="other">Kustutad valitud sõnumid?</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="one">See kustutab püsivalt valitud sõnumi.</item>
-        <item quantity="other">See kustutab püsivalt kõik valitud %1$d sõnumit.</item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">Salvesta sisemällu?</string>
-    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-        <item quantity="one">Selle meediafaili sisemällu salvestamine lubab mistahes teisel rakendusel sinu seadmes sellele juurde pääseda.\n\nJätkad?</item>
-        <item quantity="other">Kõigi %1$d meediafaili sisemällu salvestamine lubab mistahes teisel rakendusel sinu seadmes nendele juurde pääseda.\n\nJätkad?</item>
-    </plurals>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="one">Manuse sisemällu salvestamisel tekkis viga!</item>
-        <item quantity="other">Manuste sisemällu salvestamisel tekkis viga!</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="one">Salvestan manust</item>
-        <item quantity="other">Salvestan %1$d manust</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">Profiilipilt</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">Kasutan kohandatud: %s</string>
-    <string name="CustomDefaultPreference_using_default">Kasutan vaikimisi: %s</string>
-    <string name="CustomDefaultPreference_none">Puudub</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">Nüüd</string>
-    <string name="DateUtils_today">Täna</string>
-    <string name="DateUtils_yesterday">Eile</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">Täna</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">Tundmatu fail</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">Täisresolutsiooniga GIFi vastuvõtmisel esines viga</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_gifs">GIFid</string>
-    <string name="GiphyFragmentPagerAdapter_stickers">Kleepsud</string>
-    <!-- CropImageActivity -->
-    <string name="CropImageActivity_profile_avatar">Pilt</string>
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Koputa ja hoia all, et salvestada helisõnum, vabasta saatmiseks</string>
-    <!-- LongMessageActivity -->
-    <string name="LongMessageActivity_unable_to_find_message">Sõnumit ei leitud</string>
-    <string name="LongMessageActivity_message_from_s">Sõnum kasutajalt %1$s</string>
-    <string name="LongMessageActivity_your_message">Sinu sõnum</string>
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">Meedia</string>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_title">
-        <item quantity="one">Kustutad valitud sõnumi?</item>
-        <item quantity="other">Kustutad valitud sõnumid?</item>
-    </plurals>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_message">
-        <item quantity="one">See kustutab valitud sõnumi püsivalt.</item>
-        <item quantity="other">See kustutab püsivalt %1$d valitud sõnumit.</item>
-    </plurals>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">Kustutan</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">Kustutan sõnumeid...</string>
-    <string name="MediaOverviewActivity_Documents">Dokumendid</string>
-    <string name="MediaOverviewActivity_Select_all">Vali kõik</string>
-    <string name="MediaOverviewActivity_collecting_attachments">Kogun manuseid...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">Multimeediasõnum</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">Laadin alla MMS-sõnumit</string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">MMS-sõnumi allalaadimisel tekkis viga, koputa uuesti proovimiseks</string>
-    <!-- MediaPickerActivity -->
-    <string name="MediaPickerActivity_send_to">Saada kohta %s</string>
-    <!-- MediaSendActivity -->
-    <string name="MediaSendActivity_add_a_caption">Lisa pealkiri...</string>
-    <string name="MediaSendActivity_an_item_was_removed_because_it_exceeded_the_size_limit">Üksus eemaldati, sest see ületas suuruspiirangut.</string>
-    <string name="MediaSendActivity_camera_unavailable">Kaamera pole saadaval.</string>
-    <string name="MediaSendActivity_message_to_s">Sõnum kasutajale %s</string>
-    <plurals name="MediaSendActivity_cant_share_more_than_n_items">
-        <item quantity="one">Sa ei saa jagada rohkem kui %d üksust.</item>
-        <item quantity="other">Sa ei saa jagada rohkem kui %d üksust.</item>
-    </plurals>
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">Kogu meedia</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Vastuvõetud sõnum, mis on krüptitud kasutades vana, mittetoetatud Sessioni versiooni. Palun palu saatjal uuendada uusimale versioonile ja siis sõnum uuesti saata.</string>
-    <string name="MessageRecord_left_group">Sa lahkusid grupist.</string>
-    <string name="MessageRecord_you_updated_group">Sa uuendasid gruppi.</string>
-    <string name="MessageRecord_s_updated_group">%s uuendas gruppi.</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">Hävinevad sõnumid</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">Sinu sõnumid ei aegu.</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">Selles vestluses saadetud ja vastuvõetud sõnumid haihtuvad peale %s pärast nägemist.</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">Sisesta salaväljend</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">Blokeerid selle kontakti?</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">Sa ei saa sellelt kontaktilt enam sõnumeid ja kõnesid vastu võtta.</string>
-    <string name="RecipientPreferenceActivity_block">Blokeeri</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">Eemaldada kontakti blokeering?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Sa saad uuesti sellelt kontaktilt sõnumeid ja kõnesid vastu võtta.</string>
-    <string name="RecipientPreferenceActivity_unblock">Eemalda blokeering</string>
-    <!-- Slide -->
-    <string name="Slide_image">Pilt</string>
-    <string name="Slide_audio">Heli</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Vastuvõetud korrumpeerunud
-        võtmevahetussõnum!
-    </string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">Vastuvõetud sõnum uue turvanumbriga. Koputa, et töödelda ja kuvada.</string>
-    <string name="SmsMessageRecord_secure_session_reset">Sa lähtestasid turvalise sessiooni.</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%s lähtestas turvalise sessiooni.</string>
-    <string name="SmsMessageRecord_duplicate_message">Duplikaatsõnum.</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">Grupp uuendatud</string>
-    <string name="ThreadRecord_left_the_group">Lahkus grupist</string>
-    <string name="ThreadRecord_secure_session_reset">Turvaline sessioon lähtestatud.</string>
-    <string name="ThreadRecord_draft">Mustand:</string>
-    <string name="ThreadRecord_called">Sa helistasid</string>
-    <string name="ThreadRecord_called_you">Helistas sulle</string>
-    <string name="ThreadRecord_missed_call">Vastamata kõne</string>
-    <string name="ThreadRecord_media_message">Meediasõnum</string>
-    <string name="ThreadRecord_s_is_on_signal">%s on Sessionis!</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">Haihtuvad sõnumid keelatud</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">Hävineva sõnumi ajaks on seatud %s</string>
-    <string name="ThreadRecord_safety_number_changed">Turvanumber muudetud</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">Sinu turvanumber kontaktiga %s on muutunud.</string>
-    <string name="ThreadRecord_you_marked_verified">Sa märkisid kinnitatuks</string>
-    <string name="ThreadRecord_you_marked_unverified">Sa märkisid mittekinnitatuks</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">Sessioni uuendus</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">Uus Sessioni versioon on saadaval, koputa uuendamiseks</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">Halb krüptitud sõnum</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Sõnum krüptitud mitteeksisteeriva sessiooni jaoks</string>
-    <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">Halb krüptitud MSS sõnum</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS-sõnum krüptitud mitteeksisteeriva sessiooni jaoks</string>
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">Vaigista teated</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">Koputa avamiseks.</string>
-    <string name="KeyCachingService_passphrase_cached">Session on avatud</string>
-    <string name="KeyCachingService_lock">Lukusta Session</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">Sina</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">Mittetoetatud meediatüüp</string>
-    <string name="MediaPreviewActivity_draft">Mustand</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Õiguste puudumise tõttu pole võimalik välisele andmekandjale salvestada.</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">Kustutad sõnumi?</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">See kustutab püsivalt valitud sõnumi.</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d uut sõnumit %2$d vestluses</string>
-    <string name="MessageNotifier_most_recent_from_s">Viimatine kontaktilt %1$s</string>
-    <string name="MessageNotifier_locked_message">Lukustatud sõnum</string>
-    <string name="MessageNotifier_message_delivery_failed">Sõnumi kohaletoimetamine ebaõnnestus.</string>
-    <string name="MessageNotifier_failed_to_deliver_message">Sõnumi kohale toimetamine ebaõnnestus.</string>
-    <string name="MessageNotifier_error_delivering_message">Sõnumi kohale toimetamisel tekkis viga.</string>
-    <string name="MessageNotifier_mark_all_as_read">Märgi kõik loetuks</string>
-    <string name="MessageNotifier_mark_read">Märgi loetuks</string>
-    <string name="MessageNotifier_reply">Vasta</string>
-    <string name="MessageNotifier_pending_signal_messages">Ootel Sessioni sõnumid</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">Sul on ootel Sessioni sõnumeid, koputa vaatamiseks</string>
-    <string name="MessageNotifier_unknown_contact_message">Kontakt</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">Vaikimisi</string>
-    <string name="NotificationChannel_calls">Kõned</string>
-    <string name="NotificationChannel_failures">Ebaõnnestumised</string>
-    <string name="NotificationChannel_backups">Varundused</string>
-    <string name="NotificationChannel_locked_status">Luku olek</string>
-    <string name="NotificationChannel_app_updates">Rakenduse uuendused</string>
-    <string name="NotificationChannel_other">Muu</string>
-    <string name="NotificationChannel_group_messages">Sõnumid</string>
-    <string name="NotificationChannel_missing_display_name">Tundmatu</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Kiirvastus pole saadaval, kui Session on lukustatud!</string>
-    <string name="QuickResponseService_problem_sending_message">Sõnumi saatmisel esines probleem!</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">Salvestatud kohta %s</string>
-    <string name="SaveAttachmentTask_saved">Salvestatud</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Otsi</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">Sobimatu otsetee</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_new_message">Uus sõnum</string>
-    <!-- TransferControlView -->
-    <plurals name="TransferControlView_n_items">
-        <item quantity="one">%d üksus</item>
-        <item quantity="other">%d üksust</item>
-    </plurals>
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">Video esitamisel tekkis viga</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">Heli</string>
-    <string name="attachment_type_selector__audio_description">Heli</string>
-    <string name="attachment_type_selector__contact">Kontakt</string>
-    <string name="attachment_type_selector__contact_description">Kontakt</string>
-    <string name="attachment_type_selector__camera">Kaamera</string>
-    <string name="attachment_type_selector__camera_description">Kaamera</string>
-    <string name="attachment_type_selector__location">Asukoht</string>
-    <string name="attachment_type_selector__location_description">Asukoht</string>
-    <string name="attachment_type_selector__gallery_description">Pilt või video</string>
-    <string name="attachment_type_selector__file_description">Fail</string>
-    <string name="attachment_type_selector__gallery">Galerii</string>
-    <string name="attachment_type_selector__file">Fail</string>
-    <string name="attachment_type_selector__drawer_description">Lülita manusesahtlit</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">Laadin kontakte...</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">Saada</string>
-    <string name="conversation_activity__compose_description">Sõnumi koostamine</string>
-    <string name="conversation_activity__emoji_toggle_description">Lülita emoji klaviatuuri</string>
-    <string name="conversation_activity__attachment_thumbnail">Manuse pisipilt</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">Lülita kiire kaamera manuse sahtel sisse või välja</string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">Salvesta ja saada helimanus</string>
-    <string name="conversation_activity__quick_attachment_drawer_lock_record_description">Lukusta helimanuse salvestamine</string>
-    <string name="conversation_activity__enable_signal_for_sms">Luba Session SMSide jaoks</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__slide_to_cancel">Libista tühistamiseks</string>
-    <string name="conversation_input_panel__cancel">Loobu</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">Meediasõnum</string>
-    <string name="conversation_item__secure_message_description">Turvaline sõnum</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">Saatmine ebaõnnestus</string>
-    <string name="conversation_item_sent__pending_approval_description">Ootab kinnitust</string>
-    <string name="conversation_item_sent__delivered_description">Kohale toimetatud</string>
-    <string name="conversation_item_sent__message_read">Sõnum loetud</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">Kontakti foto</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">Esita</string>
-    <string name="audio_view__pause_accessibility_description">Paus</string>
-    <string name="audio_view__download_accessibility_description">Laadi alla</string>
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">Heli</string>
-    <string name="QuoteView_photo">Foto</string>
-    <string name="QuoteView_you">Sina</string>
-    <string name="QuoteView_original_missing">Originaalsõnumit ei leitud</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">Keri alla</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">Otsi GIFe ja kleepse</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">Midagi ei leitud</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">Näe tervet vestlust</string>
-    <string name="load_more_header__loading">Laadimine</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">Meedia puudub</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">SAADA UUESTI</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">Blokeeri</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">Mõned probleemid vajavad su tähelepanu.</string>
-    <string name="message_details_header__sent">Saadetud</string>
-    <string name="message_details_header__received">Vastuvõetud</string>
-    <string name="message_details_header__disappears">Haihtub</string>
-    <string name="message_details_header__via">Saatmisviis:</string>
-    <string name="message_details_header__to">Saaja:</string>
-    <string name="message_details_header__from">Saatja:</string>
-    <string name="message_details_header__with">Koos:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">Loo salaväljend</string>
-    <string name="AndroidManifest__select_contacts">Vali kontaktid</string>
-    <string name="AndroidManifest__media_preview">Meedia eelvaade</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">Kasuta vaikeväärtust</string>
-    <string name="arrays__use_custom">Kasuta kohandatud väärtust</string>
-    <string name="arrays__mute_for_one_hour">Vaigista 1 tunniks</string>
-    <string name="arrays__mute_for_two_hours">Vaigista 2 tunniks</string>
-    <string name="arrays__mute_for_one_day">Vaigista 1 päevaks</string>
-    <string name="arrays__mute_for_seven_days">Vaigista 7 päevaks</string>
-    <string name="arrays__mute_for_one_year">Vaigista 1 aastaks</string>
-    <string name="arrays__settings_default">Seadete vaikeväärtus</string>
-    <string name="arrays__enabled">Lubatud</string>
-    <string name="arrays__disabled">Keelatud</string>
-    <string name="arrays__name_and_message">Nimi ja sõnum</string>
-    <string name="arrays__name_only">Ainult nimi</string>
-    <string name="arrays__no_name_or_message">Ei nime ega sõnumit</string>
-    <string name="arrays__images">Pildid</string>
-    <string name="arrays__audio">Heli</string>
-    <string name="arrays__documents">Dokumendid</string>
-    <string name="arrays__small">Väike</string>
-    <string name="arrays__normal">Keskmine</string>
-    <string name="arrays__large">Suur</string>
-    <string name="arrays__extra_large">Ekstrasuur</string>
-    <string name="arrays__default">Vaikimisi</string>
-    <string name="arrays__high">Kõrge</string>
-    <string name="arrays__max">Maksimaalne</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="one">%d tund</item>
-        <item quantity="other">%d tundi</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">Sisestusklahv saadab</string>
-    <string name="preferences__send_link_previews">Saada linkide eelvaateid</string>
-    <string name="preferences__previews_are_supported_for">Eelvaated on toetatud Imgur, Instagram, Pinterest, Reddit ja YouTube linkide puhul</string>
-    <string name="preferences__screen_security">Kuva turvamine</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">Blokeeri kuvatõmmised viimatiste nimekirjas ja rakenduse sees</string>
-    <string name="preferences__notifications">Teated</string>
-    <string name="preferences__led_color">LEDi värv</string>
-    <string name="preferences__led_color_unknown">Tundmatu</string>
-    <string name="preferences__pref_led_blink_title">LEDi välkumismuster</string>
-    <string name="preferences__sound">Heli</string>
-    <string name="preferences__silent">Vaikne</string>
-    <string name="preferences__repeat_alerts">Korda teateid</string>
-    <string name="preferences__never">Mitte kunagi</string>
-    <string name="preferences__one_time">Üks kord</string>
-    <string name="preferences__two_times">Kaks korda</string>
-    <string name="preferences__three_times">Kolm korda</string>
-    <string name="preferences__five_times">Viis korda</string>
-    <string name="preferences__ten_times">Kümme korda</string>
-    <string name="preferences__vibrate">Vibratsioon</string>
-    <string name="preferences__green">Roheline</string>
-    <string name="preferences__red">Punane</string>
-    <string name="preferences__blue">Sinine</string>
-    <string name="preferences__orange">Oranž</string>
-    <string name="preferences__cyan">Tsüaansinine</string>
-    <string name="preferences__magenta">Fuksiinpunane</string>
-    <string name="preferences__white">Valge</string>
-    <string name="preferences__none">Puudub</string>
-    <string name="preferences__fast">Kiire</string>
-    <string name="preferences__normal">Keskmine</string>
-    <string name="preferences__slow">Aeglane</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Kustuta automaatselt vanad sõnumid, kui vestlus ületab määratud pikkuse</string>
-    <string name="preferences__delete_old_messages">Kustuta vanad sõnumid</string>
-    <string name="preferences__conversation_length_limit">Vestluse pikkuse limiit</string>
-    <string name="preferences__trim_all_conversations_now">Piira kõik vestlused nüüd</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Skaneeri kõiki vestlusi ja jõusta vestluspikkuse limiite</string>
-    <string name="preferences__default">Vaikimisi</string>
-    <string name="preferences__incognito_keyboard">Inkognito klaviatuur</string>
-    <string name="preferences__read_receipts">Lugemiskinnitused</string>
-    <string name="preferences__typing_indicators">Kirjutamisindikaatorid</string>
-    <string name="preferences__if_typing_indicators_are_disabled_you_wont_be_able_to_see_typing_indicators">Kui kirjutamisindikaatorid on keelatud, ei näe sa neid ka teiste puhul.</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">Palu klaviatuuril keelata isikupärastatud õppimine</string>
-    <string name="preferences__light_theme">Hele</string>
-    <string name="preferences__dark_theme">Tume</string>
-    <string name="preferences_chats__message_trimming">Sõnumi piiramine</string>
-    <string name="preferences_advanced__use_system_emoji">Kasuta süsteemi emojisid</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">Keela Sessionisse sisseehitatud emoji-tugi</string>
-    <string name="preferences_chats__chats">Vestlused</string>
-    <string name="preferences_notifications__messages">Sõnumid</string>
-    <string name="preferences_notifications__in_chat_sounds">Vestlusesisesed helid</string>
-    <string name="preferences_notifications__priority">Prioriteet</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">Uus sõnum kontaktile...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">Sõnumi andmed</string>
-    <string name="conversation_context__menu_copy_text">Kopeeri tekst</string>
-    <string name="conversation_context__menu_delete_message">Kustuta sõnum</string>
-    <string name="conversation_context__menu_resend_message">Saada sõnum uuesti</string>
-    <string name="conversation_context__menu_reply_to_message">Vasta sõnumile</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">Salvesta manus</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">Hävinevad sõnumid</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">Sõnumite aegumine</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">Keela vaigistus</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">Vaigista teated</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">Muuda gruppi</string>
-    <string name="conversation__menu_leave_group">Lahku grupist</string>
-    <string name="conversation__menu_view_all_media">Kogu meedia</string>
-    <string name="conversation__menu_add_shortcut">Lisa avakuvale</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">Laienda hüpikut</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">Kohaletoimetamine</string>
-    <string name="conversation_group_options__conversation">Vestlus</string>
-    <string name="conversation_group_options__broadcast">Kanna üle</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">Salvesta</string>
-    <string name="media_preview__forward_title">Edasta</string>
-    <string name="media_preview__all_media_title">Kogu meedia</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">Dokumente pole</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">Meedia eelvaade</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">Kustutan</string>
-    <string name="trimmer__deleting_old_messages">Kustutan vanu sõnumeid...</string>
-    <string name="trimmer__old_messages_successfully_deleted">Vanad sõnumid edukalt kustutatud</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">Luba on vajalik</string>
-    <string name="Permissions_continue">Jätka</string>
-    <string name="Permissions_not_now">Mitte praegu</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">Varundused salvestatakse välismällu ja krüptitakse valitud salaväljendiga. Sul peab see salaväljend olemas olema, et taastada antud varundust.</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">Ma olen salaväljendi üles kirjutanud. Ilma selleta ei saa ma varundust taastada.</string>
-    <string name="registration_activity__skip">Jäta vahele</string>
-    <string name="RegistrationActivity_backup_failure_downgrade">Uuematest Sessioni versioonidest ei saa varundusi importida</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">Vale varunduse salaväljend</string>
-    <string name="BackupDialog_enable_local_backups">Lubad kohalikud varundused?</string>
-    <string name="BackupDialog_enable_backups">Luba varundused</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">Palun kinnita oma arusaamist, märkides kinnituse märkeruudu.</string>
-    <string name="BackupDialog_delete_backups">Kustutad varundused?</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">Kustuta ja keela kõik kohalikud varundused?</string>
-    <string name="BackupDialog_delete_backups_statement">Kustuta varundused</string>
-    <string name="BackupDialog_copied_to_clipboard">Lõikelauale kopeeritud</string>
-    <string name="LocalBackupJob_creating_backup">Varunduse loomine...</string>
-    <string name="ProgressPreference_d_messages_so_far">Siiani leidsime %d sõnumit</string>
-    <string name="BackupUtil_never">Mitte kunagi</string>
-    <string name="preferences_app_protection__screen_lock">Ekraanilukk</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">Lukusta Sessioni juurdepääs Androidi lukustuskuva või sõrmejäljega</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">Ekraaniluku ebaaktiivsuse ajalõpp</string>
-    <string name="AppProtectionPreferenceFragment_none">Puudub</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+    <string name="saved">Salvestatud</string>
+    <string name="savedMessages">Salvestatud sõnumid</string>
+    <string name="saving">Salvestamine...</string>
+    <string name="scan">Skaneeri</string>
+    <string name="screenSecurity">Ekraani turvalisus</string>
+    <string name="screenshotNotifications">Ekraanipildi teavitused</string>
+    <string name="screenshotNotificationsDescription">Nõua teavitust, kui kontakt teeb kuvatõmmise üks-ühele vestlusest.</string>
+    <string name="screenshotTaken"><b>{name}</b> tegi ekraanipildi.</string>
+    <string name="search">Otsi</string>
+    <string name="searchContacts">Otsi kontakte</string>
+    <string name="searchConversation">Otsi vestlust</string>
+    <string name="searchEnter">Palun sisestage oma otsing.</string>
+    <string name="searchMatchesNone">Tulemused puuduvad.</string>
+    <string name="searchMatchesNoneSpecific">Tulemusi ei leitud otsingule \'{query}\'</string>
+    <string name="searchMembers">Otsi liikmeid</string>
+    <string name="searchSearching">Otsimine...</string>
+    <string name="select">Vali</string>
+    <string name="selectAll">Vali kõik</string>
+    <string name="send">Saada</string>
+    <string name="sending">Saatmine</string>
+    <string name="sent">Saadetud:</string>
+    <string name="sessionAppearance">Välimus</string>
+    <string name="sessionClearData">Tühjenda andmed</string>
+    <string name="sessionConversations">Vestlused</string>
+    <string name="sessionHelp">Spikker</string>
+    <string name="sessionInviteAFriend">Kutsu sõber</string>
+    <string name="sessionMessageRequests">Sõnumitaotlused</string>
+    <string name="sessionNotifications">Teatised</string>
+    <string name="sessionPermissions">Õigused</string>
+    <string name="sessionPrivacy">Privaatsus</string>
+    <string name="sessionRecoveryPassword">Taasteparool</string>
+    <string name="sessionSettings">Seaded</string>
+    <string name="set">Määra</string>
+    <string name="settingsRestartDescription">Uute seadete rakendamiseks peate taaskäivitama {app_name}.</string>
+    <string name="share">Jaga</string>
+    <string name="shareAccountIdDescription">Kutsu oma sõpra vestlema sinuga Sessionis, jagades oma Account ID nendega.</string>
+    <string name="shareAccountIdDescriptionCopied">Jaga oma sõpradega seal, kus te tavaliselt suhtlete — seejärel liikuge siia vestlema.</string>
+    <string name="shareExtensionDatabaseError">Andmebaasi avamisel esines probleem. Palun taaskäivitage rakendus ja proovige uuesti.</string>
+    <string name="show">Näita</string>
+    <string name="showAll">Näita kõiki</string>
+    <string name="showLess">Näita vähem</string>
+    <string name="stickers">Kleepsud</string>
+    <string name="supportGoTo">Mine kasutajatoelehele</string>
+    <string name="theContinue">Jätka</string>
+    <string name="theDefault">Vaikimisi</string>
+    <string name="theError">Tõrge</string>
+    <string name="tryAgain">Proovi uuesti</string>
+    <string name="typingIndicators">Tippimisnäidikud</string>
+    <string name="typingIndicatorsDescription">Näe ja jaga kirjutamisindikaatoreid (...)</string>
+    <string name="undo">Võta tagasi</string>
+    <string name="unknown">Tundmatu</string>
+    <string name="updateApp">Rakenduse uuendused</string>
+    <string name="updateDownloaded">Värskendus installitud, klõpsa taaskäivitamiseks</string>
+    <string name="updateDownloading">Allalaaditakse uuendust: {percent_loader}%</string>
+    <string name="updateError">Ei saa uuendada</string>
+    <string name="updateErrorDescription">{app_name} ei õnnestunud uuendada. Minge palun {download_url} ja installige uus versioon käsitsi, seejärel võtke meiega ühendust Abi Keskuse kaudu, et sellest probleemist teada anda.</string>
+    <string name="updateNewVersion">Uus versioon {app_name} on saadaval, uuendamiseks puuduta</string>
+    <string name="updateNewVersionDescription">Uus versioon {app_name} on saadaval. </string>
+    <string name="updateReleaseNotes">Mine väljalaskemärkmete juurde</string>
+    <string name="updateSession">{app_name} Uuendus</string>
+    <string name="updateVersion">Versioon {version}</string>
+    <string name="uploading">Üleslaadimine</string>
+    <string name="urlCopy">Kopeeri URL</string>
+    <string name="urlOpen">Kas avada URL</string>
+    <string name="urlOpenBrowser">See avaneb teie brauseris.</string>
+    <string name="urlOpenDescription">Kas soovite avada selle URL-i oma brauseris?
+
+{url}</string>
+    <string name="useFastMode">Kasuta kiirrežiimi</string>
+    <string name="video">Video</string>
+    <string name="videoErrorPlay">Videot ei saa mängida.</string>
+    <string name="view">Näita</string>
+    <string name="waitFewMinutes">See võib võtta paar minutit.</string>
+    <string name="waitOneMoment">Hetk, palun...</string>
+    <string name="warning">Hoiatus</string>
+    <string name="window">Aken</string>
+    <string name="yes">Jah</string>
+    <string name="you">Sina</string>
 </resources>

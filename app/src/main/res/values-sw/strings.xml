@@ -1,433 +1,790 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="yes">Ndio</string>
-    <string name="no">Hapana</string>
+    <string name="about">Kuhusu</string>
+    <string name="accept">Kubali</string>
+    <string name="accountIDCopy">Nakili ID ya Akaunti</string>
+    <string name="accountIdCopied">Kitambulisho cha Akaunti Imenakiliwa</string>
+    <string name="accountIdCopyDescription">Nakili ID yako ya Akaunti kisha ushiriki na marafiki zako ili waweze kukutumia ujumbe.</string>
+    <string name="accountIdEnter">Ingiza Account ID</string>
+    <string name="accountIdErrorInvalid">Akaunti ID hii si sahihi. Tafadhali angalia na ujaribu tena.</string>
+    <string name="accountIdOrOnsEnter">Ingiza Account ID au ONS</string>
+    <string name="accountIdOrOnsInvite">Alika kitambulisho cha Akaunti au ONS</string>
+    <string name="accountIdShare">Hey, nimekuwa nikitumia {app_name} kupiga gumzo na kupata faragha kabisa na usalama. Njoo ujiunge nami! Kitambulisho changu cha Akaunti ni
+
+{account_id}
+
+Pakua kwenye {download_url}</string>
+    <string name="accountIdYours">Akaunti ID yako</string>
+    <string name="accountIdYoursDescription">Huu ni ID yako ya Akaunti. Watumiaji wengine wanaweza kuuchanganua kuanzisha zungumzo na wewe.</string>
+    <string name="actualSize">Ukubwa Halisi</string>
+    <string name="add">Ongeza</string>
+    <string name="adminCannotBeRemoved">Wasimamizi hawawezi kuondolewa.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name}</b> na <b>{count} wengine</b> wamepandishwa cheo kuwa Admin.</string>
+    <string name="adminPromote">Hamisha Wasimamizi</string>
+    <string name="adminPromoteDescription">Je, una uhakika unataka kumpandisha <b>{name}</b> kuwa admin? Maimi hawawezi kuondolewa.</string>
+    <string name="adminPromoteMoreDescription">Je, una uhakika unataka kumpandisha <b>{name}</b> na <b>{count} wengine</b> kuwa admin? Maimi hawawezi kuondolewa.</string>
+    <string name="adminPromoteToAdmin">Hamisha kuwa Msimamizi</string>
+    <string name="adminPromoteTwoDescription">Je, una uhakika unataka kumpandisha <b>{name}</b> na <b>{other_name}</b> kuwa admin? Maimi hawawezi kuondolewa.</string>
+    <string name="adminPromotedToAdmin"><b>{name}</b> amepandishwa cheo kuwa Admin.</string>
+    <string name="adminPromotionFailed">Kusimishwa kwa Msimamizi kumeenda kombo</string>
+    <string name="adminPromotionFailedDescription">Imeshindikana kupandisha daraja {name} katika {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMany">Imeshindikana kupandisha daraja {name} na wengine {count} katika {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMore">Imeshindikana kupandisha daraja {name} na {other_name} katika {group_name}</string>
+    <string name="adminPromotionSent">Kuenezwa kwa Msimamizi kumeenda</string>
+    <string name="adminRemove">Ondoa Wasimamizi</string>
+    <string name="adminRemoveAsAdmin">Ondoa kama Msimamizi</string>
+    <string name="adminRemoveCommunityNone">Hakuna Wasimamizi kwenye Community hii.</string>
+    <string name="adminRemoveFailed">Imeshindikana kumwondoa {name} kama Admin.</string>
+    <string name="adminRemovedUser"><b>{name}</b> ameondolewa kama Admin.</string>
+    <string name="adminSendingPromotion">Inatuma msimamizi kutumwa</string>
+    <string name="adminSettings">Mipangilio ya Msimamizi</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name}</b> na <b>{other_name}</b> wamepandishwa cheo kuwa Admin.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="appearanceAutoDarkMode">Njia ya giza ya kiotomatiki</string>
+    <string name="appearanceHideMenuBar">Ficha Mwambaa wa Menyu</string>
+    <string name="appearanceLanguage">Lugha</string>
+    <string name="appearanceLanguageDescription">Chagua mpangilio wa lugha yako kwa {app_name}. {app_name} itaanza tena unapobadilisha mpangilio wa lugha lako.</string>
+    <string name="appearancePreview1">U hali gani?</string>
+    <string name="appearancePreview2">Niko salama, wewe je?</string>
+    <string name="appearancePreview3">Nilivyo, asante.</string>
+    <string name="appearancePrimaryColor">Rangi ya Msingi</string>
+    <string name="appearanceThemes">Mandhari</string>
+    <string name="appearanceThemesClassicDark">Mandhari Nyeusi ya Kawaida</string>
+    <string name="appearanceThemesClassicLight">Mandhari Nyepesi ya Kawaida</string>
+    <string name="appearanceThemesOceanDark">Bahari giza</string>
+    <string name="appearanceThemesOceanLight">Bahari mwangaza</string>
+    <string name="appearanceZoom">Kuza</string>
+    <string name="appearanceZoomIn">Kuza Ndani</string>
+    <string name="appearanceZoomOut">Kuza Nje</string>
+    <string name="attachment">Ambatisho</string>
+    <string name="attachmentsAdd">Ongeza Kiambatanisho</string>
+    <string name="attachmentsAlbumUnnamed">Albamu isiyo na jina</string>
+    <string name="attachmentsAutoDownload">Pakua Viambatisho Moja kwa Moja</string>
+    <string name="attachmentsAutoDownloadDescription">Pakua moja kwa moja vyombo vya habari na faili kutoka kwenye chat hii.</string>
+    <string name="attachmentsAutoDownloadModalDescription">Ungependa kuhifadhi kiotomatiki faili zote kutoka <b>{conversation_name}</b>?</string>
+    <string name="attachmentsAutoDownloadModalTitle">Pakua Kiotomatiki</string>
+    <string name="attachmentsClearAll">Futa Viambatisho Vyote</string>
+    <string name="attachmentsClearAllDescription">Una uhakika unataka kufuta viambatanisho vyote? Jumbe zenye viambatanisho pia zitafutwa.</string>
+    <string name="attachmentsClickToDownload">Gusa ili kupakua {file_type}</string>
+    <string name="attachmentsCollapseOptions">Fupisha chaguzi za kiambatisho</string>
+    <string name="attachmentsCollecting">kukusanya viambatisho...</string>
+    <string name="attachmentsDownload">Pakua Kiambatanisho</string>
+    <string name="attachmentsDuration">Muda:</string>
+    <string name="attachmentsErrorLoad">Kosa kwenye kushirikisha faili</string>
+    <string name="attachmentsErrorNoApp">Nashindwa kupata app ya kuchagua habari.</string>
+    <string name="attachmentsErrorNotSupported">Aina hii ya faili haiwezi kusupportiwa.</string>
+    <string name="attachmentsErrorNumber">Haiwezi kutuma zaidi ya faili 32 za picha na video mara moja.</string>
+    <string name="attachmentsErrorOpen">Haiwezi kufungua faili.</string>
+    <string name="attachmentsErrorSending">Kosa kutuma faili</string>
+    <string name="attachmentsErrorSeparate">Tafadhali tuma faili kama meseji tofauti.</string>
+    <string name="attachmentsErrorSize">Majalada yawe chini ya 10MB</string>
+    <string name="attachmentsErrorTypes">Huwezi kushikiza picha na video na aina zingine za faili. Jaribu kutuma faili nyingine katika ujumbe tofauti.</string>
+    <string name="attachmentsExpired">Kiambatanisho kimekwisha muda</string>
+    <string name="attachmentsFileId">File ID:</string>
+    <string name="attachmentsFileSize">Ukubwa wa Jalada:</string>
+    <string name="attachmentsFileType">Aina ya Jalada:</string>
+    <string name="attachmentsFilesEmpty">Hauna faili zozote katika mazungumzo haya.</string>
+    <string name="attachmentsImageErrorMetadata">Haiwezi kuondoa metadata kutoka kwa faili.</string>
+    <string name="attachmentsLoadingNewer">Kupakia Vyombo Mpya...</string>
+    <string name="attachmentsLoadingNewerFiles">Kupakia Faili Mpya...</string>
+    <string name="attachmentsLoadingOlder">Kupakia Vyombo vya Zamani...</string>
+    <string name="attachmentsLoadingOlderFiles">Kupakia Mafaili ya Zamani...</string>
+    <string name="attachmentsMedia">{name} tarehe {date_time}</string>
+    <string name="attachmentsMediaEmpty">Hauna media yoyote katika mazungumzo haya.</string>
+    <string name="attachmentsMediaSaved">Chombo kimehifadhiwa na {name}</string>
+    <string name="attachmentsMoveAndScale">Songesha na Pima</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} Kiambatanisho</string>
+    <string name="attachmentsResolution">Azimio:</string>
+    <string name="attachmentsSaveError">Haiwezi kuhifadhi faili.</string>
+    <string name="attachmentsSendTo">Tuma kwa {name}</string>
+    <string name="attachmentsTapToDownload">Gusa ili kupakua {file_type}</string>
+    <string name="attachmentsThisMonth">Mwezi huu</string>
+    <string name="attachmentsThisWeek">Wiki Hii</string>
+    <string name="attachmentsWarning">Viambatisho unavyohifadhi vinaweza kufikiwa na programu nyingine kwenye kifaa chako.</string>
+    <string name="audio">Sauti</string>
+    <string name="audioNoInput">Hakuna maingizo ya sauti</string>
+    <string name="audioNoOutput">Hakuna matokeo ya sauti</string>
+    <string name="audioUnableToPlay">Haiwezi kucheza faili ya sauti.</string>
+    <string name="audioUnableToRecord">Haiwezi kurekodi sauti.</string>
+    <string name="authenticateFailed">Uthibitishaji Umeshindwa</string>
+    <string name="authenticateFailedTooManyAttempts">Majaribio mengi ya uthibitishaji yamefeli. Tafadhali jaribu tena baadaye.</string>
+    <string name="authenticateNotAccessed">Uthibitishaji haukupatikana.</string>
+    <string name="authenticateToOpen">Thibitisha kufungua {app_name}.</string>
+    <string name="back">Rudi</string>
+    <string name="banDeleteAll">Piga marufuku na ufute wote</string>
+    <string name="banErrorFailed">Kupiga marufuku kumeshindikana</string>
+    <string name="banUnbanErrorFailed">Uondoshaji umeshindikana</string>
+    <string name="banUnbanUser">Ondoa marufuku kwa Mtumiaji</string>
+    <string name="banUnbanUserUnbanned">Mtumiaji ameondolewa marufuku</string>
+    <string name="banUser">Piga marufuku mtumiaji</string>
+    <string name="banUserBanned">Mtumiaji amepigwa marufuku</string>
+    <string name="block">Zuia</string>
+    <string name="blockBlockedDescription">Ondolea kizuizi kwa mawasiliano haya kutuma ujumbe.</string>
+    <string name="blockBlockedNone">Hakuna mawasiliano yaliyofungiwa</string>
+    <string name="blockBlockedUser">Amezuiliwa {name}</string>
+    <string name="blockDescription">Una uhakika unataka kumzuia <b>{name}?</b> Watumiaji waliodhamiriwa hawawezi kukutumia maombi ya ujumbe, mialiko ya kikundi au kukupigia simu.</string>
+    <string name="blockUnblock">Ondolea kizuizi</string>
+    <string name="blockUnblockName">Je, una uhakika unataka kuondolea {name} kizuizi?</string>
+    <string name="blockUnblockNameMultiple">Je, una uhakika unataka kuondolea {name} na {count} wengine kizuizi?</string>
+    <string name="blockUnblockNameTwo">Je, una uhakika unataka kuondolea {name} na 1 mwingine kizuizi?</string>
+    <string name="blockUnblockedUser">Kizuizi kiliondolewa kwa {name}</string>
+    <string name="call">Wito</string>
+    <string name="callsCalledYou">{name} amekuita</string>
+    <string name="callsCannotStart">Huwezi kuanza simu mpya. Maliza simu yako ya sasa kwanza.</string>
+    <string name="callsConnecting">Inaunganishwa...</string>
+    <string name="callsEnd">mwisho wa kuongea na simu</string>
+    <string name="callsEnded">Simu Imemalizika</string>
+    <string name="callsErrorAnswer">Imeshindikana kujibu simu</string>
+    <string name="callsErrorStart">Imeshindikana kuanza simu</string>
+    <string name="callsInProgress">Simu inayoendelea</string>
+    <string name="callsIncoming">Simu inaingia kutoka {name}</string>
+    <string name="callsIncomingUnknown">Simu inaingia</string>
+    <string name="callsMissed">Simu zilizopotea</string>
+    <string name="callsMissedCallFrom">wito wa simu haukupokelewa kutoka {name}</string>
+    <string name="callsNotificationsRequired">Sauti na Simu za Video zinahitaji arifa ziweze kuwezeshwa katika mipangilio ya mfumo wako wa kifaa</string>
+    <string name="callsPermissionsRequired">Ruhusa za Simu Zinahitajika</string>
+    <string name="callsPermissionsRequiredDescription">Unaweza kuwezesha ruhusa ya \"Simu za Sauti na Video\" katika Mipangilio ya Faragha.</string>
+    <string name="callsReconnecting">Kuungana Tena…</string>
+    <string name="callsRinging">kupigia...</string>
+    <string name="callsSessionCall">wito wa Session</string>
+    <string name="callsSettings">Simu (Beta)</string>
+    <string name="callsVoiceAndVideo">Sauti na Simu za Video</string>
+    <string name="callsVoiceAndVideoBeta">Sauti na Simu za Video (Beta)</string>
+    <string name="callsVoiceAndVideoModalDescription">IP yako inaonekana kwa mshirika wako wa simu na seva ya Oxen Foundation wakati unatumia simu za beta.</string>
+    <string name="callsVoiceAndVideoToggleDescription">Kuwezesha simu za sauti na video kwa watumiaji wengine</string>
+    <string name="callsYouCalled">Ulimpiga simu {name}</string>
+    <string name="callsYouMissedCallPermissions">Ulikosa simu kutoka <b>{name} </b> kwa sababu hujawezesha <b>Sauti na Simu za Video</b> katika Mipangilio ya Faragha.</string>
+    <string name="cameraErrorNotFound">Hakuna kamera iliyopatikana</string>
+    <string name="cameraErrorUnavailable">Kamera haipatikani.</string>
+    <string name="cameraGrantAccess">Ipe Ruhusa ya Kamera</string>
+    <string name="cameraGrantAccessDenied">{app_name} inahitaji ruhusa ya Kamera kuchukua picha na video, lakini imekataliwa kabisa. Tafadhali endelea kwenye mipangilio ya programu, chagua \"Ruhusa\", na wezesha \"Kamera\".</string>
+    <string name="cameraGrantAccessDescription">{app_name} inahitaji ruhusa ya kamera kuchukua picha na video, au kuchanganua misimbo ya QR.</string>
+    <string name="cameraGrantAccessQr">{app_name} inahitaji ruhusa ya kamera ili kuchanganua misimbo ya QR</string>
+    <string name="cancel">Ghairi</string>
+    <string name="clear">Futa</string>
+    <string name="clearAll">Futa Zote</string>
+    <string name="clearDataAll">Futa Data Yote</string>
+    <string name="clearDataAllDescription">Hii itafuta jumbe na mawasiliano yako milele. Je, ungependa kufuta kifaa hiki tu, au kufuta data yako pia kutoka kwa mtandao?</string>
+    <string name="clearDataError">Data Haijafutwa</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="one">Data hazijafutwa na %1$d Service Node. Kitambulisho cha Service Node: %2$s.</item>
+        <item quantity="other">Data hazijafutwa na %1$d Service Nodes. Vitambulisho vya Service Node: %2$s.</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">Kosa lisilojulikana limetokea na data zako hazikuwa zimefutwa. Je, unataka kufuta data zako kwenye vifaa hivi pekee badala yake?</string>
+    <string name="clearDevice">Futa Kifaa</string>
+    <string name="clearDeviceAndNetwork">Futa kifaa na mtandao</string>
+    <string name="clearDeviceAndNetworkConfirm">Je, una uhakika unataka kufuta data yako kutoka kwenye mtandao? Ukiendelea, hutakuwa na uwezo wa kurejesha ujumbe au anwani zako.</string>
+    <string name="clearDeviceDescription">Una uhakika unataka kufuta kifaa chako?</string>
+    <string name="clearDeviceOnly">Futa kifaa pekee</string>
+    <string name="clearMessages">Futa Jumbe Zote</string>
+    <string name="clearMessagesChatDescription">Una uhakika unataka kufuta jumbe zote za mazungumzo yako na <b>{name}</b> kwenye kifaa chako?</string>
+    <string name="clearMessagesCommunity">Una uhakika unataka kufuta jumbe zote za <b>{community_name}</b> kwenye kifaa chako?</string>
+    <string name="clearMessagesForEveryone">Futa kwa kila mtu</string>
+    <string name="clearMessagesForMe">Futa kwangu</string>
+    <string name="clearMessagesGroupAdminDescription">Una uhakika unataka kufuta jumbe zote za kikundi <b>{group_name}</b>?</string>
+    <string name="clearMessagesGroupDescription">Una uhakika unataka kufuta jumbe zote za <b>{group_name}</b> kwenye kifaa chako?</string>
+    <string name="clearMessagesNoteToSelfDescription">Una uhakika unataka kufuta jumbe zote za Note to Self kwenye kifaa chako?</string>
+    <string name="close">Funga</string>
+    <string name="closeWindow">Funga Dirisha</string>
+    <string name="communityEnterUrl">Ingiza URL ya Community</string>
+    <string name="communityEnterUrlErrorInvalid">URL Batili</string>
+    <string name="communityEnterUrlErrorInvalidDescription">Tafadhali kagua URL ya Community na ujaribu tena.</string>
+    <string name="communityError">Hitilafu ya Community</string>
+    <string name="communityErrorDescription">Pole, hitilafu imetokea. Tafadhali jaribu tena baadaye.</string>
+    <string name="communityInvitation">Mwaliko wa Community</string>
+    <string name="communityJoin">Jiunge na Jamii</string>
+    <string name="communityJoinDescription">Je, una uhakika unataka kujiunga na {community_name}?</string>
+    <string name="communityJoinError">Imeshindikana kujiunga na {community_name}</string>
+    <string name="communityJoinOfficial">Ama ujiunge na mojawapo ya hizi...</string>
+    <string name="communityJoined">Umejiunga na Jamii</string>
+    <string name="communityJoinedAlready">Wewe tayari ni mwanachama wa huu jumuiya.</string>
+    <string name="communityLeave">Toka kwenye Jamii</string>
+    <string name="communityLeaveError">Imeshindikana kuondoka {community_name}</string>
+    <string name="communityUnknown">Community isiyojulikana</string>
+    <string name="communityUrl">Community URL</string>
+    <string name="communityUrlCopy">Nakili Community URL</string>
+    <string name="confirm">Thibitisha</string>
+    <string name="contactContacts">Mawasiliano</string>
+    <string name="contactDelete">Futa Mwasiliani</string>
+    <string name="contactDeleteDescription">Una uhakika unataka kufuta <b>{name}</b> kutoka kwa mawasiliano yako? Jumbe mpya kutoka <b>{name}</b> zitawasili kama maombi ya jumbe.</string>
+    <string name="contactNone">Hauna waasiliani wowote bado</string>
+    <string name="contactSelect">Chagua Mawasiliano</string>
+    <string name="contactUserDetails">Maelezo ya Mtumiaji</string>
+    <string name="contentDescriptionCamera">Kamera</string>
+    <string name="contentDescriptionChooseConversationType">Chagua kitendo cha kuanza mazungumzo</string>
+    <string name="contentDescriptionMediaMessage">Ujumbe wa vyombo vya habari</string>
+    <string name="contentDescriptionMessageComposition">Utungaji wa ujumbe</string>
+    <string name="contentDescriptionQuoteThumbnail">Thumbnail ya picha kutoka kwa ujumbe ulionukuliwa</string>
+    <string name="contentDescriptionStartConversation">Unda mazungumzo na mawasiliano mapya</string>
+    <string name="conversationsAddToHome">Ongeza kwenye skrini ya nyumbani</string>
+    <string name="conversationsAddedToHome">Imeongezwa kwenye skiirini ya mwanzo</string>
+    <string name="conversationsAudioMessages">Jumbe za Sauti</string>
+    <string name="conversationsAutoplayAudioMessage">Chezesha Moja kwa Moja Ujumbe wa Sauti</string>
+    <string name="conversationsAutoplayAudioMessageDescription">Chezesha Moja kwa Moja ujumbe wa sauti uliotumwa mfululizo</string>
+    <string name="conversationsBlockedContacts">Anwani Zilizozuiwa</string>
+    <string name="conversationsCommunities">Jumuiya</string>
+    <string name="conversationsDelete">Futa Mazungumzo</string>
+    <string name="conversationsDeleteDescription">Je, una uhakika unataka kufuta mazungumzo yako na <b>{name}</b>? Jumbe mpya kutoka kwa <b>{name}</b> zitaanzisha mazungumzo mapya.</string>
+    <string name="conversationsDeleted">Mazungumzo yamefutwa</string>
+    <string name="conversationsEmpty">Hakuna jumbe kwenye {conversation_name}.</string>
+    <string name="conversationsEnter">Ingiza Kitufe</string>
+    <string name="conversationsEnterDescription">Kazi ya kitufe cha kuingiza wakati wa kuandika katika mazungumzo.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER kutuma ujumbe, ENTER kuanza mstari mpya</string>
+    <string name="conversationsEnterSends">ENTER hutuma ujumbe, SHIFT + ENTER inaanza mstari mpya</string>
+    <string name="conversationsGroups">Makundi</string>
+    <string name="conversationsMessageTrimming">Ujumbe unapunguza</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Kata Community</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">Futa ujumbe kutoka Mazungumzo ya Community wenye umri zaidi ya miezi 6, na ambapo kuna zaidi ya jumbe 2,000.</string>
+    <string name="conversationsNew">Mazungumzo mapya</string>
+    <string name="conversationsNone">Hauna mazungumzo yoyote bado</string>
+    <string name="conversationsSendWithEnterKey">Tuma na Kibonyezo cha Enter</string>
+    <string name="conversationsSendWithEnterKeyDescription">Gusa kitufe cha Ingiza ili kutuma ujumbe badala ya kuanza mstari mpya.</string>
+    <string name="conversationsSettingsAllMedia">Vyombo vyote vya habari</string>
+    <string name="conversationsSpellCheck">Ukaguzi wa Tahajia</string>
+    <string name="conversationsSpellCheckDescription">Wezesha uangalizi wa tahajia unapopatajumbe</string>
+    <string name="conversationsStart">Anza Mazungumzo</string>
+    <string name="copied">Imenakiliwa</string>
+    <string name="copy">Nakili</string>
+    <string name="create">Unda</string>
+    <string name="cut">Kata</string>
+    <string name="databaseErrorGeneric">Kosa la database limetokea.<br\/><br\/>Toa logi za programu zako kushirikisha kwa utatuzi. Ikiwa hili halitafanikiwa, sakinisha tena {app_name} na urejeshe akaunti yako. <br\/><br\/> Onyo: Hii itasababisha kupotea kwa ujumbe wote, viambatisho, na data ya akaunti iliyo zaidi ya wiki mbili.</string>
+    <string name="databaseErrorTimeout">Tumeona {app_name} inachukua muda mrefu kuanza.
+
+Unaweza kuendelea kusubiri, kuhamisha kumbukumbu za kifaa chako kushiriki kwa kutatua shida, au jaribu kuanzisha Session upya.</string>
+    <string name="databaseErrorUpdate">Hifadhidata ya programu yako hailingani na toleo hili la {app_name}. Sakinusha programu na urejeshe akaunti yako ili kuunda hifadhidata mpya na uendelee kutumia {app_name}.
+
+Onyo: Hii itasababisha kupoteza ujumbe na viambatanisho vyote vilivyo zaidi ya wiki mbili.</string>
+    <string name="databaseOptimizing">Kuhamisha Hifadhidata</string>
+    <string name="debugLog">Logi ya Kurekebisha</string>
+    <string name="decline">Kataa</string>
     <string name="delete">Futa</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">Baadhi ya vifaa vyako vina matoleo yasiyo ya kisasa. Usawazishaji unaweza kuwa si wa kuaminika hadi yamesasishwa.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">Zuia Mtumiaji Huyu</string>
+    <string name="deleteAfterGroupPR1BlockUser">Zuia Mtumiaji</string>
+    <string name="deleteAfterGroupPR1GroupSettings">Mipangilio ya Kikundi</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Taarifa za bubu tu kwa kutajwa</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">Ukiwezeshwa, utaarifiwa tu kwa ujumbe unaokutaja.</string>
+    <string name="deleteAfterGroupPR1MessageSound">Sauti ya Ujumbe</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">Unataka kufuta meseji hizi kabisa kwenye mazungumzo haya?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">Huwezi kuondoka huku unaongeza au unapunguza wanachama wengine.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">Urithi</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">Toleo la awali la meseji zinazopotea.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer"><b>{name}</b> ameseti kipima muda wa ujumbe unaopotea kwa <b>{time}</b></string>
+    <string name="deleteMessage">Futa Ujumbe</string>
+    <string name="deleteMessageConfirm">Je, una uhakika unataka kufuta ujumbe huu?</string>
+    <string name="deleteMessageDeleted">Ujumbe umefutwa</string>
+    <string name="deleteMessageDeletedGlobally">Ujumbe huu umefutwa</string>
+    <string name="deleteMessageDeletedLocally">Ujumbe huu umefutwa kwenye kifaa hiki</string>
+    <string name="deleteMessageDescriptionDevice">Je, una uhakika unataka kufuta ujumbe huu kutoka kifaa hiki pekee?</string>
+    <string name="deleteMessageDescriptionEveryone">Je, una uhakika unataka kufuta ujumbe huu kwa kila mtu?</string>
+    <string name="deleteMessageDeviceOnly">Futa kwenye kifaa hiki pekee</string>
+    <string name="deleteMessageDevicesAll">Futa kwenye vifaa vyangu vyote</string>
+    <string name="deleteMessageEveryone">Futa kwa kila mtu</string>
+    <string name="deleteMessageFailed">Imeshindikana kufuta ujumbe</string>
+    <string name="deleteMessages">Futa Ujumbe</string>
+    <string name="deleteMessagesConfirm">Je, una uhakika unataka kufuta jumbe hizi?</string>
+    <string name="deleteMessagesDeleted">Jumbe zimefutwa</string>
+    <string name="deleteMessagesDescriptionDevice">Una uhakika unataka kufuta jumbe hizi kwenye kifaa hiki pekee?</string>
+    <string name="deleteMessagesDescriptionEveryone">Una uhakika unataka kufuta jumbe hizi kwa kila mtu?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="one">Imeshindikana kufuta ujumbe</item>
+        <item quantity="other">Imeshindikana kufuta jumbe</item>
+    </plurals>
+    <string name="deleting">Kufuta</string>
+    <string name="developerToolsToggle">Geuza Zana za Usanidi</string>
+    <string name="dictationStart">Anza Dikte...</string>
+    <string name="disappearingMessages">Ujumbe Unaoangamia</string>
+    <string name="disappearingMessagesCountdownBig">Ujumbe utajifuta baada ya {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">Itajifuta ndani ya {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">Ujumbe utajifuta baada ya {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">Itajifuta ndani ya {time_large} {time_small}</string>
+    <string name="disappearingMessagesDeleteType">Aina ya Kufutwa</string>
+    <string name="disappearingMessagesDescription">Mpangilio huu unawahusu wote katika mazungumzo haya.</string>
+    <string name="disappearingMessagesDescription1">Mpangilio huu unahusu jumbe unazotuma katika mazungumzo haya.</string>
+    <string name="disappearingMessagesDisappear">Kutoweka Baada ya {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">Kutoweka Baada ya Kusomwa</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">Jumbe hujifuta baada ya kusomwa.</string>
+    <string name="disappearingMessagesDisappearAfterSend">Kutoweka Baada ya Kutumwa</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">Jumbe hujifuta baada ya kutumwa.</string>
+    <string name="disappearingMessagesFollowSetting">Weka Mpangilio</string>
+    <string name="disappearingMessagesFollowSettingOff">Jumbe unazotuma hazitafutika tena. Uko tayari kuzima <b>jumbe zinazofutika</b>?</string>
+    <string name="disappearingMessagesFollowSettingOn">Weka ujumbe wako upotee <b>{time}</b> baada ya kuwa <b>{disappearing_messages_type}</b>?</string>
+    <string name="disappearingMessagesLegacy">{name} anatumia mteja wa zamani. Ujumbe unaotoweka unaweza usifanye kazi kama inavyotarajiwa.</string>
+    <string name="disappearingMessagesOnlyAdmins">Ni wasimamizi wa kikundi tu wanaoweza kubadilisha mipangilio hii.</string>
+    <string name="disappearingMessagesSent">Imetumwa</string>
+    <string name="disappearingMessagesSet"><b>{name}</b> ameseti ujumbe kupotea {time} baada ya kuwa {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesSetYou"><b>Wewe</b> umeseti ujumbe kupotea {time} baada ya kuwa {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesTimer">Kipima muda</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name}</b> amezima ujumbe unaopotea. Ujumbe atumao hautapotea tena.</string>
+    <string name="disappearingMessagesTurnedOffYou"><b>Wewe</b> umezima <b>ujumbe unaopotea</b>. Ujumbe utakao tumwa hautapotea tena.</string>
+    <string name="disappearingMessagesTypeRead">soma</string>
+    <string name="disappearingMessagesTypeSent">imetumwa</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> amesasisha mipangilio ya ujumbe unaotoweka.</string>
+    <string name="disappearingMessagesUpdatedYou"><b>Wewe</b> umesasisha mipangilio ya ujumbe unaopotea.</string>
+    <string name="dismiss">Acha</string>
+    <string name="displayNameDescription">Inaweza kuwa jina lako halisi, jina bandia, au kitu kingine ukipendacho - na unaweza kubadilisha wakati wowote.</string>
+    <string name="displayNameEnter">Weka jina la kuonyesha</string>
+    <string name="displayNameErrorDescription">Tafadhali weka jina la kuonyesha</string>
+    <string name="displayNameErrorDescriptionShorter">Tafadhali chagua jina fupi kidogo</string>
+    <string name="displayNameErrorNew">Hatuwezi kupakia jina lako la kuonyesha. Tafadhali weka jina jipya la kuonyesha ili uendelee.</string>
+    <string name="displayNameNew">Chagua jina jipya la kuonyesha</string>
+    <string name="displayNamePick">Chagua jina lako la kuonyesha</string>
+    <string name="displayNameSet">Weka Jina la Kuonyesha</string>
+    <string name="document">Hati</string>
+    <string name="done">Imefanyika</string>
+    <string name="download">Pakua</string>
+    <string name="downloading">Kupakua...</string>
+    <string name="draft">Rasimu</string>
+    <string name="edit">Hariri</string>
+    <string name="emojiAndSymbols">Emoji &amp; Symbols</string>
+    <string name="emojiCategoryActivities">Shughuli</string>
+    <string name="emojiCategoryAnimals">Wanyama &amp; Maumbile</string>
+    <string name="emojiCategoryFlags">Bendera</string>
+    <string name="emojiCategoryFood">Chakula &amp; Kinywaji</string>
+    <string name="emojiCategoryObjects">Vitu</string>
+    <string name="emojiCategoryRecentlyUsed">Zilizotumiwa Hivi karibuni</string>
+    <string name="emojiCategorySmileys">Smileys &amp; Watu</string>
+    <string name="emojiCategorySymbols">Alama</string>
+    <string name="emojiCategoryTravel">Safari &amp; Sehemu</string>
+    <string name="emojiReactsClearAll">Una uhakika unataka kufuta emoji zote {emoji}?</string>
+    <string name="emojiReactsCoolDown">Punguza mwendo! Umetuma mzio mwingi wa emoji. Jaribu tena hivi karibuni</string>
+    <plurals name="emojiReactsCountOthers">
+        <item quantity="one">Na %1$d mwingine ameonyesha hisia ya %2$s kwenye ujumbe huu.</item>
+        <item quantity="other">Na %1$d wengine wameonyesha hisia ya %2$s kwenye ujumbe huu.</item>
+    </plurals>
+    <string name="emojiReactsHoverNameDesktop">{name} alijibu na <emoji/></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} &amp; {other_name} walijibu na <emoji/></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} na <span>{count} wengine</span> walijibu na <emoji/></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} na <span>1 mwingine</span> walijibu na <emoji/></string>
+    <string name="emojiReactsHoverYouDesktop">Umereact kwa kutumia <emoji/></string>
+    <string name="emojiReactsHoverYouNameDesktop">Wewe &amp; {name} mliitikia na <emoji /></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">Wewe, {name} &amp; <span>{count} wengine</span> walireact na <emoji /></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">Wewe, {name} &amp; <span>mmoja mwengine</span> walireact na <emoji /></string>
+    <string name="emojiReactsNotification">Amezidi ujumbe wako {emoji}</string>
+    <string name="enable">Wezesha</string>
+    <string name="errorConnection">Tafadhali kagua muunganiko wako wa intaneti na ujaribu tena.</string>
+    <string name="errorCopyAndQuit">Nakili Hitilafu na Kuacha</string>
+    <string name="errorDatabase">Hitilafu ya Database</string>
+    <string name="errorUnknown">Kosa lisilojulikana limetokea.</string>
+    <string name="failures">Kushindwa</string>
+    <string name="file">jalada</string>
+    <string name="files">Majalada</string>
+    <string name="followSystemSettings">Fuata mipangilio ya mfumo</string>
+    <string name="from">Kutoka:</string>
+    <string name="fullScreenToggle">Geuza Skrini Kamili</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">{app_name} itaunganishwa na Giphy kutoa matokeo ya utafutaji. Hutakuwa na ulinzi kamili wa metadata unapopoa GIFs.</string>
+    <string name="groupAddMemberMaximum">Makundi yana wanachama wengi zaidi ya 100</string>
+    <string name="groupCreate">Unda Kikundi</string>
+    <string name="groupCreateErrorNoMembers">Tafadhali chagua angalau mwanakikundi mmoja.</string>
+    <string name="groupDelete">Futa Kundi</string>
+    <string name="groupDeleteDescription">Una uhakika unataka kufuta <b>{group_name}</b> kikundi hiki? Hii itapondoa wanakikundi na kushusha maudhui yote.</string>
+    <string name="groupDescriptionEnter">Weka maelezo ya kikundi</string>
+    <string name="groupDisplayPictureUpdated">Picha ya onyesho la kikundi imesasishwa.</string>
+    <string name="groupEdit">Hariri Kundi</string>
+    <string name="groupError">Hitilafu ya Kikundi</string>
+    <string name="groupErrorCreate">Imeshindikana kuunda kikundi tafadhali hakikisha muunganisho wako wa intaneti na jaribu tena.</string>
+    <string name="groupErrorJoin">Imeshindikana kujiunga na {group_name}</string>
+    <string name="groupInformationSet">Weka Taarifa za Kikundi</string>
+    <string name="groupInviteDelete">Je, una uhakika unataka kufuta hii mwaliko wa kundi?</string>
+    <string name="groupInviteFailed">Kualika kumeharibika</string>
+    <string name="groupInviteFailedMore">Imeshindikana kualika {name} na wengine {count} kwa {group_name}</string>
+    <string name="groupInviteFailedTwo">Imeshindikana kualika {name} na {other_name} kwa {group_name}</string>
+    <string name="groupInviteFailedUser">Imeshindikana kualika {name} kwa {group_name}</string>
+    <string name="groupInviteSending">Inatuma mwaliko</string>
+    <string name="groupInviteSent">Kualika kumewekwa</string>
+    <string name="groupInviteSuccessful">Mwaliko wa kikundi umefanikiwa</string>
+    <string name="groupInviteVersion">Watumiaji lazima wawe na toleo {version} au zaidi kupokea mialiko</string>
+    <string name="groupInviteYou"><b>Wewe</b> umealikwa kujiunga na kundi.</string>
+    <string name="groupLeave">Toka kwenye kikundi</string>
+    <string name="groupLeaveDescription">Je, una uhakika unataka kuondoka {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">Je, una uhakika unataka kuondoka {group_name}? Hii itafanya kundi kufungwa kwa wanachama wote.</string>
+    <string name="groupLeaveErrorFailed">Imeshindikana kuondoka {group_name}</string>
+    <string name="groupLegacyBanner">Makundi yameboreshwa, unda kikundi kipya kuboresha. Utendaji wa kikundi wa zamani utapungua kutoka {date}.</string>
+    <string name="groupMemberLeft"><b>{name}</b> ameondoka kwenye kundi.</string>
+    <string name="groupMemberLeftMore"><b>{name}</b> na <b>{count} wengine</b> wameondoka kwenye kundi.</string>
+    <string name="groupMemberLeftTwo"><b>{name}</b> na <b>{other_name}</b> wameondoka kwenye kundi.</string>
+    <string name="groupMemberMoreNew"><b>{name}</b> na <b>{count} wengine</b> wamejiunga na kundi.</string>
+    <string name="groupMemberNew"><b>{name}</b> amejiunga na kundi.</string>
+    <string name="groupMemberTwoNew"><b>{name}</b> na <b>{other_name}</b> wamejiunga na kundi.</string>
+    <string name="groupMemberYouLeft"><b>Wewe</b> umetoka kwenye kundi.</string>
+    <string name="groupMembers">Wajumbe wa kikundi</string>
+    <string name="groupMembersNone">Hakuna wanachama wengine katika kikundi hiki.</string>
+    <string name="groupName">Jina la kikundi</string>
+    <string name="groupNameEnter">Weka jina la kikundi</string>
+    <string name="groupNameEnterPlease">Tafadhali weka jina la kikundi.</string>
+    <string name="groupNameEnterShorter">Tafadhali weka jina fupi kidogo la kikundi.</string>
+    <string name="groupNameNew">Jina la kundi sasa ni {group_name}.</string>
+    <string name="groupNameUpdated">Jina la kikundi limesasishwa.</string>
+    <string name="groupNoMessages">Hauna jumbe kutoka kwa <b>{group_name}</b>. Tuma ujumbe ili kuanza mazungumzo!</string>
+    <string name="groupOnlyAdmin">Wewe ndiye msimamizi pekee katika <b>{group_name}</b>.
+
+Wanakundi na mipangilio hawawezi kubadilishwa bila msimamizi.</string>
+    <string name="groupPromotedYou"><b>Wewe</b> umepandishwa cheo kuwa Admin.</string>
+    <string name="groupRemoveDescription">Ungependa kuondoa <b>{name}</b> kutoka <b>{group_name}</b>?</string>
+    <string name="groupRemoveMessages">Ondoa mtumiaji na jumbe zao</string>
+    <string name="groupRemoveMoreDescription">Ungependa kuondoa <b>{name}</b> na <b>{count} wengine</b> kutoka <b>{group_name}</b>?</string>
+    <string name="groupRemoveTwoDescription">Ungependa kuondoa <b>{name}</b> na <b>{other_name}</b> kutoka <b>{group_name}</b>?</string>
+    <string name="groupRemoveUserOnly">Ondoa mtumiaji</string>
+    <string name="groupRemoveUsersMessages">Ondoa watumiaji na jumbe zao</string>
+    <string name="groupRemoveUsersOnly">Ondoa watumiaji</string>
+    <string name="groupRemoved"><b>{name}</b> ameondolewa kwenye kundi.</string>
+    <string name="groupRemovedMore"><b>{name}</b> na <b>{count} wengine</b> wameondolewa kutoka kwenye kundi.</string>
+    <string name="groupRemovedTwo"><b>{name}</b> na <b>{other_name}</b> wameondolewa kutoka kwenye kundi</string>
+    <string name="groupRemovedYou">Umetolewa kutoka kwa <b>{group_name}</b>.</string>
+    <string name="groupSetDisplayPicture">Weka Picha ya Kikundi</string>
+    <string name="groupUnknown">Kundi lisilojulikana</string>
+    <string name="groupUpdated">Kikundi kimeboreshwa</string>
+    <string name="helpFAQ">Maswali Yanayoulizwa Sana</string>
+    <string name="helpHelpUsTranslateSession">Tusaidie Kutafsiri {app_name}</string>
+    <string name="helpReportABug">Ripoti hitilafu</string>
+    <string name="helpReportABugDescription">Shiriki maelezo machache kutusaidia kutatua tatizo lako. Hamisha maingizo yako, kisha pakia faili kupitia Kituo cha Msaada cha {app_name}.</string>
+    <string name="helpReportABugExportLogs">Hamisha Magogo</string>
+    <string name="helpReportABugExportLogsDescription">Hamisha magogo yako, kisha pakia faili kupitia Dawati la Msaada la {app_name}.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">Hifadhi kwenye desktop</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">Hifadhi faili hili kwenye desktop yako, kisha shirikisha na watengenezaji wa {app_name}.</string>
+    <string name="helpSupport">Usaidizi</string>
+    <string name="helpWedLoveYourFeedback">Tungependa maoni yako</string>
+    <string name="hide">Ficha</string>
+    <string name="hideOthers">Ficha Wengine</string>
+    <string name="image">Picha</string>
+    <string name="incognitoKeyboard">Kibodi cha Incognito</string>
+    <string name="incognitoKeyboardDescription">Omba hali fiche ikiwa inapatikana. Kulingana na kibodi unayotumia, kibodi yako inaweza kupuuza ombi hili.</string>
+    <string name="info">Taarifa</string>
+    <string name="invalidShortcut">Mkato wa batili</string>
+    <string name="join">Jiunge</string>
+    <string name="later">Baadae</string>
+    <string name="learnMore">Jua Mengine</string>
+    <string name="leave">Toka</string>
+    <string name="leaving">Kuondoka...</string>
+    <string name="linkPreviews">Muhtasari wa Viungo</string>
+    <string name="linkPreviewsDescription">Onyesha hakikisho za viungo kwa URL zinazotumiwa.</string>
+    <string name="linkPreviewsEnable">Wezesha Muhtasari wa Viungo</string>
+    <string name="linkPreviewsErrorLoad">Haiwezi kupakia hakikisho la kiungo</string>
+    <string name="linkPreviewsErrorUnsecure">Muhtasari haujapakiwa kwa kiungo kisicho salama</string>
+    <string name="linkPreviewsFirstDescription">Onyesha mapitio ya URLs unazotuma na kupokea. Hili linaweza kuwa na manufaa, hata hivyo {app_name} inahitaji kuwasiliana na tovuti zilizounganishwa ili kutengeneza mapitio. Unaweza kuzima muhtasari wa viungo wakati wowote kwenye mipangilio ya {app_name}.</string>
+    <string name="linkPreviewsSend">Tuma Muhtasari wa Viungo</string>
+    <string name="linkPreviewsSendModalDescription">Hautakuwa na ulinzi kamili wa metadata unapoituma kiungo za mapitio.</string>
+    <string name="linkPreviewsTurnedOff">Muhtasari wa Viungo Umezimwa</string>
+    <string name="linkPreviewsTurnedOffDescription">{app_name} lazima iwasiliane na tovuti zilizounganishwa ili kuzalisha mwonekano wa viungo unavyotuma na kupokea.
+
+Unaweza kuwawasha kwenye mipangilio ya {app_name}.</string>
+    <string name="loadAccount">Pakua Akaunti</string>
+    <string name="loadAccountProgressMessage">Inafunguka akaunti yako</string>
+    <string name="loading">Inafunguka...</string>
+    <string name="lockApp">Funga Programu</string>
+    <string name="lockAppDescriptionAndroid">omba alama ya kidole, PIN, muundo au nywila ili kufungua {app_name}.</string>
+    <string name="lockAppDescriptionIos">omba Touch ID, Face ID au nywila yako kufungua {app_name}.</string>
+    <string name="lockAppEnablePasscode">Lazima uwezeshe nenosiri katika Mipangilio yako ya iOS ili kutumia Screen Lock.</string>
+    <string name="lockAppLocked">{app_name} imefungiwa</string>
+    <string name="lockAppQuickResponse">Jibu la haraka halipatikani wakati {app_name} imefungwa!</string>
+    <string name="lockAppStatus">Hali ya kufunga</string>
+    <string name="lockAppUnlock">Gusa Kufungua</string>
+    <string name="lockAppUnlocked">{app_name} imefunguliwa</string>
+    <string name="max">Mwisho</string>
+    <string name="media">Vyombo vya habari</string>
+    <plurals name="members">
+        <item quantity="one">wanakundi %1$d</item>
+        <item quantity="other">wanakundi %1$d</item>
+    </plurals>
+    <plurals name="membersActive">
+        <item quantity="one">%1$d mwanachama hai</item>
+        <item quantity="other">%1$d wanachama hai</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">Ongeza Account ID au ONS</string>
+    <string name="membersInvite">Alika marafiki</string>
+    <string name="membersInviteSend">Tuma Mwaliko</string>
+    <string name="membersInviteSendMultiple">Tuma Mialiko</string>
+    <string name="membersInviteShareDescription">Ungependa kushiriki historia ya ujumbe wa kundi na <b>{name}</b>?</string>
+    <string name="membersInviteShareMessageHistory">Shiriki historia ya ujumbe</string>
+    <string name="membersInviteShareMoreDescription">Ungependa kushiriki historia ya ujumbe wa kundi na <b>{name}</b> na <b>{count} wengine</b>?</string>
+    <string name="membersInviteShareNewMessagesOnly">Shiriki jumbe mpya pekee</string>
+    <string name="membersInviteShareTwoDescription">Ungependa kushiriki historia ya ujumbe wa kundi na <b>{name}</b> na <b>{other_name}</b>?</string>
+    <string name="membersInviteTitle">Alika</string>
+    <string name="message">Ujumbe</string>
+    <string name="messageEmpty">Ujumbe huu ni mtupu.</string>
+    <string name="messageErrorDelivery">Ujumbe haujatumwa</string>
+    <string name="messageErrorLimit">Kikomo cha ujumbe kimefikiwa</string>
+    <string name="messageErrorOld">Imepokea ujumbe uliofichwa kwa kutumia toleo la zamani la {app_name} ambayo haitumiki tena. Tafadhali kumwomba mtumaji kuwasasishe kwa toleo la hivi karibuni na kurejesha ujumbe.</string>
+    <string name="messageErrorOriginal">Meseji halisi haipatikani</string>
+    <string name="messageInfo">Taarifa ya Ujumbe</string>
+    <string name="messageMarkRead">Soma nakili</string>
+    <string name="messageMarkUnread">Alamisha haijasomwa</string>
+    <string name="messageNew">Ujumbe mpya</string>
+    <string name="messageNewDescriptionDesktop">Anza mazungumzo mapya kwa kuingiza Kitambulisho cha Akaunti ya rafiki yako au ONS.</string>
+    <string name="messageNewDescriptionMobile">Anza mazungumzo mapya kwa kuingiza Kitambulisho cha Akaunti ya rafiki yako, ONS au kuchanganua msimbo wao wa QR.</string>
+    <string name="messageNewMessages">Jumbe mpya</string>
+    <plurals name="messageNewYouveGot">
+        <item quantity="one">Umepewa ujumbe mpya.</item>
+        <item quantity="other">Umepewa jumbe mpya %1$d.</item>
+    </plurals>
+    <string name="messageReplyingTo">Kujibu</string>
+    <string name="messageRequestGroupInvite"><b>{name}</b> amekualika ujiunge na <b>{group_name}</b>.</string>
+    <string name="messageRequestGroupInviteDescription">Ukituma ujumbe kwa kundi hili, mwaliko wa kundi utakubaliwa kiotomatiki.</string>
+    <string name="messageRequestPending">Ombi lako la ujumbe linasubiri kwa sasa.</string>
+    <string name="messageRequestPendingDescription">Utaweza kutuma jumbe za sauti na viambatanisho mara baada ya mpokeaji kuidhinisha ombi hili la ujumbe.</string>
+    <string name="messageRequestYouHaveAccepted">Umeidhinisha ombi la ujumbe kutoka kwa <b>{name}</b>.</string>
+    <string name="messageRequestsAcceptDescription">Ukituma ujumbe kwa mtumiaji huyu, ombi lao la ujumbe litakubaliwa kiotomatiki na ID yako ya akaunti itaonekana.</string>
+    <string name="messageRequestsAccepted">Ombi lako la ujumbe limekubaliwa.</string>
+    <string name="messageRequestsClearAllExplanation">Una uhakika unataka kufuta maombi yote ya ujumbe na mialiko ya kikundi?</string>
+    <string name="messageRequestsCommunities">Maombi ya Ujumbe wa Community</string>
+    <string name="messageRequestsCommunitiesDescription">Ruhusu maombi ya ujumbe kutoka kwa Majadiliano ya Jamii.</string>
+    <string name="messageRequestsDelete">Je, una uhakika unataka kufuta hii Message request?</string>
+    <string name="messageRequestsNew">Una ombi jipya la ujumbe</string>
+    <string name="messageRequestsNonePending">Hakuna maombi ya ujumbe yanayosubiri</string>
+    <string name="messageRequestsTurnedOff"><b>{name}</b> amezima maombi ya ujumbe kutoka kwenye Mazungumzo ya Community, hivyo huwezi kutuma ujumbe</string>
+    <string name="messageSelect">Chagua Ujumbe</string>
+    <string name="messageStatusFailedToSend">Imeshindikana kutuma</string>
+    <string name="messageStatusFailedToSync">Imeshindikana kulandanisha</string>
+    <string name="messageStatusSyncing">Inasawazisha</string>
+    <string name="messageUnread">Ujumbe usiosomwa</string>
+    <string name="messageVoice">Ujumbe-Sauti</string>
+    <string name="messageVoiceErrorShort">Shikilia kurekodi ujumbe wa sauti</string>
+    <string name="messageVoiceSlideToCancel">Telezesha ili Kughairi</string>
+    <string name="messages">Jumbe</string>
+    <string name="minimize">Minimize</string>
+    <string name="next">Inayofuata</string>
+    <string name="nicknameDescription">Chagua jina la utani kwa {name}. Hii itaonekana kwako katika mazungumzo ya moja kwa moja na ya kikundi.</string>
+    <string name="nicknameEnter">Weka jina la utani</string>
+    <string name="nicknameRemove">Ondoa jina la utani</string>
+    <string name="nicknameSet">Weka Jina la Utani</string>
+    <string name="no">Hapana</string>
+    <string name="noSuggestions">Hakuna Mapendekezo</string>
+    <string name="none">Hakuna</string>
+    <string name="notNow">Sio sasa</string>
+    <string name="noteToSelf">Kumbuka kwake</string>
+    <string name="noteToSelfEmpty">Hauna jumbe katika Note to Self.</string>
+    <string name="noteToSelfHide">Ficha Kumbuka kwake</string>
+    <string name="noteToSelfHideDescription">Je, una uhakika unataka kuficha Note to Self?</string>
+    <string name="notificationsAllMessages">Jumbe Zote</string>
+    <string name="notificationsAndroidSystem">{message_count} ujumbe mpya katika {conversation_count} mazungumzo</string>
+    <string name="notificationsContent">Maudhui ya Arifa</string>
+    <string name="notificationsContentDescription">Taarifa iliyoonyeshwa kwenye arifa.</string>
+    <string name="notificationsContentShowNameAndContent">Jina na Maudhui</string>
+    <string name="notificationsContentShowNameOnly">jina tu</string>
+    <string name="notificationsContentShowNoNameOrContent">Hakuna Jina wala Maudhui</string>
+    <string name="notificationsFastMode">Mtindo wa Kiharaka</string>
+    <string name="notificationsFastModeDescriptionAndroid">Utaarifiwa kuhusu ujumbe mpya kwa uhakika na mara moja kwa kutumia seva za arifa za Google.</string>
+    <string name="notificationsFastModeDescriptionIos">Utaarifiwa kuhusu ujumbe mpya kwa uhakika na mara moja kwa kutumia seva za arifa za Apple.</string>
+    <string name="notificationsGoToAndroidSettings">Nenda kwenye mipangilio ya arifa za Android</string>
+    <string name="notificationsGoToDevice">Nenda kwenye mipangilio ya arifa ya kifaa</string>
+    <string name="notificationsIosGroup">{name} kwa {conversation_name}</string>
+    <string name="notificationsIosRestart">Huenda umepokea jumbe wakati {device} yako ilikuwa inarestart.</string>
+    <string name="notificationsLedColor">Rangi za LED</string>
+    <string name="notificationsMentionsOnly">Tajo Tu</string>
+    <string name="notificationsMessage">Arifa za Jumbe</string>
+    <string name="notificationsMostRecent">ya hivi karibuni kutoka {name}</string>
+    <string name="notificationsMute">zima kwa siri</string>
+    <string name="notificationsMuteFor">Zima kwa {time_large}</string>
+    <string name="notificationsMuteUnmute">Usifute</string>
+    <string name="notificationsMuted">Limenyamazishwa</string>
+    <string name="notificationsSlowMode">Mtindo wa Kipole</string>
+    <string name="notificationsSlowModeDescription">{app_name} itakagua iwapo kuna jumbe mpya usulini kila mara.</string>
+    <string name="notificationsSound">Sauti</string>
+    <string name="notificationsSoundDescription">Sauti wakati Programu iko wazi</string>
+    <string name="notificationsSoundDesktop">Arifa za Sauti</string>
+    <string name="notificationsStrategy">Mkakati wa Arifa</string>
+    <string name="notificationsStyle">Mtindo wa Arifa</string>
+    <string name="notificationsVibrate">Vibrate</string>
+    <string name="off">Zima</string>
+    <string name="okay">Sawa</string>
+    <string name="onboardingAccountCreate">Unda akaunti</string>
+    <string name="onboardingAccountCreated">Akaunti Imesasishwa</string>
+    <string name="onboardingAccountExists">Nina akaunti</string>
+    <string name="onboardingBackAccountCreation">Huwezi kwenda nyuma zaidi. Ili kufuta kuundwa kwa akaunti yako, Session inahitaji kufungwa.</string>
+    <string name="onboardingBackLoadAccount">Huwezi kwenda nyuma zaidi. Ili kusitisha kupakia akaunti yako, Session inahitaji kufungwa.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Kuunda akaunti ni haraka, bila malipo, na bila jina </string>
+    <string name="onboardingBubbleNoPhoneNumber">Hata huhitaji nambari ya simu kujisajili.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">Faragha mfukoni mwako.</string>
+    <string name="onboardingBubbleSessionIsEngineered">{app_name} imeundwa kulinda faragha yako.</string>
+    <string name="onboardingBubbleWelcomeToSession">Karibu kwenye {app_name}</string>
+    <string name="onboardingHitThePlusButton">Bonyeza kitufe cha kuongeza ili kuanzisha mazungumzo, kuunda kikundi, au kujiunga na jamii rasmi!</string>
+    <string name="onboardingMessageNotificationExplanation">Kuna njia mbili ambazo {app_name} inaweza kukuarifu kuhusu jumbe mpya.</string>
+    <string name="onboardingPrivacy">Sera ya Faragha</string>
+    <string name="onboardingTos">Sheria za Huduma</string>
+    <string name="onboardingTosPrivacy">Kwa kutumia huduma hii, unakubali <b>Vigezo vya Huduma</b> na <b>Sera ya Faragha</b></string>
+    <string name="onionRoutingPath">Njia</string>
+    <string name="onionRoutingPathDescription">{app_name} inaficha IP yako kwa kupitisha ujumbe wako kupitia nodi nyingi za huduma katika mtandao wa {app_name} ulioenea. Hii ndio njia yako ya sasa:</string>
+    <string name="onionRoutingPathDestination">Marudio</string>
+    <string name="onionRoutingPathEntryNode">Nodi ya kuingilia</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">Nchi isiyojulikana</string>
+    <string name="onsErrorNotRecognized">Hatuwezi kutambua ONS hii. Tafadhali hakikisha na ujaribu tena.</string>
+    <string name="onsErrorUnableToSearch">Hatuwezi kutafuta ONS hii. Tafadhali jaribu tena baadaye.</string>
+    <string name="open">Fungua</string>
+    <string name="other">ingine</string>
+    <string name="passwordChange">Badilisha Nywila</string>
+    <string name="passwordChangeDescription">Badilisha nywila inayohitajika kufungua {app_name}.</string>
+    <string name="passwordChangedDescription">Nenosiri lako limebadilishwa. Tafadhali lihifadhi salama.</string>
+    <string name="passwordConfirm">Thibitisha nenosiri</string>
+    <string name="passwordCreate">Unda nenosiri lako</string>
+    <string name="passwordCurrentIncorrect">Nenosiri lako la sasa sio sahihi.</string>
+    <string name="passwordDescription">omba nywila kufungua {app_name}.</string>
+    <string name="passwordEnter">Weka nenosiri</string>
+    <string name="passwordEnterCurrent">Tafadhali weka nyila yako ya sasa.</string>
+    <string name="passwordEnterNew">Tafadhali weka nyila yako mpya</string>
+    <string name="passwordError">Nywila lazima ziwe na herufi, nambari na alama pekee</string>
+    <string name="passwordErrorLength">Nywila lazima iwe kati ya herufi 6 na 64</string>
+    <string name="passwordErrorMatch">Nywila hazilingani</string>
+    <string name="passwordFailed">Imeshindikana kuweka nenosiri</string>
+    <string name="passwordIncorrect">Nywila sio sahihi</string>
+    <string name="passwordRemove">Ondoa Nywila</string>
+    <string name="passwordRemoveDescription">Ondoa nywila inayotakiwa kufungua {app_name}.</string>
+    <string name="passwordRemovedDescription">Nenosiri lako limeondolewa.</string>
+    <string name="passwordSet">Weka Nywila</string>
+    <string name="passwordSetDescription">Nenosiri lako limewekwa. Tafadhali lihifadhi salama.</string>
+    <string name="paste">Bandika</string>
+    <string name="permissionsAppleMusic">{app_name} inahitaji kutumia Apple Music kucheza viambatanisho vya vyombo vya habari.</string>
+    <string name="permissionsAutoUpdate">Sasisho la Moja kwa Moja</string>
+    <string name="permissionsAutoUpdateDescription">Angalia sasisho moja kwa moja unapoanzisha</string>
+    <string name="permissionsFaceId">Kipengele cha kufuli skrini kwenye {app_name} kinatumia Face ID.</string>
+    <string name="permissionsKeepInSystemTray">Weka kwenye Tray ya Mfumo</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} inaendelea kukimbia chinichini ukiwa umefunga dirisha</string>
+    <string name="permissionsLibrary">{app_name} inahitaji ruhusa ya maktaba ya picha ili kuendelea. Unaweza kuwasha ruhusa kwenye mipangilio ya iOS.</string>
+    <string name="permissionsMicrophone">Maikrofoni</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">{app_name} inahitaji idhini ya Kipaza sauti kutuma ujumbe wa sauti, lakini imekataliwa kabisa. Tafadhali endelea kwenye mipangilio ya programu, chagua \"Ruhusa\", na wezesha \"Kipaza sauti\".</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">Unaweza kuwezesha upatikanaji wa kipaza sauti katika mipangilio ya faragha ya {app_name}</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">{app_name} inahitaji ruhusa ya kipaza sauti kupiga simu na kurekodi ujumbe wa sauti.</string>
+    <string name="permissionsMicrophoneDescription">Ruhusu ufikiaji wa kipaza sauti</string>
+    <string name="permissionsRequired">Ruhusa inahitajika</string>
+    <string name="permissionsStorageSave">{app_name} inahitaji ruhusa ya hifadhi ili kuhifadhi viambatanisho na vyombo vya habari.</string>
+    <string name="permissionsStorageSaveDenied">{app_name} inahitaji ruhusa ya hifadhi kuhifadhi picha na video, lakini imekataliwa kabisa. Tafadhali endelea kwenye mipangilio ya programu, chagua \"Ruhusa\", na wezesha \"Ruhusa ya Hifadhi\".</string>
+    <string name="permissionsStorageSend">{app_name} inahitaji ruhusa ya kuhifadhi ili kutuma picha na video.</string>
+    <string name="pin">Bandika</string>
+    <string name="pinConversation">Bandika Mazungumzo</string>
+    <string name="pinUnpin">Ondoa</string>
+    <string name="pinUnpinConversation">Ondoa Mazungumzo</string>
+    <string name="preview">Hakiki</string>
+    <string name="profile">Profaili</string>
+    <string name="profileDisplayPicture">Picha ya Onyesho</string>
+    <string name="profileDisplayPictureRemoveError">Imeshindikana kuondoa picha ya kuonyesha.</string>
+    <string name="profileDisplayPictureSet">Weka Picha ya Kuonyesha</string>
+    <string name="profileDisplayPictureSizeError">Tafadhali chagua faili ndogo.</string>
+    <string name="profileErrorUpdate">Imeshindikana kusasisha wasifu.</string>
+    <string name="promote">Panda</string>
+    <string name="qrCode">Msimbo wa QR</string>
+    <string name="qrNotAccountId">QR code hii haina ID ya Akaunti</string>
+    <string name="qrNotRecoveryPassword">QR code hii haina Nywila ya Urejeshaji</string>
+    <string name="qrScan">Changanua Msimbo wa QR</string>
+    <string name="qrView">Tazama QR</string>
+    <string name="qrYoursDescription">Marafiki wanaweza kukutumia ujumbe kwa kuskani QR yako.</string>
+    <string name="quit">Acha {app_name}</string>
+    <string name="quitButton">Acha</string>
+    <string name="read">Soma</string>
+    <string name="readReceipts">Stakabadhi za Kusoma</string>
+    <string name="readReceiptsDescription">Onyesha risiti za kusoma kwa ujumbe wote unaotuma na kupokea.</string>
+    <string name="received">Imepokelewa:</string>
+    <string name="recommended">Imependekezwa</string>
+    <string name="recoveryPasswordBannerDescription">Hifadhi neno lako la siri la urejesho kuhakikisha hupotezi ufikiaji wa akaunti yako.</string>
+    <string name="recoveryPasswordBannerTitle">Hifadhi neno lako la siri la urejesho</string>
+    <string name="recoveryPasswordDescription">Tumia nywila ya urejeshaji kufungua akaunti yako kwenye vifaa vipya.
+
+Akaunti yako haiwezi kurejeshwa bila nywila yako ya urejeshaji. Hakikisha umeihifadhi mahali salama na siri — usishiriki na yeyote.</string>
+    <string name="recoveryPasswordEnter">Weka nenosiri lako la kurejeshea akaunti</string>
+    <string name="recoveryPasswordErrorMessageGeneric">Tafadhali kagua nyila yako ya kurejesha na ujaribu tena.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">Baadhi ya maneno katika Nywila yako ya Urejeshaji si sahihi. Tafadhali angalia na jaribu tena.</string>
+    <string name="recoveryPasswordErrorMessageShort">Nywila ya Urejeshaji uliyoweka haijatosha. Tafadhali angalia na ujaribu tena.</string>
+    <string name="recoveryPasswordErrorTitle">Nywila ya Urejeshaji Iliyokosewa</string>
+    <string name="recoveryPasswordExplanation">Ili kupakia akaunti yako, weka nywila yako ya urejeshaji.</string>
+    <string name="recoveryPasswordHidePermanently">Ficha Nywila ya Urejeshaji Milele</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">Bila nenosiri lako la kupona, huwezi kupakia akaunti yako kwenye vifaa vipya. 
+
+Tunapendekeza sana ulihifadhi nenosiri lako la kupona mahali salama kabla ya kuendelea.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">Je, una uhakika unataka kuficha recovery password yako kabisa kwenye kifaa hiki? Hii haiwezi kubatilishwa.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Ficha Nywila ya Urejeshaji</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">Futa nyila ya kurejesha kwa kudumu kwenye kifaa hiki.</string>
+    <string name="recoveryPasswordRestoreDescription">Weka nenosiri lako la kurejeshea akaunti ili kubeba akaunti yako. Kama hujahifadhi, unaweza kulikuta kwenye mipangilio ya programu yako.</string>
+    <string name="recoveryPasswordView">Tazama Nywila</string>
+    <string name="recoveryPasswordWarningSendDescription">Hii ni nywila yako ya urejeshaji. Ukiituma kwa mtu atapata ufikiaji kamili wa akaunti yako.</string>
+    <string name="redo">Rudia</string>
+    <string name="remove">Ondoa</string>
+    <string name="reply">Jibu</string>
+    <string name="resend">Tuma tena</string>
+    <string name="resolving">Inapakia taarifa za nchi...</string>
+    <string name="restart">Washa tena</string>
+    <string name="resync">Resync</string>
+    <string name="retry">Jarribu tena</string>
     <string name="save">Hifadhi</string>
-    <string name="note_to_self">Kumbuka kwake</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">Ujumbe mpya</string>
-    <!-- AlbumThumbnailView -->
-    <string name="AlbumThumbnailView_plus">/+ 1%d</string>
-    <!-- ApplicationPreferencesActivity -->
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Futa sasa meseji zote za zamani </string>
-    <string name="ApplicationPreferencesActivity_delete">Futa</string>
-    <string name="ApplicationPreferencesActivity_On">Waka</string>
-    <string name="ApplicationPreferencesActivity_Off">Zima</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(picha)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(sauti)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(jibu)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Nashindwa kupata app ya kuchagua habari</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Session inahitaji idhini ya Hifadhi ili kuunganisha picha, video, au sauti, lakini imekataliwa kabisa. Tafadhali endelea kwenye orodha ya mipangilio ya programu, chagua \"Ruhusa\", na uwawezesha \"Hifadhi\".</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">Session inahitaji ruhusa ya Kamera ili kuchukua picha, lakini imekataliwa kabisa. Tafadhali endelea kwenye orodha ya mipangilio ya programu, chagua \"Ruhusa\", na uwawezesha \"Kamera\".</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">Hitilafu ya kucheza sauti!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">leo</string>
-    <string name="BucketedThreadMedia_Yesterday">jana</string>
-    <string name="BucketedThreadMedia_This_week">Wiki hii</string>
-    <string name="BucketedThreadMedia_This_month">Mwezi huu</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">hakuna kivinjari cha web kilichopatikana</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">Makundi</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">imefeli kutuma, gusa kwa taarifa</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">umepokea ujumbe uliobadilishwa, gusa  kuendelea na mchakato</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">imefeli kutuma, gusa kwa isiyo salama ili kuanguka nyuma</string>
-    <string name="ConversationItem_unable_to_open_media">Haiwezi kupata programu inayoweza kufungua media hii.</string>
-    <string name="ConversationItem_copied_text">nakala 1%s</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">Ongeza Kiambatanisho</string>
-    <string name="ConversationActivity_select_contact_info">Chagua taarifa za mawasiliano</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Samahani, tatizo lilitokea kwenye kuweka kiambatanisho chako.</string>
-    <string name="ConversationActivity_invalid_recipient">Mpokeaji sio sahihi</string>
-    <string name="ConversationActivity_added_to_home_screen">omeongezwa kwenye skiirini ya mwanzo</string>
-    <string name="ConversationActivity_leave_group">toka kwenye kundi</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">unauhakika unataka kutoka katika kundi hili</string>
-    <string name="ConversationActivity_error_leaving_group">kosa la kuondoka kwenye kundi</string>
-    <string name="ConversationActivity_unblock_this_contact_question">Fungua mawasiliano hii?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Utapata tena ujumbe na wito kutoka kwa anwani hii.</string>
-    <string name="ConversationActivity_unblock">Fungua</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">Kiambatisho kimezidi ukubwa wa aina ya ujumbe unaotuma</string>
-    <string name="ConversationActivity_unable_to_record_audio">Haiwezi kurekodi sauti!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">hakuna programu ya kuweza kushughulikia kiungo hiki kwenye kifaa chako</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">Kutuma ujumbe wa sauti, kuruhusu ufikiaji wa Session  kwenye kipaza sauti yako.</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">Session inahitaji idhini ya Kipaza sauti ili kutuma ujumbe wa sauti, lakini imekataliwa kabisa. Tafadhali endelea kwenye mipangilio ya programu, chagua \"Ruhusa\", na uwawezesha \"Kipaza sauti\".</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">Ili kukamata picha na video, kuruhusu upatikanaji wa Session kwa kamera.</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">Session inahitaji kibali cha Kamera kuchukua picha au video, lakini imekataliwa kabisa. Tafadhali endelea kwenye mipangilio ya programu, chagua \"Ruhusa\", na uwawezesha \"Kamera\".</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">Session inahitaji uruhusu kamera kuchukua picha na video</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="one">Futa ujumbe uliochaguliwa?</item>
-        <item quantity="other">Futa </item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">Hifadhi kwa kuhifadhi</string>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="one">kosa wakati wa kuhifadhi kiambatisho kwenye stoo</item>
-        <item quantity="other">kosa </item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">picha ya wasifu</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">tumia desturi: 1%s</string>
-    <string name="CustomDefaultPreference_none">Hakuna</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">Sasa</string>
-    <string name="DateUtils_minutes_ago">%ddk</string>
-    <string name="DateUtils_today">Leo</string>
-    <string name="DateUtils_yesterday">Jana</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">Leo</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">Faili lisilojulikana</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">Hitilafu wakati wa kurejesha GIF kamili ya azimio</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_stickers">Stika</string>
-    <!-- CropImageActivity -->
-    <!-- InputPanel -->
-    <!-- LongMessageActivity -->
-    <string name="LongMessageActivity_unable_to_find_message">imeshindikana kutafuta ujumbe</string>
-    <string name="LongMessageActivity_your_message">ujumbe wako</string>
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">Vyombo vya habari</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">Inafutwa</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">Kufuta meseji</string>
-    <string name="MediaOverviewActivity_Documents">nyaraka</string>
-    <string name="MediaOverviewActivity_Select_all">Chagua vyote</string>
-    <string name="MediaOverviewActivity_collecting_attachments">kukusanya viambatisho</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">Ujumbe wa Multimedia</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">kupakua ujumbe wa mms</string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Hitilafu kupakua ujumbe wa MMS, bomba ili ujaribu tena</string>
-    <!-- MediaPickerActivity -->
-    <string name="MediaPickerActivity_send_to">tuma kwa 1%s</string>
-    <!-- MediaSendActivity -->
-    <string name="MediaSendActivity_add_a_caption">ongeza maelezo</string>
-    <string name="MediaSendActivity_camera_unavailable">kamera haipatikani</string>
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">Vyombo vyote vya habari</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Imepokea ujumbe uliofichwa kwa kutumia toleo la zamani la Session ambayo haitumiki tena. Tafadhali kumwomba mtumaji kuwasasishe kwa toleo la hivi karibuni na kurejesha ujumbe.</string>
-    <string name="MessageRecord_left_group">umetoka kwenye kundi</string>
-    <string name="MessageRecord_you_updated_group">Umesasisha kikundi</string>
-    <string name="MessageRecord_s_updated_group">1%s amesasisha kikundi</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">Ukumbe uliotoweka</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">Ujumbe wako hautopitwa na wakati</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">Ingiza nenosiri</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">Zuia hii anwani?</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">Hautopokea tena ujumbe na simu kutoka kwa anwani hii</string>
-    <string name="RecipientPreferenceActivity_block">Zuia</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">Fungua mawasiliano hii?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Utapata tena ujumbe na wito kutoka kwa anwani hii.</string>
-    <string name="RecipientPreferenceActivity_unblock">Fungua</string>
-    <!-- Slide -->
-    <string name="Slide_image">picha</string>
-    <string name="Slide_audio">Sauti</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">kupokea key iliyoharibika badilishana ujumbe</string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">ujumbe uliopokelewa pamoja na namba ya usalama. Gusa kuchakata na kuonyesha.</string>
-    <string name="SmsMessageRecord_secure_session_reset">umerekebisha salama kipindi</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">1%s kupanga tena kipindi salama</string>
-    <string name="SmsMessageRecord_duplicate_message">kutoa nakala ya ujumbe</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">Kikundi kilichosasishwa</string>
-    <string name="ThreadRecord_left_the_group">kujitoa katika kundi</string>
-    <string name="ThreadRecord_secure_session_reset">rekebisha salama kipindi</string>
-    <string name="ThreadRecord_draft">rasimu</string>
-    <string name="ThreadRecord_called">wewe uliita</string>
-    <string name="ThreadRecord_called_you">ulipigiwa simu</string>
-    <string name="ThreadRecord_missed_call">Simu zilizopotea</string>
-    <string name="ThreadRecord_media_message">Ujumbe wa vyombo vya habari</string>
-    <string name="ThreadRecord_s_is_on_signal">1%s yupo Session</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">Uumbe zilizopotea  imezuiliwa</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">Ujumbe unapotea kwa mpangilio wa muda  kwa 1%s</string>
-    <string name="ThreadRecord_safety_number_changed">namba salama zimebadilika</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">namba yako ya usalama pamoja na 1%s imebadilika</string>
-    <string name="ThreadRecord_you_marked_verified">umeweka kuthibitishwa?</string>
-    <string name="ThreadRecord_you_marked_unverified">umeweka haukuthibitishwa</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">Session iliyosasishwa</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">Toleo jipya la Session inapatikana, bomba ili uhakikishe</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">ujumbe mbaya encrypted</string>
-    <!-- MmsMessageRecord -->
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">Arifa za bubu</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">gusa kufungua</string>
-    <string name="KeyCachingService_passphrase_cached">Session imefunguliwa</string>
-    <string name="KeyCachingService_lock">zuia Session</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">Wewe</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">aina ya vyombo vya habari ambazo hazijaungwa mkono</string>
-    <string name="MediaPreviewActivity_draft">rasimu</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">haiwezekani kuhifadhi kwenye external storage  bila ruhusa</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">futa ujumbe?</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">hii itafuta ujumbe kwa kudumu</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">1%1$d ujumbe mpya kwa  2%2$d mazungumzo</string>
-    <string name="MessageNotifier_most_recent_from_s">ya hivi karibuni kutoka: 1%1$s</string>
-    <string name="MessageNotifier_locked_message">ujumbe umefungiwa</string>
-    <string name="MessageNotifier_message_delivery_failed">utoaji wa ujumbe umefeli</string>
-    <string name="MessageNotifier_failed_to_deliver_message">imefeli kutoa ujumbe</string>
-    <string name="MessageNotifier_error_delivering_message">hitilafu kupokea ujumbe</string>
-    <string name="MessageNotifier_mark_all_as_read">nakili yote kama haijasomeka</string>
-    <string name="MessageNotifier_mark_read">soma nakili</string>
-    <string name="MessageNotifier_reply">jibu</string>
-    <string name="MessageNotifier_pending_signal_messages">Ujumbe wa Session inasubiri</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">una ujumbe wa Session unasubiri, gusa kufungua na kurudi</string>
-    <string name="MessageNotifier_unknown_contact_message">Mawasiliano</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">Chaguo Msingi</string>
-    <string name="NotificationChannel_calls">wito</string>
-    <string name="NotificationChannel_failures">Kushindwa</string>
-    <string name="NotificationChannel_backups">Rudisha taarifa</string>
-    <string name="NotificationChannel_locked_status">Hali ya kufunga</string>
-    <string name="NotificationChannel_app_updates">Sasisho za programu</string>
-    <string name="NotificationChannel_other">ingine</string>
-    <string name="NotificationChannel_group_messages">ujumbe</string>
-    <string name="NotificationChannel_missing_display_name">Isiyojulikana</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Jibu la haraka halipatikani wakati Session imefungwa!</string>
-    <string name="QuickResponseService_problem_sending_message">Tatizo kutuma ujumbe</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">imehifadhiwa kwa 1%s</string>
-    <string name="SaveAttachmentTask_saved">imehifadhiwa</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Tafuta</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">Mkato wa batili</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_signal">Alama</string>
-    <string name="SingleRecipientNotificationBuilder_new_message">Ujumbe mpya</string>
-    <!-- TransferControlView -->
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">Kasoro kwenye kuchezesha video</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">Sauti</string>
-    <string name="attachment_type_selector__audio_description">Sauti</string>
-    <string name="attachment_type_selector__contact">Mawasiliano</string>
-    <string name="attachment_type_selector__contact_description">Mawasiliano</string>
-    <string name="attachment_type_selector__camera">Kamera</string>
-    <string name="attachment_type_selector__camera_description">Kamera</string>
-    <string name="attachment_type_selector__location">eneo</string>
-    <string name="attachment_type_selector__location_description">eneo</string>
-    <string name="attachment_type_selector__gif_description">gif</string>
-    <string name="attachment_type_selector__gallery_description">picha au video</string>
-    <string name="attachment_type_selector__file_description">jalada</string>
-    <string name="attachment_type_selector__gallery">nyumba ya sanaa</string>
-    <string name="attachment_type_selector__file">jalada</string>
-    <string name="attachment_type_selector__drawer_description">Toggle kiambatisho drawer</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">kupakia mawasiliano</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">Tuma</string>
-    <string name="conversation_activity__compose_description">utungaji wa ujumbe</string>
-    <string name="conversation_activity__emoji_toggle_description">Toggle katuni kibodi</string>
-    <string name="conversation_activity__attachment_thumbnail">kiambatanisho thumbnail</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">Toggle haraka kamera kiambatisho drawer</string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">Rekodi na tuma kiambatisho cha sauti</string>
-    <string name="conversation_activity__enable_signal_for_sms">Wezesha Session kwa meseji</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__cancel">futa</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">Ujumbe wa vyombo vya habari</string>
-    <string name="conversation_item__secure_message_description">ujumbe salama</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">imefeli kutuma</string>
-    <string name="conversation_item_sent__pending_approval_description">inasubiri idhini</string>
-    <string name="conversation_item_sent__delivered_description">imefika</string>
-    <string name="conversation_item_sent__message_read">soma ujumbe</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">wasiliana na picha</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">cheza</string>
-    <string name="audio_view__pause_accessibility_description">pumzika</string>
-    <string name="audio_view__download_accessibility_description">pakua</string>
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">Sauti</string>
-    <string name="QuoteView_photo">picha</string>
-    <string name="QuoteView_you">Wewe</string>
-    <string name="QuoteView_original_missing">Meseji halisi haipatikani</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">sogeza hadi chini</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">tafuta GIF na stika</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">hakuna kilichopatikana</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">Angalia mazungumzo yote</string>
-    <string name="load_more_header__loading">Kupakia</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">hakuna vyombo vya habari</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">TUMA TENA</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">Zuia</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">baadhi ya masuala yanahitaji umakini wako</string>
-    <string name="message_details_header__sent">Imetumwa</string>
-    <string name="message_details_header__received">Imepokelewa</string>
-    <string name="message_details_header__disappears">kutoweka</string>
-    <string name="message_details_header__via">Kupitia</string>
-    <string name="message_details_header__to">Kuelekea:</string>
-    <string name="message_details_header__from">Kutoka:</string>
-    <string name="message_details_header__with">Pamoja:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">kuunda phassphrase</string>
-    <string name="AndroidManifest__select_contacts">chagua  mawasiliano</string>
-    <string name="AndroidManifest__media_preview">Uhakiki wa vyombo vya habari</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">Tumia chaguo msingi</string>
-    <string name="arrays__use_custom">tumia desturi</string>
-    <string name="arrays__mute_for_one_hour">nyamaza kwa saa 1</string>
-    <string name="arrays__mute_for_two_hours">nyamaza kwa masaa 2</string>
-    <string name="arrays__mute_for_one_day">toa sauti kwa siku moja</string>
-    <string name="arrays__mute_for_seven_days">toa sauti kwa siku 7</string>
-    <string name="arrays__mute_for_one_year">Simamisha kwa mwaka 1</string>
-    <string name="arrays__settings_default">Vipimo vya chaguo msingi</string>
-    <string name="arrays__enabled">wezesha</string>
-    <string name="arrays__disabled">kuzuia</string>
-    <string name="arrays__name_and_message">jina na ujumbe</string>
-    <string name="arrays__name_only">jina tu</string>
-    <string name="arrays__no_name_or_message">hakuna jina wala ujumbe</string>
-    <string name="arrays__images">picha</string>
-    <string name="arrays__audio">Sauti</string>
-    <string name="arrays__documents">nyaraka</string>
-    <string name="arrays__small">ndogo</string>
-    <string name="arrays__normal">Kawaida</string>
-    <string name="arrays__large">kubwa</string>
-    <string name="arrays__extra_large">kubwa zaidi</string>
-    <string name="arrays__default">Chaguo Msingi</string>
-    <string name="arrays__high">juu</string>
-    <string name="arrays__max">mwisho</string>
-    <!-- plurals.xml -->
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">Ingiza kutuma muhimu</string>
-    <string name="preferences__send_link_previews">tuma kiungo kilichoonekana</string>
-    <string name="preferences__screen_security">usalamaa wa skrini</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">Zima viwambo vya skrini katika orodha ya rekodi na ndani ya programu</string>
-    <string name="preferences__notifications">Arifa</string>
-    <string name="preferences__led_color">Rangi za LED</string>
-    <string name="preferences__led_color_unknown">Isiyojulikana</string>
-    <string name="preferences__pref_led_blink_title">Mfano wa LED blink</string>
-    <string name="preferences__sound">Sauti</string>
-    <string name="preferences__silent">Kimya</string>
-    <string name="preferences__repeat_alerts">rudia tahadhari</string>
-    <string name="preferences__never">Haiwezekani</string>
-    <string name="preferences__one_time">Mara moja</string>
-    <string name="preferences__two_times">Mara mbili</string>
-    <string name="preferences__three_times">Mara tatu</string>
-    <string name="preferences__five_times">Mara tano</string>
-    <string name="preferences__ten_times">Mara kumi</string>
-    <string name="preferences__vibrate">vibrate</string>
-    <string name="preferences__green">Kijani</string>
-    <string name="preferences__red">Nyekundu</string>
-    <string name="preferences__blue">Buluu</string>
-    <string name="preferences__orange">Njano</string>
-    <string name="preferences__cyan">cyan</string>
-    <string name="preferences__magenta">magenta</string>
-    <string name="preferences__white">Nyeupe</string>
-    <string name="preferences__none">Hakuna</string>
-    <string name="preferences__fast">Haraka</string>
-    <string name="preferences__normal">Kawaida</string>
-    <string name="preferences__slow">Polepole</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Futa moja kwa moja ujumbe wa zamani mara moja mazungumzo yanazidi urefu uliojulikana</string>
-    <string name="preferences__delete_old_messages">Futa ujumbe wa zamani</string>
-    <string name="preferences__conversation_length_limit">mwisho wa urefu wa maongezi</string>
-    <string name="preferences__trim_all_conversations_now">Piga mazungumzo yote sasa</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Pitia kupitia mazungumzo yote na uimarishe mipaka ya urefu wa mazungumzo</string>
-    <string name="preferences__default">Chaguo Msingi</string>
-    <string name="preferences__incognito_keyboard">Kibodi cha kuingia</string>
-    <string name="preferences__read_receipts">Soma stakabadhi</string>
-    <string name="preferences__typing_indicators">andika viashiria</string>
-    <string name="preferences__if_typing_indicators_are_disabled_you_wont_be_able_to_see_typing_indicators">Ikiwa viashiria vya kuandika vimezimwa, huwezi kuona viashiria vya kuandika kutoka kwa wengine.</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">Omba kibodi ili kuzima kujifunza kwa kibinafsi</string>
-    <string name="preferences__light_theme">Mwanga</string>
-    <string name="preferences__dark_theme">Giza</string>
-    <string name="preferences_chats__message_trimming">ujumbe unapunguza</string>
-    <string name="preferences_advanced__use_system_emoji">kutumia emoji mfumo</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">kuzuia Session iliyojengwa kusaidia emoji</string>
-    <string name="preferences_chats__chats">mazungumzo</string>
-    <string name="preferences_notifications__messages">ujumbe</string>
-    <string name="preferences_notifications__in_chat_sounds">sauti wakati wa mazungumzo</string>
-    <string name="preferences_notifications__priority">Kipaumbele</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">Ujumbe mpya kuelekea..</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">Maelezo ya ujumbe</string>
-    <string name="conversation_context__menu_copy_text">Nakala ya nakala</string>
-    <string name="conversation_context__menu_delete_message">Futa ujumbe</string>
-    <string name="conversation_context__menu_resend_message">Tuma tena ujumbe</string>
-    <string name="conversation_context__menu_reply_to_message">Jibu ujumbe</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">Hifadhi attachment</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">Ukumbe uliotoweka</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">Ujumbe umepitwa na wakati</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">Usifute</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">Arifa za bubu</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">Hariri kikundi</string>
-    <string name="conversation__menu_leave_group">Toka kwenye kikundi</string>
-    <string name="conversation__menu_view_all_media">Vyombo vyote vya habari</string>
-    <string name="conversation__menu_add_shortcut">Ongeza kwenye skrini ya nyumbani</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">Kupanua popup</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">utoaji</string>
-    <string name="conversation_group_options__conversation">Mazungumzo</string>
-    <string name="conversation_group_options__broadcast">Kutangaza</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">Hifadhi</string>
-    <string name="media_preview__forward_title">Mbele</string>
-    <string name="media_preview__all_media_title">Vyombo vyote vya habari</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">Hakuna nyaraka</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">Uhakiki wa vyombo vya habari</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">Kufuta</string>
-    <string name="trimmer__deleting_old_messages">futa ujumbe wa zamani</string>
-    <string name="trimmer__old_messages_successfully_deleted">Ujumbe wa zamani umefutwa kwa ufanisi</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">Ruhusa inahitajika</string>
-    <string name="Permissions_continue">Endelea</string>
-    <string name="Permissions_not_now">sio sasa</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">Backups itahifadhiwa kwenye hifadhi ya nje na imetambulishwa na nenosiri chini. Lazima uwe na chapisho hili ili urejeshe upya.</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">Nimeandika neno hili la kupitisha. Bila hivyo, sitashindwa kurejesha salama.</string>
-    <string name="registration_activity__skip">ruka</string>
-    <string name="RegistrationActivity_backup_failure_downgrade">Haiwezi kuingiza backups kutoka kwa matoleo mapya ya Session</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">Sahihi ya kupitisha safu ya salama</string>
-    <string name="BackupDialog_enable_local_backups">kuwezesha salama ya ndani?</string>
-    <string name="BackupDialog_enable_backups">Rudisha salama</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">Tafadhali kukubali ufahamu wako kwa kuashiria sanduku la uthibitisho la kuthibitisha.</string>
-    <string name="BackupDialog_delete_backups">Futa vifungo?</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">Zima na kufuta salama zote za ndani?</string>
-    <string name="BackupDialog_delete_backups_statement">Futa salama</string>
-    <string name="BackupDialog_copied_to_clipboard">Ilikopishwa kwenye ubao wa video</string>
-    <string name="LocalBackupJob_creating_backup">Kujenga salama</string>
-    <string name="ProgressPreference_d_messages_so_far">1%d ujumbe hadi sasa</string>
-    <string name="BackupUtil_never">Haiwezekani</string>
-    <string name="preferences_app_protection__screen_lock">safi ya skrini</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">Funga ufikiaji wa Signal na lock ya Android au alama za vidole</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">Funga muda wa kuacha kuingia</string>
-    <string name="AppProtectionPreferenceFragment_none">Hakuna</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+    <string name="saved">imehifadhiwa</string>
+    <string name="savedMessages">Jumbe zilizohifadhiwa</string>
+    <string name="saving">Inahifadhi...</string>
+    <string name="scan">Changanua</string>
+    <string name="screenSecurity">Usalama wa Skrini</string>
+    <string name="screenshotNotifications">Arifa za Picha za Skrini</string>
+    <string name="screenshotNotificationsDescription">omba arifa wakati mawasiliano anapotuma picha skrini ya mazungumzo ya moja kwa moja.</string>
+    <string name="screenshotTaken"><b>{name}</b> amechukua picha ya skrini.</string>
+    <string name="search">Tafuta</string>
+    <string name="searchContacts">Tafuta Mawasiliano</string>
+    <string name="searchConversation">Tafuta Mazungumzo</string>
+    <string name="searchEnter">Tafadhali weka utafutaji wako.</string>
+    <string name="searchMatchesNone">Hakuna matokeo yamepatikana.</string>
+    <string name="searchMatchesNoneSpecific">Hakuna matokeo yamepatikana kwa {query}</string>
+    <string name="searchMembers">Tafuta Wanachama</string>
+    <string name="searchSearching">Inatafuta...</string>
+    <string name="select">Chagua</string>
+    <string name="selectAll">Chagua Vyote</string>
+    <string name="send">Tuma</string>
+    <string name="sending">Inatuma</string>
+    <string name="sent">Imetumwa:</string>
+    <string name="sessionAppearance">Muonekano</string>
+    <string name="sessionClearData">Futa Data</string>
+    <string name="sessionConversations">Mazungumzo</string>
+    <string name="sessionHelp">Msaada</string>
+    <string name="sessionInviteAFriend">Alika Rafiki</string>
+    <string name="sessionMessageRequests">Message Requests</string>
+    <string name="sessionNotifications">Arifa</string>
+    <string name="sessionPermissions">Ruhusa</string>
+    <string name="sessionPrivacy">Faragha</string>
+    <string name="sessionRecoveryPassword">Nywila ya Urejeshaji</string>
+    <string name="sessionSettings">Mipangilio</string>
+    <string name="set">Weka</string>
+    <string name="settingsRestartDescription">Lazima uanzishe tena {app_name} ili kutumia mipangilio yako mipya.</string>
+    <string name="share">Shiriki</string>
+    <string name="shareAccountIdDescription">Mwalike rafiki yako azungumze nawe kwenye Session kwa kushirikisha Kitambulisho chako cha Akaunti.</string>
+    <string name="shareAccountIdDescriptionCopied">Shiriki na marafiki zako popote unapo kawaida kuzungumza nao — kisha hamishiana mazungumzo hapa.</string>
+    <string name="shareExtensionDatabaseError">Kuna tatizo la kufungua hifadhidata. Tafadhali anzisha programu upya na ujaribu tena.</string>
+    <string name="shareToSession">Shiriki kwa {app_Name}</string>
+    <string name="show">Onyesha</string>
+    <string name="showAll">Onyesha Zote</string>
+    <string name="showLess">Onyesha Chache</string>
+    <string name="stickers">Stika</string>
+    <string name="supportGoTo">Nenda kwenye Ukurasa wa Usaidizi</string>
+    <string name="theContinue">Endelea</string>
+    <string name="theDefault">Chaguo Msingi</string>
+    <string name="theError">Kosa</string>
+    <string name="tryAgain">Jaribu tena</string>
+    <string name="typingIndicators">Andika viashiria</string>
+    <string name="typingIndicatorsDescription">Angalia na shiriki viashiria vya kuandika (...)</string>
+    <string name="undo">Rudisha</string>
+    <string name="unknown">Isiyojulikana</string>
+    <string name="updateApp">Sasisho za programu</string>
+    <string name="updateDownloaded">Sasisho limewekwa, bofya kuwasha upya</string>
+    <string name="updateDownloading">Kupakua sasisho: {percent_loader}%</string>
+    <string name="updateError">Huwezi Kusasisha</string>
+    <string name="updateErrorDescription">{app_name} imeshindwa kusasisha. Tafadhali nenda {download_url} na usakinishe toleo jipya kwa mkono, kisha wasiliana na kituo chetu cha msaada ili kutujulisha kuhusu tatizo hili.</string>
+    <string name="updateNewVersion">Toleo jipya la {app_name} linapatikana, gusa ili kusasisha</string>
+    <string name="updateNewVersionDescription">Toleo jipya la {app_name} linapatikana.</string>
+    <string name="updateReleaseNotes">Zunguka kwenye Vidokezo vya Toleo</string>
+    <string name="updateSession">Sasisho la {app_name}.</string>
+    <string name="updateVersion">Toleo {version}</string>
+    <string name="uploading">Inapakia</string>
+    <string name="urlCopy">Nakili URL</string>
+    <string name="urlOpen">Fungua URL</string>
+    <string name="urlOpenBrowser">Hii itafunguliwa kwenye kivinjari chako.</string>
+    <string name="urlOpenDescription">Je, una uhakika unataka kufungua URL hii kwenye kivinjari chako?
+
+{url}</string>
+    <string name="useFastMode">Tumia Hali ya Haraka</string>
+    <string name="video">Video</string>
+    <string name="videoErrorPlay">Haiwezi kucheza video.</string>
+    <string name="view">Tazama</string>
+    <string name="waitFewMinutes">Hii inaweza kuchukua dakika chache.</string>
+    <string name="waitOneMoment">Tafadhali subiri...</string>
+    <string name="warning">Onyo</string>
+    <string name="window">Dirisha</string>
+    <string name="yes">Ndio</string>
+    <string name="you">Wewe</string>
 </resources>

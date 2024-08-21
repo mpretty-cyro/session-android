@@ -1,537 +1,789 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="yes">Iawn</string>
-    <string name="no">Na</string>
+    <string name="about">Ynghylch</string>
+    <string name="accept">Derbyn</string>
+    <string name="accountIDCopy">Copïo ID Cyfrif</string>
+    <string name="accountIdCopied">ID Cyfrif wedi\'i gopïo</string>
+    <string name="accountIdCopyDescription">Copïwch eich ID Cyfrif wedyn rhannwch efo eich ffrindiau fel y gallant anfon neges atoch.</string>
+    <string name="accountIdEnter">Rhowch ID Cyfrif</string>
+    <string name="accountIdErrorInvalid">Mae\'r ID Cyfrif hwn yn annilys. Gwiriwch a rhowch gynnig arall arni os gwelwch yn dda.</string>
+    <string name="accountIdOrOnsEnter">Rhowch ID Cyfrif neu ONS</string>
+    <string name="accountIdOrOnsInvite">Gwahodd ID Cyfrif neu ONS</string>
+    <string name="accountIdShare">Hei, rydw i wedi defnyddio {app_name} i sgwrsio gyda chyfrinachedd a diogelwch llwyr. Dewch i ymuno â mi! Fy ID Cyfrif yw
+
+{account_id}
+
+Lawrlwythwch ef yn {download_url}</string>
+    <string name="accountIdYours">Eich ID Cyfrif</string>
+    <string name="accountIdYoursDescription">Dyma eich ID Cyfrif. Gall defnyddwyr eraill ei sganio i ddechrau sgwrs gyda chi.</string>
+    <string name="actualSize">Maint Go Iawn</string>
+    <string name="add">Ychwanegu</string>
+    <string name="adminCannotBeRemoved">Ni ellir dileu gweinyddwyr.</string>
+    <string name="adminMorePromotedToAdmin"><b>{name} y</b> a <b>{count} eraill</b> penodwyd i admin.</string>
+    <string name="adminPromote">Hyrwyddo Gweinyddwyr</string>
+    <string name="adminPromoteDescription">Ydych chi\'n siŵr eich bod am hyrwyddo <b>{name}</b> i admin? Ni ellir tynnu gweinyddwyr.</string>
+    <string name="adminPromoteMoreDescription">Ydych chi\'n siŵr eich bod am hyrwyddo <b>{name}</b> a <b>{count} eraill</b> i admin? Ni ellir tynnu gweinyddwyr.</string>
+    <string name="adminPromoteToAdmin">Hyrwyddo i Weinyddwr</string>
+    <string name="adminPromoteTwoDescription">Ydych chi\'n siŵr eich bod am hyrwyddo <b>{name}</b> a <b>{other_name}</b> i admin? Ni ellir tynnu gweinyddwyr.</string>
+    <string name="adminPromotedToAdmin"><b>{name} y</b> penodwyd i admin.</string>
+    <string name="adminPromotionFailed">Methodd dyrchafiad gweinyddwr</string>
+    <string name="adminPromotionFailedDescription">Methu dyrchafu {name} yn {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMany">Methu dyrchafu {name} a {count} arall yn {group_name}</string>
+    <string name="adminPromotionFailedDescriptionMore">Methu dyrchafu {name} a {other_name} yn {group_name}</string>
+    <string name="adminPromotionSent">Anfonwyd dyrchafiad gweinyddwr</string>
+    <string name="adminRemove">Tynnu Gweinyddwyr</string>
+    <string name="adminRemoveAsAdmin">Tynnu fel Gweinyddwr</string>
+    <string name="adminRemoveCommunityNone">Nid oes unrhyw Weinyddwyr yn y Gymuned hon.</string>
+    <string name="adminRemoveFailed">Methwyd tynnu {name} fel Admin.</string>
+    <string name="adminRemovedUser"><b>{name} y</b> wedi cael ei dynnu fel admin.</string>
+    <string name="adminSendingPromotion">Anfon dyrchafiad gweinyddol</string>
+    <string name="adminSettings">Gosodiadau Gweinyddwr</string>
+    <string name="adminTwoPromotedToAdmin"><b>{name} y</b> a <b>{other_name}</b> penodwyd i admin.</string>
+    <string name="andMore">+{count}</string>
+    <string name="anonymous">Dienw</string>
+    <string name="appearanceAutoDarkMode">Auto ddull tywyll</string>
+    <string name="appearanceHideMenuBar">Cuddio Bar Dewislen</string>
+    <string name="appearanceLanguage">Iaith</string>
+    <string name="appearanceLanguageDescription">Dewiswch eich gosodiad iaith ar gyfer {app_name}. Bydd {app_name} yn ailgychwyn pan fyddwch chi\'n newid eich gosodiad iaith.</string>
+    <string name="appearancePreview1">Sut wyt ti?</string>
+    <string name="appearancePreview2">Rwy\'n dda diolch, ti?</string>
+    <string name="appearancePreview3">Rwy\'n gwneud yn wych, diolch.</string>
+    <string name="appearancePrimaryColor">Lliw Cynradd</string>
+    <string name="appearanceThemes">Themâu</string>
+    <string name="appearanceThemesClassicDark">Clasurol Tywyll</string>
+    <string name="appearanceThemesClassicLight">Clasurol Golau</string>
+    <string name="appearanceThemesOceanDark">Môr Tywyll</string>
+    <string name="appearanceThemesOceanLight">Môr Ysgafn</string>
+    <string name="appearanceZoom">Chwyddo</string>
+    <string name="appearanceZoomIn">Chwyddo Mewn</string>
+    <string name="appearanceZoomOut">Chwyddo Allan</string>
+    <string name="attachment">Atodiad</string>
+    <string name="attachmentsAdd">Ychwanegu atodiad</string>
+    <string name="attachmentsAlbumUnnamed">Albwm Dienw</string>
+    <string name="attachmentsAutoDownload">Llwytho Atodiadau Auto</string>
+    <string name="attachmentsAutoDownloadDescription">Llwytho cyfryngau a ffeiliau\'n awtomatig o\'r sgwrs hon.</string>
+    <string name="attachmentsAutoDownloadModalDescription">Hoffech chi lawrlwytho\'r holl ffeiliau o <b>{conversation_name}</b> yn awtomatig?</string>
+    <string name="attachmentsAutoDownloadModalTitle">Llwytho Auto</string>
+    <string name="attachmentsClearAll">Clirio Pob Atodiad</string>
+    <string name="attachmentsClearAllDescription">Ydych chi\'n siŵr eich bod am glirio\'r holl atodiadau? Bydd negeseuon gydag atodiadau hefyd yn cael eu dileu.</string>
+    <string name="attachmentsClickToDownload">Cliciwch i lawrlwytho {file_type}</string>
+    <string name="attachmentsCollapseOptions">Cau opsiynau atodiad</string>
+    <string name="attachmentsCollecting">Casglu atodiadau...</string>
+    <string name="attachmentsDownload">Llwytho i lawr Atodiad</string>
+    <string name="attachmentsDuration">Hyd:</string>
+    <string name="attachmentsErrorLoad">Gwall yn atodi\'r ffeil</string>
+    <string name="attachmentsErrorNoApp">Methu canfod rhaglen i ddewis cyfryngau.</string>
+    <string name="attachmentsErrorNotSupported">Nid yw\'r math o ffeil hwn yn cael ei gefnogi.</string>
+    <string name="attachmentsErrorNumber">Methu anfon mwy na 32 delwedd a ffeiliau fideo ar unwaith.</string>
+    <string name="attachmentsErrorOpen">Methu agor ffeil.</string>
+    <string name="attachmentsErrorSending">Gwall yn anfon y ffeil</string>
+    <string name="attachmentsErrorSeparate">Anfonwch ffeiliau fel negeseuon ar wahân.</string>
+    <string name="attachmentsErrorSize">Ni ddylai ffeiliau fod yn fwy na 10MB</string>
+    <string name="attachmentsErrorTypes">Methu atodi delweddau a fideos gyda mathau eraill o ffeiliau. Ceisiwch anfon ffeiliau eraill mewn neges ar wahân.</string>
+    <string name="attachmentsExpired">Atodiad wedi dod i ben</string>
+    <string name="attachmentsFileId">ID Ffeil:</string>
+    <string name="attachmentsFileSize">Maint Ffeil:</string>
+    <string name="attachmentsFileType">Math Ffeil:</string>
+    <string name="attachmentsFilesEmpty">Nid oes gennych unrhyw ffeiliau yn y sgwrs hon.</string>
+    <string name="attachmentsImageErrorMetadata">Methu tynnu metadata o ffeil.</string>
+    <string name="attachmentsLoadingNewer">Yn llwytho Cyfryngau diweddar...</string>
+    <string name="attachmentsLoadingNewerFiles">Yn llwytho ffeiliau diweddar...</string>
+    <string name="attachmentsLoadingOlder">Yn llwytho hen Cyfryngau...</string>
+    <string name="attachmentsLoadingOlderFiles">Yn llwytho hen ffeiliau...</string>
+    <string name="attachmentsMedia">{name} ar {date_time}</string>
+    <string name="attachmentsMediaEmpty">Nid oes gennych unrhyw gyfryngau yn y sgwrs hon.</string>
+    <string name="attachmentsMediaSaved">Cyfryngau wedi\'i gadw gan {name}</string>
+    <string name="attachmentsMoveAndScale">Symud a Graddio</string>
+    <string name="attachmentsNa">N/A</string>
+    <string name="attachmentsNotification">{emoji} Atodiad</string>
+    <string name="attachmentsResolution">Cydraniad:</string>
+    <string name="attachmentsSaveError">Methu cadw ffeil.</string>
+    <string name="attachmentsTapToDownload">Tapio i lawrlwytho {file_type}</string>
+    <string name="attachmentsThisMonth">Mis yma</string>
+    <string name="attachmentsWarning">Gall rhaglenni eraill ar eich dyfais gael mynediad at atodiadau rydych chi\'n eu cadw.</string>
+    <string name="audio">Sain</string>
+    <string name="audioNoInput">Dim mewnbwn sain wedi\'i ganfod</string>
+    <string name="audioNoOutput">Dim allbwn sain wedi\'i ganfod</string>
+    <string name="audioUnableToPlay">Methu chwarae ffeil sain.</string>
+    <string name="audioUnableToRecord">Methu recordio sain.</string>
+    <string name="authenticateFailed">Ddim yn ddilysu</string>
+    <string name="authenticateFailedTooManyAttempts">Gormod o ymdrechion dilysu aflwyddiannus. Rhowch gynnig arall arni yn ddiweddarach os gwelwch yn dda.</string>
+    <string name="authenticateNotAccessed">Ni ellir cyrchu\'ad-ddo dilysu.</string>
+    <string name="authenticateToOpen">Dilysu i agor {app_name}.</string>
+    <string name="back">Yn ôl</string>
+    <string name="banDeleteAll">Gwahardd a Dileu Pob Un</string>
+    <string name="banErrorFailed">Methwyd gwahardd</string>
+    <string name="banUnbanErrorFailed">Methwyd â dileu\'r gwaharddiad</string>
+    <string name="banUnbanUser">Dadwahardd Defnyddiwr</string>
+    <string name="banUnbanUserUnbanned">Defnyddiwr wedi cael ei ddadwahardd</string>
+    <string name="banUser">Gwahardd Defnyddiwr</string>
+    <string name="banUserBanned">Defnyddiwr wedi\'i wahardd</string>
+    <string name="block">Rhwystro</string>
+    <string name="blockBlockedDescription">Dadrwystro\'r cyswllt hwn i anfon neges.</string>
+    <string name="blockBlockedNone">Dim cysylltiadau wedi\'u rhwystro</string>
+    <string name="blockBlockedUser">Rhwystro {name}</string>
+    <string name="blockDescription">Ydych chi\'n siŵr eich bod am rwystro <b>{name}</b>? Ni all defnyddwyr rhwystredig anfon ceisiadau neges, gwahoddiadau grŵp na’ch galw.</string>
+    <string name="blockUnblock">Dadrwystro</string>
+    <string name="blockUnblockName">Ydych chi\'n siŵr eich bod am ddadrwystro {name}?</string>
+    <string name="blockUnblockNameMultiple">Ydych chi\'n siŵr eich bod am ddadrwystro {name} a {count} eraill?</string>
+    <string name="blockUnblockNameTwo">Ydych chi\'n siŵr eich bod am ddadrwystro {name} ag un arall?</string>
+    <string name="blockUnblockedUser">Wedi dadrwystro {name}</string>
+    <string name="call">Galw</string>
+    <string name="callsCalledYou">Galwodd {name} chi</string>
+    <string name="callsCannotStart">Ni allwch gychwyn galwad newydd. Gorffennwch eich galwad gyfredol yn gyntaf.</string>
+    <string name="callsConnecting">Wrthi\'n cysylltu...</string>
+    <string name="callsEnd">Gorffen galwad</string>
+    <string name="callsEnded">Gorffennodd Galwad</string>
+    <string name="callsErrorAnswer">Methu ateb galwad</string>
+    <string name="callsErrorStart">Methwyd cychwyn galwad</string>
+    <string name="callsInProgress">Galwad ar y gweill</string>
+    <string name="callsIncoming">Galwad i mewn gan {name}</string>
+    <string name="callsIncomingUnknown">Galwad i mewn</string>
+    <string name="callsMissed">Galwad Coll</string>
+    <string name="callsMissedCallFrom">Galwad coll gan {name}</string>
+    <string name="callsNotificationsRequired">Mae galwadau Llais a Fideo yn gofyn am hysbysiadau wedi\'u caniatáu yng ngosodiadau system eich dyfais. </string>
+    <string name="callsPermissionsRequired">Angen Caniatâd Galwadau</string>
+    <string name="callsPermissionsRequiredDescription">Gallwch alluogi\'r caniatâd \"Galwadau Llais a Fideo\" yn y Gosodiadau Preifatrwydd.</string>
+    <string name="callsReconnecting">Aildrefnu…</string>
+    <string name="callsRinging">Canu...</string>
+    <string name="callsSessionCall">Galwad Session</string>
+    <string name="callsSettings">Galwadau (Beta)</string>
+    <string name="callsVoiceAndVideo">Galwadau Llais a Fideo</string>
+    <string name="callsVoiceAndVideoBeta">Galwadau Llais a Fideo (Beta)</string>
+    <string name="callsVoiceAndVideoModalDescription">Mae eich GPS yn weladwy i\'ch partner galwad ac i Wasanaeth Node Foundation Oxen wrth ddefnyddio galwadau beta.</string>
+    <string name="callsVoiceAndVideoToggleDescription">Yn caniatáu galwadau llais a fideo i ac o ddefnyddwyr eraill</string>
+    <string name="callsYouCalled">Wedi galw {name}</string>
+    <string name="callsYouMissedCallPermissions">Buoch yn methu alwad gan <b>{name}</b> oherwydd nad ydych wedi galluogi <b>Galwadau Llais a Fideo</b> yn Gosodiadau Preifatrwydd.</string>
+    <string name="cameraErrorNotFound">Dim camera wedi\'i ganfod</string>
+    <string name="cameraErrorUnavailable">Camera ddim ar gael.</string>
+    <string name="cameraGrantAccess">Caniatewch Mynediad i\'r Camera</string>
+    <string name="cameraGrantAccessDenied">Mae angen mynediad i\'r camera ar {app_name} i dynnu lluniau a fideos, ond fe\'i gwrthodwyd yn barhaol. Parhewch i osodiadau\'r ap, dewiswch \"Caniatadau\", a galluogi \"Camera\".</string>
+    <string name="cameraGrantAccessDescription">Mae angen mynediad i\'r camera ar {app_name} i dynnu lluniau a fideos, neu i sganio côd QR.</string>
+    <string name="cameraGrantAccessQr">Mae angen mynediad i\'r camera ar {app_name} i sganio côd QR</string>
+    <string name="cancel">Diddymu</string>
+    <string name="clear">Clir</string>
+    <string name="clearAll">Clirio Popeth</string>
+    <string name="clearDataAll">Clirio\'r holl ddata</string>
+    <string name="clearDataAllDescription">Bydd hyn yn dileuon eich negeseuon a\'ch cysylltiadau yn barhaol. Hoffech chi glirio\'r ddyfais hon yn unig, neu ddileuon eich data o\'r rhwydwaith hefyd?</string>
+    <string name="clearDataError">Data Heb Ei Ddileu</string>
+    <plurals name="clearDataErrorDescription">
+        <item quantity="zero">Data not deleted by %1$d Nôd Gwasanaeth. ID Nôd Gwasanaeth: %2$s.</item>
+        <item quantity="one">Data not deleted by %1$d Nôd Gwasanaeth. ID Nôd Gwasanaeth: %2$s.</item>
+        <item quantity="two">Data not deleted by %1$d Nôd Gwasanaeth. ID Nôd Gwasanaeth: %2$s.</item>
+        <item quantity="few">Data not deleted by %1$d Nôd Gwasanaeth. ID Nôd Gwasanaeth: %2$s.</item>
+        <item quantity="many">Data not deleted by %1$d Nôd Gwasanaeth. ID Nôd Gwasanaeth: %2$s.</item>
+        <item quantity="other">Data not deleted by %1$d Nôd Gwasanaeth. ID Nôd Gwasanaeth: %2$s.</item>
+    </plurals>
+    <string name="clearDataErrorDescriptionGeneric">Digwyddodd gwall anhysbys ac ni chafodd eich data ei ddileu. A ydych am ddileu eich data o’r ddyfais hon yn lle?</string>
+    <string name="clearDevice">Clirio Dyfais</string>
+    <string name="clearDeviceAndNetwork">Clirio dyfais a rhwydwaith</string>
+    <string name="clearDeviceAndNetworkConfirm">Ydych chi\'n siŵr eich bod am ddileu eich data oddi ar y rhwydwaith? Os byddwch yn parhau, ni fyddwch yn gallu adfer eich negeseuon neu eich cysylltiadau.</string>
+    <string name="clearDeviceDescription">Ydych chi\'n siŵr eich bod am glirio eich dyfais?</string>
+    <string name="clearDeviceOnly">Clirio dyfais yn unig</string>
+    <string name="clearMessages">Clirio\'r holl negeseuon</string>
+    <string name="clearMessagesChatDescription">Ydych chi\'n siŵr eich bod am glirio\'r holl negeseuon yn eich sgwrs gyda <b>{name}</b> oddi ar eich dyfais?</string>
+    <string name="clearMessagesCommunity">Ydych chi\'n siŵr eich bod am glirio\'r holl negeseuon <b>{community_name}</b> oddi ar eich dyfais?</string>
+    <string name="clearMessagesForEveryone">Clirio ar gyfer pawb</string>
+    <string name="clearMessagesForMe">Clirio ar gyfer fi</string>
+    <string name="clearMessagesGroupAdminDescription">Ydych chi\'n siŵr eich bod am glirio\'r holl negeseuon <b>{group_name}</b>?</string>
+    <string name="clearMessagesGroupDescription">Ydych chi\'n siŵr eich bod am glirio\'r holl negeseuon <b>{group_name}</b> oddi ar eich dyfais?</string>
+    <string name="clearMessagesNoteToSelfDescription">Ydych chi\'n siŵr eich bod am glirio\'r holl negeseuon Nodyn i Fi Fy Hun oddi ar eich dyfais?</string>
+    <string name="close">Cau</string>
+    <string name="closeWindow">Cau Ffenestr</string>
+    <string name="communityEnterUrl">Rhowch URL Cymunedol</string>
+    <string name="communityEnterUrlErrorInvalid">URL annilys</string>
+    <string name="communityEnterUrlErrorInvalidDescription">Gwiriwch y URL Community a cheisio eto.</string>
+    <string name="communityError">Gwall Cymunedol</string>
+    <string name="communityErrorDescription">Wps, mae nam wedi digwydd. Ceisiwch eto yn nes ymlaen.</string>
+    <string name="communityInvitation">Gwahoddiad Cymunedol</string>
+    <string name="communityJoin">Ymuno â\'r Gymuned</string>
+    <string name="communityJoinDescription">Ydych chi\'n siŵr eich bod am ymuno â {community_name}?</string>
+    <string name="communityJoinError">Methu ymuno â {community_name}</string>
+    <string name="communityJoinOfficial">Neu ymunwch ag un o\'r rhain...</string>
+    <string name="communityJoined">Ymuno â\'r Gymuned</string>
+    <string name="communityJoinedAlready">Rydych eisoes yn aelod o\'r gymuned hon.</string>
+    <string name="communityLeave">Gadael y Gymuned</string>
+    <string name="communityLeaveError">Methu gadael {community_name}</string>
+    <string name="communityUnknown">Community Anhysbys</string>
+    <string name="communityUrl">URL Cymunedol</string>
+    <string name="communityUrlCopy">Copïo URL Cymunedol</string>
+    <string name="confirm">Cadarnhau</string>
+    <string name="contactContacts">Cysylltiadau</string>
+    <string name="contactDelete">Dileu Cyswllt</string>
+    <string name="contactDeleteDescription">Ydych chi\'n siŵr eich bod am ddileu <b>{name}</b> o\'ch cysylltiadau? Bydd negeseuon newydd gan <b>{name}</b> yn cyrraedd fel cais neges.</string>
+    <string name="contactNone">Nid oes gennych unrhyw gysylltiadau eto</string>
+    <string name="contactSelect">Dewis Cysylltiadau</string>
+    <string name="contactUserDetails">Manylion Defnyddiwr</string>
+    <string name="contentDescriptionCamera">Camera</string>
+    <string name="contentDescriptionChooseConversationType">Dewiswch weithred i gychwyn sgwrs</string>
+    <string name="contentDescriptionMediaMessage">Neges cyfryngau</string>
+    <string name="contentDescriptionMessageComposition">Cyfansoddiad neges</string>
+    <string name="contentDescriptionQuoteThumbnail">Bawdlun o ddelwedd o neges wedi\'i dyfynnu.</string>
+    <string name="contentDescriptionStartConversation">Creu sgwrs gyda chysylltiad newydd</string>
+    <string name="conversationsAddToHome">Ychwanegu at y sgrin gartref</string>
+    <string name="conversationsAddedToHome">Ychwanegwyd at y sgrin gartref</string>
+    <string name="conversationsAudioMessages">Negeseuon Sain</string>
+    <string name="conversationsAutoplayAudioMessage">Autochwarae Negeseuon Sain</string>
+    <string name="conversationsAutoplayAudioMessageDescription">Autochwarae negeseuon sain a anfonwyd yn olynol</string>
+    <string name="conversationsBlockedContacts">Cysylltiadau wedi\'u rhwystro</string>
+    <string name="conversationsCommunities">Cymunedau</string>
+    <string name="conversationsDelete">Dileu Sgwrs</string>
+    <string name="conversationsDeleteDescription">Ydych chi\'n siŵr eich bod am ddileu eich sgwrs gyda <b>{name}</b>? Bydd negeseuon newydd gan <b>{name}</b> yn cychwyn sgwrs newydd.</string>
+    <string name="conversationsDeleted">Sgwrs wedi\'i dileu</string>
+    <string name="conversationsEmpty">Nid oes negeseuon yn {conversation_name}.</string>
+    <string name="conversationsEnter">Rhowch Allwedd</string>
+    <string name="conversationsEnterDescription">Swyddogaeth allwedd enter wrth deipio mewn sgwrs.</string>
+    <string name="conversationsEnterNewLine">SHIFT + ENTER yn anfon neges, ENTER yn dechrau llinell newydd</string>
+    <string name="conversationsEnterSends">ENTER yn anfon neges, SHIFT + ENTER yn dechrau llinell newydd</string>
+    <string name="conversationsGroups">Grwpiau</string>
+    <string name="conversationsMessageTrimming">Tocio Negeseuon</string>
+    <string name="conversationsMessageTrimmingTrimCommunities">Trimio Cymunedau</string>
+    <string name="conversationsMessageTrimmingTrimCommunitiesDescription">Dileu negeseuon o sgyrsiau Cymuned hŷn na 6 mis, a lle mae dros 2,000 o negeseuon.</string>
+    <string name="conversationsNew">Sgwrs newydd</string>
+    <string name="conversationsNone">Nid oes gennych unrhyw sgyrsiau eto</string>
+    <string name="conversationsSendWithEnterKey">Anfon gyda\'r Allwedd Enter</string>
+    <string name="conversationsSendWithEnterKeyDescription">Tapio\'r Allwedd Mynd i mewn bydd yn anfon neges yn lle dechrau llinell newydd.</string>
+    <string name="conversationsSettingsAllMedia">Pob Cyfrwng</string>
+    <string name="conversationsSpellCheck">Gwiriad Sillafu</string>
+    <string name="conversationsSpellCheckDescription">Galluogi gwirio sillafu wrth deipio negeseuon</string>
+    <string name="conversationsStart">Dechrau Sgwrs</string>
+    <string name="copied">Copïwyd</string>
+    <string name="copy">Copïo</string>
+    <string name="create">Creu</string>
+    <string name="cut">Torri</string>
+    <string name="databaseErrorGeneric">Mae gwall cronfa ddata wedi digwydd.
+
+Allforiwch gofnodion eich cais i\'w rhannu ar gyfer datrys problemau. Os yw hyn yn aflwyddiannus, ailosodwch {app_name} a adfer eich cyfrif.
+
+Rhybudd: Bydd hyn yn arwain at golled o\'r holl negeseuon, atodiadau, a data cyfrif sydd ymhellach i ffwrdd na phythefnos.</string>
+    <string name="databaseErrorTimeout">Rydym wedi sylwi bod {app_name} yn cymryd llawer o amser i ddechrau.
+
+Gallwch barhau i aros, allforio logiau eich dyfais i\'w rhannu ar gyfer datrys problemau, neu geisio ailgychwyn Session.</string>
+    <string name="databaseErrorUpdate">Mae eich cronfa ddata ap yn anghydnaws â\'r fersiwn hon o {app_name}. Ailosodwch yr ap a darganfod eich cyfrif i greu cronfa ddata newydd a pharhau i ddefnyddio {app_name}.
+
+Rhybudd: Bydd hyn yn arwain at golli’r holl negeseuon a’r atodiadau sy’n hŷn na phythefnos.</string>
+    <string name="databaseOptimizing">Optimeiddio Cronfa Ddata</string>
+    <string name="debugLog">Cofnod Dadfygio</string>
+    <string name="decline">Gwrthod</string>
     <string name="delete">Dileu</string>
+    <string name="deleteAfterGroupFirstReleaseConfigOutdated">Mae rhai o\'ch dyfeisiau\'n defnyddio fersiynau allan o ddyddiad. Efallai na fydd cydamseru\'n ddibynadwy nes cânt eu diweddaru.</string>
+    <string name="deleteAfterGroupPR1BlockThisUser">Rhwystro\'r Defnyddiwr Hwn</string>
+    <string name="deleteAfterGroupPR1BlockUser">Rhwystro Defnyddiwr</string>
+    <string name="deleteAfterGroupPR1GroupSettings">Gosodiadau Grŵp</string>
+    <string name="deleteAfterGroupPR1MentionsOnly">Dim ond hysbysu am Gyfeiriadau</string>
+    <string name="deleteAfterGroupPR1MentionsOnlyDescription">Pan fydd ar gael, dim ond y negeseuon sy\'n eich crybwyll byddwch chi\'n cael eich hysbysu amdanynt.</string>
+    <string name="deleteAfterGroupPR1MessageSound">Sain Neges</string>
+    <string name="deleteAfterGroupPR3DeleteMessagesConfirmation">Dileu\'r negeseuon yn y sgwrs hon yn barhaol?</string>
+    <string name="deleteAfterGroupPR3GroupErrorLeave">Methu gadael wrth ychwanegu neu dynnu aelodau eraill.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesLegacy">Etifeddiaeth</string>
+    <string name="deleteAfterLegacyDisappearingMessagesOriginal">Fersiwn wreiddiol o negeseuon diflannu.</string>
+    <string name="deleteAfterLegacyDisappearingMessagesTheyChangedTimer">Gosododd <b>{name}</b> amserydd y neges diflannu i <b>{time}</b></string>
+    <string name="deleteMessage">Dileu Neges</string>
+    <string name="deleteMessageConfirm">Ydych chi\'n siŵr eich bod am ddileu\'r neges hon?</string>
+    <string name="deleteMessageDeleted">Neges wedi\'i dileu</string>
+    <string name="deleteMessageDeletedGlobally">Dilewyd y neges hon</string>
+    <string name="deleteMessageDeletedLocally">Dilewyd y neges hon ar y ddyfais hon</string>
+    <string name="deleteMessageDescriptionDevice">Ydych chi\'n siŵr eich bod am ddileu\'r neges hon oddi ar y ddyfais hon yn unig?</string>
+    <string name="deleteMessageDescriptionEveryone">Ydych chi\'n siŵr eich bod am ddileu\'r neges hon i bawb?</string>
+    <string name="deleteMessageDeviceOnly">Dileu ar y ddyfais hon yn unig</string>
+    <string name="deleteMessageDevicesAll">Dileu ar fy holl ddyfeisiau</string>
+    <string name="deleteMessageEveryone">Dileu i bawb</string>
+    <string name="deleteMessageFailed">Methu dileu neges</string>
+    <string name="deleteMessages">Dileu Negeseuon</string>
+    <string name="deleteMessagesConfirm">Ydych chi\'n siŵr eich bod am ddileu\'r neges(au) hyn?</string>
+    <string name="deleteMessagesDeleted">Negeseuon wedi\'u dileu</string>
+    <string name="deleteMessagesDescriptionDevice">Ydych chi\'n siŵr eich bod am ddileu\'r negeseuon hyn o\'r ddyfais hon yn unig?</string>
+    <string name="deleteMessagesDescriptionEveryone">Ydych chi\'n siŵr eich bod am ddileu\'r negeseuon hyn i bawb?</string>
+    <plurals name="deleteMessagesFailed">
+        <item quantity="zero">Ac mae %1$d eraill wedi ymateb gyda %2$s i\'r neges hon.</item>
+        <item quantity="one">Methu dileu neges</item>
+        <item quantity="two">Methu dileu negeseuon</item>
+        <item quantity="few">Ddim wedi dileu data gan %1$d Service Node. ID y Service Node: %2$s.</item>
+        <item quantity="many">Ddim wedi dileu data gan %1$d Service Nodes. IDau’r Service Node: %2$s.</item>
+        <item quantity="other">Bawdlun o ddelwedd o neges wedi\'i dyfynnu</item>
+    </plurals>
+    <string name="deleting">Wrthi\'n dileu</string>
+    <string name="developerToolsToggle">Toglo Offeryn Datblygwr</string>
+    <string name="dictationStart">Dechrau Dikteiddio...</string>
+    <string name="disappearingMessages">Negeseuon Diflanedig</string>
+    <string name="disappearingMessagesCountdownBig">Bydd y neges yn cael ei dileu mewn {time_large}</string>
+    <string name="disappearingMessagesCountdownBigMobile">Auto-dileu mewn {time_large}</string>
+    <string name="disappearingMessagesCountdownBigSmall">Bydd y neges yn cael ei dileu mewn {time_large} {time_small}</string>
+    <string name="disappearingMessagesCountdownBigSmallMobile">Auto-dileu mewn {time_large} {time_small}</string>
+    <string name="disappearingMessagesDeleteType">Dileu Math</string>
+    <string name="disappearingMessagesDescription">Mae\'r gosodiad hwn yn berthnasol i bawb yn y sgwrs hon.</string>
+    <string name="disappearingMessagesDescription1">Mae\'r gosodiad hwn yn berthnasol i negeseuon a anfonwch yn y sgwrs hon.</string>
+    <string name="disappearingMessagesDisappear">Ymestyn Ar Ôl {disappearing_messages_type} - {time}</string>
+    <string name="disappearingMessagesDisappearAfterRead">Ymestyn Ar Ôl Darllen</string>
+    <string name="disappearingMessagesDisappearAfterReadDescription">Mae neges yn cael ei dileu ar ôl iddyn nhw fod wedi\'u darllen.</string>
+    <string name="disappearingMessagesDisappearAfterSend">Ymestyn Ar Ôl Anfon</string>
+    <string name="disappearingMessagesDisappearAfterSendDescription">Mae neges yn cael ei dileu ar ôl iddyn nhw fod wedi\'u anfon.</string>
+    <string name="disappearingMessagesFollowSetting">Dilyniadu Gosodiad</string>
+    <string name="disappearingMessagesFollowSettingOff">Ni fydd negeseuon rydych chi\'n eu hanfon yn diflannu mwyach. Ydych chi\'n siŵr eich bod am ddiffodd <b>neges diflannu?</b></string>
+    <string name="disappearingMessagesFollowSettingOn">Gosod eich negeseuon i ddiflannu <b>{time} <\/b> ar ôl iddynt gael eu <b>{disappearing_messages_type} <\/b>?</string>
+    <string name="disappearingMessagesLegacy">Mae {name} yn defnyddio cleient hen ffasiwn. Efallai na fydd negeseuon diflanedig yn gweithio fel y disgwylir.</string>
+    <string name="disappearingMessagesOnlyAdmins">Dim ond gweinyddwyr grŵp yn gallu newid y gosodiad hwn.</string>
+    <string name="disappearingMessagesSent">Anfonwyd</string>
+    <string name="disappearingMessagesSet"><b>{name} y</b> wedi gosod negeseuon i ddiflannu {time} ar ôl iddynt fod wedi {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesSetYou">Rydych wedi gosod yr amserydd neges sy\'n diflannu i {time} ar ôl iddynt fod wedi {disappearing_messages_type}.</string>
+    <string name="disappearingMessagesTimer">Amserydd</string>
+    <string name="disappearingMessagesTurnedOff"><b>{name} y</b> wedi troi neges diflannu i ffwrdd. Ni fydd negeseuon maent yn anfon yn diflannu mwyach.</string>
+    <string name="disappearingMessagesTurnedOffYou">Rydych wedi troi <b>i ffwrdd</b> negeseuon sy\'n diflannu. Ni fydd negeseuon rydych yn anfon yn diflannu mwyach.</string>
+    <string name="disappearingMessagesTypeRead">darllen</string>
+    <string name="disappearingMessagesTypeSent">anfonwyd</string>
+    <string name="disappearingMessagesUpdated"><b>{admin_name}</b> diweddarwyd gosodiadau negeseuon diflanedig.</string>
+    <string name="disappearingMessagesUpdatedYou">Rydych wedi diweddaru\'r gosodiadau neges diflannu.</string>
+    <string name="dismiss">Gwrthod</string>
+    <string name="displayNameDescription">Gall fod dy enw go iawn, alias, neu unrhyw enw arall wyt ti’n ei hoffi — ac fe elli di ei newid unrhyw bryd.</string>
+    <string name="displayNameEnter">Rhowch eich enw arddangos</string>
+    <string name="displayNameErrorDescription">Rhowch enw arddangos</string>
+    <string name="displayNameErrorDescriptionShorter">Rhowch enw arddangos byrrach</string>
+    <string name="displayNameErrorNew">Methwyd llwytho eich enw arddangos. Rhowch enw arddangos newydd i barhau.</string>
+    <string name="displayNameNew">Dewiswch enw arddangos newydd</string>
+    <string name="displayNamePick">Dewiswch eich enw arddangos</string>
+    <string name="displayNameSet">Gosod Enw Arddangos</string>
+    <string name="document">Dogfen</string>
+    <string name="done">Wedi gorffen</string>
+    <string name="download">Llwytho i lawr</string>
+    <string name="downloading">Yn llwytho i lawr...</string>
+    <string name="draft">Drafft</string>
+    <string name="edit">Golygu</string>
+    <string name="emojiAndSymbols">Emojïau &amp; Symbolau</string>
+    <string name="emojiCategoryActivities">Gweithgareddau</string>
+    <string name="emojiCategoryAnimals">Anifeiliaid &amp; Natur</string>
+    <string name="emojiCategoryFlags">Baneri</string>
+    <string name="emojiCategoryFood">Bwyd a Diod</string>
+    <string name="emojiCategoryObjects">Pethau</string>
+    <string name="emojiCategoryRecentlyUsed">Defnyddiwyd yn Ddiweddar</string>
+    <string name="emojiCategorySmileys">Smileys &amp; People</string>
+    <string name="emojiCategorySymbols">Symbolau</string>
+    <string name="emojiCategoryTravel">Teithio a Mannau</string>
+    <string name="emojiReactsClearAll">Ydych chi\'n siŵr eich bod am glirio\'r holl {emoji}?</string>
+    <string name="emojiReactsCoolDown">Arafwch! Rydych chi wedi anfon gormod o ymatebion eiconau. Ceisiwch eto yn fuan.</string>
+    <string name="emojiReactsHoverNameDesktop">{name} wedi ymateb gyda <emoji/></string>
+    <string name="emojiReactsHoverTwoNameDesktop">{name} & {other_name} wedi ymateb gyda <emoji/></string>
+    <string name="emojiReactsHoverTwoNameMultipleDesktop">{name}, {other_name} a <span>{count} eraill</span> wedi ymateb gyda <emoji/></string>
+    <string name="emojiReactsHoverTwoNameOneDesktop">{name}, {other_name} a <span>1 arall</span> wedi ymateb gyda <emoji/></string>
+    <string name="emojiReactsHoverYouDesktop">Wnaethoch chi ymateb gyda <emoji /></string>
+    <string name="emojiReactsHoverYouNameDesktop">Chi a {name} wedi ymateb gyda <emoji/></string>
+    <string name="emojiReactsHoverYouNameMultipleDesktop">Rydym ni, {name} &amp; <span>{count} eraill</span> wedi ymateb gyda <emoji /></string>
+    <string name="emojiReactsHoverYouNameOneDesktop">Rydym ni, {name} &amp; <span>1 arall</span> wedi ymateb gyda <emoji /></string>
+    <string name="emojiReactsNotification">Wedi ymateb i\'ch neges {emoji}</string>
+    <string name="enable">Galluogi</string>
+    <string name="errorConnection">Gwiriwch eich cysylltiad rhyngrwyd a cheisio eto.</string>
+    <string name="errorCopyAndQuit">Copïo Gwall a Chau</string>
+    <string name="errorDatabase">Gwall Cronfa Ddata</string>
+    <string name="errorUnknown">Digwyddodd gwall anhysbys.</string>
+    <string name="failures">Methiannau</string>
+    <string name="file">Ffeil</string>
+    <string name="files">Ffeiliau</string>
+    <string name="followSystemSettings">Dilyn gosodiadau\'r system</string>
+    <string name="from">Oddi wrth:</string>
+    <string name="fullScreenToggle">Toglo Sgrin Llawn</string>
+    <string name="gif">GIF</string>
+    <string name="giphyWarning">Giphy</string>
+    <string name="giphyWarningDescription">Bydd {app_name} yn cysylltu â Giphy i ddarparu canlyniadau chwilio. Ni fyddwch yn cael diogelu metadata llawn wrth anfon GIFs.</string>
+    <string name="groupAddMemberMaximum">Dim ond 100 aelodau fydd modd eu hychwanegu i grwpiau</string>
+    <string name="groupCreate">Creu Grŵp</string>
+    <string name="groupCreateErrorNoMembers">Dewiswch o leiaf un aelod grŵp arall.</string>
+    <string name="groupDelete">Dileu Grŵp</string>
+    <string name="groupDeleteDescription">Ydych chi\'n siŵr eich bod am ddileu <b>{group_name}</b>? Bydd hyn yn dileu\'r holl aelodau ac yn dileu\'r holl gynnwys grŵp.</string>
+    <string name="groupDescriptionEnter">Rhowch ddisgrifiad y grŵp</string>
+    <string name="groupDisplayPictureUpdated">Llun arddangos grŵp wedi\'i ddiweddaru.</string>
+    <string name="groupEdit">Golygu Grŵp</string>
+    <string name="groupError">Gwall Grŵp</string>
+    <string name="groupErrorCreate">Methu creu grŵp. Gwiriwch eich cysylltiad rhyngrwyd a cheisio eto.</string>
+    <string name="groupErrorJoin">Methu ymuno â {group_name}</string>
+    <string name="groupInformationSet">Gosod Gwybodaeth y Grŵp</string>
+    <string name="groupInviteDelete">Ydych chi\'n siŵr eich bod am ddileu\'r gwahoddiad grŵp hwn?</string>
+    <string name="groupInviteFailed">Methodd gwahoddiad</string>
+    <string name="groupInviteFailedMore">Methu gwahodd {name} a {count} arall i {group_name}</string>
+    <string name="groupInviteFailedTwo">Methu gwahodd {name} a {other_name} i {group_name}</string>
+    <string name="groupInviteFailedUser">Methu gwahodd {name} i {group_name}</string>
+    <string name="groupInviteSending">Anfon gwahoddiad</string>
+    <string name="groupInviteSent">Anfonwyd gwahoddiad</string>
+    <string name="groupInviteSuccessful">Gwahoddiad grŵp llwyddiannus</string>
+    <string name="groupInviteVersion">Rhaid i\'r defnyddwyr fod â fersiwn {version} neu uwch i dderbyn gwahoddiadau</string>
+    <string name="groupInviteYou">Gwahoddwyd <b>chi</b> i ymuno â\'r grŵp.</string>
+    <string name="groupLeave">Gadael y grŵp</string>
+    <string name="groupLeaveDescription">Ydych chi\'n siŵr eich bod am adael {group_name}?</string>
+    <string name="groupLeaveDescriptionAdmin">Ydych chi\'n siŵr eich bod am adael {group_name}? Bydd hyn yn anactifadu\'r grŵp i bawb.</string>
+    <string name="groupLeaveErrorFailed">Methu gadael {group_name}</string>
+    <string name="groupLegacyBanner">Mae grwpiau wedi\'u huwchraddio, creu grŵp newydd i uwchraddio. Bydd swyddogaeth hen grŵp yn dirywio o {date}.</string>
+    <string name="groupMemberLeft"><b>{name} y</b> gadawodd y grŵp.</string>
+    <string name="groupMemberLeftMore"><b>{name} y</b> a <b>{count} eraill</b> gadawodd y grŵp.</string>
+    <string name="groupMemberLeftTwo"><b>{name} y</b> a <b>{other_name}</b> gadawodd y grŵp.</string>
+    <string name="groupMemberMoreNew"><b>{name} y</b> a <b>{count} eraill</b> ymunodd â\'r grŵp.</string>
+    <string name="groupMemberNew"><b>{name} y</b> ymunodd â\'r grŵp.</string>
+    <string name="groupMemberTwoNew"><b>{name} y</b> a <b>{other_name}</b> ymunodd â\'r grŵp.</string>
+    <string name="groupMemberYouLeft"><b>Rydych chi</b> wedi gadael y grŵp.</string>
+    <string name="groupMembers">Aelodau\'r grŵp</string>
+    <string name="groupMembersNone">Nid oes aelodau eraill yn y grŵp hwn.</string>
+    <string name="groupName">Enw\'r grŵp</string>
+    <string name="groupNameEnter">Rhowch enw\'r grŵp</string>
+    <string name="groupNameEnterPlease">Rhowch enw grŵp.</string>
+    <string name="groupNameEnterShorter">Rhowch enw grŵp byrrach.</string>
+    <string name="groupNameNew">Enw\'r grŵp nawr yw {group_name}. </string>
+    <string name="groupNameUpdated">Enw\'r grŵp wedi\'i ddiweddaru.</string>
+    <string name="groupNoMessages">Nid oes gennych unrhyw negeseuon gan <b>{group_name}</b>. Anfonwch neges i ddechrau\'r sgwrs!</string>
+    <string name="groupOnlyAdmin">Chi yw\'r unig weinyddwr yn <b>{group_name}</b>.
+
+Ni ellir newid aelodau a gosodiadau\'r grŵp heb weinyddwr.</string>
+    <string name="groupPromotedYou">Penodwyd <b>chi</b> i admin.</string>
+    <string name="groupRemoveDescription">Hoffech chi dynnu <b>{name}</b> o <b>{group_name}</b>?</string>
+    <string name="groupRemoveMessages">Tynnu defnyddiwr a\'u negeseuon</string>
+    <string name="groupRemoveMoreDescription">Hoffech chi dynnu <b>{name}</b> a <b>{count} eraill</b> o <b>{group_name}</b>?</string>
+    <string name="groupRemoveTwoDescription">Hoffech chi dynnu <b>{name}</b> a <b>{other_name}</b> o <b>{group_name}</b>?</string>
+    <string name="groupRemoveUserOnly">Tynnu defnyddiwr</string>
+    <string name="groupRemoveUsersMessages">Tynnu defnyddwyr a\'u negeseuon</string>
+    <string name="groupRemoveUsersOnly">Tynnu defnyddwyr</string>
+    <string name="groupRemoved">Tynnwyd <b>{name}</b> o\'r grŵp.</string>
+    <string name="groupRemovedMore"><b>{name} y</b> a <b>{count} eraill</b> wedi cael eu symud o\'r grŵp.</string>
+    <string name="groupRemovedTwo"><b>{name} y</b> a <b>{other_name}</b> wedi cael eu symud o\'r grŵp.</string>
+    <string name="groupRemovedYou">Tynnwyd chi allan o <b>{group_name}</b>.</string>
+    <string name="groupSetDisplayPicture">Gosod Llun Arddangos y Grŵp</string>
+    <string name="groupUnknown">Grŵp Anhysbys</string>
+    <string name="groupUpdated">Grŵp wedi\'i ddiweddaru</string>
+    <string name="helpFAQ">Cwestiynau Cyffredin</string>
+    <string name="helpHelpUsTranslateSession">Helpwch ni gyfieithu {app_name}</string>
+    <string name="helpReportABug">Adrodd nam</string>
+    <string name="helpReportABugDescription">Rhowch rywfaint o fanylion i\'n helpu i ddatrys eich mater. Allforio eich cofnodiadau, yna lanlwythwch y ffeil drwy Desg Gymorth {app_name}.</string>
+    <string name="helpReportABugExportLogs">Allforio Cofnodion</string>
+    <string name="helpReportABugExportLogsDescription">Allforiwch eich cofnodion, yna llwythwch y ffeil trwy Desg Gymorth {app_name}.</string>
+    <string name="helpReportABugExportLogsSaveToDesktop">Cadw i’r bwrdd gwaith</string>
+    <string name="helpReportABugExportLogsSaveToDesktopDescription">Cadw\'r ffeil hon i\'ch bwrdd gwaith, yna ei rhannu gyda datblygwyr {app_name}.</string>
+    <string name="helpSupport">Cefnogaeth</string>
+    <string name="helpWedLoveYourFeedback">Byddem wrth ein bodd i gael eich adborth</string>
+    <string name="hide">Cuddio</string>
+    <string name="hideOthers">Cuddio Eraill</string>
+    <string name="image">Llun</string>
+    <string name="incognitoKeyboard">Bysellfwrdd Dirgel</string>
+    <string name="incognitoKeyboardDescription">Gofyn am fodd incognito os ar gael. Yn dibynnu ar y bysellfwrdd rydych yn ei ddefnyddio, gall eich bysellfwrdd anwybyddu\'r cais hwn.</string>
+    <string name="info">Gwybodaeth</string>
+    <string name="invalidShortcut">Llwybr byr annilys</string>
+    <string name="join">Ymuno</string>
+    <string name="later">Yn hwyrach</string>
+    <string name="learnMore">Dysgu Rhagor</string>
+    <string name="leave">Gadael</string>
+    <string name="leaving">Gadael...</string>
+    <string name="linkPreviews">Rhagolwg Dolen</string>
+    <string name="linkPreviewsDescription">Dangos rhagolwg dolenni ar gyfer URLau a gefnogir.</string>
+    <string name="linkPreviewsEnable">Galluogi Rhagolwg Dolenni</string>
+    <string name="linkPreviewsErrorLoad">Methu llwytho rhagolwg dolenni</string>
+    <string name="linkPreviewsErrorUnsecure">Heb lwytho rhagolwg ar gyfer dolen anniogel</string>
+    <string name="linkPreviewsFirstDescription">Dangos rhagolwg ar gyfer URLs byddwch chi\'n eu hanfon a derbyn. Gall hwn fod yn ddefnyddiol, ond mae\'n rhaid i {app_name} gysylltu â gwefannau cysylltiedig i greu rhagolwg. Gallwch bob amser troi rhagolwg dolenni bant yn gosodiadau {app_name}.</string>
+    <string name="linkPreviewsSend">Anfon Rhagolwg Dolenni</string>
+    <string name="linkPreviewsSendModalDescription">Ni fydd gennych ddiogelwch metadata llawn wrth anfon rhagolwg dolenni.</string>
+    <string name="linkPreviewsTurnedOff">Rhagolygon Dolenau wedi\'u Diffodd</string>
+    <string name="linkPreviewsTurnedOffDescription">Mae\'n rhaid i {app_name} gysylltu â gwefannau cysylltiedig i gynhyrchu rhagolwg o ddolenni a anfonwch a derbyniwch.
+
+Gallwch eu troi ymlaen yng ngosodiadau {app_name}.</string>
+    <string name="loadAccount">Llwytho Cyfrif</string>
+    <string name="loadAccountProgressMessage">Yn llwytho eich cyfrif</string>
+    <string name="loading">Llwytho...</string>
+    <string name="lockApp">Clôi Ap</string>
+    <string name="lockAppDescriptionIos">Angen Touch ID, Face ID neu eich cod mynediad i ddatgloi {app_name}.</string>
+    <string name="lockAppEnablePasscode">Rhaid i chi alluogi cyfuniad mewnosod yn eich Gosodiadau iOS er mwyn defnyddio Clo Sgrin.</string>
+    <string name="lockAppLocked">Mae {app_name} wedi\'i gloi</string>
+    <string name="lockAppQuickResponse">Nid yw ymateb cyflym ar gael pan fydd {app_name} wedi\'i gloi!</string>
+    <string name="lockAppStatus">Statws y clo</string>
+    <string name="lockAppUnlock">Tapio i ddatgloi</string>
+    <string name="lockAppUnlocked">Mae {app_name} wedi\'i ddad-gloi</string>
+    <string name="max">Mwyaf</string>
+    <string name="media">Cyfryngau</string>
+    <plurals name="members">
+        <item quantity="zero">%1$d aelod</item>
+        <item quantity="one">%1$d aelodau</item>
+        <item quantity="two">%1$d aelodau</item>
+        <item quantity="few">%1$d aelodau</item>
+        <item quantity="many">%1$d aelodau</item>
+        <item quantity="other">%1$d aelod gweithgar</item>
+    </plurals>
+    <string name="membersAddAccountIdOrOns">Ychwanegu ID Cyfrif neu ONS</string>
+    <string name="membersInvite">Gwahodd Cysylltiadau</string>
+    <string name="membersInviteSend">Anfon Gwahoddiad</string>
+    <string name="membersInviteSendMultiple">Anfon Gwahoddiadau</string>
+    <string name="membersInviteShareDescription">Hoffech chi rannu hanes neges grŵp gyda <b>{name}</b>?</string>
+    <string name="membersInviteShareMessageHistory">Rhannu hanes negeseuon</string>
+    <string name="membersInviteShareMoreDescription">Hoffech chi rannu hanes neges grŵp gyda <b>{name}</b> a <b>{count} eraill</b>?</string>
+    <string name="membersInviteShareNewMessagesOnly">Rhannu negeseuon newydd yn unig</string>
+    <string name="membersInviteShareTwoDescription">Hoffech chi rannu hanes neges grŵp gyda <b>{name}</b> a <b>{other_name}</b>?</string>
+    <string name="membersInviteTitle">Gwahodd</string>
+    <string name="message">Neges</string>
+    <string name="messageEmpty">Mae\'r neges hon yn wag.</string>
+    <string name="messageErrorDelivery">Methodd trosglwyddo neges</string>
+    <string name="messageErrorLimit">Cyrhaeddwyd terfyn neges</string>
+    <string name="messageErrorOld">Wedi derbyn neges wedi\'i hamgryptio gan ddefnyddio hen fersiwn o {app_name} nad yw bellach yn cael ei gefnogi. Gofynnwch i\'r anfonwr ddiweddaru i\'r fersiwn ddiweddaraf ac ail-anfon y neges.</string>
+    <string name="messageErrorOriginal">Heb ganfod y neges wreiddiol</string>
+    <string name="messageInfo">Gwybodaeth am y Neges</string>
+    <string name="messageMarkRead">Marcio wedi\'i ddarllen</string>
+    <string name="messageMarkUnread">Marcio heb ei ddarllen</string>
+    <string name="messageNew">Neges newydd</string>
+    <string name="messageNewDescriptionDesktop">Dechrau sgwrs newydd trwy nodi ID Cyfrif neu ONS eich ffrind.</string>
+    <string name="messageNewDescriptionMobile">Dechrau sgwrs newydd trwy nodi ID eich ffrind, ONS neu sganio eu cod QR.</string>
+    <string name="messageNewMessages">Negeseuon Newydd</string>
+    <string name="messageReplyingTo">Yn ateb i</string>
+    <string name="messageRequestGroupInvite"><b>{name} y</b> wedi eich gwahodd i ymuno â <b>{group_name}</b>.</string>
+    <string name="messageRequestGroupInviteDescription">Anfon neges i\'r grŵp hwn yn awtomatig yn derbyn y gwahoddiad grŵp.</string>
+    <string name="messageRequestPending">Ar hyn o bryd mae eich cais neges wedi\'i ddal.</string>
+    <string name="messageRequestPendingDescription">Byddwch yn gallu anfon negeseuon llais a hofryngau unwaith y bydd derbynnydd wedi cymeradwyo cais neges hwn.</string>
+    <string name="messageRequestYouHaveAccepted">Mewngofnodwyd cais neges gan <b>{name}</b>.</string>
+    <string name="messageRequestsAcceptDescription">Anfon neges i\'r defnyddiwr hwn yn awtomatig yn derbyn eu cais neges ac yn datgelu eich ID Cyfrif.</string>
+    <string name="messageRequestsAccepted">Mae eich cais neges wedi\'i dderbyn.</string>
+    <string name="messageRequestsClearAllExplanation">Ydych chi\'n siŵr eich bod am glirio\'r holl geisiadau neges a gwahoddiadau grŵp?</string>
+    <string name="messageRequestsCommunities">Ceisiadau am Negeseuon Cymunedol</string>
+    <string name="messageRequestsCommunitiesDescription">Caniatáu ceisiadau neges gan sgyrsiau Community.</string>
+    <string name="messageRequestsDelete">Ydych chi\'n siŵr eich bod am ddileu\'r cais neges hwn?</string>
+    <string name="messageRequestsNew">Mae gennych geisiad negeseuon newydd</string>
+    <string name="messageRequestsNonePending">Dim ceisiadau negeseuon yn yr arfaeth</string>
+    <string name="messageRequestsTurnedOff"><b>{name} y</b> wedi troi ceisiadau neges oddi wrth sgwrsiau Cymunedol, felly ni allwch anfon neges atynt.</string>
+    <string name="messageSelect">Dewis Neges</string>
+    <string name="messageStatusFailedToSend">Methwyd anfon</string>
+    <string name="messageStatusFailedToSync">Methwyd cysoni</string>
+    <string name="messageStatusSyncing">Cysoni</string>
+    <string name="messageUnread">Neges heb eu darllen</string>
+    <string name="messageVoice">Neges Llais</string>
+    <string name="messageVoiceErrorShort">Dal i recordio neges lais</string>
+    <string name="messageVoiceSlideToCancel">Llithro i ddiddymu</string>
+    <string name="messages">Negeseuon</string>
+    <string name="minimize">Lleihau</string>
+    <string name="next">Nesaf</string>
+    <string name="nicknameDescription">Dewiswch lysenw ar gyfer {name}. Bydd hyn yn ymddangos ichi yn eich sgyrsiau un-i-un a grŵp.</string>
+    <string name="nicknameEnter">Rhowch lysenw</string>
+    <string name="nicknameRemove">Tynnu llysenw</string>
+    <string name="nicknameSet">Gosod Llysenw</string>
+    <string name="no">Na</string>
+    <string name="noSuggestions">Dim Awgrymiadau</string>
+    <string name="none">Dim</string>
+    <string name="notNow">Nid nawr</string>
+    <string name="noteToSelf">Nodyn i Fi Fy Hun</string>
+    <string name="noteToSelfEmpty">Nid oes gennych negeseuon yn Note to Self.</string>
+    <string name="noteToSelfHide">Cuddio Nodyn i Mi Fy Hun</string>
+    <string name="noteToSelfHideDescription">Ydych chi\'n siŵr eich bod am guddio Nodyn i Fi Fy Hun?</string>
+    <string name="notificationsAllMessages">Pob Neges</string>
+    <string name="notificationsAndroidSystem">{message_count} neges newydd mewn {conversation_count} sgwrs</string>
+    <string name="notificationsContent">Cynnwys Hysbysiad</string>
+    <string name="notificationsContentDescription">Y wybodaeth a ddangosir mewn hysbysiadau.</string>
+    <string name="notificationsContentShowNameAndContent">Enw a Chynnwys</string>
+    <string name="notificationsContentShowNameOnly">Enw yn unig</string>
+    <string name="notificationsContentShowNoNameOrContent">Dim Enw neu Gynnwys</string>
+    <string name="notificationsFastMode">Fast Mode</string>
+    <string name="notificationsFastModeDescriptionAndroid">Byddwch yn cael hysbysu am negeseuon newydd yn ddibynadwy ac yn syth gan ddefnyddio Gwasanaethau Hysbysiad Google.</string>
+    <string name="notificationsFastModeDescriptionIos">Byddwch yn cael hysbysu am negeseuon newydd yn ddibynadwy ac yn syth gan ddefnyddio Gwasanaethau Hysbysiad Apple.</string>
+    <string name="notificationsGoToAndroidSettings">Ewch i osodiadau hysbysiadau Android</string>
+    <string name="notificationsGoToDevice">Ewch i osodiadau hysbysiadau\'r ddyfais</string>
+    <string name="notificationsIosGroup">{name} i {conversation_name}</string>
+    <string name="notificationsIosRestart">Efallai eich bod wedi derbyn negeseuon tra\'r oedd eich {device} yn ailgychwyn.</string>
+    <string name="notificationsLedColor">Lliw\'r LED</string>
+    <string name="notificationsMentionsOnly">Dim ond Cyfeiriadau\'n unig</string>
+    <string name="notificationsMessage">Hysbysiadau neges</string>
+    <string name="notificationsMostRecent">Y diweddaraf gan: {name}</string>
+    <string name="notificationsMute">Tewi</string>
+    <string name="notificationsMuteFor">Tewi am {time_large}</string>
+    <string name="notificationsMuteUnmute">Dad-dewi</string>
+    <string name="notificationsMuted">Wedi tewi</string>
+    <string name="notificationsSlowMode">Slow Mode</string>
+    <string name="notificationsSlowModeDescription">Bydd {app_name} yn edrych am negeseuon newydd yn achlysurol yn y cefndir.</string>
+    <string name="notificationsSound">Sain</string>
+    <string name="notificationsSoundDescription">Sain pan fydd Ap ar agor</string>
+    <string name="notificationsSoundDesktop">Hysbysiadau Sain</string>
+    <string name="notificationsStrategy">Strategaeth Hysbysiadau</string>
+    <string name="notificationsStyle">Arddull Hysbysiadau</string>
+    <string name="notificationsVibrate">Dirgrynu</string>
+    <string name="off">I ffwrdd</string>
+    <string name="okay">Iawn</string>
+    <string name="onboardingAccountCreate">Creu cyfrif</string>
+    <string name="onboardingAccountCreated">Crëwyd cyfrif</string>
+    <string name="onboardingAccountExists">Mae gen i gyfrif</string>
+    <string name="onboardingBackAccountCreation">Ni allwch fynd yn ôl ymhellach. Er mwyn canslo creu eich cyfrif, mae\'n rhaid i Session gau.</string>
+    <string name="onboardingBackLoadAccount">Ni allwch fynd yn ôl ymhellach. Er mwyn atal llwytho eich cyfrif, mae\'n rhaid i Session gau.</string>
+    <string name="onboardingBubbleCreatingAnAccountIsEasy">Mae creu cyfrif yn syth, yn rhad ac am ddim, ac yn anhysbys</string>
+    <string name="onboardingBubbleNoPhoneNumber">Nid oes angen eich rhif ffôn hyd yn oed i gofrestru.</string>
+    <string name="onboardingBubblePrivacyInYourPocket">Preifatrwydd yn eich poced.</string>
+    <string name="onboardingBubbleSessionIsEngineered">Mae {app_name} wedi\'i gynllunio i ddiogelu eich preifatrwydd.</string>
+    <string name="onboardingBubbleWelcomeToSession">Croeso i {app_name}</string>
+    <string name="onboardingHitThePlusButton">Taro’r botwm plws i gychwyn sgwrs, creu grŵp, neu ymuno â chymuned swyddogol!</string>
+    <string name="onboardingMessageNotificationExplanation">Mae dwy ffordd y gall {app_name} roi gwybod i chi am negeseuon newydd.</string>
+    <string name="onboardingPrivacy">Polisi Preifatrwydd</string>
+    <string name="onboardingTos">Telerau Gwasanaeth</string>
+    <string name="onboardingTosPrivacy">Trwy ddefnyddio\'r gwasanaeth hwn, rydych chi\'n cytuno i\'n <b>Telerau Gwasanaeth</b> ac <b>Polisi Preifatrwydd</b></string>
+    <string name="onionRoutingPath">Llwybr</string>
+    <string name="onionRoutingPathDescription">Mae {app_name} yn cuddio\'ch cyfeiriad IP trwy lwybro\'ch negeseuon trwy nifer o nodau gwasanaeth yn rhwydwaith gwasgaredig {app_name}. Dyma\'ch llwybr presennol:</string>
+    <string name="onionRoutingPathDestination">Cyrchfan</string>
+    <string name="onionRoutingPathEntryNode">Node Mynediad</string>
+    <string name="onionRoutingPathServiceNode">Service Node</string>
+    <string name="onionRoutingPathUnknownCountry">Gwlad Anhysbys</string>
+    <string name="onsErrorNotRecognized">Nid oeddem yn gallu adnabod y ONS hwn. Gwiriwch ef a rhowch gynnig arall arni.</string>
+    <string name="onsErrorUnableToSearch">Methwyd chwilio am y ONS hwn. Rhowch gynnig arall arni yn nes ymlaen.</string>
+    <string name="open">Agor</string>
+    <string name="other">Arall</string>
+    <string name="passwordChange">Newid Cyfrinair</string>
+    <string name="passwordChangeDescription">Newid y cyfrinair sy\'n angenrheidiol i ddatgloi {app_name}.</string>
+    <string name="passwordChangedDescription">Mae eich cyfrinair wedi\'i newid. Cadwch ef yn ddiogel.</string>
+    <string name="passwordConfirm">Cadarnhau cyfrinair</string>
+    <string name="passwordCreate">Creu eich cyfrinair</string>
+    <string name="passwordCurrentIncorrect">Mae eich cyfrinair cyfredol yn anghywir.</string>
+    <string name="passwordDescription">Angen cyfrinair i ddatgloi {app_name}.</string>
+    <string name="passwordEnter">Rhowch cyfrinair</string>
+    <string name="passwordEnterCurrent">Nodwch eich cyfrinair cyfredol.</string>
+    <string name="passwordEnterNew">Nodwch eich cyfrinair newydd</string>
+    <string name="passwordError">Dim ond llythrennau, rhifau a symbolau y mae\'n rhaid i gyfrinair ei gynnwys</string>
+    <string name="passwordErrorLength">Rhaid i gyfrinair fod rhwng 6 a 64 nod o hyd</string>
+    <string name="passwordErrorMatch">Nid yw cyfrineiriau\'n cydweddu</string>
+    <string name="passwordFailed">Methwyd gosod cyfrinair</string>
+    <string name="passwordIncorrect">Cyfrinair anghywir</string>
+    <string name="passwordRemove">Tynnu\'r Cyfrinair</string>
+    <string name="passwordRemoveDescription">Tynnu\'r cyfrinair sydd ei angen i ddatgloi {app_name}.</string>
+    <string name="passwordRemovedDescription">Mae eich cyfrinair wedi\'i dynnu.</string>
+    <string name="passwordSet">Gosod Cyfrinair</string>
+    <string name="passwordSetDescription">Mae eich cyfrinair wedi\'i osod. Cadwch ef yn ddiogel.</string>
+    <string name="paste">Gludo</string>
+    <string name="permissionsAppleMusic">Mae angen i {app_name} ddefnyddio Apple Music i chwarae atodiadau cyfryngau.</string>
+    <string name="permissionsAutoUpdate">Diweddariad Auto</string>
+    <string name="permissionsAutoUpdateDescription">Gwiriwch yn awtomatig am ddiweddariadau wrth gychwyn</string>
+    <string name="permissionsFaceId">Mae\'r nodwedd cloi sgrin ar {app_name} yn defnyddio ID Wyneb.</string>
+    <string name="permissionsKeepInSystemTray">Cadw yn y Derbynnydd System</string>
+    <string name="permissionsKeepInSystemTrayDescription">{app_name} yn parhau i redeg yn y cefndir pan fyddwch yn cau\'r ffenestr</string>
+    <string name="permissionsLibrary">Mae {app_name} angen mynediad i\'r llyfrgell lluniau i barhau. Gallwch alluogi mynediad yng ngosodiadau iOS.</string>
+    <string name="permissionsMicrophone">Meicroffon</string>
+    <string name="permissionsMicrophoneAccessRequiredAndroid">Mae {app_name} angen caniatâd Meicroffon i anfon negeseuon sain, ond mae wedi\'i atal yn barhaol. Ewch i osodiadau\'r ap, dewis \"Caniatâd\", a galluogi \"Microffon\".</string>
+    <string name="permissionsMicrophoneAccessRequiredDesktop">Gallwch alluogi mynediad meicroffon yn osodiadau preifatrwydd {app_name}</string>
+    <string name="permissionsMicrophoneAccessRequiredIos">Mae {app_name} angen mynediad i\'r meicroffon i wneud galwadau a recordio negeseuon sain.</string>
+    <string name="permissionsMicrophoneDescription">Caniatáu mynediad at feicroffon</string>
+    <string name="permissionsRequired">Angen caniatâd</string>
+    <string name="permissionsStorageSave">Mae {app_name} angen mynediad i storio i gadw atodiadau a chyfryngau.</string>
+    <string name="permissionsStorageSaveDenied">Mae {app_name} angen caniatâd Storio i gadw lluniau a fideos, ond mae wedi\'i wrthod yn barhaol. Ewch i ddewislen gosodiadau\'r ap, dewis \"Caniatâd\", a galluogi \"Storio\".</string>
+    <string name="permissionsStorageSend">Mae {app_name} angen mynediad i storio i anfon lluniau a fideos.</string>
+    <string name="pin">Pin </string>
+    <string name="pinConversation">Pin Sgwrs</string>
+    <string name="pinUnpin">Datgloi Sgwrs</string>
+    <string name="pinUnpinConversation">Datgloi Sgwrs</string>
+    <string name="preview">Rhagolwg</string>
+    <string name="profile">Proffil</string>
+    <string name="profileDisplayPicture">Dangos llun</string>
+    <string name="profileDisplayPictureRemoveError">Methwyd tynnu\'r llun arddangos.</string>
+    <string name="profileDisplayPictureSet">Gosod Llun Arddangos</string>
+    <string name="profileDisplayPictureSizeError">Dewiswch ffeil llai.</string>
+    <string name="profileErrorUpdate">Methwyd diweddaru proffil.</string>
+    <string name="promote">Hyrwyddo</string>
+    <string name="qrCode">Cod QR</string>
+    <string name="qrNotAccountId">Nid yw\'r côd QR hwn yn cynnwys ID Cyfrif</string>
+    <string name="qrNotRecoveryPassword">Nid yw\'r côd QR hwn yn cynnwys Cyfrinair Adferiad</string>
+    <string name="qrScan">Sganiwch Cod QR</string>
+    <string name="qrView">Gweld QR</string>
+    <string name="qrYoursDescription">Gall cyfeillion anfon neges atoch drwy sganio eich cod QR.</string>
+    <string name="quit">Gadael {app_name}</string>
+    <string name="quitButton">Gadael</string>
+    <string name="read">Darllen</string>
+    <string name="readReceipts">Derbynebau Darllen</string>
+    <string name="readReceiptsDescription">Dangos derbyniadau darllen ar gyfer yr holl negeseuon rydych chi\'n eu hanfon a\'u derbyn.</string>
+    <string name="received">Derbyniwyd:</string>
+    <string name="recommended">Argymhellir</string>
+    <string name="recoveryPasswordBannerDescription">Cadwch eich cyfrinair adfer i wneud yn siŵr nad ydych yn colli mynediad i\'ch cyfrif.</string>
+    <string name="recoveryPasswordBannerTitle">Cadwch eich cyfrinair adfer</string>
+    <string name="recoveryPasswordDescription">Defnyddiwch eich chyfrinair adfer i lwytho eich cyfrif ar ddyfeisiau newydd. <br /><br />Ni ellir adfer eich cyfrif heb eich cyfrinair adfer. Sicrhewch ei fod yn cael ei storio yn rhywle diogel - ac na fyddwch yn ei rannu ag unrhyw un.</string>
+    <string name="recoveryPasswordEnter">Rhowch eich cyfrinair adfer</string>
+    <string name="recoveryPasswordErrorMessageGeneric">Gwiriwch eich cyfrinair adfer a cheisio eto.</string>
+    <string name="recoveryPasswordErrorMessageIncorrect">Mae rhai o\'r geiriau yn eich Cyfrinair Adfer yn anghywir. Gwiriwch a cheisiwch eto.</string>
+    <string name="recoveryPasswordErrorMessageShort">Nid yw\'r Cyfrinair Adfer y gwnaethoch ei nodi yn ddigon hir. Gwiriwch a rhowch gynnig arall arni os gwelwch yn dda.</string>
+    <string name="recoveryPasswordErrorTitle">Cyfrinair Adfer Anghywir</string>
+    <string name="recoveryPasswordExplanation">I lwytho eich cyfrif, rhowch eich cyfrinair adfer.</string>
+    <string name="recoveryPasswordHidePermanently">Cuddio Cyfrinair Adfer yn Barhaol</string>
+    <string name="recoveryPasswordHidePermanentlyDescription1">Heb eich cyfrinair adfer, ni allwch lwytho eich cyfrif ar ddyfeisiau newydd. 
+
+Rydym yn argymell yn gryf eich bod yn cadw eich cyfrinair adfer mewn lle diogel cyn parhau.</string>
+    <string name="recoveryPasswordHidePermanentlyDescription2">Ydych chi\'n siŵr eich bod am guddio eich cyfrinair adfer am byth ar y ddyfais hon? Ni ellir dadwneud hyn.</string>
+    <string name="recoveryPasswordHideRecoveryPassword">Cuddio Cyfrinair Adfer</string>
+    <string name="recoveryPasswordHideRecoveryPasswordDescription">Cuddio eich cyfrinair adfer yn barhaol ar y ddyfais hon.</string>
+    <string name="recoveryPasswordRestoreDescription">Rhowch eich cyfrinair adfer i lwytho eich cyfrif. Os nad ydych wedi\'i gadw, gallwch ddod o hyd iddo yn eich gosodiadau app.</string>
+    <string name="recoveryPasswordView">Gweld Cyfrinair</string>
+    <string name="recoveryPasswordWarningSendDescription">Dyma eich cyfrinair adfer. Os byddwch yn ei anfon at rywun, bydd ganddynt fynediad llawn i\'ch cyfrif.</string>
+    <string name="redo">Ailbennu</string>
+    <string name="remove">Tynnu</string>
+    <string name="reply">Ateb</string>
+    <string name="resend">Ailanfon</string>
+    <string name="resolving">Llwytho gwybodaeth gwlad...</string>
+    <string name="restart">Ailgychwyn</string>
+    <string name="resync">Aildrefnu</string>
+    <string name="retry">Ceisio eto</string>
     <string name="save">Cadw</string>
-    <string name="note_to_self">Nodyn i Fi Fy Hun</string>
-    <!-- AbstractNotificationBuilder -->
-    <string name="AbstractNotificationBuilder_new_message">Neges newydd</string>
-    <!-- AlbumThumbnailView -->
-    <!-- ApplicationPreferencesActivity -->
-    <plurals name="ApplicationPreferencesActivity_messages_per_conversation">
-        <item quantity="zero">%d neges i bob sgwrs</item>
-        <item quantity="one">%d neges i bob sgwrs</item>
-        <item quantity="two">%d neges i bob sgwrs</item>
-        <item quantity="few">%d neges i bob sgwrs</item>
-        <item quantity="many">%d neges i bob sgwrs</item>
-        <item quantity="other">%d neges i bob sgwrs</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete_all_old_messages_now">Dileu hen negeseuon nawr?</string>
-    <plurals name="ApplicationPreferencesActivity_this_will_immediately_trim_all_conversations_to_the_d_most_recent_messages">
-        <item quantity="zero">Bydd hyn yn tocio pob sgwrs i\'r neges ddiweddaraf.</item>
-        <item quantity="one">Bydd hyn yn tocio pob sgwrs i\'r %d neges ddiweddaraf.</item>
-        <item quantity="two">Bydd hyn yn tocio pob sgwrs i\'r %d neges ddiweddaraf.</item>
-        <item quantity="few">Bydd hyn yn tocio pob sgwrs i\'r %d neges ddiweddaraf.</item>
-        <item quantity="many">Bydd hyn yn tocio pob sgwrs i\'r %d neges ddiweddaraf.</item>
-        <item quantity="other">Bydd hyn yn tocio pob sgwrs i\'r %d neges ddiweddaraf.</item>
-    </plurals>
-    <string name="ApplicationPreferencesActivity_delete">Dileu</string>
-    <string name="ApplicationPreferencesActivity_On">Ymlaen</string>
-    <string name="ApplicationPreferencesActivity_Off">I ffwrdd</string>
-    <!-- DraftDatabase -->
-    <string name="DraftDatabase_Draft_image_snippet">(llun)</string>
-    <string name="DraftDatabase_Draft_audio_snippet">(sain)</string>
-    <string name="DraftDatabase_Draft_video_snippet">(fideo)</string>
-    <string name="DraftDatabase_Draft_quote_snippet">(ateb)</string>
-    <!-- AttachmentManager -->
-    <string name="AttachmentManager_cant_open_media_selection">Methu canfod rhaglen i ddewis cyfryngau.</string>
-    <string name="AttachmentManager_signal_requires_the_external_storage_permission_in_order_to_attach_photos_videos_or_audio">Mae ar Session angen caniatâd Storio er mwyn atodi lluniau, fideos neu sain, ond mae wedi\'i wrthod yn barhaol. Ewch i ddewislen gosodiadau\'r ap, dewis \"Caniatâd\", a galluogi \"Storio\".</string>
-    <string name="AttachmentManager_signal_requires_the_camera_permission_in_order_to_take_photos_but_it_has_been_permanently_denied">Mae ar Session angen caniatâd Camera er mwyn atodi tynnu lluniau, ond fe\'i rwystrwyd yn barhaol. Ewch i ddewislen gosodiadau\'r ap, dewis \"Caniatâd\", a galluogi \"Camera\".</string>
-    <!-- AudioSlidePlayer -->
-    <string name="AudioSlidePlayer_error_playing_audio">Gwall chwarae sain!</string>
-    <!-- BucketedThreadMedia -->
-    <string name="BucketedThreadMedia_Today">Heddiw</string>
-    <string name="BucketedThreadMedia_Yesterday">Ddoe</string>
-    <string name="BucketedThreadMedia_This_week">Wythnos hon</string>
-    <string name="BucketedThreadMedia_This_month">Mis yma</string>
-    <!-- CommunicationActions -->
-    <string name="CommunicationActions_no_browser_found">Heb ganfod porwr gwe.</string>
-    <!-- ContactsCursorLoader -->
-    <string name="ContactsCursorLoader_groups">Grwpiau</string>
-    <!-- ConversationItem -->
-    <string name="ConversationItem_error_not_delivered">Methodd yr anfon, tapiwch am fanylion</string>
-    <string name="ConversationItem_received_key_exchange_message_tap_to_process">Wedi derbyn neges cyfnewid allwedd, tapiwch i brosesu.</string>
-    <string name="ConversationItem_click_to_approve_unencrypted">Methodd yr anfon, tapiwch am gam nôl anniogel</string>
-    <string name="ConversationItem_unable_to_open_media">Methu canfod app sy\'n gallu agor y cyfryngau hwn.</string>
-    <string name="ConversationItem_copied_text">Copïwyd %s</string>
-    <string name="ConversationItem_download_more">Llwytho Rhagor i Lawr</string>
-    <string name="ConversationItem_pending">Yn aros</string>
-    <!-- ConversationActivity -->
-    <string name="ConversationActivity_add_attachment">Ychwanegu atodiad</string>
-    <string name="ConversationActivity_select_contact_info">Dewis manylion cyswllt</string>
-    <string name="ConversationActivity_sorry_there_was_an_error_setting_your_attachment">Mae\'n ddrwg gennym, bu gwall wrth osod eich atodiad.</string>
-    <string name="ConversationActivity_invalid_recipient">Derbynnydd annilys!</string>
-    <string name="ConversationActivity_added_to_home_screen">Ychwanegwyd at y sgrin gartref</string>
-    <string name="ConversationActivity_leave_group">Gadael y grŵp</string>
-    <string name="ConversationActivity_are_you_sure_you_want_to_leave_this_group">Ydych chi\'n siŵr eich bod am adael y grŵp?</string>
-    <string name="ConversationActivity_error_leaving_group">Gwall wrth adael grŵp</string>
-    <string name="ConversationActivity_unblock_this_contact_question">Dadrwystro\'r cyswllt hwn?</string>
-    <string name="ConversationActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Byddwch unwaith eto yn gallu derbyn negeseuon a galwadau o\'r cyswllt hwn.</string>
-    <string name="ConversationActivity_unblock">Dadrwystro</string>
-    <string name="ConversationActivity_attachment_exceeds_size_limits">Mae atodiad yn fwy na therfynau maint y math o neges rydych chi\'n ei hanfon.</string>
-    <string name="ConversationActivity_unable_to_record_audio">Methu recordio sain!</string>
-    <string name="ConversationActivity_there_is_no_app_available_to_handle_this_link_on_your_device">Nid oes ap ar gael i drin y ddolen hon ar eich dyfais.</string>
-    <string name="ConversationActivity_to_send_audio_messages_allow_signal_access_to_your_microphone">I anfon negeseuon sain, caniatewch i Session gael mynediad i\'ch meicroffon.</string>
-    <string name="ConversationActivity_signal_requires_the_microphone_permission_in_order_to_send_audio_messages">Mae ar Session angen caniatâd Meicroffon i anfon negeseuon sain, ond mae wed\'i atal yn barhaol. Ewch i osodiadau\'r ap, dewis \"Caniatâd\", a galluogi \"Microffon\".</string>
-    <string name="ConversationActivity_to_capture_photos_and_video_allow_signal_access_to_the_camera">I gipio lluniau a fideo, caniatewch i Session gael mynediad i\'r camera.</string>
-    <string name="ConversationActivity_signal_needs_the_camera_permission_to_take_photos_or_video">Mae ar Session angen caniatâd Camera er mwyn atodi tynnu lluniau neu fideos, ond fe\'i rwystrwyd yn barhaol. Ewch i ddewislen gosodiadau\'r ap, dewis \"Caniatâd\", a galluogi \"Camera\".</string>
-    <string name="ConversationActivity_signal_needs_camera_permissions_to_take_photos_or_video">Angen Session angen caniatâd camera i dynnu lluniau neu fideo</string>
-    <string name="ConversationActivity_search_position">%1$d o %2$d</string>
-    <!-- ConversationFragment -->
-    <plurals name="ConversationFragment_delete_selected_messages">
-        <item quantity="zero">Dileu\'r negeseuon hyn?</item>
-        <item quantity="one">Dileu\'r negeseuon hyn?</item>
-        <item quantity="two">Dileu\'r negeseuon hyn?</item>
-        <item quantity="few">Dileu\'r negeseuon hyn?</item>
-        <item quantity="many">Dileu\'r negeseuon hyn?</item>
-        <item quantity="other">Dileu\'r negeseuon hyn?</item>
-    </plurals>
-    <plurals name="ConversationFragment_this_will_permanently_delete_all_n_selected_messages">
-        <item quantity="zero">Bydd hyn yn dileu yn barhaol y sgwrs sydd wedi\'i dewis.</item>
-        <item quantity="one">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="two">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="few">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="many">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="other">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-    </plurals>
-    <string name="ConversationFragment_save_to_sd_card">Cadw i\'r storio?</string>
-    <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
-        <item quantity="zero">Bydd cadw\'r cyfryngau hyn i\'r storfa yn caniatáu i apiau eraill ar eich dyfais gael mynediad iddynt.\n\Parhau?</item>
-        <item quantity="one">Bydd cadw\'r holl gyfryngau %1$d i\'r storfa yn caniatáu i unrhyw apiau eraill ar eich dyfais gael mynediad iddynt.\n\Parhau?</item>
-        <item quantity="two">Bydd cadw\'r holl gyfryngau %1$d i\'r storfa yn caniatáu i apiau eraill ar eich dyfais gael mynediad iddynt.\n\Parhau?</item>
-        <item quantity="few">Bydd cadw\'r holl gyfryngau %1$d i\'r storfa yn caniatáu i apiau eraill ar eich dyfais gael mynediad iddynt.\n\Parhau?</item>
-        <item quantity="many">Bydd cadw\'r holl gyfryngau %1$d i\'r storfa yn caniatáu i apiau eraill ar eich dyfais gael mynediad iddynt.\n\Parhau?</item>
-        <item quantity="other">Bydd cadw\'r holl gyfryngau %1$d i\'r storfa yn caniatáu i apiau eraill ar eich dyfais gael mynediad iddynt.\n\Parhau?</item>
-    </plurals>
-    <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
-        <item quantity="zero">Gwall wrth gadw atodiad i\'r storio!</item>
-        <item quantity="one">Gwall wrth gadw atodiadau i\'r storio!</item>
-        <item quantity="two">Gwall wrth gadw atodiadau i\'r storio!</item>
-        <item quantity="few">Gwall wrth gadw atodiadau i\'r storio!</item>
-        <item quantity="many">Gwall wrth gadw atodiadau i\'r storio!</item>
-        <item quantity="other">Gwall wrth gadw atodiadau i\'r storio!</item>
-    </plurals>
-    <plurals name="ConversationFragment_saving_n_attachments">
-        <item quantity="zero">Cadw atodiad</item>
-        <item quantity="one">Cadw %1$d atodiad</item>
-        <item quantity="two">Cadw %1$d atodiad</item>
-        <item quantity="few">Cadw %1$d atodiad</item>
-        <item quantity="many">Cadw %1$d atodiad</item>
-        <item quantity="other">Cadw %1$d atodiad</item>
-    </plurals>
-    <!-- CreateProfileActivity -->
-    <string name="CreateProfileActivity_profile_photo">Llun proffil</string>
-    <!-- CustomDefaultPreference -->
-    <string name="CustomDefaultPreference_using_custom">Defnyddio\'r cyfaddas: %s</string>
-    <string name="CustomDefaultPreference_using_default">Defnyddio rhagosodedig: %s</string>
-    <string name="CustomDefaultPreference_none">Dim</string>
-    <!-- DateUtils -->
-    <string name="DateUtils_just_now">Nawr</string>
-    <string name="DateUtils_minutes_ago">%d mun</string>
-    <string name="DateUtils_today">Heddiw</string>
-    <string name="DateUtils_yesterday">Ddoe</string>
-    <!-- DeviceListItem -->
-    <string name="DeviceListItem_today">Heddiw</string>
-    <!-- DocumentView -->
-    <string name="DocumentView_unknown_file">Ffeil anhysbys</string>
-    <!-- GiphyActivity -->
-    <string name="GiphyActivity_error_while_retrieving_full_resolution_gif">Gwall wrth estyn GIF cydraniad llawn</string>
-    <!-- GiphyFragmentPageAdapter -->
-    <string name="GiphyFragmentPagerAdapter_gifs">GIFau</string>
-    <string name="GiphyFragmentPagerAdapter_stickers">Sticeri</string>
-    <!-- CropImageActivity -->
-    <string name="CropImageActivity_profile_avatar">Afatar</string>
-    <!-- InputPanel -->
-    <string name="InputPanel_tap_and_hold_to_record_a_voice_message_release_to_send">Tapio a dal i recordio neges lais, rhyddhau i\'w hanfon</string>
-    <!-- LongMessageActivity -->
-    <string name="LongMessageActivity_unable_to_find_message">Methu canfod neges</string>
-    <string name="LongMessageActivity_message_from_s">Neges gan %1$s</string>
-    <string name="LongMessageActivity_your_message">Eich neges</string>
-    <!-- MediaOverviewActivity -->
-    <string name="MediaOverviewActivity_Media">Cyfryngau</string>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_title">
-        <item quantity="zero">Dileu\'r negeseuon hyn?</item>
-        <item quantity="one">Dileu\'r negeseuon hyn?</item>
-        <item quantity="two">Dileu\'r negeseuon hyn?</item>
-        <item quantity="few">Dileu\'r negeseuon hyn?</item>
-        <item quantity="many">Dileu\'r negeseuon hyn?</item>
-        <item quantity="other">Dileu\'r negeseuon hyn?</item>
-    </plurals>
-    <plurals name="MediaOverviewActivity_Media_delete_confirm_message">
-        <item quantity="zero">Bydd hyn yn dileu yn barhaol y sgwrs sydd wedi\'i dewis.</item>
-        <item quantity="one">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="two">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="few">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="many">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-        <item quantity="other">Bydd hyn yn dileu yn barhaol y %1$d neges sydd wedi\'u dewis.</item>
-    </plurals>
-    <string name="MediaOverviewActivity_Media_delete_progress_title">Wrthi\'n dileu</string>
-    <string name="MediaOverviewActivity_Media_delete_progress_message">Dileu negeseuon...</string>
-    <string name="MediaOverviewActivity_Documents">Dogfennau</string>
-    <string name="MediaOverviewActivity_Select_all">Dewis popeth</string>
-    <string name="MediaOverviewActivity_collecting_attachments">Casglu atodiadau...</string>
-    <!-- NotificationMmsMessageRecord -->
-    <string name="NotificationMmsMessageRecord_multimedia_message">Neges amlgyfrwng</string>
-    <string name="NotificationMmsMessageRecord_downloading_mms_message">Llwytho i lawr neges MMS</string>
-    <string name="NotificationMmsMessageRecord_error_downloading_mms_message">Gwall wrth lawrlwytho neges MMS, tapio i geisio eto</string>
-    <!-- MediaPickerActivity -->
-    <string name="MediaPickerActivity_send_to">Anfon i %s</string>
-    <!-- MediaSendActivity -->
-    <string name="MediaSendActivity_add_a_caption">Ychwanegu neges...</string>
-    <string name="MediaSendActivity_an_item_was_removed_because_it_exceeded_the_size_limit">Cafodd eitem ei thynnu gan ei bod yn fwy na\'r maint mwyaf</string>
-    <string name="MediaSendActivity_camera_unavailable">Camera ddim ar gael</string>
-    <string name="MediaSendActivity_message_to_s">Neges i %s</string>
-    <plurals name="MediaSendActivity_cant_share_more_than_n_items">
-        <item quantity="zero">Nid oes modd rhannu mwy na %d eitem.</item>
-        <item quantity="one">Nid oes modd rhannu mwy na %d eitem.</item>
-        <item quantity="two">Nid oes modd rhannu mwy na %d eitem.</item>
-        <item quantity="few">Nid oes modd rhannu mwy na %d eitem.</item>
-        <item quantity="many">Nid oes modd rhannu mwy na %d eitem.</item>
-        <item quantity="other">Nid oes modd rhannu mwy na %d eitem.</item>
-    </plurals>
-    <!-- MediaRepository -->
-    <string name="MediaRepository_all_media">Pob cyfrwng</string>
-    <!-- MessageRecord -->
-    <string name="MessageRecord_message_encrypted_with_a_legacy_protocol_version_that_is_no_longer_supported">Wedi derbyn neges wedi\'i hamgryptio gan ddefnyddio hen fersiwn o Session nad yw bellach yn cael ei gefnogi. Gofynnwch i\'r anfonwr ddiweddaru i\'r fersiwn ddiweddaraf ac ail-anfon y neges.</string>
-    <string name="MessageRecord_left_group">Rydych wedi gadael y grŵp.</string>
-    <string name="MessageRecord_you_updated_group">Rydych chi wedi diweddaru\'r grŵp.</string>
-    <string name="MessageRecord_s_updated_group">Mae %s wedi diweddaru\'r grŵp.</string>
-    <!-- ExpirationDialog -->
-    <string name="ExpirationDialog_disappearing_messages">Negeseuon diflanedig</string>
-    <string name="ExpirationDialog_your_messages_will_not_expire">Ni fydd eich negeseuon yn dod i ben.</string>
-    <string name="ExpirationDialog_your_messages_will_disappear_s_after_they_have_been_seen">Bydd negeseuon sy\'n cael eu anfon a\'u derbyn yn y sgwrs yn diflannu %s ar ôl iddynt gael eu gweld.</string>
-    <!-- PassphrasePromptActivity -->
-    <string name="PassphrasePromptActivity_enter_passphrase">Rhoi cyfrinymadrodd</string>
-    <!-- RecipientPreferencesActivity -->
-    <string name="RecipientPreferenceActivity_block_this_contact_question">Rhwystro\'r cysllwt hwn?</string>
-    <string name="RecipientPreferenceActivity_you_will_no_longer_receive_messages_and_calls_from_this_contact">Ni fyddwch bellach yn derbyn negeseuon a galwadau oddi wrth y cyswllt hwn.</string>
-    <string name="RecipientPreferenceActivity_block">Rhwystro</string>
-    <string name="RecipientPreferenceActivity_unblock_this_contact_question">Dadrwystro\'r cyswllt hwn?</string>
-    <string name="RecipientPreferenceActivity_you_will_once_again_be_able_to_receive_messages_and_calls_from_this_contact">Byddwch unwaith eto yn gallu derbyn negeseuon a galwadau o\'r cyswllt hwn.</string>
-    <string name="RecipientPreferenceActivity_unblock">Dadrwystro</string>
-    <!-- Slide -->
-    <string name="Slide_image">Llun</string>
-    <string name="Slide_audio">Sain</string>
-    <string name="Slide_video">Fideo</string>
-    <!-- SmsMessageRecord -->
-    <string name="SmsMessageRecord_received_corrupted_key_exchange_message">Wedi derbyn neges cyfnewid
-                     allwedd llygredig!</string>
-    <string name="SmsMessageRecord_received_message_with_new_safety_number_tap_to_process">Derbyn neges gyda rhif diogelwch newydd. Tapiwch i brosesu a dangos.</string>
-    <string name="SmsMessageRecord_secure_session_reset">Rydych yn ailosod y sesiwn ddiogel.</string>
-    <string name="SmsMessageRecord_secure_session_reset_s">%s ailosod y sesiwn ddiogel.</string>
-    <string name="SmsMessageRecord_duplicate_message">Neges ddyblyg.</string>
-    <!-- ThreadRecord -->
-    <string name="ThreadRecord_group_updated">Grŵp wedi\'i ddiweddaru</string>
-    <string name="ThreadRecord_left_the_group">Wedi gadael y grŵp.</string>
-    <string name="ThreadRecord_secure_session_reset">Ailosod sesiwn ddiogel.</string>
-    <string name="ThreadRecord_draft">Drafft:</string>
-    <string name="ThreadRecord_called">Galwoch chi</string>
-    <string name="ThreadRecord_called_you">Wedi\'ch galw chi</string>
-    <string name="ThreadRecord_missed_call">Galwad coll</string>
-    <string name="ThreadRecord_media_message">Neges cyfryngau</string>
-    <string name="ThreadRecord_s_is_on_signal">Mae %s ar Session!</string>
-    <string name="ThreadRecord_disappearing_messages_disabled">Negeseuon diflanedig wedi\'u hanalluogi</string>
-    <string name="ThreadRecord_disappearing_message_time_updated_to_s">Amser neges diflanedig wedi\'i osod i %s</string>
-    <string name="ThreadRecord_safety_number_changed">Mae\'r rhif diogelwch wedi newid</string>
-    <string name="ThreadRecord_your_safety_number_with_s_has_changed">Mae\'ch rhif diogelwch gyda %1$s wedi newid.</string>
-    <string name="ThreadRecord_you_marked_verified">Eich marcio wedi\'i wirio</string>
-    <string name="ThreadRecord_you_marked_unverified">Eich marcio heb ei wirio</string>
-    <!-- UpdateApkReadyListener -->
-    <string name="UpdateApkReadyListener_Signal_update">Diweddariad Session</string>
-    <string name="UpdateApkReadyListener_a_new_version_of_signal_is_available_tap_to_update">Mae fersiwn newydd o Session ar gael. Tapiwch i ddiweddaru.</string>
-    <!-- MessageDisplayHelper -->
-    <string name="MessageDisplayHelper_bad_encrypted_message">Neges amgryptio gwael</string>
-    <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Neges wedi\'i hamgryptio ar gyfer sesiwn nad yw\'n bodoli</string>
-    <!-- MmsMessageRecord -->
-    <string name="MmsMessageRecord_bad_encrypted_mms_message">Neges MMS amgryptio gwael</string>
-    <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">Neges MMS wedi\'i hamgryptio ar gyfer sesiwn nad yw\'n bodoli</string>
-    <!-- MuteDialog -->
-    <string name="MuteDialog_mute_notifications">Tewi hysbysiadau</string>
-    <!-- KeyCachingService -->
-    <string name="KeyCachingService_signal_passphrase_cached">Cyffwrdd i agor.</string>
-    <string name="KeyCachingService_passphrase_cached">Mae Session wedi\'i ddatgloi</string>
-    <string name="KeyCachingService_lock">Cloi Session</string>
-    <!-- MediaPreviewActivity -->
-    <string name="MediaPreviewActivity_you">Chi</string>
-    <string name="MediaPreviewActivity_unssuported_media_type">Math o gyfrwng heb ei gynnal</string>
-    <string name="MediaPreviewActivity_draft">Drafft</string>
-    <string name="MediaPreviewActivity_unable_to_write_to_external_storage_without_permission">Methu cadw i storfa allanol heb ganiatâd</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_title">Dileu neges?</string>
-    <string name="MediaPreviewActivity_media_delete_confirmation_message">Bydd hyn yn dileu yn barhaol y neges hon.</string>
-    <!-- MessageNotifier -->
-    <string name="MessageNotifier_d_new_messages_in_d_conversations">%1$d neges newydd mewn %2$d sgwrs</string>
-    <string name="MessageNotifier_most_recent_from_s">Y diweddaraf gan: %1$s</string>
-    <string name="MessageNotifier_locked_message">Neges wedi\'i chloi</string>
-    <string name="MessageNotifier_message_delivery_failed">Methodd trosglwyddo neges.</string>
-    <string name="MessageNotifier_failed_to_deliver_message">Methu trosglwyddo neges.</string>
-    <string name="MessageNotifier_error_delivering_message">Gwall wrth drosglwyddo neges.</string>
-    <string name="MessageNotifier_mark_all_as_read">Marcio popeth wedi\'i ddarllen</string>
-    <string name="MessageNotifier_mark_read">Marcio wedi\'i ddarllen</string>
-    <string name="MessageNotifier_reply">Ymateb</string>
-    <string name="MessageNotifier_pending_signal_messages">Negeseuon Session yn aros</string>
-    <string name="MessageNotifier_you_have_pending_signal_messages">Mae gennych negeseuon Session yn aros, tapiwch i\'w hagor ac adfer</string>
-    <string name="MessageNotifier_unknown_contact_message">Cysylltiad</string>
-    <!-- Notification Channels -->
-    <string name="NotificationChannel_messages">Rhagosodiad</string>
-    <string name="NotificationChannel_calls">Galwadau</string>
-    <string name="NotificationChannel_failures">Methiannau</string>
-    <string name="NotificationChannel_backups">Copïau wrth gefn</string>
-    <string name="NotificationChannel_locked_status">Statws y clo</string>
-    <string name="NotificationChannel_app_updates">Diweddariadau ap</string>
-    <string name="NotificationChannel_other">Arall</string>
-    <string name="NotificationChannel_group_messages">Negeseuon</string>
-    <string name="NotificationChannel_missing_display_name">Anhysbys</string>
-    <!-- QuickResponseService -->
-    <string name="QuickResponseService_quick_response_unavailable_when_Signal_is_locked">Nid yw ymateb cyflym ar gael pan fydd Session wedi\'i gloi!</string>
-    <string name="QuickResponseService_problem_sending_message">Anhawster anfon neges!</string>
-    <!-- SaveAttachmentTask -->
-    <string name="SaveAttachmentTask_saved_to">Wedi\'i gadw i %s</string>
-    <string name="SaveAttachmentTask_saved">Wedi cadw</string>
-    <!-- SearchToolbar -->
-    <string name="SearchToolbar_search">Chwilio</string>
-    <!-- ShortcutLauncherActivity -->
-    <string name="ShortcutLauncherActivity_invalid_shortcut">Llwybr byr annilys</string>
-    <!-- SingleRecipientNotificationBuilder -->
-    <string name="SingleRecipientNotificationBuilder_new_message">Neges newydd</string>
-    <!-- TransferControlView -->
-    <plurals name="TransferControlView_n_items">
-        <item quantity="zero">%d Eitem</item>
-        <item quantity="one">%d Eitem</item>
-        <item quantity="two">%d Eitem</item>
-        <item quantity="few">%d Eitem</item>
-        <item quantity="many">%d Eitem</item>
-        <item quantity="other">%d Eitem</item>
-    </plurals>
-    <!-- VideoPlayer -->
-    <string name="VideoPlayer_error_playing_video">Gwall wrth chwarae fideo</string>
-    <!-- attachment_type_selector -->
-    <string name="attachment_type_selector__audio">Sain</string>
-    <string name="attachment_type_selector__audio_description">Sain</string>
-    <string name="attachment_type_selector__contact">Cysylltiad</string>
-    <string name="attachment_type_selector__contact_description">Cysylltiad</string>
-    <string name="attachment_type_selector__location">Lleoliad</string>
-    <string name="attachment_type_selector__location_description">Lleoliad</string>
-    <string name="attachment_type_selector__gallery_description">Delwedd neu fideo</string>
-    <string name="attachment_type_selector__file_description">Ffeil</string>
-    <string name="attachment_type_selector__gallery">Oriel</string>
-    <string name="attachment_type_selector__file">Ffeil</string>
-    <string name="attachment_type_selector__drawer_description">Newid drôr yr atodiad</string>
-    <!-- contact_selection_group_activity -->
-    <string name="contact_selection_group_activity__finding_contacts">Llwytho cysylltiadau...</string>
-    <!-- conversation_activity -->
-    <string name="conversation_activity__send">Anfon</string>
-    <string name="conversation_activity__compose_description">Cyfansoddiad neges</string>
-    <string name="conversation_activity__emoji_toggle_description">Toglo bysellfwrdd gwenogluniau</string>
-    <string name="conversation_activity__attachment_thumbnail">Llun Bach Atodiad</string>
-    <string name="conversation_activity__quick_attachment_drawer_toggle_camera_description">Newid y drôr atodiad cyflym camera</string>
-    <string name="conversation_activity__quick_attachment_drawer_record_and_send_audio_description">Recordio ac anfon atodiad sain</string>
-    <string name="conversation_activity__quick_attachment_drawer_lock_record_description">Cloi recordio atodiad sain</string>
-    <string name="conversation_activity__enable_signal_for_sms">Galluogi Session ar gyfer SMS</string>
-    <!-- conversation_input_panel -->
-    <string name="conversation_input_panel__slide_to_cancel">Llithro i ddiddymu</string>
-    <string name="conversation_input_panel__cancel">Diddymu</string>
-    <!-- conversation_item -->
-    <string name="conversation_item__mms_image_description">Neges cyfryngau</string>
-    <string name="conversation_item__secure_message_description">Neges ddiogel</string>
-    <!-- conversation_item_sent -->
-    <string name="conversation_item_sent__send_failed_indicator_description">Methwyd Anfon</string>
-    <string name="conversation_item_sent__pending_approval_description">Dan Ystyriaeth</string>
-    <string name="conversation_item_sent__delivered_description">Wedi\'i drosglwyddo</string>
-    <string name="conversation_item_sent__message_read">Neges wedi\'i ddarllen</string>
-    <!-- conversation_item_received -->
-    <string name="conversation_item_received__contact_photo_description">Llun cyswllt</string>
-    <!-- audio_view -->
-    <string name="audio_view__play_accessibility_description">Chwarae</string>
-    <string name="audio_view__pause_accessibility_description">Oedi</string>
-    <string name="audio_view__download_accessibility_description">Llwytho i lawr</string>
-    <!-- open_group_invitation_view -->
-    <!-- QuoteView -->
-    <string name="QuoteView_audio">Sain</string>
-    <string name="QuoteView_video">Fideo</string>
-    <string name="QuoteView_photo">Llun</string>
-    <string name="QuoteView_you">Chi</string>
-    <string name="QuoteView_original_missing">Heb ganfod y neges wreiddiol</string>
-    <!-- conversation_fragment -->
-    <string name="conversation_fragment__scroll_to_the_bottom_content_description">Sgrolio i\'r gwaelod</string>
-    <!-- giphy_activity -->
-    <string name="giphy_activity_toolbar__search_gifs_and_stickers">Chwilio GIFau a sticeri</string>
-    <!-- giphy_fragment -->
-    <string name="giphy_fragment__nothing_found">Heb ganfod dim.</string>
-    <!-- load_more_header -->
-    <string name="load_more_header__see_full_conversation">Gweld y sgwrs lawn</string>
-    <string name="load_more_header__loading">Llwytho</string>
-    <!-- media_overview_activity -->
-    <string name="media_overview_activity__no_media">Dim cyfrwng</string>
-    <!-- message_recipients_list_item -->
-    <string name="message_recipients_list_item__resend">AIL ANFON</string>
-    <!-- recipient_preferences -->
-    <string name="recipient_preferences__block">Rhwystro</string>
-    <!-- message_details_header -->
-    <string name="message_details_header__issues_need_your_attention">Mae angen eich sylw ar rai materion.</string>
-    <string name="message_details_header__sent">Anfonwyd</string>
-    <string name="message_details_header__received">Derbyniwyd</string>
-    <string name="message_details_header__disappears">Yn diflannu</string>
-    <string name="message_details_header__via">Drwy</string>
-    <string name="message_details_header__to">At:</string>
-    <string name="message_details_header__from">Oddi wrth:</string>
-    <string name="message_details_header__with">Gyda:</string>
-    <!-- AndroidManifest.xml -->
-    <string name="AndroidManifest__create_passphrase">Creu cyfrinair</string>
-    <string name="AndroidManifest__select_contacts">Dewis cysylltiadau</string>
-    <string name="AndroidManifest__media_preview">Rhagolwg cyfrwng</string>
-    <!-- arrays.xml -->
-    <string name="arrays__use_default">Defnyddio\'r rhagosodedig</string>
-    <string name="arrays__use_custom">Defnyddio cyfaddas</string>
-    <string name="arrays__mute_for_one_hour">Tewi am 1 awr</string>
-    <string name="arrays__mute_for_two_hours">Tewi am 2 awr</string>
-    <string name="arrays__mute_for_one_day">Tewi am 1 diwrnod</string>
-    <string name="arrays__mute_for_seven_days">Tewi am 7 diwrnod</string>
-    <string name="arrays__mute_for_one_year">Tewi am 1 blwyddyn</string>
-    <string name="arrays__settings_default">Rhagosodiadau\'r gosodiadau</string>
-    <string name="arrays__enabled">Galluogwyd</string>
-    <string name="arrays__disabled">Analluogwyd</string>
-    <string name="arrays__name_and_message">Enw a neges</string>
-    <string name="arrays__name_only">Enw yn unig</string>
-    <string name="arrays__no_name_or_message">Dim enw na neges</string>
-    <string name="arrays__images">Lluniau</string>
-    <string name="arrays__audio">Sain</string>
-    <string name="arrays__video">Fideo</string>
-    <string name="arrays__documents">Dogfennau</string>
-    <string name="arrays__small">Bach</string>
-    <string name="arrays__normal">Canolig</string>
-    <string name="arrays__large">Mawr</string>
-    <string name="arrays__extra_large">Mawr iawn</string>
-    <string name="arrays__default">Rhagosodedig</string>
-    <string name="arrays__high">Uchel</string>
-    <string name="arrays__max">Mwyaf</string>
-    <!-- plurals.xml -->
-    <plurals name="hours_ago">
-        <item quantity="zero">%d awr</item>
-        <item quantity="one">%d awr</item>
-        <item quantity="two">%d awr</item>
-        <item quantity="few">%d awr</item>
-        <item quantity="many">%d awr</item>
-        <item quantity="other">%d awr</item>
-    </plurals>
-    <!-- preferences.xml -->
-    <string name="preferences__pref_enter_sends_title">Pwyso Enter i anfon</string>
-    <string name="preferences__send_link_previews">Anfon rhagolwg dolen</string>
-    <string name="preferences__previews_are_supported_for">Cefnogir rhagweld cynnwys trwy ddolenni Imgur, Instagram, Pinterest, Reddit a YouTube</string>
-    <string name="preferences__screen_security">Diogelu\'r sgrin</string>
-    <string name="preferences__disable_screen_security_to_allow_screen_shots">Rhwystro sgrinluniau tu mewn i\'r rhaglen</string>
-    <string name="preferences__notifications">Hysbysiadau</string>
-    <string name="preferences__led_color">Lliw\'r LED</string>
-    <string name="preferences__led_color_unknown">Anhysbys</string>
-    <string name="preferences__pref_led_blink_title">Patrwm fflachio\'r LED</string>
-    <string name="preferences__sound">Sain</string>
-    <string name="preferences__silent">Tawel</string>
-    <string name="preferences__repeat_alerts">Ailadrodd rhybuddion</string>
-    <string name="preferences__never">Byth</string>
-    <string name="preferences__one_time">Unwaith</string>
-    <string name="preferences__two_times">Dwywaith</string>
-    <string name="preferences__three_times">Teirgwaith</string>
-    <string name="preferences__five_times">Pumwaith</string>
-    <string name="preferences__ten_times">Degwaith</string>
-    <string name="preferences__vibrate">Dirgrynu</string>
-    <string name="preferences__green">Gwyrdd</string>
-    <string name="preferences__red">Coch</string>
-    <string name="preferences__blue">Glas</string>
-    <string name="preferences__orange">Oren</string>
-    <string name="preferences__cyan">Gwyrddlas</string>
-    <string name="preferences__white">Gwyn</string>
-    <string name="preferences__none">Dim</string>
-    <string name="preferences__fast">Cyflym</string>
-    <string name="preferences__normal">Canolig</string>
-    <string name="preferences__slow">Araf</string>
-    <string name="preferences__automatically_delete_older_messages_once_a_conversation_exceeds_a_specified_length">Dileu negeseuon hŷn yn ddiofyn pan fydd y sgwrs yn fwy na maint penodol</string>
-    <string name="preferences__delete_old_messages">Dileu hen negeseuon</string>
-    <string name="preferences__conversation_length_limit">Maint uchaf sgyrsiau</string>
-    <string name="preferences__trim_all_conversations_now">Tocio bob sgwrs nawr</string>
-    <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Sganio drwy\'r holl sgyrsiau a gorfodi terfynau hyd sgwrsio</string>
-    <string name="preferences__default">Rhagosodiad</string>
-    <string name="preferences__incognito_keyboard">Bysellfwrdd dirgel</string>
-    <string name="preferences__read_receipts">Derbynebau darllen</string>
-    <string name="preferences__typing_indicators">Dangosyddion Teipio</string>
-    <string name="preferences__if_typing_indicators_are_disabled_you_wont_be_able_to_see_typing_indicators">Os yw dangosyddion teipio wedi eu hanalluogi, fyddwch chi ddim yn gweld dangosyddion teipio pobl eraill.</string>
-    <string name="preferences__request_keyboard_to_disable_personalized_learning">Gofyn i\'r bysellfwrdd analluogi dysgu personol</string>
-    <string name="preferences__light_theme">Golau</string>
-    <string name="preferences__dark_theme">Tywyll</string>
-    <string name="preferences_chats__message_trimming">Tocio sgyrsiau</string>
-    <string name="preferences_advanced__use_system_emoji">Defnyddio gwenogluniau\'r system</string>
-    <string name="preferences_advanced__disable_signal_built_in_emoji_support">Analluogi cefnogaeth gwenogluniau Session</string>
-    <string name="preferences_chats__chats">Sgyrsiau</string>
-    <string name="preferences_notifications__messages">Negeseuon</string>
-    <string name="preferences_notifications__in_chat_sounds">Seiniau wrth sgwrsio</string>
-    <string name="preferences_notifications__priority">Blaenoriaeth</string>
-    <!-- **************************************** -->
-    <!-- menus -->
-    <!-- **************************************** -->
-    <!-- contact_selection_list -->
-    <string name="contact_selection_list__unknown_contact">Neges newydd at...</string>
-    <!-- conversation_context -->
-    <string name="conversation_context__menu_message_details">Manylion y neges</string>
-    <string name="conversation_context__menu_copy_text">Copïo testun</string>
-    <string name="conversation_context__menu_delete_message">Dileu neges</string>
-    <string name="conversation_context__menu_resend_message">Ailanfon y neges</string>
-    <string name="conversation_context__menu_reply_to_message">Ateb neges</string>
-    <!-- conversation_context_image -->
-    <string name="conversation_context_image__save_attachment">Cadw atodiad</string>
-    <!-- conversation_expiring_off -->
-    <string name="conversation_expiring_off__disappearing_messages">Negeseuon diflanedig</string>
-    <!-- conversation_expiring_on -->
-    <string name="menu_conversation_expiring_on__messages_expiring">Neges yn dod i ben</string>
-    <!-- conversation_muted -->
-    <string name="conversation_muted__unmute">Dad-dewi</string>
-    <!-- conversation_unmuted -->
-    <string name="conversation_unmuted__mute_notifications">Tewi hysbysiadau</string>
-    <!-- conversation -->
-    <string name="conversation__menu_edit_group">Golygu grŵp</string>
-    <string name="conversation__menu_leave_group">Gadael y grŵp</string>
-    <string name="conversation__menu_view_all_media">Pob cyfrwng</string>
-    <string name="conversation__menu_add_shortcut">Ychwanegu at y sgrin gartref</string>
-    <!-- conversation_popup -->
-    <string name="conversation_popup__menu_expand_popup">Ehangu llamlen</string>
-    <!-- conversation_group_options -->
-    <string name="conversation_group_options__delivery">Trosglwyddo</string>
-    <string name="conversation_group_options__conversation">Sgwrs</string>
-    <string name="conversation_group_options__broadcast">Darlledu</string>
-    <!-- media_preview -->
-    <string name="media_preview__save_title">Cadw</string>
-    <string name="media_preview__forward_title">Ymlaen</string>
-    <string name="media_preview__all_media_title">Pob cyfrwng</string>
-    <!-- media_overview -->
-    <string name="media_overview_documents_fragment__no_documents_found">Dim dogfennau</string>
-    <!-- media_preview_activity -->
-    <string name="media_preview_activity__media_content_description">Rhagolwg cyfrwng</string>
-    <!-- Trimmer -->
-    <string name="trimmer__deleting">Wrthi\'n dileu</string>
-    <string name="trimmer__deleting_old_messages">Dileu hen negeseuon...</string>
-    <string name="trimmer__old_messages_successfully_deleted">Dilëwyd hen negeseuon yn llwyddiannus</string>
-    <!-- transport_selection_list_item -->
-    <string name="Permissions_permission_required">Angen caniatâd</string>
-    <string name="Permissions_continue">Parhau</string>
-    <string name="Permissions_not_now">Nid nawr</string>
-    <string name="backup_enable_dialog__backups_will_be_saved_to_external_storage_and_encrypted_with_the_passphrase_below_you_must_have_this_passphrase_in_order_to_restore_a_backup">Bydd copïau wrth gefn yn cael eu cadw i storfa allanol ac wedi\'u hamgryptio gyda\'r cyfrinymadrodd isod. Rhaid i chi fod â\'r cyfrinymadrodd hwn er mwyn adfer y copi wrth gefn.</string>
-    <string name="backup_enable_dialog__i_have_written_down_this_passphrase">Rwy wedi ysgrifennu\'r cyfrinymadrodd hwn i lawr. Hebddo, fydda i ddim yn gallu adfer copi wrth gefn.</string>
-    <string name="registration_activity__skip">Hepgor</string>
-    <string name="RegistrationActivity_backup_failure_downgrade">Methu mewnforio o fersiynau mwy diweddar o Session</string>
-    <string name="RegistrationActivity_incorrect_backup_passphrase">Cyfrinymadrodd wrth gefn anghywir</string>
-    <string name="BackupDialog_enable_local_backups">Galluogi copïau wrth gefn lleol?</string>
-    <string name="BackupDialog_enable_backups">Galluogi copïau wrth gefn</string>
-    <string name="BackupDialog_please_acknowledge_your_understanding_by_marking_the_confirmation_check_box">Cydnabyddwch eich dealltwriaeth trwy farcio\'r blwch gwirio cadarnhau.</string>
-    <string name="BackupDialog_delete_backups">Dileu copïau wrth gefn?</string>
-    <string name="BackupDialog_disable_and_delete_all_local_backups">Analluogi a dileu\'r copïau wrth gefn lleol?</string>
-    <string name="BackupDialog_delete_backups_statement">Dileu copïau wrth gefn</string>
-    <string name="BackupDialog_copied_to_clipboard">Wedi\'i gopïo i\'r clipfwrdd</string>
-    <string name="LocalBackupJob_creating_backup">Creu copi wrth gefn ...</string>
-    <string name="ProgressPreference_d_messages_so_far">%d neges hyd yn hyn</string>
-    <string name="BackupUtil_never">Byth</string>
-    <string name="preferences_app_protection__screen_lock">Clo sgrin</string>
-    <string name="preferences_app_protection__lock_signal_access_with_android_screen_lock_or_fingerprint">Cloi mynediad i Session gyda chlo sgrin neu ôl bysedd Android</string>
-    <string name="preferences_app_protection__screen_lock_inactivity_timeout">Amserlen segur clo sgrin</string>
-    <string name="AppProtectionPreferenceFragment_none">Dim</string>
-    <!-- Conversation activity -->
-    <!-- Session -->
-    <!-- Next round of translation -->
+    <string name="saved">Wedi cadw</string>
+    <string name="savedMessages">Negeseuon wedi\'u cadw</string>
+    <string name="saving">Yn cadw...</string>
+    <string name="scan">Sganiwch</string>
+    <string name="screenSecurity">Diogelu\'r sgrin</string>
+    <string name="screenshotNotifications">Hysbysiadau Sgrinlun</string>
+    <string name="screenshotNotificationsDescription">Gofyn am hysbysiad pan fydd cyswllt yn cymryd llun-sgrin o sgwrs un-i-un.</string>
+    <string name="screenshotTaken">Cymerodd <b>{name}</b> lun o\'r sgrin.</string>
+    <string name="search">Chwilio</string>
+    <string name="searchContacts">Chwilio Cysylltiadau</string>
+    <string name="searchConversation">Chwilio Sgwrs</string>
+    <string name="searchEnter">Nodwch eich chwiliad.</string>
+    <string name="searchMatchesNone">Dim canlyniadau.</string>
+    <string name="searchMatchesNoneSpecific">Dim canlyniadau ar gyfer {query}</string>
+    <string name="searchMembers">Chwilio Aelodau</string>
+    <string name="searchSearching">Chwilio...</string>
+    <string name="select">Dewis</string>
+    <string name="selectAll">Dewis popeth</string>
+    <string name="send">Anfon</string>
+    <string name="sending">Yn anfon</string>
+    <string name="sent">Anfonwyd:</string>
+    <string name="sessionAppearance">Golwg</string>
+    <string name="sessionClearData">Clirio data</string>
+    <string name="sessionConversations">Sgyrsiau</string>
+    <string name="sessionHelp">Cymorth</string>
+    <string name="sessionInviteAFriend">Gwahodd Ffrind</string>
+    <string name="sessionMessageRequests">Ceisiadau Negeseuon</string>
+    <string name="sessionNotifications">Hysbysiadau</string>
+    <string name="sessionPermissions">Caniatâd</string>
+    <string name="sessionPrivacy">Preifatrwydd</string>
+    <string name="sessionRecoveryPassword">Cyfrinair Adfer</string>
+    <string name="sessionSettings">Gosodiadau</string>
+    <string name="set">Gosod</string>
+    <string name="settingsRestartDescription">Mae’n rhaid i chi ailgychwyn {app_name} i gymhwyso\'r gosodiadau newydd.</string>
+    <string name="share">Rhannu</string>
+    <string name="shareAccountIdDescription">Gwahodd dy ffrind i sgwrsio gyda ti ar Session drwy rannu dy ID Cyfrif gyda nhw.</string>
+    <string name="shareAccountIdDescriptionCopied">Rhannwch gyda\'ch ffrindiau ble bynnag yr ydych chi fel arfer yn siarad gyda nhw — yna symudwch y sgwrs yma.</string>
+    <string name="shareExtensionDatabaseError">Mae problem wrth agor y gronfa ddata. Ailgychwyn yr ap a rhowch gynnig arall arni os gwelwch yn dda.</string>
+    <string name="shareToSession">Rhannu i {app_Name}</string>
+    <string name="show">Dangos</string>
+    <string name="showAll">Dangos Pob Un</string>
+    <string name="showLess">Dangos Llai</string>
+    <string name="stickers">Sticeri</string>
+    <string name="supportGoTo">Ewch i Dudalen Cymorth</string>
+    <string name="theContinue">Parhau</string>
+    <string name="theDefault">Rhagosodedig</string>
+    <string name="theError">Gwall</string>
+    <string name="tryAgain">Ceisio eto</string>
+    <string name="typingIndicators">Dangosyddion Teipio</string>
+    <string name="typingIndicatorsDescription">Gweld a rhannu dangosyddion teipio (...)</string>
+    <string name="undo">Dadwneud</string>
+    <string name="unknown">Anhysbys</string>
+    <string name="updateApp">Diweddariadau ap</string>
+    <string name="updateDownloaded">Diweddariad wedi\'i osod, cliciwch i ailgychwyn</string>
+    <string name="updateDownloading">Llwytho diweddariad: {percent_loader}%</string>
+    <string name="updateError">Methu Diweddaru</string>
+    <string name="updateErrorDescription">Methodd {app_name} i ddiweddaru. Ewch i {download_url} a gosodwch y fersiwn newydd â llaw, yna cysylltwch â\'n Canolfan Cymorth i\'n hysbysu am y broblem hon.</string>
+    <string name="updateNewVersion">Mae fersiwn newydd o {app_name} ar gael. Tapiwch i ddiweddaru.</string>
+    <string name="updateNewVersionDescription">Mae fersiwn newydd o {app_name} ar gael.</string>
+    <string name="updateReleaseNotes">Ewch i Nodiadau Rhyddhau</string>
+    <string name="updateSession">Diweddariad {app_name}</string>
+    <string name="updateVersion">Fersiwn {version}</string>
+    <string name="uploading">Yn llwytho i fyny</string>
+    <string name="urlCopy">Copïo URL</string>
+    <string name="urlOpen">Agor URL</string>
+    <string name="urlOpenBrowser">Bydd hyn yn agor yn eich porwr.</string>
+    <string name="urlOpenDescription">Ydych chi\'n siŵr eich bod am agor y URL hwn yn eich porwr?
+
+{url}</string>
+    <string name="useFastMode">Defnyddiwch Dull Cyflym</string>
+    <string name="video">Fideo</string>
+    <string name="videoErrorPlay">Methu chwarae fideo.</string>
+    <string name="view">Gweld</string>
+    <string name="waitFewMinutes">Gall hyn gymryd ychydig funudau.</string>
+    <string name="waitOneMoment">Un eiliad os gwelwch yn dda...</string>
+    <string name="warning">Rhybudd</string>
+    <string name="window">Ffenestr</string>
+    <string name="yes">Iawn</string>
+    <string name="you">Chi</string>
 </resources>
