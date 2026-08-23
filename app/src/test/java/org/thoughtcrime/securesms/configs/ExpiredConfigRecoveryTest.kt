@@ -746,18 +746,42 @@ class ExpiredConfigRecoveryTest {
         givenGroupKeysRestorable()
         recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
 
-        recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
+        val verdict = recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
 
+        assertEquals(true, verdict, "a landed keys re-store must report REPAIRED, so the flag clears")
         assertEquals(listOf(groupId), recovery.keysRestored.replayCache)
+    }
+
+    /**
+     * The third state, and the one whose absence caused the defect: no keys re-store was attempted at all.
+     *
+     * Recovery declines for reasons that say nothing about whether the group is beyond reach — backgrounded,
+     * backing off, not level with the swarm. The verdict must be null so the caller leaves the flag exactly
+     * as it was. Answering false here would clear the banner on the strength of a repair that never ran.
+     */
+    @Test
+    fun `no keys re-store attempted reports no verdict, not success`() = runTest {
+        every { restoreSource.groupConfigsToRestore(groupId, any()) } returns emptyList()
+        recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+
+        val verdict = recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
+
+        assertEquals(null, verdict)
+        assertEquals(emptyList(), recovery.keysRestored.replayCache)
     }
 
     /**
      * V23c — a keys re-store that FAILED must not announce anything, so the flag stays up.
      *
-     * What this pins is only that a wholly failed round is silent. It does NOT pin per-restore emission over
-     * per-round — every store fails here, so a round-level signal stays silent too and both implementations
-     * pass. The mixed round below is the test that separates them; this comment used to claim that job and
-     * was wrong, which a mutation to round-level emission demonstrated by surviving.
+     * It asserts the VERDICT as well as the silence, and the verdict is the half that matters. The silence
+     * alone could not see a cold-review finding against this file: detection used to answer `false` when the
+     * bytes were held, which cleared the flag at a different site *before* the round ran, so "the flag
+     * stands" was false while this test passed. A test that watches only the signal it owns cannot see a
+     * second site enforcing the same rule differently.
+     *
+     * What the silence alone does pin is that a wholly failed round is quiet. It does NOT pin per-restore
+     * emission over per-round — every store fails here, so a round-level signal stays silent too. The mixed
+     * round below separates those.
      */
     @Test
     fun `V23c - a failed keys re-store announces nothing, so the flag stands`() = runTest {
@@ -765,8 +789,9 @@ class ExpiredConfigRecoveryTest {
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("store failed")
         recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
 
-        recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
+        val verdict = recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
 
+        assertEquals(false, verdict, "a failed keys re-store must report FAILED, so the flag is raised")
         assertEquals(emptyList(), recovery.keysRestored.replayCache)
     }
 

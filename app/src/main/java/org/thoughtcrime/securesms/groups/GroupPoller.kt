@@ -282,11 +282,22 @@ class GroupPoller @AssistedInject constructor(
                         }
 
                         if (expiryReport != null) {
+                            // Detection defers the keys verdict when this device holds the bytes, because
+                            // holding them is not the same as having put them back. The round settles it:
+                            // repaired means not expired, a FAILED re-store means expired, and null means it
+                            // was never attempted — leave the flag exactly as it was.
+                            //
+                            // This must stay after the round rather than being folded into the check above.
+                            // Clearing the flag on "could repair" and then only ever re-raising it on a
+                            // successful re-store leaves a device whose stores permanently fail showing no
+                            // banner at all, forever, because every later poll reaches the same deferral.
                             expiredConfigRecovery.onGroupConfigsChecked(
                                 groupId = groupId,
                                 auth = groupAuth,
                                 report = expiryReport,
-                            )
+                            )?.let { keysRepaired ->
+                                groupExpired = !keysRepaired
+                            }
                         }
                     }
 

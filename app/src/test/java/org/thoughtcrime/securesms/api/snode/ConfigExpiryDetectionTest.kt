@@ -365,15 +365,43 @@ class ConfigExpiryDetectionTest {
      * banner, so correcting it after the fact is a flicker on a group that was never out of reach.
      */
     @Test
-    fun `V23a - keys all gone but held locally is repairable, not expired`() {
+    fun `V23a - keys all gone but held locally DEFERS the verdict, it does not clear the flag`() {
         assertEquals(
-            false,
+            null,
             groupExpiredFromExpiryCheck(
                 ConfigExpiryReport.Checked(setOf("keys-1")),
                 keysHashes = setOf("keys-1"),
                 canRepairKeys = { true },
             )
         )
+    }
+
+    /**
+     * The asymmetry that makes the above `null` rather than `false`, and it is the whole point.
+     *
+     * `false` reads as "not expired" and would CLEAR the flag before the re-store has been tried. If the
+     * re-store then fails nothing raises it again — the next poll finds the same missing hashes and the same
+     * retained bytes and answers `false` once more, so a device whose stores permanently fail never shows the
+     * banner. `null` leaves the flag alone and lets the round's actual outcome settle it.
+     *
+     * A test asserting `false` here passes against the broken implementation and reads entirely reasonable,
+     * which is why this one names the distinction instead of just the value.
+     */
+    @Test
+    fun `V23a - holding the bytes is not the same answer as having put them back`() {
+        val held = groupExpiredFromExpiryCheck(
+            ConfigExpiryReport.Checked(setOf("keys-1")),
+            keysHashes = setOf("keys-1"),
+            canRepairKeys = { true },
+        )
+        val notHeld = groupExpiredFromExpiryCheck(
+            ConfigExpiryReport.Checked(setOf("keys-1")),
+            keysHashes = setOf("keys-1"),
+            canRepairKeys = { false },
+        )
+
+        assertEquals(null, held, "holding the bytes must DEFER, not answer")
+        assertEquals(true, notHeld, "no bytes anywhere is the only conclusive expiry")
     }
 
     /**

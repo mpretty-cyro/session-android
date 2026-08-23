@@ -116,9 +116,16 @@ fun groupExpiredFromExpiryCheck(
         return false
     }
 
-    // Every keys hash is gone from the swarm. Whether that makes the group expired is a separate
-    // question, and it is this one: expired means nobody here can put them back.
-    return !canRepairKeys()
+    // Every keys hash is gone from the swarm. Whether that makes the group EXPIRED is a separate
+    // question, and detection cannot answer it alone: expired means nobody can put them back, and
+    // whether this device can is settled by the re-store attempt, not by holding the bytes.
+    //
+    // So when the bytes are held this DEFERS — null, no verdict — rather than answering `false`.
+    // Answering false clears the flag before the repair has been tried, and if the repair then fails
+    // nothing raises it again: the next poll sees the same missing hashes, the same retained bytes, and
+    // defers again. A device whose re-store permanently fails would never show the banner. The verdict
+    // for this case is applied after the round instead, from its actual outcome.
+    return if (canRepairKeys()) null else true
 }
 
 /**

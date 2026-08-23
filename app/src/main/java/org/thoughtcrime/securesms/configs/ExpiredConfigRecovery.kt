@@ -300,11 +300,22 @@ class ExpiredConfigRecovery @Inject constructor(
     fun canRepairGroupKeys(groupId: AccountId, missingHashes: Set<String>): Boolean =
         restoreSource.canRepairGroupKeys(groupId, missingHashes)
 
+    /**
+     * @return the keys-repair verdict this round settled, which the caller applies to the expired flag:
+     *  `true` the keys landed, `false` a keys re-store was attempted and failed, `null` no keys re-store
+     *  happened at all — the guards declined, or the keys were not among the missing hashes.
+     *
+     *  Detection deliberately defers the flag when this device holds the bytes, because holding them is not
+     *  the same as having put them back. Null therefore means "still no verdict", and the flag must be left
+     *  exactly as it was rather than cleared: an unattempted repair is not a completed one.
+     */
     suspend fun onGroupConfigsChecked(
         groupId: AccountId,
         auth: SwarmAuth,
         report: ConfigExpiryReport,
-    ) {
+    ): Boolean? {
+        var keysVerdict: Boolean? = null
+
         recover(
             auth = auth,
             report = report,
@@ -312,20 +323,29 @@ class ExpiredConfigRecovery @Inject constructor(
             // Per SUCCEEDED restore, not per round: a round that stored info and members but failed on keys
             // must leave the banner up. Emitting from the round would make that case pass for the wrong
             // reason.
-            onRestored = { restore ->
+            // Per restore, not per round: a round that stored info and members but failed on keys must
+            // leave the banner up, and a round-level signal cannot tell those apart.
+            onAttempted = { restore, landed ->
                 if (restore.isGroupKeys) {
-                    Log.i(TAG, "Group keys restored for $groupId; clearing any expired flag")
-                    mutableKeysRestored.tryEmit(groupId)
+                    keysVerdict = landed
+                    if (landed) {
+                        Log.i(TAG, "Group keys restored for $groupId; clearing any expired flag")
+                        mutableKeysRestored.tryEmit(groupId)
+                    } else {
+                        Log.w(TAG, "Group keys re-store FAILED for $groupId; the group stays flagged")
+                    }
                 }
             },
         )
+
+        return keysVerdict
     }
 
     private suspend fun recover(
         auth: SwarmAuth,
         report: ConfigExpiryReport,
         gather: (missingHashes: Set<String>) -> List<PendingRestore>,
-        onRestored: (PendingRestore) -> Unit = {},
+        onAttempted: (restore: PendingRestore, landed: Boolean) -> Unit = { _, _ -> },
     ) {
         val missing = (report as? ConfigExpiryReport.Checked)?.missingHashes.orEmpty()
         if (missing.isEmpty()) {
@@ -415,9 +435,10 @@ class ExpiredConfigRecovery @Inject constructor(
 
         val outcomes = runRound(auth, restores)
 
-        // Per restore that actually landed, index-aligned with [restores]. Anything keyed off the round as
-        // a whole would fire for a round in which this particular config failed.
-        outcomes.forEachIndexed { index, landed -> if (landed) onRestored(restores[index]) }
+        // Per restore, index-aligned with [restores], and reporting FAILURES as well as successes —
+        // a caller that only hears about successes cannot tell "failed" from "never attempted", and those
+        // require opposite treatment of the expired flag.
+        outcomes.forEachIndexed { index, landed -> onAttempted(restores[index], landed) }
 
         // Decided once for the whole round rather than per config, so a mixed round can't race itself into
         // an arbitrary state depending on which config finished last.
