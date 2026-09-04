@@ -34,6 +34,7 @@ import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
 import org.thoughtcrime.securesms.api.swarm.SwarmSnodeSelector
 import org.thoughtcrime.securesms.api.swarm.execute
 import org.thoughtcrime.securesms.configs.ExpiredConfigRecovery
+import org.thoughtcrime.securesms.configs.KeysBackfill
 import org.thoughtcrime.securesms.database.ReceivedMessageHashDatabase
 import org.thoughtcrime.securesms.util.AppVisibilityManager
 import org.thoughtcrime.securesms.util.NetworkConnectivity
@@ -54,6 +55,7 @@ class GroupPoller @AssistedInject constructor(
     private val swarmApiExecutor: SwarmApiExecutor,
     private val swarmSnodeSelector: SwarmSnodeSelector,
     private val expiredConfigRecovery: ExpiredConfigRecovery,
+    private val keysBackfill: KeysBackfill,
     networkConnectivity: NetworkConnectivity,
     appVisibilityManager: AppVisibilityManager,
 ): BasePoller<GroupPoller.GroupPollResult>(
@@ -235,6 +237,34 @@ class GroupPoller @AssistedInject constructor(
                                 namespace = Namespace.GROUP_MESSAGES()
                             )
                         }
+
+                        // Proactive, and deliberately NOT inside the detection block below. The two ask
+                        // opposite questions — detection fires when the swarm has LOST a hash, backfill
+                        // when WE lack bytes for one the swarm still HAS — so a backfill hung off
+                        // detection would run only once its own window had already closed.
+                        //
+                        // It stores nothing: it restores the input the recovery path below needs, rather
+                        // than doing that path's job a second time.
+                        //
+                        // WHY IT SITS HERE, after the merge and after the last-hash writes above:
+                        //
+                        //  - the poll's own merge has already run, so this cannot perturb the
+                        //    merged-versus-given accounting that decides `tookEverythingIn` — and that
+                        //    value gates recovery, so skewing it would silently disable the thing this
+                        //    exists to feed
+                        //  - a group whose keys arrived in THIS poll is therefore already counted, and
+                        //    stops qualifying without a fetch
+                        //
+                        // It does NOT sit here for last-hash safety. That is structural: KeysBackfill calls
+                        // the retrieve layer directly and never calls setLastMessageHashValue, so it cannot
+                        // move the cursor from any position. Do not weaken that into a positional argument.
+                        runCatching { keysBackfill.backfillIfNeeded(groupId, groupAuth, snode) }
+                            .onFailure { e ->
+                                if (e is CancellationException) throw e
+                                // A backfill is an optimisation on top of the poll; it must never be the
+                                // reason the poll fails.
+                                logE("Keys backfill failed", e)
+                            }
 
                         // Left until last: the configs above have been taken in, which is what makes it
                         // safe to put back anything the swarm has lost, and nothing else should wait

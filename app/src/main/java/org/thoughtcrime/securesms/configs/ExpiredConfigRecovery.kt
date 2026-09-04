@@ -95,7 +95,7 @@ private val RECOVERY_RETRY_BACKOFF_CEILING_MS = 30.minutes.inWholeMilliseconds
  * correctness and the other costs a no-op request, err toward the cheap side. Standardised across the three
  * clients; don't tune it as though something depended on it.
  */
-private val RESTORED_HASH_BAR_MS = 1.hours.inWholeMilliseconds
+internal val RESTORED_HASH_BAR_MS = 1.hours.inWholeMilliseconds
 
 /**
  * Puts config messages back on the swarm after they've been swept for exceeding their TTL.
