@@ -34,6 +34,7 @@ import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
 import org.thoughtcrime.securesms.api.swarm.SwarmSnodeSelector
 import org.thoughtcrime.securesms.api.swarm.execute
 import org.thoughtcrime.securesms.configs.ExpiredConfigRecovery
+import org.thoughtcrime.securesms.configs.ForceRekey
 import org.thoughtcrime.securesms.configs.KeysBackfill
 import org.thoughtcrime.securesms.database.ReceivedMessageHashDatabase
 import org.thoughtcrime.securesms.util.AppVisibilityManager
@@ -56,6 +57,7 @@ class GroupPoller @AssistedInject constructor(
     private val swarmSnodeSelector: SwarmSnodeSelector,
     private val expiredConfigRecovery: ExpiredConfigRecovery,
     private val keysBackfill: KeysBackfill,
+    private val forceRekey: ForceRekey,
     networkConnectivity: NetworkConnectivity,
     appVisibilityManager: AppVisibilityManager,
 ): BasePoller<GroupPoller.GroupPollResult>(
@@ -258,13 +260,16 @@ class GroupPoller @AssistedInject constructor(
                         // It does NOT sit here for last-hash safety. That is structural: KeysBackfill calls
                         // the retrieve layer directly and never calls setLastMessageHashValue, so it cannot
                         // move the cursor from any position. Do not weaken that into a positional argument.
-                        runCatching { keysBackfill.backfillIfNeeded(groupId, groupAuth, snode) }
+                        val backfillAttempted = runCatching {
+                            keysBackfill.backfillIfNeeded(groupId, groupAuth, snode)
+                        }
                             .onFailure { e ->
                                 if (e is CancellationException) throw e
                                 // A backfill is an optimisation on top of the poll; it must never be the
                                 // reason the poll fails.
                                 logE("Keys backfill failed", e)
                             }
+                            .getOrDefault(false)
 
                         // Left until last: the configs above have been taken in, which is what makes it
                         // safe to put back anything the swarm has lost, and nothing else should wait
@@ -329,6 +334,30 @@ class GroupPoller @AssistedInject constructor(
                                 groupExpired = !keysRepaired
                             }
                         }
+
+                        // ── force-rekey seam ─────────────────────────────────────────────────────────
+                        // Everything about whether the rekey is SAFE lives in ForceRekey and disappears
+                        // with it. What is decided here is only the sequencing precondition, which is this
+                        // caller's knowledge rather than that component's:
+                        //
+                        //   backfillAttempted     a backfill actually ran for this group in THIS poll
+                        //   groupExpired == true  the verdict after the round: every keys hash is gone AND
+                        //                         nothing here can put them back — so the bytes are still
+                        //                         absent, which is the other half of "B1 attempted and failed"
+                        //
+                        // `tookEverythingIn` is this poll's own result, NOT the session-scoped level
+                        // predicate — see the guard in ForceRekey for why that distinction is the whole
+                        // point. It aggregates all three configs rather than members alone, which is
+                        // stronger than required and fails closed: it can be false when the members view was
+                        // fine, and the only cost of that is a rekey deferred to a later poll.
+                        if (backfillAttempted && groupExpired == true) {
+                            forceRekey.rekeyIfUnrecoverable(
+                                groupId = groupId,
+                                backfillAttemptedAndFailed = true,
+                                membersLevelAsOfThisPoll = tookEverythingIn,
+                            )
+                        }
+
                     }
 
                     // Revoke message must be handled regardless, and at the end

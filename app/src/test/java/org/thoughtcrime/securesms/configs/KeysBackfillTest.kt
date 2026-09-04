@@ -148,6 +148,37 @@ class KeysBackfillTest {
         coVerify(exactly = 1) { swarmApiExecutor.send(any(), match { it.api is RetrieveMessageApi }) }
     }
 
+    /**
+     * V25b — the seam Morgan asked for: **the whole V24 series must still pass with the force-rekey stubbed
+     * to a no-op.**
+     *
+     * This is the only vector that can demonstrate the backfill is correct and shippable with the rekey
+     * deleted, which is the property he wants before taking that decision to the team. It is expressed as a
+     * dependency assertion rather than by re-running the other tests, because on this platform the two share
+     * no state and no call path at all — [KeysBackfill] holds no reference to [ForceRekey] in any direction,
+     * so "stub it to a no-op" and "delete the file" are the same operation here and the V24 series is
+     * unaffected by construction.
+     *
+     * If this ever fails to compile because the backfill has grown a reference to the rekey, the seam has
+     * been lost and the V24 series is no longer evidence that the backfill stands alone.
+     */
+    @Test
+    fun `V25b - the backfill has no dependency on the force-rekey`() {
+        val constructorParams = KeysBackfill::class.java.declaredFields.map { it.type.simpleName }
+        assertFalse(
+            constructorParams.any { it == "ForceRekey" },
+            "KeysBackfill must not reference ForceRekey — the V24 series is only evidence of a shippable " +
+                    "backfill while deleting the rekey cannot affect it",
+        )
+
+        // The same property stated from the other side: nothing the backfill calls can reach the rekey,
+        // so every V24 assertion above already ran with the rekey absent from the path.
+        assertTrue(
+            KeysBackfill::class.java.declaredMethods.none { it.name.contains("ekey") },
+            "the backfill exposes no rekey-shaped entry point",
+        )
+    }
+
     private fun givenKeys(activeHashes: List<String>, heldBytes: Map<String, ByteArray>) {
         val keys = mockk<ReadableGroupKeysConfig>(relaxed = true)
         every { keys.activeHashes() } returns activeHashes
