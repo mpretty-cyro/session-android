@@ -211,7 +211,7 @@ class Poller @Inject constructor(
 
         // At the top of the poll, not at the mark below — see GroupPoller.doPollOnce for why the minting
         // site is the part that matters.
-        val pollToken = expiredConfigRecovery.beginPoll()
+        val pollToken = expiredConfigRecovery.beginPoll(userAuth.accountId.hexString)
 
         // Get messages call wrapped in an async
         val retrieveMessageApi = retrieveMessageFactory.create(

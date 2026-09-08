@@ -137,7 +137,7 @@ class ForceRekeyTest {
     fun `a members view nothing vouches for blocks the rekey`() {
         givenGroup(admin = true)
 
-        assertFalse(rekey(forceRekey.beginPoll()))
+        assertFalse(rekey(forceRekey.beginPoll(groupId.hexString)))
 
         verify(exactly = 0) { configs.rekey() }
     }
@@ -157,13 +157,22 @@ class ForceRekeyTest {
     fun `V25e - a level mark from an earlier poll does not authorise this poll's rekey`() {
         givenGroup(admin = true)
 
-        // A poll that marked us level: proceeds.
-        assertTrue(rekey(completedPoll()))
+        // A poll that marked us level: proceeds. Its token is kept, which is the point of the test — a
+        // caller that holds on to one is exactly what the currency check has to answer.
+        val levelPoll = completedPoll()
+        assertTrue(rekey(levelPoll))
         verify(exactly = 1) { configs.rekey() }
 
         // A day on, so the storm guard is not what answers, and a fresh poll that has marked nothing.
         now += 25 * 60 * 60 * 1000L
-        val stalePoll = forceRekey.beginPoll()
+        val stalePoll = forceRekey.beginPoll(groupId.hexString)
+
+        // The earlier poll's OWN token is not a way back in. This is the step that separates "is the mark
+        // from the poll you name" from "is that poll still current": the mark `levelPoll` left is still in
+        // the map, so the first question says yes and only the second refuses. A caller who kept a token
+        // would otherwise be told it is level now on information of any age.
+        assertFalse(rekey(levelPoll))
+        verify(exactly = 1) { configs.rekey() }
 
         // The mark must still be PRESENT here, and asserting that is what stops this test passing for the
         // wrong reason. A later change that folded the poll check into the withdrawal would make both
@@ -211,9 +220,12 @@ class ForceRekeyTest {
 
         val ours = completedPoll()
 
+        // A whole poll of a DIFFERENT swarm, begun and marked, in between. Its key is what makes this a
+        // test of cross-swarm interference rather than of our own poll being superseded.
+        val otherSwarm = AccountId(IdPrefix.GROUP, ByteArray(32) { 8 }).hexString
         forceRekey.markLocalStateLevelWithSwarm(
-            swarmPubKeyHex = AccountId(IdPrefix.GROUP, ByteArray(32) { 8 }).hexString,
-            pollToken = forceRekey.beginPoll(),
+            swarmPubKeyHex = otherSwarm,
+            pollToken = forceRekey.beginPoll(otherSwarm),
             mergedConfigMessagesForDiagnosticsOnly = true,
         )
 
@@ -247,7 +259,7 @@ class ForceRekeyTest {
 
     /** A poll that ran and took everything in: mints the token and marks the swarm level with it. */
     private fun completedPoll(): PollToken {
-        val token = forceRekey.beginPoll()
+        val token = forceRekey.beginPoll(groupId.hexString)
         forceRekey.markLocalStateLevelWithSwarm(
             swarmPubKeyHex = groupId.hexString,
             pollToken = token,

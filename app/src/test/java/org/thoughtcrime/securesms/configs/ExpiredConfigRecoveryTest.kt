@@ -940,7 +940,7 @@ class ExpiredConfigRecoveryTest {
     private fun markLevel(swarmPubKeyHex: String, merged: Boolean = true) =
         recovery.markLocalStateLevelWithSwarm(
             swarmPubKeyHex = swarmPubKeyHex,
-            pollToken = recovery.beginPoll(),
+            pollToken = recovery.beginPoll(swarmPubKeyHex),
             mergedConfigMessagesForDiagnosticsOnly = merged,
         )
 

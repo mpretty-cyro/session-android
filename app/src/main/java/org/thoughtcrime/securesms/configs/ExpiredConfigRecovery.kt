@@ -146,10 +146,13 @@ private val REKEY_STORM_GUARD_MS = 24.hours.inWholeMilliseconds
  * Identifies one poll of one swarm — the unit that separates "level at some point this session" from
  * "level as of the poll I am in".
  *
- * Minted by [ExpiredConfigRecovery.beginPoll] and **carried by the caller**, never read back from shared
- * state. That is what keeps it correct while polls overlap: two concurrent polls hold different tokens and
- * each compares only against its own, so neither can be made to look current by the other one starting. A
- * single shared "current token" would have exactly that bug.
+ * Minted by [ExpiredConfigRecovery.beginPoll] and **carried by the caller**. Carrying it is what keeps it
+ * correct while polls overlap: two concurrent polls hold different tokens, and a single shared "current
+ * token" consulted by readers would let either be aged out by the other merely starting.
+ *
+ * Carrying alone is not sufficient, though — a caller can carry a token long past the poll that minted it.
+ * The store therefore also records each swarm's current poll and verifies the token against it. See
+ * [ExpiredConfigRecovery.localStateIsLevelWithSwarmAsOf] for why both halves are needed.
  */
 @JvmInline
 value class PollToken internal constructor(private val id: Long)
@@ -195,14 +198,25 @@ class ExpiredConfigRecovery @Inject constructor(
     private val nextPollToken = AtomicLong()
 
     /**
-     * Mints a token for a poll that is starting.
+     * The most recent poll of each swarm, so a token handed back to us can be checked for being *current*
+     * and not merely for naming some poll that once happened.
+     *
+     * Keyed per swarm, which is what lets the currency check exist without reintroducing the cross-swarm
+     * bug: another swarm's poll advances only its own entry, so it can never age ours out.
+     */
+    private val currentPollTokens = ConcurrentHashMap<String, PollToken>()
+
+    /**
+     * Mints a token for a poll of [swarmPubKeyHex] that is starting, and records it as that swarm's current
+     * poll.
      *
      * Call once at the top of a poll and hand that same token to [markLocalStateLevelWithSwarm] and
-     * [rekeyIfUnrecoverable]. Do not re-mint between them, and do not stamp it from anywhere that is not a
-     * completing poll — a token recorded by something other than the poll it names would make a stale view
-     * read as current, which is the one thing this exists to prevent.
+     * [rekeyIfUnrecoverable]. Do not re-mint between them, and do not call it from anywhere that is not a
+     * poll actually beginning — calling it advances the swarm's current poll, which retires the level mark
+     * any in-flight poll is relying on.
      */
-    fun beginPoll(): PollToken = PollToken(nextPollToken.incrementAndGet())
+    fun beginPoll(swarmPubKeyHex: String): PollToken =
+        PollToken(nextPollToken.incrementAndGet()).also { currentPollTokens[swarmPubKeyHex] = it }
 
     /**
      * Swarms where a poll this session failed to take in everything it fetched.
@@ -336,14 +350,33 @@ class ExpiredConfigRecovery @Inject constructor(
         swarmsLevelWithLocalState.containsKey(swarmPubKeyHex)
 
     /**
-     * Whether local state was level with [swarmPubKeyHex] **as of the poll [pollToken] names** — the
-     * stricter reading of the same field, and the only one that may authorise a rekey.
+     * Whether local state is level with [swarmPubKeyHex] **as of the poll [pollToken] names, and that poll
+     * is still the current one** — the stricter reading of the mark, and the only one that may authorise a
+     * rekey.
      *
-     * Named rather than inlined so the two readings sit together and neither can be changed without the
-     * other being seen. See [swarmsLevelWithLocalState] for why one field carries both.
+     * 🔴 BOTH conjuncts are load-bearing, and the second is the one that is easy to lose. Checking only
+     * that the mark equals the token asks "was the mark made by the poll you are naming" — which a caller
+     * holding an OLD token satisfies, because the mark that poll left is still sitting in the map. It would
+     * answer "you are level now" to a caller whose information is arbitrarily old, and it would do so
+     * without failing, which is the fail-open shape this guard exists to rule out. A token names a poll; it
+     * does not make that poll current, and nothing about holding one makes it fresh.
+     *
+     * This is a carry-and-verify design: the caller threads its token through, and we additionally require
+     * it to be the swarm's current poll. The alternative — taking no token and reading both sides from our
+     * own state — is immune to a bad token by construction, but answers "the most recent poll was level"
+     * to a caller running outside any poll at all, because nothing here marks a poll as finished. Since the
+     * realistic way this guard ever becomes load-bearing is the rekey's call site moving out of the poll
+     * body, the shape that fails closed for that caller is the one worth having.
+     *
+     * The residual, which neither shape closes: the token is ordinal, not temporal. If no poll has begun
+     * since the one that marked us, its token is still current however long ago it ran.
+     *
+     * Named rather than inlined so the two readings of [swarmsLevelWithLocalState] sit together and neither
+     * can be changed without the other being seen.
      */
     private fun localStateIsLevelWithSwarmAsOf(swarmPubKeyHex: String, pollToken: PollToken): Boolean =
-        swarmsLevelWithLocalState[swarmPubKeyHex] == pollToken
+        currentPollTokens[swarmPubKeyHex] == pollToken &&
+                swarmsLevelWithLocalState[swarmPubKeyHex] == pollToken
 
     /**
      * Acts on an expiry check for the current user's own configs.

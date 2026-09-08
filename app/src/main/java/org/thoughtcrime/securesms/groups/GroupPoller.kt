@@ -90,8 +90,9 @@ class GroupPoller @AssistedInject constructor(
         // refuse, and nothing about it would look wrong. That is the fail-OPEN direction, and the one no
         // test of the poller can catch, because the guard passes.
         //
-        // Minted per poll, carried by this caller, and never read back from shared state — see [PollToken].
-        val pollToken = expiredConfigRecovery.beginPoll()
+        // Minted per poll and carried by this caller; the store additionally verifies it is still this
+        // swarm's current poll, so carrying a token past its poll cannot get back in — see [PollToken].
+        val pollToken = expiredConfigRecovery.beginPoll(groupId.hexString)
 
         val result = runCatching {
             supervisorScope {
