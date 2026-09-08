@@ -132,7 +132,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V22 — a successful poll that returned **no config messages** must still permit recovery, and this
+     * V22 — a successful poll that returned no config messages must still permit recovery, and this
      * is the most consequential assertion in the file.
      *
      * The intuitive reading of the guard is "wait until a merge has happened". That reading makes the
@@ -154,7 +154,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V22a — **recorded as N/A-by-construction on this platform, not as passing.** Read the reason before
+     * V22a — recorded as N/A-by-construction on this platform, not as passing. Read the reason before
      * treating this as coverage.
      *
      * The vector guards clients where a failed poll and an empty poll arrive as the *same value* (an empty
@@ -162,10 +162,10 @@ class ExpiredConfigRecoveryTest {
      * Elsewhere V22a is the only vector that discriminates — V22 passes under the wrong implementation.
      *
      * That trap cannot occur here, and the reason is structural rather than tested: a failed retrieve
-     * **throws** (`AutoRetryApiExecutor` rethrows once retries are exhausted; `AbstractSnodeApi` throws on
+     * throws (`AutoRetryApiExecutor` rethrows once retries are exhausted; `AbstractSnodeApi` throws on
      * any non-2xx), so failure is an *exception* and empty is an *empty list* — different types, and the
      * poller never reaches [ExpiredConfigRecovery.markLocalStateLevelWithSwarm] on the failing path. This
-     * client also polls a **single** snode per request, so there is no aggregate-of-many-snodes step in
+     * client also polls a single snode per request, so there is no aggregate-of-many-snodes step in
      * which failures could be flattened into emptiness at all.
      *
      * So the assertion below exercises no code that V10 doesn't already cover — it documents the hazard
@@ -201,7 +201,7 @@ class ExpiredConfigRecoveryTest {
 
     /**
      * V22c, the part that matters most and the one a per-poll check misses: the verdict has to be
-     * **sticky for the session**.
+     * sticky for the session.
      *
      * A message we couldn't merge is never offered again — the dedup table marks a hash as seen before
      * the merge is attempted, and the poller's `lastHash` advances on a successful *fetch* — so the very
@@ -243,7 +243,7 @@ class ExpiredConfigRecoveryTest {
     /**
      * ...but the retrying is rate-limited, or releasing the claims would reintroduce the storm.
      *
-     * Deliberately a backoff and **not** a cap on attempts. A cap would exclude a device whose stores keep
+     * Deliberately a backoff and not a cap on attempts. A cap would exclude a device whose stores keep
      * failing for the rest of the session — which is the same population the feature exists to repair, so
      * a transient network failure would cost a device its recovery entirely. See V13a.
      */
@@ -261,7 +261,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V13a — a store that failed transiently MUST be retried; only a store that **succeeded** bars the
+     * V13a — a store that failed transiently MUST be retried; only a store that succeeded bars the
      * hash for the session.
      *
      * Read as a pair with V13. V13 alone passes on a barred-on-attempt implementation, which is why the
@@ -290,7 +290,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V13h — a round needing more than the server's sub-request limit must be **chunked**, and all of it
+     * V13h — a round needing more than the server's sub-request limit must be chunked, and all of it
      * must land.
      *
      * The server rejects an oversized batch *whole* rather than truncating it, and it surfaces as a request
@@ -302,7 +302,7 @@ class ExpiredConfigRecoveryTest {
      * population the repair exists for: **the accounts with the largest configs have the most to lose and
      * are exactly the ones whose recovery would be rejected wholesale.**
      *
-     * Asserts the **boundary**, not eventual success — the fixture is 25 parts plus a delete, so it
+     * Asserts the boundary, not eventual success — the fixture is 25 parts plus a delete, so it
      * genuinely crosses 20, and the assertion is on the observed chunk sizes. A test that only checked
      * "everything eventually stored" would pass on an implementation that got lucky with a small fixture.
      */
@@ -359,7 +359,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V13g — the bar on a successfully re-stored hash must be **time-bounded**, not session-scoped.
+     * V13g — the bar on a successfully re-stored hash must be time-bounded, not session-scoped.
      *
      * The bar exists to stop a swarm reporting the same hash missing on every poll costing a store every
      * poll — a burst measured in seconds. "Never again this session" is unbounded in time, and a session can
@@ -368,7 +368,7 @@ class ExpiredConfigRecoveryTest {
      * session-scoped bar blocks the recovery that should put it back — excluding long-lived sessions, which
      * is exactly where configs expire.
      *
-     * ⚠️ Driven by **advancing the clock**, never by rebuilding the recovery instance. A fresh instance
+     * Driven by advancing the clock, never by rebuilding the recovery instance. A fresh instance
      * clears in-memory state, so a restart-driven version of this test passes on the session-scoped
      * implementation too — it would be measuring construction rather than expiry. A session-scoped
      * implementation passes V13/V13a/V13b and fails only this.
@@ -399,7 +399,7 @@ class ExpiredConfigRecoveryTest {
      * perfectly correct while the semantics are wrong.
      *
      * Here each message is its own `execute()`, which throws on its own non-2xx, so a multipart config with
-     * one bad part stays retryable **in full**. This test drives that: part 2 of 3 fails.
+     * one bad part stays retryable in full. This test drives that: part 2 of 3 fails.
      */
     @Test
     fun `V13b - one failed part of a multipart store leaves the whole config retryable`() = runTest {
@@ -431,7 +431,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V13c — the wait **doubles** per consecutive failed round. A flat-rate implementation passes V13a and
+     * V13c — the wait doubles per consecutive failed round. A flat-rate implementation passes V13a and
      * fails only this.
      */
     @Test
@@ -483,7 +483,7 @@ class ExpiredConfigRecoveryTest {
     /**
      * V13 — a swarm reporting the same hash missing on every poll must cost one store, not one per poll.
      *
-     * ⚠️ This test does **not** advance the clock, so it cannot tell a session-scoped bar from a
+     * This test does not advance the clock, so it cannot tell a session-scoped bar from a
      * time-bounded one — both pass it. Hence "while the bar holds" in the name rather than a bare "once":
      * the unqualified claim would be a property no assertion here checks. V13g is the only test that
      * separates them.
@@ -651,7 +651,7 @@ class ExpiredConfigRecoveryTest {
      *
      * The handoff sits at the very end of `Poller.poll()` with nothing above it to catch, and `gather` runs
      * libsession code — `push()` throws when a config has no encryption keys. So an escaping exception
-     * doesn't merely mis-handle a hash: it fails the **entire poll**, every poll, because the condition
+     * doesn't merely mis-handle a hash: it fails the entire poll, every poll, because the condition
      * doesn't clear. No messages processed, no configs merged, failure counter climbing.
      *
      * A best-effort repair feature must never be able to break the thing it rides on — recovery's whole
@@ -691,7 +691,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V13e — a hash a **guard** ruled out is barred like a success, not treated as a retryable failure.
+     * V13e — a hash a guard ruled out is barred like a success, not treated as a retryable failure.
      *
      * (Two of the Session clients independently used "V13b" for two different tests, which is silent by
      * construction and only surfaces when suites are compared — which is this feature's entire
@@ -715,7 +715,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * The one must-not vector that **cannot** use [assertRecoveryStillReachable], because its premise *is*
+     * The one must-not vector that cannot use [assertRecoveryStillReachable], because its premise *is*
      * the death mode: "nothing was eligible" and "the harness returned nothing" are the same observation.
      * A reachability control here would be asserting that an empty gather produces a store.
      *
@@ -734,7 +734,7 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V23d — a group already flagged expired must have the flag cleared **by the re-store itself**.
+     * V23d — a group already flagged expired must have the flag cleared by the re-store itself.
      *
      * The reactive path cannot do this. It clears the flag when a keys message is *handled*, and the device
      * that re-stored the bytes already holds that hash, so it may never handle it again — leaving a banner up
@@ -773,10 +773,10 @@ class ExpiredConfigRecoveryTest {
      * V23c — a keys re-store that FAILED must not announce anything, so the flag stays up.
      *
      * It asserts the VERDICT as well as the silence, and the verdict is the half that matters. The silence
-     * alone could not see a cold-review finding against this file: detection used to answer `false` when the
-     * bytes were held, which cleared the flag at a different site *before* the round ran, so "the flag
-     * stands" was false while this test passed. A test that watches only the signal it owns cannot see a
-     * second site enforcing the same rule differently.
+     * alone cannot see a second site enforcing the same rule differently: let detection answer `false`
+     * while the bytes are held, and the flag is cleared elsewhere *before* the round runs — so "the flag
+     * stands" is already untrue while this test still passes. A test that watches only the signal it owns
+     * has no way to notice that.
      *
      * What the silence alone does pin is that a wholly failed round is quiet. It does NOT pin per-restore
      * emission over per-round — every store fails here, so a round-level signal stays silent too. The mixed

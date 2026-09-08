@@ -64,18 +64,18 @@ class PendingRestore(
  *   key to make a new one — the bytes would then no longer reproduce the original hash. Recovery only
  *   ever touches clean configs, so the property it depends on holds exactly where it runs.
  *
- * **How reachable the clean check is, since it looks redundant and mostly is.** Dirtying a config moves
+ * How reachable the clean check is, since it looks redundant and mostly is. Dirtying a config moves
  * its current hashes into the *old* set and clears them (libsession `base.cpp`, `set_state`), so a dirty
  * config's [activeHashes] usually no longer contains anything the swarm reported missing — and the first
  * condition rejects it before this one is consulted.
  *
- * It is **not** wholly redundant, though, and the exception is the reason to keep it: [activeHashes] is
+ * It is not wholly redundant, though, and the exception is the reason to keep it: [activeHashes] is
  * current hashes *plus the parts of any pending multipart set* that is neither done nor expired, and that
  * second component survives dirtying. So a config that went dirty while a multipart set was still
  * arriving, one of whose part hashes the swarm has lost, reaches this check with a non-empty
  * intersection. Rare, and exactly the case where re-uploading would fight the uploader.
  *
- * That reachability rests on libsession's behaviour rather than ours, and **cannot be asserted here**: it
+ * That reachability rests on libsession's behaviour rather than ours, and cannot be asserted here: it
  * would need `activeHashes()` to run against the real native library, which no JVM unit test in this
  * project can load. The tests below reach this branch through a mocked config, which can present
  * dirty-with-intersecting-hashes freely. So do not delete this check on the grounds that no test drives
@@ -188,7 +188,7 @@ class ConfigRestoreSource @Inject constructor(
     /**
      * Whether the expired-group banner should be withheld for [groupId] because this device can repair it.
      *
-     * Deliberately **not** gated on the things that gate the *action* — foreground, backoff, being level
+     * Deliberately not gated on the things that gate the *action* — foreground, backoff, being level
      * with the swarm. Those decide whether to write now; this decides whether the group is beyond reach at
      * all, and a group whose repair is merely deferred until the app is foregrounded is not expired. Gating
      * this on them would raise the banner and have a later poll take it away again — a visible flicker on
@@ -209,7 +209,7 @@ class ConfigRestoreSource @Inject constructor(
     /**
      * The keys equivalent of [toRestore], and deliberately not the same function.
      *
-     * **Every retained message goes back, not just the missing ones.** A generation is a rekey plus every
+     * Every retained message goes back, not just the missing ones. A generation is a rekey plus every
      * supplemental issued against it, and a member who receives only part of a generation cannot derive the
      * key — so a partial re-store is worse than none. The retained set is not keyed by generation and
      * carries no generation field, so grouping is not expressible here; re-storing all of it is a strict

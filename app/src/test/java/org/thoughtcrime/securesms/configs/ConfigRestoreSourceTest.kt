@@ -125,7 +125,7 @@ class ConfigRestoreSourceTest {
     }
 
     /**
-     * V23 — keys ARE restorable when this device holds their bytes, and a **member** can do it: the retained
+     * V23 — keys ARE restorable when this device holds their bytes, and a member can do it: the retained
      * message carries the admin's signature already, so pushing it back lands on the same hash without being
      * re-signed. This fixture is a non-admin deliberately.
      */
@@ -144,7 +144,7 @@ class ConfigRestoreSourceTest {
     }
 
     /**
-     * V23b — a supplemental is retained and re-stored **at all**.
+     * V23b — a supplemental is retained and re-stored at all.
      *
      * A generation is a rekey plus every supplemental issued against it, and a member who receives only part
      * of one cannot derive the key. Retention is keyed by message hash, not by generation, so all of it goes
@@ -200,7 +200,7 @@ class ConfigRestoreSourceTest {
      * The keys config is not in the restorable set at all, and a missing keys hash goes straight to the
      * expired-group flag instead.
      *
-     * ⚠️ This is a **platform** limitation with a known expiry date, not a property of the format: libsession
+     * This is a platform limitation with a known expiry date, not a property of the format: libsession
      * retains the bytes of active keys messages and exposes them, and once the Android wrapper binds that
      * accessor a member will be able to repair a group's keys by pushing the retained bytes back. At that
      * point this test inverts rather than being deleted — keys become restorable when their bytes are held,

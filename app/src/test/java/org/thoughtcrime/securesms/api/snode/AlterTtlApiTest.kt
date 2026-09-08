@@ -23,7 +23,7 @@ import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 /**
- * Tests the `expire` request as it actually goes **on the wire**, and the response as it actually
+ * Tests the `expire` request as it actually goes on the wire, and the response as it actually
  * comes back — rather than what the caller passed in.
  *
  * That distinction is the whole point here. Three separate instances of the same bug have now been
@@ -105,14 +105,14 @@ class AlterTtlApiTest {
 
     @Test
     fun `a shorten response is never read for missing hashes`() = runTest {
-        // The body is deliberately **fully readable** — `unchanged` present and empty — so the shorten
+        // The body is deliberately fully readable — `unchanged` present and empty — so the shorten
         // short-circuit is the ONLY thing that can produce Inconclusive here. With an absent `unchanged`
         // key (the first version of this fixture) the response is unreadable anyway, and the test passed
         // whether or not the alter type was checked at all: it would have gone green against an
         // implementation that read shorten responses for absence. Read this way it discriminates —
         // drop the alter-type guard and both hashes come back as Checked missing.
         //
-        // ⚠️ Deliberately counterfactual: a real shorten response omits `unchanged`, so production trips
+        // Deliberately counterfactual: a real shorten response omits `unchanged`, so production trips
         // both causes together and no realistic fixture can isolate either one. Since the assertion now
         // names the cause, "correcting" this body to omit `unchanged` fails the test LOUDLY (it would come
         // back NoUsableSubResponse) rather than passing vacuously — which is the whole point of the causes

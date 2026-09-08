@@ -84,7 +84,7 @@ class ConfigExpiryDetectionTest {
     /**
      * V5's companion, and the only fixture that isolates the `failed` term.
      *
-     * A sub-response is usable only if it is `!failed` **and** carries `unchanged`. Every other failed-node
+     * A sub-response is usable only if it is `!failed` and carries `unchanged`. Every other failed-node
      * fixture — V5's and V6's — leaves `unchanged` absent, so the second term does the excluding and the
      * first is never consulted: deleting `!it.failed` passes the whole suite. Verified, not assumed, by
      * dropping that term alongside a control mutation known to kill two tests; the control fired and this
@@ -92,7 +92,7 @@ class ConfigExpiryDetectionTest {
      *
      * So the fixture below is a node reporting failure that *nevertheless* carries `unchanged`. With the
      * term present it is excluded and the healthy node's answer stands. Without it, the failed node's empty
-     * arrays are read as authority and **every requested hash is reported missing** — a false positive that
+     * arrays are read as authority and every requested hash is reported missing — a false positive that
      * authorises re-storing configs the swarm still holds, on the word of a snode that said it failed.
      */
     @Test
@@ -123,12 +123,12 @@ class ConfigExpiryDetectionTest {
     /**
      * V8 — no extend was asked for, so the response says nothing about absence whatever it contains.
      *
-     * The sub-response is deliberately **readable** (`unchanged` present and empty) so that the extend
+     * The sub-response is deliberately readable (`unchanged` present and empty) so that the extend
      * flag is the only thing that can produce Inconclusive. The first version passed `unchanged = null`,
      * which is unreadable on its own (V8b) — so the test went green whether or not the extend flag was
      * consulted at all, and a mutation deleting that guard left it passing. It now fails on that mutation.
      *
-     * ⚠️ **This fixture is deliberately counterfactual and must stay that way.** A real server omits
+     * This fixture is deliberately counterfactual and must stay that way. A real server omits
      * `unchanged` when it decides the request wasn't an extend, so production triggers *both* causes at
      * once — which is exactly why the realistic fixture cannot isolate either. Restoring `unchanged = null`
      * to make it "accurate" now fails this test *loudly* — it would come back `NoUsableSubResponse` where
@@ -291,7 +291,7 @@ class ConfigExpiryDetectionTest {
     }
 
     /**
-     * V14 — a response to a request that asked about nothing is **inconclusive**, not a conclusive
+     * V14 — a response to a request that asked about nothing is inconclusive, not a conclusive
      * "nothing is missing".
      *
      * `Checked(emptySet())` is the natural short-circuit and it is wrong in a way that hides itself: a
@@ -353,7 +353,7 @@ class ConfigExpiryDetectionTest {
     }
 
     /**
-     * V23a — every keys hash is gone from the swarm, and this device holds the bytes, so the group is **not**
+     * V23a — every keys hash is gone from the swarm, and this device holds the bytes, so the group is not
      * expired: it is repairable from here.
      *
      * This is the case the rule change exists for, and it is the only one that distinguishes the new rule
@@ -361,7 +361,7 @@ class ConfigExpiryDetectionTest {
      * both are needed — either alone would pass against an implementation that ignored the repairable
      * question entirely.
      *
-     * The banner must be **withheld** rather than raised and later cleared: it is a visible conversation
+     * The banner must be withheld rather than raised and later cleared: it is a visible conversation
      * banner, so correcting it after the fact is a flicker on a group that was never out of reach.
      */
     @Test

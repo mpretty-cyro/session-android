@@ -43,10 +43,10 @@ private const val TAG = "ExpiredConfigRecovery"
 /**
  * Most sub-requests recovery will put in one batch — and therefore also the most it has in flight at once.
  *
- * **Derived from the storage server's limit, deliberately not from a concurrency preference.** Requests
+ * Derived from the storage server's limit, deliberately not from a concurrency preference. Requests
  * sharing a snode coalesce into one batch inside a 100ms window (`BatchApiExecutor`), which has no size cap
  * or chunking of its own — it flushes whatever accumulated when the deadline fires. The server then rejects
- * an oversized batch **whole** rather than truncating it (`BATCH_REQUEST_MAX = 20`, `request_handler.h`;
+ * an oversized batch whole rather than truncating it (`BATCH_REQUEST_MAX = 20`, `request_handler.h`;
  * `parse_error` in `client_rpc_endpoints.cpp`). So an unchunked round loses *everything*, and it surfaces as
  * a request failure rather than a size error — so it reads as a network problem and gets retried into the
  * same wall.
@@ -54,7 +54,7 @@ private const val TAG = "ExpiredConfigRecovery"
  * That is easy to reach: `MAX_MULTIPART_SIZE / MAX_MESSAGE_SIZE` means one config can split into ~66 parts,
  * each its own store, and a round batches every config for the swarm together.
  *
- * **Both decode paths cap at 20 inclusive** and reject 21. They *look* like they disagree — `> MAX` on the
+ * Both decode paths cap at 20 inclusive and reject 21. They *look* like they disagree — `> MAX` on the
  * JSON path, `>= MAX` on the bt path — but the bt check sits *before* its `push_back` inside the loop, so on
  * the nth request it sees size n-1 and 20 requests never trip it. Reading the operators is not the same as
  * reading the loop.
@@ -72,7 +72,7 @@ private const val MAX_BATCH_SUB_REQUESTS = 20
  * How long to leave a swarm alone after its first failed recovery round, doubling per consecutive failure
  * up to [RECOVERY_RETRY_BACKOFF_CEILING_MS] and resetting once anything stores.
  *
- * This is a **deferral, never an exclusion**, and the distinction is the whole design. A cap on attempts
+ * This is a deferral, never an exclusion, and the distinction is the whole design. A cap on attempts
  * would shut out a device whose stores keep failing for the rest of the session — which is the same
  * population being repaired, so a run of transient failures would cost exactly the wrong devices their
  * recovery. The ceiling therefore bounds the *interval* and never the *number of attempts*: retry stays
@@ -86,7 +86,7 @@ private val RECOVERY_RETRY_BACKOFF_CEILING_MS = 30.minutes.inWholeMilliseconds
 /**
  * How long a successfully re-stored hash stays barred from being re-stored again.
  *
- * **Bounded in time rather than scoped to the session, and the reason is the TTL.** The bar exists only to
+ * Bounded in time rather than scoped to the session, and the reason is the TTL. The bar exists only to
  * stop a swarm that reports the same hash missing on every poll costing a store every poll — a burst
  * measured in seconds. "Never again this session" is unbounded, and a session can outlive the 30-day config
  * TTL: a mobile client backgrounded for a month, or a desktop client, which by design runs for weeks. In
@@ -94,7 +94,7 @@ private val RECOVERY_RETRY_BACKOFF_CEILING_MS = 30.minutes.inWholeMilliseconds
  * session-scoped bar would block the very recovery that should put it back — excluding long-lived sessions,
  * which is exactly where configs expire.
  *
- * **1 hour, and the figure is not load-bearing** — the property is "hours". It is still ~100x the margin the
+ * 1 hour, and the figure is not load-bearing — the property is "hours". It is still ~100x the margin the
  * bar needs (polls are seconds apart, replication lag seconds to minutes) and 1/720th of the TTL, so it
  * cannot interact with a genuine second expiry.
  *
@@ -128,7 +128,7 @@ private val REKEY_STORM_GUARD_MS = 24.hours.inWholeMilliseconds
  * device still logged in is holding a perfectly good copy. This class uploads that copy again.
  *
  * It is safe to do so for one specific reason, which is worth understanding because it's what makes
- * the whole thing non-destructive: **config encryption is deterministic**, and the storage server
+ * the whole thing non-destructive: config encryption is deterministic, and the storage server
  * derives a message's hash from its ciphertext alone (no timestamp, no TTL). Re-uploading an
  * unchanged config therefore produces *the same message hash it had before* — it isn't a new message
  * competing with existing state, it's the same message going back where it was. `store` is purely
@@ -146,7 +146,7 @@ private val REKEY_STORM_GUARD_MS = 24.hours.inWholeMilliseconds
  * Identifies one poll of one swarm — the unit that separates "level at some point this session" from
  * "level as of the poll I am in".
  *
- * Minted by [ExpiredConfigRecovery.beginPoll] and **carried by the caller**. Carrying it is what keeps it
+ * Minted by [ExpiredConfigRecovery.beginPoll] and carried by the caller. Carrying it is what keeps it
  * correct while polls overlap: two concurrent polls hold different tokens, and a single shared "current
  * token" consulted by readers would let either be aged out by the other merely starting.
  *
@@ -169,7 +169,7 @@ class ExpiredConfigRecovery @Inject constructor(
     private val configFactory: ConfigFactoryProtocol,
 ) {
     /**
-     * Swarms our local state is known to be **level** with — i.e. there is nothing on the swarm we
+     * Swarms our local state is known to be level with — i.e. there is nothing on the swarm we
      * haven't already taken in — each recorded against the poll that established it.
      *
      * That property, not "a poll happened" or "a merge happened", is what makes a re-store safe: a
@@ -179,10 +179,10 @@ class ExpiredConfigRecovery @Inject constructor(
      *
      * One field, two readings, and that is the whole reason the value is a token rather than a flag:
      *
-     *  - **present at all** — level at some point this session and not since withdrawn. What
+     *  - present at all — level at some point this session and not since withdrawn. What
      *    [localStateIsLevelWithSwarm] asks, and the right question for a re-store, where staleness costs
      *    only a redundant, byte-identical write.
-     *  - **equal to the caller's token** — level as of the poll the caller is in. What
+     *  - equal to the caller's token — level as of the poll the caller is in. What
      *    [rekeyIfUnrecoverable] asks, and the only safe question ahead of a write that is irreversible and
      *    encrypts to this device's view of the members.
      *
@@ -221,7 +221,7 @@ class ExpiredConfigRecovery @Inject constructor(
     /**
      * Swarms where a poll this session failed to take in everything it fetched.
      *
-     * **Sticky for the session, and that is the point.** A config message we couldn't merge is not
+     * Sticky for the session, and that is the point. A config message we couldn't merge is not
      * offered to us again: the dedup table marks a hash as seen before the merge is attempted, and the
      * poller's `lastHash` advances on a successful *fetch*, so the swarm won't return it on the next
      * poll either. So the very next poll looks completely clean while local state is still missing what
@@ -238,16 +238,16 @@ class ExpiredConfigRecovery @Inject constructor(
      * Hashes claimed by a recovery round, so that a swarm reporting the same hash missing on every poll
      * costs one store rather than one per poll.
      *
-     * Note this is **not** "at most one attempt per hash per session", and anything reasoning from that
-     * stronger claim will be wrong. The bar is on a store that **succeeded**: a round that *fails*
+     * Note this is not "at most one attempt per hash per session", and anything reasoning from that
+     * stronger claim will be wrong. The bar is on a store that succeeded: a round that *fails*
      * releases its claims so a later poll can retry (see [runRestore]), because otherwise the storm guard
      * would be the thing making a partial upload permanent — and worse, a single transient network failure
      * would cost a device its repair for the whole session. What bounds the retrying is
      * [RECOVERY_RETRY_BACKOFF_MS], not this set.
      *
-     * ⚠️ This set answers exactly one question — *"is there any point acting on this hash again?"* — and it
+     * This set answers exactly one question — *"is there any point acting on this hash again?"* — and it
      * is written by two different causes that happen to share that answer: a store that succeeded, and a
-     * hash a guard ruled out. **It is therefore not a record of what was restored**, and a future consumer
+     * hash a guard ruled out. It is therefore not a record of what was restored, and a future consumer
      * asking that (a metric, a UI, a "did recovery help?" check) must not read it. If you need to
      * distinguish them, add a second set rather than reinterpreting this one: they are answers to different
      * questions that currently coincide, and one value cannot be wrong about one without being wrong about
@@ -279,7 +279,7 @@ class ExpiredConfigRecovery @Inject constructor(
 
     /**
      * Records that local state is level with [swarmPubKeyHex] — call this only after a poll that
-     * **succeeded**, and only once whatever config it returned has been taken in.
+     * succeeded, and only once whatever config it returned has been taken in.
      *
      * Two ways to get this wrong, both of which have bitten a Session client:
      *
@@ -288,9 +288,9 @@ class ExpiredConfigRecovery @Inject constructor(
      * expired gets *nothing* back when it polls, so there is nothing to merge, and it would never
      * recover — while every device whose configs were fine would. An empty poll establishes the property
      * we need directly: nothing is on the swarm that we haven't already taken in. Hence
-     * [mergedConfigMessagesForDiagnosticsOnly] is logged and **must not** affect the outcome.
+     * [mergedConfigMessagesForDiagnosticsOnly] is logged and must not affect the outcome.
      *
-     * A **failed** poll is the case that must not count — it says nothing about swarm state, so treating
+     * A failed poll is the case that must not count — it says nothing about swarm state, so treating
      * it as level reintroduces the same hazard from the other side. On this client that's structural
      * rather than checked here: a failed retrieve throws (see `AutoRetryApiExecutor`, which rethrows once
      * retries are exhausted), so callers never reach this line. Empty and failed are different *types*
@@ -326,7 +326,7 @@ class ExpiredConfigRecovery @Inject constructor(
     }
 
     /**
-     * Records that a poll of [swarmPubKeyHex] did **not** take in everything it fetched — a merge that
+     * Records that a poll of [swarmPubKeyHex] did not take in everything it fetched — a merge that
      * threw, or one that skipped a message it couldn't parse and returned normally.
      *
      * This is not merely the absence of [markLocalStateLevelWithSwarm]: it withdraws the swarm for the rest
@@ -354,7 +354,7 @@ class ExpiredConfigRecovery @Inject constructor(
      * is still the current one** — the stricter reading of the mark, and the only one that may authorise a
      * rekey.
      *
-     * 🔴 BOTH conjuncts are load-bearing, and the second is the one that is easy to lose. Checking only
+     * BOTH conjuncts are load-bearing, and the second is the one that is easy to lose. Checking only
      * that the mark equals the token asks "was the mark made by the poll you are naming" — which a caller
      * holding an OLD token satisfies, because the mark that poll left is still sitting in the map. It would
      * answer "you are level now" to a caller whose information is arbitrarily old, and it would do so
@@ -714,7 +714,7 @@ class ExpiredConfigRecovery @Inject constructor(
     // swarm still HAS. By the time the first is true, the message this needs is gone.
 
     /**
-     * Resolved lazily, and injectable for tests, because libsession's [Namespace] is a **native** class:
+     * Resolved lazily, and injectable for tests, because libsession's [Namespace] is a native class:
      * touching it runs an initialiser that loads the shared library, which no JVM unit test in this project
      * can do. Calling it inline would make every test of this component fail with NoClassDefFoundError
      * regardless of what it was asserting — the same reason [PendingRestore] keeps its namespace a lambda.
@@ -727,12 +727,12 @@ class ExpiredConfigRecovery @Inject constructor(
      * Deliberately the same interval as the re-store bar rather than a new one: the trade is identical and
      * lands further on this side, since the redundant action here is a small *read* rather than a write.
      *
-     * ⚠️ **This answers HOW OFTEN TO RETRY. It does not answer WHETHER A REKEY MAY FIRE.** Those are two
+     * This answers HOW OFTEN TO RETRY. It does not answer WHETHER A REKEY MAY FIRE. Those are two
      * questions and they want opposite treatment of an expiry: letting the bar lapse simply permits another
      * cheap read, whereas treating a lapsed entry as "a repair was attempted" would license an irreversible,
      * every-member-visible write on evidence this object has already discarded. If a force-rekey is ever
      * added, it must not read this map as its precondition — and above all this must not be made
-     * **persistent** to serve one. A persisted attempt record is a sticky negative: it would let a rekey
+     * persistent to serve one. A persisted attempt record is a sticky negative: it would let a rekey
      * fire on evidence gathered weeks ago, after the swarm has changed. In-memory fails CLOSED — a rekey is
      * delayed by one poll cycle at worst, never blocked, because this runs inside the poll.
      */
@@ -803,7 +803,7 @@ class ExpiredConfigRecovery @Inject constructor(
     // a new generation so the group can carry on, accepting that content encrypted to the superseded keys
     // stays unreadable.
     //
-    // ⚠️ The backfill above must not read this section's state or call into it. It repairs the ordinary case
+    // The backfill above must not read this section's state or call into it. It repairs the ordinary case
     // and has to keep working, and keep being testable, independently of the one irreversible write here.
 
     private val lastRekeyAt = ConcurrentHashMap<String, Long>()
@@ -813,7 +813,7 @@ class ExpiredConfigRecovery @Inject constructor(
      *  bytes are still absent. Checked by the caller rather than here, because "has the other path had its
      *  turn" is the caller's knowledge, not this one's.
      * @param pollToken the token for the poll this call is part of, from [beginPoll]. The members view
-     *  must be level **as of this poll** — not merely at some point this session.
+     *  must be level as of this poll — not merely at some point this session.
      * @return true if a rekey was actually issued — the only outcome worth asserting on, since every guard
      *  below produces the same visible result as doing nothing.
      */
@@ -835,7 +835,7 @@ class ExpiredConfigRecovery @Inject constructor(
             return false
         }
 
-        // 🔴 A rekey encrypts the new key to THIS DEVICE'S view of the members config. This path fires
+        // A rekey encrypts the new key to THIS DEVICE'S view of the members config. This path fires
         // precisely on devices whose config state is known to be degraded, so a member added while we were
         // away — and not yet merged here — would be silently dropped from the group by a rekey issued from
         // that stale view.

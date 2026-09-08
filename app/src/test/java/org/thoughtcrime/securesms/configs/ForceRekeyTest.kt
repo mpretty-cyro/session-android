@@ -234,7 +234,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * The withdrawal has to clear the mark for **both** readings, not just the one it was written for.
+     * The withdrawal has to clear the mark for both readings, not just the one it was written for.
      * It removes the map entry, which is a different operation now that the value is a token rather than
      * set membership — so it is checked rather than assumed.
      */

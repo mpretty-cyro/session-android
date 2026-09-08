@@ -15,7 +15,7 @@ import kotlinx.serialization.Serializable
  */
 sealed interface ConfigExpiryReport {
     /**
-     * The response can't tell us anything, and **no hash may be treated as missing**. Every consumer
+     * The response can't tell us anything, and no hash may be treated as missing. Every consumer
      * treats these identically — the distinction is not a behavioural one, it exists so that a test can
      * name *which* condition it is exercising.
      *
@@ -73,7 +73,7 @@ class SnodeExpiryState(
  * The group keys config decides this on its own — info or members going missing drives a re-store, never
  * the banner.
  *
- * **The rule is not "every keys hash is missing".** It is *every keys hash is missing **and** this device
+ * The rule is not "every keys hash is missing". It is *every keys hash is missing and this device
  * cannot put them back*, and those are one rule rather than a rule plus an override. libsession retains the
  * raw bytes of the keys messages it has loaded, and re-storing those bytes lands on the same hash without
  * being re-signed — so a device holding them, admin or member, is looking at a group it can repair rather

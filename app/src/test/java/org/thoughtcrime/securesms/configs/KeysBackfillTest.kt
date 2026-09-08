@@ -28,7 +28,7 @@ import kotlin.test.assertTrue
 /**
  * Re-loading a group's keys messages so libsession captures their bytes.
  *
- * The trigger under test is **bytes-absent**, not keys-related — a distinction V24b exists to pin, because a
+ * The trigger under test is bytes-absent, not keys-related — a distinction V24b exists to pin, because a
  * fixture that fires the backfill unconditionally still passes V24.
  *
  * Note on V14: the empty-ask guard cannot decide anything here. It governs the *expiry detection* request,
@@ -94,7 +94,7 @@ class KeysBackfillTest {
     }
 
     /**
-     * V24b — bytes already held means **no fetch is issued at all**.
+     * V24b — bytes already held means no fetch is issued at all.
      *
      * The one most easily built vacuously: a fixture that fires the backfill regardless still satisfies V24,
      * so this asserts the *absence* of the request rather than the presence of a result. The reachability
@@ -161,12 +161,13 @@ class KeysBackfillTest {
      * The keys backfill must stay correct and testable with the force rekey removed, since the rekey is the
      * one irreversible write here and may not be kept.
      *
-     * Now that both live on one object the seam is no longer a file boundary, so this asserts what remains
-     * checkable: the backfill reaches none of the rekey's state. **That is weaker than it was.** Previously
-     * a coupling needed a new constructor parameter or import and was visible in review; now it needs only a
-     * reference to a sibling private field, which is invisible in a diff. The severance itself is unchanged
-     * in strength — delete the rekey's members and its test, rebuild, and these tests must still pass — but
-     * nothing warns you between runs, so this assertion is the standing half of that.
+     * Both live on one object, so the seam is not a file boundary and this asserts what is checkable
+     * without one: the backfill reaches none of the rekey's state. That is a weak guarantee. A coupling
+     * here needs only a reference to a sibling private field, which is invisible in a diff, where across
+     * files it would need a constructor parameter or an import and show up in review.
+     *
+     * The severance is the real check — delete the rekey's members and its test, rebuild, and these tests
+     * must still pass — but nothing warns you between runs, so this assertion is its standing half.
      */
     @Test
     fun `the backfill touches none of the force rekey's state`() {
