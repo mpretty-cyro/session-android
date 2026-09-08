@@ -191,8 +191,8 @@ class ConfigRestoreSource @Inject constructor(
      * Deliberately **not** gated on the things that gate the *action* — foreground, backoff, being level
      * with the swarm. Those decide whether to write now; this decides whether the group is beyond reach at
      * all, and a group whose repair is merely deferred until the app is foregrounded is not expired. Gating
-     * this on them would raise a banner that a later poll takes away, which is the flicker v119(a) exists
-     * to avoid.
+     * this on them would raise the banner and have a later poll take it away again — a visible flicker on
+     * a group that was never out of reach.
      */
     fun canRepairGroupKeys(groupId: AccountId, missingHashes: Set<String>): Boolean {
         val group = configFactory.getGroup(groupId)

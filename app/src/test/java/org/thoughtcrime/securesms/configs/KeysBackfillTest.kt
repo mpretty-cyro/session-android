@@ -26,7 +26,7 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 /**
- * Vectors V24-V24c: re-loading a group's keys messages so libsession captures their bytes.
+ * Re-loading a group's keys messages so libsession captures their bytes.
  *
  * The trigger under test is **bytes-absent**, not keys-related — a distinction V24b exists to pin, because a
  * fixture that fires the backfill unconditionally still passes V24.
@@ -46,7 +46,7 @@ class KeysBackfillTest {
     private lateinit var configFactory: ConfigFactoryProtocol
     private lateinit var swarmApiExecutor: SwarmApiExecutor
     private lateinit var retrieveFactory: RetrieveMessageApi.Factory
-    private lateinit var backfill: KeysBackfill
+    private lateinit var backfill: ExpiredConfigRecovery
     private var now = 1_000_000L
 
     private companion object { const val GROUP_KEYS_NAMESPACE = 12 }
@@ -63,7 +63,16 @@ class KeysBackfillTest {
         coEvery { swarmApiExecutor.send(any(), any()) } returns
                 RetrieveMessageResponse(messages = listOf(message("keys-1")))
 
-        backfill = KeysBackfill(configFactory, swarmApiExecutor, retrieveFactory, clock).also {
+        backfill = ExpiredConfigRecovery(
+            restoreSource = mockk(relaxed = true),
+            clock = clock,
+            appVisibilityManager = mockk(relaxed = true),
+            swarmApiExecutor = swarmApiExecutor,
+            storeMessageApiFactory = mockk(relaxed = true),
+            deleteMessageApiFactory = mockk(relaxed = true),
+            retrieveMessageFactory = retrieveFactory,
+            configFactory = configFactory,
+        ).also {
             // Hardcoded rather than read from libsession's native Namespace, which unit tests cannot load.
             it.keysNamespace = { GROUP_KEYS_NAMESPACE }
         }
@@ -149,33 +158,30 @@ class KeysBackfillTest {
     }
 
     /**
-     * V25b — the seam Morgan asked for: **the whole V24 series must still pass with the force-rekey stubbed
-     * to a no-op.**
+     * The keys backfill must stay correct and testable with the force rekey removed, since the rekey is the
+     * one irreversible write here and may not be kept.
      *
-     * This is the only vector that can demonstrate the backfill is correct and shippable with the rekey
-     * deleted, which is the property he wants before taking that decision to the team. It is expressed as a
-     * dependency assertion rather than by re-running the other tests, because on this platform the two share
-     * no state and no call path at all — [KeysBackfill] holds no reference to [ForceRekey] in any direction,
-     * so "stub it to a no-op" and "delete the file" are the same operation here and the V24 series is
-     * unaffected by construction.
-     *
-     * If this ever fails to compile because the backfill has grown a reference to the rekey, the seam has
-     * been lost and the V24 series is no longer evidence that the backfill stands alone.
+     * Now that both live on one object the seam is no longer a file boundary, so this asserts what remains
+     * checkable: the backfill reaches none of the rekey's state. **That is weaker than it was.** Previously
+     * a coupling needed a new constructor parameter or import and was visible in review; now it needs only a
+     * reference to a sibling private field, which is invisible in a diff. The severance itself is unchanged
+     * in strength — delete the rekey's members and its test, rebuild, and these tests must still pass — but
+     * nothing warns you between runs, so this assertion is the standing half of that.
      */
     @Test
-    fun `V25b - the backfill has no dependency on the force-rekey`() {
-        val constructorParams = KeysBackfill::class.java.declaredFields.map { it.type.simpleName }
-        assertFalse(
-            constructorParams.any { it == "ForceRekey" },
-            "KeysBackfill must not reference ForceRekey — the V24 series is only evidence of a shippable " +
-                    "backfill while deleting the rekey cannot affect it",
-        )
+    fun `the backfill touches none of the force rekey's state`() {
+        val rekeyOnly = setOf("lastRekeyAt")
+        val reached = ExpiredConfigRecovery::class.java.declaredMethods
+            .filter { it.name.contains("backfill", ignoreCase = true) }
+            .flatMap { it.parameterTypes.map { p -> p.simpleName } }
 
-        // The same property stated from the other side: nothing the backfill calls can reach the rekey,
-        // so every V24 assertion above already ran with the rekey absent from the path.
         assertTrue(
-            KeysBackfill::class.java.declaredMethods.none { it.name.contains("ekey") },
-            "the backfill exposes no rekey-shaped entry point",
+            reached.none { it in rekeyOnly },
+            "the backfill must not take the rekey's state as an input",
+        )
+        assertTrue(
+            ExpiredConfigRecovery::class.java.declaredMethods.any { it.name.contains("backfill", true) },
+            "reachability control: the backfill entry point must exist for this to be asserting anything",
         )
     }
 

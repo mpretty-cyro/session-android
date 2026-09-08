@@ -95,12 +95,14 @@ class ExpiredConfigRecoveryTest {
             swarmApiExecutor = swarmApiExecutor,
             storeMessageApiFactory = mockk<StoreMessageApi.Factory>(relaxed = true),
             deleteMessageApiFactory = deleteMessageApiFactory,
+            retrieveMessageFactory = mockk(relaxed = true),
+            configFactory = mockk(relaxed = true),
         )
     }
 
     @Test
     fun `a missing hash on a merged swarm is put back`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -121,10 +123,7 @@ class ExpiredConfigRecoveryTest {
 
     @Test
     fun `V10b - a successful poll of a different swarm does not unlock this one`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(
-            AccountId(IdPrefix.GROUP, ByteArray(32) { 9 }).hexString,
-            mergedConfigMessagesForDiagnosticsOnly = true,
-        )
+        markLevel(AccountId(IdPrefix.GROUP, ByteArray(32) { 9 }).hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -147,7 +146,7 @@ class ExpiredConfigRecoveryTest {
      */
     @Test
     fun `V22 - a successful poll that merged nothing still permits recovery`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = false)
+        markLevel(userId.hexString, merged = false)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -215,7 +214,7 @@ class ExpiredConfigRecoveryTest {
         recovery.markMergeIncompleteForSwarm(userId.hexString)
 
         // The next poll fetches nothing at all and looks perfectly healthy.
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = false)
+        markLevel(userId.hexString, merged = false)
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
         assertStoreCount(0)
@@ -233,7 +232,7 @@ class ExpiredConfigRecoveryTest {
         recovery.markMergeIncompleteForSwarm(
             AccountId(IdPrefix.GROUP, ByteArray(32) { 9 }).hexString
         )
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -251,7 +250,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `retries after failure are rate-limited, not counted`() = runTest {
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("store rejected")
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         repeat(10) {
             recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
@@ -266,14 +265,14 @@ class ExpiredConfigRecoveryTest {
      * hash for the session.
      *
      * Read as a pair with V13. V13 alone passes on a barred-on-attempt implementation, which is why the
-     * spec carried the weaker wording for 39 revisions: barring on attempt buys none of the anti-storm
+     * the weaker wording survived a long time: barring on attempt buys none of the anti-storm
      * property and silently excludes any device whose one attempt hit a blip — on a feature that exists
      * for devices something has already gone wrong for.
      */
     @Test
     fun `V13a - a transiently failed store is retried once the backoff elapses`() = runTest {
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("transient")
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
         assertStoreCount(ATTEMPTS_PER_STORE)
@@ -346,7 +345,7 @@ class ExpiredConfigRecoveryTest {
             }
         }
 
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf("P1")))
 
         // All 25 stores plus the delete went out...
@@ -376,7 +375,7 @@ class ExpiredConfigRecoveryTest {
      */
     @Test
     fun `V13g - a successfully re-stored hash is barred for a bounded time, not the session`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
         assertStoreCount(1)
@@ -415,7 +414,7 @@ class ExpiredConfigRecoveryTest {
             storeCalls.incrementAndGet()
             StoreMessageResponse(hash = h2, timestamp = Instant.EPOCH)
         }
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf("P2")))
 
@@ -438,7 +437,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `V13c - the second wait is 120s, not 60`() = runTest {
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("still failing")
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
         assertStoreCount(ATTEMPTS_PER_STORE)
@@ -467,7 +466,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `V13d - retrying never stops, however long the session fails`() = runTest {
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("permanently failing")
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         // Twenty hours of a persistently failing swarm, stepping past each (growing) window.
         // Counted via the gather rather than via storeCalls, which only counts stores that SUCCEED — a
@@ -491,7 +490,7 @@ class ExpiredConfigRecoveryTest {
      */
     @Test
     fun `V13 - a hash reported missing on every poll is put back once while the bar holds`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         repeat(3) {
             recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
@@ -509,7 +508,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `V18 - one missing part of a multipart config re-stores all of them`() = runTest {
         givenRestorable(claimedHashes = setOf("P1", "P2", "P3"), messageCount = 3)
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf("P2")))
 
@@ -526,7 +525,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `every part of a re-stored multipart config is claimed, not just the missing one`() = runTest {
         givenRestorable(claimedHashes = setOf("P1", "P2", "P3"), messageCount = 3)
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf("P2")))
         assertStoreCount(3)
@@ -544,7 +543,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `V17 - obsolete hashes returned by a re-store are deleted`() = runTest {
         givenRestorable(claimedHashes = setOf(h2), messageCount = 1, obsoleteHashes = listOf("old-1"))
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -564,7 +563,7 @@ class ExpiredConfigRecoveryTest {
     fun `a failed store does not delete its config's obsolete hashes`() = runTest {
         givenRestorable(claimedHashes = setOf(h2), messageCount = 1, obsoleteHashes = listOf("old-1"))
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("store rejected")
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -598,7 +597,7 @@ class ExpiredConfigRecoveryTest {
      */
     @Test
     fun `V17b - no obsolete hashes means no delete request`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -609,7 +608,7 @@ class ExpiredConfigRecoveryTest {
     /** Every cause, so that a cause added later cannot quietly become one that authorises a store. */
     @Test
     fun `an inconclusive report triggers nothing, whatever made it inconclusive`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         listOf(
             ConfigExpiryReport.Inconclusive.ExtendNotRequested,
@@ -624,7 +623,7 @@ class ExpiredConfigRecoveryTest {
 
     @Test
     fun `a report with nothing missing triggers nothing`() = runTest {
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(emptySet()))
 
@@ -635,7 +634,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `recovery waits for the foreground`() = runTest {
         appVisible.value = false
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -667,7 +666,7 @@ class ExpiredConfigRecoveryTest {
     fun `V13f - a throwing inspection does not escape, bar anything, or consume the backoff`() = runTest {
         every { restoreSource.userConfigsToRestore(any()) } throws
                 IllegalStateException("Cannot push data without an encryption key!")
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         // Must not throw — if this escapes, the caller is the poll itself.
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
@@ -705,7 +704,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `V13e - a hash ruled out by a guard is not re-inspected on a later poll`() = runTest {
         every { restoreSource.userConfigsToRestore(any()) } returns emptyList()
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
@@ -726,7 +725,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `nothing eligible means no requests`() = runTest {
         every { restoreSource.userConfigsToRestore(any()) } returns emptyList()
-        recovery.markLocalStateLevelWithSwarm(userId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(userId.hexString)
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -744,7 +743,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `V23d - a successful keys re-store announces itself so the flag can be cleared`() = runTest {
         givenGroupKeysRestorable()
-        recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(groupId.hexString)
 
         val verdict = recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
 
@@ -762,7 +761,7 @@ class ExpiredConfigRecoveryTest {
     @Test
     fun `no keys re-store attempted reports no verdict, not success`() = runTest {
         every { restoreSource.groupConfigsToRestore(groupId, any()) } returns emptyList()
-        recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(groupId.hexString)
 
         val verdict = recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
 
@@ -787,7 +786,7 @@ class ExpiredConfigRecoveryTest {
     fun `V23c - a failed keys re-store announces nothing, so the flag stands`() = runTest {
         givenGroupKeysRestorable()
         coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("store failed")
-        recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(groupId.hexString)
 
         val verdict = recovery.onGroupConfigsChecked(groupId, authFor(groupId.hexString), keysMissing)
 
@@ -809,7 +808,7 @@ class ExpiredConfigRecoveryTest {
                 namespace = { GROUP_INFO_NAMESPACE },
             )
         )
-        recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(groupId.hexString)
 
         recovery.onGroupConfigsChecked(
             groupId,
@@ -850,6 +849,8 @@ class ExpiredConfigRecoveryTest {
             swarmApiExecutor = swarmApiExecutor,
             storeMessageApiFactory = factory,
             deleteMessageApiFactory = deleteMessageApiFactory,
+            retrieveMessageFactory = mockk(relaxed = true),
+            configFactory = mockk(relaxed = true),
         )
         coEvery { swarmApiExecutor.send(any(), any()) } answers {
             val request = secondArg<SwarmApiRequest<*>>()
@@ -873,7 +874,7 @@ class ExpiredConfigRecoveryTest {
                 namespace = { GROUP_KEYS_NAMESPACE },
             ),
         )
-        recovery.markLocalStateLevelWithSwarm(groupId.hexString, mergedConfigMessagesForDiagnosticsOnly = true)
+        markLevel(groupId.hexString)
 
         recovery.onGroupConfigsChecked(
             groupId,
@@ -929,6 +930,21 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
+     * A poll of [swarmPubKeyHex] that completed and took everything in.
+     *
+     * Every call mints its own token, which is right for this file: these vectors exercise the re-store
+     * path, and that asks only whether a level mark is present at all. The poll-scoped reading of the same
+     * field — whether the mark belongs to the poll asking — is the rekey's, and is pinned in
+     * [ForceRekeyTest]. Do not add token juggling here to cover it; it would test the wrong caller.
+     */
+    private fun markLevel(swarmPubKeyHex: String, merged: Boolean = true) =
+        recovery.markLocalStateLevelWithSwarm(
+            swarmPubKeyHex = swarmPubKeyHex,
+            pollToken = recovery.beginPoll(),
+            mergedConfigMessagesForDiagnosticsOnly = merged,
+        )
+
+    /**
      * Positive control for a must-not vector, and the reason every one of them calls it.
      *
      * A negative assertion cannot establish anything about its own harness: "no store happened" is
@@ -945,10 +961,7 @@ class ExpiredConfigRecoveryTest {
         val controlSwarm = AccountId(IdPrefix.STANDARD, ByteArray(32) { 7 }).hexString
         val before = storeCallCount()
 
-        recovery.markLocalStateLevelWithSwarm(
-            controlSwarm,
-            mergedConfigMessagesForDiagnosticsOnly = true,
-        )
+        markLevel(controlSwarm)
         recovery.onUserConfigsChecked(
             authFor(controlSwarm),
             ConfigExpiryReport.Checked(setOf("control-hash")),

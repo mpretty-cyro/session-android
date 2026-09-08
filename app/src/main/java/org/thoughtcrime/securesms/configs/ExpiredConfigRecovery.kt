@@ -13,9 +13,17 @@ import org.session.libsession.snode.SwarmAuth
 import org.session.libsignal.utilities.AccountId
 import org.session.libsignal.utilities.Base64
 import org.session.libsignal.utilities.Log
+import org.session.libsignal.utilities.Snode
 import org.session.libsignal.utilities.retryWithUniformInterval
 import org.thoughtcrime.securesms.api.snode.ConfigExpiryReport
+import network.loki.messenger.libsession_util.Namespace
+import org.session.libsession.utilities.ConfigFactoryProtocol
+import org.session.libsession.utilities.ConfigMessage
+import org.session.libsession.utilities.getGroup
+import org.session.libsession.utilities.withGroupConfigs
+import org.session.libsession.utilities.withMutableGroupConfigs
 import org.thoughtcrime.securesms.api.snode.DeleteMessageApi
+import org.thoughtcrime.securesms.api.snode.RetrieveMessageApi
 import org.thoughtcrime.securesms.api.snode.StoreMessageApi
 import org.thoughtcrime.securesms.api.swarm.SwarmApiExecutor
 import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
@@ -23,6 +31,7 @@ import org.thoughtcrime.securesms.api.swarm.execute
 import org.thoughtcrime.securesms.util.AppVisibilityManager
 import java.util.Collections
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.atomic.AtomicLong
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.time.Duration.Companion.hours
@@ -98,6 +107,20 @@ private val RECOVERY_RETRY_BACKOFF_CEILING_MS = 30.minutes.inWholeMilliseconds
 internal val RESTORED_HASH_BAR_MS = 1.hours.inWholeMilliseconds
 
 /**
+ * The interval below which this device will not rekey the same group again.
+ *
+ * Deliberately much longer than the re-store bar, because the trade runs the opposite way. A redundant
+ * re-store is byte-identical and costs one request, so that bar errs short. A redundant rekey makes every
+ * member on every version process a new generation, and leaves content encrypted to the superseded keys
+ * unreadable to anyone who never held them — so this errs long.
+ *
+ * The delay costs nothing: a group that reaches this path has had no retrievable keys message for at least
+ * the 30-day config TTL, against which a day is noise. Standardised across the clients; do not tune it as
+ * though something local depended on it.
+ */
+private val REKEY_STORM_GUARD_MS = 24.hours.inWholeMilliseconds
+
+/**
  * Puts config messages back on the swarm after they've been swept for exceeding their TTL.
  *
  * A config has a 30 day TTL, refreshed every time we poll. Go quiet for longer than that and your
@@ -119,6 +142,18 @@ internal val RESTORED_HASH_BAR_MS = 1.hours.inWholeMilliseconds
  * @see org.thoughtcrime.securesms.api.snode.detectMissingConfigHashes for how "missing" is decided.
  * @see ConfigRestoreSource for which configs are eligible.
  */
+/**
+ * Identifies one poll of one swarm — the unit that separates "level at some point this session" from
+ * "level as of the poll I am in".
+ *
+ * Minted by [ExpiredConfigRecovery.beginPoll] and **carried by the caller**, never read back from shared
+ * state. That is what keeps it correct while polls overlap: two concurrent polls hold different tokens and
+ * each compares only against its own, so neither can be made to look current by the other one starting. A
+ * single shared "current token" would have exactly that bug.
+ */
+@JvmInline
+value class PollToken internal constructor(private val id: Long)
+
 @Singleton
 class ExpiredConfigRecovery @Inject constructor(
     private val restoreSource: ConfigRestoreSource,
@@ -127,18 +162,47 @@ class ExpiredConfigRecovery @Inject constructor(
     private val swarmApiExecutor: SwarmApiExecutor,
     private val storeMessageApiFactory: StoreMessageApi.Factory,
     private val deleteMessageApiFactory: DeleteMessageApi.Factory,
+    private val retrieveMessageFactory: RetrieveMessageApi.Factory,
+    private val configFactory: ConfigFactoryProtocol,
 ) {
     /**
-     * Swarms our local state is known to be **level** with, this session — i.e. there is nothing on the
-     * swarm we haven't already taken in.
+     * Swarms our local state is known to be **level** with — i.e. there is nothing on the swarm we
+     * haven't already taken in — each recorded against the poll that established it.
      *
      * That property, not "a poll happened" or "a merge happened", is what makes a re-store safe: a
      * device that has taken in whatever the swarm had re-stores the incorporated result, which is
      * correct by construction. Re-storing while the swarm still holds config we haven't seen is the
      * dangerous ordering, and it's what this guard exists to prevent.
+     *
+     * One field, two readings, and that is the whole reason the value is a token rather than a flag:
+     *
+     *  - **present at all** — level at some point this session and not since withdrawn. What
+     *    [localStateIsLevelWithSwarm] asks, and the right question for a re-store, where staleness costs
+     *    only a redundant, byte-identical write.
+     *  - **equal to the caller's token** — level as of the poll the caller is in. What
+     *    [rekeyIfUnrecoverable] asks, and the only safe question ahead of a write that is irreversible and
+     *    encrypts to this device's view of the members.
+     *
+     * Resist splitting these into two fields. They are the same observation read at two lifetimes, and two
+     * fields would let one be updated without the other — which is the state neither reading survives.
+     *
+     * In memory, deliberately. A persisted mark would answer the first question about a session whose
+     * merges we can no longer vouch for, and the withdrawal in [markMergeIncompleteForSwarm] is exactly
+     * the kind of negative that must not outlive the run that observed it.
      */
-    private val swarmsLevelWithLocalState =
-        Collections.newSetFromMap(ConcurrentHashMap<String, Boolean>())
+    private val swarmsLevelWithLocalState = ConcurrentHashMap<String, PollToken>()
+
+    private val nextPollToken = AtomicLong()
+
+    /**
+     * Mints a token for a poll that is starting.
+     *
+     * Call once at the top of a poll and hand that same token to [markLocalStateLevelWithSwarm] and
+     * [rekeyIfUnrecoverable]. Do not re-mint between them, and do not stamp it from anywhere that is not a
+     * completing poll — a token recorded by something other than the poll it names would make a stale view
+     * read as current, which is the one thing this exists to prevent.
+     */
+    fun beginPoll(): PollToken = PollToken(nextPollToken.incrementAndGet())
 
     /**
      * Swarms where a poll this session failed to take in everything it fetched.
@@ -224,12 +288,13 @@ class ExpiredConfigRecovery @Inject constructor(
      *  deliberate, because the obvious reading of a shorter one is that it should influence the decision
      *  — which is the bug. **Deleting this parameter removes the only mechanism by which anyone can
      *  demonstrate that this guard works**: without it, "polled but merged nothing" cannot be expressed
-     *  in a test, so `V22 - a successful poll that merged nothing still permits recovery` collapses into
-     *  a duplicate of the happy path and can no longer fail. A guard whose test cannot fail is precisely
-     *  the defect this parameter exists to make impossible. Remove it as a decision, not as a tidy-up.
+     *  in a test, so the test for it collapses into a duplicate of the happy path and can no longer fail.
+     *  A guard whose test cannot fail is precisely the defect this parameter exists to make impossible.
+     *  Remove it as a decision, not as a tidy-up.
      */
     fun markLocalStateLevelWithSwarm(
         swarmPubKeyHex: String,
+        pollToken: PollToken,
         mergedConfigMessagesForDiagnosticsOnly: Boolean,
     ) {
         // An earlier poll this session already lost something we can never be offered again, so a clean
@@ -243,7 +308,7 @@ class ExpiredConfigRecovery @Inject constructor(
             "Local state is level with the swarm " +
                     "(merged config: $mergedConfigMessagesForDiagnosticsOnly)"
         )
-        swarmsLevelWithLocalState.add(swarmPubKeyHex)
+        swarmsLevelWithLocalState[swarmPubKeyHex] = pollToken
     }
 
     /**
@@ -263,8 +328,22 @@ class ExpiredConfigRecovery @Inject constructor(
      * Whether local state is known to be level with [swarmPubKeyHex] this session — the
      * precondition for recovery, and the only thing that may authorise a re-store.
      */
-    private fun localStateIsLevelWithSwarm(swarmPubKeyHex: String): Boolean =
-        swarmPubKeyHex in swarmsLevelWithLocalState
+    // `internal` for one reason: the test that keeps the two readings from collapsing into each other has
+    // to observe BOTH at the same instant. Asserting only that the rekey refused cannot tell "the mark is
+    // present but belongs to an earlier poll" — the case that must refuse — from "the mark is gone", which
+    // also refuses and would equally have broken the re-store. Split across two tests they can drift.
+    internal fun localStateIsLevelWithSwarm(swarmPubKeyHex: String): Boolean =
+        swarmsLevelWithLocalState.containsKey(swarmPubKeyHex)
+
+    /**
+     * Whether local state was level with [swarmPubKeyHex] **as of the poll [pollToken] names** — the
+     * stricter reading of the same field, and the only one that may authorise a rekey.
+     *
+     * Named rather than inlined so the two readings sit together and neither can be changed without the
+     * other being seen. See [swarmsLevelWithLocalState] for why one field carries both.
+     */
+    private fun localStateIsLevelWithSwarmAsOf(swarmPubKeyHex: String, pollToken: PollToken): Boolean =
+        swarmsLevelWithLocalState[swarmPubKeyHex] == pollToken
 
     /**
      * Acts on an expiry check for the current user's own configs.
@@ -587,5 +666,170 @@ class ExpiredConfigRecovery @Inject constructor(
 
         class Store(override val restoreIndex: Int, val namespace: Int, val data: ByteArray) : Op
         class Delete(override val restoreIndex: Int, val hashes: List<String>) : Op
+    }
+
+    // ── keys backfill ────────────────────────────────────────────────────────────────────────────────
+    //
+    // Re-loads a group's keys messages so libsession captures their BYTES. Retention records those bytes
+    // when a message is loaded, so a group that loaded its keys before retention existed holds the keys and
+    // the hashes and no bytes — and bytes are what a re-store needs. Feeding the same messages back through
+    // the ordinary merge fixes it: libsession takes the "we already have this key" early return, a no-op for
+    // key state that still records the bytes and flags a dump.
+    //
+    // It runs proactively rather than when a config is found missing, because the two conditions are
+    // opposites: a re-store is needed when the swarm has LOST a hash, this when WE lack bytes for one the
+    // swarm still HAS. By the time the first is true, the message this needs is gone.
+
+    /**
+     * Resolved lazily, and injectable for tests, because libsession's [Namespace] is a **native** class:
+     * touching it runs an initialiser that loads the shared library, which no JVM unit test in this project
+     * can do. Calling it inline would make every test of this component fail with NoClassDefFoundError
+     * regardless of what it was asserting — the same reason [PendingRestore] keeps its namespace a lambda.
+     */
+    internal var keysNamespace: () -> Int = { Namespace.GROUP_KEYS() }
+    /**
+     * Groups whose namespace we have re-polled recently, so a group whose keys are genuinely gone does not
+     * re-poll on every poll for the rest of the session.
+     *
+     * Deliberately the same interval as the re-store bar rather than a new one: the trade is identical and
+     * lands further on this side, since the redundant action here is a small *read* rather than a write.
+     *
+     * ⚠️ **This answers HOW OFTEN TO RETRY. It does not answer WHETHER A REKEY MAY FIRE.** Those are two
+     * questions and they want opposite treatment of an expiry: letting the bar lapse simply permits another
+     * cheap read, whereas treating a lapsed entry as "a repair was attempted" would license an irreversible,
+     * every-member-visible write on evidence this object has already discarded. If a force-rekey is ever
+     * added, it must not read this map as its precondition — and above all this must not be made
+     * **persistent** to serve one. A persisted attempt record is a sticky negative: it would let a rekey
+     * fire on evidence gathered weeks ago, after the swarm has changed. In-memory fails CLOSED — a rekey is
+     * delayed by one poll cycle at worst, never blocked, because this runs inside the poll.
+     */
+    private val attemptedAt = ConcurrentHashMap<String, Long>()
+
+    /**
+     * @return true if a re-poll was actually issued, which is the only outcome worth asserting on — a caller
+     *  that cannot tell "fetched" from "declined" cannot tell this apart from doing nothing.
+     */
+    suspend fun backfillIfNeeded(groupId: AccountId, auth: SwarmAuth, snode: Snode): Boolean {
+        if (!bytesMissingForSomeActiveHash(groupId)) {
+            // Nothing to do, and nothing to record: the condition is self-clearing, so a group that has
+            // already been backfilled simply stops qualifying. No migration flag, no one-shot bit.
+            return false
+        }
+
+        val now = clock.currentTimeMillis()
+        attemptedAt.entries.removeAll { now - it.value >= RESTORED_HASH_BAR_MS }
+        if (attemptedAt.putIfAbsent(groupId.hexString, now) != null) {
+            return false
+        }
+
+        Log.i(TAG, "Backfilling keys bytes for $groupId")
+
+        // No lastHash on purpose: we want everything the swarm still holds for this namespace, not the
+        // messages since our cursor — the messages we need are ones we already consumed, so a cursored
+        // fetch returns exactly nothing.
+        val messages = swarmApiExecutor.execute(
+            SwarmApiRequest(
+                swarmPubKeyHex = groupId.hexString,
+                swarmNodeOverride = snode,
+                api = retrieveMessageFactory.create(
+                    lastHash = "",
+                    auth = auth,
+                    namespace = keysNamespace(),
+                    maxSize = null,
+                ),
+            )
+        ).messages
+
+        if (messages.isEmpty()) {
+            Log.w(TAG, "Swarm holds no keys messages for $groupId; bytes cannot be recovered from here")
+            return true
+        }
+
+        // The ordinary merge path. Every one of these is a message we already hold the key for, so this is
+        // a no-op for key state by design — the point is the retention it performs on the way through.
+        configFactory.mergeGroupConfigMessages(
+            groupId = groupId,
+            keys = messages.map { ConfigMessage(it.hash, it.data, it.timestamp.toEpochMilli()) },
+            info = emptyList(),
+            members = emptyList(),
+        )
+
+        return true
+    }
+
+    /** True exactly for a group holding an active keys hash with no bytes behind it. */
+    private fun bytesMissingForSomeActiveHash(groupId: AccountId): Boolean =
+        configFactory.withGroupConfigs(groupId) { configs ->
+            val held = configs.groupKeys.activeKeyMessages().keys
+            configs.groupKeys.activeHashes().any { it !in held }
+        }
+
+    // ── force rekey ──────────────────────────────────────────────────────────────────────────────────
+    //
+    // Last resort for a group whose keys are gone from the swarm and whose bytes no device here holds: mint
+    // a new generation so the group can carry on, accepting that content encrypted to the superseded keys
+    // stays unreadable.
+    //
+    // ⚠️ The backfill above must not read this section's state or call into it. It repairs the ordinary case
+    // and has to keep working, and keep being testable, independently of the one irreversible write here.
+
+    private val lastRekeyAt = ConcurrentHashMap<String, Long>()
+
+    /**
+     * @param backfillAttemptedAndFailed the caller's precondition: a backfill has run for this group and the
+     *  bytes are still absent. Checked by the caller rather than here, because "has the other path had its
+     *  turn" is the caller's knowledge, not this one's.
+     * @param pollToken the token for the poll this call is part of, from [beginPoll]. The members view
+     *  must be level **as of this poll** — not merely at some point this session.
+     * @return true if a rekey was actually issued — the only outcome worth asserting on, since every guard
+     *  below produces the same visible result as doing nothing.
+     */
+    fun rekeyIfUnrecoverable(
+        groupId: AccountId,
+        backfillAttemptedAndFailed: Boolean,
+        pollToken: PollToken,
+    ): Boolean {
+        if (!backfillAttemptedAndFailed) return false
+
+        val group = configFactory.getGroup(groupId)
+        if (group == null || group.kicked || group.destroyed) return false
+
+        // Admin-only, and a member must not even appear to try: a member has no signing key, so a rekey
+        // would fail at the point of signing rather than be rejected here, which reads as an error rather
+        // than as a thing that was never applicable.
+        if (group.adminKey == null) {
+            Log.d(TAG, "Not rekeying $groupId: this device is not an admin")
+            return false
+        }
+
+        // 🔴 A rekey encrypts the new key to THIS DEVICE'S view of the members config. This path fires
+        // precisely on devices whose config state is known to be degraded, so a member added while we were
+        // away — and not yet merged here — would be silently dropped from the group by a rekey issued from
+        // that stale view.
+        //
+        // Hence EQUALITY with the caller's token, not mere presence in the map. Presence is what
+        // [localStateIsLevelWithSwarm] asks for a re-store, and it FAILS OPEN at exactly the wrong moment
+        // here: it means "was level at some point this session and has not since been withdrawn", so a
+        // member added an hour ago, with our last complete poll yesterday, satisfies it — and that stale
+        // delta is precisely what produces the exclusion. Equality demands the mark was laid down by the
+        // poll we are in.
+        //
+        // A predicate's usable lifetime is a property of what you are about to do with it, not of the
+        // predicate. Do not "simplify" this to the sticky reading because it reads the same field.
+        if (!localStateIsLevelWithSwarmAsOf(groupId.hexString, pollToken)) {
+            Log.d(TAG, "Not rekeying $groupId: members view is not level as of this poll")
+            return false
+        }
+
+        val now = clock.currentTimeMillis()
+        lastRekeyAt.entries.removeAll { now - it.value >= REKEY_STORM_GUARD_MS }
+        if (lastRekeyAt.putIfAbsent(groupId.hexString, now) != null) {
+            Log.d(TAG, "Not rekeying $groupId again within the guard interval")
+            return false
+        }
+
+        Log.w(TAG, "Force-rekeying $groupId: its keys are gone from the swarm and nobody here holds the bytes")
+        configFactory.withMutableGroupConfigs(groupId) { configs -> configs.rekey() }
+        return true
     }
 }

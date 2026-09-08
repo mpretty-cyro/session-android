@@ -209,6 +209,10 @@ class Poller @Inject constructor(
     private suspend fun poll(snode: Snode) = supervisorScope {
         val userAuth = requireNotNull(storage.userAuth)
 
+        // At the top of the poll, not at the mark below — see GroupPoller.doPollOnce for why the minting
+        // site is the part that matters.
+        val pollToken = expiredConfigRecovery.beginPoll()
+
         // Get messages call wrapped in an async
         val retrieveMessageApi = retrieveMessageFactory.create(
             namespace = Namespace.DEFAULT(),
@@ -361,6 +365,7 @@ class Poller @Inject constructor(
         if (tookEverythingIn) {
             expiredConfigRecovery.markLocalStateLevelWithSwarm(
                 swarmPubKeyHex = userAuth.accountId.hexString,
+                pollToken = pollToken,
                 mergedConfigMessagesForDiagnosticsOnly = mergedAnyConfig,
             )
         } else {

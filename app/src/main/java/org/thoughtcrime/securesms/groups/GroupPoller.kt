@@ -34,8 +34,6 @@ import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
 import org.thoughtcrime.securesms.api.swarm.SwarmSnodeSelector
 import org.thoughtcrime.securesms.api.swarm.execute
 import org.thoughtcrime.securesms.configs.ExpiredConfigRecovery
-import org.thoughtcrime.securesms.configs.ForceRekey
-import org.thoughtcrime.securesms.configs.KeysBackfill
 import org.thoughtcrime.securesms.database.ReceivedMessageHashDatabase
 import org.thoughtcrime.securesms.util.AppVisibilityManager
 import org.thoughtcrime.securesms.util.NetworkConnectivity
@@ -56,8 +54,6 @@ class GroupPoller @AssistedInject constructor(
     private val swarmApiExecutor: SwarmApiExecutor,
     private val swarmSnodeSelector: SwarmSnodeSelector,
     private val expiredConfigRecovery: ExpiredConfigRecovery,
-    private val keysBackfill: KeysBackfill,
-    private val forceRekey: ForceRekey,
     networkConnectivity: NetworkConnectivity,
     appVisibilityManager: AppVisibilityManager,
 ): BasePoller<GroupPoller.GroupPollResult>(
@@ -85,6 +81,17 @@ class GroupPoller @AssistedInject constructor(
 
     override suspend fun doPollOnce(isFirstPollSinceAppStarted: Boolean): GroupPollResult = pollSemaphore.withPermit {
         var groupExpired: Boolean? = null
+
+        // ⚠️ Minted HERE, at the top of the poll, and handed to both the level mark and the rekey below.
+        //
+        // Minting it at either of those sites instead produces a guard that is VACUOUS while still
+        // compiling and still reading correctly: a token taken at the end names the poll that just
+        // finished, so the rekey compares the mark against its own poll and always agrees. It would never
+        // refuse, and nothing about it would look wrong. That is the fail-OPEN direction, and the one no
+        // test of the poller can catch, because the guard passes.
+        //
+        // Minted per poll, carried by this caller, and never read back from shared state — see [PollToken].
+        val pollToken = expiredConfigRecovery.beginPoll()
 
         val result = runCatching {
             supervisorScope {
@@ -261,7 +268,7 @@ class GroupPoller @AssistedInject constructor(
                         // the retrieve layer directly and never calls setLastMessageHashValue, so it cannot
                         // move the cursor from any position. Do not weaken that into a positional argument.
                         val backfillAttempted = runCatching {
-                            keysBackfill.backfillIfNeeded(groupId, groupAuth, snode)
+                            expiredConfigRecovery.backfillIfNeeded(groupId, groupAuth, snode)
                         }
                             .onFailure { e ->
                                 if (e is CancellationException) throw e
@@ -294,6 +301,7 @@ class GroupPoller @AssistedInject constructor(
                         if (tookEverythingIn) {
                             expiredConfigRecovery.markLocalStateLevelWithSwarm(
                                 swarmPubKeyHex = groupId.hexString,
+                                pollToken = pollToken,
                                 mergedConfigMessagesForDiagnosticsOnly = keysMessage.isNotEmpty() ||
                                         infoMessage.isNotEmpty() ||
                                         membersMessage.isNotEmpty(),
@@ -342,19 +350,24 @@ class GroupPoller @AssistedInject constructor(
                         //
                         //   backfillAttempted     a backfill actually ran for this group in THIS poll
                         //   groupExpired == true  the verdict after the round: every keys hash is gone AND
-                        //                         nothing here can put them back — so the bytes are still
-                        //                         absent, which is the other half of "B1 attempted and failed"
+                        //                         nothing here can put them back, so the bytes this device
+                        //                         would need are still absent
                         //
-                        // `tookEverythingIn` is this poll's own result, NOT the session-scoped level
-                        // predicate — see the guard in ForceRekey for why that distinction is the whole
-                        // point. It aggregates all three configs rather than members alone, which is
-                        // stronger than required and fails closed: it can be false when the members view was
-                        // fine, and the only cost of that is a rekey deferred to a later poll.
+                        // Whether our members view is CURRENT is deliberately not threaded through from
+                        // here any more. The level mark above carries `pollToken`, and the rekey demands
+                        // the recorded token equal the one it is given rather than merely being present —
+                        // so a mark left by an earlier poll no longer authorises this one.
+                        //
+                        // That keeps the strength of the mark's own condition, which is the part worth
+                        // preserving: it is laid down only when `tookEverythingIn` held across all three
+                        // configs, not members alone. Stronger than a rekey strictly needs, and it fails
+                        // closed — the mark can be withheld when the members view was in fact fine, and
+                        // the only cost is a rekey deferred to a later poll.
                         if (backfillAttempted && groupExpired == true) {
-                            forceRekey.rekeyIfUnrecoverable(
+                            expiredConfigRecovery.rekeyIfUnrecoverable(
                                 groupId = groupId,
                                 backfillAttemptedAndFailed = true,
-                                membersLevelAsOfThisPoll = tookEverythingIn,
+                                pollToken = pollToken,
                             )
                         }
 
