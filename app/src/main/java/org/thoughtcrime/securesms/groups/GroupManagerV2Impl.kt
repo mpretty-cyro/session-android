@@ -281,11 +281,13 @@ class GroupManagerV2Impl @Inject constructor(
             for ((id, shareHistory) in memberInvites) {
                 val hex = id.hexString
 
-                val toSet = configs.groupMembers.get(hex)
-                    ?.also { existing ->
-                        val status = configs.groupMembers.status(existing)
-                        if (status == GroupMember.Status.INVITE_FAILED || status == GroupMember.Status.INVITE_SENT) {
-                            existing.setSupplement(shareHistory)
+                val existing = configs.groupMembers.get(hex)
+                val existingStatus = existing?.let(configs.groupMembers::status)
+
+                val toSet = existing
+                    ?.also { member ->
+                        if (existingStatus == GroupMember.Status.INVITE_FAILED || existingStatus == GroupMember.Status.INVITE_SENT) {
+                            member.setSupplement(shareHistory)
                         }
                     }
                     ?: configs.groupMembers.getOrConstruct(hex).also { member ->
@@ -297,7 +299,12 @@ class GroupManagerV2Impl @Inject constructor(
 
                 if (shareHistory) shareHistoryHexes += hex
 
-                toSet.setInvited()
+                // Someone who has already accepted must not be dragged back to "invited": this runs
+                // for a re-invite too, and the member state we hold is the newer truth.
+                if (existingStatus != GroupMember.Status.INVITE_ACCEPTED &&
+                    existingStatus != GroupMember.Status.PROMOTION_ACCEPTED) {
+                    toSet.setInvited()
+                }
                 configs.groupMembers.set(toSet)
             }
 
@@ -901,6 +908,15 @@ class GroupManagerV2Impl @Inject constructor(
         inviteMessageTimestamp: Long,
         inviteMessageHash: String,
     ) {
+        val existing = configFactory.getGroup(groupId)
+        if (existing != null && !existing.invited && !existing.kicked && !existing.destroyed) {
+            // Rebuilding ClosedGroupInfo for a group we are already in would put us back to
+            // "invited" and throw away joinedAtSecs. Kicked or destroyed deliberately fall through:
+            // a fresh invitation is how we get back in, and that does need the rebuild.
+            Log.d(TAG, "Ignoring an invitation to a group we have already joined")
+            return
+        }
+
         val address = Address.fromSerialized(groupId.hexString)
         val inviterRecipient = recipientRepository.getRecipient(Address.fromSerialized(inviter.hexString))
 
