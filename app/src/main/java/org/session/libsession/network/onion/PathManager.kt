@@ -38,6 +38,7 @@ import org.thoughtcrime.securesms.api.snode.SnodeApiRequest
 import org.thoughtcrime.securesms.api.snode.execute
 import org.thoughtcrime.securesms.util.NetworkConnectivity
 import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
@@ -57,6 +58,7 @@ open class PathManager @Inject constructor(
     companion object {
         private const val STRIKE_THRESHOLD = 3
         private const val PATH_ROTATE_INTERVAL_MS = 10 * 60 * 1000L // 10min
+        private const val ROTATION_FAILURES_BEFORE_REBUILD = 3
     }
 
     private val pathSize: Int = 3
@@ -71,6 +73,7 @@ open class PathManager @Inject constructor(
 
     // path rotation
     private val isRotating = AtomicBoolean(false)
+    private val consecutiveRotationFailures = AtomicInteger(0)
 
     // -----------------------------
     // Flow Setup
@@ -288,7 +291,22 @@ open class PathManager @Inject constructor(
             if (working.size >= targetPathCount) break
         }
 
-        if (working.isEmpty()) return
+        if (working.isEmpty()) {
+            // Rotation keeps the current guards, so it cannot rotate away from a bad first hop: every
+            // candidate is built around it and fails verification. Dropping the paths is what escapes
+            // that - the next getPath() rebuilds with no reusable guards and draws fresh ones.
+            //
+            // Counted in attempts rather than elapsed time because failure does not advance the
+            // rotation timestamp, so a wedged client re-enters rotation on every getPath: three
+            // failures is seconds apart, not half an hour. clearPaths() takes no lock and Phase 2
+            // holds none, and it sets the rotation timestamp itself, so the escalation cannot thrash.
+            if (consecutiveRotationFailures.incrementAndGet() >= ROTATION_FAILURES_BEFORE_REBUILD) {
+                consecutiveRotationFailures.set(0)
+                Log.w("Onion Request", "No candidate path verified $ROTATION_FAILURES_BEFORE_REBUILD rotations running, dropping paths to force a rebuild onto new guards")
+                clearPaths()
+            }
+            return
+        }
 
         // Phase 3: commit under lock (guards must match current guards)
         buildMutex.withLock {
@@ -309,6 +327,7 @@ open class PathManager @Inject constructor(
             val committed = sanitizePaths(working.take(targetPathCount))
             _paths.value = committed
             prefs.setLastPathRotation(System.currentTimeMillis())
+            consecutiveRotationFailures.set(0)
         }
     }
 
