@@ -12,6 +12,7 @@ import network.loki.messenger.libsession_util.Curve25519
 import network.loki.messenger.libsession_util.GroupInfoConfig
 import network.loki.messenger.libsession_util.GroupKeysConfig
 import network.loki.messenger.libsession_util.GroupMembersConfig
+import network.loki.messenger.libsession_util.MutableGroupKeysConfig
 import network.loki.messenger.libsession_util.UserGroupsConfig
 import network.loki.messenger.libsession_util.UserProfile
 import network.loki.messenger.libsession_util.util.ConfigPush
@@ -416,11 +417,7 @@ class ConfigFactory @Inject constructor(
 
         val changed = doWithMutableGroupConfigs(groupId, fromMerge = true) { configs ->
             // Keys must be loaded first as they are used to decrypt the other config messages.
-            // Counted rather than folded to a flag: every key is still attempted, but callers whose
-            // correctness depends on having taken everything in need to know how many actually landed.
-            val keysLoaded = keys.count { msg ->
-                configs.groupKeys.loadKey(msg.data, msg.hash, msg.timestamp, configs.groupInfo.pointer, configs.groupMembers.pointer)
-            }
+            val keysLoad = configs.groupKeys.loadKeyMessages(keys)
 
             val infoMerged = if (info.isEmpty()) {
                 emptyList()
@@ -436,9 +433,9 @@ class ConfigFactory @Inject constructor(
 
             configs.dumpIfNeeded(clock)
 
-            mergedCount = keysLoaded + infoMerged.size + membersMerged.size
+            mergedCount = keysLoad.takenIn + infoMerged.size + membersMerged.size
 
-            val changed = keysLoaded > 0 || infoMerged.isNotEmpty() || membersMerged.isNotEmpty()
+            val changed = keysLoad.gaveUsAKey || infoMerged.isNotEmpty() || membersMerged.isNotEmpty()
             changed to changed
         }
 
@@ -681,4 +678,22 @@ private class GroupConfigsImpl(
     override fun rekey() {
         groupKeys.rekey(groupInfo.pointer, groupMembers.pointer)
     }
+}
+internal class KeysLoad(val takenIn: Int, val gaveUsAKey: Boolean)
+
+/**
+ * Loads [messages] into this keys config, in order.
+ *
+ * `loadKey` returning false does not mean the message was rejected. It means the message was valid but
+ * held no key for this device: every supplemental, for an admin, and every supplemental addressed to
+ * someone else, for a member. libsession has retained it by then, since it is part of the generation. A
+ * message that is actually rejected throws, which aborts the merge and reaches the caller as an exception.
+ * So every load that returns was taken in, and counting only the `true` ones would read each supplemental
+ * as a failed merge.
+ */
+internal fun MutableGroupKeysConfig.loadKeyMessages(messages: List<ConfigMessage>): KeysLoad {
+    // Every message is loaded before looking at the results, so one that gives us a key cannot stop the
+    // rest from being loaded.
+    val gaveUsAKey = messages.map { loadKey(it.data, it.hash, it.timestamp) }
+    return KeysLoad(takenIn = gaveUsAKey.size, gaveUsAKey = gaveUsAKey.any { it })
 }

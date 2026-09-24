@@ -730,9 +730,8 @@ class ExpiredConfigRecovery @Inject constructor(
      * This answers HOW OFTEN TO RETRY. It does not answer WHETHER A REKEY MAY FIRE. Those are two
      * questions and they want opposite treatment of an expiry: letting the bar lapse simply permits another
      * cheap read, whereas treating a lapsed entry as "a repair was attempted" would license an irreversible,
-     * every-member-visible write on evidence this object has already discarded. If a force-rekey is ever
-     * added, it must not read this map as its precondition — and above all this must not be made
-     * persistent to serve one. A persisted attempt record is a sticky negative: it would let a rekey
+     * every-member-visible write on evidence this object has already discarded. The force rekey below must
+     * not read this map as its precondition, and above all this must not be made persistent to serve it. A persisted attempt record is a sticky negative: it would let a rekey
      * fire on evidence gathered weeks ago, after the swarm has changed. In-memory fails CLOSED — a rekey is
      * delayed by one poll cycle at worst, never blocked, because this runs inside the poll.
      */
@@ -809,20 +808,34 @@ class ExpiredConfigRecovery @Inject constructor(
     private val lastRekeyAt = ConcurrentHashMap<String, Long>()
 
     /**
-     * @param backfillAttemptedAndFailed the caller's precondition: a backfill has run for this group and the
-     *  bytes are still absent. Checked by the caller rather than here, because "has the other path had its
-     *  turn" is the caller's knowledge, not this one's.
+     * @param backfillAttempted whether a backfill ran for this group in this poll. That is the caller's
+     *  knowledge, so it is passed in. Whether the backfill left the bytes absent is not: it is read here,
+     *  from the state as it stands after the backfill.
      * @param pollToken the token for the poll this call is part of, from [beginPoll]. The members view
      *  must be level as of this poll — not merely at some point this session.
      * @return true if a rekey was actually issued — the only outcome worth asserting on, since every guard
      *  below produces the same visible result as doing nothing.
+     *
+     * Never throws. This runs inside the poll, and the poll rethrows whatever escapes it once it finishes,
+     * which would fail a poll whose merge and re-stores had already succeeded.
      */
     fun rekeyIfUnrecoverable(
         groupId: AccountId,
-        backfillAttemptedAndFailed: Boolean,
+        backfillAttempted: Boolean,
+        pollToken: PollToken,
+    ): Boolean = try {
+        rekeyIfUnrecoverableOrThrow(groupId, backfillAttempted, pollToken)
+    } catch (e: Exception) {
+        Log.e(TAG, "Force rekey of $groupId failed", e)
+        false
+    }
+
+    private fun rekeyIfUnrecoverableOrThrow(
+        groupId: AccountId,
+        backfillAttempted: Boolean,
         pollToken: PollToken,
     ): Boolean {
-        if (!backfillAttemptedAndFailed) return false
+        if (!backfillAttempted) return false
 
         val group = configFactory.getGroup(groupId)
         if (group == null || group.kicked || group.destroyed) return false
@@ -832,6 +845,18 @@ class ExpiredConfigRecovery @Inject constructor(
         // than as a thing that was never applicable.
         if (group.adminKey == null) {
             Log.d(TAG, "Not rekeying $groupId: this device is not an admin")
+            return false
+        }
+
+        // A device holding any retained keys message can put the keys back itself, so a rekey is not the
+        // remedy for it, however the last re-store went. The caller's `groupExpired` cannot be trusted
+        // for this: it is also raised by a re-store that failed, and a re-store only runs when the bytes are
+        // held. One transient store failure must not be enough to issue an irreversible write.
+        val holdsKeysBytes = configFactory.withGroupConfigs(groupId) {
+            it.groupKeys.activeKeyMessages().isNotEmpty()
+        }
+        if (holdsKeysBytes) {
+            Log.d(TAG, "Not rekeying $groupId: this device holds keys bytes it can re-store")
             return false
         }
 
@@ -861,6 +886,8 @@ class ExpiredConfigRecovery @Inject constructor(
             return false
         }
 
+        // The guard is taken before the rekey, so a rekey that throws is not retried until the interval has
+        // passed. That is the direction to fail in for a write this expensive to repeat.
         Log.w(TAG, "Force-rekeying $groupId: its keys are gone from the swarm and nobody here holds the bytes")
         configFactory.withMutableGroupConfigs(groupId) { configs -> configs.rekey() }
         return true

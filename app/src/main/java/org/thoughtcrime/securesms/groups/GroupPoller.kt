@@ -28,7 +28,7 @@ import org.session.libsignal.utilities.AccountId
 import org.session.libsignal.utilities.Snode
 import org.thoughtcrime.securesms.api.snode.AlterTtlApi
 import org.thoughtcrime.securesms.api.snode.RetrieveMessageApi
-import org.thoughtcrime.securesms.api.snode.groupExpiredFromExpiryCheck
+import org.thoughtcrime.securesms.api.snode.groupExpiredAfterPoll
 import org.thoughtcrime.securesms.api.swarm.SwarmApiExecutor
 import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
 import org.thoughtcrime.securesms.api.swarm.SwarmSnodeSelector
@@ -232,7 +232,7 @@ class GroupPoller @AssistedInject constructor(
                         saveLastMessageHash(snode, infoMessage, Namespace.GROUP_INFO())
                         saveLastMessageHash(snode, membersMessage, Namespace.GROUP_MEMBERS())
 
-                        groupExpired = configFactoryProtocol.withGroupConfigs(groupId) {
+                        val noKeysAfterMerge = configFactoryProtocol.withGroupConfigs(groupId) {
                             it.groupKeys.size() == 0
                         }
 
@@ -265,7 +265,7 @@ class GroupPoller @AssistedInject constructor(
                         //  - a group whose keys arrived in THIS poll is therefore already counted, and
                         //    stops qualifying without a fetch
                         //
-                        // It does NOT sit here for last-hash safety. That is structural: KeysBackfill calls
+                        // It does NOT sit here for last-hash safety. That is structural: the backfill calls
                         // the retrieve layer directly and never calls setLastMessageHashValue, so it cannot
                         // move the cursor from any position. Do not weaken that into a positional argument.
                         val backfillAttempted = runCatching {
@@ -312,62 +312,35 @@ class GroupPoller @AssistedInject constructor(
                         }
 
                         // The keys hashes alone decide this, and only when the check actually had an
-                        // answer — otherwise the empty-keys check above stands. "Expired" now means the
-                        // keys are gone AND this device cannot put them back, so the repairable question
-                        // is part of the rule rather than something applied to its answer.
-                        groupExpiredFromExpiryCheck(
+                        // answer. "Expired" means the keys are gone AND this device cannot put them back,
+                        // so whether it can is part of the rule rather than something applied to its answer.
+                        groupExpired = groupExpiredAfterPoll(
+                            noKeysAfterMerge = noKeysAfterMerge,
                             report = expiryReport,
                             keysHashes = configHashes.keys,
                             canRepairKeys = {
                                 expiredConfigRecovery.canRepairGroupKeys(groupId, configHashes.keys)
                             },
-                        )?.let {
-                            groupExpired = it
-                        }
+                            runRecoveryRound = { report ->
+                                expiredConfigRecovery.onGroupConfigsChecked(
+                                    groupId = groupId,
+                                    auth = groupAuth,
+                                    report = report,
+                                )
+                            },
+                        )
 
-                        if (expiryReport != null) {
-                            // Detection defers the keys verdict when this device holds the bytes, because
-                            // holding them is not the same as having put them back. The round settles it:
-                            // repaired means not expired, a FAILED re-store means expired, and null means it
-                            // was never attempted — leave the flag exactly as it was.
-                            //
-                            // This must stay after the round rather than being folded into the check above.
-                            // Clearing the flag on "could repair" and then only ever re-raising it on a
-                            // successful re-store leaves a device whose stores permanently fail showing no
-                            // banner at all, forever, because every later poll reaches the same deferral.
-                            expiredConfigRecovery.onGroupConfigsChecked(
-                                groupId = groupId,
-                                auth = groupAuth,
-                                report = expiryReport,
-                            )?.let { keysRepaired ->
-                                groupExpired = !keysRepaired
-                            }
-                        }
-
-                        // ── force-rekey seam ─────────────────────────────────────────────────────────
-                        // Everything about whether the rekey is SAFE lives in ForceRekey and disappears
-                        // with it. What is decided here is only the sequencing precondition, which is this
-                        // caller's knowledge rather than that component's:
+                        // The force rekey. Whether it is safe is decided by rekeyIfUnrecoverable, which
+                        // reads the state it needs for itself: whether this device holds keys bytes it could
+                        // re-store, and whether the members view is level as of this poll. What is decided
+                        // here is only the sequencing, which is this caller's knowledge:
                         //
-                        //   backfillAttempted     a backfill actually ran for this group in THIS poll
-                        //   groupExpired == true  the verdict after the round: every keys hash is gone AND
-                        //                         nothing here can put them back, so the bytes this device
-                        //                         would need are still absent
-                        //
-                        // Whether our members view is CURRENT is deliberately not threaded through from
-                        // here. The level mark above carries `pollToken`, and the rekey demands the
-                        // recorded token equal the one it is given rather than merely being present, so a
-                        // mark left by an earlier poll does not authorise this one.
-                        //
-                        // That keeps the strength of the mark's own condition, which is the part worth
-                        // preserving: it is laid down only when `tookEverythingIn` held across all three
-                        // configs, not members alone. Stronger than a rekey strictly needs, and it fails
-                        // closed — the mark can be withheld when the members view was in fact fine, and
-                        // the only cost is a rekey deferred to a later poll.
-                        if (backfillAttempted && groupExpired == true) {
+                        //   backfillAttempted     a backfill ran for this group in THIS poll
+                        //   groupExpired == true  the keys are gone from the swarm, as far as this poll can tell
+                        if (groupExpired == true) {
                             expiredConfigRecovery.rekeyIfUnrecoverable(
                                 groupId = groupId,
-                                backfillAttemptedAndFailed = true,
+                                backfillAttempted = backfillAttempted,
                                 pollToken = pollToken,
                             )
                         }

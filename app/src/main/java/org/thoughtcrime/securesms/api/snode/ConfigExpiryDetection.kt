@@ -88,9 +88,11 @@ class SnodeExpiryState(
  * merged config messages and ended up with no keys at all" one — they answer different questions:
  *
  * - `true` / `false` — the group is beyond this device's reach, or it is not. Detection wins.
- * - `null` — detection has nothing to say, so the existing check decides. Either no eligible snode
- *   answered, or the device held no keys hashes to ask about in the first place, in which case no
- *   request was even sent. Silence here is *not* "nothing is missing".
+ * - `null` — no verdict, for one of two reasons that [groupExpiredAfterPoll] tells apart. Either
+ *   detection has nothing to say, so the existing check decides: no eligible snode answered, or the device
+ *   held no keys hashes to ask about, in which case no request was even sent. Silence here is *not*
+ *   "nothing is missing". Or every keys hash is gone and this device holds the bytes, so the re-store
+ *   round decides.
  *
  * @param keysHashes the group keys hashes that were requested — kept separate from the info and
  *  members hashes on purpose, since a flat union of the three can't be attributed back.
@@ -126,6 +128,48 @@ fun groupExpiredFromExpiryCheck(
     // defers again. A device whose re-store permanently fails would never show the banner. The verdict
     // for this case is applied after the round instead, from its actual outcome.
     return if (canRepairKeys()) null else true
+}
+
+/**
+ * The expired flag a group poll reports, from the three things that can answer it: the expiry check, the
+ * re-store round that follows it, and the older "we merged and ended up with no keys at all" check.
+ *
+ * @param noKeysAfterMerge the older check, which decides only when the expiry check has nothing to say.
+ * @param runRecoveryRound the re-store round, run whenever there is a report because it also puts back
+ *  info and members. Returns the keys verdict it settled: true repaired, false a keys re-store failed,
+ *  null none was attempted.
+ * @return null to leave the flag as it stands.
+ *
+ * The round's verdict counts only when the expiry check deferred to it, which is when every keys hash is
+ * gone and this device holds the bytes to put them back. In every other case the check has already
+ * answered, or has nothing to say:
+ *
+ * - A keys hash survives on the swarm, so the group is not expired. A re-store of the lost ones that fails
+ *   does not change that: existing members still read the group.
+ * - The check deferred, and the round made no attempt because it was backing off, in the background, or
+ *   not yet level with the swarm. There is still no verdict, so the flag stays as it is. Falling back to
+ *   the older check here would clear a flag that a failed re-store had raised, on the next poll, because
+ *   that check is false for any device that holds keys.
+ */
+suspend fun groupExpiredAfterPoll(
+    noKeysAfterMerge: Boolean,
+    report: ConfigExpiryReport?,
+    keysHashes: Set<String>,
+    canRepairKeys: () -> Boolean,
+    runRecoveryRound: suspend (ConfigExpiryReport) -> Boolean?,
+): Boolean? {
+    var deferredToTheRound = false
+    val checked = groupExpiredFromExpiryCheck(report, keysHashes) {
+        canRepairKeys().also { deferredToTheRound = it }
+    }
+
+    val keysRepaired = report?.let { runRecoveryRound(it) }
+
+    return when {
+        checked != null -> checked
+        deferredToTheRound -> keysRepaired?.not()
+        else -> noKeysAfterMerge
+    }
 }
 
 /**

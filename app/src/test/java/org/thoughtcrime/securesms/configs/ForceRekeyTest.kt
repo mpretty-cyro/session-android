@@ -1,33 +1,44 @@
 package org.thoughtcrime.securesms.configs
 
+import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
 import network.loki.messenger.libsession_util.ReadableUserGroupsConfig
 import network.loki.messenger.libsession_util.util.Bytes
+import network.loki.messenger.libsession_util.util.ConfigPush
 import network.loki.messenger.libsession_util.util.GroupInfo
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.session.libsession.network.SnodeClock
+import org.session.libsession.snode.SwarmAuth
 import org.session.libsession.utilities.ConfigFactoryProtocol
 import org.session.libsession.utilities.MutableGroupConfigs
 import org.session.libsession.utilities.UserConfigs
 import org.session.libsignal.utilities.AccountId
 import org.session.libsignal.utilities.IdPrefix
+import org.thoughtcrime.securesms.api.snode.ConfigExpiryReport
+import org.thoughtcrime.securesms.api.snode.groupExpiredAfterPoll
+import org.thoughtcrime.securesms.api.swarm.SwarmApiExecutor
+import org.thoughtcrime.securesms.util.AppVisibilityManager
 import org.thoughtcrime.securesms.util.MockLoggingRule
+import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 /**
  * The force-rekey of last resort, and what refuses it.
  *
- * Every guard here produces the same visible result as doing nothing, so each test asserts on **whether a
- * rekey was issued** rather than on an absence of errors. A rekey is the one irreversible, every-member
+ * Every guard here produces the same visible result as doing nothing, so each test asserts on whether a
+ * rekey was issued rather than on an absence of errors. A rekey is the one irreversible, every-member
  * visible write in this feature; "it did not crash" is not evidence it declined.
  *
- * V25b lives in [KeysBackfillTest] rather than here, because the property it pins is about the *backfill*
- * surviving this file's deletion.
+ * V25b, that the backfill keeps working with the force rekey removed, has no standing test. Both live on
+ * one object, so a coupling between them needs only a reference to a sibling field, which reflection over
+ * signatures cannot see. The check is to delete the rekey and its tests and rebuild.
  */
 class ForceRekeyTest {
     @get:Rule
@@ -39,14 +50,19 @@ class ForceRekeyTest {
     private lateinit var configs: MutableGroupConfigs
     private lateinit var forceRekey: ExpiredConfigRecovery
     private var now = 5_000_000L
+    private lateinit var clock: SnodeClock
 
     @Before
     fun setUp() {
         configFactory = mockk(relaxed = true)
         configs = mockk(relaxed = true)
         every { configFactory.dangerouslyAccessMutableGroupConfigs(groupId) } returns (configs to {})
+        every { configFactory.dangerouslyAccessGroupConfigs(groupId) } returns (configs to {})
+        // Nobody here holds the bytes, which is the case the rekey is for. Stubbed rather than left to the
+        // relaxed mock, whose map would answer isEmpty() with false and read as bytes held.
+        givenRetainedKeys(emptyMap())
 
-        val clock = mockk<SnodeClock>()
+        clock = mockk<SnodeClock>()
         every { clock.currentTimeMillis() } answers { now }
 
         forceRekey = ExpiredConfigRecovery(
@@ -61,7 +77,7 @@ class ForceRekeyTest {
         )
     }
 
-    /** V25 — admin, backfill attempted and failed, members view current: the rekey goes ahead. */
+    /** V25 — admin, backfill attempted, no keys bytes held, members view current: the rekey goes ahead. */
     @Test
     fun `V25 - an admin rekeys a group nobody can repair`() {
         givenGroup(admin = true)
@@ -124,7 +140,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * The v165 MUST: a rekey encrypts to THIS DEVICE'S view of members, and this path fires precisely on
+     * A rekey encrypts to THIS DEVICE'S view of members, and this path fires precisely on
      * devices whose config state is degraded. A member added while we were away — not yet merged here —
      * would be silently dropped by a rekey issued from that stale view.
      *
@@ -197,7 +213,7 @@ class ForceRekeyTest {
         assertFalse(
             forceRekey.rekeyIfUnrecoverable(
                 groupId = groupId,
-                backfillAttemptedAndFailed = false,
+                backfillAttempted = false,
                 pollToken = completedPoll(),
             )
         )
@@ -250,10 +266,90 @@ class ForceRekeyTest {
         verify(exactly = 0) { configs.rekey() }
     }
 
+    /**
+     * An admin that holds the keys bytes, whose one re-store of them fails, must not rekey.
+     *
+     * The failed re-store is what makes this reachable. The poll reports the group expired on it, and that
+     * report together with a backfill in the same poll is all the caller checks, so the rekey has to
+     * notice the held bytes for itself. The backfill runs because some other active keys hash has no bytes
+     * behind it, so holding some bytes and having a backfill attempted are true together.
+     *
+     * The round is the production one, with its store failing. The retained bytes are in the shape the
+     * wrapper's `activeKeyMessages()` returns, and the restore is the one ConfigRestoreSource builds from
+     * them (pinned in [ConfigRestoreSourceTest]). The restore source is stubbed rather than real because
+     * its keys restore resolves the native namespace.
+     */
+    @Test
+    fun `an admin holding the keys bytes does not rekey after one failed re-store`() = runTest {
+        givenGroup(admin = true)
+        val retained = mapOf("keys-1" to "keys-one".toByteArray())
+        givenRetainedKeys(retained)
+
+        val restoreSource = mockk<ConfigRestoreSource>()
+        every { restoreSource.canRepairGroupKeys(groupId, any()) } returns true
+        every { restoreSource.groupConfigsToRestore(groupId, any()) } returns listOf(
+            PendingRestore(
+                label = "group keys for $groupId",
+                push = ConfigPush(retained.values.map { Bytes(it) }, 0L, emptyList()),
+                claimedHashes = retained.keys,
+                isGroupKeys = true,
+                namespace = { GROUP_KEYS_NAMESPACE },
+            )
+        )
+        val swarmApiExecutor = mockk<SwarmApiExecutor>()
+        coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("store 500")
+        val appVisibilityManager = mockk<AppVisibilityManager>()
+        every { appVisibilityManager.isAppVisible } returns MutableStateFlow(true)
+
+        forceRekey = ExpiredConfigRecovery(
+            restoreSource = restoreSource,
+            clock = clock,
+            appVisibilityManager = appVisibilityManager,
+            swarmApiExecutor = swarmApiExecutor,
+            storeMessageApiFactory = mockk(relaxed = true),
+            deleteMessageApiFactory = mockk(relaxed = true),
+            retrieveMessageFactory = mockk(relaxed = true),
+            configFactory = configFactory,
+        )
+        val pollToken = completedPoll()
+
+        val groupExpired = groupExpiredAfterPoll(
+            noKeysAfterMerge = false,
+            report = ConfigExpiryReport.Checked(setOf("keys-1")),
+            keysHashes = setOf("keys-1"),
+            canRepairKeys = { forceRekey.canRepairGroupKeys(groupId, setOf("keys-1")) },
+            runRecoveryRound = { report ->
+                forceRekey.onGroupConfigsChecked(groupId, authFor(groupId), report)
+            },
+        )
+        assertEquals(true, groupExpired, "the failed re-store must reach the rekey for this to test anything")
+
+        assertFalse(forceRekey.rekeyIfUnrecoverable(groupId, backfillAttempted = true, pollToken = pollToken))
+        verify(exactly = 0) { configs.rekey() }
+
+        // Reachability control: the same instance and poll, with the bytes gone, does rekey.
+        givenRetainedKeys(emptyMap())
+        assertTrue(forceRekey.rekeyIfUnrecoverable(groupId, backfillAttempted = true, pollToken = pollToken))
+        verify(exactly = 1) { configs.rekey() }
+    }
+
+    /**
+     * The rekey runs inside the poll, and anything that escapes it is rethrown when the poll finishes, which
+     * fails a poll whose merge and re-stores had already succeeded.
+     */
+    @Test
+    fun `a rekey that throws does not escape`() {
+        givenGroup(admin = true)
+        every { configs.rekey() } throws RuntimeException("libsession: C++ exception")
+
+        assertFalse(rekey())
+        verify(exactly = 1) { configs.rekey() }
+    }
+
     /** A rekey attempt from a poll that has marked us level, unless given a token that hasn't. */
     private fun rekey(pollToken: PollToken = completedPoll()) = forceRekey.rekeyIfUnrecoverable(
         groupId = groupId,
-        backfillAttemptedAndFailed = true,
+        backfillAttempted = true,
         pollToken = pollToken,
     )
 
@@ -266,6 +362,14 @@ class ForceRekeyTest {
             mergedConfigMessagesForDiagnosticsOnly = true,
         )
         return token
+    }
+
+    private fun givenRetainedKeys(retained: Map<String, ByteArray>) {
+        every { configs.groupKeys.activeKeyMessages() } returns retained
+    }
+
+    private fun authFor(swarm: AccountId): SwarmAuth = mockk<SwarmAuth>().also {
+        every { it.accountId } returns swarm
     }
 
     private fun givenGroup(admin: Boolean, kicked: Boolean = false, destroyed: Boolean = false) {
@@ -285,5 +389,10 @@ class ForceRekeyTest {
         val userConfigs = mockk<UserConfigs>()
         every { userConfigs.userGroups } returns userGroups
         every { configFactory.dangerouslyAccessUserConfigs() } returns (userConfigs to {})
+    }
+
+    private companion object {
+        /** Hardcoded rather than read from libsession's native `Namespace`, which unit tests can't load. */
+        const val GROUP_KEYS_NAMESPACE = 12
     }
 }

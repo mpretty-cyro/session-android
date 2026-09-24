@@ -1,11 +1,13 @@
 package org.thoughtcrime.securesms.api.snode
 
+import kotlinx.coroutines.test.runTest
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.jsonObject
 import org.junit.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 import kotlin.test.fail
 
 /**
@@ -403,6 +405,66 @@ class ConfigExpiryDetectionTest {
         assertEquals(null, held, "holding the bytes must DEFER, not answer")
         assertEquals(true, notHeld, "no bytes anywhere is the only conclusive expiry")
     }
+
+    // --- What a group poll reports, once the re-store round has run ---
+
+    /**
+     * A re-store that fails raises the flag, and the next poll, whose round is backing off and attempts
+     * nothing, must leave it up. The expiry check defers on both polls because the bytes are held, so the
+     * round is the only thing that can answer. When it has not answered there is no verdict, which is null.
+     * The older no-keys-at-all check is false for this device, and false clears the flag.
+     */
+    @Test
+    fun `a poll whose round attempts nothing leaves a raised flag up`() = runTest {
+        assertEquals(true, pollVerdict(keysRepaired = false), "the failed re-store raises it")
+        assertEquals(null, pollVerdict(keysRepaired = null), "the next poll has no verdict to give")
+        assertEquals(false, pollVerdict(keysRepaired = true), "and a later re-store that lands clears it")
+    }
+
+    /**
+     * While any keys hash survives on the swarm, existing members can still read the group, so it is not
+     * expired. Losing some of its keys hashes and then failing to put them back does not change that.
+     */
+    @Test
+    fun `a failed keys re-store does not raise the flag while a keys hash survives`() = runTest {
+        var roundRan = false
+
+        val verdict = groupExpiredAfterPoll(
+            noKeysAfterMerge = false,
+            report = ConfigExpiryReport.Checked(setOf("keys-1")),
+            keysHashes = setOf("keys-1", "keys-2"),
+            canRepairKeys = mustNotAsk,
+            runRecoveryRound = { roundRan = true; false },
+        )
+
+        assertEquals(false, verdict)
+        // The round still runs, because it also puts back info and members.
+        assertTrue(roundRan)
+    }
+
+    /** With no report there is no round, and the older check decides, whichever way it goes. */
+    @Test
+    fun `without a report the no-keys check decides and no round runs`() = runTest {
+        for (noKeys in listOf(true, false)) {
+            val verdict = groupExpiredAfterPoll(
+                noKeysAfterMerge = noKeys,
+                report = null,
+                keysHashes = setOf("keys-1"),
+                canRepairKeys = mustNotAsk,
+                runRecoveryRound = { fail("no report, so there is nothing for a round to act on") },
+            )
+            assertEquals(noKeys, verdict)
+        }
+    }
+
+    /** Every keys hash gone, bytes held, and the round's own keys verdict. */
+    private suspend fun pollVerdict(keysRepaired: Boolean?) = groupExpiredAfterPoll(
+        noKeysAfterMerge = false,
+        report = ConfigExpiryReport.Checked(setOf("keys-1")),
+        keysHashes = setOf("keys-1"),
+        canRepairKeys = { true },
+        runRecoveryRound = { keysRepaired },
+    )
 
     /**
      * Answering "can this device repair the keys?" means taking the config lock, so the rule must not ask
