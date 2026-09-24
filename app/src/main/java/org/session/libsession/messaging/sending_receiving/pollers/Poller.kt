@@ -362,15 +362,12 @@ class Poller @Inject constructor(
         // so one bad message can't fail the whole poll, which means a successful fetch is not by itself
         // proof we took anything in. If we didn't, the swarm still holds config we haven't incorporated
         // and we are not level with it — so say so rather than authorising a re-store.
-        if (tookEverythingIn) {
-            expiredConfigRecovery.markLocalStateLevelWithSwarm(
-                swarmPubKeyHex = userAuth.accountId.hexString,
-                pollToken = pollToken,
-                mergedConfigMessagesForDiagnosticsOnly = mergedAnyConfig,
-            )
-        } else {
-            expiredConfigRecovery.markMergeIncompleteForSwarm(userAuth.accountId.hexString)
-        }
+        expiredConfigRecovery.recordConfigMerge(
+            swarmPubKeyHex = userAuth.accountId.hexString,
+            pollToken = pollToken,
+            tookEverythingIn = tookEverythingIn,
+            mergedConfigMessagesForDiagnosticsOnly = mergedAnyConfig,
+        )
 
         extendTask?.await()?.getOrNull()?.let { result ->
             expiredConfigRecovery.onUserConfigsChecked(auth = userAuth, report = result.expiry)

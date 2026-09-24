@@ -301,17 +301,14 @@ class GroupPoller @AssistedInject constructor(
                         // `tookEverythingIn` covers the case neither of those catches: a merge that
                         // skips a message it can't parse and returns normally. No error, nothing to
                         // catch, and the swarm still holds config we haven't incorporated.
-                        if (tookEverythingIn) {
-                            expiredConfigRecovery.markLocalStateLevelWithSwarm(
-                                swarmPubKeyHex = groupId.hexString,
-                                pollToken = pollToken,
-                                mergedConfigMessagesForDiagnosticsOnly = keysMessage.isNotEmpty() ||
-                                        infoMessage.isNotEmpty() ||
-                                        membersMessage.isNotEmpty(),
-                            )
-                        } else {
-                            expiredConfigRecovery.markMergeIncompleteForSwarm(groupId.hexString)
-                        }
+                        expiredConfigRecovery.recordConfigMerge(
+                            swarmPubKeyHex = groupId.hexString,
+                            pollToken = pollToken,
+                            tookEverythingIn = tookEverythingIn,
+                            mergedConfigMessagesForDiagnosticsOnly = keysMessage.isNotEmpty() ||
+                                    infoMessage.isNotEmpty() ||
+                                    membersMessage.isNotEmpty(),
+                        )
 
                         // The keys hashes alone decide this, and only when the check actually had an
                         // answer. "Expired" means the keys are gone AND this device cannot put them back,
@@ -405,40 +402,30 @@ class GroupPoller @AssistedInject constructor(
         groupRevokedMessageHandler.handleRevokeMessage(groupId, messages.map { it.data })
     }
 
-    /**
-     * @return whether every message handed to the merge was actually taken in. Merging skips a message
-     *  it can't parse or verify and returns normally, so a clean return is not evidence of that — the
-     *  count has to be compared. Callers whose correctness depends on being level with the swarm need
-     *  this; callers that just want the configs applied can ignore it.
-     */
+    /** @return whether every message handed to the merge was actually taken in. See [mergeGroupConfigs]. */
     private fun handleGroupConfigMessages(
         keysResponse: List<RetrieveMessageResponse.Message>,
         infoResponse: List<RetrieveMessageResponse.Message>,
         membersResponse: List<RetrieveMessageResponse.Message>
     ): Boolean {
-        if (keysResponse.isEmpty() && infoResponse.isEmpty() && membersResponse.isEmpty()) {
-            return true
-        }
-
-        log("Handling group config messages(" +
-                    "info = ${infoResponse.size}, " +
-                    "keys = ${keysResponse.size}, " +
-                    "members = ${membersResponse.size})"
-        )
-
-        val given = keysResponse.size + infoResponse.size + membersResponse.size
-        val merged = configFactoryProtocol.mergeGroupConfigMessages(
-            groupId = groupId,
+        val count = mergeGroupConfigs(
             keys = keysResponse.map { it.toConfigMessage() },
             info = infoResponse.map { it.toConfigMessage() },
             members = membersResponse.map { it.toConfigMessage() },
-        )
-
-        if (merged < given) {
-            logE("Only merged $merged of $given group config messages")
+        ) { keys, info, members ->
+            log("Handling group config messages(" +
+                        "info = ${info.size}, " +
+                        "keys = ${keys.size}, " +
+                        "members = ${members.size})"
+            )
+            configFactoryProtocol.mergeGroupConfigMessages(groupId, keys, info, members)
         }
 
-        return merged == given
+        if (count.merged < count.given) {
+            logE("Only merged ${count.merged} of ${count.given} group config messages")
+        }
+
+        return count.tookEverythingIn
     }
 
     private fun handleMessages(messages: List<RetrieveMessageResponse.Message>) {
@@ -489,4 +476,32 @@ class GroupPoller @AssistedInject constructor(
     interface Factory {
         fun create(groupId: AccountId, pollSemaphore: Semaphore): GroupPoller
     }
+}
+
+/** How many of a poll's config messages the merge was given, and how many it took in. */
+internal class ConfigMergeCount(val given: Int, val merged: Int) {
+    /**
+     * Whether the poll may mark this device level with the swarm. A clean return from the merge is not
+     * evidence of that: a message that fails to parse or verify is skipped and the rest merged, so the
+     * count has to be compared.
+     */
+    val tookEverythingIn: Boolean get() = merged == given
+}
+
+/**
+ * Merges a poll's messages from the group's three config namespaces with [merge], which returns how many it
+ * took in. Nothing fetched means nothing to merge, and the swarm holds nothing we lack.
+ *
+ * Reached only when all three namespaces answered: a failed fetch throws before this.
+ */
+internal inline fun mergeGroupConfigs(
+    keys: List<ConfigMessage>,
+    info: List<ConfigMessage>,
+    members: List<ConfigMessage>,
+    merge: (keys: List<ConfigMessage>, info: List<ConfigMessage>, members: List<ConfigMessage>) -> Int,
+): ConfigMergeCount {
+    val given = keys.size + info.size + members.size
+    if (given == 0) return ConfigMergeCount(given = 0, merged = 0)
+
+    return ConfigMergeCount(given = given, merged = merge(keys, info, members))
 }

@@ -108,6 +108,8 @@ class ForceRekeyTest {
         }
         swarmDirectory = mockk()
         coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } returns listOf(nodeA, nodeB, nodeC)
+        // The cached view, which agrees with the network until a test says otherwise.
+        coEvery { swarmDirectory.getSwarm(groupId.hexString) } returns listOf(nodeA, nodeB, nodeC)
 
         clock = mockk<SnodeClock>()
         every { clock.currentTimeMillis() } answers { now }
@@ -190,6 +192,68 @@ class ForceRekeyTest {
         val retry = backfill()
         assertEquals(KeysBackfill.Failed, retry)
         assertTrue(rekeyAfter(retry, completedPoll()))
+    }
+
+    /**
+     * V25f — a node that did not answer is dropped from the cached swarm, and on the next attempt every
+     * node left on the cached list answers empty. That is not the swarm answering: the node that was
+     * dropped is still in the swarm and still has not answered, so the attempt stays inconclusive. A
+     * failure is judged against the swarm as fetched for that attempt.
+     */
+    @Test
+    fun `V25f - a node dropped from the cached swarm still has to answer`() = runTest {
+        givenGroup(admin = true)
+        nodeAnswers[nodeB] = { throw SocketTimeoutException("timeout") }
+
+        assertEquals(KeysBackfill.Inconclusive, backfill())
+
+        // The pool drops the node that timed out; the network still lists it.
+        coEvery { swarmDirectory.getSwarm(groupId.hexString) } returns listOf(nodeA, nodeC)
+        now += RESTORED_HASH_BAR_MS
+
+        assertEquals(KeysBackfill.Inconclusive, backfill())
+        coVerify(exactly = 2) { swarmApiExecutor.send(any(), match { it.swarmNodeOverride == nodeB }) }
+        assertFalse(rekeyAfter(KeysBackfill.Inconclusive, completedPoll()))
+
+        // Reachability control: once that node answers too, the attempt fails and the rekey goes ahead.
+        now += RESTORED_HASH_BAR_MS
+        nodeAnswers[nodeB] = { emptyList() }
+        val outcome = backfill()
+        assertEquals(KeysBackfill.Failed, outcome)
+        assertTrue(rekeyAfter(outcome, completedPoll()))
+        verify(exactly = 1) { configs.rekey() }
+    }
+
+    /**
+     * V25g — a backfill fails in one poll, but another guard refuses that poll's rekey. The next poll is
+     * inside the backfill bar, so no backfill runs, and every other guard now passes. There is no rekey:
+     * only a failure found by this poll's own attempt authorises one, since a peer may have put the keys
+     * back since the earlier attempt.
+     */
+    @Test
+    fun `V25g - a failure from an earlier poll does not authorise this poll's rekey`() = runTest {
+        givenGroup(admin = true)
+
+        // Poll N: the backfill fails, and the poll never marked us level.
+        val pollN = forceRekey.beginPoll(groupId.hexString)
+        val failed = backfill()
+        assertEquals(KeysBackfill.Failed, failed)
+        assertFalse(rekeyAfter(failed, pollN))
+
+        // Poll N+1: level now, but the backfill is barred and establishes nothing.
+        val pollN1 = completedPoll()
+        val barred = backfill()
+        assertEquals(KeysBackfill.NotAttempted, barred)
+        assertFalse(rekeyAfter(barred, pollN1))
+        verify(exactly = 0) { configs.rekey() }
+
+        // Reachability control: past the bar, a poll whose own attempt fails does rekey.
+        now += RESTORED_HASH_BAR_MS
+        val pollN2 = completedPoll()
+        val again = backfill()
+        assertEquals(KeysBackfill.Failed, again)
+        assertTrue(rekeyAfter(again, pollN2))
+        verify(exactly = 1) { configs.rekey() }
     }
 
     /** A swarm that cannot be looked up has not answered either. */

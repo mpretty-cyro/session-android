@@ -321,12 +321,29 @@ class ExpiredConfigRecovery @Inject constructor(
      *
      * @param mergedConfigMessagesForDiagnosticsOnly Logged, never acted on. The clumsy name is
      *  deliberate, because the obvious reading of a shorter one is that it should influence the decision
-     *  — which is the bug. **Deleting this parameter removes the only mechanism by which anyone can
-     *  demonstrate that this guard works**: without it, "polled but merged nothing" cannot be expressed
+     *  — which is the bug. Deleting this parameter removes the only mechanism by which anyone can
+     *  demonstrate that this guard works: without it, "polled but merged nothing" cannot be expressed
      *  in a test, so the test for it collapses into a duplicate of the happy path and can no longer fail.
      *  A guard whose test cannot fail is precisely the defect this parameter exists to make impossible.
      *  Remove it as a decision, not as a tidy-up.
      */
+    /**
+     * Records the outcome of a poll's config merge: level with [swarmPubKeyHex] if it took in everything it
+     * fetched, withdrawn from recovery if it did not. The one place a poller decides between the two.
+     */
+    fun recordConfigMerge(
+        swarmPubKeyHex: String,
+        pollToken: PollToken,
+        tookEverythingIn: Boolean,
+        mergedConfigMessagesForDiagnosticsOnly: Boolean,
+    ) {
+        if (tookEverythingIn) {
+            markLocalStateLevelWithSwarm(swarmPubKeyHex, pollToken, mergedConfigMessagesForDiagnosticsOnly)
+        } else {
+            markMergeIncompleteForSwarm(swarmPubKeyHex)
+        }
+    }
+
     fun markLocalStateLevelWithSwarm(
         swarmPubKeyHex: String,
         pollToken: PollToken,

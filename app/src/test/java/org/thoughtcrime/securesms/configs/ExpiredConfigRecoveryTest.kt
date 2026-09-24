@@ -184,15 +184,25 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V22c — a poll that took in fewer messages than it fetched must not permit recovery.
+     * A swarm withdrawn by an incomplete merge is not recovered.
+     *
+     * This is the store's reaction to the withdrawal. Whether a poll's merge withdraws it is decided by
+     * mergeGroupConfigs, and that decision is V22c, in [org.thoughtcrime.securesms.groups.GroupConfigMergeTest].
      *
      * The tolerance itself is correct: a config message that won't parse or verify is skipped and the
      * rest are merged. What's wrong is reading that silence as "everything landed" — 2-of-3 merging is
      * indistinguishable from 3-of-3 unless the count is compared.
      */
     @Test
-    fun `V22c - a poll that merged only some of what it fetched must not permit recovery`() = runTest {
-        recovery.markMergeIncompleteForSwarm(userId.hexString)
+    fun `a swarm withdrawn by an incomplete merge is not recovered`() = runTest {
+        // Level first, so that the refusal below is the withdrawal's doing and not a swarm never marked.
+        markLevel(userId.hexString)
+        recovery.recordConfigMerge(
+            swarmPubKeyHex = userId.hexString,
+            pollToken = recovery.beginPoll(userId.hexString),
+            tookEverythingIn = false,
+            mergedConfigMessagesForDiagnosticsOnly = true,
+        )
 
         recovery.onUserConfigsChecked(userAuth(), ConfigExpiryReport.Checked(setOf(h2)))
 
@@ -201,8 +211,9 @@ class ExpiredConfigRecoveryTest {
     }
 
     /**
-     * V22c, the part that matters most and the one a per-poll check misses: the verdict has to be
-     * sticky for the session.
+     * V22d, the part that matters most and the one a per-poll check misses: the withdrawal has to be
+     * sticky for the session. Like the test above, this pins the store's reaction; the merge decision that
+     * triggers the withdrawal is V22c in GroupConfigMergeTest.
      *
      * A message we couldn't merge is never offered again — the dedup table marks a hash as seen before
      * the merge is attempted, and the poller's `lastHash` advances on a successful *fetch* — so the very
@@ -212,7 +223,12 @@ class ExpiredConfigRecoveryTest {
      */
     @Test
     fun `V22d - a later clean poll must not undo an earlier incomplete merge`() = runTest {
-        recovery.markMergeIncompleteForSwarm(userId.hexString)
+        recovery.recordConfigMerge(
+            swarmPubKeyHex = userId.hexString,
+            pollToken = recovery.beginPoll(userId.hexString),
+            tookEverythingIn = false,
+            mergedConfigMessagesForDiagnosticsOnly = true,
+        )
 
         // The next poll fetches nothing at all and looks perfectly healthy.
         markLevel(userId.hexString, merged = false)
