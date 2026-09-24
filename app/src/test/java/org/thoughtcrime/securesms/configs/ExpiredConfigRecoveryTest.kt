@@ -225,7 +225,7 @@ class ExpiredConfigRecoveryTest {
      * And a swarm withdrawn this way doesn't take unrelated swarms down with it.
      *
      * Deliberately unlabelled: the withdrawal being per-swarm is a consequence of V22c, not a vector of its
-     * own. It carried "V22c" until a sweep found that label already on the test above.
+     * own.
      */
     @Test
     fun `withdrawing one swarm leaves others recoverable`() = runTest {
@@ -518,9 +518,7 @@ class ExpiredConfigRecoveryTest {
     /**
      * And every part is then claimed, so a later poll naming a *different* part changes nothing.
      *
-     * Deliberately unlabelled: this is a consequence of V18 on this client, not a vector of its own. It
-     * carried "V13b" until a sweep found that label already on a different test above — the same silent
-     * collision that is only supposed to happen *between* clients.
+     * Deliberately unlabelled: this is a consequence of V18 on this client, not a vector of its own.
      */
     @Test
     fun `every part of a re-stored multipart config is claimed, not just the missing one`() = runTest {
@@ -823,9 +821,9 @@ class ExpiredConfigRecoveryTest {
     /**
      * The case that actually distinguishes per-restore emission from per-round: info lands, keys does not.
      *
-     * V23c alone does NOT pin this, and I claimed it did. It fails *every* store, so `outcomes.any { it }`
-     * is false and a round-level implementation stays silent too — both pass. Verified by mutating the
-     * emission to round-level: V23c, V23d and the non-keys control all survived it. This test is what dies.
+     * V23c does not pin this. It fails every store, so `outcomes.any { it }` is false and a round-level
+     * implementation stays silent too. Emitting per round survives V23c, V23d and the non-keys control;
+     * this is the test that fails.
      *
      * Getting it wrong would clear the banner on a group whose keys never made it back, on the strength of
      * its *info* config having stored.

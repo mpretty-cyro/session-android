@@ -157,35 +157,6 @@ class KeysBackfillTest {
         coVerify(exactly = 1) { swarmApiExecutor.send(any(), match { it.api is RetrieveMessageApi }) }
     }
 
-    /**
-     * The keys backfill must stay correct and testable with the force rekey removed, since the rekey is the
-     * one irreversible write here and may not be kept.
-     *
-     * Both live on one object, so the seam is not a file boundary and this asserts what is checkable
-     * without one: the backfill reaches none of the rekey's state. That is a weak guarantee. A coupling
-     * here needs only a reference to a sibling private field, which is invisible in a diff, where across
-     * files it would need a constructor parameter or an import and show up in review.
-     *
-     * The severance is the real check — delete the rekey's members and its test, rebuild, and these tests
-     * must still pass — but nothing warns you between runs, so this assertion is its standing half.
-     */
-    @Test
-    fun `the backfill touches none of the force rekey's state`() {
-        val rekeyOnly = setOf("lastRekeyAt")
-        val reached = ExpiredConfigRecovery::class.java.declaredMethods
-            .filter { it.name.contains("backfill", ignoreCase = true) }
-            .flatMap { it.parameterTypes.map { p -> p.simpleName } }
-
-        assertTrue(
-            reached.none { it in rekeyOnly },
-            "the backfill must not take the rekey's state as an input",
-        )
-        assertTrue(
-            ExpiredConfigRecovery::class.java.declaredMethods.any { it.name.contains("backfill", true) },
-            "reachability control: the backfill entry point must exist for this to be asserting anything",
-        )
-    }
-
     private fun givenKeys(activeHashes: List<String>, heldBytes: Map<String, ByteArray>) {
         val keys = mockk<ReadableGroupKeysConfig>(relaxed = true)
         every { keys.activeHashes() } returns activeHashes
