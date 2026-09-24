@@ -11,9 +11,11 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.session.libsession.network.SnodeClock
+import org.session.libsession.network.snode.SwarmDirectory
 import org.session.libsession.snode.model.RetrieveMessageResponse
 import org.session.libsession.snode.SwarmAuth
 import org.session.libsession.utilities.ConfigFactoryProtocol
+import org.session.libsession.utilities.ConfigMessage
 import org.session.libsession.utilities.GroupConfigs
 import org.session.libsignal.utilities.AccountId
 import org.session.libsignal.utilities.IdPrefix
@@ -22,7 +24,7 @@ import org.thoughtcrime.securesms.api.snode.RetrieveMessageApi
 import org.thoughtcrime.securesms.api.snode.StoreMessageApi
 import org.thoughtcrime.securesms.api.swarm.SwarmApiExecutor
 import org.thoughtcrime.securesms.util.MockLoggingRule
-import kotlin.test.assertFalse
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
@@ -41,7 +43,15 @@ class KeysBackfillTest {
     val loggingRule = MockLoggingRule()
 
     private val groupId = AccountId(IdPrefix.GROUP, ByteArray(32) { 2 })
-    private val snode = mockk<Snode>(relaxed = true)
+    /** The poll's own node, which the backfill asks first, and the rest of the swarm. */
+    private val snode = Snode("https://a", 443, Snode.KeySet("ed-a", "x-a"))
+    private val otherNode = Snode("https://b", 443, Snode.KeySet("ed-b", "x-b"))
+
+    /** What every node holds for the keys namespace. */
+    private var swarmHolds: List<RetrieveMessageResponse.Message> = emptyList()
+
+    private var activeHashes = listOf<String>()
+    private val held = mutableMapOf<String, ByteArray>()
 
     private lateinit var configFactory: ConfigFactoryProtocol
     private lateinit var swarmApiExecutor: SwarmApiExecutor
@@ -60,8 +70,25 @@ class KeysBackfillTest {
         val clock = mockk<SnodeClock>()
         every { clock.currentTimeMillis() } answers { now }
 
-        coEvery { swarmApiExecutor.send(any(), any()) } returns
-                RetrieveMessageResponse(messages = listOf(message("keys-1")))
+        swarmHolds = listOf(message("keys-1"))
+        coEvery { swarmApiExecutor.send(any(), any()) } answers { RetrieveMessageResponse(messages = swarmHolds) }
+
+        // A merge retains the bytes of every keys message it loads, which is what libsession's retention
+        // does. Without that, no fetch would ever be seen to capture anything.
+        every { configFactory.mergeGroupConfigMessages(groupId, any(), any(), any()) } answers {
+            val keys = secondArg<List<ConfigMessage>>()
+            keys.forEach { held[it.hash] = it.data }
+            keys.size
+        }
+        val keys = mockk<ReadableGroupKeysConfig>(relaxed = true)
+        every { keys.activeHashes() } answers { activeHashes }
+        every { keys.activeKeyMessages() } answers { held.toMap() }
+        val configs = mockk<GroupConfigs>(relaxed = true)
+        every { configs.groupKeys } returns keys
+        every { configFactory.dangerouslyAccessGroupConfigs(groupId) } returns (configs to {})
+
+        val swarmDirectory = mockk<SwarmDirectory>()
+        coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } returns listOf(snode, otherNode)
 
         backfill = ExpiredConfigRecovery(
             restoreSource = mockk(relaxed = true),
@@ -72,6 +99,7 @@ class KeysBackfillTest {
             deleteMessageApiFactory = mockk(relaxed = true),
             retrieveMessageFactory = retrieveFactory,
             configFactory = configFactory,
+            swarmDirectory = swarmDirectory,
         ).also {
             // Hardcoded rather than read from libsession's native Namespace, which unit tests cannot load.
             it.keysNamespace = { GROUP_KEYS_NAMESPACE }
@@ -83,9 +111,11 @@ class KeysBackfillTest {
     fun `V24 - an active keys hash with no bytes triggers a re-poll`() = runTest {
         givenKeys(activeHashes = listOf("keys-1"), heldBytes = emptyMap())
 
-        assertTrue(backfill.backfillIfNeeded(groupId, auth(), snode))
+        assertEquals(KeysBackfill.Captured, backfill.backfillIfNeeded(groupId, auth(), snode))
 
+        // The poll's own node had it, so nobody else is asked.
         coVerify(exactly = 1) { swarmApiExecutor.send(any(), any()) }
+        assertTrue("keys-1" in held)
         // Merged through the ordinary path — that merge is a no-op for key state and is precisely what
         // records the bytes.
         coVerify(exactly = 1) {
@@ -104,19 +134,21 @@ class KeysBackfillTest {
     fun `V24b - bytes already held issues no fetch at all`() = runTest {
         givenKeys(activeHashes = listOf("keys-1"), heldBytes = mapOf("keys-1" to bytes()))
 
-        assertFalse(backfill.backfillIfNeeded(groupId, auth(), snode))
+        assertEquals(KeysBackfill.NotAttempted, backfill.backfillIfNeeded(groupId, auth(), snode))
 
         coVerify(exactly = 0) { swarmApiExecutor.send(any(), any()) }
 
         // Reachability control: the same instance, through the same fixture, must still fetch when a hash
         // genuinely lacks bytes — otherwise "no fetch" proves nothing about the trigger.
         givenKeys(activeHashes = listOf("keys-1", "keys-2"), heldBytes = mapOf("keys-1" to bytes()))
-        assertTrue(backfill.backfillIfNeeded(groupId, auth(), snode))
+        swarmHolds = listOf(message("keys-2"))
+        assertEquals(KeysBackfill.Captured, backfill.backfillIfNeeded(groupId, auth(), snode))
         coVerify(exactly = 1) { swarmApiExecutor.send(any(), any()) }
     }
 
     /**
-     * V24a — the attempt is recorded, so a group whose keys are genuinely gone stops re-polling.
+     * V24a — no node of the swarm holds the message and every node answered: the attempt fails, and it is
+     * recorded, so a group whose keys are genuinely gone stops re-polling.
      *
      * Without this a group the swarm can no longer help re-polls its namespace on every poll, forever: the
      * bytes never arrive, so the trigger never clears on its own.
@@ -125,18 +157,19 @@ class KeysBackfillTest {
     fun `V24a - a recorded attempt stops a second re-poll within the bar`() = runTest {
         givenKeys(activeHashes = listOf("keys-1"), heldBytes = emptyMap())
         // The swarm no longer holds it, so the condition cannot self-clear.
-        coEvery { swarmApiExecutor.send(any(), any()) } returns RetrieveMessageResponse(messages = emptyList())
+        swarmHolds = emptyList()
 
-        assertTrue(backfill.backfillIfNeeded(groupId, auth(), snode))
-        assertFalse(backfill.backfillIfNeeded(groupId, auth(), snode))
-        assertFalse(backfill.backfillIfNeeded(groupId, auth(), snode))
+        assertEquals(KeysBackfill.Failed, backfill.backfillIfNeeded(groupId, auth(), snode))
+        assertEquals(KeysBackfill.NotAttempted, backfill.backfillIfNeeded(groupId, auth(), snode))
+        assertEquals(KeysBackfill.NotAttempted, backfill.backfillIfNeeded(groupId, auth(), snode))
 
-        coVerify(exactly = 1) { swarmApiExecutor.send(any(), any()) }
+        // One request per node of the swarm, once.
+        coVerify(exactly = 2) { swarmApiExecutor.send(any(), any()) }
 
         // ...and the bar is a bar, not a permanent block: past it, one more attempt is allowed.
         now += 61 * 60 * 1000L
-        assertTrue(backfill.backfillIfNeeded(groupId, auth(), snode))
-        coVerify(exactly = 2) { swarmApiExecutor.send(any(), any()) }
+        assertEquals(KeysBackfill.Failed, backfill.backfillIfNeeded(groupId, auth(), snode))
+        coVerify(exactly = 4) { swarmApiExecutor.send(any(), any()) }
     }
 
     /**
@@ -158,12 +191,9 @@ class KeysBackfillTest {
     }
 
     private fun givenKeys(activeHashes: List<String>, heldBytes: Map<String, ByteArray>) {
-        val keys = mockk<ReadableGroupKeysConfig>(relaxed = true)
-        every { keys.activeHashes() } returns activeHashes
-        every { keys.activeKeyMessages() } returns heldBytes
-        val configs = mockk<GroupConfigs>(relaxed = true)
-        every { configs.groupKeys } returns keys
-        every { configFactory.dangerouslyAccessGroupConfigs(groupId) } returns (configs to {})
+        this.activeHashes = activeHashes
+        held.clear()
+        held.putAll(heldBytes)
     }
 
     /**

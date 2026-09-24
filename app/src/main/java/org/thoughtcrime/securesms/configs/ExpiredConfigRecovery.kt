@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import org.session.libsession.network.SnodeClock
+import org.session.libsession.network.snode.SwarmDirectory
 import org.session.libsession.snode.SnodeMessage
 import org.session.libsession.snode.SwarmAuth
 import org.session.libsignal.utilities.AccountId
@@ -16,6 +17,7 @@ import org.session.libsignal.utilities.Log
 import org.session.libsignal.utilities.Snode
 import org.session.libsignal.utilities.retryWithUniformInterval
 import org.thoughtcrime.securesms.api.snode.ConfigExpiryReport
+import org.thoughtcrime.securesms.api.snode.everyKeysHashMissing
 import network.loki.messenger.libsession_util.Namespace
 import org.session.libsession.utilities.ConfigFactoryProtocol
 import org.session.libsession.utilities.ConfigMessage
@@ -142,6 +144,24 @@ private val REKEY_STORM_GUARD_MS = 24.hours.inWholeMilliseconds
  * @see org.thoughtcrime.securesms.api.snode.detectMissingConfigHashes for how "missing" is decided.
  * @see ConfigRestoreSource for which configs are eligible.
  */
+/** What a keys backfill established. The force rekey acts on [Failed] alone. */
+enum class KeysBackfill {
+    /** Nothing was asked: every active keys hash already has bytes, or an attempt is barred. */
+    NotAttempted,
+
+    /** Some node returned bytes this device lacked. */
+    Captured,
+
+    /** Every node of the swarm answered, and none returned bytes for any keys hash this device lacks. */
+    Failed,
+
+    /**
+     * No node returned the bytes, but not every node answered, or the swarm could not be looked up. A node
+     * that did not answer is not evidence the message is gone, so this is not a failure.
+     */
+    Inconclusive,
+}
+
 /**
  * Identifies one poll of one swarm — the unit that separates "level at some point this session" from
  * "level as of the poll I am in".
@@ -167,6 +187,7 @@ class ExpiredConfigRecovery @Inject constructor(
     private val deleteMessageApiFactory: DeleteMessageApi.Factory,
     private val retrieveMessageFactory: RetrieveMessageApi.Factory,
     private val configFactory: ConfigFactoryProtocol,
+    private val swarmDirectory: SwarmDirectory,
 ) {
     /**
      * Swarms our local state is known to be level with — i.e. there is nothing on the swarm we
@@ -738,31 +759,106 @@ class ExpiredConfigRecovery @Inject constructor(
     private val attemptedAt = ConcurrentHashMap<String, Long>()
 
     /**
-     * @return true if a re-poll was actually issued, which is the only outcome worth asserting on — a caller
-     *  that cannot tell "fetched" from "declined" cannot tell this apart from doing nothing.
+     * Re-fetches the keys namespace until the bytes this device lacks are captured, asking the poll's own
+     * node first and then every other node of the group's swarm.
+     *
+     * Asking only one node would make its answer the evidence for the force rekey, which is irreversible:
+     * one node that has lost a message, or never had it, is not the swarm losing it. A copy anywhere in
+     * the swarm is merged here and put back by the ordinary re-store, rather than replaced by a rekey.
+     *
+     * @return what the attempt established. [KeysBackfill.Failed] is the only outcome the force rekey
+     *  acts on, so it is reserved for the case where every node answered.
      */
-    suspend fun backfillIfNeeded(groupId: AccountId, auth: SwarmAuth, snode: Snode): Boolean {
-        if (!bytesMissingForSomeActiveHash(groupId)) {
+    suspend fun backfillIfNeeded(groupId: AccountId, auth: SwarmAuth, snode: Snode): KeysBackfill {
+        val lacking = keysHashesWithoutBytes(groupId)
+        if (lacking.isEmpty()) {
             // Nothing to do, and nothing to record: the condition is self-clearing, so a group that has
             // already been backfilled simply stops qualifying. No migration flag, no one-shot bit.
-            return false
+            return KeysBackfill.NotAttempted
         }
 
         val now = clock.currentTimeMillis()
         attemptedAt.entries.removeAll { now - it.value >= RESTORED_HASH_BAR_MS }
         if (attemptedAt.putIfAbsent(groupId.hexString, now) != null) {
-            return false
+            return KeysBackfill.NotAttempted
         }
 
         Log.i(TAG, "Backfilling keys bytes for $groupId")
 
-        // No lastHash on purpose: we want everything the swarm still holds for this namespace, not the
-        // messages since our cursor — the messages we need are ones we already consumed, so a cursored
-        // fetch returns exactly nothing.
-        val messages = swarmApiExecutor.execute(
+        var someNodeDidNotAnswer = false
+
+        /** @return whether this device now holds bytes for every active keys hash. */
+        suspend fun ask(node: Snode): Boolean {
+            val messages = try {
+                fetchKeysMessages(groupId, auth, node)
+            } catch (e: Exception) {
+                if (e is CancellationException) throw e
+                Log.w(TAG, "Keys backfill: no answer from $node for $groupId", e)
+                someNodeDidNotAnswer = true
+                return false
+            }
+
+            if (messages.isNotEmpty()) {
+                // The ordinary merge path. Every one of these is a message we already hold the key for, so
+                // this is a no-op for key state by design: the point is the retention it performs on the way
+                // through, and the dump it flags.
+                configFactory.mergeGroupConfigMessages(
+                    groupId = groupId,
+                    keys = messages.map { ConfigMessage(it.hash, it.data, it.timestamp.toEpochMilli()) },
+                    info = emptyList(),
+                    members = emptyList(),
+                )
+            }
+
+            return keysHashesWithoutBytes(groupId).isEmpty()
+        }
+
+        if (!ask(snode)) {
+            // Fetched rather than read from the cache. The cached swarm is trimmed as nodes fail and is only
+            // refreshed when a node reports it has left, so it can be both out of date and short, and
+            // "every node answered" has to mean every node of the swarm as it is now.
+            val swarm = try {
+                swarmDirectory.fetchSwarm(groupId.hexString)
+            } catch (e: Exception) {
+                if (e is CancellationException) throw e
+                Log.w(TAG, "Keys backfill: could not look up the swarm for $groupId", e)
+                null
+            }
+
+            if (swarm.isNullOrEmpty()) {
+                someNodeDidNotAnswer = true
+            } else {
+                for (node in swarm) {
+                    if (node.ed25519Key == snode.ed25519Key) continue
+                    if (ask(node)) break
+                }
+            }
+        }
+
+        val captured = lacking - keysHashesWithoutBytes(groupId)
+        return when {
+            captured.isNotEmpty() -> KeysBackfill.Captured
+            someNodeDidNotAnswer -> {
+                Log.w(TAG, "Keys backfill for $groupId is inconclusive: not every node answered")
+                KeysBackfill.Inconclusive
+            }
+            else -> {
+                Log.w(TAG, "No node in the swarm holds the keys messages $groupId lacks bytes for")
+                KeysBackfill.Failed
+            }
+        }
+    }
+
+    private suspend fun fetchKeysMessages(groupId: AccountId, auth: SwarmAuth, node: Snode) =
+        swarmApiExecutor.execute(
             SwarmApiRequest(
                 swarmPubKeyHex = groupId.hexString,
-                swarmNodeOverride = snode,
+                // Pinned: with an override the executor retries on this node only, so a failure is this
+                // node's and an answer is this node's.
+                swarmNodeOverride = node,
+                // No lastHash on purpose: we want everything the node still holds for this namespace, not
+                // the messages since our cursor. The messages we need are ones we already consumed, so a
+                // cursored fetch returns exactly nothing.
                 api = retrieveMessageFactory.create(
                     lastHash = "",
                     auth = auth,
@@ -772,28 +868,11 @@ class ExpiredConfigRecovery @Inject constructor(
             )
         ).messages
 
-        if (messages.isEmpty()) {
-            Log.w(TAG, "Swarm holds no keys messages for $groupId; bytes cannot be recovered from here")
-            return true
-        }
-
-        // The ordinary merge path. Every one of these is a message we already hold the key for, so this is
-        // a no-op for key state by design — the point is the retention it performs on the way through.
-        configFactory.mergeGroupConfigMessages(
-            groupId = groupId,
-            keys = messages.map { ConfigMessage(it.hash, it.data, it.timestamp.toEpochMilli()) },
-            info = emptyList(),
-            members = emptyList(),
-        )
-
-        return true
-    }
-
-    /** True exactly for a group holding an active keys hash with no bytes behind it. */
-    private fun bytesMissingForSomeActiveHash(groupId: AccountId): Boolean =
+    /** The group's active keys hashes that have no bytes behind them. */
+    private fun keysHashesWithoutBytes(groupId: AccountId): Set<String> =
         configFactory.withGroupConfigs(groupId) { configs ->
             val held = configs.groupKeys.activeKeyMessages().keys
-            configs.groupKeys.activeHashes().any { it !in held }
+            configs.groupKeys.activeHashes().filterTo(mutableSetOf()) { it !in held }
         }
 
     // ── force rekey ──────────────────────────────────────────────────────────────────────────────────
@@ -808,9 +887,11 @@ class ExpiredConfigRecovery @Inject constructor(
     private val lastRekeyAt = ConcurrentHashMap<String, Long>()
 
     /**
-     * @param backfillAttempted whether a backfill ran for this group in this poll. That is the caller's
-     *  knowledge, so it is passed in. Whether the backfill left the bytes absent is not: it is read here,
-     *  from the state as it stands after the backfill.
+     * @param backfill what this poll's backfill established. Only [KeysBackfill.Failed] permits a rekey:
+     *  every node of the swarm answered and none had the bytes. Whether the bytes are absent now is not taken
+     *  from it; that is read here, from the state as it stands after the backfill.
+     * @param report this poll's expiry check, with [keysHashes] the keys hashes it asked about. A rekey needs
+     *  it to say every one of them is gone from the swarm.
      * @param pollToken the token for the poll this call is part of, from [beginPoll]. The members view
      *  must be level as of this poll — not merely at some point this session.
      * @return true if a rekey was actually issued — the only outcome worth asserting on, since every guard
@@ -821,10 +902,12 @@ class ExpiredConfigRecovery @Inject constructor(
      */
     fun rekeyIfUnrecoverable(
         groupId: AccountId,
-        backfillAttempted: Boolean,
+        backfill: KeysBackfill,
+        report: ConfigExpiryReport?,
+        keysHashes: Set<String>,
         pollToken: PollToken,
     ): Boolean = try {
-        rekeyIfUnrecoverableOrThrow(groupId, backfillAttempted, pollToken)
+        rekeyIfUnrecoverableOrThrow(groupId, backfill, report, keysHashes, pollToken)
     } catch (e: Exception) {
         Log.e(TAG, "Force rekey of $groupId failed", e)
         false
@@ -832,10 +915,17 @@ class ExpiredConfigRecovery @Inject constructor(
 
     private fun rekeyIfUnrecoverableOrThrow(
         groupId: AccountId,
-        backfillAttempted: Boolean,
+        backfill: KeysBackfill,
+        report: ConfigExpiryReport?,
+        keysHashes: Set<String>,
         pollToken: PollToken,
     ): Boolean {
-        if (!backfillAttempted) return false
+        if (backfill != KeysBackfill.Failed) return false
+
+        if (!everyKeysHashMissing(report, keysHashes)) {
+            Log.d(TAG, "Not rekeying $groupId: the expiry check does not say every keys hash is gone")
+            return false
+        }
 
         val group = configFactory.getGroup(groupId)
         if (group == null || group.kicked || group.destroyed) return false
@@ -849,8 +939,8 @@ class ExpiredConfigRecovery @Inject constructor(
         }
 
         // A device holding any retained keys message can put the keys back itself, so a rekey is not the
-        // remedy for it, however the last re-store went. The caller's `groupExpired` cannot be trusted
-        // for this: it is also raised by a re-store that failed, and a re-store only runs when the bytes are
+        // remedy for it, however the last re-store went. Read here rather than inferred from the poll's
+        // expired verdict, which a failed re-store also raises, and a re-store only runs when the bytes are
         // held. One transient store failure must not be enough to issue an irreversible write.
         val holdsKeysBytes = configFactory.withGroupConfigs(groupId) {
             it.groupKeys.activeKeyMessages().isNotEmpty()

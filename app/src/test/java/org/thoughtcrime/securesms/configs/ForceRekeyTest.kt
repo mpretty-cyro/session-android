@@ -1,6 +1,7 @@
 package org.thoughtcrime.securesms.configs
 
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -14,17 +15,26 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.session.libsession.network.SnodeClock
+import org.session.libsession.network.snode.SwarmDirectory
 import org.session.libsession.snode.SwarmAuth
+import org.session.libsession.snode.model.RetrieveMessageResponse
+import org.session.libsession.snode.model.StoreMessageResponse
+import org.session.libsession.utilities.ConfigMessage
 import org.session.libsession.utilities.ConfigFactoryProtocol
 import org.session.libsession.utilities.MutableGroupConfigs
 import org.session.libsession.utilities.UserConfigs
 import org.session.libsignal.utilities.AccountId
 import org.session.libsignal.utilities.IdPrefix
+import org.session.libsignal.utilities.Snode
 import org.thoughtcrime.securesms.api.snode.ConfigExpiryReport
+import org.thoughtcrime.securesms.api.snode.StoreMessageApi
 import org.thoughtcrime.securesms.api.snode.groupExpiredAfterPoll
 import org.thoughtcrime.securesms.api.swarm.SwarmApiExecutor
+import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
 import org.thoughtcrime.securesms.util.AppVisibilityManager
 import org.thoughtcrime.securesms.util.MockLoggingRule
+import java.net.SocketTimeoutException
+import java.time.Instant
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -52,38 +62,165 @@ class ForceRekeyTest {
     private var now = 5_000_000L
     private lateinit var clock: SnodeClock
 
+    // The swarm, and what each node holds for the keys namespace. The backfill's first node is the
+    // poll's own, [nodeA].
+    private val nodeA = node("a")
+    private val nodeB = node("b")
+    private val nodeC = node("c")
+    private val nodeAnswers = mutableMapOf<Snode, suspend () -> List<RetrieveMessageResponse.Message>>()
+    private lateinit var swarmApiExecutor: SwarmApiExecutor
+    private lateinit var swarmDirectory: SwarmDirectory
+    private var storesFail = false
+
+    // The group's keys config as libsession presents it: the active hashes, and the bytes retained for
+    // them. A merge retains the bytes of every message it loads, which is what libsession's retention does.
+    private var activeKeysHashes = listOf("keys-1")
+    private val retained = mutableMapOf<String, ByteArray>()
+
+    private val keysHashes get() = activeKeysHashes.toSet()
+    private val everyKeysHashMissing get() = ConfigExpiryReport.Checked(keysHashes)
+
     @Before
     fun setUp() {
         configFactory = mockk(relaxed = true)
         configs = mockk(relaxed = true)
         every { configFactory.dangerouslyAccessMutableGroupConfigs(groupId) } returns (configs to {})
         every { configFactory.dangerouslyAccessGroupConfigs(groupId) } returns (configs to {})
-        // Nobody here holds the bytes, which is the case the rekey is for. Stubbed rather than left to the
-        // relaxed mock, whose map would answer isEmpty() with false and read as bytes held.
-        givenRetainedKeys(emptyMap())
+        every { configs.groupKeys.activeHashes() } answers { activeKeysHashes }
+        every { configs.groupKeys.activeKeyMessages() } answers { retained.toMap() }
+        every { configFactory.mergeGroupConfigMessages(groupId, any(), any(), any()) } answers {
+            val keys = secondArg<List<ConfigMessage>>()
+            keys.forEach { retained[it.hash] = it.data }
+            keys.size
+        }
+
+        // Every node answers, and holds nothing, unless a test says otherwise.
+        for (node in listOf(nodeA, nodeB, nodeC)) nodeAnswers[node] = { emptyList() }
+        swarmApiExecutor = mockk()
+        coEvery { swarmApiExecutor.send(any(), any()) } coAnswers {
+            val request = secondArg<SwarmApiRequest<*>>()
+            if (request.api is StoreMessageApi) {
+                if (storesFail) throw RuntimeException("store 500")
+                StoreMessageResponse(hash = "stored", timestamp = Instant.EPOCH)
+            } else {
+                RetrieveMessageResponse(messages = nodeAnswers.getValue(request.swarmNodeOverride!!)())
+            }
+        }
+        swarmDirectory = mockk()
+        coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } returns listOf(nodeA, nodeB, nodeC)
 
         clock = mockk<SnodeClock>()
         every { clock.currentTimeMillis() } answers { now }
 
-        forceRekey = ExpiredConfigRecovery(
-            restoreSource = mockk(relaxed = true),
-            clock = clock,
-            appVisibilityManager = mockk(relaxed = true),
-            swarmApiExecutor = mockk(relaxed = true),
-            storeMessageApiFactory = mockk(relaxed = true),
-            deleteMessageApiFactory = mockk(relaxed = true),
-            retrieveMessageFactory = mockk(relaxed = true),
-            configFactory = configFactory,
-        )
+        forceRekey = recovery()
     }
 
-    /** V25 — admin, backfill attempted, no keys bytes held, members view current: the rekey goes ahead. */
+    /**
+     * V25 — every node of the swarm answered and none holds the message, the expiry check says every keys
+     * hash is gone, nothing is held here, and the device is an admin: exactly one rekey.
+     */
     @Test
-    fun `V25 - an admin rekeys a group nobody can repair`() {
+    fun `V25 - an admin rekeys a group no node of the swarm can repair`() = runTest {
         givenGroup(admin = true)
+        val pollToken = completedPoll()
 
-        assertTrue(rekey())
+        val outcome = backfill()
 
+        assertEquals(KeysBackfill.Failed, outcome)
+        // Every node was asked, which is what makes the failure mean the swarm and not one node.
+        for (node in listOf(nodeA, nodeB, nodeC)) {
+            coVerify(exactly = 1) { swarmApiExecutor.send(any(), match { it.swarmNodeOverride == node }) }
+        }
+        assertTrue(rekeyAfter(outcome, pollToken))
+        assertFalse(rekeyAfter(outcome, pollToken))
+        verify(exactly = 1) { configs.rekey() }
+    }
+
+    /**
+     * V25d — the poll's node holds nothing, but another node of the swarm still has the message. It is
+     * fetched from there and merged, so the bytes are held and the ordinary re-store puts it back, and there
+     * is no rekey.
+     *
+     * The merge is the ordinary one, and it is what persists the dump; with the config factory mocked here,
+     * that persistence is not itself observed.
+     */
+    @Test
+    fun `V25d - a copy on another node is merged rather than replaced by a rekey`() = runTest {
+        givenGroup(admin = true)
+        val pollToken = completedPoll()
+        nodeAnswers[nodeB] = { listOf(message("keys-1")) }
+
+        val outcome = backfill()
+
+        assertEquals(KeysBackfill.Captured, outcome)
+        assertTrue("keys-1" in retained)
+        // Stopped once it had the bytes: the third node is never asked.
+        coVerify(exactly = 0) { swarmApiExecutor.send(any(), match { it.swarmNodeOverride == nodeC }) }
+        assertFalse(rekeyAfter(outcome, pollToken))
+        verify(exactly = 0) { configs.rekey() }
+    }
+
+    /**
+     * V25e — every node that answered holds nothing, but one did not answer. That node is not evidence the
+     * message is gone, so the attempt is inconclusive: no rekey, and it is retried once the ordinary
+     * backfill bar has passed.
+     *
+     * A timeout reaches this layer as the IO exception OkHttp's call and read timeouts throw, rethrown by the
+     * executor once its retries are spent, so that is the shape used.
+     */
+    @Test
+    fun `V25e - a node that did not answer makes the attempt inconclusive`() = runTest {
+        givenGroup(admin = true)
+        val pollToken = completedPoll()
+        nodeAnswers[nodeB] = { throw SocketTimeoutException("timeout") }
+
+        val outcome = backfill()
+
+        assertEquals(KeysBackfill.Inconclusive, outcome)
+        // Asked past the node that timed out, so its silence did not end the attempt early.
+        coVerify(exactly = 1) { swarmApiExecutor.send(any(), match { it.swarmNodeOverride == nodeC }) }
+        assertFalse(rekeyAfter(outcome, pollToken))
+        verify(exactly = 0) { configs.rekey() }
+
+        // Barred like any attempt, then retried: with every node answering this time, it fails, and
+        // the rekey goes ahead.
+        assertEquals(KeysBackfill.NotAttempted, backfill())
+        now += RESTORED_HASH_BAR_MS
+        nodeAnswers[nodeB] = { emptyList() }
+        val retry = backfill()
+        assertEquals(KeysBackfill.Failed, retry)
+        assertTrue(rekeyAfter(retry, completedPoll()))
+    }
+
+    /** A swarm that cannot be looked up has not answered either. */
+    @Test
+    fun `a swarm that cannot be looked up makes the attempt inconclusive`() = runTest {
+        givenGroup(admin = true)
+        coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } throws SocketTimeoutException("timeout")
+
+        assertEquals(KeysBackfill.Inconclusive, backfill())
+    }
+
+    /**
+     * The expiry check has to say every keys hash is gone. A backfill that failed across the whole swarm
+     * says only that this device cannot get the bytes, not that the keys are gone.
+     */
+    @Test
+    fun `no rekey unless the expiry check says every keys hash is gone`() {
+        givenGroup(admin = true)
+        activeKeysHashes = listOf("keys-1", "keys-2")
+
+        for (report in listOf(
+            null,
+            ConfigExpiryReport.Inconclusive.NoUsableSubResponse,
+            ConfigExpiryReport.Checked(setOf("keys-1")),
+        )) {
+            assertFalse(rekey(report = report))
+        }
+        verify(exactly = 0) { configs.rekey() }
+
+        // Reachability control: the same fixture with both gone does rekey.
+        assertTrue(rekey(report = ConfigExpiryReport.Checked(setOf("keys-1", "keys-2"))))
         verify(exactly = 1) { configs.rekey() }
     }
 
@@ -146,7 +283,7 @@ class ForceRekeyTest {
      *
      * Here in its simplest form: a poll ran and did not mark us level, so there is nothing vouching for the
      * members view. Asserted with everything else satisfied, so the only thing that can decline it is this
-     * guard. [V25e][`V25e - a level mark from an earlier poll does not authorise this poll's rekey`] covers
+     * guard. [`a level mark from an earlier poll does not authorise this poll's rekey`] covers
      * the harder half, where a mark exists but belongs to an earlier poll.
      */
     @Test
@@ -159,7 +296,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * V25e — the level mark must belong to the poll that is asking.
+     * The level mark must belong to the poll that is asking.
      *
      * This is the hazard the token exists for, and the one a boolean-or-presence check cannot see. A device
      * last fully level yesterday, offered a members update since that it hasn't merged, still *has* a mark:
@@ -170,7 +307,7 @@ class ForceRekeyTest {
      * nothing.
      */
     @Test
-    fun `V25e - a level mark from an earlier poll does not authorise this poll's rekey`() {
+    fun `a level mark from an earlier poll does not authorise this poll's rekey`() {
         givenGroup(admin = true)
 
         // A poll that marked us level: proceeds. Its token is kept, which is the point of the test — a
@@ -205,24 +342,20 @@ class ForceRekeyTest {
         verify(exactly = 2) { configs.rekey() }
     }
 
-    /** The caller's precondition: no backfill attempt means no rekey, whatever else is true. */
+    /** Only a backfill that failed across the whole swarm permits a rekey, whatever else is true. */
     @Test
-    fun `no backfill attempt means no rekey`() {
+    fun `no rekey unless the backfill failed`() {
         givenGroup(admin = true)
 
-        assertFalse(
-            forceRekey.rekeyIfUnrecoverable(
-                groupId = groupId,
-                backfillAttempted = false,
-                pollToken = completedPoll(),
-            )
-        )
+        for (outcome in listOf(KeysBackfill.NotAttempted, KeysBackfill.Captured, KeysBackfill.Inconclusive)) {
+            assertFalse(rekey(backfill = outcome))
+        }
 
         verify(exactly = 0) { configs.rekey() }
     }
 
     /**
-     * V25f — one instance serves every group and the user's own account, so other swarms poll constantly
+     * One instance serves every group and the user's own account, so other swarms poll constantly
      * in between. Our mark must survive that.
      *
      * The mistake this pins is a token held as a single shared "current poll" value rather than one each
@@ -231,7 +364,7 @@ class ForceRekeyTest {
      * other test here notices — the feature just quietly stops existing.
      */
     @Test
-    fun `V25f - another swarm polling does not make our own mark stale`() {
+    fun `another swarm polling does not make our own mark stale`() {
         givenGroup(admin = true)
 
         val ours = completedPoll()
@@ -282,8 +415,11 @@ class ForceRekeyTest {
     @Test
     fun `an admin holding the keys bytes does not rekey after one failed re-store`() = runTest {
         givenGroup(admin = true)
-        val retained = mapOf("keys-1" to "keys-one".toByteArray())
-        givenRetainedKeys(retained)
+        // Bytes for one keys hash and not the other, and no node holds the other: the backfill fails
+        // across the whole swarm while this device still holds bytes it could re-store.
+        activeKeysHashes = listOf("keys-1", "keys-2")
+        retained["keys-1"] = "keys-one".toByteArray()
+        storesFail = true
 
         val restoreSource = mockk<ConfigRestoreSource>()
         every { restoreSource.canRepairGroupKeys(groupId, any()) } returns true
@@ -291,45 +427,36 @@ class ForceRekeyTest {
             PendingRestore(
                 label = "group keys for $groupId",
                 push = ConfigPush(retained.values.map { Bytes(it) }, 0L, emptyList()),
-                claimedHashes = retained.keys,
+                claimedHashes = retained.keys.toSet(),
                 isGroupKeys = true,
                 namespace = { GROUP_KEYS_NAMESPACE },
             )
         )
-        val swarmApiExecutor = mockk<SwarmApiExecutor>()
-        coEvery { swarmApiExecutor.send(any(), any()) } throws RuntimeException("store 500")
         val appVisibilityManager = mockk<AppVisibilityManager>()
         every { appVisibilityManager.isAppVisible } returns MutableStateFlow(true)
-
-        forceRekey = ExpiredConfigRecovery(
-            restoreSource = restoreSource,
-            clock = clock,
-            appVisibilityManager = appVisibilityManager,
-            swarmApiExecutor = swarmApiExecutor,
-            storeMessageApiFactory = mockk(relaxed = true),
-            deleteMessageApiFactory = mockk(relaxed = true),
-            retrieveMessageFactory = mockk(relaxed = true),
-            configFactory = configFactory,
-        )
+        forceRekey = recovery(restoreSource = restoreSource, appVisibilityManager = appVisibilityManager)
         val pollToken = completedPoll()
+
+        val outcome = backfill()
+        assertEquals(KeysBackfill.Failed, outcome)
 
         val groupExpired = groupExpiredAfterPoll(
             noKeysAfterMerge = false,
-            report = ConfigExpiryReport.Checked(setOf("keys-1")),
-            keysHashes = setOf("keys-1"),
-            canRepairKeys = { forceRekey.canRepairGroupKeys(groupId, setOf("keys-1")) },
+            report = everyKeysHashMissing,
+            keysHashes = keysHashes,
+            canRepairKeys = { forceRekey.canRepairGroupKeys(groupId, keysHashes) },
             runRecoveryRound = { report ->
                 forceRekey.onGroupConfigsChecked(groupId, authFor(groupId), report)
             },
         )
-        assertEquals(true, groupExpired, "the failed re-store must reach the rekey for this to test anything")
+        assertEquals(true, groupExpired, "the failed re-store must report the group expired for this to test anything")
 
-        assertFalse(forceRekey.rekeyIfUnrecoverable(groupId, backfillAttempted = true, pollToken = pollToken))
+        assertFalse(rekeyAfter(outcome, pollToken))
         verify(exactly = 0) { configs.rekey() }
 
         // Reachability control: the same instance and poll, with the bytes gone, does rekey.
-        givenRetainedKeys(emptyMap())
-        assertTrue(forceRekey.rekeyIfUnrecoverable(groupId, backfillAttempted = true, pollToken = pollToken))
+        retained.clear()
+        assertTrue(rekeyAfter(outcome, pollToken))
         verify(exactly = 1) { configs.rekey() }
     }
 
@@ -346,12 +473,58 @@ class ForceRekeyTest {
         verify(exactly = 1) { configs.rekey() }
     }
 
-    /** A rekey attempt from a poll that has marked us level, unless given a token that hasn't. */
-    private fun rekey(pollToken: PollToken = completedPoll()) = forceRekey.rekeyIfUnrecoverable(
+    /**
+     * A rekey attempt from a poll that has marked us level, after a backfill that failed across the swarm and
+     * an expiry check saying every keys hash is gone, unless told otherwise.
+     */
+    private fun rekey(
+        pollToken: PollToken = completedPoll(),
+        backfill: KeysBackfill = KeysBackfill.Failed,
+        report: ConfigExpiryReport? = everyKeysHashMissing,
+    ) = forceRekey.rekeyIfUnrecoverable(
         groupId = groupId,
-        backfillAttempted = true,
+        backfill = backfill,
+        report = report,
+        keysHashes = keysHashes,
         pollToken = pollToken,
     )
+
+    /** The rekey as the poll makes it, after a backfill with [outcome]. */
+    private fun rekeyAfter(outcome: KeysBackfill, pollToken: PollToken) =
+        rekey(pollToken = pollToken, backfill = outcome)
+
+    /** The poll's backfill, whose first node is the poll's own. */
+    private suspend fun backfill() = forceRekey.backfillIfNeeded(groupId, authFor(groupId), nodeA)
+
+    private fun recovery(
+        restoreSource: ConfigRestoreSource = mockk(relaxed = true),
+        appVisibilityManager: AppVisibilityManager = mockk(relaxed = true),
+    ) = ExpiredConfigRecovery(
+        restoreSource = restoreSource,
+        clock = clock,
+        appVisibilityManager = appVisibilityManager,
+        swarmApiExecutor = swarmApiExecutor,
+        storeMessageApiFactory = mockk(relaxed = true),
+        deleteMessageApiFactory = mockk(relaxed = true),
+        retrieveMessageFactory = mockk(relaxed = true),
+        configFactory = configFactory,
+        swarmDirectory = swarmDirectory,
+    ).also {
+        // Hardcoded rather than read from libsession's native Namespace, which unit tests cannot load.
+        it.keysNamespace = { GROUP_KEYS_NAMESPACE }
+    }
+
+    private fun node(name: String) = Snode("https://$name", 443, Snode.KeySet("ed-$name", "x-$name"))
+
+    /**
+     * Mocked rather than constructed: `Message.data` lazily decodes `dataB64` through
+     * `android.util.Base64`, which is not available to a JVM unit test.
+     */
+    private fun message(hash: String) = mockk<RetrieveMessageResponse.Message>().also {
+        every { it.hash } returns hash
+        every { it.data } returns "keys-message-bytes".toByteArray()
+        every { it.timestamp } returns Instant.EPOCH
+    }
 
     /** A poll that ran and took everything in: mints the token and marks the swarm level with it. */
     private fun completedPoll(): PollToken {
@@ -362,10 +535,6 @@ class ForceRekeyTest {
             mergedConfigMessagesForDiagnosticsOnly = true,
         )
         return token
-    }
-
-    private fun givenRetainedKeys(retained: Map<String, ByteArray>) {
-        every { configs.groupKeys.activeKeyMessages() } returns retained
     }
 
     private fun authFor(swarm: AccountId): SwarmAuth = mockk<SwarmAuth>().also {

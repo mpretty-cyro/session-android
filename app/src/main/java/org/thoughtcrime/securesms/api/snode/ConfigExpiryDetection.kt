@@ -114,7 +114,7 @@ fun groupExpiredFromExpiryCheck(
         return null
     }
 
-    if (!keysHashes.all { it in report.missingHashes }) {
+    if (!everyKeysHashMissing(report, keysHashes)) {
         return false
     }
 
@@ -129,6 +129,13 @@ fun groupExpiredFromExpiryCheck(
     // for this case is applied after the round instead, from its actual outcome.
     return if (canRepairKeys()) null else true
 }
+
+/**
+ * Whether [report] says every one of [keysHashes] is gone from the swarm. False when it cannot say: an
+ * inconclusive report, or no keys hashes asked about.
+ */
+fun everyKeysHashMissing(report: ConfigExpiryReport?, keysHashes: Set<String>): Boolean =
+    report is ConfigExpiryReport.Checked && keysHashes.isNotEmpty() && keysHashes.all { it in report.missingHashes }
 
 /**
  * The expired flag a group poll reports, from the three things that can answer it: the expiry check, the

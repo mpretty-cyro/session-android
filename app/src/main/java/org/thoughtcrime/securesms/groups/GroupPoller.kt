@@ -34,6 +34,7 @@ import org.thoughtcrime.securesms.api.swarm.SwarmApiRequest
 import org.thoughtcrime.securesms.api.swarm.SwarmSnodeSelector
 import org.thoughtcrime.securesms.api.swarm.execute
 import org.thoughtcrime.securesms.configs.ExpiredConfigRecovery
+import org.thoughtcrime.securesms.configs.KeysBackfill
 import org.thoughtcrime.securesms.database.ReceivedMessageHashDatabase
 import org.thoughtcrime.securesms.util.AppVisibilityManager
 import org.thoughtcrime.securesms.util.NetworkConnectivity
@@ -268,7 +269,7 @@ class GroupPoller @AssistedInject constructor(
                         // It does NOT sit here for last-hash safety. That is structural: the backfill calls
                         // the retrieve layer directly and never calls setLastMessageHashValue, so it cannot
                         // move the cursor from any position. Do not weaken that into a positional argument.
-                        val backfillAttempted = runCatching {
+                        val backfill = runCatching {
                             expiredConfigRecovery.backfillIfNeeded(groupId, groupAuth, snode)
                         }
                             .onFailure { e ->
@@ -277,7 +278,8 @@ class GroupPoller @AssistedInject constructor(
                                 // reason the poll fails.
                                 logE("Keys backfill failed", e)
                             }
-                            .getOrDefault(false)
+                            // A throw is not an attempt: nothing was established about the swarm.
+                            .getOrDefault(KeysBackfill.NotAttempted)
 
                         // Left until last: the configs above have been taken in, which is what makes it
                         // safe to put back anything the swarm has lost, and nothing else should wait
@@ -330,20 +332,16 @@ class GroupPoller @AssistedInject constructor(
                             },
                         )
 
-                        // The force rekey. Whether it is safe is decided by rekeyIfUnrecoverable, which
-                        // reads the state it needs for itself: whether this device holds keys bytes it could
-                        // re-store, and whether the members view is level as of this poll. What is decided
-                        // here is only the sequencing, which is this caller's knowledge:
-                        //
-                        //   backfillAttempted     a backfill ran for this group in THIS poll
-                        //   groupExpired == true  the keys are gone from the swarm, as far as this poll can tell
-                        if (groupExpired == true) {
-                            expiredConfigRecovery.rekeyIfUnrecoverable(
-                                groupId = groupId,
-                                backfillAttempted = backfillAttempted,
-                                pollToken = pollToken,
-                            )
-                        }
+                        // The force rekey decides everything about whether it may fire, from what this poll
+                        // established: the backfill's outcome, the expiry check, and the state as it now
+                        // stands. It returns at once unless the backfill failed across the whole swarm.
+                        expiredConfigRecovery.rekeyIfUnrecoverable(
+                            groupId = groupId,
+                            backfill = backfill,
+                            report = expiryReport,
+                            keysHashes = configHashes.keys,
+                            pollToken = pollToken,
+                        )
 
                     }
 

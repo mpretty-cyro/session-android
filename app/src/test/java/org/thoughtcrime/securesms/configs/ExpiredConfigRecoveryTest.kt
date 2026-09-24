@@ -97,6 +97,7 @@ class ExpiredConfigRecoveryTest {
             deleteMessageApiFactory = deleteMessageApiFactory,
             retrieveMessageFactory = mockk(relaxed = true),
             configFactory = mockk(relaxed = true),
+            swarmDirectory = mockk(relaxed = true),
         )
     }
 
@@ -849,6 +850,7 @@ class ExpiredConfigRecoveryTest {
             deleteMessageApiFactory = deleteMessageApiFactory,
             retrieveMessageFactory = mockk(relaxed = true),
             configFactory = mockk(relaxed = true),
+            swarmDirectory = mockk(relaxed = true),
         )
         coEvery { swarmApiExecutor.send(any(), any()) } answers {
             val request = secondArg<SwarmApiRequest<*>>()
