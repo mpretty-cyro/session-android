@@ -835,17 +835,20 @@ class ExpiredConfigRecovery @Inject constructor(
             // refreshed when a node reports it has left, so it can be both out of date and short, and
             // "every node answered" has to mean every node of the swarm as it is now.
             val swarm = try {
-                swarmDirectory.fetchSwarm(groupId.hexString)
+                swarmDirectory.fetchSwarmCounted(groupId.hexString)
             } catch (e: Exception) {
                 if (e is CancellationException) throw e
                 Log.w(TAG, "Keys backfill: could not look up the swarm for $groupId", e)
                 null
             }
 
-            if (swarm.isNullOrEmpty()) {
+            // An entry in the swarm listing that could not be read is a node that is never asked, so it counts
+            // as one that did not answer.
+            if (swarm == null || swarm.nodes.isEmpty() || swarm.unreadable > 0) {
                 someNodeDidNotAnswer = true
-            } else {
-                for (node in swarm) {
+            }
+            if (swarm != null) {
+                for (node in swarm.nodes) {
                     if (node.ed25519Key == snode.ed25519Key) continue
                     if (ask(node)) break
                 }

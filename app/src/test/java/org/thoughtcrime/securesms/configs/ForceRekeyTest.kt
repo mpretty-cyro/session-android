@@ -107,7 +107,7 @@ class ForceRekeyTest {
             }
         }
         swarmDirectory = mockk()
-        coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } returns listOf(nodeA, nodeB, nodeC)
+        givenFetchedSwarm(unreadable = 0)
         // The cached view, which agrees with the network until a test says otherwise.
         coEvery { swarmDirectory.getSwarm(groupId.hexString) } returns listOf(nodeA, nodeB, nodeC)
 
@@ -139,7 +139,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * V25d — the poll's node holds nothing, but another node of the swarm still has the message. It is
+     * V25h — the poll's node holds nothing, but another node of the swarm still has the message. It is
      * fetched from there and merged, so the bytes are held and the ordinary re-store puts it back, and there
      * is no rekey.
      *
@@ -147,7 +147,7 @@ class ForceRekeyTest {
      * that persistence is not itself observed.
      */
     @Test
-    fun `V25d - a copy on another node is merged rather than replaced by a rekey`() = runTest {
+    fun `V25h - a copy on another node is merged rather than replaced by a rekey`() = runTest {
         givenGroup(admin = true)
         val pollToken = completedPoll()
         nodeAnswers[nodeB] = { listOf(message("keys-1")) }
@@ -163,7 +163,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * V25e — every node that answered holds nothing, but one did not answer. That node is not evidence the
+     * V25i — every node that answered holds nothing, but one did not answer. That node is not evidence the
      * message is gone, so the attempt is inconclusive: no rekey, and it is retried once the ordinary
      * backfill bar has passed.
      *
@@ -171,7 +171,7 @@ class ForceRekeyTest {
      * executor once its retries are spent, so that is the shape used.
      */
     @Test
-    fun `V25e - a node that did not answer makes the attempt inconclusive`() = runTest {
+    fun `V25i - a node that did not answer makes the attempt inconclusive`() = runTest {
         givenGroup(admin = true)
         val pollToken = completedPoll()
         nodeAnswers[nodeB] = { throw SocketTimeoutException("timeout") }
@@ -195,13 +195,13 @@ class ForceRekeyTest {
     }
 
     /**
-     * V25f — a node that did not answer is dropped from the cached swarm, and on the next attempt every
+     * V25j — a node that did not answer is dropped from the cached swarm, and on the next attempt every
      * node left on the cached list answers empty. That is not the swarm answering: the node that was
      * dropped is still in the swarm and still has not answered, so the attempt stays inconclusive. A
      * failure is judged against the swarm as fetched for that attempt.
      */
     @Test
-    fun `V25f - a node dropped from the cached swarm still has to answer`() = runTest {
+    fun `V25j - a node dropped from the cached swarm still has to answer`() = runTest {
         givenGroup(admin = true)
         nodeAnswers[nodeB] = { throw SocketTimeoutException("timeout") }
 
@@ -225,13 +225,13 @@ class ForceRekeyTest {
     }
 
     /**
-     * V25g — a backfill fails in one poll, but another guard refuses that poll's rekey. The next poll is
+     * V25k — a backfill fails in one poll, but another guard refuses that poll's rekey. The next poll is
      * inside the backfill bar, so no backfill runs, and every other guard now passes. There is no rekey:
      * only a failure found by this poll's own attempt authorises one, since a peer may have put the keys
      * back since the earlier attempt.
      */
     @Test
-    fun `V25g - a failure from an earlier poll does not authorise this poll's rekey`() = runTest {
+    fun `V25k - a failure from an earlier poll does not authorise this poll's rekey`() = runTest {
         givenGroup(admin = true)
 
         // Poll N: the backfill fails, and the poll never marked us level.
@@ -256,11 +256,33 @@ class ForceRekeyTest {
         verify(exactly = 1) { configs.rekey() }
     }
 
+    /**
+     * A swarm listing with an entry that could not be read names a node that is never asked, so the attempt
+     * cannot fail, whatever the nodes that were read say.
+     */
+    @Test
+    fun `an unreadable entry in the swarm listing makes the attempt inconclusive`() = runTest {
+        givenGroup(admin = true)
+        givenFetchedSwarm(unreadable = 1)
+
+        val outcome = backfill()
+
+        assertEquals(KeysBackfill.Inconclusive, outcome)
+        assertFalse(rekeyAfter(outcome, completedPoll()))
+
+        // Reachability control: the same listing, fully read, fails, and the rekey goes ahead.
+        now += RESTORED_HASH_BAR_MS
+        givenFetchedSwarm(unreadable = 0)
+        val readable = backfill()
+        assertEquals(KeysBackfill.Failed, readable)
+        assertTrue(rekeyAfter(readable, completedPoll()))
+    }
+
     /** A swarm that cannot be looked up has not answered either. */
     @Test
     fun `a swarm that cannot be looked up makes the attempt inconclusive`() = runTest {
         givenGroup(admin = true)
-        coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } throws SocketTimeoutException("timeout")
+        coEvery { swarmDirectory.fetchSwarmCounted(groupId.hexString) } throws SocketTimeoutException("timeout")
 
         assertEquals(KeysBackfill.Inconclusive, backfill())
     }
@@ -341,17 +363,17 @@ class ForceRekeyTest {
     }
 
     /**
-     * A rekey encrypts to THIS DEVICE'S view of members, and this path fires precisely on
+     * V25d — a rekey encrypts to THIS DEVICE'S view of members, and this path fires precisely on
      * devices whose config state is degraded. A member added while we were away — not yet merged here —
      * would be silently dropped by a rekey issued from that stale view.
      *
      * Here in its simplest form: a poll ran and did not mark us level, so there is nothing vouching for the
      * members view. Asserted with everything else satisfied, so the only thing that can decline it is this
-     * guard. [`a level mark from an earlier poll does not authorise this poll's rekey`] covers
+     * guard. [V25e][`V25e - a level mark from an earlier poll does not authorise this poll's rekey`] covers
      * the harder half, where a mark exists but belongs to an earlier poll.
      */
     @Test
-    fun `a members view nothing vouches for blocks the rekey`() {
+    fun `V25d - a members view nothing vouches for blocks the rekey`() {
         givenGroup(admin = true)
 
         assertFalse(rekey(forceRekey.beginPoll(groupId.hexString)))
@@ -360,7 +382,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * The level mark must belong to the poll that is asking.
+     * V25e — the level mark must belong to the poll that is asking.
      *
      * This is the hazard the token exists for, and the one a boolean-or-presence check cannot see. A device
      * last fully level yesterday, offered a members update since that it hasn't merged, still *has* a mark:
@@ -371,7 +393,7 @@ class ForceRekeyTest {
      * nothing.
      */
     @Test
-    fun `a level mark from an earlier poll does not authorise this poll's rekey`() {
+    fun `V25e - a level mark from an earlier poll does not authorise this poll's rekey`() {
         givenGroup(admin = true)
 
         // A poll that marked us level: proceeds. Its token is kept, which is the point of the test — a
@@ -419,7 +441,7 @@ class ForceRekeyTest {
     }
 
     /**
-     * One instance serves every group and the user's own account, so other swarms poll constantly
+     * V25f — one instance serves every group and the user's own account, so other swarms poll constantly
      * in between. Our mark must survive that.
      *
      * The mistake this pins is a token held as a single shared "current poll" value rather than one each
@@ -428,7 +450,7 @@ class ForceRekeyTest {
      * other test here notices — the feature just quietly stops existing.
      */
     @Test
-    fun `another swarm polling does not make our own mark stale`() {
+    fun `V25f - another swarm polling does not make our own mark stale`() {
         givenGroup(admin = true)
 
         val ours = completedPoll()
@@ -576,6 +598,11 @@ class ForceRekeyTest {
     ).also {
         // Hardcoded rather than read from libsession's native Namespace, which unit tests cannot load.
         it.keysNamespace = { GROUP_KEYS_NAMESPACE }
+    }
+
+    private fun givenFetchedSwarm(unreadable: Int) {
+        coEvery { swarmDirectory.fetchSwarmCounted(groupId.hexString) } returns
+                SwarmDirectory.FetchedSwarm(listOf(nodeA, nodeB, nodeC), unreadable = unreadable)
     }
 
     private fun node(name: String) = Snode("https://$name", 443, Snode.KeySet("ed-$name", "x-$name"))

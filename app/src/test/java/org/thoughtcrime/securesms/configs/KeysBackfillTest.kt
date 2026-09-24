@@ -88,7 +88,8 @@ class KeysBackfillTest {
         every { configFactory.dangerouslyAccessGroupConfigs(groupId) } returns (configs to {})
 
         val swarmDirectory = mockk<SwarmDirectory>()
-        coEvery { swarmDirectory.fetchSwarm(groupId.hexString) } returns listOf(snode, otherNode)
+        coEvery { swarmDirectory.fetchSwarmCounted(groupId.hexString) } returns
+                SwarmDirectory.FetchedSwarm(listOf(snode, otherNode), unreadable = 0)
 
         backfill = ExpiredConfigRecovery(
             restoreSource = mockk(relaxed = true),
